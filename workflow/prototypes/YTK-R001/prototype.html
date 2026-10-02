@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>ヤットコ YTK-R001 非公開プロトタイプ</title>
+<style>
+:root{--bg:#f7f4ee;--card:#fff;--ink:#202321;--muted:#6e756f;--line:#d8d7d0;--accent:#245c49;--soft:#e2efe9;--warn:#8c4b19;--warnsoft:#fff0dd;--danger:#8b2d2d;--dangersoft:#fbe9e9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Meiryo",sans-serif;line-height:1.55}button,input,select{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 16px;background:rgba(247,244,238,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}header h1{margin:0;font-size:20px}.eyebrow{margin:0;color:var(--muted);font-size:11px;letter-spacing:.08em}.badge{padding:5px 8px;border:1px solid var(--warn);border-radius:999px;color:var(--warn);font-size:11px;font-weight:700;text-align:center}
+main{width:min(760px,100%);margin:auto;padding:20px 14px 90px}.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(34,42,37,.08)}h2{margin:0 0 7px;font-size:24px;line-height:1.35}h3{margin:0;font-size:16px}.lead{margin:4px 0 0;color:var(--muted)}
+.notice{margin:15px 0;padding:13px;border-radius:13px;background:var(--soft);border:1px solid #b8d7c9}.notice.warn{background:var(--warnsoft);border-color:#e8c69f}.notice.danger{background:var(--dangersoft);border-color:#e4b7b7}.notice strong{display:block;margin-bottom:4px}.notice p{margin:0}
+.secret-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;list-style:none;padding:0;margin:10px 0 0}.secret-list li{padding:7px 9px;background:#fff;border:1px solid var(--line);border-radius:9px;font-size:12px}
+.stepbar{display:flex;gap:9px;align-items:center;margin-bottom:13px}.stepbar span{font-size:12px;color:var(--muted)}.progress{flex:1;height:7px;background:#e4e1d9;border-radius:999px;overflow:hidden}.progress i{display:block;height:100%;background:var(--accent)}
+.grid{display:grid;grid-template-columns:1fr;gap:11px;margin-top:16px}.card{min-width:0;padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff}.head{display:flex;gap:9px;align-items:flex-start}.head>div{min-width:0}.letter{width:32px;height:32px;flex:none;display:grid;place-items:center;background:#f0ece3;border-radius:9px;font-weight:800}.hint{margin:3px 0 0;color:var(--muted);font-size:12px}
+.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:11px}.choices.four{grid-template-columns:repeat(2,minmax(0,1fr))}.choice{width:100%;min-width:0;min-height:41px;padding:7px 4px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font-size:12px;font-weight:700;white-space:normal;overflow-wrap:anywhere}.choice.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.field{margin-top:13px}.field label,.field .label{display:block;margin-bottom:6px;font-weight:800;font-size:13px}.field small{display:block;margin-top:4px;color:var(--muted)}input,select{width:100%;min-height:44px;padding:9px 10px;border:1px solid #bfc4bf;border-radius:11px;background:#fff;color:var(--ink)}input+small{font-size:11px}.detail{margin-top:12px;padding:14px;border:1px solid var(--line);border-radius:15px}
+.actions{position:sticky;bottom:0;display:flex;gap:8px;margin-top:16px;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to bottom,rgba(247,244,238,0),var(--bg) 40%)}.btn{min-height:47px;padding:9px 14px;border-radius:13px;border:1px solid var(--accent);font-weight:800}.primary{flex:1;background:var(--accent);color:#fff}.secondary{background:#fff;color:var(--accent)}.ghost{background:transparent;color:var(--muted);border-color:var(--line)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.risks{display:grid;gap:9px;margin-top:14px}.risk{padding:13px;border:1px solid var(--line);border-radius:14px}.risktop{display:flex;justify-content:space-between;gap:8px;align-items:center}.chip{padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800;background:#f0ece3}.chip.ok{background:var(--soft);color:var(--accent)}.chip.mid{background:var(--warnsoft);color:var(--warn)}.chip.attn{background:var(--dangersoft);color:var(--danger)}.risk p{margin:4px 0 0;color:var(--muted);font-size:12px}.summary{margin-top:16px}.summary h3{margin-bottom:6px}.summary ul{margin:0;padding-left:20px}.summary li+li{margin-top:4px}.empty{color:var(--muted);font-size:13px}
+footer{padding:16px 14px calc(24px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:11px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.risks{grid-template-columns:repeat(2,minmax(0,1fr))}.secret-list{grid-template-columns:repeat(3,minmax(0,1fr))}.choices.four{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:380px){header{align-items:flex-start}.badge{max-width:112px}.choices{grid-template-columns:1fr}.choices.four{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div><p class="eyebrow">YTK-R001 / NON-PRODUCTION</p><h1>ヤットコ</h1></div><span class="badge">非公開制作確認用</span></header>
+<main id="app" aria-live="polite"></main>
+<footer>公開仕様ではありません。入力内容は外部送信・永続保存しません。</footer>
+<script>
+(function(){
+"use strict";
+var C=[
+{id:"device",l:"A",t:"端末・通信",h:"スマホ、PC、SIM/eSIM、電話番号"},
+{id:"base",l:"B",t:"基盤アカウント",h:"Apple、Google、Microsoftなど"},
+{id:"mail",l:"C",t:"メール",h:"Gmail、iCloudメール、Outlookなど"},
+{id:"social",l:"D",t:"SNS・メッセージ",h:"LINE、Instagram、Xなど"},
+{id:"cloud",l:"E",t:"クラウド・写真・バックアップ",h:"iCloud、Google Photos、Driveなど"},
+{id:"subscription",l:"F",t:"サブスク・継続課金",h:"アプリ、動画、音楽、ソフトなど"},
+{id:"finance",l:"G",t:"金融系デジタルサービス",h:"銀行、証券、カード、決済、暗号資産"},
+{id:"commerce",l:"H",t:"通販・配送・フリマ",h:"通販、フリマ、配送サービス"},
+{id:"auth",l:"I",t:"認証・復旧手段",h:"パスワード管理、認証アプリ、復旧設定"},
+{id:"license",l:"J",t:"デジタル購入物・ライセンス",h:"電子書籍、ゲーム、ソフトウェア"},
+{id:"carrier",l:"K",t:"携帯電話会社・通信契約",h:"回線契約、電話番号に紐づくサービス"},
+{id:"business",l:"L",t:"個人事業・副業・Web関連",h:"サイト、ドメイン、クラウド、販売サービス"}
+];
+var S={step:0,status:{},detail:{},intent:{}};
+C.forEach(function(c){S.status[c.id]=null;});
+var RL={identity:"本人確認の入口",billing:"継続課金",finance:"金融資産",data:"消失すると困るデータ",family:"家族が存在を知らない可能性"};
+var ST={ok:"確認できている",mid:"少し曖昧",attn:"要確認",empty:"未回答"};
+function E(tag,cls,txt){var x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=txt;return x;}
+function B(txt,cls,fn){var x=E("button",cls||"choice",txt);x.type="button";x.addEventListener("click",fn);return x;}
+function active(){return C.filter(function(c){return S.status[c.id]==="using"||S.status[c.id]==="unknown";});}
+function using(){return C.filter(function(c){return S.status[c.id]==="using";});}
+function d(id){if(!S.detail[id])S.detail[id]={service:"",identifier:"",identifierType:"email",billing:"unknown",financial:"unknown",important:"unknown",handover:"unknown",family:"unknown"};if(!S.intent[id])S.intent[id]="undecided";return S.detail[id];}
+function forbidden(v){v=String(v||"");return /(password|passwd|パスワード|暗証番号|pin\b|otp\b|ワンタイム|復旧コード|recovery\s*code|秘密鍵|private\s*key|seed\s*phrase|シードフレーズ|cvv|cvc)/i.test(v)||/(?:\d[ -]*?){13,19}/.test(v);}
+function rv(vals,yes){if(!vals.length)return"empty";if(vals.indexOf(yes||"yes")>=0)return"attn";if(vals.indexOf("unknown")>=0)return"mid";return"ok";}
+function risks(status,detail){
+var u=C.filter(function(c){return status[c.id]==="using";}),dl=u.map(function(c){return detail[c.id];}).filter(Boolean),entry={device:1,base:1,mail:1,carrier:1},ed=u.filter(function(c){return entry[c.id];}).map(function(c){return detail[c.id];}).filter(Boolean),identity="empty";
+if(ed.length){var hv=ed.map(function(x){return x.handover;});identity=hv.indexOf("not_configured")>=0?"attn":hv.indexOf("unknown")>=0?"mid":"ok";}
+return{identity:identity,billing:rv(dl.map(function(x){return x.billing;})),finance:rv(dl.map(function(x){return x.financial;})),data:rv(dl.map(function(x){return x.important;})),family:rv(dl.map(function(x){return x.family;}),"no")};
+}
+function head(n,title,lead){var f=E("div","stepbar"),s=E("span","", "STEP "+n+" / 5"),p=E("div","progress"),i=E("i");i.style.width=Math.round(n/5*100)+"%";p.appendChild(i);f.append(s,p);var box=document.createDocumentFragment();box.append(f,E("h2","",title),E("p","lead",lead));return box;}
+function notice(type,title,text){var x=E("div","notice "+(type||""));x.append(E("strong","",title),E("p","",text));return x;}
+function nav(back,next,nextText){var a=E("div","actions");if(back)a.append(B("戻る","btn secondary",function(){S.step--;render();}));if(next)a.append(B(nextText||"次へ","btn primary",function(){S.step++;render();}));return a;}
+function chooseRow(id,key,current,opts,four){
+var r=E("div","choices"+(four?" four":""));
+opts.forEach(function(o){var b=B(o[1],"choice"+(current===o[0]?" on":""),function(){d(id)[key]=o[0];render();});r.appendChild(b);});
+return r;
+}
+function renderStart(app){
+var p=E("section","panel");p.append(E("p","eyebrow","非公開プロトタイプ"),E("h2","","デジタル情報を、まず「見える状態」に。"),E("p","lead","全部を決める必要はありません。「わからない」も整理結果のひとつです。"));
+var n=notice("danger","秘密情報は入力しないでください","ヤットコはログイン情報を預かる設計ではありません。この試作版も外部送信・永続保存を行いません。"),ul=E("ul","secret-list");
+["パスワード","PIN・暗証番号","端末パスコード","OTP","復旧コード","秘密鍵・シード","カード完全番号","CVV/CVC","パスキー秘密情報"].forEach(function(x){ul.append(E("li","",x));});n.appendChild(ul);p.append(n,notice("warn","公開仕様ではありません","YTK-R001の制作検証用です。法的・契約上の状態を自動判定しません。"));
+var a=E("div","actions");a.append(B("整理をはじめる","btn primary",function(){S.step=1;render();}));p.appendChild(a);app.appendChild(p);
+}
+function renderCats(app){
+var p=E("section","panel");p.appendChild(head(1,"持っているものを、ざっくり確認","12分類を眺めます。サービス名を全部思い出す必要はありません。"));
+var g=E("div","grid");C.forEach(function(c){var k=E("article","card"),h=E("div","head"),v=E("div");v.append(E("h3","",c.t),E("p","hint",c.h));h.append(E("span","letter",c.l),v);k.appendChild(h);var r=E("div","choices");[["using","使っている"],["not_using","使っていない"],["unknown","わからない"]].forEach(function(o){var b=B(o[1],"choice"+(S.status[c.id]===o[0]?" on":""),function(){S.status[c.id]=o[0];if(o[0]!=="not_using")d(c.id);render();});r.appendChild(b);});k.appendChild(r);g.appendChild(k);});p.appendChild(g);
+var a=nav(true,false);var next=B("次へ","btn primary",function(){S.step=2;render();});if(!Object.values(S.status).some(Boolean))next.disabled=true;a.appendChild(next);p.appendChild(a);app.appendChild(p);
+}
+function addTextField(box,id,label,key,placeholder){
+var f=E("div","field"),l=E("label","",label),x=E("input");x.autocomplete="off";x.maxLength=120;x.value=d(id)[key];x.placeholder=placeholder;x.addEventListener("input",function(){if(forbidden(x.value)){x.value="";d(id)[key]="";alert("秘密情報らしき文字列は入力しないでください。");}else d(id)[key]=x.value;});f.append(l,x,E("small","","パスワードや認証情報は入力しないでください。"));box.appendChild(f);
+}
+function addSelect(box,id){
+var f=E("div","field"),l=E("label","","登録識別子の種類"),s=E("select");[["email","メールアドレス"],["phone","電話番号"],["username","ユーザー名"],["other","その他"]].forEach(function(o){var op=E("option","",o[1]);op.value=o[0];if(d(id).identifierType===o[0])op.selected=true;s.appendChild(op);});s.addEventListener("change",function(){d(id).identifierType=s.value;});f.append(l,s);box.appendChild(f);
+}
+function addChoiceField(box,id,label,key,opts,four){var f=E("div","field");f.append(E("span","label",label),chooseRow(id,key,d(id)[key],opts,four));box.appendChild(f);}
+function renderDetails(app){
+var p=E("section","panel");p.appendChild(head(2,"使っているものを、もう一段だけ確認","秘密情報は入力せず、サービスの存在と状態だけを整理します。"));p.appendChild(notice("danger","入力禁止","パスワード、暗証番号、カード完全番号、OTP、復旧コード、秘密鍵・シードフレーズは入力しないでください。"));
+var ac=active();if(!ac.length)p.append(E("p","empty","詳細確認の対象はありません。"));ac.forEach(function(c){d(c.id);var k=E("article","detail"),h=E("div","head"),v=E("div");v.append(E("h3","",c.t),E("p","hint",S.status[c.id]==="unknown"?"利用状況が不明。わかる範囲だけで構いません。":c.h));h.append(E("span","letter",c.l),v);k.appendChild(h);addTextField(k,c.id,"サービス名（任意）","service","例：Google / LINE / ○○銀行");addSelect(k,c.id);addTextField(k,c.id,"登録識別子（任意）","identifier","登録先を思い出すための情報");
+var tri=[["yes","あり"],["no","なし"],["unknown","不明"]];addChoiceField(k,c.id,"継続課金","billing",tri);addChoiceField(k,c.id,"金融資産","financial",tri);addChoiceField(k,c.id,"重要データ","important",tri);addChoiceField(k,c.id,"公式の引継ぎ・死後管理・復旧設定","handover",[["configured","設定済み"],["not_configured","未設定"],["unknown","不明"],["na","対象外/不明"]],true);addChoiceField(k,c.id,"家族はこのサービスの存在を把握している？","family",[["yes","把握"],["no","知らない可能性"],["unknown","不明"]]);p.appendChild(k);});p.appendChild(nav(true,true));app.appendChild(p);
+}
+function riskDesc(k,s){var m={identity:{ok:"入口になりやすい項目の状態を確認できています。",mid:"入口になりやすい項目に不明点があります。",attn:"入口になりやすい項目で未設定があります。",empty:"判断材料がまだありません。"},billing:{ok:"継続課金ありの回答はありません。",mid:"課金状況が不明な項目があります。",attn:"継続課金ありの項目があります。",empty:"判断材料がまだありません。"},finance:{ok:"金融資産ありの回答はありません。",mid:"金融資産の有無が不明です。",attn:"金融資産ありの項目があります。",empty:"判断材料がまだありません。"},data:{ok:"重要データありの回答はありません。",mid:"重要データの有無が不明です。",attn:"失うと困るデータがある項目があります。",empty:"判断材料がまだありません。"},family:{ok:"家族が把握している回答です。",mid:"家族が把握しているか不明です。",attn:"家族が知らない可能性があります。",empty:"判断材料がまだありません。"}};return m[k][s];}
+function riskGrid(r){var g=E("div","risks");Object.keys(r).forEach(function(k){var x=E("article","risk"),t=E("div","risktop");t.append(E("h3","",RL[k]),E("span","chip "+r[k],ST[r[k]]));x.append(t,E("p","",riskDesc(k,r[k])));g.appendChild(x);});return g;}
+function renderRisks(app){var p=E("section","panel"),r=risks(S.status,S.detail);p.appendChild(head(3,"気になるところを、5つの軸で見る","安全・危険の断定ではなく、次に確認する場所を見つける整理表示です。"));p.appendChild(riskGrid(r));p.appendChild(notice("warn","断定はしません","死後対応・相続・契約承継・データ提供条件はサービスごとに異なります。"));p.appendChild(nav(true,true));app.appendChild(p);}
+function renderIntent(app){
+var p=E("section","panel");p.appendChild(head(4,"自分はどうしたい？","決まっていないものは「未決定」で残せます。"));var ac=active();if(!ac.length)p.append(E("p","empty","意向を設定する対象はありません。"));ac.forEach(function(c){var k=E("article","detail"),h=E("div","head"),v=E("div");v.append(E("h3","",c.t),E("p","hint",d(c.id).service||c.h));h.append(E("span","letter",c.l),v);k.appendChild(h);var f=E("div","field"),r=E("div","choices four");f.append(E("span","label","本人の意向"));[["keep","残したい"],["delete","削除したい"],["family","家族に任せる"],["undecided","未決定"]].forEach(function(o){r.append(B(o[1],"choice"+(S.intent[c.id]===o[0]?" on":""),function(){S.intent[c.id]=o[0];render();}));});f.appendChild(r);k.appendChild(f);p.appendChild(k);});p.appendChild(nav(true,true,"結果を見る"));app.appendChild(p);
+}
+function tasks(r,unknown){var a=[];if(unknown.length)a.push("「わからない」の分類を"+unknown.length+"件、思い出せる範囲で確認する");if(r.identity==="attn"||r.identity==="mid")a.push("スマホ・電話番号・主要アカウント・メールの復旧／引継ぎ設定を公式案内で確認する");if(r.billing==="attn"||r.billing==="mid")a.push("継続課金の契約先と契約アカウントを確認する");if(r.finance==="attn"||r.finance==="mid")a.push("金融サービスの存在を整理し、必要時は各社の正式な相続手続き先を確認する");if(r.data==="attn"||r.data==="mid")a.push("失うと困るデータの所在とバックアップ状況を確認する");if(r.family==="attn"||r.family==="mid")a.push("家族が存在を知らないサービスがないか確認する");return a.slice(0,5);}
+function section(title,items){var x=E("div","summary");x.appendChild(E("h3","",title));if(!items.length)x.append(E("p","empty","該当なし"));else{var u=E("ul");items.forEach(function(i){u.append(E("li","",i));});x.appendChild(u);}return x;}
+function renderResult(app){
+var p=E("section","panel"),ac=active(),un=C.filter(function(c){return S.status[c.id]==="unknown";}),r=risks(S.status,S.detail),cnt={keep:0,delete:0,family:0,undecided:0};ac.forEach(function(c){cnt[S.intent[c.id]||"undecided"]++;});p.appendChild(head(5,"いまの整理結果","ToDoを増やすより、持っているもの・曖昧なもの・本人の意向を見える状態にします。"));p.appendChild(section("持っている / 不明のもの",ac.map(function(c){return c.t+"（"+(S.status[c.id]==="unknown"?"不明":"利用中")+"）";})));p.appendChild(section("曖昧なもの",un.map(function(c){return c.t;})));var q=E("div","summary");q.append(E("h3","","気になるポイント"),riskGrid(r));p.appendChild(q);p.appendChild(section("本人の意向",["残したい: "+cnt.keep,"削除したい: "+cnt.delete,"家族に任せる: "+cnt.family,"未決定: "+cnt.undecided]));p.appendChild(section("次に確認すること",tasks(r,un)));p.appendChild(notice("","この結果は端末内の一時状態です","ページを再読み込みすると消えます。外部送信、localStorage、Cookie等への保存は行いません。"));var a=nav(true,false);a.append(B("最初からやり直す","btn ghost",function(){S={step:0,status:{},detail:{},intent:{}};C.forEach(function(c){S.status[c.id]=null;});render();}));p.appendChild(a);app.appendChild(p);
+}
+function render(){if(typeof document==="undefined")return;var app=document.getElementById("app");if(!app)return;app.innerHTML="";[renderStart,renderCats,renderDetails,renderRisks,renderIntent,renderResult][S.step](app);window.scrollTo({top:0,behavior:"auto"});}
+globalThis.YTK={categories:C,forbidden:forbidden,risks:risks,tasks:tasks};
+if(typeof document!=="undefined")render();
+})();
+</script>
+</body>
+</html>
