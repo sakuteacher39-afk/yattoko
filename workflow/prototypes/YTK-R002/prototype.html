@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>ヤットコ YTK-R002 非公開プロトタイプ</title>
+<style>
+:root{--bg:#f7f4ee;--card:#fff;--ink:#202321;--muted:#6e756f;--line:#d8d7d0;--accent:#245c49;--soft:#e2efe9;--warn:#8c4b19;--warnsoft:#fff0dd;--danger:#8b2d2d;--dangersoft:#fbe9e9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Meiryo",sans-serif;line-height:1.55}button,input,select{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 16px;background:rgba(247,244,238,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}header h1{margin:0;font-size:20px}.eyebrow{margin:0;color:var(--muted);font-size:11px;letter-spacing:.08em}.badge{padding:5px 8px;border:1px solid var(--warn);border-radius:999px;color:var(--warn);font-size:11px;font-weight:700;text-align:center}
+main{width:min(760px,100%);margin:auto;padding:20px 14px 90px}.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(34,42,37,.08)}h2{margin:0 0 7px;font-size:24px;line-height:1.35}h3{margin:0;font-size:16px}.lead{margin:4px 0 0;color:var(--muted)}
+.notice{margin:15px 0;padding:13px;border-radius:13px;background:var(--soft);border:1px solid #b8d7c9}.notice.warn{background:var(--warnsoft);border-color:#e8c69f}.notice.danger{background:var(--dangersoft);border-color:#e4b7b7}.notice strong{display:block;margin-bottom:4px}.notice p{margin:0}
+.secret-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;list-style:none;padding:0;margin:10px 0 0}.secret-list li{padding:7px 9px;background:#fff;border:1px solid var(--line);border-radius:9px;font-size:12px}
+.stepbar{display:flex;gap:9px;align-items:center;margin-bottom:13px}.stepbar span{font-size:12px;color:var(--muted)}.progress{flex:1;height:7px;background:#e4e1d9;border-radius:999px;overflow:hidden}.progress i{display:block;height:100%;background:var(--accent)}
+.grid{display:grid;grid-template-columns:1fr;gap:11px;margin-top:16px}.card{min-width:0;padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff}.head{display:flex;gap:9px;align-items:flex-start}.head>div{min-width:0}.letter{width:32px;height:32px;flex:none;display:grid;place-items:center;background:#f0ece3;border-radius:9px;font-weight:800}.hint{margin:3px 0 0;color:var(--muted);font-size:12px}
+.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:11px}.choices.four{grid-template-columns:repeat(2,minmax(0,1fr))}.choice{width:100%;min-width:0;min-height:41px;padding:7px 4px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font-size:12px;font-weight:700;white-space:normal;overflow-wrap:anywhere}.choice.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.field{margin-top:13px}.field label,.field .label{display:block;margin-bottom:6px;font-weight:800;font-size:13px}.field small{display:block;margin-top:4px;color:var(--muted)}input,select{width:100%;min-height:44px;padding:9px 10px;border:1px solid #bfc4bf;border-radius:11px;background:#fff;color:var(--ink)}input+small{font-size:11px}.detail{margin-top:12px;padding:14px;border:1px solid var(--line);border-radius:15px}
+.actions{position:sticky;bottom:0;display:flex;gap:8px;margin-top:16px;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to bottom,rgba(247,244,238,0),var(--bg) 40%)}.btn{min-height:47px;padding:9px 14px;border-radius:13px;border:1px solid var(--accent);font-weight:800}.primary{flex:1;background:var(--accent);color:#fff}.secondary{background:#fff;color:var(--accent)}.ghost{background:transparent;color:var(--muted);border-color:var(--line)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.risks{display:grid;gap:9px;margin-top:14px}.risk{padding:13px;border:1px solid var(--line);border-radius:14px}.risktop{display:flex;justify-content:space-between;gap:8px;align-items:center}.chip{padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800;background:#f0ece3}.chip.ok{background:var(--soft);color:var(--accent)}.chip.mid{background:var(--warnsoft);color:var(--warn)}.chip.attn{background:var(--dangersoft);color:var(--danger)}.risk p{margin:4px 0 0;color:var(--muted);font-size:12px}.summary{margin-top:16px}.summary h3{margin-bottom:6px}.summary ul{margin:0;padding-left:20px}.summary li+li{margin-top:4px}.empty{color:var(--muted);font-size:13px}
+footer{padding:16px 14px calc(24px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:11px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.risks{grid-template-columns:repeat(2,minmax(0,1fr))}.secret-list{grid-template-columns:repeat(3,minmax(0,1fr))}.choices.four{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:380px){header{align-items:flex-start}.badge{max-width:112px}.choices{grid-template-columns:1fr}.choices.four{grid-template-columns:1fr}}
+
+.r2-kicker{margin:0 0 5px;color:var(--accent);font-size:12px;font-weight:800}.r2-meta{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.r2-pill{padding:5px 8px;border-radius:999px;background:#f0ece3;font-size:11px;font-weight:700}.r2-list{display:grid;gap:9px;margin-top:14px}.r2-row{padding:13px;border:1px solid var(--line);border-radius:14px;background:#fff}.r2-row h3{margin-bottom:4px}.r2-row p{margin:3px 0;color:var(--muted);font-size:12px}.r2-service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}.r2-service-grid .choice{min-height:48px}.r2-question{margin-top:13px;padding:14px;border:1px solid var(--line);border-radius:14px}.r2-question h3{margin-bottom:5px}.r2-question p{margin:0;color:var(--muted);font-size:12px}.r2-other{margin-top:13px}.r2-other label{display:block;margin-bottom:6px;font-weight:800;font-size:13px}.r2-other input{width:100%;min-height:46px;padding:10px;border:1px solid #bfc4bf;border-radius:11px;background:#fff;color:var(--ink)}.r2-other small{display:block;margin-top:5px;color:var(--muted);font-size:11px}.r2-subactions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.r2-subactions .btn{flex:1 1 180px}.r2-inherited{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--soft);font-size:13px}.r2-complete{padding:16px;border:1px solid #b8d7c9;border-radius:15px;background:var(--soft);margin-top:14px}.r2-complete p{margin:4px 0}.r2-muted{color:var(--muted);font-size:12px}
+@media(max-width:380px){.r2-service-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div><p class="eyebrow">YTK-R002 / NON-PRODUCTION</p><h1>ヤットコ</h1></div><span class="badge">非公開制作確認用</span></header>
+<main id="app" aria-live="polite"></main>
+<footer>公開仕様ではありません。入力内容は外部送信・永続保存しません。</footer>
+<script>
+(function(){
+"use strict";
+var C=[
+{id:"device",l:"A",t:"端末・通信",h:"スマホ、PC、SIM/eSIM、電話番号"},
+{id:"base",l:"B",t:"基盤アカウント",h:"Apple、Google、Microsoftなど"},
+{id:"mail",l:"C",t:"メール",h:"Gmail、iCloudメール、Outlookなど"},
+{id:"social",l:"D",t:"SNS・メッセージ",h:"LINE、Instagram、Xなど"},
+{id:"cloud",l:"E",t:"クラウド・写真・バックアップ",h:"iCloud、Google Photos、Driveなど"},
+{id:"subscription",l:"F",t:"サブスク・継続課金",h:"アプリ、動画、音楽、ソフトなど"},
+{id:"finance",l:"G",t:"金融系デジタルサービス",h:"銀行、証券、カード、決済、暗号資産"},
+{id:"commerce",l:"H",t:"通販・配送・フリマ",h:"通販、フリマ、配送サービス"},
+{id:"auth",l:"I",t:"認証・復旧手段",h:"パスワード管理、認証アプリ、復旧設定"},
+{id:"license",l:"J",t:"デジタル購入物・ライセンス",h:"電子書籍、ゲーム、ソフトウェア"},
+{id:"carrier",l:"K",t:"携帯電話会社・通信契約",h:"回線契約、電話番号に紐づくサービス"},
+{id:"business",l:"L",t:"個人事業・副業・Web関連",h:"サイト、ドメイン、クラウド、販売サービス"}
+];
+var S={step:0,status:{},quick:{identity:null,billing:null,finance:null,data:null,family:null},intent:{}};
+C.forEach(function(c){S.status[c.id]=null;});
+var R2={
+ active:false,screen:"entry",history:[],allCategories:false,selectedCategory:null,
+ draft:null,records:[],questionPage:0,doneNotice:false,validationMessage:""
+};
+var R2CAT={
+ device:["iPhone","Androidスマートフォン","Windows PC","その他"],
+ base:["Apple","Google","Microsoft","その他"],
+ mail:["Gmail","iCloudメール","Outlook","その他"],
+ social:["LINE","Instagram","X","その他"],
+ cloud:["iCloud","Google Drive / Google Photos","OneDrive","Dropbox","その他"],
+ subscription:["Netflix","Spotify","Adobe","その他"],
+ finance:["ゆうちょ銀行","SBI証券","Coincheck","その他"],
+ commerce:["Amazon","楽天市場","メルカリ","その他"],
+ auth:["1Password","Bitwarden","Google Authenticator","その他"],
+ license:["Kindle","Steam","PlayStation","その他"],
+ carrier:["docomo","au","SoftBank","楽天モバイル","その他"],
+ business:["GitHub","Cloudflare","Shopify","その他"]
+};
+var R2Q={
+ device:[
+  {k:"importantData",q:"この端末にしかない大事なデータがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"backup",q:"バックアップ状況は確認できていますか",o:[["checked","だいたい確認済み"],["missing","未設定あり"],["unknown","わからない"]]}
+ ],
+ base:[
+  {k:"handover",q:"引継ぎ・復旧設定を確認していますか",o:[["checked","確認済み"],["missing","未設定あり"],["unknown","わからない"]]},
+  {k:"importantData",q:"大事なデータがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"billing",q:"有料サービスや継続課金がありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]}
+ ],
+ mail:[
+  {k:"recoveryUse",q:"他サービスのログイン・復旧先として使っていますか",o:[["often","よく使う"],["rare","ほぼ使わない"],["unknown","わからない"]]},
+  {k:"importantData",q:"残したい重要メールやデータがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]}
+ ],
+ social:[
+  {k:"importantData",q:"残したい写真・投稿・メッセージがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"handover",q:"引継ぎや死後対応の設定を確認していますか",o:[["checked","確認済み"],["unchecked","未確認"],["unknown","わからない"]]},
+  {k:"billing",q:"継続課金がありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]}
+ ],
+ cloud:[
+  {k:"importantData",q:"大事なデータがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"backupUse",q:"バックアップ・同期に使っていますか",o:[["yes","使っている"],["no","使っていない"],["unknown","わからない"]]},
+  {k:"paid",q:"有料プランですか",o:[["yes","はい"],["no","いいえ"],["unknown","わからない"]]}
+ ],
+ subscription:[
+  {k:"billing",q:"継続課金がありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"billingSource",q:"どこから管理・請求されていますか",o:[["apple","Apple"],["google","Google Play"],["microsoft","Microsoft"],["direct","サービスへ直接"],["other","その他"],["unknown","わからない"]],show:function(a){return a.billing==="yes";}}
+ ],
+ finance:[
+  {k:"asset",q:"資産・残高・債務などがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"familyKnow",q:"家族はこのサービスの存在を知っていますか",o:[["yes","知っている"],["no","知らない"],["unknown","わからない"]]},
+  {k:"selfIdentify",q:"アカウントを特定するための登録情報を自分で確認できますか",o:[["yes","確認できる"],["no","確認できない"],["unknown","わからない"]]}
+ ],
+ commerce:[
+  {k:"billing",q:"継続会員・継続課金がありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"balance",q:"ポイント・売上金・残高などがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"openTrade",q:"未完了の取引がありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]}
+ ],
+ auth:[
+  {k:"recovery",q:"復旧・緊急アクセス設定を確認していますか",o:[["checked","確認済み"],["missing","未設定あり"],["unknown","わからない"]]},
+  {k:"dependency",q:"他サービスのログインに強く依存していますか",o:[["yes","はい"],["no","いいえ"],["unknown","わからない"]]}
+ ],
+ license:[
+  {k:"purchase",q:"購入物・ライセンスがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"subscription",q:"サブスク型ですか",o:[["yes","はい"],["no","いいえ"],["unknown","わからない"]]},
+  {k:"importantData",q:"残したいユーザーデータがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]}
+ ],
+ carrier:[
+  {k:"recoveryUse",q:"この電話番号を他サービスの認証・復旧に使っていますか",o:[["yes","使っている"],["no","使っていない"],["unknown","わからない"]]},
+  {k:"mainLine",q:"主回線ですか",o:[["yes","はい"],["no","いいえ"],["unknown","わからない"]]},
+  {k:"familyKnow",q:"家族は契約先を知っていますか",o:[["yes","知っている"],["no","知らない"],["unknown","わからない"]]}
+ ],
+ business:[
+  {k:"importance",q:"事業継続に重要ですか",o:[["high","重要"],["support","補助的"],["unknown","わからない"]]},
+  {k:"billing",q:"自動更新・継続課金がありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]},
+  {k:"sharedAdmin",q:"他の人も管理していますか",o:[["yes","はい"],["no","いいえ"],["unknown","わからない"]]},
+  {k:"importantData",q:"大事なデータがありますか",o:[["yes","ある"],["no","ない"],["unknown","わからない"]]}
+ ]
+};
+var R2INT={keep:"残したい",delete:"削除したい",family:"家族に任せる",undecided:"未決定"};
+var RL={identity:"本人確認の入口",billing:"継続課金",finance:"金融資産",data:"消失すると困るデータ",family:"家族が存在を知らない可能性"};
+var ST={ok:"確認できている",mid:"少し曖昧",attn:"要確認",empty:"未回答"};
+function E(tag,cls,txt){var x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=txt;return x;}
+function B(txt,cls,fn){var x=E("button",cls||"choice",txt);x.type="button";x.addEventListener("click",fn);return x;}
+function active(){return C.filter(function(c){return S.status[c.id]==="using"||S.status[c.id]==="unknown";});}
+function riskValue(v,attnValue,okValue){if(!v)return"empty";if(v===attnValue)return"attn";if(v==="unknown")return"mid";if(v===okValue)return"ok";return"empty";}
+function risks(status,quick){
+return{
+identity:riskValue(quick.identity,"not_configured","configured"),
+billing:riskValue(quick.billing,"yes","no"),
+finance:riskValue(quick.finance,"yes","no"),
+data:riskValue(quick.data,"yes","no"),
+family:riskValue(quick.family,"hidden","known")
+};}
+function head(n,title,lead){var f=E("div","stepbar"),s=E("span","", "STEP "+n+" / 5"),p=E("div","progress"),i=E("i");i.style.width=Math.round(n/5*100)+"%";p.appendChild(i);f.append(s,p);var box=document.createDocumentFragment();box.append(f,E("h2","",title),E("p","lead",lead));return box;}
+function notice(type,title,text){var x=E("div","notice "+(type||""));x.append(E("strong","",title),E("p","",text));return x;}
+function nav(back,next,nextText){var a=E("div","actions");if(back)a.append(B("戻る","btn secondary",function(){S.step--;render(true);}));if(next)a.append(B(nextText||"次へ","btn primary",function(){S.step++;render(true);}));return a;}
+function chooseRow(id,key,current,opts,four){
+var r=E("div","choices"+(four?" four":""));
+opts.forEach(function(o){var b=B(o[1],"choice"+(current===o[0]?" on":""),function(){d(id)[key]=o[0];render();});r.appendChild(b);});
+return r;
+}
+function renderStart(app){
+var p=E("section","panel");p.append(E("p","eyebrow","非公開プロトタイプ"),E("h2","","デジタル情報を、まず「見える状態」に。"),E("p","lead","全部を決める必要はありません。「わからない」も整理結果のひとつです。"));
+var n=notice("danger","秘密情報は入力しないでください","ヤットコはログイン情報を預かる設計ではありません。この試作版も外部送信・永続保存を行いません。"),ul=E("ul","secret-list");
+["パスワード","PIN・暗証番号","端末パスコード","OTP","復旧コード","秘密鍵・シード","カード完全番号","CVV/CVC","パスキー秘密情報"].forEach(function(x){ul.append(E("li","",x));});n.appendChild(ul);p.append(n,notice("warn","公開仕様ではありません","YTK-R001の制作検証用です。法的・契約上の状態を自動判定しません。"));
+var a=E("div","actions");a.append(B("整理をはじめる","btn primary",function(){S.step=1;render(true);}));p.appendChild(a);app.appendChild(p);
+}
+function renderCats(app){
+var p=E("section","panel");p.appendChild(head(1,"持っているものを、ざっくり確認","12分類を眺めます。サービス名を全部思い出す必要はありません。"));
+var g=E("div","grid");C.forEach(function(c){var k=E("article","card"),h=E("div","head"),v=E("div");v.append(E("h3","",c.t),E("p","hint",c.h));h.append(E("span","letter",c.l),v);k.appendChild(h);var r=E("div","choices");[["using","使っている"],["not_using","使っていない"],["unknown","わからない"]].forEach(function(o){var b=B(o[1],"choice"+(S.status[c.id]===o[0]?" on":""),function(){S.status[c.id]=o[0];if(!S.intent[c.id])S.intent[c.id]="undecided";render();});r.appendChild(b);});k.appendChild(r);g.appendChild(k);});p.appendChild(g);
+var a=nav(true,false);var next=B("次へ","btn primary",function(){S.step=2;render(true);});if(!Object.values(S.status).some(Boolean))next.disabled=true;a.appendChild(next);p.appendChild(a);app.appendChild(p);
+}
+function quickRow(key,opts){
+var r=E("div","choices");
+opts.forEach(function(o){var b=B(o[1],"choice"+(S.quick[key]===o[0]?" on":""),function(){S.quick[key]=o[0];render();});r.appendChild(b);});
+return r;
+}
+function quickQuestion(title,text,key,opts){
+var k=E("article","detail");k.append(E("h3","",title),E("p","hint",text),quickRow(key,opts));return k;
+}
+function renderDetails(app){
+var p=E("section","panel");p.appendChild(head(2,"5つだけ、ざっくり確認","文字入力はありません。わかるところだけタップして、全部答えなくても先へ進めます。"));
+p.appendChild(notice("danger","秘密情報は入力しません","パスワード、暗証番号、カード完全番号、OTP、復旧コード、秘密鍵・シードフレーズなどを入力する欄はありません。"));
+p.appendChild(quickQuestion("本人確認の入口","スマホ・電話番号・主要アカウント・メールの復旧／引継ぎ設定は？","identity",[["configured","だいたい確認済み"],["not_configured","未設定あり"],["unknown","わからない"]]));
+p.appendChild(quickQuestion("継続課金","月額・年額など、払い続けているサービスは？","billing",[["yes","あり"],["no","なし"],["unknown","わからない"]]));
+p.appendChild(quickQuestion("金融資産","銀行・証券・決済・暗号資産など、デジタル経由で確認する資産は？","finance",[["yes","あり"],["no","なし"],["unknown","わからない"]]));
+p.appendChild(quickQuestion("消失すると困るデータ","写真・文書・メッセージなど、失うと困るデータは？","data",[["yes","あり"],["no","なし"],["unknown","わからない"]]));
+p.appendChild(quickQuestion("家族の把握状況","家族が存在を知らないサービスや契約は？","family",[["known","だいたい把握"],["hidden","知らないものあり"],["unknown","わからない"]]));
+p.appendChild(notice("","詳しい整理はあとで","サービス名、登録メールアドレス、電話番号、ユーザー名などは初回フローでは聞きません。必要な項目だけ深掘りする追加整理機能は次工程の候補です。"));
+p.appendChild(nav(true,true));app.appendChild(p);
+}
+function riskDesc(k,s){var m={identity:{ok:"入口になりやすい項目の状態を確認できています。",mid:"入口になりやすい項目に不明点があります。",attn:"入口になりやすい項目で未設定があります。",empty:"判断材料がまだありません。"},billing:{ok:"継続課金ありの回答はありません。",mid:"課金状況が不明な項目があります。",attn:"継続課金ありの項目があります。",empty:"判断材料がまだありません。"},finance:{ok:"金融資産ありの回答はありません。",mid:"金融資産の有無が不明です。",attn:"金融資産ありの項目があります。",empty:"判断材料がまだありません。"},data:{ok:"重要データありの回答はありません。",mid:"重要データの有無が不明です。",attn:"失うと困るデータがある項目があります。",empty:"判断材料がまだありません。"},family:{ok:"家族が把握している回答です。",mid:"家族が把握しているか不明です。",attn:"家族が知らない可能性があります。",empty:"判断材料がまだありません。"}};return m[k][s];}
+function riskGrid(r){var g=E("div","risks");Object.keys(r).forEach(function(k){var x=E("article","risk"),t=E("div","risktop");t.append(E("h3","",RL[k]),E("span","chip "+r[k],ST[r[k]]));x.append(t,E("p","",riskDesc(k,r[k])));g.appendChild(x);});return g;}
+function renderRisks(app){var p=E("section","panel"),r=risks(S.status,S.quick);p.appendChild(head(3,"気になるところを、5つの軸で見る","安全・危険の断定ではなく、次に確認する場所を見つける整理表示です。"));p.appendChild(riskGrid(r));p.appendChild(notice("warn","断定はしません","死後対応・相続・契約承継・データ提供条件はサービスごとに異なります。"));p.appendChild(nav(true,true));app.appendChild(p);}
+function renderIntent(app){
+var p=E("section","panel");p.appendChild(head(4,"自分はどうしたい？","決まっていないものは「未決定」で残せます。"));var ac=active();if(!ac.length)p.append(E("p","empty","意向を設定する対象はありません。"));ac.forEach(function(c){var k=E("article","detail"),h=E("div","head"),v=E("div");v.append(E("h3","",c.t),E("p","hint",c.h));h.append(E("span","letter",c.l),v);k.appendChild(h);var f=E("div","field"),r=E("div","choices four");f.append(E("span","label","本人の意向"));[["keep","残したい"],["delete","削除したい"],["family","家族に任せる"],["undecided","未決定"]].forEach(function(o){r.append(B(o[1],"choice"+(S.intent[c.id]===o[0]?" on":""),function(){S.intent[c.id]=o[0];render();}));});f.appendChild(r);k.appendChild(f);p.appendChild(k);});p.appendChild(nav(true,true,"結果を見る"));app.appendChild(p);
+}
+function tasks(r,unknown){var a=[];if(unknown.length)a.push("「わからない」の分類を"+unknown.length+"件、思い出せる範囲で確認する");if(r.identity==="attn"||r.identity==="mid")a.push("スマホ・電話番号・主要アカウント・メールの復旧／引継ぎ設定を公式案内で確認する");if(r.billing==="attn"||r.billing==="mid")a.push("継続課金の契約先と契約アカウントを確認する");if(r.finance==="attn"||r.finance==="mid")a.push("金融サービスの存在を整理し、必要時は各社の正式な相続手続き先を確認する");if(r.data==="attn"||r.data==="mid")a.push("失うと困るデータの所在とバックアップ状況を確認する");if(r.family==="attn"||r.family==="mid")a.push("家族が存在を知らないサービスがないか確認する");return a.slice(0,5);}
+function section(title,items){var x=E("div","summary");x.appendChild(E("h3","",title));if(!items.length)x.append(E("p","empty","該当なし"));else{var u=E("ul");items.forEach(function(i){u.append(E("li","",i));});x.appendChild(u);}return x;}
+function renderResult(app){
+var p=E("section","panel"),ac=active(),un=C.filter(function(c){return S.status[c.id]==="unknown";}),r=risks(S.status,S.quick),cnt={keep:0,delete:0,family:0,undecided:0};ac.forEach(function(c){cnt[S.intent[c.id]||"undecided"]++;});p.appendChild(head(5,"いまの整理結果","ToDoを増やすより、持っているもの・曖昧なもの・本人の意向を見える状態にします。"));p.appendChild(section("持っている / 不明のもの",ac.map(function(c){return c.t+"（"+(S.status[c.id]==="unknown"?"不明":"利用中")+"）";})));p.appendChild(section("曖昧なもの",un.map(function(c){return c.t;})));var q=E("div","summary");q.append(E("h3","","気になるポイント"),riskGrid(r));p.appendChild(q);p.appendChild(section("本人の意向",["残したい: "+cnt.keep,"削除したい: "+cnt.delete,"家族に任せる: "+cnt.family,"未決定: "+cnt.undecided]));p.appendChild(section("次に確認すること",tasks(r,un)));p.appendChild(notice("","この結果は端末内の一時状態です","ページを再読み込みすると消えます。外部送信、localStorage、Cookie等への保存は行いません。"));if(R2.doneNotice)p.appendChild(notice("","初回整理はここで完了です","詳しく整理するのは任意です。必要になったときだけ、この試作内で追加できます。"));var more=E("div","r2-complete");more.append(E("p","r2-kicker","任意の追加整理"),E("h3","","必要なところだけ詳しく整理する"),E("p","r2-muted","サービスを1件ずつ追加できます。全部やる必要はありません。"));var ma=E("div","r2-subactions");ma.append(B("詳しく整理する","btn primary",function(){startR2();}),B("今日はここで終わる","btn secondary",function(){R2.doneNotice=true;render();}));more.appendChild(ma);p.appendChild(more);var a=nav(true,false);a.append(B("最初からやり直す","btn ghost",function(){S={step:0,status:{},quick:{identity:null,billing:null,finance:null,data:null,family:null},intent:{}};C.forEach(function(c){S.status[c.id]=null;});R2={active:false,screen:"entry",history:[],allCategories:false,selectedCategory:null,draft:null,records:[],questionPage:0,doneNotice:false,validationMessage:""};render(true);}));p.appendChild(a);app.appendChild(p);
+}
+
+function r2Cat(id){return C.filter(function(c){return c.id===id;})[0];}
+function r2Push(screen){R2.history.push(R2.screen);R2.screen=screen;render(true);}
+function r2Back(){if(!R2.history.length){R2.active=false;render(true);return;}R2.screen=R2.history.pop();render(true);}
+function startR2(){R2.active=true;R2.screen="entry";R2.history=[];R2.validationMessage="";render(true);}
+function r2End(){R2.active=false;R2.doneNotice=true;R2.history=[];render(true);}
+function r2Top(title,lead){var f=E("div","stepbar"),s=E("span","","詳しく整理する / 任意"),p=E("div","progress"),i=E("i");i.style.width="100%";p.appendChild(i);f.append(s,p);var x=document.createDocumentFragment();x.append(f,E("p","r2-kicker","YTK-R002 非公開プロトタイプ"),E("h2","",title),E("p","lead",lead));return x;}
+function r2Notice(){return notice("danger","秘密情報は入力しないでください","パスワード、PIN、OTP、復旧コード、秘密鍵、シードフレーズ、カード完全番号、APIキー等を入力する機能はありません。");}
+function r2Nav(back){var a=E("div","actions");if(back)a.append(B("戻る","btn secondary",r2Back));a.append(B("いったん詳細整理を終わる","btn ghost",r2End));return a;}
+function r2CategoryList(){var base=C.filter(function(c){return S.status[c.id]==="using"||S.status[c.id]==="unknown";});return R2.allCategories?C:base;}
+function r2Entry(app){
+ var p=E("section","panel");p.appendChild(r2Top("初回整理は、もう完了しています","ここから先は任意です。必要なサービスだけ、1件ずつ詳しく整理できます。"));
+ p.appendChild(notice("","全部やる必要はありません","1サービスだけ整理して終わっても、何も追加せず終わっても正常です。"));
+ p.appendChild(r2Notice());p.appendChild(notice("warn","この試作では保存されません","同じページを開いている間だけ状態を保持します。ページを閉じたり再読み込みすると、詳細整理の内容は残りません。"));
+ var a=E("div","actions");a.append(B("カテゴリを選ぶ","btn primary",function(){r2Push("category");}),B("今日はここで終わる","btn secondary",r2End));p.appendChild(a);app.appendChild(p);
+}
+function r2Category(app){
+ var p=E("section","panel");p.appendChild(r2Top("どのカテゴリを詳しく見る？","STEP1で「使っている」「わからない」としたカテゴリを先に表示しています。"));if(R2.validationMessage){p.appendChild(notice("", "無理に追加しなくて大丈夫です",R2.validationMessage));R2.validationMessage="";}
+ var cats=r2CategoryList(),g=E("div","grid");cats.forEach(function(c){var k=E("article","card"),h=E("div","head"),v=E("div");v.append(E("h3","",c.t),E("p","hint",S.status[c.id]==="using"?"使っている":S.status[c.id]==="unknown"?"わからない":"STEP1では使っていない"));h.append(E("span","letter",c.l),v);k.append(h,B("このカテゴリを整理","choice",function(){R2.selectedCategory=c.id;R2.draft=null;R2.questionPage=0;r2Push("service");}));g.appendChild(k);});p.appendChild(g);
+ var sub=E("div","r2-subactions");if(!R2.allCategories)sub.append(B("ほかのカテゴリも見る","btn secondary",function(){R2.allCategories=true;render();}));else sub.append(B("STEP1対象だけ見る","btn secondary",function(){R2.allCategories=false;render();}));p.appendChild(sub);p.appendChild(r2Nav(true));app.appendChild(p);
+}
+function r2OtherForbidden(v){v=String(v||"");return /(password|passwd|パスワード|暗証番号|pin\b|otp\b|ワンタイム|復旧コード|recovery\s*code|秘密鍵|private\s*key|seed\s*phrase|シードフレーズ|cvv|cvc|api\s*key|access\s*token|ssh\s*private)/i.test(v)||/(?:\d[ -]*?){13,19}/.test(v);}
+function r2Service(app){
+ var c=r2Cat(R2.selectedCategory),p=E("section","panel");p.appendChild(r2Top(c.t+"のサービスを1件選ぶ","候補はUI確認用の例です。サービス情報の完全なカタログではありません。"));
+ var g=E("div","r2-service-grid");(R2CAT[c.id]||["その他"]).forEach(function(name){g.append(B(name,"choice",function(){R2.draft={categoryId:c.id,serviceId:name==="その他"?"other":name,serviceName:name==="その他"?"":name,other:name==="その他",usageStatus:null,inheritedIntention:S.intent[c.id]||"undecided",intentionOverride:null,answers:{},editIndex:null};R2.validationMessage="";r2Push(name==="その他"?"other":"core");}));});p.appendChild(g);
+ var x=E("div","r2-subactions");x.append(B("サービス名が思い出せない","btn secondary",function(){R2.validationMessage="サービス名が思い出せない場合は、無理に個別サービスを追加する必要はありません。";r2Back();}));p.appendChild(x);p.appendChild(r2Nav(true));app.appendChild(p);
+}
+function r2Other(app){
+ var p=E("section","panel");p.appendChild(r2Top("その他のサービス名","自由入力はサービス名だけです。"));p.appendChild(r2Notice());var f=E("div","r2-other"),l=E("label","","サービス名"),input=E("input");input.type="text";input.maxLength=60;input.autocomplete="off";input.placeholder="例：○○サービス";input.value=R2.draft.serviceName||"";input.addEventListener("input",function(){if(r2OtherForbidden(input.value)){input.value="";R2.draft.serviceName="";R2.validationMessage="秘密情報らしき文字列は入力しないでください。";render();}else{R2.draft.serviceName=input.value;R2.validationMessage="";}});f.append(l,input,E("small","","パスワードや暗証番号などの秘密情報は入力しないでください。自由メモ欄はありません。"));p.appendChild(f);if(R2.validationMessage)p.appendChild(notice("warn","入力を確認してください",R2.validationMessage));
+ var a=E("div","actions");a.append(B("戻る","btn secondary",r2Back));var next=B("利用状態へ","btn primary",function(){if(!R2.draft.serviceName.trim()){R2.validationMessage="サービス名を短く入力してください。";render();return;}r2Push("core");});a.append(next);a.append(B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
+}
+function r2ChoiceRow(value,opts,onPick,four){var r=E("div","choices"+(four?" four":""));opts.forEach(function(o){r.append(B(o[1],"choice"+(value===o[0]?" on":""),function(){onPick(o[0]);render();}));});return r;}
+function r2Core(app){
+ var c=r2Cat(R2.draft.categoryId),p=E("section","panel");p.appendChild(r2Top("まず利用状態だけ確認","サービス名とカテゴリは選択済みです。実質1問だけです。"));var m=E("div","r2-meta");m.append(E("span","r2-pill",c.t),E("span","r2-pill",R2.draft.serviceName));p.appendChild(m);
+ var q=E("div","r2-question");q.append(E("h3","","利用状態"),E("p","","いま、このサービスをどう使っていますか？"),r2ChoiceRow(R2.draft.usageStatus,[["using","利用中"],["dormant","休眠・停止中"],["unknown","わからない"]],function(v){R2.draft.usageStatus=v;}));p.appendChild(q);
+ var a=E("div","actions");a.append(B("戻る","btn secondary",r2Back));var next=B("必要なことだけ確認","btn primary",function(){if(!R2.draft.usageStatus)return;r2Push("questions");});if(!R2.draft.usageStatus)next.disabled=true;a.append(next);a.append(B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
+}
+function r2VisibleQuestions(){return (R2Q[R2.draft.categoryId]||[]).filter(function(q){return !q.show||q.show(R2.draft.answers);});}
+function r2QuestionPages(){var q=r2VisibleQuestions(),pages=[];for(var i=0;i<q.length;i+=3)pages.push(q.slice(i,i+3));return pages.length?pages:[[]];}
+function r2Questions(app){
+ var c=r2Cat(R2.draft.categoryId),pages=r2QuestionPages();if(R2.questionPage>=pages.length)R2.questionPage=pages.length-1;var page=pages[R2.questionPage],p=E("section","panel");p.appendChild(r2Top("必要なことだけ確認",c.t+" / "+R2.draft.serviceName+"。未回答のまま進んでも構いません。"));p.appendChild(notice("","質問 "+(R2.questionPage+1)+" / "+pages.length,"1画面に表示する主質問は最大3問です。"));
+ page.forEach(function(q){var box=E("div","r2-question");box.append(E("h3","",q.q),r2ChoiceRow(R2.draft.answers[q.k]||null,q.o,function(v){R2.draft.answers[q.k]=v;}));p.appendChild(box);});
+ var a=E("div","actions");a.append(B("戻る","btn secondary",function(){if(R2.questionPage>0){R2.questionPage--;render(true);}else r2Back();}));if(R2.questionPage<pages.length-1)a.append(B("次の質問","btn primary",function(){R2.questionPage++;render(true);}));else a.append(B("本人の意向へ","btn primary",function(){r2Push("intention");}));a.append(B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
+}
+function r2Intention(app){
+ var c=r2Cat(R2.draft.categoryId),inherited=S.intent[c.id]||"undecided",p=E("section","panel");R2.draft.inheritedIntention=inherited;p.appendChild(r2Top("このサービスだけ、意向を変える？","変更しなければカテゴリ全体の設定をそのまま使います。"));p.appendChild(E("div","r2-inherited","カテゴリの設定: "+R2INT[inherited]));
+ var opts=[[null,"カテゴリと同じ"],["keep","残したい"],["delete","削除したい"],["family","家族に任せる"],["undecided","未決定"]],r=E("div","choices");opts.forEach(function(o){r.append(B(o[1],"choice"+(R2.draft.intentionOverride===o[0]?" on":""),function(){R2.draft.intentionOverride=o[0];render();}));});p.appendChild(r);p.appendChild(notice("","上書きはこのサービスだけ","ここで変更しても「"+c.t+"」カテゴリ全体の本人意向は変わりません。"));
+ var a=E("div","actions");a.append(B("戻る","btn secondary",r2Back),B("この1件を整理完了","btn primary",r2FinishDraft),B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
+}
+function r2FinishDraft(){
+ var copy={categoryId:R2.draft.categoryId,serviceId:R2.draft.serviceId,serviceName:R2.draft.serviceName,usageStatus:R2.draft.usageStatus,inheritedIntention:R2.draft.inheritedIntention,intentionOverride:R2.draft.intentionOverride,answers:Object.assign({},R2.draft.answers)};if(R2.draft.editIndex!==null&&R2.draft.editIndex!==undefined)R2.records[R2.draft.editIndex]=copy;else R2.records.push(copy);R2.draft=copy;R2.screen="complete";R2.history=[];render(true);
+}
+function r2Usage(v){return v==="using"?"利用中":v==="dormant"?"休眠・停止中":"わからない";}
+function r2EffectiveIntent(rec){return rec.intentionOverride===null?R2INT[rec.inheritedIntention]+"（カテゴリと同じ）":R2INT[rec.intentionOverride];}
+function r2AnswerLabel(rec,k,v){var q=(R2Q[rec.categoryId]||[]).filter(function(x){return x.k===k;})[0];if(!q)return v;var o=q.o.filter(function(x){return x[0]===v;})[0];return o?o[1]:v;}
+function r2Complete(app){
+ var rec=R2.draft,c=r2Cat(rec.categoryId),p=E("section","panel");p.appendChild(r2Top("1件、整理できました","ここで終わっても正常です。全カテゴリを埋める必要はありません。"));var x=E("div","r2-complete");x.append(E("h3","",rec.serviceName),E("p","","カテゴリ: "+c.t),E("p","","利用状態: "+r2Usage(rec.usageStatus)),E("p","","本人意向: "+r2EffectiveIntent(rec)));Object.keys(rec.answers).forEach(function(k){x.append(E("p","",r2AnswerLabel(rec,k,rec.answers[k])));});p.appendChild(x);
+ var a=E("div","r2-subactions");a.append(B("同じカテゴリでもう1件","btn primary",function(){R2.selectedCategory=rec.categoryId;R2.draft=null;R2.questionPage=0;R2.screen="service";render(true);}),B("別カテゴリを整理","btn secondary",function(){R2.selectedCategory=null;R2.draft=null;R2.questionPage=0;R2.screen="category";render(true);}),B("一覧を見る","btn secondary",function(){R2.screen="list";render(true);}),B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
+}
+function r2List(app){
+ var p=E("section","panel");p.appendChild(r2Top("このセッションで整理したもの",R2.records.length+"件整理しました。未回答や「わからない」もそのままで構いません。"));if(!R2.records.length)p.append(E("p","empty","まだサービスは追加していません。"));var list=E("div","r2-list");R2.records.forEach(function(rec,i){var c=r2Cat(rec.categoryId),x=E("article","r2-row");x.append(E("h3","",rec.serviceName),E("p","",c.t+" / "+r2Usage(rec.usageStatus)),E("p","","本人意向: "+r2EffectiveIntent(rec)));var a=E("div","r2-subactions");a.append(B("詳細を見る / 修正","btn secondary",function(){R2.selectedCategory=rec.categoryId;R2.draft={categoryId:rec.categoryId,serviceId:rec.serviceId,serviceName:rec.serviceName,other:rec.serviceId==="other",usageStatus:rec.usageStatus,inheritedIntention:rec.inheritedIntention,intentionOverride:rec.intentionOverride,answers:Object.assign({},rec.answers),editIndex:i};R2.questionPage=0;R2.history=["list"];R2.screen="core";render(true);}));x.appendChild(a);list.appendChild(x);});p.appendChild(list);
+ var a=E("div","r2-subactions");a.append(B("もう1件追加","btn primary",function(){R2.screen="category";R2.history=["list"];render(true);}),B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
+}
+function renderR2(app){var map={entry:r2Entry,category:r2Category,service:r2Service,other:r2Other,core:r2Core,questions:r2Questions,intention:r2Intention,complete:r2Complete,list:r2List};(map[R2.screen]||r2Entry)(app);}
+function render(resetScroll){if(typeof document==="undefined")return;var app=document.getElementById("app");if(!app)return;var scrollY=window.scrollY||window.pageYOffset||0;app.innerHTML="";if(R2.active)renderR2(app);else [renderStart,renderCats,renderDetails,renderRisks,renderIntent,renderResult][S.step](app);window.scrollTo({top:resetScroll?0:scrollY,behavior:"auto"});}
+globalThis.YTK={categories:C,risks:risks,tasks:tasks,r2Questions:R2Q,r2Catalog:R2CAT,r2State:R2};
+if(typeof document!=="undefined")render(true);
+})();
+</script>
+</body>
+</html>
