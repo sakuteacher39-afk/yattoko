@@ -227,11 +227,11 @@ function r2Core(app){
  var q=E("div","r2-question");q.append(E("h3","","利用状態"),E("p","","いま、このサービスをどう使っていますか？"),r2ChoiceRow(R2.draft.usageStatus,[["using","利用中"],["dormant","休眠・停止中"],["unknown","わからない"]],function(v){R2.draft.usageStatus=v;}));p.appendChild(q);
  var a=E("div","actions");a.append(B("戻る","btn secondary",r2Back));var next=B("必要なことだけ確認","btn primary",function(){if(!R2.draft.usageStatus)return;r2Push("questions");});if(!R2.draft.usageStatus)next.disabled=true;a.append(next);a.append(B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
 }
-function r2VisibleQuestions(){return (R2Q[R2.draft.categoryId]||[]).filter(function(q){return !q.show||q.show(R2.draft.answers);});}
+function r2PruneHiddenAnswers(){if(!R2.draft)return;var qs=R2Q[R2.draft.categoryId]||[],changed=true;while(changed){changed=false;qs.forEach(function(q){if(q.show&&!q.show(R2.draft.answers)&&Object.prototype.hasOwnProperty.call(R2.draft.answers,q.k)){delete R2.draft.answers[q.k];changed=true;}});}}function r2VisibleQuestions(){r2PruneHiddenAnswers();return (R2Q[R2.draft.categoryId]||[]).filter(function(q){return !q.show||q.show(R2.draft.answers);});}
 function r2QuestionPages(){var q=r2VisibleQuestions(),pages=[];for(var i=0;i<q.length;i+=3)pages.push(q.slice(i,i+3));return pages.length?pages:[[]];}
 function r2Questions(app){
  var c=r2Cat(R2.draft.categoryId),pages=r2QuestionPages();if(R2.questionPage>=pages.length)R2.questionPage=pages.length-1;var page=pages[R2.questionPage],p=E("section","panel");p.appendChild(r2Top("必要なことだけ確認",c.t+" / "+R2.draft.serviceName+"。未回答のまま進んでも構いません。"));p.appendChild(notice("","質問 "+(R2.questionPage+1)+" / "+pages.length,"1画面に表示する主質問は最大3問です。"));
- page.forEach(function(q){var box=E("div","r2-question");box.append(E("h3","",q.q),r2ChoiceRow(R2.draft.answers[q.k]||null,q.o,function(v){R2.draft.answers[q.k]=v;}));p.appendChild(box);});
+ page.forEach(function(q){var box=E("div","r2-question");box.append(E("h3","",q.q),r2ChoiceRow(R2.draft.answers[q.k]||null,q.o,function(v){R2.draft.answers[q.k]=v;r2PruneHiddenAnswers();}));p.appendChild(box);});
  var a=E("div","actions");a.append(B("戻る","btn secondary",function(){if(R2.questionPage>0){R2.questionPage--;render(true);}else r2Back();}));if(R2.questionPage<pages.length-1)a.append(B("次の質問","btn primary",function(){R2.questionPage++;render(true);}));else a.append(B("本人の意向へ","btn primary",function(){r2Push("intention");}));a.append(B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
 }
 function r2Intention(app){
@@ -240,7 +240,7 @@ function r2Intention(app){
  var a=E("div","actions");a.append(B("戻る","btn secondary",r2Back),B("この1件を整理完了","btn primary",r2FinishDraft),B("いったん詳細整理を終わる","btn ghost",r2End));p.appendChild(a);app.appendChild(p);
 }
 function r2FinishDraft(){
- var copy={categoryId:R2.draft.categoryId,serviceId:R2.draft.serviceId,serviceName:R2.draft.serviceName,usageStatus:R2.draft.usageStatus,inheritedIntention:R2.draft.inheritedIntention,intentionOverride:R2.draft.intentionOverride,answers:Object.assign({},R2.draft.answers)};if(R2.draft.editIndex!==null&&R2.draft.editIndex!==undefined)R2.records[R2.draft.editIndex]=copy;else R2.records.push(copy);R2.draft=copy;R2.screen="complete";R2.history=[];render(true);
+ r2PruneHiddenAnswers();var copy={categoryId:R2.draft.categoryId,serviceId:R2.draft.serviceId,serviceName:R2.draft.serviceName,usageStatus:R2.draft.usageStatus,inheritedIntention:R2.draft.inheritedIntention,intentionOverride:R2.draft.intentionOverride,answers:Object.assign({},R2.draft.answers)};if(R2.draft.editIndex!==null&&R2.draft.editIndex!==undefined)R2.records[R2.draft.editIndex]=copy;else R2.records.push(copy);R2.draft=copy;R2.screen="complete";R2.history=[];render(true);
 }
 function r2Usage(v){return v==="using"?"利用中":v==="dormant"?"休眠・停止中":"わからない";}
 function r2EffectiveIntent(rec){return rec.intentionOverride===null?R2INT[rec.inheritedIntention]+"（カテゴリと同じ）":R2INT[rec.intentionOverride];}
@@ -255,7 +255,7 @@ function r2List(app){
 }
 function renderR2(app){var map={entry:r2Entry,category:r2Category,service:r2Service,other:r2Other,core:r2Core,questions:r2Questions,intention:r2Intention,complete:r2Complete,list:r2List};(map[R2.screen]||r2Entry)(app);}
 function render(resetScroll){if(typeof document==="undefined")return;var app=document.getElementById("app");if(!app)return;var scrollY=window.scrollY||window.pageYOffset||0;app.innerHTML="";if(R2.active)renderR2(app);else [renderStart,renderCats,renderDetails,renderRisks,renderIntent,renderResult][S.step](app);window.scrollTo({top:resetScroll?0:scrollY,behavior:"auto"});}
-globalThis.YTK={categories:C,risks:risks,tasks:tasks,r2Questions:R2Q,r2Catalog:R2CAT,r2State:R2};
+globalThis.YTK={categories:C,risks:risks,tasks:tasks,r2Questions:R2Q,r2Catalog:R2CAT,r2State:R2,r2PruneHiddenAnswers:r2PruneHiddenAnswers};
 if(typeof document!=="undefined")render(true);
 })();
 </script>
