@@ -1,5 +1,7 @@
 # YTK-R005-C / C1 Local Skeleton
 
+状態: **C1 PARTIAL / BLOCKED**
+
 完全ローカル・完全ダミーデータ専用。Auth0 / Supabase / AWSへ接続しない。
 
 - `npm test`: TypeScript build + local automated tests
