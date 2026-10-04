@@ -1,0 +1,10 @@
+{
+  "name": "yattoko-r005-c1-local-prototype",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "test:postgres": "bash scripts/test-postgres.sh"
+  }
+}
