@@ -1,8 +1,30 @@
 # ヤットコ 調査報告
 
 調査ID: YTK-R005-A
-状態: CHANGES_REQUESTED対応済み（再承認待ち）
+状態: APPROVED
 調査日: 2026-10-04
+
+承認記録:
+- 最終判定: APPROVED
+- 承認範囲: YTK-R005-A「認証・保存基盤 技術選定調査」の調査・技術選定方針
+- 第一候補: Auth0 + Supabase Postgres + Application API
+- 第二候補: Amazon Cognito User Pools + Supabase Postgres
+- R005-B方針: 第一候補を基準に非公開アーキテクチャ設計を行い、Auth0の費用・session要件等が過大と判明した場合はCognitoへの切替可能性を維持する
+- Supabase表記方針: 今後の設計・実装では現行の publishable key / secret key を優先表記し、legacy anon / service_role は互換説明として扱う
+- 未承認:
+  - Auth0 tenant作成
+  - Cognito User Pool作成
+  - Supabase project作成
+  - 契約 / 課金
+  - APIキー発行
+  - OAuth設定
+  - DB作成
+  - 外部接続
+  - サーバー実装
+  - R005-C開始
+  - 本番環境作成
+  - 公開
+- 次工程: 人間による開始指示待ち。R005-Bを自動開始しない
 
 ## 調査テーマ
 
