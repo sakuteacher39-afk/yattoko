@@ -1,7 +1,7 @@
 # ヤットコ 調査報告
 
 調査ID: YTK-R004
-状態: DRAFT（調査完了・人間承認待ち）
+状態: CHANGES_REQUESTED対応済み（再承認待ち）
 調査日: 2026-10-04
 
 ## 調査目的
@@ -450,6 +450,147 @@ iPhone利用者向けの**任意ログイン方式**として有力。
 Passkeyを使えない人を完全排除しないが、
 「メールだけで全データへ入れる」状態を標準にしない。
 
+## 最弱認証経路と最低認証強度
+
+### 基本原則
+
+アカウント全体の安全性は、
+登録されている最も強い認証方式ではなく、
+**実際に利用可能な最も弱いログイン / 復旧経路にも制約される。**
+
+したがって、
+「Passkeyを1つ登録しているから、このアカウント全体がフィッシング耐性を持つ」
+とは扱わない。
+
+Passkey、password、Apple / Google等の各identityには
+個別の認証保証レベルを持たせ、
+そのセッションがどの認証経路で成立したかをサーバー側で判定する。
+
+### 認証保証レベル候補
+
+#### A0: メール所有確認のみ
+
+例:
+
+- メールmagic link
+- メールOTP
+- password reset link
+
+許可候補:
+
+- 復旧要求の開始
+- 認証メール所有確認
+- セキュリティ通知確認
+
+禁止:
+
+- P2〜P3相当の整理データ閲覧
+- 整理データ編集
+- エクスポート
+- 削除
+- 認証方式追加 / 削除
+- Passkey追加
+- メール変更
+- 退会
+
+メールだけでは本アカウントへの完全アクセスを復旧しない。
+
+#### A1: 単一の低〜中保証ログイン
+
+例:
+
+- password単独
+- Apple / GoogleのOIDCログイン単独で、ヤットコ側が十分なMFA / assuranceを確認できない場合
+
+許可候補:
+
+- アカウント識別
+- セキュリティ設定画面への限定導線
+- step-up要求
+- 認証器一覧の限定表示
+- 復旧手続き継続
+
+原則禁止:
+
+- P2〜P3相当の整理データ本文の閲覧
+- 整理データ変更
+- 高リスク操作
+
+#### A2: 強い認証済みセッション
+
+候補:
+
+- user verification済みPasskey
+- 将来、ヤットコが承認した同等以上のフィッシング耐性方式
+- Passkey非対応者向けに別途承認される強い複合認証
+
+許可:
+
+- 通常の整理データ閲覧
+- 通常の整理データ編集
+
+高リスク操作はA2であってもfresh authenticationを別途要求する。
+
+### 通常データ閲覧時の最低認証強度
+
+**R003でP2〜P3相当とした保存整理データの閲覧にはA2を原則必須とする。**
+
+つまり、
+ログインセッションが存在するだけでは足りず、
+そのセッションがA2へ到達している必要がある。
+
+### Passkey登録後のpassword単独ログイン
+
+Passkeyを登録済みのアカウントでは、
+password単独でA2へ昇格させない。
+
+passwordで本人候補を識別できても、
+整理データを開く前にPasskey等によるstep-upを要求する。
+
+passwordは以下の用途候補へ縮小する。
+
+- fallback認証の一部
+- 復旧要求の開始
+- Passkey利用不能時の限定セッション
+
+Passkey登録後もpasswordを残すか自体は未確定だが、
+残す場合も「passwordだけで全データへ入れる弱い横口」にしない。
+
+### Apple / Googleログイン単独
+
+Apple / GoogleのOIDCログインは、
+provider側で強い認証が行われている可能性があっても、
+ヤットコが常にその保証強度を確認できるとは限らない。
+
+したがって初期標準では、
+
+- Apple / Google login単独 = A1
+- ヤットコPasskeyでstep-up後 = A2
+
+とする候補を優先する。
+
+将来、認証providerから信頼できる `acr` / `amr` 等を取得し、
+ヤットコ側の保証ポリシーで同等性を検証できる場合のみ、
+OIDC単独をA2として扱う余地を残す。
+
+メールアドレスの一致やproviderのブランドだけを根拠にA2へ昇格させない。
+
+### Passkeyを持たない利用者
+
+Passkey非対応 / 利用困難な利用者向けA2 fallbackは、
+R005開始前に別途正式決定する。
+
+決まるまでは、
+
+- password単独
+- メールOTP単独
+- Apple / Google単独
+
+をA2とはみなさない。
+
+つまり、
+クラウド保存を利用できる条件とA2到達条件を整合させてから実装する。
+
 ## MFA方針
 
 ### 一般ユーザー
@@ -530,6 +671,91 @@ R005でUX検証と合わせて最終決定する。
 
 高リスク操作画面を開いた時点ではなく、
 確定直前に再認証する。
+
+## Identity link / unlink規則
+
+Apple / Google等の外部identity追加・削除は、
+通常ログイン以上の高リスク操作として扱う。
+
+### provider識別子
+
+外部identityの一意識別には、
+メールアドレスではなく
+
+**issuer + subject**
+
+を基準とする。
+
+例:
+
+- `iss`: provider issuer
+- `sub`: provider内での安定したsubject
+
+メールアドレスは連絡先・表示補助には使えても、
+アカウント同一性の自動判定キーにしない。
+
+AppleのPrivate Relay等で、
+同一人物でも通常メールとは異なるアドレスが返る場合があるため、
+メール一致 / 不一致を本人同一性の決定根拠にしない。
+
+### 既存アカウントへのlink条件
+
+既存ヤットコアカウントへApple / Google等を追加する場合、
+最低限以下をすべて要求する。
+
+1. 既存ヤットコアカウントへログイン済み
+2. 既存のA2強度でfresh authentication済み
+3. 追加するprovider側でも正常認証
+4. OIDC tokenのissuer / subject / audience / expiry等をサーバー側で検証
+5. 対象 `issuer + subject` が別ヤットコアカウントへ既に紐付いていない
+6. link結果を監査ログへ記録
+7. link完了を既存通知先へ通知
+
+メールアドレスが一致しても、
+未ログイン状態から既存アカウントへ自動linkしない。
+
+### unlink条件
+
+provider identityを削除する場合:
+
+1. A2でfresh authentication
+2. 削除対象identityを明示
+3. unlink後も有効なA2認証経路 / 承認済み復旧経路が残ることを確認
+4. 最後の有効認証経路を削除させない
+5. unlinkを監査ログへ記録
+6. unlink完了を通知
+
+最後のPasskeyや最後の強い認証経路を消す場合は、
+先に代替A2経路を登録させる。
+
+### 新規ログイン時のメール一致
+
+未ログイン状態でApple / Googleログインを行い、
+既存ヤットコアカウントと同じメールアドレスが返っても、
+
+**自動マージ / 自動linkしない。**
+
+候補処理:
+
+- 新規アカウント作成を保留
+- 「既存アカウントへログインして連携してください」と案内
+- 既存A2認証後にlink
+
+### 重複アカウント
+
+同一人物が誤って複数ヤットコアカウントを作成した場合でも、
+整理データを自動マージしない。
+
+理由:
+
+- メール一致だけでは同一人物を保証できない
+- 別用途・別人物の可能性
+- P2〜P3データの誤結合リスク
+- 本人意向や削除状態の衝突
+
+将来アカウント統合機能を作る場合は、
+両アカウントのA2 fresh authenticationと、
+明示的な移行確認を必要とする別設計とする。
 
 ## アカウント復旧方針
 
@@ -674,6 +900,135 @@ R004時点では、
 - 認証メール変更履歴の確認
 - 通知
 - 高リスク操作一時制限候補
+
+## メール復旧後の権限制御
+
+### 基本原則
+
+メール所有確認だけでは、
+P2〜P3相当の整理データへの完全アクセスを復旧しない。
+
+「メールでpasswordを再設定できる」ことと、
+「メールだけでアカウント全権限を取り戻せる」ことを分離する。
+
+### メールだけで可能な範囲
+
+A0として以下までを許可候補とする。
+
+- 復旧要求の開始
+- 認証メール所有確認
+- password再設定要求
+- セキュリティ通知受信
+- recovery-pending状態への移行
+
+メール確認だけでは以下を許可しない。
+
+- 整理データ本文閲覧
+- 整理データ編集
+- データエクスポート
+- 全削除
+- 退会
+- 認証メール変更
+- identity link / unlink
+- 既存Passkey削除
+
+### password忘れ時
+
+メールでpasswordを再設定できる場合でも、
+再設定成功だけでA2へ昇格させない。
+
+Passkey登録済みアカウントでは:
+
+1. メールでpassword再設定
+2. password認証はA1
+3. 保存整理データ閲覧前に既存Passkeyでstep-up
+4. Passkeyを使えない場合は通常復旧フローへ
+
+これにより、
+メールアカウント乗っ取りだけでPasskey保護済みデータへ到達できない。
+
+### メール確認後の新認証器登録
+
+メール確認だけで新Passkeyを即登録し、
+既存Passkeyと同等権限を与える方式は禁止候補。
+
+新しいA2認証器を登録するには原則として、
+
+- 既存A2認証器
+または
+- 将来正式承認される別の強い本人確認復旧
+
+を必要とする。
+
+メールしか残っていない場合は、
+新Passkey登録を許可せずrecovery-pending / protected状態へ移行する候補を優先する。
+
+### 既存Passkey等がある場合
+
+既存A2認証器が一つでも残っている場合、
+それを復旧の第一経路とする。
+
+メールは補助確認・通知に留め、
+強認証を飛ばす理由にしない。
+
+### 全強認証手段を失った場合
+
+以下をすべて失った場合:
+
+- Passkey
+- 承認済みの別A2認証器
+- 信頼できる強い復旧経路
+
+メール所有確認だけでは完全復旧させない。
+
+標準処理候補:
+
+1. recovery-pending
+2. P2〜P3整理データを非表示
+3. 編集・削除・export・identity変更を禁止
+4. 既存通知先へ復旧要求通知
+5. 安全な追加本人確認方式が存在しなければprotected / frozen状態
+6. サポート担当が整理内容を本人確認材料にして解除しない
+
+安全な本人確認ができない場合は、
+無理に復旧させない現在方針を維持する。
+
+### 復旧後cooling-off
+
+メールが関与した低保証復旧から強い認証経路を再構築できた場合でも、
+一定時間のcooling-offを設ける候補。
+
+初期候補:
+
+**24時間**
+
+法定値ではなく設計候補。
+
+cooling-off中に禁止する候補:
+
+- 全整理データ削除
+- 退会
+- データエクスポート
+- 認証メール再変更
+- identity link / unlink
+- 既存Passkey全削除
+- 家族 / 死後 / 緊急アクセス設定
+- break-glass相当の権限変更
+
+通常の整理データ閲覧まで禁止するかは、
+復旧時に到達した本人確認強度に応じR005前に最終決定する。
+
+### 復旧成功後のセッション / 認証器
+
+強い復旧が成功した場合:
+
+- password reset前の全セッションを失効
+- 不明なセッションを失効
+- 認証器一覧をユーザーへ提示
+- 不明なPasskey / provider identityを確認させる
+- 必要に応じ既存認証器を失効
+- 新認証器追加を通知
+- 復旧イベントを監査ログへ記録
 
 ## セッション管理要件
 
@@ -1139,16 +1494,160 @@ R004では機能を実装・確定しない。
 
 Passkey-first方式は将来機能を妨げない。
 
+## 認証基盤の実装方針
+
+### 初期推奨
+
+**実績あるmanaged authentication基盤を原則優先する。**
+
+評価理由:
+
+ヤットコが必要とする認証機能は、
+
+- Passkey / WebAuthn
+- OIDC / OAuth
+- 複数authenticator
+- identity link / unlink
+- session revoke
+- password fallback
+- recovery
+- rate limiting
+- 管理者MFA
+- 監査
+- セキュリティ更新
+
+を含み、
+認証自体が独立した高リスクシステムになる。
+
+R005の目的はヤットコの保存・認証要件を検証することであり、
+認証基盤そのものをゼロから発明することではない。
+
+したがって、
+要件を満たす実績あるmanaged authが利用可能なら、
+初期実装ではそちらを優先する。
+
+### managed auth選定条件
+
+R005開始前に候補ごとに最低限以下を比較する。
+
+- WebAuthn / Passkey対応
+- user verification制御
+- 複数Passkey / authenticator対応
+- 安全なsession revoke
+- 全端末session失効
+- OIDC / OAuth対応
+- 複数identityのlink / unlink
+- issuer + subject管理
+- fresh authentication / step-up表現
+- password fallbackの安全な実装
+- recovery flowの制御可能性
+- rate limit / bot対策
+- 管理者向けフィッシング耐性MFA
+- 管理者 / supportのRBAC
+- 監査ログ
+- API / webhook等のセキュリティイベント連携
+- データ所在
+- データ保持 / 削除
+- バックアップ
+- 障害時の可用性 / SLA候補
+- provider停止 / 障害時の運用
+- vendor lock-in
+- サービス終了時のauthデータexport
+- 別providerへ移行可能か
+- Passkey credential / identity mappingを移行できるか
+- 日本向け利用条件 / 法務条件
+
+### managed auth採用時も委譲できない責任
+
+managed authを使っても、
+ヤットコ側で以下を設計・実装する必要がある。
+
+- A0 / A1 / A2の認証保証判定
+- P2〜P3データ閲覧の最低強度
+- 高リスク操作のstep-up
+- R003整理データとの権限分離
+- identity link / unlinkルール
+- 退会 / 全削除フロー
+- 通知
+- 管理者権限
+- ログ最小化
+- provider障害時のUX
+- アプリ側CSRF / XSS等の対策
+
+「managedだから安全」と自動的に扱わない。
+
+### 自前認証を採用する場合
+
+自前認証は原則第二候補とし、
+**別途セキュリティレビューなしに採用しない。**
+
+自前で責任を負う範囲:
+
+- password verifier保存
+- password reset
+- Passkey / WebAuthn challenge管理
+- credential管理
+- OAuth / OIDC token検証
+- identity link / unlink
+- session発行 / rotation / revoke
+- CSRF
+- recovery
+- rate limiting
+- credential stuffing対策
+- bot対策
+- 管理者認証
+- MFA
+- audit log
+- security notification
+- 脆弱性対応
+- ライブラリ / 仕様更新追従
+- インシデント対応
+
+採用条件候補:
+
+- managed authで満たせない明確な要件がある
+- セキュリティレビュー済み
+- 継続保守担当が存在する
+- penetration test等の検証計画がある
+- 障害 / 侵害時の運用計画がある
+
+### provider障害時
+
+managed auth障害時に、
+安全性を下げて迂回ログインを開放しない。
+
+禁止候補:
+
+- 「障害中だけメールOTPで全データへ入れる」
+- 管理者が手動でsessionを発行
+- 本人確認なしでPasskeyを解除
+
+可用性と安全性が衝突する場合、
+整理データへのアクセスを一時停止する方を優先する。
+
 ## R005へ引き継ぐ実装要件
 
 ### 認証基盤
 
+- 実績あるmanaged authentication基盤を原則優先
+- 自前認証は別途セキュリティレビューなしに採用しない
+- auth provider選定時にPasskey、session revoke、複数identity、管理者MFA、監査、データ所在、backup、export、provider障害対応を評価
+- A0 / A1 / A2の認証保証レベルをサーバー側で保持・判定
+- P2〜P3整理データ閲覧にはA2を原則必須
+- password単独 / email-only / assurance未確認OIDC単独をA2として扱わない
 - 内部userIdを正本とする
 - 認証identityと整理データを論理分離
 - Passkey / WebAuthn対応
 - 複数authenticator登録
 - authenticator一覧表示 / 個別失効
 - provider identityの安全なlink / unlink
+- email一致だけでidentityを自動linkしない
+- provider identityはissuer + subjectで識別
+- link / unlink時に既存A2 fresh authentication必須
+- link / unlink完了通知
+- 最後のA2認証 / 復旧経路を削除禁止
+- link / unlink監査ログ
+- 重複ヤットコアカウントの整理データを自動マージしない
 - Apple / Googleではprovider subjectを識別子に使用
 - password fallback採用時は平文保存禁止
 - email verification
@@ -1218,6 +1717,13 @@ Passkey-first方式は将来機能を妨げない。
 
 ### 復旧
 
+- email-only recoveryはA0とし、P2〜P3整理データ閲覧を許可しない
+- emailによるpassword resetだけではA2へ昇格させない
+- emailだけで新A2 authenticatorを登録させない
+- 既存A2 authenticatorがある場合は必ず優先
+- 全A2手段喪失時はprotected / frozen状態候補
+- recovery後cooling-off候補を実装可能にする
+- recovery後の既存session / authenticator見直し
 - 複数authenticator
 - recovery request rate limit
 - account enumeration防止
@@ -1285,14 +1791,17 @@ R003の方針を維持。
 
 ### 一般ユーザー認証
 
-**Passkey-first**
+**Passkey-first。ただし最弱経路も含めた保証レベル制御を必須とする。**
 
 標準候補:
 
-1. Passkey
-2. Sign in with Apple / Googleを任意追加
-3. メール + パスワードを互換fallbackとして用意
-4. メールmagic link / OTPは単独主要認証ではなく検証・復旧補助
+1. Passkey = A2の第一候補
+2. Sign in with Apple / Google = 原則A1。A2データ閲覧前にPasskey等でstep-up
+3. メール + パスワード = fallback候補だがpassword単独はA1
+4. メールmagic link / OTP = A0の検証・復旧補助
+
+P2〜P3相当の整理データ閲覧にはA2を原則必須とする。
+Passkeyを登録しただけで、passwordやOIDC単独の弱い経路まで自動的に安全になったとは扱わない。
 
 ### MFA
 
@@ -1305,6 +1814,11 @@ R003の方針を維持。
 ### 復旧
 
 - 最低2つの独立した認証経路を推奨
+- email-onlyでは整理データへ完全復旧しない
+- password resetだけではA2へ昇格しない
+- 既存Passkey等がある場合は必ず優先
+- 全強認証手段喪失時はprotected / frozen状態を許容
+- 強い復旧後もcooling-off候補を設ける
 - Passkey複数登録を優先
 - Apple / Google等は補助経路
 - verified emailは復旧補助
@@ -1338,7 +1852,10 @@ R003の方針を維持。
 - Passkey非対応ユーザーの正式fallback
 - password fallbackを本番で本当に提供するか
 - Sign in with Apple / Googleを初期リリースから両方提供するか
-- 認証サービスを自前 / managed providerのどちらにするか
+- managed authの具体的採用ベンダー
+- managed authでA0 / A1 / A2を十分表現できるか
+- managed authからの将来移行可能性
+- 自前認証を採用するだけの明確な必要性が存在するか
 - auth provider候補とデータ所在
 - auth provider障害時の可用性
 - email magic link / OTPを復旧でどこまで許可するか
