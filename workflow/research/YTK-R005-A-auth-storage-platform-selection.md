@@ -1,7 +1,7 @@
 # ヤットコ 調査報告
 
 調査ID: YTK-R005-A
-状態: DRAFT（技術選定調査完了・人間承認待ち）
+状態: CHANGES_REQUESTED対応済み（再承認待ち）
 調査日: 2026-10-04
 
 ## 調査テーマ
@@ -270,14 +270,418 @@ R004の「managed authentication基盤を原則優先」の利点が薄れる。
 
 Passkey-firstの公式managed対応が明確になれば再評価可能。
 
+### 候補5: Amazon Cognito User Pools
+
+#### 確認できた点
+
+2026-10-04時点のAWS公式仕様では、Amazon Cognito User PoolsはR004要件に対して以前よりかなり強い候補となっている。
+
+- WebAuthn / PasskeyはEssentials / Plusで正式提供
+- `WebAuthnConfiguration.UserVerification` を `required` / `preferred` で設定可能
+- `FactorConfiguration = MULTI_FACTOR_WITH_USER_VERIFICATION` とした場合、user verification済みPasskeyをMFA要件を満たす認証として扱える
+- Cognitoは認証強度を `acr`、認証手段を `amr` claimとしてtokenへ記録できる
+- Cognito既定ACRではpassword単独=level 1、email/SMS OTP単独=level 2、Passkey単独=level 3、password+TOTP=level 4
+- `acr_values` / `TARGET_ACR_VALUES` によりstep-upを要求可能
+- `max_age` / `MAX_AGE` によりfresh authenticationを要求可能
+- `auth_time` をapplication側で検証可能
+- refresh token revoke、`GlobalSignOut`、`AdminUserGlobalSignOut` を提供
+- refresh token rotationをEssentials / Plusで利用可能
+- Google、Sign in with Apple、その他OIDC / SAML IdPを利用可能
+- `AdminLinkProviderForUser` で明示identity linkが可能
+- social IdPでは `Cognito_Subject`、OIDCではsubject等のprovider固有識別子を使ったlinkが可能
+- `AdminDisableProviderForUser` でunlink可能
+- linkされていないfederated identityは、初回sign-in時に別profileとして作成されるため、標準動作として「メール一致だけで既存profileへ自動link」は行わない
+- IAMで管理API権限を最小権限化可能
+- CloudTrailでCognito管理API / 認証関連イベントを監査可能
+- 東京 `ap-northeast-1` でUser Poolsを利用可能
+- Essentials / Liteは直接認証・social loginについて10,000 MAU / 月の恒久free tierあり
+- Essentialsの10,000 MAU超は公式価格例でUSD 0.015 / MAU
+- Plusはfree tierなし、公式価格例でUSD 0.020 / MAU
+
+#### user verification / PasskeyをMFA相当として扱う条件
+
+Cognito APIの `WebAuthnConfigurationType` では、
+
+- `UserVerification = required`
+- `FactorConfiguration = MULTI_FACTOR_WITH_USER_VERIFICATION`
+
+を設定した場合、
+user verificationを伴うPasskey認証をMFA要件を満たすものとして扱える。
+
+これはR004の
+
+- Passkey-first
+- PasskeyをA2第一候補とする
+- 通常利用では追加OTPを毎回要求しない
+
+方針と整合しやすい。
+
+ただし、
+ヤットコのA0 / A1 / A2とCognitoのACR level 1〜4は同じ概念ではない。
+Application API側で明示的にmappingする。
+
+初期mapping候補:
+
+- Yattoko A0: email recovery confirmation等。整理データ閲覧不可
+- Yattoko A1: Cognito level 1 password、保証未確認federated login等
+- Yattoko A2: user verification済みPasskeyに対応するCognito level 3を第一候補
+
+email OTPがCognito level 2であっても、
+ヤットコR004ではメール単独をP2〜P3データ閲覧のA2とはしない。
+
+vendorのACR数値をそのままヤットコ権限へ変換しない。
+
+#### fresh authentication / step-up
+
+CognitoはEssentials / Plusでstep-upを正式提供している。
+
+applicationはtokenの
+
+- `acr`
+- `amr`
+- `auth_time`
+
+を確認し、
+不足する場合だけ
+
+- `acr_values`
+- `max_age`
+
+等で再認証を要求できる。
+
+R004の「高リスク操作fresh auth 10分候補」は、
+`auth_time` と `max_age` を利用する構成候補へ落としやすい。
+
+この点はAuth0で独自Action / claimを設計する場合より、
+Cognitoの方が標準化された表現を持つ。
+
+#### session / refresh token失効
+
+Cognitoは以下を提供する。
+
+- `RevokeToken`
+- revoke endpoint
+- `GlobalSignOut`
+- `AdminUserGlobalSignOut`
+- refresh token rotation
+
+ただし重要な制約がある。
+
+AWS公式資料では、
+revoked tokenであっても
+署名とexpirationだけを確認する一般的なJWT libraryでは
+有効と判定され得ることが明記されている。
+
+したがって、
+Application APIがCognito JWTを完全offline検証するだけでは
+「即時全session失効」の唯一防御線にならない。
+
+R005-Bでは、
+
+- 短寿命access token
+- Application API独自session
+- session version / denylist
+- Cognito revokeとの組合せ
+
+のいずれかを検討する必要がある。
+
+この問題はAuth0等の自己完結JWTでも同種の設計課題がある。
+
+#### Apple / Google等の外部IdP
+
+Cognito User Poolsは
+
+- Google
+- Sign in with Apple
+- Login with Amazon
+- Facebook
+- OIDC
+- SAML
+
+とのfederationをmanaged loginで扱える。
+
+federated sign-inでは、
+IdPがACR / AMRを返す場合はCognito側へmapping可能。
+認証強度を確認できない場合は、
+ヤットコA2として扱わない。
+
+#### identity link / unlink
+
+Cognitoは
+`AdminLinkProviderForUser`
+と
+`AdminDisableProviderForUser`
+を提供する。
+
+social providerでは
+provider固有subjectを `Cognito_Subject` としてlink可能。
+
+これはR004の
+
+- issuer + subjectを基準
+- メール一致だけでlinkしない
+
+方針と整合可能。
+
+ただし実装上の重要な制約がある。
+
+`AdminLinkProviderForUser` は管理APIであり、
+external identityがCognito上で別profileとして初回sign-inを完了する前に
+linkする構成が基本となる。
+
+そのため、
+R004で要求した
+
+「既存ヤットコアカウントへログイン済み
+→ A2 fresh auth
+→ 追加providerも認証
+→ 明示link」
+
+を安全に実現するには、
+provider認証結果をApplication APIで受け、
+Cognito上で重複profileを作る前に
+AdminLinkを実行する専用フロー設計が必要。
+
+Auth0のuser-initiated account linkingと比べると、
+Cognitoはこの部分のapplication側オーケストレーションが重い。
+
+一方、
+メール一致による暗黙linkを標準で行わない点はR004と適合する。
+
+#### 復旧
+
+Cognitoはverified email / phoneを使うpassword recoveryを標準提供し、
+self-service recoveryを無効にして `admin_only` とする設定も可能。
+
+ただしR004の方針に従い、
+
+- email password reset成功 = A2
+
+とは扱わない。
+
+password reset後にpasswordでsign-inしても、
+Cognito ACR level 1相当であれば
+Application API側でP2〜P3データを遮断し、
+Passkey等のA2 step-upを要求する構成が可能。
+
+全A2手段喪失時は
+Cognitoのpassword recoveryだけで完全復旧させず、
+ヤットコ側のprotected / frozen状態を維持する必要がある。
+
+#### 管理者権限 / 監査
+
+Cognito管理APIはIAMによる最小権限制御が可能。
+
+link / unlink等の管理操作もIAM permissionを要求するため、
+Application API用roleへ必要操作だけを付与できる。
+
+CloudTrailはCognito API操作を監査可能。
+
+AWS公式資料は、
+CloudTrailが一部private fieldsをマスクする一方、
+任意属性に入れたPIIを自動的にすべて検出・マスクするわけではないと明記している。
+
+したがってR003の方針どおり、
+Cognito user attributesへヤットコ整理内容を保存しない。
+
+#### provider移行性
+
+CognitoはCSV importやuser migration Lambdaによる「Cognitoへの移行」を提供する。
+
+一方、
+他providerへの移行で必要となる
+
+- password verifier
+- Passkey credential
+- 外部identity link
+
+の完全portable exportを前提にできる公式仕様は今回確認できていない。
+
+user attributesはAPIで取得可能でも、
+認証credential移行には制約がある。
+
+provider lock-inは中程度以上と評価する。
+
+Auth0もPasskey / password credentialの完全移行には制約があるため、
+この点だけでCognitoを除外はしない。
+
+#### 料金 / free tier
+
+2026-10-04時点のAWS公式価格:
+
+- Essentials: 直接認証 / social identity provider利用者について10,000 MAU / 月まで無料
+- Essentials: free tier超過分は公式価格例でUSD 0.015 / MAU
+- Plus: free tierなし
+- Plus: 公式価格例でUSD 0.020 / MAU
+- SAML / OIDC federationは別MAU価格体系あり
+- SMSはSNS料金が別途発生
+- email送信はSES料金が別途発生
+
+R005-Cの完全ダミープロトタイプで
+Passkey / step-up / local test user中心に検証する限り、
+Cognito Essentialsの認証MAU費は無料範囲で実施できる可能性が高い。
+
+ただしAWS account自体の作成、SES / SNS、Lambda、CloudTrail保存先等、
+併用AWSサービスの利用料は別。
+
+今回契約・課金・User Pool作成は行わない。
+
+#### R004との適合
+
+**高い。Auth0と並ぶ最終候補。**
+
+特に
+
+- Passkey
+- user verification
+- ACR / AMR
+- fresh auth
+- provider subject link
+- IAM
+- CloudTrail
+- 東京region
+- free tier
+
+は非常に強い。
+
+弱点は、
+
+- user-initiated identity linkの実装複雑度
+- revoked JWTのApplication API側即時失効
+- provider移行性
+- AWS IAM / Cognito設定の運用複雑度
+
+にある。
+
+#### 判定
+
+**認証基盤 第二候補。ただしAuth0との差は小さい。**
+
+コスト最優先ならCognitoを第一候補へ入れ替える合理性がある。
+
+安全要件・R004の明示identity link UXを優先する現時点では、
+Auth0を僅差で第一候補に維持する。
+
 ## 認証基盤比較まとめ
 
 | 候補 | Passkey | A2判定候補 | link規則適合 | session revoke | 日本リージョン | R004適合 | R005-A判定 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Auth0 | ○ | ○ | ○ | ○ | ○ | 高 | 第一候補 |
+| Auth0 | ○ | ○ Actions等で構成 | ○ | ○ ※完全session APIはplan注意 | ○ | 高 | 第一候補 |
+| Amazon Cognito | ○ Essentials+ | ◎ acr/amr標準 | ○ 明示AdminLink | ○ ※JWT即時失効は別対策必要 | ○ 東京 | 高 | 第二候補・僅差 |
 | Supabase Auth | Experimental | △ | × 自動メールlink | ○ | DB側東京可 | 中以下 | 見送り |
 | Clerk | ○ | ○ | × 自動メールlink標準 | ○ | 要追加確認 | 中 | 見送り |
 | Firebase Auth | △ 要追加確認 | △ | ○ | ○ | ○ | 中 | 第二群 |
+
+## Auth0 最低必要プランと費用条件
+
+調査基準日: **2026-10-04**
+
+Auth0公式B2C pricingの月額表示を基準とする。
+価格・entitlementは将来変更され得るため、
+契約前に再確認する。
+
+### 機能別の最低プラン
+
+| R005で確認したい機能 | 最低プラン候補 | 公式確認内容 / 注意 |
+| --- | --- | --- |
+| Passkey | Free | Pricing比較表でFreeからIncluded |
+| Actions | Free | FreeはActions + Forms合計5枠。A2 claim等の小規模検証は可能候補 |
+| Account Linking | Essentials | FreeはNot included、Essentials以上でIncluded |
+| Pro MFA | Essentials | Essentials以上でIncluded |
+| step-up | Essentialsを実用上の最低候補 | R004のMFA / step-up完全検証にはPro MFAを使えるEssentialsを優先 |
+| 基本ログ | Free | Free log retentionは1日 |
+| Log Streaming /外部監査保存 | Essentials | Essentialsで1 Log Stream、5日retention |
+| 開発 / 本番環境分離 | Essentials | Freeはtenant 1、Essentialsは3 tenantでProduction / Development分離を公式に掲示 |
+| 日本Public Cloud region | Freeを含むself-service候補 | Auth0 Public Cloudはself-service / enterpriseで日本regionを提供。plan別制限は公式cloud deployment表で確認されない |
+| User Export | Free互換候補・契約前再確認 | Management API / Dashboard export公式資料あり。pricing表にplan restrictionの明記を確認できず |
+| Refresh token / grant revocation | plan制限を追加確認 | Management APIによるgrant / refresh token revoke手段あり |
+| 完全なSession Management API（session列挙・個別 / 全session terminate） | **Enterprise扱いで計画** | Auth0公式Session Management API紹介ではEnterprise planが必要と記載。現行pricing比較表には同API entitlementが明示されないため、Essentialsで利用可能と推測しない |
+| Enterprise MFA factors | Professional | Professional以上 |
+| Enhanced Attack Protection | Professional | Professional以上 |
+
+### Auth0の最低必要プラン判定
+
+R004の**identity link / unlink**は必須要件。
+
+Auth0 FreeではAccount Linkingがpricing上Not includedなので、
+Freeを「R005要件を完全検証可能」と扱わない。
+
+現時点では、
+
+**Auth0 EssentialsをR005の実用的な最低プラン候補**
+
+とする。
+
+2026-10-04時点の公式参考価格:
+
+- Free: USD 0 / month、最大25,000 MAU
+- Essentials: **USD 35 / month（500 MAU表示時の参考価格）**
+- Professional: **USD 240 / month（500 MAU表示時の参考価格）**
+- Enterprise: 要問い合わせ
+
+ただし、
+完全なAuth0 Session Management APIをR005で必須とする場合、
+公式紹介記事ではEnterprise要件が示されている。
+
+そのため、
+
+**EssentialsだけでR004の全session要件まで完全検証できるとは現時点で断定しない。**
+
+R005-Bでは、
+Application API側のserver-side sessionを正本として管理し、
+Auth0側session / refresh token revokeを補助にすることで
+Enterprise依存を避けられるかを設計課題とする。
+
+### R005-Cを無料でどこまで検証できるか
+
+Auth0 Freeで検証可能な候補:
+
+- Passkey signup / login
+- Auth0 Database Connection
+- Social Connection
+- 最大5枠のActions
+- Passkey利用判定Actionの試作
+- basic attack protection
+- 1日分の基本ログ
+- dummy user
+- user export基本動作（plan restrictionは実環境前再確認）
+- Application API側A0 / A1 / A2判定の一部
+
+Freeで完全検証できないもの:
+
+- Account Linking / unlinkを含むR004 identity統合
+- Essentials Pro MFAを前提にしたstep-up
+- Production / Development tenant分離
+- Log Streaming
+- 長いlog retention
+- Enterprise Session Management API
+
+### 有料化が必要になる最初の工程
+
+R005-Bは非公開アーキテクチャ設計だけなので有料契約不要。
+
+R005-Cで
+「Passkey + dummy保存」の最小部分だけを見るなら
+Auth0 Freeで開始可能。
+
+ただしR005-Cで
+
+- identity link / unlink
+- Pro MFAを使うstep-up
+- 複数tenant環境分離
+- Log Streaming
+
+まで検証する時点で
+**Essentials以上の有料化が必要になる可能性が高い。**
+
+つまり、
+R005の必須要件を一通り外部managed auth上で確認するなら、
+最初の有料化ポイントは**R005-C内**になる可能性が高い。
+
+完全Session Management APIまでAuth0側で検証するなら、
+さらにEnterprise条件の再確認が必要。
+
+**今回、Auth0契約・課金・tenant作成は実施しない。**
 
 ## 保存基盤候補比較
 
@@ -410,6 +814,75 @@ Postgresで重大な不都合が判明した場合の再評価候補。
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Supabase Postgres | RLS | 強い | 強い | ○ | ○ | 高 | 高 | 第一候補 |
 | Firestore | Security Rules | アプリ / Rules中心 | ○ | ○ | ○ | 中 | 中〜高 | 第二候補 |
+
+## Auth0 vs Amazon Cognito 最終再評価
+
+### Auth0が優位な点
+
+- user-initiated account linkingの設計資料が明確
+- R004の「既存A2 → 追加provider認証 → 明示link」に近いフローを構成しやすい
+- Passkey + social identity + account linkingをCIAM製品として一体的に扱いやすい
+- Auth0 Actionsでアプリ独自claimを作りやすい
+- user export / tenant configuration export手段が比較的明確
+- 一般向けCIAMの開発UXが比較的単純
+
+### Auth0の弱点
+
+- R004必須のAccount LinkingがFreeでは使えずEssentials以上
+- 完全Session Management APIはEnterprise要件が残る
+- A0 / A1 / A2はヤットコ側独自表現で、Passkey利用検出 + custom claim設計が必要
+- pricing / plan entitlementへの依存が大きい
+
+### Cognitoが優位な点
+
+- Passkeyとuser verificationを公式設定として持つ
+- PasskeyをMFA相当として扱える
+- `acr` / `amr` / `auth_time` / `max_age` が標準
+- step-upがEssentialsで標準
+- provider subjectによる明示link / unlink API
+- IAMによる強い管理権限分離
+- CloudTrail監査
+- 東京region
+- Essentials 10,000 MAU free tier
+- 価格面でR005-Cをダミー利用する障壁が非常に低い
+
+### Cognitoの弱点
+
+- user-initiated account linkingをR004どおり行うにはApplication API側オーケストレーションが重い
+- 初回federated sign-in前のlink設計を誤るとduplicate user profileが生じ得る
+- AWS IAM / User Pool / App Client / Lambda等の設定面が複雑
+- token revoke後もoffline JWT検証だけでは即時失効にならない
+- provider migration / credential portabilityは強くない
+
+### 最終評価
+
+**第一候補: Auth0**
+**第二候補: Amazon Cognito User Pools**
+
+ただし差は小さい。
+
+安全要件のみを見ると両者とも候補になる。
+CognitoはACR / AMRと費用面ではむしろ優位。
+
+Auth0を第一候補に維持する理由は、
+YTK-R004で特に厳格化した
+**user-initiated identity link / unlink**
+を設計しやすい点を重く評価したため。
+
+一方で、
+R005-BでAuth0の
+
+- Essentials費用
+- Session Management APIのEnterprise依存
+- A2 claim実装
+
+が過度な複雑性 / コストになると判断した場合、
+
+**Cognito Essentialsへ第一候補を入れ替える余地を正式に残す。**
+
+価格を優先するだけならCognitoが第一候補。
+R004のidentity lifecycle実装容易性まで含めるとAuth0が僅差で第一候補、
+という再判定とする。
 
 ## R005-A 推奨技術構成
 
@@ -650,6 +1123,173 @@ Supabaseへは承認された保存データだけを分離して送る。
 
 ヤットコアプリ側DBへD区分を作らない。
 
+## Application API → Supabase 権限境界
+
+R005-Bの**必須設計課題**とする。
+
+Application APIを置くだけで安全と扱わない。
+
+### service role / secret keyの扱い
+
+Supabase公式資料では、
+
+- `service_role` Postgres roleは `BYPASSRLS` を持つ
+- secret keyは `service_role` としてRLSを迂回する
+- secret / service role credentialをbrowserへ公開してはいけない
+
+と明記されている。
+
+したがって、
+
+**通常ユーザーCRUDでservice role / secret keyを常用する構成を第一案にしない。**
+
+API層でowner checkを行っていても、
+API実装ミスがあれば全user rowへ到達できるcredentialを毎requestで使う構成は、
+R005の「他ユーザーの整理データへアクセスできる構造を許可しない」方針に対して防御が一層しか残らない。
+
+### 通常リクエストの優先候補
+
+R005-Bでは以下を優先して設計比較する。
+
+#### 方式1: Application APIでuser JWTを検証し、RLS適用roleでDBへ接続
+
+候補:
+
+- Auth0 / Cognito JWTをApplication APIで検証
+- Application APIで内部userIdへmapping
+- transaction内でrequest claimsを設定
+- Postgresの `authenticated` 相当または専用non-bypass roleへswitch
+- RLSを必ず適用
+- table grantsも最小化
+- owner checkをApplication APIとRLSの両方で実施
+
+Supabaseのserver middlewareには、
+user JWT claimsを注入し
+`authenticated` roleへ `set local role` して
+RLSを適用する方式が公式に用意されている。
+
+R005-Bでは同等の仕組みが
+Auth0 / Cognito + 内部userId mappingで安全に利用できるか検証する。
+
+#### 方式2: Supabase Data APIへuser-scoped JWTを渡す
+
+Auth0 / Cognito third-party auth連携を使い、
+RLSが適用されるJWTでData APIへアクセスする。
+
+利点:
+
+- RLS適用が明確
+
+課題:
+
+- 内部userId分離
+- A0 / A1 / A2 claim
+- R003 server validation
+- Application APIをどこまで通すか
+
+を慎重に設計する必要がある。
+
+### service roleを許可する用途候補
+
+強権限credentialは、
+cross-user accessが本当に必要な限定処理だけに分離する。
+
+候補:
+
+- schema migration
+- backup / restore
+- controlled deletion job
+- deletion journal maintenance
+- integrity repair
+- 管理者が承認したbackground job
+
+通常の
+
+- user record取得
+- user record作成
+- user record更新
+- user record削除
+
+へ常用しない。
+
+### 権限分離
+
+R005-Bでは最低限以下を別credential / roleとして設計する。
+
+1. **通常user request role**
+   - RLS適用
+   - owner rowのみ
+   - 必要table / operationだけgrant
+
+2. **background job role**
+   - jobごとに必要権限を限定
+   - cross-userが必要なら専用role
+   - service roleを安易に共有しない
+
+3. **migration role**
+   - schema変更専用
+   - application runtimeへ渡さない
+
+4. **backup / restore role**
+   - 通常APIと分離
+   - restore時のdelete tombstone再適用要件
+
+5. **break-glass / infra**
+   - 日常利用禁止
+   - 監査必須
+
+### Browserへの強権限credential
+
+以下をbrowser / mobile clientへ絶対に渡さない。
+
+- Supabase secret key
+- legacy service_role key
+- BYPASSRLSを持つPostgres credential
+- migration credential
+- backup credential
+
+publishable keyを利用する場合でも、
+user access token + RLSを前提とし、
+public key自体を認可根拠にしない。
+
+### 二重防御
+
+通常CRUDでは、
+
+1. Application API:
+   - token検証
+   - A2判定
+   - internal userId解決
+   - allowlist
+   - enum
+   - 条件分岐
+   - owner確認
+
+2. Postgres:
+   - grants
+   - RLS
+   - foreign key
+   - CHECK / enum
+   - unique constraint
+
+の二重防御を固定候補とする。
+
+**API owner checkだけを唯一のuser隔離防御にしない。**
+
+### R005-Bで決定するもの
+
+- 通常requestに使用する具体的Postgres role
+- Auth0 / Cognito claimをRLSへ伝える方式
+- internal userIdをRLS policyで参照する方式
+- Data APIかdirect Postgres connectionか
+- transaction-local claims / role switch方式
+- admin jobごとのcredential
+- secret rotation
+- connection pooling時のrole / claim漏れ防止
+
+R005-AではDB credentialを作成せず、
+接続実装もしない。
+
 ## R005-Bへの引継ぎ候補
 
 人間がR005-AをAPPROVEDした場合にのみ、
@@ -661,6 +1301,12 @@ R005-Bで以下を設計する。
 - A0 / A1 / A2 claim / session表現
 - API authorization
 - server-side validation
+- Application API → SupabaseのDB権限境界
+- 通常CRUDでservice role / secret keyを常用しない設計
+- RLSが実際に適用される接続方式
+- user request / background job / migration / backup / break-glass権限分離
+- 強権限credentialのbrowser露出禁止
+- API owner check + RLSの二重防御
 - RLS
 - DB grants
 - schemaVersion
@@ -684,6 +1330,12 @@ APIキー発行・OAuth設定・外部契約・本番接続は
 
 ## 重要な未確定事項
 
+- Auth0 EssentialsでApplication API側session管理を組み合わせた場合にEnterprise Session Management APIを不要にできるか
+- Auth0 user exportのplan entitlement最終確認
+- Cognitoで既存A2 → provider認証 → AdminLinkを安全に実現する具体フロー
+- Cognito federated identityとlocal PasskeyのUX
+- Cognito revocationとApplication API session即時失効の組合せ
+- Cognitoから将来provider変更する際のcredential portability
 - Auth0の具体planと機能条件
 - Auth0 Passkeyとsocial identity併用時の最終UX
 - Auth0でA2保証claimをどう表現するか
@@ -707,6 +1359,39 @@ APIキー発行・OAuth設定・外部契約・本番接続は
 - 将来の家族 / delegate identityをAuth0でどう表現するか
 
 ## 確認した公式資料
+
+### Amazon Cognito / AWS
+
+- WebAuthnConfigurationType
+  https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_WebAuthnConfigurationType.html
+- Authentication levels with ACR and AMR claims
+  https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-step-up-authentication.html
+- Authentication flows / WebAuthn passkeys
+  https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html
+- User pool feature plans
+  https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html
+- Token revocation
+  https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html
+- Refresh token rotation
+  https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html
+- Linking federated users
+  https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html
+- AdminLinkProviderForUser
+  https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html
+- AdminDisableProviderForUser
+  https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableProviderForUser.html
+- Social identity providers
+  https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-social-idp.html
+- Password recovery
+  https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html
+- CloudTrail logging
+  https://docs.aws.amazon.com/cognito/latest/developerguide/logging-using-cloudtrail.html
+- Cognito security best practices
+  https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-security-best-practices.html
+- Cognito endpoints / regions
+  https://docs.aws.amazon.com/general/latest/gr/cognito.html
+- Amazon Cognito pricing
+  https://aws.amazon.com/cognito/pricing/
 
 ### Supabase
 
@@ -743,6 +1428,22 @@ APIキー発行・OAuth設定・外部契約・本番接続は
   https://support.auth0.com/center/s/article/User-Export-Get-users
 - Public / Private Cloud Deployment
   https://auth0.com/platform/cloud-deployment
+- Auth0 Pricing
+  https://auth0.com/pricing
+- Auth0 User Export
+  https://support.auth0.com/center/s/article/User-Export-Get-users
+- Auth0 Session Management API
+  https://auth0.com/blog/introducing-session-management-api/
+
+### WorkOS
+
+- Identity Linking
+  https://workos.com/docs/authkit/identity-linking
+
+除外理由:
+WorkOS AuthKitは公式にverified emailをunique identifier / source of truthとしてidentityを自動linkする設計を採る。
+これはR004の「メール一致だけで自動linkしない」と直接衝突するため、
+R005-Aの最終候補から除外する。
 
 ### Clerk
 
@@ -772,9 +1473,17 @@ APIキー発行・OAuth設定・外部契約・本番接続は
 
 ## R005-A 推奨結論
 
-現時点の第一候補:
+Cognito追加比較後の現時点第一候補:
 
 **Auth0 + Supabase Postgres**
+
+認証第二候補:
+
+**Amazon Cognito User Pools + Supabase Postgres**
+
+ただしAuth0とCognitoの差は小さく、
+R005-BでAuth0の有料plan / session要件が過大と判断した場合は
+Cognitoを第一候補へ切り替える余地を残す。
 
 役割:
 
