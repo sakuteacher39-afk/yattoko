@@ -2,8 +2,46 @@
 
 - 成果物種別: 非公開アーキテクチャ設計 / proposal
 - 工程: YTK-R005-B
-- 状態: CHANGES_REQUESTED対応済み（再承認待ち）
+- 状態: APPROVED
 - 作成日: 2026-10-04
+- 承認記録:
+  - 最終判定: APPROVED
+  - 承認範囲:
+    - 非公開アーキテクチャ設計
+    - trust boundary
+    - identity model
+    - A0 / A1 / A2
+    - クラウド保存開始条件
+    - Application API認可
+    - DB role / RLS
+    - Supabase露出面
+    - Application layer encryption方針
+    - 復旧
+    - 削除
+    - backup / restore
+    - Deletion Journal
+    - ログ
+    - 管理者 / break-glass
+    - Frontend hardening
+    - R005-D攻撃試験方針
+    - Auth0継続 / Cognito切替条件
+  - 未承認:
+    - Auth0 tenant作成
+    - Cognito User Pool作成
+    - Supabase project作成
+    - KMS作成
+    - Application API hosting
+    - 契約 / 課金
+    - APIキー発行
+    - OAuth設定
+    - DB作成
+    - SQL実行
+    - 実装
+    - 外部接続
+    - R005-C開始
+    - 本番環境
+    - 公開
+  - 次工程: 人間による開始指示待ち。R005-Cを自動開始しない
 - 前提:
   - YTK-R003 保存データ仕様: APPROVED
   - YTK-R004 認証設計: APPROVED
