@@ -2,7 +2,7 @@
 
 - 成果物種別: 非公開アーキテクチャ設計 / proposal
 - 工程: YTK-R005-B
-- 状態: 人間承認待ち
+- 状態: CHANGES_REQUESTED対応済み（再承認待ち）
 - 作成日: 2026-10-04
 - 前提:
   - YTK-R003 保存データ仕様: APPROVED
@@ -243,7 +243,7 @@ GitHub / client bundle / Browserへ入れない。
 - constraints
 - transaction
 - schemaVersion
-- deletion journal
+- primary DBとは独立したappend-only deletion journal
 
 DBはApplication APIの認可判断を盲信しない。
 
@@ -412,13 +412,57 @@ Auth0障害時に、
 session expiryまでに限定し、
 新規A2要求が必要な操作は停止する。
 
-## 6. 内部userId / Identity Mapping
+## 6. 内部userId / Auth0 Principal / Linked Provider Identity
 
-### 6.1 正本
+### 6.1 3層を分離する
 
-**ヤットコ内部UUIDを整理データ所有者の唯一の正本とする。**
+YTK-R005-Bではidentityを以下の3層へ明確に分離する。
 
-概念モデル:
+#### A. ヤットコ内部userId
+
+**整理データownerの唯一の正本。**
+
+- UUID
+- provider非依存
+- email非依存
+- Auth0 primary変更に追従して変更しない
+- linked provider追加 / 削除で変更しない
+- duplicate accountを自動mergeしない
+
+#### B. Auth0 principal
+
+Auth0がヤットコへ発行するtokenのprincipal。
+
+正本:
+
+**Auth0 issuer + Auth0 token `sub`**
+
+Auth0 account linkingではprimary / secondaryが存在し、
+link後もsecondary provider identityをtoken `sub` と同一視しない。
+
+Auth0公式仕様では、
+link後はsecondary identityがprimary user profileの `identities[]` に統合される一方、
+link処理後に正しいprimary userへ自動的に切り替わらない場合があるため、
+Application APIは「linkしたから現在のtoken subが必ずprimary」と仮定しない。
+
+#### C. linked provider identity
+
+Auth0 user profileの `identities[]` に含まれる個々のprovider identity。
+
+識別候補:
+
+- provider type
+- connection
+- provider側user_id / provider subject
+- isSocial等の必要最小metadata
+
+Apple / Google等のsecondary identityはここで管理する。
+
+**linked provider identityをAuth0 principalと同一視しない。**
+
+emailはA / B / Cいずれの層でも本人同一性の正本にしない。
+
+### 6.2 概念データモデル
 
 ```text
 ytk_users
@@ -429,16 +473,38 @@ ytk_users
   created_at
   updated_at
 
-auth_identities
-  identity_id UUID PK
+auth_principals
+  principal_id UUID PK
   user_id UUID FK -> ytk_users.user_id
-  issuer TEXT
-  subject TEXT
+  auth_issuer TEXT
+  auth_sub TEXT
+  status
+  valid_from
+  valid_to
+  UNIQUE (auth_issuer, auth_sub)
+
+provider_identities
+  provider_identity_id UUID PK
+  user_id UUID FK -> ytk_users.user_id
+  auth0_principal_id UUID FK -> auth_principals.principal_id
   provider TEXT
+  connection TEXT
+  provider_subject TEXT
   status
   linked_at
   unlinked_at
-  UNIQUE (issuer, subject)
+  UNIQUE (provider, connection, provider_subject)
+
+identity_operations
+  operation_id UUID PK
+  user_id UUID FK
+  operation_type
+  state
+  target_provider
+  target_provider_subject
+  started_at
+  updated_at
+  idempotency_key UNIQUE
 ```
 
 整理データ:
@@ -451,25 +517,131 @@ service_records
   owner_user_id UUID FK -> ytk_users.user_id
 ```
 
-### 6.2 Auth0 identity
+### 6.3 Auth0 principalの扱い
 
-identity正本:
+通常ログイン時:
 
-**issuer + subject**
+1. Auth0 tokenのissuer / subを検証
+2. `auth_principals(auth_issuer, auth_sub)` を検索
+3. activeな1件だけがinternal userIdへmappingされることを確認
+4. 0件または複数ならfail closed
+5. internal userIdをserver-side sessionへ固定
 
-メールアドレスをidentity keyにしない。
+token `sub` が変化した場合、
+email一致やprovider identity一致だけで旧userIdへ自動mappingしない。
 
-Auth0 user ID表示形式がprovider情報を含む場合でも、
-Application側ではOIDC issuer + subjectの組として扱う。
+### 6.4 linked provider identityの同期
 
-### 6.3 provider identity
+link / unlink後はAuth0 user profileの `identities[]` をserver-sideで再取得し、
+ヤットコDBの `provider_identities` とreconcileする。
 
-Apple / Google等も、
-Auth0を通った認証結果からissuer / subject相当の安定IDを管理する。
+Browserから送られた
 
-メール一致で既存userIdへ自動linkしない。
+- provider
+- user_id
+- email
 
-### 6.4 認証メール
+だけを正本にしない。
+
+### 6.5 primary identity変更時
+
+Auth0側でprimary identityを変更すると、
+将来発行されるtoken `sub` が変化する可能性を前提とする。
+
+そのためprimary変更は通常linkとは別の高リスク操作とする。
+
+必要条件:
+
+- current internal userIdでA2 fresh
+- 変更前Auth0 principalを確認
+- 変更後primary candidateも強く再認証
+- identity operationを開始
+- Auth0側変更
+- Auth0から変更後profile / principalを再取得
+- 新Auth0 principalを同じinternal userIdへ明示mapping
+- 旧principalは `superseded` 等へ遷移
+- 全Yattoko sessionを失効
+- 新principalで再ログイン
+- notification
+- audit
+
+途中状態では新principalへ整理データを返さない。
+
+### 6.6 secondary identity追加時
+
+- current userがA2 fresh
+- secondary identityを別途認証
+- secondary identityが他internal userIdに紐付いていない
+- Auth0 link成功後に `identities[]` を再取得
+- provider identityを同じinternal userIdへ登録
+- token principal自体の変更有無を確認
+- notification
+- audit
+
+email一致は候補検索にもowner決定にも使わない。
+
+### 6.7 unlink時
+
+unlink対象はAuth0 principalではなく
+明示したlinked provider identityとして扱う。
+
+- current user A2 fresh
+- unlink後も最低1つA2経路を保持
+- Auth0 unlink
+- Auth0 profile再取得
+- 対象provider identityを `unlinked`
+- unlinkしたidentityが将来独立Auth0 profileとしてログインしても、旧internal userIdへ自動mappingしない
+- notification
+- audit
+
+### 6.8 最後のA2 identity削除
+
+**禁止。**
+
+最後のA2 identityを消す場合は、
+先に別A2を追加・確認しなければならない。
+
+Auth0上のlink数だけで判定せず、
+ヤットコA2 policy上「実際にA2になれるidentity」が残ることをserver-sideで確認する。
+
+### 6.9 Auth0 principalが変化する場合
+
+primary変更、unlink、provider側仕様等により
+Auth0 token `sub` が変化する場合、
+
+- 新subをemail一致で既存userへ紐付けない
+- 事前に認証済みidentity operationとの対応が確認できる場合だけsame internal userIdへmapping
+- 対応operationがなければ新規 / 未解決principalとしてfail closed
+
+### 6.10 二重紐付け禁止
+
+DB制約:
+
+- `UNIQUE(auth_issuer, auth_sub)`
+- `UNIQUE(provider, connection, provider_subject)`
+
+API:
+
+同一provider identityが別internal userIdへ既にactive mappingされていればlinkを拒否。
+
+競合時に「どちらかへ自動merge」はしない。
+
+### 6.11 duplicate account
+
+同一人物が複数ヤットコaccountを作った可能性があっても、
+自動mergeしない。
+
+将来mergeを作る場合は別仕様とし、
+
+- 両internal accountでA2 fresh
+- 双方の整理データ範囲を明示
+- conflict解決
+- deletion / audit
+- rollback
+
+を個別設計する。
+
+### 6.12 認証メール
 
 用途:
 
@@ -479,23 +651,19 @@ Auth0を通った認証結果からissuer / subject相当の安定IDを管理す
 
 本人所有者の正本ではない。
 
-整理DBへ重複保存しない方向を優先する。
+Private Relay等を含め、
+email一致 / 不一致をidentity ownership判定に使わない。
 
-### 6.5 DB / API保証
+### 6.13 RLSとの関係
 
-必須:
+RLSが所有者判定に使うのは最終的なinternal userId。
 
-- `UNIQUE(issuer, subject)`
-- 同じidentityを複数userIdへ登録不可
-- APIは既存A2 fresh認証なしでlink不可
-- email一致だけのinsert禁止
-- 自動account mergeなし
-- 重複accountの整理データ自動mergeなし
+Auth0 principal / provider identityを直接owner列として保存しない。
 
 identity mapping tableはuser request roleから直接SELECT不可。
 
-RLS内部でuserIdを求める場合は、
-固定search_path・最小権限の専用helper経由とする。
+RLS内部でinternal userIdを解決するhelperを使う場合は、
+固定search_path、最小権限、入力claimの検証を必須とする。
 
 ## 7. A0 / A1 / A2判定
 
@@ -1066,6 +1234,121 @@ user request roleへの直接grant自体を与えない。
 
 専用helperだけから参照。
 
+### 13.6 RLSのThreat Boundary
+
+Application API owner authorization + Postgres RLSの二重防御は維持する。
+
+ただしRLSを
+「Application API runtime完全侵害から独立した完全なtrust boundary」
+とは扱わない。
+
+#### RLSが強く防ぐ対象
+
+- API queryでowner条件を書き忘れる
+- resource IDを誤って別userへ向ける
+- UPDATE / DELETE時のowner predicate漏れ
+- mass assignmentでowner変更を試みる
+- 一般的な認可実装ミス
+- endpointごとのowner check欠落
+
+つまり、
+**正規Application APIが通常DB credentialで動いている状況の第二防御線**
+として非常に重要。
+
+PostgreSQLでは通常roleに対してpolicyがrow accessを制御し、
+policyがなければdefault-denyとなる。
+一方、superuserやBYPASSRLS roleはRLSを迂回するため、
+通常runtimeにそれらを使わない。
+
+#### RLSだけでは完全に防げない対象
+
+Application API runtime自体が完全侵害され、
+攻撃者が
+
+- `ytk_user_request` credential
+- transaction-local auth contextを設定する能力
+- arbitrary query実行能力
+
+を同時に得た場合、
+攻撃者が別userのissuer / subject / internal contextを偽装する可能性がある。
+
+non-BYPASSRLS credentialでも、
+RLS policyへ与えるcaller contextそのものを侵害runtimeが自由に偽装できるなら、
+RLSは独立した本人認証器にはならない。
+
+したがって、
+
+**RLSはApplication runtime完全侵害を無効化する魔法の壁ではない。**
+
+### 13.7 runtime完全侵害の残余リスク低減
+
+残余リスクを以下で下げる。
+
+#### Application layer encryption
+
+DBだけを奪われた場合、
+P2〜P3具体値を平文で読みにくくする。
+
+ただしruntime + KMS decrypt権限まで完全侵害された場合は復号可能。
+これも完全防御とは扱わない。
+
+#### KMS権限分離
+
+- DB roleとdecrypt roleを分離
+- background jobへ不要なdecrypt権限を付与しない
+- decrypt operationを監査
+- key scopeを最小化
+- 将来可能ならservice / key分割でblast radiusを抑える
+
+#### runtime最小権限
+
+- user request roleはapp table必要operationだけ
+- DDL不可
+- backup不可
+- migration不可
+- journal delete不可
+- Auth0 Management APIも必要scopeだけ
+
+#### network restriction
+
+- DB接続元制限
+- KMS / secret store接続元制限候補
+- management endpointをpublic application pathから分離
+
+#### secret rotation
+
+- DB credential rotation
+- Auth0 Management credential rotation
+- session signing secret rotation
+- KMS credential / workload identity rotation
+- leak疑い時の即時失効手順
+
+#### 監査 / 検知
+
+- abnormal cross-user query volume
+-大量decrypt
+- unusual admin operation
+- identity context switching異常
+- break-glass use
+
+をcontent本文なしで監査する。
+
+### 13.8 より独立したDB認可境界の将来候補
+
+必要になれば、
+Application APIが任意に偽造しにくい
+認証provider署名済みuser tokenをDB authorization contextへ直接利用する方式も比較可能。
+
+ただし、
+
+- internal userId mapping
+- A2 custom policy
+- Data API exposure
+- server validation
+
+が複雑になるため、
+R005-Bでは採用せず残余リスクとして記録する。
+
 ## 14. RLS受入条件 / R005-D
 
 RLSは「設定した」で完了としない。
@@ -1477,34 +1760,179 @@ security / recovery endpointだけ許可候補。
 
 禁止操作は9.4に従う。
 
-### 20.7 identity link
+### 20.7 Identity link / unlinkの分散処理
 
-1. current account A2 fresh
-2. secondary identityをAuth0で再認証
-3. secondary token署名 / issuer / audience検証
-4. DB `UNIQUE(issuer, subject)` 確認
-5. 他userIdに紐付いていればdeny
-6. Auth0 link
-7. mapping transaction
-8. notification
-9. audit
+Auth0とヤットコDBは同一transactionにできない。
 
-email一致は判定に使わない。
+したがってlink / unlinkを
+「Auth0 API成功 + DB更新」で終わる単純二段処理にしない。
 
-### 20.8 identity unlink
+#### operation正本
 
-- A2 fresh
-- unlink後のA2経路を確認
-- 最後のA2を消さない
-- DB mapping更新
-- Auth0 unlink
-- notification
-- audit
+`identity_operations` を持つ。
 
-分散処理の途中失敗に備え、
-link/unlink operation stateを持つ候補。
+最低項目:
 
-### 20.9 認証メール変更
+- operation_id
+- internal userId
+- operation_type: link / unlink / primary_change
+- target provider identity
+- idempotency_key
+- state
+- attempt_count
+- last_error_code
+- started_at
+- updated_at
+- completed_at
+
+整理内容本文は保存しない。
+
+#### 状態候補
+
+```text
+initiated
+→ auth0_pending
+→ auth0_applied
+→ db_applied
+→ verified
+→ completed
+
+失敗:
+retryable_failed
+manual_reconcile_required
+compensating
+compensated
+failed_closed
+```
+
+#### link正常系
+
+1. A2 fresh確認
+2. operation作成
+3. secondary identity再認証
+4. duplicate provider identity確認
+5. Auth0 link
+6. state = auth0_applied
+7. Auth0 profile / identities[]再取得
+8. DB provider identity mappingをidempotent upsert
+9. state = db_applied
+10. Auth0 / DB一致再確認
+11. state = verified / completed
+12. notification / audit
+
+#### Auth0 link成功 → DB mapping失敗
+
+**fail closed。**
+
+- 新secondary identity経由でP2〜P3を許可しない
+- operationを `auth0_applied` / retryable_failedとして保持
+- idempotency keyでDB mappingをretry
+- Auth0 `identities[]` を再取得して事実確認
+- retry上限を超えたらmanual_reconcile_required
+- 安全に補償可能ならAuth0 unlinkで元状態へ戻す
+- compensationも失敗したらidentity操作を凍結し、対象identityからdata access不可
+
+「Auth0でlinkedだからDB ownerも同じはず」と推測しない。
+
+#### DB mapping成功 → Auth0 link失敗
+
+linkではDB mappingをAuth0成功前にactive化しない。
+
+準備recordが必要なら `pending` に限定する。
+
+Auth0失敗時:
+
+- pending mappingを無効化 / 削除
+- data accessへ使用不可
+- retryは同じoperation_id / idempotency_key
+- completedになるまでsecondary identityをowner解決へ使わない
+
+#### unlink正常系
+
+1. A2 fresh
+2. 最後のA2でないことを確認
+3. operation作成
+4. Auth0 unlink
+5. state = auth0_applied
+6. Auth0 identities[]再取得
+7. DB identityを `unlinked` / revoked
+8. active session再評価・必要時失効
+9. verified
+10. notification / audit
+
+#### Auth0 unlink成功 → DB更新失敗
+
+最優先は**unlink済みidentityが旧userデータへアクセスし続けないこと**。
+
+そのため:
+
+- Application APIのprincipal resolutionでoperation中identityをdenylist扱い
+- affected userのYattoko sessionを失効
+- DB updateをretry
+- reconcile完了までidentity-sensitive操作を停止
+
+#### DB更新成功 → Auth0 unlink失敗
+
+DBを先にactive mappingから外す実装は原則避ける。
+
+やむを得ず発生した場合:
+
+- mappingを `unlink_pending`
+- Auth0側ではまだlinkedでも、当該secondary経路をApplication APIでA2 / owner解決に使用しない
+- Auth0 unlinkをidempotent retry
+- compensationでDBをactiveへ戻す場合もAuth0状態を再取得してから行う
+
+#### idempotency
+
+すべてのlink / unlink / primary changeに
+一意なidempotency keyを付与する。
+
+同じoperationの再送で、
+
+- provider identity二重作成
+- duplicate mapping
+- 二重unlink
+
+を起こさない。
+
+#### reconciliation
+
+定期 / on-demandで、
+
+- Auth0 principal
+- Auth0 identities[]
+- auth_principals
+- provider_identities
+- identity_operations
+
+を比較するreconciliation jobを持つ候補。
+
+差分があっても自動mergeしない。
+
+安全に一意修復できない差分はfail closed + manual review。
+
+#### 監査
+
+記録候補:
+
+- operation_id
+- opaque userId
+- operation type
+- provider type
+- old/new principal opaque ID
+- state transition
+- success/failure
+- error code
+- timestamp
+
+記録禁止:
+
+- token
+- email本文
+- provider access token
+- 整理内容
+
+### 20.8 認証メール変更
 
 - A2 fresh
 - new email verify
@@ -1512,7 +1940,7 @@ link/unlink operation stateを持つ候補。
 - Application sessions全失効候補
 - cooling-off候補
 
-### 20.10 session失効
+### 20.9 session失効
 
 乗っ取り・recovery・主要identity変更時:
 
@@ -1578,30 +2006,195 @@ high-risk。
 
 ## 22. Tombstone / Deletion Journal
 
-保存候補:
+### 22.1 正本
 
-- opaque record / user ID
+**Deletion Journalの正本は、復元対象Supabase Postgresとは独立した耐久・append-only storeへ置く。**
+
+復元対象DBと同じbackup setの中にしかjournalが存在しない構成は禁止する。
+
+Supabase DB内には高速参照用のworking tombstone mirrorを持ってよいが、
+それをrestore後再削除の唯一正本にしない。
+
+### 22.2 候補比較
+
+#### 案A: 独立append-only object storage
+
+例として、
+primary DBとは別のaccount / project / backup lifecycleを持つ
+object storageでimmutable / versioning / retention lockを利用する構成。
+
+利点:
+
+- primary DB backupから独立
+- append-onlyにしやすい
+- 低コスト
+- restore後に時系列eventを再適用しやすい
+- DB migrationに巻き込まれにくい
+
+欠点:
+
+- lookup用indexを別途工夫
+- object lifecycle設計が必要
+- provider選定が必要
+
+#### 案B: 独立managed database
+
+primary Supabase projectとは別の
+削除journal専用database / account。
+
+利点:
+
+- queryしやすい
+- transaction / constraintを使いやすい
+
+欠点:
+
+- 運用対象が増える
+- 同じ誤操作domainへ置くと独立性が弱い
+- DB backup設計がもう一系統必要
+
+#### 案C: primary DB内だけ
+
+**不採用。**
+
+古いbackup restore時に、
+backup取得後の削除event自体が巻き戻るため。
+
+### 22.3 採用案
+
+**案A: primary DBから独立したappend-only journal storeを第一候補とする。**
+
+具体providerはR005-C前の別承認事項。
+
+要件:
+
+- primary Supabase projectとは別backup / deletion lifecycle
+- append-only
+- object versioning / immutability相当
+- Application runtimeはappendのみ
+- update / overwrite / delete権限なし
+- restore workerはread可能
+- lifecycle deletionは専用管理経路
+- break-glass以外で過去eventを書き換え不可
+- journal操作を監査
+
+### 22.4 保存項目
+
+必要最小限:
+
+- journal_event_id
+- opaque internal userId
+- opaque record ID（対象がrecordの場合）
 - deletion type
+- delete generation
 - deletion timestamp
-- deletion generation
-- backup cutoff
+- backup cutoff / source generation
+- schemaVersion
+- event integrity metadata
 
 保存禁止:
 
 - service名
 - answer
 - intention
+- email
+- provider identity本文
 - encrypted content本文
 
-保持:
+### 22.5 delete generation
 
-**backup最大保持期間 + 7日**
+単なるtimestampだけでなく、
+user / record単位の単調増加generationまたは
+globally ordered event ID候補を持つ。
 
-R003候補を継承。
+restore時に
+
+「このbackup以降に発生したdelete」
+
+を一意に抽出できることを要件とする。
+
+### 22.6 journal改ざん対策
+
+候補:
+
+- append-only IAM / role
+- object lock / immutability
+- versioning
+- event checksum
+- hash chainまたは署名/HMAC等のintegrity metadata
+- KMS-backed signingを採る場合はjournal writer権限と管理者権限を分離
+
+具体方式はR005-C以降で選定し、
+手書き暗号へ依存しない。
+
+### 22.7 journal削除
+
+保持期間:
+
+**primary backup最大保持期間 + 7日以上**
+
+ただし削除条件は日数だけにしない。
+
+journal eventを削除できるのは、
+
+- 対応する古いbackupがすべて失効済み
+- restore対象として利用されないことを確認済み
+- 法的 / 運用上追加保持不要
+
+を満たした後。
+
+lifecycle jobだけが削除可能とする候補。
+
+通常Application APIにはjournal delete権限を与えない。
+
+### 22.8 journal自身のbackup / 耐久性
+
+journal正本を一つの単一媒体だけに置かない。
+
+候補:
+
+- object storage自体のdurability + versioning
+- 別account / regionへの複製
+- 定期manifest snapshot
+- integrity verification
+
+ただしjournal backupも整理内容本文を含めない。
+
+journal backupのretentionは
+「primary backupを復元し得る期間」を必ずカバーする。
+
+### 22.9 primary DB mirror
+
+primary DBに
+
+- deletion state
+- tombstone
+- last deletion generation
+
+等をmirrorしてよい。
 
 用途:
 
-restore後の削除再適用だけ。
+- 通常処理高速化
+- duplicate delete防止
+
+ただしrestore安全性の正本は独立journal。
+
+### 22.10 restore時
+
+1. primary DB backupを隔離restore
+2. backup cutoff / generationを特定
+3. 独立Deletion Journalからcutoff後eventを取得
+4. event integrity検証
+5. deleteをidempotent再適用
+6. closed account / deleted record確認
+7. journal適用完了generationを記録
+8. cross-user / RLS試験
+9. 人間承認
+10. user traffic再開
+
+独立journalへ到達できない場合、
+restore環境を本番相当trafficへ戻さない。
 
 ## 23. Backup / Restore
 
@@ -2043,7 +2636,9 @@ R005-Bが人間APPROVEDされた場合のみR005-Cへ渡す。
 - ytk_user_request role
 - RLS SELECT/INSERT/UPDATE/DELETE
 - owner immutable
-- identity unique
+- Auth0 principal unique
+- provider identity unique
+- identity operation state / idempotency
 - constraints
 - schemaVersion
 - deletion journal
@@ -2085,7 +2680,8 @@ R005-C開始前に人間承認または設計確定が必要:
 - encryption algorithm / library
 - key rotation手順
 - Supabase plan / backup retention
-- restore用deletion journalの保管場所
+- deletion journal具体provider / account / immutability方式
+- deletion journal replication / integrity方式
 - API / DB network restriction
 - break-glass二者承認を運用可能か
 - R005-Cを完全localから始めるか、外部dev環境を別承認で作るか
@@ -2159,20 +2755,20 @@ R005-Bとして以下を人間承認候補とする。
 2. BrowserからSupabaseへ直接アクセスしない
 3. Data APIは不要なら無効化
 4. internal UUIDをowner正本
-5. issuer + subjectをidentity正本
+5. internal userId / Auth0 principal / linked provider identityを3層分離し、Auth0 principalはissuer + token sub、provider identityはprovider側subjectとして別管理
 6. emailはidentity keyにしない
 7. cloud storage開始には最低1 A2
 8. 代替A2承認まではPasskey必須
 9. 2個目A2は強く推奨
 10. A2はAuth0 managed Passkey + signed claim + API validation + server session + enrollment確認で多層化
 11. user requestはnon-BYPASSRLS専用role
-12. API owner auth + RLS + DB constraint
+12. API owner auth + RLS + DB constraint。ただしRLSは一般的認可ミスへの第二防御であり、Application runtime完全侵害への独立境界とは扱わない
 13. public/Data API surfaceを最小化
 14. D区分はfield/column/JSONすべて禁止
 15. 機微fieldへApplication layer encryptionを追加
 16. full per-user encryptionは初期不採用
 17. recoveryはメールだけでdataを返さない
-18. restore時はdeletion journal再適用後までuser trafficを開かない
+18. deletion journal正本をprimary DBから独立したappend-only storeへ置き、restore時は再適用後までuser trafficを開かない
 19. loggingはallowlist
 20. R005-D攻撃テストPASSを承認条件とする
 
