@@ -16,13 +16,17 @@ if (-not (Get-Command psql -ErrorAction SilentlyContinue)) {
   throw "STOP: psql not found."
 }
 
+# Same libpq/Windows-path normalization as the admin script.
+$ResolvedCaPath = (Resolve-Path -LiteralPath $CaPath).Path
+$LibpqCaPath = $ResolvedCaPath -replace '\\', '/'
+
 $SecurePassword = Read-Host "ytk_user_request password" -AsSecureString
 $RuntimePassword = [Net.NetworkCredential]::new("", $SecurePassword).Password
 
 try {
   $env:PGPASSWORD = $RuntimePassword
 
-  $ConnInfo = "host=$PoolerHost port=6543 dbname=postgres user=ytk_user_request.$ProjectRef sslmode=verify-full sslrootcert=$CaPath"
+  $ConnInfo = "host=$PoolerHost port=6543 dbname=postgres user=ytk_user_request.$ProjectRef sslmode=verify-full sslrootcert=$LibpqCaPath"
 
   & psql $ConnInfo -v ON_ERROR_STOP=1 -f (Join-Path $PSScriptRoot "..\sql\103_c2_supabase_runtime_rls_test.sql")
   if ($LASTEXITCODE -ne 0) {
@@ -35,4 +39,6 @@ finally {
   Remove-Item Env:PGPASSWORD -ErrorAction SilentlyContinue
   $RuntimePassword = $null
   $SecurePassword = $null
+  $ResolvedCaPath = $null
+  $LibpqCaPath = $null
 }

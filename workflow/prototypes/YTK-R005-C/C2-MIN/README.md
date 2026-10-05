@@ -1,6 +1,6 @@
 # YTK-R005-C / C2-MIN Supabase Phase 6 Offline Package
 
-Status: **OFFLINE PREPARED / NOT YET APPLIED**
+Status: **OFFLINE PREPARED / FIRST APPLY STOPPED BEFORE DB CHANGE / PATH FIX PREPARED**
 
 No secret, password, token, project connection string, or real user data is stored here.
 
@@ -37,7 +37,7 @@ No secret, password, token, project connection string, or real user data is stor
 
 - `sql/199_c2_supabase_cleanup.sql`
   - Admin-only cleanup
-  - No CASCADE
+  - No CASCADE execution
   - Unexpected dependencies cause cleanup to stop
 
 - `scripts/phase6-admin-apply.ps1`
@@ -45,6 +45,7 @@ No secret, password, token, project connection string, or real user data is stor
   - Keeps the password only in the current process environment
   - Uses the shared **session pooler** on port 5432
   - Requires `sslmode=verify-full` and the downloaded CA
+  - Normalizes a Windows CA path to forward slashes before passing it to libpq conninfo
   - Applies 101 and runs 102
   - Intentionally does not set the runtime role password
 
@@ -52,7 +53,22 @@ No secret, password, token, project connection string, or real user data is stor
   - Prompts locally for the runtime role password
   - Uses shared **transaction pooler** on port 6543
   - Requires `sslmode=verify-full`
+  - Uses the same Windows-path normalization
   - Runs 103
+
+## First apply stop
+
+The first admin apply attempt stopped before any database change because libpq could not resolve the CA file path inside the keyword/value connection string.
+
+Human verification then confirmed the CA file itself exists with `Test-Path = True`.
+
+The scripts now:
+
+1. resolve the local CA path with `Resolve-Path`
+2. convert Windows backslashes to forward slashes for libpq
+3. keep `sslmode=verify-full`
+
+No TLS downgrade was made.
 
 ## Human password boundary
 

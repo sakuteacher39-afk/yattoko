@@ -17,13 +17,19 @@ if (-not (Get-Command psql -ErrorAction SilentlyContinue)) {
   throw "STOP: psql not found."
 }
 
+# libpq conninfo treats backslash as an escape character.
+# Resolve the Windows path and normalize it to forward slashes before using
+# sslrootcert=... so verify-full receives the real file path.
+$ResolvedCaPath = (Resolve-Path -LiteralPath $CaPath).Path
+$LibpqCaPath = $ResolvedCaPath -replace '\\', '/'
+
 $SecurePassword = Read-Host "Supabase postgres admin password" -AsSecureString
 $AdminPassword = [Net.NetworkCredential]::new("", $SecurePassword).Password
 
 try {
   $env:PGPASSWORD = $AdminPassword
 
-  $ConnInfo = "host=$PoolerHost port=5432 dbname=postgres user=postgres.$ProjectRef sslmode=verify-full sslrootcert=$CaPath"
+  $ConnInfo = "host=$PoolerHost port=5432 dbname=postgres user=postgres.$ProjectRef sslmode=verify-full sslrootcert=$LibpqCaPath"
 
   & psql $ConnInfo -v ON_ERROR_STOP=1 -f (Join-Path $PSScriptRoot "..\sql\101_c2_supabase_schema.sql")
   if ($LASTEXITCODE -ne 0) { throw "STOP: schema apply failed." }
@@ -38,4 +44,6 @@ finally {
   Remove-Item Env:PGPASSWORD -ErrorAction SilentlyContinue
   $AdminPassword = $null
   $SecurePassword = $null
+  $ResolvedCaPath = $null
+  $LibpqCaPath = $null
 }

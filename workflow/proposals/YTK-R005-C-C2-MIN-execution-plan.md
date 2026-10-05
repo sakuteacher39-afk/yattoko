@@ -622,7 +622,17 @@ passwordをSQL / shell history / Gitへ書かない。
 - TLS設定緩和: なし
 - STOP条件に従い停止
 
-次にCA fileの実在確認を行い、原因を解消してから同じverify-full方針で再実行する。
+CA file実在確認:
+
+- `Test-Path "C:\Users\81804\AppData\Local\Yattoko\R005C\supabase-ca.crt"` → `True`
+
+CA path root cause narrowed:
+
+- fileは存在
+- failureはlibpq keyword/value conninfoへWindows backslash pathを直接渡したことによるpath解釈問題の可能性が高い
+- TLS設定は緩和しない
+- script側で `Resolve-Path` + forward-slash normalizationを追加
+- 同じ `sslmode=verify-full` で再試行する
 
 ### Checkpoint F
 
