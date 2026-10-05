@@ -665,6 +665,34 @@ error要旨:
 - elevated attributeが1つでもtrueならSTOP
 - managed環境に合わせるためにRLSやTLSを弱めない
 
+### Phase 6 third apply attempt: STOP
+
+2026-10-05、SupabaseへのTLS/Session Pooler接続後、
+`101_c2_supabase_schema.sql` のPL/pgSQL dollar-quote構文エラーで停止。
+
+原因:
+
+- managed-role対応時の成果物更新でJavaScript replacement stringの `$` 特殊処理により
+  `DO $ ... $;` が `DO $ ... $;` へ破損していた
+- `102` / `103` のdollar-quoteは正常
+- Supabase側のRLS/role仕様エラーではない
+
+状態:
+
+- TLS verify-full: 成功
+- Session Pooler接続: 成功
+- `BEGIN`: 成功
+- `CREATE SCHEMA`: transaction内で実行
+- COMMIT: 未到達
+- psql終了によりtransactionはrollback対象
+- runtime role password: 未設定
+- runtime pooler test: 未実行
+
+修正:
+
+- `101` の `DO $ ... $;` を復元
+- TLS/RLS/権限を緩和しない
+
 ### Checkpoint F
 
 構築係へ共有するsanitized result:

@@ -9,7 +9,7 @@ BEGIN;
 
 CREATE SCHEMA IF NOT EXISTS ytk_private;
 
-DO $
+DO $$
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'ytk_user_request') THEN
     -- Supabase's project postgres role is not a true SUPERUSER.
@@ -19,7 +19,7 @@ BEGIN
     CREATE ROLE ytk_user_request LOGIN;
   END IF;
 END
-$;
+$$;
 
 -- Do not ALTER SUPERUSER-related role attributes on Supabase managed Postgres.
 -- All runtime SQL uses fully-qualified ytk_private object names, while helper
