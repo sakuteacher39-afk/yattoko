@@ -379,14 +379,38 @@ Auth0はPost-Login Actionで
 
 ### Checkpoint C
 
-- [ ] dedicated DB connection
-- [ ] Identifier First
-- [ ] New Universal Login
-- [ ] Passkey enabled
-- [ ] Action deployed
-- [ ] dummy userなし
-- [ ] real loginなし
-- [ ] A2 actual proofは未確認のまま
+進捗記録:
+
+- dedicated Database Connection: 作成済み
+- Identifier: email only
+- phone: OFF
+- username: OFF
+- Identifier First: enabled
+- Passkey: enabled
+- Passkey prerequisites: all complete
+- progressive enrollment: ON
+- local enrollment: ON
+- Application assignment:
+  - Yattoko R005-C Dev BFF: ON
+  - Default App: OFF
+  - Yattoko R005-C Dev API (Test Application): OFF
+- Post-Login Action `YTK R005-C Set Assurance`: 作成済み
+- Post-Login Action deploy: 完了
+- Login FlowへのAction追加: 未実施
+- dummy user: 未作成
+- Passkey enrollment / actual login: 未実施
+- actual Passkey event / signed A2 claim: 未確認
+
+Checkpoint CはLogin FlowへのAction追加が完了するまで未完了。
+
+- [x] dedicated DB connection
+- [x] Identifier First
+- [x] New Universal Login
+- [x] Passkey enabled
+- [x] Action deployed
+- [x] dummy userなし
+- [x] real loginなし
+- [x] A2 actual proofは未確認のまま
 
 ## 9. Phase 4 — Supabase Project
 
