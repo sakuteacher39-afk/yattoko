@@ -1,11 +1,11 @@
 # ヤットコ／YTK-R005-C C2-MIN 実行計画
 
 - 工程: YTK-R005-C / C2-MIN
-- 状態: EXECUTION PLAN APPROVED / Phase 0 IN PROGRESS
+- 状態: EXECUTION PLAN APPROVED / Phase 6 OFFLINE PREP COMPLETE / HUMAN APPLY PENDING
 - 作成日: 2026-10-05
 - C1: COMPLETE / PASS
 - C2-MIN resource承認: APPROVED
-- C2 resource作成: 未開始
+- C2-MIN resource作成: Auth0 + Supabase approved resources created / Phase 6 DB apply not started
 - C2-EXT / C2-NET: NOT AUTHORIZED
 - C3: NOT AUTHORIZED
 
@@ -455,12 +455,16 @@ custom role作成後に消す。
 
 ### Checkpoint D
 
-- [ ] Free
-- [ ] Tokyo
-- [ ] project ref確認
-- [ ] project admin password非共有
-- [ ] production dataなし
-- [ ] Supabase Auth使用なし
+Checkpoint D: PASS
+
+- [x] Project: `yattoko-r005c-dev`
+- [x] Organization: `Yattoko R005-C Dev`
+- [x] Free
+- [x] Northeast Asia (Tokyo)
+- [x] GitHub integration: none
+- [x] project admin password非共有
+- [x] production dataなし
+- [x] Supabase AuthをApplication認証に使用しない
 
 ## 10. Phase 5 — Supabase Data API / SSL
 
@@ -504,11 +508,16 @@ Application runtimeではCA検証を有効にし、
 
 ### Checkpoint E
 
-- [ ] Data API OFF
-- [ ] SSL enforcement ON
-- [ ] CA cert local保存
-- [ ] Network Restriction未変更
-- [ ] paid optionなし
+Checkpoint E: PASS
+
+- [x] Data API OFF
+- [x] Automatically expose new tables: Data API OFFにより実質無効
+- [x] Enable automatic RLS: OFF（SQLで明示設定）
+- [x] SSL enforcement ON
+- [x] CA certificate `prod-ca-2021.crt` を取得し、GitHub外で `supabase-ca.crt` として保存
+- [x] Network Restriction未変更 / 保留
+- [x] paid optionなし
+- [x] DB password / connection string / secret非共有
 
 ## 11. Phase 6 — Supabase schema / custom role
 
@@ -541,6 +550,29 @@ Application runtimeではCA検証を有効にし、
 を構成する。
 
 role passwordをSQL fileへ書かない。
+
+### Phase 6 offline準備結果
+
+構築係によるoffline作成・review完了:
+
+- `workflow/prototypes/YTK-R005-C/C2-MIN/sql/101_c2_supabase_schema.sql`
+- `workflow/prototypes/YTK-R005-C/C2-MIN/sql/102_c2_supabase_verify_admin.sql`
+- `workflow/prototypes/YTK-R005-C/C2-MIN/sql/103_c2_supabase_runtime_rls_test.sql`
+- `workflow/prototypes/YTK-R005-C/C2-MIN/sql/199_c2_supabase_cleanup.sql`
+- `workflow/prototypes/YTK-R005-C/C2-MIN/scripts/phase6-admin-apply.ps1`
+- `workflow/prototypes/YTK-R005-C/C2-MIN/scripts/phase7-runtime-test.ps1`
+
+review方針:
+
+- runtime passwordをSQLへ埋め込まない
+- admin static verificationとruntime Supavisor testを分離
+- admin applyはshared session pooler / 5432
+- runtime testはshared transaction pooler / 6543
+- custom shared-pooler usernameは `ytk_user_request.<PROJECT-REF>`
+- SSL `verify-full` + downloaded CA
+- prepared statement不使用
+- synthetic UUID/dummy byteaのみ
+- cleanupにCASCADEを使わない
 
 ### 人間操作: admin接続
 
@@ -874,9 +906,20 @@ C2-MINをC3へ引き継ぐ場合:
 
 ### 現在状態
 
-**実行計画APPROVED / Phase 0実施中。**
+**C2-MIN IN PROGRESS / Phase 6 offline準備完了 / 実DB適用前。**
 
-外部resourceはまだ1件も作成していない。
+作成済みapproved external resources:
+- Auth0 Japan tenant / Application / API / Database Connection / Passkey設定 / Post-Login Action
+- Supabase Free project / Tokyo
+
+未実施:
+- Supabase schema / custom role SQL apply
+- runtime role password設定
+- shared transaction pooler runtime test
+- dummy external Auth0 user
+- actual Passkey login
+
+A2 actual proofは未確認のまま。
 
 ## 21. 公式確認資料
 
@@ -912,17 +955,22 @@ C2-MINをC3へ引き継ぐ場合:
 - Postgres Roles
   https://supabase.com/docs/guides/database/postgres/roles
 
-## 22. 停止
+## 22. 現在の停止点
 
-本計画を人間が確認するまで:
+Phase 6のoffline SQL / script準備とreviewまでは完了。
 
-- Auth0 tenantを作らない
-- Supabase projectを作らない
-- credentialを発行しない
-- Actionをdeployしない
-- SQLを外部DBへ実行しない
-- external connectionを開始しない
+次は人間がSupabase DashboardのConnect画面から
+**Session poolerの非秘密接続情報を確認するところ**から再開する。
+
+現時点では:
+
+- SQLをSupabaseへまだ適用しない
+- runtime role passwordをまだ設定しない
+- transaction pooler testをまだ実行しない
+- secret / password / connection string全文をChatGPTへ共有しない
+- Network Restrictionを変更しない
+- paid planへ変更しない
 - C2-EXT / C2-NETへ進まない
 - C3へ進まない
 
-**人間確認待ちで停止する。**
+**次のhuman checkpoint待ちで停止する。**

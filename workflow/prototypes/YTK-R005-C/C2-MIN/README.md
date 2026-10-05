@@ -1,0 +1,81 @@
+# YTK-R005-C / C2-MIN Supabase Phase 6 Offline Package
+
+Status: **OFFLINE PREPARED / NOT YET APPLIED**
+
+No secret, password, token, project connection string, or real user data is stored here.
+
+## Files
+
+- `sql/101_c2_supabase_schema.sql`
+  - Creates/re-asserts `ytk_user_request`
+  - Creates `ytk_private.service_records`
+  - Enables and forces RLS
+  - Adds explicit SELECT/INSERT/UPDATE/DELETE policies
+  - Does **not** set a password
+
+- `sql/102_c2_supabase_verify_admin.sql`
+  - Admin-side static verification
+  - Checks non-BYPASSRLS role shape
+  - Checks no role memberships
+  - Checks table ownership separation
+  - Checks SECURITY INVOKER helpers
+  - Checks RLS/FORCE RLS
+  - Checks owner column UPDATE denial
+  - Checks SSL on the admin connection
+  - Does not substitute for the runtime pooler test
+
+- `sql/103_c2_supabase_runtime_rls_test.sql`
+  - Must be run through the shared **transaction pooler**
+  - Must authenticate as `ytk_user_request.<PROJECT-REF>`
+  - Uses synthetic UUIDs only
+  - Tests cross-user SELECT/INSERT/UPDATE/DELETE
+  - Tests A1 denial
+  - Tests immutable owner column
+  - Tests transaction-local context clearing
+  - Alternates A/B transactions to exercise pool reuse
+  - Cleans its synthetic rows on successful completion
+
+- `sql/199_c2_supabase_cleanup.sql`
+  - Admin-only cleanup
+  - No CASCADE
+  - Unexpected dependencies cause cleanup to stop
+
+- `scripts/phase6-admin-apply.ps1`
+  - Prompts locally for the Supabase admin password
+  - Keeps the password only in the current process environment
+  - Uses the shared **session pooler** on port 5432
+  - Requires `sslmode=verify-full` and the downloaded CA
+  - Applies 101 and runs 102
+  - Intentionally does not set the runtime role password
+
+- `scripts/phase7-runtime-test.ps1`
+  - Prompts locally for the runtime role password
+  - Uses shared **transaction pooler** on port 6543
+  - Requires `sslmode=verify-full`
+  - Runs 103
+
+## Human password boundary
+
+The runtime role password must be set interactively by the human after 101/102 pass.
+
+Preferred operation inside an admin `psql` session:
+
+```text
+\password ytk_user_request
+```
+
+Do not paste the password into ChatGPT, GitHub, SQL files, PowerShell history, or a connection URL.
+
+## STOP conditions
+
+Stop immediately if:
+
+- the custom role cannot use the shared pooler
+- the custom role is given BYPASSRLS
+- SSL verify-full fails
+- any cross-user test fails
+- A1 can read a row
+- owner_user_id can be changed
+- transaction-local context survives a commit
+- a privileged/service-role credential becomes necessary for normal runtime CRUD
+- a secret appears in Git/GitHub/log output

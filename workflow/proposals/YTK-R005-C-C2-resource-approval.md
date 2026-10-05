@@ -1,7 +1,7 @@
 # ヤットコ／YTK-R005-C C2 外部resource承認パッケージ
 
 - 工程: YTK-R005-C / C2準備
-- 状態: C2-MIN APPROVED / 実行計画APPROVED / Phase 0開始 / 外部resource未作成
+- 状態: C2-MIN IN PROGRESS / Auth0 Checkpoint C PASS / Supabase Checkpoint D-E PASS / Phase 6 DB apply pending
 - 作成日: 2026-10-05
 - C1: COMPLETE / PASS
 - C2: NOT AUTHORIZED / 未開始
