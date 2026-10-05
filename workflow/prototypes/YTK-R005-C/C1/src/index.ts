@@ -3,3 +3,7 @@ export * from './identity.js';
 export * from './input.js';
 export * from './storage.js';
 export * from './bff.js';
+export * from './external-auth.js';
+export * from './external-db.js';
+export * from './external-logging.js';
+export * from './external-bff.js';
