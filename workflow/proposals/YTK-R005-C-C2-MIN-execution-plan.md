@@ -200,6 +200,7 @@ secretを受け取らず、code / SQL / validation / non-secret確認を担当�
   - `service_role`
   - `SUPABASE_SERVICE_ROLE_KEY`
 - Auth0 / Supabase / AWS resource作成: 0
+- 人間PC working tree: clean（`git status --short` 無出力）
 - credential発行: 0
 - paid plan変更: 0
 
