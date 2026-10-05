@@ -607,6 +607,23 @@ passwordをSQL / shell history / Gitへ書かない。
 - admin credentialをprocess environmentから削除
 - runtime role passwordだけ別process environmentへ設定
 
+### Phase 6 first apply attempt: STOP
+
+2026-10-05、人間Windows PCからShared Session Poolerへのadmin applyを開始したが、
+`sslmode=verify-full` で指定したローカルCA証明書pathを `psql` が利用できず接続前段で停止。
+
+結果:
+
+- schema apply: 未実行
+- admin static verification: 未実行
+- custom role作成: 未実行
+- runtime password設定: 未実行
+- DB内容変更: なし
+- TLS設定緩和: なし
+- STOP条件に従い停止
+
+次にCA fileの実在確認を行い、原因を解消してから同じverify-full方針で再実行する。
+
 ### Checkpoint F
 
 構築係へ共有するsanitized result:
