@@ -1,11 +1,11 @@
 # YTK-R005-C / C1 PostgreSQL 実確認手順書
 
-- 状態: 手順書作成済み / 試験未実行
+- 状態: 手順書作成済み / 2026-10-05 実PostgreSQL試験実施済み・PASS
 - 対象工程: YTK-R005-C / C1
 - 作成日: 2026-10-04
 - 目的: Windows PC上の完全ローカル実PostgreSQLでC1のrole / RLS / transaction-local contextを確認する
-- C1状態: **C1 PARTIAL / BLOCKED のまま**
-- 本手順書作成によってC1完了・APPROVEDとはしない
+- C1状態: **C1 COMPLETE / PASS（C2未承認）**
+- 実行結果の正式記録は `REPORT.md` / `TEST_MATRIX.md` を正本とする
 
 ## 1. 固定安全条件
 
@@ -639,15 +639,28 @@ PASS / FAIL
 
 credentialは報告しない。
 
-# 13. C1完了判定との関係
+# 13. 実行結果とC1完了判定
 
-この手順書作成だけではC1は完了しない。
+2026-10-05、人間のWindows PC上のNative PostgreSQL 18.6で本手順に基づく実確認を実施。
 
-実PostgreSQLで上記試験を実行し、必要項目がすべてPASSしたことを別途確認した後にC1完了判定を行う。
+結果:
 
-現在状態は引き続き:
+- `npm run test:postgres`: PASS
+- non-BYPASSRLS: PASS
+- RLS / FORCE RLS: PASS
+- owner_user_id UPDATE禁止: PASS
+- cross-user SELECT / INSERT / UPDATE / DELETE遮断: PASS
+- A1遮断: PASS
+- transaction-local context消失: PASS
+- 同一接続次transactionへのcontext leakageなし: PASS
 
-**C1 PARTIAL / BLOCKED**
+正式な詳細記録は `REPORT.md` / `TEST_MATRIX.md` を参照。
+
+現在状態:
+
+**C1 COMPLETE / PASS（C2未承認）**
+
+なおSupavisor実pooler、Auth0実Passkey、KMS / S3 / DynamoDB / NAT等は本手順の確認範囲外。
 
 # 14. 公式参考資料
 
