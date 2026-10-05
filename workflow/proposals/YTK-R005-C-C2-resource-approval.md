@@ -1,13 +1,53 @@
 # ヤットコ／YTK-R005-C C2 外部resource承認パッケージ
 
 - 工程: YTK-R005-C / C2準備
-- 状態: DRAFT / 人間承認待ち
+- 状態: C2-MIN APPROVED / 実行手順確認待ち / C2未開始
 - 作成日: 2026-10-05
 - C1: COMPLETE / PASS
 - C2: NOT AUTHORIZED / 未開始
 - 目的: C2で必要となり得る外部resource・契約・課金・credential・OAuth設定をresource単位で承認可能にする
 - 重要: 本資料の作成はC2開始、resource作成、契約、課金、credential発行を承認するものではない
 - 価格基準日: 2026-10-05。価格は変更され得るため、作成直前に公式画面またはPricing Calculatorで再確認する
+
+## 0. C2-MIN 人間承認記録
+
+承認日: 2026-10-05
+
+個別承認済み:
+
+- C2-APP-001 Auth0 Tenant: 作る
+- C2-APP-002 Auth0 Application: 作る
+- C2-APP-003 Auth0 API / Audience: 作る
+- C2-APP-004 Auth0 Plan: Freeで開始
+- C2-APP-005 Auth0 Database Connection / Passkey / Action: 作る / 有効化
+- C2-APP-006 OAuth Callback / Logout URL: localhost URLで作る
+- C2-APP-008 Supabase Project: 作る
+- C2-APP-009 Supabase Plan: Freeで開始
+- C2-APP-010 Supabase Shared Transaction Pooler: transaction poolerを使う
+- C2-APP-011 Supabase custom DB role / credential: 作る
+- C2-APP-012 Supabase Data API / Network Restriction / SSL: Data API disable / SSLを設定。Network Restrictionは保留
+- C2-APP-020 Credential / Secret Store: C2-MINはprocess environment
+
+未承認・作成禁止:
+
+- C2-APP-007 dummy Auth identity / test mailbox / 実Passkey登録
+- Auth0 Essentials
+- Supabase Pro
+- AWS C2-EXT一式
+- Lambda / API Gateway / DynamoDB / KMS / S3 / Object Lock / Secrets Manager / CloudWatch / Budgets
+- VPC / NAT Gateway / Elastic IP
+- Google / Apple OAuth
+- Cognito
+- custom domain / DNS
+- Network Restriction
+
+重要:
+
+C2-APP-005によりPasskey機能とActionの**設定**は承認済みだが、
+C2-APP-007が未承認のため、
+外部dummy user作成・実Passkey enrollment・実loginによるA2証明はまだ行わない。
+
+C2-MINのresource作成も、本実行手順を人間が確認するまで開始しない。
 
 ## 1. 固定安全条件
 
