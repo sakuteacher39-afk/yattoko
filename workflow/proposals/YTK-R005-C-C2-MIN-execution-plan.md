@@ -1101,3 +1101,37 @@ Runtime role provisioning checkpoint: PASS
 - secret value is not recorded
 - GitHubへのsecret保存なし
 - 次工程: Shared Transaction Pooler経由のruntime RLS/context test
+
+
+### Shared Transaction Pooler runtime test
+
+Shared Transaction Pooler runtime test: PASS
+
+2026-10-05、humanが `phase7-runtime-test.ps1` を実行し、
+Supabase Shared Transaction Pooler (port 6543) 経由で
+`ytk_user_request` runtime role の実RLS/context試験を完了。
+
+確認結果:
+
+- runtime role connection: PASS
+- TLS verify-full: PASS
+- non-BYPASSRLS: PASS
+- synthetic owner A/B row setup: PASS
+- owner own-row SELECT/UPDATE: PASS
+- cross-user INSERT blocked: PASS
+- owner_user_id mutation blocked: PASS
+- cross-user UPDATE blocked: PASS
+- cross-user DELETE blocked: PASS
+- A1 access blocked: PASS
+- transaction-local user/assurance context cleared after COMMIT: PASS
+- A/B/A/B transaction alternation: PASS
+- synthetic test rows cleanup: PASS
+- final missing-context visibility check: PASS
+
+Observed terminal result:
+
+- `PASS: C2-MIN Supavisor transaction-pooler runtime RLS/context tests.`
+- `PASS: shared transaction pooler runtime test completed.`
+
+Secret values were not recorded.
+Actual Auth0 Passkey event / signed A2 claim remains unproven by C2-MIN and must not be represented as verified.
