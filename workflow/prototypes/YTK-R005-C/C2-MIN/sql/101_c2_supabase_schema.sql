@@ -9,31 +9,21 @@ BEGIN;
 
 CREATE SCHEMA IF NOT EXISTS ytk_private;
 
-DO $$
+DO $
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'ytk_user_request') THEN
-    CREATE ROLE ytk_user_request
-      LOGIN
-      NOSUPERUSER
-      NOCREATEDB
-      NOCREATEROLE
-      NOREPLICATION
-      NOBYPASSRLS;
+    -- Supabase's project postgres role is not a true SUPERUSER.
+    -- Create only a LOGIN role and rely on PostgreSQL's non-privileged defaults.
+    -- 102_c2_supabase_verify_admin.sql fail-closes if any elevated attribute
+    -- (SUPERUSER / CREATEDB / CREATEROLE / REPLICATION / BYPASSRLS) is present.
+    CREATE ROLE ytk_user_request LOGIN;
   END IF;
 END
-$$;
+$;
 
--- Re-assert the approved privilege shape if this script is re-run.
-ALTER ROLE ytk_user_request
-  LOGIN
-  NOSUPERUSER
-  NOCREATEDB
-  NOCREATEROLE
-  NOREPLICATION
-  NOBYPASSRLS;
-
--- Keep runtime name resolution away from public/user-controlled schemas.
-ALTER ROLE ytk_user_request SET search_path = pg_catalog, ytk_private;
+-- Do not ALTER SUPERUSER-related role attributes on Supabase managed Postgres.
+-- All runtime SQL uses fully-qualified ytk_private object names, while helper
+-- functions pin their own search_path.
 
 CREATE OR REPLACE FUNCTION ytk_private.current_user_id()
 RETURNS uuid

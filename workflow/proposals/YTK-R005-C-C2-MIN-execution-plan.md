@@ -634,6 +634,37 @@ CA path root cause narrowed:
 - script側で `Resolve-Path` + forward-slash normalizationを追加
 - 同じ `sslmode=verify-full` で再試行する
 
+### Phase 6 second apply attempt: STOP
+
+2026-10-05、CA path修正後にShared Session Poolerへ `sslmode=verify-full` で到達した。
+
+`101_c2_supabase_schema.sql` 実行中、Supabase managed Postgresの権限制約により
+`ALTER ROLE ytk_user_request ... NOSUPERUSER ...` が拒否された。
+
+error要旨:
+
+- permission denied to alter role
+- only roles with SUPERUSER attribute may alter roles with SUPERUSER attribute
+
+判定:
+
+- TLS到達: 成功
+- SQL接続: 成功
+- schema apply: FAIL / STOP
+- admin static verification: 未実行
+- runtime pooler test: 未実行
+- TLS緩和: なし
+- privileged runtime roleへの代替: なし
+
+修正方針:
+
+- Supabase公式どおり、project `postgres` は完全SUPERUSERではない前提へ合わせる
+- runtime roleは `CREATE ROLE ytk_user_request LOGIN` のみ
+- PostgreSQL既定の非特権attributeを使用
+- `102_c2_supabase_verify_admin.sql` が SUPERUSER / CREATEDB / CREATEROLE / REPLICATION / BYPASSRLS をすべてfalseと実測確認
+- elevated attributeが1つでもtrueならSTOP
+- managed環境に合わせるためにRLSやTLSを弱めない
+
 ### Checkpoint F
 
 構築係へ共有するsanitized result:

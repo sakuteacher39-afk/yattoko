@@ -95,3 +95,23 @@ Stop immediately if:
 - transaction-local context survives a commit
 - a privileged/service-role credential becomes necessary for normal runtime CRUD
 - a secret appears in Git/GitHub/log output
+
+
+## Supabase managed-role compatibility fix
+
+The first database apply reached Supabase but stopped at the role hardening step:
+
+- Supabase project `postgres` is an administrative role, not a true PostgreSQL SUPERUSER.
+- `ALTER ROLE ... NOSUPERUSER` was rejected because changing the SUPERUSER attribute itself requires true superuser authority.
+- The failed script was inside an explicit transaction, so the failed apply is treated as rolled back / not applied.
+- C2-MIN does not weaken the runtime role to work around this.
+
+The schema now creates a new runtime role with:
+
+```sql
+CREATE ROLE ytk_user_request LOGIN;
+```
+
+PostgreSQL's default role attributes are non-superuser / non-createdb / non-createrole / non-replication / non-bypassrls. The admin verification script then explicitly checks every approved negative attribute and stops if any elevated capability is present.
+
+No privileged runtime credential is introduced.
