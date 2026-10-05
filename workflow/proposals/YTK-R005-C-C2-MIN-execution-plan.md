@@ -1089,3 +1089,15 @@ Phase 6のoffline SQL / script準備とreviewまでは完了。
 - C3へ進まない
 
 **次のhuman checkpoint待ちで停止する。**
+
+
+### Runtime role provisioning checkpoint
+
+Runtime role provisioning checkpoint: PASS
+
+2026-10-05、humanがSession Poolerのadmin psql接続で
+`ytk_user_request` のruntime認証設定を対話完了し、psqlを正常終了した。
+
+- secret value is not recorded
+- GitHubへのsecret保存なし
+- 次工程: Shared Transaction Pooler経由のruntime RLS/context test
