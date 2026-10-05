@@ -1,7 +1,7 @@
 # ヤットコ／YTK-R005-C C2-MIN 実行計画
 
 - 工程: YTK-R005-C / C2-MIN
-- 状態: EXECUTION PLAN / 人間確認待ち
+- 状態: EXECUTION PLAN APPROVED / Phase 0 IN PROGRESS
 - 作成日: 2026-10-05
 - C1: COMPLETE / PASS
 - C2-MIN resource承認: APPROVED
@@ -185,6 +185,25 @@ secretを受け取らず、code / SQL / validation / non-secret確認を担当�
 2. C1 21 PASS / PostgreSQL 18.6 PASSが保持されていることを確認
 3. C2-MIN用branch / directory namingを確定
 4. secretを含まないconfig templateだけ準備する
+
+### Phase 0 GitHub側確認記録
+
+2026-10-05時点:
+
+- GitHub main上のC1 COMPLETE / PASS記録を確認
+- ローカル自動テスト21 PASS / PostgreSQL 18.6 PASS記録を確認
+- GitHub code searchで以下のsecret関連文字列を確認し該当0件:
+  - `.env`
+  - `YTK_AUTH0_CLIENT_SECRET`
+  - `YTK_DB_PASSWORD`
+  - `client_secret`
+  - `service_role`
+  - `SUPABASE_SERVICE_ROLE_KEY`
+- Auth0 / Supabase / AWS resource作成: 0
+- credential発行: 0
+- paid plan変更: 0
+
+人間PC側のworking treeはChatGPTから確認できないため、次のhuman checkpointとして `git status --short` を確認する。
 
 ### STOP条件
 
@@ -818,9 +837,9 @@ C2-MINをC3へ引き継ぐ場合:
 
 ### 現在状態
 
-**実行計画作成済み / 人間確認待ち。**
+**実行計画APPROVED / Phase 0実施中。**
 
-外部resourceはまだ1件も作成しない。
+外部resourceはまだ1件も作成していない。
 
 ## 21. 公式確認資料
 

@@ -1,7 +1,7 @@
 # ヤットコ／YTK-R005-C C2 外部resource承認パッケージ
 
 - 工程: YTK-R005-C / C2準備
-- 状態: C2-MIN APPROVED / 実行手順確認待ち / C2未開始
+- 状態: C2-MIN APPROVED / 実行計画APPROVED / Phase 0開始 / 外部resource未作成
 - 作成日: 2026-10-05
 - C1: COMPLETE / PASS
 - C2: NOT AUTHORIZED / 未開始
@@ -12,6 +12,7 @@
 ## 0. C2-MIN 人間承認記録
 
 承認日: 2026-10-05
+実行計画承認日: 2026-10-05
 
 個別承認済み:
 
