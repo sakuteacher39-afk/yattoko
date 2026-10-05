@@ -401,7 +401,19 @@ Auth0はPost-Login Actionで
 - Passkey enrollment / actual login: 未実施
 - actual Passkey event / signed A2 claim: 未確認
 
-Checkpoint CはLogin FlowへのAction追加が完了するまで未完了。
+Login FlowへのAction追加・Applyまで完了。
+
+Checkpoint C: PASS
+
+境界:
+- Auth0 Database Connection / Passkey設定: 完了
+- Post-Login Action deploy: 完了
+- Login Flow反映: 完了
+- dummy user: 0
+- actual login: 未実施
+- Passkey enrollment: 未実施
+- actual Passkey event / signed A2 claim: 未確認
+- A2実証済みとは扱わない
 
 - [x] dedicated DB connection
 - [x] Identifier First
