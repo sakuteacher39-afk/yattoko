@@ -695,6 +695,35 @@ error要旨:
 
 ### Checkpoint F
 
+Checkpoint F: PASS
+
+2026-10-05、Shared Session Pooler管理接続から
+`101_c2_supabase_schema.sql` と
+`102_c2_supabase_verify_admin.sql` を実行し成功。
+
+確認結果:
+
+- schema apply: PASS
+- admin static verification: PASS
+- runtime role: `ytk_user_request`
+- `rolsuper = false`
+- `rolcreaterole = false`
+- `rolcreatedb = false`
+- `rolreplication = false`
+- `rolbypassrls = false`
+- RLS enabled: true
+- FORCE RLS: true
+- table owner: `postgres`
+- `owner_user_id` UPDATE privilege: false
+- runtime role password: 未設定（意図どおり）
+- runtime transaction pooler test: 未実行
+- TLS verify-full: 維持
+
+次工程はhumanが `ytk_user_request` passwordを対話設定した後、
+Shared Transaction Pooler経由でruntime RLS/context testを実行する。
+
+
+
 構築係へ共有するsanitized result:
 
 - role name
