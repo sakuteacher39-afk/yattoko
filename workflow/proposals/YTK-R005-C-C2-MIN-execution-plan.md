@@ -1287,3 +1287,20 @@ Phase 9 Auth0 JWKS fetch: PASS
 - login: NOT RUN
 - Passkey enrollment: NOT RUN
 - actual A2 token: NOT RUN
+
+
+### Phase 9 Auth0 API audience
+
+Phase 9 Auth0 API audience: PASS
+
+2026-10-06、humanがAuth0 Dashboard上の
+`Yattoko R005-C Dev API` 設定画面でIdentifierを確認。
+
+確認結果:
+- Identifier / API audience = `https://api.yattoko.invalid/r005c`
+- Phase 8 external adapter expected audienceとのexact match: PASS
+- setting change: none
+- login: NOT RUN
+- token issuance: NOT RUN
+- Passkey enrollment: NOT RUN
+- actual A2 token: NOT RUN
