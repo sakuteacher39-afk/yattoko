@@ -1373,3 +1373,21 @@ Phase 9 Auth0 passkey readiness: PASS
 - login: NOT RUN
 - runtime authentication event: NOT RUN
 - signed A2 claim: NOT RUN
+
+
+### Phase 9 Auth0 post-login Action deployment
+
+Phase 9 Auth0 post-login Action deployment: PASS
+
+2026-10-06、humanがAuth0 Dashboardの
+`Actions > Triggers > post-login` flowを確認。
+
+確認結果:
+- `YTK R005-C Set Assurance` がpost-login flow内に配置済み
+- dashboard表示: all changes live
+- Action deployment / flow apply: PASS
+- setting change during this check: none
+- actual login: NOT RUN
+- Action runtime event: NOT RUN
+- tenant log passkey event: NOT RUN
+- actual signed A2 claim: NOT RUN
