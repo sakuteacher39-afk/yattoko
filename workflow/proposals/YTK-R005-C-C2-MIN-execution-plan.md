@@ -1338,3 +1338,21 @@ Phase 9 Auth0 logout URL: PASS
 - token issuance: NOT RUN
 - Passkey enrollment: NOT RUN
 - actual A2 token: NOT RUN
+
+
+### Phase 9 Auth0 Allowed Web Origins
+
+Phase 9 Auth0 Allowed Web Origins: PASS
+
+2026-10-06、humanがAuth0 Dashboard上の
+`Yattoko R005-C Dev BFF` 設定画面でAllowed Web Originsを確認。
+
+確認結果:
+- Allowed Web Origins = `http://localhost:3000`
+- approved C2-MIN localhost web originとのexact match: PASS
+- CORS allowed origins field: unchanged / not part of this check
+- setting change: none
+- login: NOT RUN
+- token issuance: NOT RUN
+- Passkey enrollment: NOT RUN
+- actual A2 token: NOT RUN
