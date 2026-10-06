@@ -1250,3 +1250,20 @@ Phase 9 prep local reproduction: PASS
 はいずれも修正後にhuman PCで再現確認済み。
 
 Phase 9 external connectivity: START ALLOWED, NOT YET STARTED.
+
+
+### Phase 9 Auth0 OIDC discovery
+
+Phase 9 Auth0 OIDC discovery: PASS
+
+2026-10-06、human Windows環境からAuth0 tenantの公開
+`/.well-known/openid-configuration` を取得。
+
+確認結果:
+- issuer = `https://yattoko-r005c-dev-20261005.jp.auth0.com/`
+- jwks_uri = same tenant `/.well-known/jwks.json`
+- expected exact issuer match: PASS
+- login: NOT RUN
+- user creation: NOT RUN
+- Passkey enrollment: NOT RUN
+- actual token / A2 claim: NOT RUN
