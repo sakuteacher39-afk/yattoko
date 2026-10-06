@@ -1504,3 +1504,21 @@ GitHub search result:
 - observed Phase 9 terminal outputにpassword/token/full connection stringなし
 
 Result: PASS.
+
+
+### Phase 9 Auth0 application type
+
+Phase 9 Auth0 application type: PASS
+
+2026-10-06、humanがAuth0 Dashboard上の
+`Yattoko R005-C Dev BFF` 設定画面でApplication Typeを確認。
+
+確認結果:
+- Application Type = Regular Web Application
+- dashboard日本語表示 = 一般的なWebアプリケーション
+- approved C2-MIN application typeとのmatch: PASS
+- setting change: none
+- login: NOT RUN
+- token issuance: NOT RUN
+- Passkey enrollment: NOT RUN
+- actual A2 token: NOT RUN
