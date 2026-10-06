@@ -1465,3 +1465,17 @@ Observed terminal result:
 - `PASS: transaction-local context absent outside request transaction`
 - `PASS: synthetic row cleanup complete`
 - `PASS: Phase 9 external BFF/Supabase smoke test completed.`
+
+
+### Phase 9 Supabase SSL enforcement
+
+Phase 9 Supabase SSL enforcement: PASS
+
+2026-10-06、humanがSupabase DashboardのDatabase SettingsでSSL設定を確認。
+
+確認結果:
+- Enforce SSL on incoming connections: ON
+- non-SSL database connections: rejected by configuration
+- SSL certificate available from dashboard
+- setting change: none
+- Phase 9 node-postgres smoke test had already passed with certificate verification enabled
