@@ -1184,3 +1184,25 @@ Secret values were not observed in the reviewed Phase 8 artifacts.
 Phase 9 eligibility: START ALLOWED, but NOT STARTED by this checkpoint.
 C2-EXT / C2-NET / C3 remain unauthorized.
 Actual Auth0 Passkey event / signed A2 claim remains unproven.
+
+
+### Phase 9 prep reproducibility fix
+
+2026-10-06、human Windows環境でPhase 8成果物をpull後、
+`npm test` がテスト開始前に `tsc is not recognized` で停止。
+
+原因:
+- C1 `package.json` は `tsc -p tsconfig.json` を使用していた
+- TypeScript compiler自体がdependencies/devDependenciesに宣言されていなかった
+- 制作部環境のglobal/local preexisting `tsc` に依存しており、fresh local installで再現しなかった
+
+判定:
+- Phase 8 implementation PASSは維持
+- Phase 9 external connectivityは未開始のまま
+- reproducibility defectとしてPhase 9 prepでSTOPし、先に修正
+
+修正:
+- `typescript: 5.9.3` をexact devDependencyとして追加
+- runtime dependency `pg: 8.23.1` は変更なし
+- TLS/RLS/Auth0/Supabase設定変更なし
+- external connectionなし
