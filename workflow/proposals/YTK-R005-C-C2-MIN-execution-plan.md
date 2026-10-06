@@ -1479,3 +1479,28 @@ Phase 9 Supabase SSL enforcement: PASS
 - SSL certificate available from dashboard
 - setting change: none
 - Phase 9 node-postgres smoke test had already passed with certificate verification enabled
+
+
+### Phase 9 secret hygiene re-audit
+
+Phase 9 secret hygiene re-audit: PASS
+
+2026-10-06、Phase 9 external smoke test後にGitHub mainを再監査。
+
+GitHub search result:
+- `.env`: 0
+- `YTK_AUTH0_CLIENT_SECRET`: 0
+- `SUPABASE_SERVICE_ROLE_KEY`: 0
+- `service_role`: 0
+- `client_secret`: 0
+- private-key PEM marker: 0
+- literal PostgreSQL connection-string scheme: 0
+
+実行経路:
+- runtime DB passwordはSecureString prompt -> process environmentのみ
+- test script finallyでprocess environmentをclear
+- admin DB credentialをPhase 9 runtimeに使用していない
+- service role / Supabase secret keyをruntimeに使用していない
+- observed Phase 9 terminal outputにpassword/token/full connection stringなし
+
+Result: PASS.
