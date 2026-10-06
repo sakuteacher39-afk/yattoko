@@ -1522,3 +1522,19 @@ Phase 9 Auth0 application type: PASS
 - token issuance: NOT RUN
 - Passkey enrollment: NOT RUN
 - actual A2 token: NOT RUN
+
+
+### Phase 9 Auth0 tenant region
+
+Phase 9 Auth0 tenant region: PASS
+
+2026-10-06、humanがAuth0 Tenant Settingsでregionを確認。
+
+確認結果:
+- Region = JP-1
+- Japan tenant requirementとのmatch: PASS
+- setting change: none
+- paid plan change: none
+- login: NOT RUN
+- user creation: NOT RUN
+- Passkey enrollment: NOT RUN
