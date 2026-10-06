@@ -1321,3 +1321,20 @@ Phase 9 Auth0 callback URL: PASS
 - token issuance: NOT RUN
 - Passkey enrollment: NOT RUN
 - actual A2 token: NOT RUN
+
+
+### Phase 9 Auth0 logout URL
+
+Phase 9 Auth0 logout URL: PASS
+
+2026-10-06、humanがAuth0 Dashboard上の
+`Yattoko R005-C Dev BFF` 設定画面でAllowed Logout URLを確認。
+
+確認結果:
+- Allowed Logout URL = `http://localhost:3000`
+- approved C2-MIN localhost logout URLとのexact match: PASS
+- setting change: none
+- login: NOT RUN
+- token issuance: NOT RUN
+- Passkey enrollment: NOT RUN
+- actual A2 token: NOT RUN
