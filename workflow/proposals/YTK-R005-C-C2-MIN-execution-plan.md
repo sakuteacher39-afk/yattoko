@@ -1356,3 +1356,20 @@ Phase 9 Auth0 Allowed Web Origins: PASS
 - token issuance: NOT RUN
 - Passkey enrollment: NOT RUN
 - actual A2 token: NOT RUN
+
+
+### Phase 9 Auth0 passkey readiness
+
+Phase 9 Auth0 passkey readiness: PASS
+
+2026-10-06、humanがAuth0 Dashboard上の
+`yattoko-r005c-dev-db` connectionでPasskey設定を確認。
+
+確認結果:
+- Passkey: active
+- Passkey authentication prerequisites: ready
+- setting change: none
+- enrollment: NOT RUN
+- login: NOT RUN
+- runtime authentication event: NOT RUN
+- signed A2 claim: NOT RUN
