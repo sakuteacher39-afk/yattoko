@@ -1206,3 +1206,24 @@ Actual Auth0 Passkey event / signed A2 claim remains unproven.
 - runtime dependency `pg: 8.23.1` は変更なし
 - TLS/RLS/Auth0/Supabase設定変更なし
 - external connectionなし
+
+
+### Phase 9 prep TypeScript 5.9 Web Crypto compatibility fix
+
+2026-10-06、`typescript 5.9.3` 導入後のhuman Windows再現試験で、
+`src/storage.ts` のWeb Crypto BufferSource型互換エラーによりbuildが停止。
+
+原因:
+- TypeScript 5.9のtyped-array genericsで既存 `Uint8Array` parameterが
+  `Uint8Array<ArrayBufferLike>` として扱われる
+- Web Crypto BufferSource側はArrayBuffer-backed viewを要求
+- runtime暗号方式やPhase 8 external adapterの不具合ではなくcompile-time compatibility defect
+
+修正:
+- Web Cryptoへ渡す既存byte inputを明示的なArrayBuffer-backed `Uint8Array` へcopy
+- AES-GCM / IV length / AAD / ciphertext formatは変更しない
+- TypeScript 5.9.3 pinは維持
+- TLS/RLS/Auth0/Supabase設定変更なし
+- external connectionなし
+
+Phase 9 external connectivity remains NOT STARTED until local 32/32 regression reproduction succeeds.
