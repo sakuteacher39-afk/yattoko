@@ -239,15 +239,20 @@ Auth0はtenant regionとしてJapanを提供しており、tenant名は作成後
 
 ### Checkpoint A
 
-ここで一度停止。
+Checkpoint A: PASS
 
 確認項目:
 
-- [ ] JP tenant
-- [ ] Free
-- [ ] paid契約なし
-- [ ] dummy user 0
-- [ ] social connection追加なし
+- [x] JP tenant
+- [x] Free
+- [x] paid契約なし
+- [x] dummy user 0
+- [x] social connection追加なし
+
+最終再確認:
+- Region = JP-1
+- Current plan = Free / $0
+- paid plan changeなし
 
 ## 7. Phase 2 — Auth0 Application / API
 
@@ -304,12 +309,14 @@ C2-MIN実行時のみPowerShell process environmentへ入れる。
 
 ### Checkpoint B
 
-- [ ] Regular Web Application
-- [ ] localhost exact callback
-- [ ] localhost exact logout
-- [ ] API audience固定
-- [ ] Client Secret非共有
-- [ ] paid featureなし
+Checkpoint B: PASS
+
+- [x] Regular Web Application
+- [x] localhost exact callback
+- [x] localhost exact logout
+- [x] API audience固定
+- [x] Client Secret非共有
+- [x] paid featureなし
 
 ## 8. Phase 3 — Auth0 Database Connection / Passkey / Action
 
@@ -1538,3 +1545,16 @@ Phase 9 Auth0 tenant region: PASS
 - login: NOT RUN
 - user creation: NOT RUN
 - Passkey enrollment: NOT RUN
+
+
+### Phase 9 Auth0 current plan
+
+Phase 9 Auth0 current plan: PASS
+
+2026-10-06、humanがAuth0 subscription画面でcurrent planを確認。
+
+確認結果:
+- Current plan = Free
+- Price = $0
+- paid upgrade: not active
+- setting change: none
