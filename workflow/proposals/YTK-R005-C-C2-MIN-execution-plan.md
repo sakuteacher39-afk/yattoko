@@ -1021,16 +1021,20 @@ C2-MINをC3へ引き継ぐ場合:
 
 ### 現在状態
 
-**C2-MIN IN PROGRESS / Phase 6 offline準備完了 / 実DB適用前。**
+**C2-MIN IN PROGRESS / Phase 8 OFFLINE IMPLEMENTATION PASS / Phase 9未開始。**
 
 作成済みapproved external resources:
 - Auth0 Japan tenant / Application / API / Database Connection / Passkey設定 / Post-Login Action
 - Supabase Free project / Tokyo
 
-未実施:
+完了済み:
 - Supabase schema / custom role SQL apply
-- runtime role password設定
+- runtime role provisioning
 - shared transaction pooler runtime test
+- Phase 8 local BFF external adapter offline implementation
+
+未実施:
+- Phase 9 external connectivity
 - dummy external Auth0 user
 - actual Passkey login
 
@@ -1135,3 +1139,48 @@ Observed terminal result:
 
 Secret values were not recorded.
 Actual Auth0 Passkey event / signed A2 claim remains unproven by C2-MIN and must not be represented as verified.
+
+
+### Phase 8 formal judgement
+
+Phase 8 formal judgement: PASS
+
+Review target commit:
+`5e00ca463a7921e96ba325e40d243dfa90c6585a`
+
+2026-10-06、Phase 8 `local BFF external adapter` のGitHub成果物を正式確認。
+
+判定:
+
+- Phase 8 offline implementation: PASS
+- existing C1 regression suite: 21 PASS / 0 FAIL（制作部実行報告およびPhase 8 report記録）
+- Phase 8 new offline suite: 11 PASS / 0 FAIL（制作部実行報告およびPhase 8 report記録）
+- total: 32 PASS / 0 FAIL
+- real external connectivity: NOT RUN
+- actual Auth0 login / Passkey enrollment / A2 token: NOT RUN
+
+GitHub reviewで確認した実装境界:
+
+- exact Auth0 issuer allowlist
+- exact API audience
+- OIDC discovery / JWKS cache
+- RS256 signature verification
+- exp / nbf / iat validation
+- assurance claim version fail-close
+- node-postgres runtime adapter
+- transaction pooler port 6543 enforcement
+- CA based TLS verification / rejectUnauthorized true
+- transaction-local userId / assurance context
+- rollback/release failure path
+- BFF A1 denial before DB access
+- owner_user_id derived from internal user context
+- CRUD owner predicate defense-in-depth
+- allowlist operational logging
+- request/response body and secret-shaped fields excluded
+- no full DB connection string path
+
+Secret values were not observed in the reviewed Phase 8 artifacts.
+
+Phase 9 eligibility: START ALLOWED, but NOT STARTED by this checkpoint.
+C2-EXT / C2-NET / C3 remain unauthorized.
+Actual Auth0 Passkey event / signed A2 claim remains unproven.
