@@ -1429,3 +1429,39 @@ Phase 9 Supabase Data API: PASS
 - secret-shaped log outputを禁止
 
 Status: PREPARED / NOT RUN.
+
+
+### Phase 9 external BFF/Supabase smoke test
+
+Phase 9 external BFF/Supabase smoke test: PASS
+
+2026-10-06、human Windows環境から
+`phase9-external-bff-test.ps1` を実行し、
+Phase 8で実装したnode-postgres / local BFF code path経由で
+real Supabase Shared Transaction Poolerへ接続確認。
+
+確認結果:
+- runtime role: PASS
+- TLS verification: PASS
+- non-BYPASSRLS: PASS
+- BFF synthetic A2 own CRUD through real Supabase: PASS
+- cross-user read: blocked
+- cross-user update: blocked
+- cross-user delete: blocked
+- A1 blocked before DB request: PASS
+- owner_user_id derived from internal user context: PASS
+- transaction-local context absent outside request transaction: PASS
+- synthetic row cleanup: PASS
+- secret values: not recorded
+- actual Auth0 login/token/Passkey: NOT RUN
+- actual signed A2 claim: NOT RUN
+
+Observed terminal result:
+- `PASS: runtime role / TLS / non-BYPASSRLS`
+- `PASS: BFF synthetic A2 own CRUD through real Supabase`
+- `PASS: cross-user read/update/delete blocked`
+- `PASS: A1 blocked before DB request`
+- `PASS: owner_user_id derived from internal user context`
+- `PASS: transaction-local context absent outside request transaction`
+- `PASS: synthetic row cleanup complete`
+- `PASS: Phase 9 external BFF/Supabase smoke test completed.`
