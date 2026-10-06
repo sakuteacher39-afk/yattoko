@@ -1028,7 +1028,7 @@ C2-MINをC3へ引き継ぐ場合:
 
 ### 現在状態
 
-**C2-MIN PASS CANDIDATE / HUMAN FINAL APPROVAL PENDING.**
+**C2-MIN COMPLETE / PASS.**
 
 作成済みapproved external resources:
 - Auth0 Japan tenant / Application / API / Database Connection / Passkey設定 / Post-Login Action
@@ -1562,7 +1562,7 @@ Phase 9 Auth0 current plan: PASS
 
 ### C2-MIN final completion review
 
-C2-MIN final completion review: PASS CANDIDATE
+C2-MIN final completion review: PASS
 
 2026-10-06、approved C2-MIN execution planの完了条件を総点検。
 
@@ -1578,3 +1578,26 @@ Current judgement:
 - C2-EXT / C2-NET / C3: NOT AUTHORIZED
 
 STOP at human final approval checkpoint.
+
+
+### Human final approval
+
+Human final approval: APPROVED
+
+2026-10-06、humanが明示的に
+`C2-MINを正式PASSとして承認する`
+と承認。
+
+Final status:
+- C2-MIN: COMPLETE / PASS
+- Phase 8: PASS
+- Phase 9: PASS
+- actual Auth0 Passkey login: NOT RUN
+- actual Action runtime event: NOT RUN
+- actual signed A2 claim: NOT PROVEN
+- C2-EXT: NOT AUTHORIZED
+- C2-NET: NOT AUTHORIZED
+- C3: NOT AUTHORIZED
+
+STOP:
+Do not start any next phase without separate human approval.
