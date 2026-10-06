@@ -1021,7 +1021,7 @@ C2-MINをC3へ引き継ぐ場合:
 
 ### 現在状態
 
-**C2-MIN IN PROGRESS / Phase 8 OFFLINE IMPLEMENTATION PASS / Phase 9未開始。**
+**C2-MIN IN PROGRESS / Phase 9 IN PROGRESS.**
 
 作成済みapproved external resources:
 - Auth0 Japan tenant / Application / API / Database Connection / Passkey設定 / Post-Login Action
@@ -1405,3 +1405,27 @@ Phase 9 Supabase Data API: PASS
 - setting change: none
 - browser direct Supabase data access path: not enabled
 - Phase 9 external BFF connectivity: not yet executed at this checkpoint
+
+
+### Phase 9 external BFF/Supabase smoke harness prepared
+
+2026-10-06、Phase 9の実node-postgres / BFF-to-Supabase確認用harnessを準備。
+
+追加:
+- `C2-MIN/scripts/phase9-external-bff-test.ps1`
+- `C1/runtime/phase9-external-smoke.mjs`
+
+境界:
+- runtime passwordはPowerShell SecureString promptからprocess environmentへ一時投入
+- password / connection stringをGitHubへ保存しない
+- port 6543固定
+- existing `external-runtime.mjs` のCA TLS verification pathを使用
+- synthetic UUID / synthetic ciphertextのみ
+- synthetic auth resultを使用し、actual Auth0 login/token/Passkeyは実行しない
+- real Supabase node-postgres connection / runtime role / TLS / non-BYPASSRLSを確認
+- BFF経由own CRUD、cross-user read/update/delete遮断、A1 pre-DB deny、owner derivationを確認
+- transaction-local contextがrequest外に残らないことを確認
+- synthetic rowをcleanup
+- secret-shaped log outputを禁止
+
+Status: PREPARED / NOT RUN.
