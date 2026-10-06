@@ -1304,3 +1304,20 @@ Phase 9 Auth0 API audience: PASS
 - token issuance: NOT RUN
 - Passkey enrollment: NOT RUN
 - actual A2 token: NOT RUN
+
+
+### Phase 9 Auth0 callback URL
+
+Phase 9 Auth0 callback URL: PASS
+
+2026-10-06、humanがAuth0 Dashboard上の
+`Yattoko R005-C Dev BFF` 設定画面でAllowed Callback URLを確認。
+
+確認結果:
+- Allowed Callback URL = `http://localhost:3000/callback`
+- approved C2-MIN localhost callbackとのexact match: PASS
+- setting change: none
+- login: NOT RUN
+- token issuance: NOT RUN
+- Passkey enrollment: NOT RUN
+- actual A2 token: NOT RUN
