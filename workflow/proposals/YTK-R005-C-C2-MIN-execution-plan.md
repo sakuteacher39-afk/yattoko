@@ -1227,3 +1227,26 @@ Actual Auth0 Passkey event / signed A2 claim remains unproven.
 - external connectionなし
 
 Phase 9 external connectivity remains NOT STARTED until local 32/32 regression reproduction succeeds.
+
+
+### Phase 9 prep local reproduction
+
+Phase 9 prep local reproduction: PASS
+
+2026-10-06、human Windows環境でPhase 8成果物をfresh local dependency install後に再実行。
+
+結果:
+- TypeScript 5.9.3 build: PASS
+- existing C1 tests: 21 PASS
+- Phase 8 new offline tests: 11 PASS
+- total: 32 PASS / 0 FAIL
+- vulnerabilities reported by npm install: 0
+- external Auth0/Supabase connectivity: NOT STARTED
+
+前段で検出した再現性欠陥:
+- missing TypeScript dependency
+- TypeScript 5.9 Web Crypto BufferSource typing incompatibility
+
+はいずれも修正後にhuman PCで再現確認済み。
+
+Phase 9 external connectivity: START ALLOWED, NOT YET STARTED.
