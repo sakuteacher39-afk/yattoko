@@ -1267,3 +1267,23 @@ Phase 9 Auth0 OIDC discovery: PASS
 - user creation: NOT RUN
 - Passkey enrollment: NOT RUN
 - actual token / A2 claim: NOT RUN
+
+
+### Phase 9 Auth0 JWKS fetch
+
+Phase 9 Auth0 JWKS fetch: PASS
+
+2026-10-06、human Windows環境からAuth0 tenantの公開JWKS endpointを取得し、
+公開鍵メタ情報のみ確認。
+
+確認結果:
+- JWKS fetch: PASS
+- key count observed: 2
+- kty: RSA
+- alg: RS256
+- use: sig
+- key material itself: not recorded
+- token: not used
+- login: NOT RUN
+- Passkey enrollment: NOT RUN
+- actual A2 token: NOT RUN
