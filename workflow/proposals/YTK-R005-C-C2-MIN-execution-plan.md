@@ -1391,3 +1391,17 @@ Phase 9 Auth0 post-login Action deployment: PASS
 - Action runtime event: NOT RUN
 - tenant log passkey event: NOT RUN
 - actual signed A2 claim: NOT RUN
+
+
+### Phase 9 Supabase Data API
+
+Phase 9 Supabase Data API: PASS
+
+2026-10-06、humanがSupabase DashboardのData API設定を確認。
+
+確認結果:
+- Enable Data API: OFF
+- dashboard warning: no schemas can be queried
+- setting change: none
+- browser direct Supabase data access path: not enabled
+- Phase 9 external BFF connectivity: not yet executed at this checkpoint
