@@ -1,8 +1,11 @@
 # YTK-F2 保存安全性 修正設計書
 
-- 文書種別: F2安全性審査 S01〜S09 対応用・修正設計案
-- 作成日: 2026-10-13
-- 状態: **PROPOSED / 制作管理室レビュー待ち**
+- 文書種別: F2正式レビュー差戻し F2-R01〜R06 対応版
+- 初版作成日: 2026-10-13
+- 差戻し対応日: 2026-10-13
+- 参照正式レビュー: `workflow/reviews/YTK-F2-storage-safety-formal-review-20261013.md`
+- 正式レビューcommit: `e2fa1bb23c8c57219d4d6c87467879a7f62a684e`
+- 状態: **REVISED / 制作管理室 再レビュー待ち**
 - F2全体承認: 未承認
 - F3詳細仕様承認: 未承認
 - F4実装: 未着手 / 未承認
@@ -11,577 +14,694 @@
 - 本番公開: 未承認
 - R005: 凍結維持
 
-## 1. 参照した最新実データ
+## 1. 今回の差戻し対応範囲
 
-### Notion
-- YTK-F2｜端末保存仕様｜検討ドラフト｜2026-10-11
-  - 2026-10-13時点のS01〜S09審査指摘を含む最新版
-- ヤットコ｜最新状態マスター｜2026-10-10方向転換版
-  - 端末保存型無料版先行
-  - R005凍結保全
-  - F2 IN PROGRESS
+正式レビューのF2-R01〜R06をすべて対象とする。
 
-### GitHub main
-確認時HEAD:
-`f18cd8d232c44636a3bc8e4dedbbf99906408f05`
+- F2-R01: category canonical identity
+- F2-R02: unanswered / committed partial / pending と回答確定ごとの保存
+- F2-R03: R001 / R002矛盾処理の操作方向
+- F2-R04: 「その他」サービス名の正規化・拒否規範
+- F2-R05: canonical capacity projection
+- F2-R06: completed / committed partial / pending を分けたF3引継ぎ
 
-確認した主要正本:
-- R001 research: `5f66799eb2540d861512c701cdb6b2acfa21d4ce`
-- R002 research: `a87e28c77f7b9e40476329cf56ceed8bd42afd9f`
-- R003 storage-data: `431ced6d4bc3b0904eaed825b19046f80bfdf119`
-- R001 prototype: `f090acdea6bb117f49614689ecf725b0cd14f2de`
-- R002 prototype: `7e302dad973b827d2ee5d6026369c9656adf0f35`
-- R001 review: `66cf81855e16730bbbc6a672b1da0adb1d4ead26`
-- R002 review: `de3dde0209726361351434f397111f6456526fec`
+既承認の利用者向け仕様、IndexedDB、10,000,000 byte、JSON/UTF-8算定、複数タブB案、保存失敗UX、通常backup / emergency export、private mode方針、長期消失注意、秘密情報禁止は変更しない。
 
-R001/R002のAPPROVEDは非公開UXの承認であり、IndexedDB保存処理・公開仕様・本番公開の承認ではない。
+## 2. category identity（F2-R01）
 
-## 2. 既承認事項として固定するもの
+### 2.1 canonical category key
 
-本修正では以下を変更しない。
+永続化・整合判定・R2CAT / R2Q参照に使うcategoryの正本は、既存R001/R002 prototypeの内部IDと一致させる。
 
-- 端末保存の正式方式: IndexedDB
-- アプリ定義上限: 10,000,000 bytes
-- 容量判定: 保存後の構造化データ全体を決定的JSON表現へ変換しUTF-8 byte数を測る
-- 10,000,000 bytes以下をアプリ側審査通過、10,000,001 bytes以上を拒否
-- 保存失敗時: 明示モーダル、未保存入力保持、「保存済み」誤表示禁止
-- 保存エラー分類: 主要5分類 + 原因不明
-- 複数タブ競合対策B案: 古い内容の保存停止、自動統合・強制上書き禁止
-- R001カテゴリ記録とR002サービス記録は分離
-- R002は1サービス=1記録
-- カテゴリ・サービス記録は一意の内部管理番号 + 更新番号を持つ
-- 「その他」自由入力はサービス名だけ
-- 自由メモ欄を作らない
-- 秘密情報を入力・保存しない
-- 外部サービス識別情報の実値を標準保存対象にしない
-- R001は全体・カテゴリ単位のサマリー、R002はサービス単位の詳細正本
-- サービス単位本人意向上書きはカテゴリ意向へ逆流しない
-- 利用開始時に長期消失リスク + 適宜ファイルバックアップ推奨を表示
-- 完了時・回答変更時・定期的な追加バックアップ催促は行わない
-- プライベートモード専用検知・遮断を追加しない
-- 保存失敗時の緊急ファイル退避を維持
-- R005凍結を維持
+| displayCode | canonical `categoryKey` |
+|---|---|
+| A | `device` |
+| B | `base` |
+| C | `mail` |
+| D | `social` |
+| E | `cloud` |
+| F | `subscription` |
+| G | `finance` |
+| H | `commerce` |
+| I | `auth` |
+| J | `license` |
+| K | `carrier` |
+| L | `business` |
 
-## 3. 修正後の保存モデル
+規範:
+- **MUST**: IndexedDBのcategory/service recordは `categoryKey` に上表の内部IDだけを保存する。
+- **MUST NOT**: A〜Lを永続正本として使用しない。
+- **MUST**: `recordId`、`categoryKey`、displayCodeは別概念として扱う。
+- **MUST**: unknown `categoryKey` を保存・import・restoreで拒否する。
+- **MUST**: R2CAT / R2Q参照は `categoryKey` を使う。
+- **SHOULD**: displayCodeはUI定義から導出し、保存正本へ重複保持しない。
+- 将来file形式にdisplayCodeを含める場合は、上表と不一致ならrestoreを拒否する。displayCodeからcategoryKeyを推測補正しない。
 
-### 3.1 原則
+### 2.2 recordIdとの区別
 
-旧R002 prototypeの `R2.records[]` / `editIndex` はUI試作用の一時状態としてのみ扱う。
+`recordId`:
+- ヤットコ内部の個別記録識別子。
+- category意味や表示順の意味を持たない。
+- service update/delete対象はrecordIdで特定する。
 
-**IndexedDBへは配列位置を識別子として保存しない。**
+`categoryKey`:
+- category意味を表す固定semantic key。
+- R001/R002/R2CAT/R2Qとの接続に使う。
 
-保存層では以下の4論理領域へ分離する。
+displayCode:
+- A〜L。
+- UI順序・表示用。
+- 永続正本ではない。
 
-1. categories
-2. overview
-3. services
-4. meta
+## 3. 保存正本の状態語彙（F2-R02 / R06）
 
-object storeの正式名称・keyPath等はF4実装開始前の制作管理室レビューで確定する。
-本書では論理構造だけを固定候補とする。
+### 3.1 4つの状態を混同しない
 
-### 3.2 category record
+| 用語 | 意味 | IndexedDB正本 | normal backup | emergency export |
+|---|---|---:|---:|---:|
+| `unanswered` | その質問について利用者がまだ回答を確定していない | yes | yes | yes（committed側） |
+| committed partial state | transaction complete済みだがR001/R002の整理が途中 | yes | yes | yes（committed側） |
+| completed service | R002で「この1件を整理完了」がcommit済み | yes | yes | yes（committed側） |
+| pending overlay | 画面上にあるがtransaction completeしていない直近mutation | no | no | yes、別領域のみ |
 
-候補フィールド:
+重要:
+- `unknown` は利用者が「わからない」と明示回答した値。
+- `unanswered` は未回答。
+- 両者を同じnullやabsenceとして扱わない。
+- pending overlayをcommitted partialへ読み替えない。
+- R003で保存しない「画面位置・画面履歴」と、利用者が確定済みの構造化事実は別物。
 
-```text
-recordId            内部管理番号。安定した一意ID
-categoryId          A〜L
-usageStatus         using / not_using / unknown
-intention           keep / delete / family / undecided
-revision            この記録の更新番号
-schemaVersion       対応保存スキーマ版
-```
+### 3.2 dataset未作成状態
 
-- `recordId` は並び順・表示名・カテゴリラベルから生成しない。
-- 1カテゴリ1記録を維持する。
-- categoryIdは固定カテゴリ参照であり外部サービス識別情報ではない。
+利用者が一度も保存対象の回答を確定していない場合、IndexedDBにヤットコdatasetが存在しなくてもよい。
 
-### 3.3 overview record
+最初の保存対象mutationで:
+1. meta
+2. R001 12 category baseline
+3. R001 overview baseline
+4. 当該mutation
 
-R001全体5問の正本。
+を**同一transaction**で初期化・commitする。
 
-候補:
-- identity
-- billing
-- finance
-- importantData
-- family
-- revision
-- schemaVersion
+baselineだけを別transactionで先に保存してglobalRevisionを余分に進めない。
 
-5リスク軸、ToDo、件数等の派生結果は保存しない。
+## 4. R001 canonical state
 
-### 3.4 service record
+dataset作成後、12 category recordは常に存在する。
 
-候補フィールド:
+### 4.1 category record
 
 ```text
 recordId
-categoryId
-serviceCatalogId     カタログ候補を選んだ場合
-otherServiceName     「その他」の場合のみ
+categoryKey
 usageStatus
-answers              許可された条件付き回答だけ
-intentionOverride    null / keep / delete / family / undecided
+intention
 revision
 schemaVersion
 ```
 
-保存しない:
-- `editIndex`
-- 配列位置
-- `inheritedIntention`
-- 計算済みのeffective intention
-- 表示用ラベル
-- 画面履歴
-- UI選択状態
-- 派生リスク
-- 外部アカウントID等の実値
+`usageStatus`:
+- `unanswered`
+- `using`
+- `not_using`
+- `unknown`
 
-本人意向の表示値は常に:
+`intention`:
+- `unanswered`
+- `keep`
+- `delete`
+- `family`
+- `undecided`
+
+既存UXの「未決定」は明示回答 `undecided` であり、未回答 `unanswered` と別。
+
+新規baseline:
+- usageStatus = `unanswered`
+- intention = `unanswered`
+- revision = 0
+
+### 4.2 overview record
+
+R001 prototypeの既存keyをcanonical keyとして維持する。
 
 ```text
-intentionOverride が null
-  -> 現在の親カテゴリ intention
-intentionOverride が存在
-  -> intentionOverride
+recordId = overview用内部ID
+identity
+billing
+finance
+data
+family
+revision
+schemaVersion
 ```
 
-で算出する。
+値:
 
-カテゴリ意向変更後も古い継承値がサービス記録へ残らない。
+`identity`
+- unanswered
+- configured
+- not_configured
+- unknown
 
-### 3.5 meta record
+`billing`
+- unanswered
+- yes
+- no
+- unknown
 
-候補:
+`finance`
+- unanswered
+- yes
+- no
+- unknown
+
+`data`
+- unanswered
+- yes
+- no
+- unknown
+
+`family`
+- unanswered
+- known
+- hidden
+- unknown
+
+baselineは全field `unanswered`、revision=0。
+
+## 5. R002 canonical service state
+
+### 5.1 service record
 
 ```text
+recordId
+categoryKey
+serviceCatalogId
+otherServiceName
+recordState
+usageStatus
+answers
+intentionOverride
+revision
 schemaVersion
-questionSchemaVersion    必要と制作管理室が判断した場合
+```
+
+`recordState`:
+- `partial`
+- `completed`
+
+`usageStatus`:
+- `unanswered`
+- `using`
+- `dormant`
+- `unknown`
+
+`intentionOverride`:
+- `null` = categoryと同じ
+- `keep`
+- `delete`
+- `family`
+- `undecided`
+
+`inheritedIntention` は保存しない。
+
+effective intention:
+- intentionOverride == null -> 現在のparent category intentionを参照
+- overrideあり -> override
+
+### 5.2 partial / completedの意味
+
+`partial`:
+- service identityがcommit済み。
+- その後のusageStatus / optional answers / intentionOverrideの一部または全部が未回答でもよい。
+- 中断後にreloadして再構成できる保存正本。
+- UIのscreen番号やquestionPageは保存しない。
+
+`completed`:
+- 「この1件を整理完了」操作がtransaction complete済み。
+- optional questionが `unanswered` のままでもcompletedになれる。
+- completedかどうかをoptional fieldの充足率から推測しない。
+
+既存completed recordを編集する場合:
+- 画面を開いただけでは変更しない。
+- 最初の実データ変更transactionで `recordState=partial` に戻し、変更と同時commitする。
+- 再度「この1件を整理完了」がcommitされたらcompletedへ戻す。
+- これにより編集途中中断を明示できる。
+
+### 5.3 answersのunanswered / inactive
+
+実装者がfield absenceの意味を推測しないよう、規範を固定する。
+
+- unconditional question: keyを必ず持ち、未回答は `unanswered`
+- conditional question:
+  - 条件がtrue: keyを必ず持ち、未回答は `unanswered`
+  - 条件がfalse: keyは**存在してはならない**
+- 親回答変更で条件がfalseになった場合、同一mutationでchild keyを削除
+- 親回答変更で条件がtrueになった場合、child keyを `unanswered` として同一mutationで生成
+
+したがって:
+- keyあり + unanswered = 表示対象だが未回答
+- keyなし = 現在の親回答では非該当
+
+## 6. 「回答確定ごと」の保存イベント（F2-R02）
+
+保存イベントは「canonical値を変更する利用者操作」を意味する。
+同じ値を再度タップしただけでcanonical stateが変わらない場合はidempotent no-opとし、revisionを増やさない。
+
+### 6.1 R001
+
+| 操作 | 保存 | 保存内容 |
+|---|---|---|
+| category statusをタップして値変更 | MUST | 対象category usageStatus |
+| category statusで同じ値を再タップ | NO-OP | revision増加なし |
+| overview各問をタップして値変更 | MUST | 対象overview field |
+| category intentionをタップして値変更 | MUST | 対象category intention |
+| STEP移動 / 戻る / 結果を見る | MUST NOT | UI位置は保存しない |
+
+各成功transaction:
+- 対象record revisionを1回増加
+- globalRevisionを1回増加
+- transaction complete後のみ保存済み
+
+### 6.2 R002 known service
+
+| 操作 | 保存 | 保存内容 |
+|---|---|---|
+| 既知serviceボタンを選択確定 | MUST | 新recordId、categoryKey、serviceCatalogId、recordState=partial、usageStatus=unanswered、初期answers |
+| usageStatus値変更 | MUST | usageStatus、recordState=partial |
+| optional answer値変更 | MUST | answer + dependent child prune/materialize、recordState=partial |
+| intentionOverride値変更 | MUST | override、recordState=partial |
+| 「この1件を整理完了」 | MUST | recordState=completed |
+| 一覧を開く / 詳細を見るだけ | MUST NOT | no change |
+| 「いったん詳細整理を終わる」 | MUST NOT（単独では） | 直前までtransaction complete済みの値だけ残る |
+
+### 6.3 R002 「その他」
+
+| 操作 | 保存 | 保存内容 |
+|---|---|---|
+| 「その他」を選択しただけ | MUST NOT | identity未確定 |
+| service名を入力中 | MUST NOT | pending UI |
+| valid service名で「利用状態へ」を押し確定 | MUST | 新recordId、categoryKey、serviceCatalogId=other、normalized otherServiceName、recordState=partial、usageStatus=unanswered、初期answers |
+| 以降のusage/answer/intention/complete | MUST | known serviceと同じ |
+
+空文字・validator不合格のservice名は保存しない。
+
+### 6.4 save in-flight中の次mutation
+
+- 同一tabのsave coordinatorでtransactionを直列化する。
+- mutationSeqはUI一時状態で、IndexedDB正本には保存しない。
+- 先行transaction complete後、後続pending mutationが残っている間は「現在入力が保存済み」と表示しない。
+- transaction abort/errorならそのmutationだけ未commit。直前までのcommitted stateを変更しない。
+
+### 6.5 中断
+
+ブラウザーreload / R002終了 / 別画面移動後:
+- transaction complete済みのR001/R002 factsは残る。
+- partial serviceはrecordState=partialとして復元する。
+- pending overlayは通常reloadでは残る保証をしない。
+- 保存失敗を検知できた場合は画面保持とemergency exportの対象にできる。
+
+## 7. revision / generation規範
+
+meta:
+```text
+schemaVersion
+questionSchemaVersion
 generationId
 globalRevision
 ```
 
-#### generationId
-- 現在のデータ集合の世代を表す内部UUID
-- 全削除後に新しい空データ集合を作る場合に更新
-- 全置換復元の成功時に更新
-- 古いタブが削除前・復元前のデータを再保存することを拒否する根拠に使う
+- record revision: 変更されたrecordごとに1増加
+- globalRevision: 成功した1transactionにつき1増加
+- 1transactionでservice + parent overview/categoryをatomic更新する場合、各変更record revisionは1増加、globalRevisionは1増加
+- 新規service recordはrevision=1
+- baseline category/overviewはrevision=0
+- 最初の利用者mutationでdataset初期化 + mutationを1transactionで行いglobalRevision=1
+- delete-all / full replace restore成功時はgenerationIdを変更
+- generationId/globalRevision/record revision不一致ではB案どおり保存停止
 
-#### globalRevision
-- 保存データ集合全体の更新番号
-- 成功した保存系トランザクションごとに増加
-- 別タブ更新の検知に使用
-- record revisionとは別に保持する
+## 8. R001 / R002 operation-direction matrix（F2-R03）
 
-#### record revision
-- 各カテゴリ / サービス記録の個別更新番号
-- 個別レコード修正対象の同定・診断に使用
-- globalRevisionの代替にはしない
+### 8.1 service追加/編集起点: positive方向
 
-## 4. 保存要求の共通保護パイプライン
+R002 detailの確定値により存在が論理的に証明された場合は、R001 summaryを**同一transactionで肯定方向へ整合**する。
 
-追加・更新・削除・カテゴリ連動変更・全削除・復元など、保存データへ影響する経路を個別実装せず、共通の保存保護層を経由させる。
+| R002 mutation | R001が否定値なら |
+|---|---|
+| usageStatus=using | parent category `not_using -> using` |
+| billing=yes | overview `billing: no -> yes` |
+| finance系 asset=yes | overview `finance: no -> yes` |
+| importantData=yes | overview `data: no -> yes` |
+| familyKnow=no | overview `family: known -> hidden` |
 
-基本順序:
+R001がunanswered / unknownの場合:
+- detail positive factはdetail正本としてcommitしてよい。
+- R003の明白矛盾解消ルールに従い、論理的に一意なsummary positiveへの整合を行う。
+- 自動整合されたsummaryとserviceを同一transactionでcommitする。
 
-1. UI入力を保存候補の構造化値へ変換
-2. allowlist / 型 / 列挙 / 長さ / 条件分岐を検証
-3. 現在タブが保持している `generationId / globalRevision / target revision` をexpected版として保持
-4. 保存対象全storeを含むIndexedDB `readwrite` transactionを開始
-5. transaction内で最新meta・必要レコードを読み直す
-6. generation不一致なら競合停止
-7. globalRevision不一致なら競合停止
-8. target record revision不一致なら競合停止
-9. R001/R002整合性を評価
-10. 論理的に一意な「存在方向」の整合だけ候補データへ反映
-11. 一意でない変更は保存を停止しユーザー再確認へ回す
-12. 非表示となる条件付き回答を除去
-13. 変更後の全保存データを決定的表現へ組み立てる
-14. UTF-8 byte数を測定
-15. 10,000,001 bytes以上ならtransactionをabortし上限超過扱い
-16. 関係レコードとmeta revisionを同一transactionで更新
-17. transaction `complete` を待つ
-18. completeした版だけ「保存済み」へ反映
-19. error / abortでは未保存UI状態を保持
+### 8.2 R001 negative変更起点
 
-注意:
-- `put().onsuccess` 等の個別request成功だけで「保存済み」にしない。
-- transaction開始後にnetwork / timer / unrelated Promise等を挟まない。
-- transaction有効期間内でIndexedDB requestと同期処理を完結できる構造を優先する。
+利用者がR001を否定方向へ変更しようとしたとき、既存R002 positive detailがある場合:
 
-IndexedDB仕様上、transactionはatomicにcommit/abortされ、`complete` はcommit成功後に発火するため、この境界を保存成功判定に使う。
+- silent commit禁止
+- child削除禁止
+- child dormant化禁止
+- summaryだけ否定値へ変更禁止
+- transactionをcommitせず、配下detailの確認/解消を求める
 
-## 5. R001 / R002整合ルール
+対象:
+- category -> not_using vs child using
+- billing -> no vs service billing=yes
+- finance -> no vs finance detail asset=yes
+- data -> no vs detail importantData=yes
+- family -> known vs detail familyKnow=no
 
-R003承認済みルールを変更しない。
+### 8.3 serviceのpositive -> negative変更
 
-### 自動整合可能な方向
+例: service billing yes -> no、usage using -> dormant。
 
-1件の詳細情報から全体に「存在する」と論理的に確定できる場合だけ肯定方向へ整合する。
+- service変更はcommitできる。
+- R001 summaryを否定方向へ自動変更しない。
+- source summaryは既存値を維持。
+- hidden child answerは条件に従ってatomicにpruneする。
 
-例:
-- R002 `billing=yes` が存在 -> R001 billing を「あり」
-- R002金融系 `asset=yes` -> R001 finance を「あり」
-- R002 `importantData=yes` -> R001 importantData を「あり」
-- R002 `familyKnow=no` -> R001 family を「知らないものあり」
-- R002 `usageStatus=using` -> 親カテゴリが not_using なら using候補
+### 8.4 service削除起点
 
-### 自動で否定方向へ変更しない
+- service recordを削除する。
+- parent categoryをnot_usingへ自動変更しない。
+- billing/finance/data/family summaryを否定方向へ自動変更しない。
+- service削除と必要なrecord revision/meta更新は同一transaction。
 
-- 最後のbilling=yesサービス削除 -> R001 billingを自動で「なし」にしない
-- 全サービス削除 -> 親カテゴリを自動で「使っていない」にしない
-- R002に記録がない -> R001「なし」を自動確定しない
+### 8.5 service category move
 
-### 親変更時
+現行R002 UXにはservice category移動操作を追加しない。
 
-- R002条件付き質問の親回答変更 -> 非表示子回答を同じ保存候補から除去
-- R001カテゴリを「使っていない」へ変更し、配下にusingサービスがある -> 確認なしでは保存しない
-- カテゴリ削除 -> 明示確認後、カテゴリ記録と配下service recordsを同一transactionで削除
-- カテゴリ意向変更 -> service `intentionOverride` は維持。override=nullのサービスだけ表示上新親意向を参照
+保存層の規範:
+- 通常のservice editではcategoryKey mutationを許可しない。
+- 将来、別承認でmove操作を導入する場合のみ専用operationとして扱う。
+- 専用moveではtarget categoryにpositive整合、source categoryにnegative自動整合しない。
+- service + target summary/category更新を同一transaction。
+- category指定はcanonical categoryKeyだけを受理し、displayCodeで対象決定しない。
 
-## 6. 複数タブ・古いデータ復活防止
+F5では:
+- ordinary editでcategoryKey改変を拒否
+- synthetic move guardを試す場合はcanonical keyだけを受理する
 
-各タブは最後に読込成功した:
-- generationId
-- globalRevision
-- 編集対象record revision
+## 9. 保存共通transaction
 
-を保持する。
+全保存系operationは共通guardを通す。
 
-保存時の最新metaと1つでも不一致ならB案に従い保存停止。
+1. UI mutationをcanonical candidateへ変換
+2. text normalization / allowlist / type / enum / dependency validation
+3. expected generation/global/record revisionを保持
+4. 必要storeを含むreadwrite transaction開始
+5. 最新meta / affected recordsをtransaction内で再読込
+6. expected版照合
+7. operation-direction整合
+8. conditional child prune/materialize
+9. prospective committed datasetを生成
+10. canonical capacity projection作成
+11. UTF-8 byte count
+12. >10,000,000ならabort
+13. affected records + metaをwrite
+14. transaction complete
+15. 対応mutationだけをcommit済みとしてUIへ反映
 
-競合時:
-- 自動mergeしない
-- force overwriteしない
-- 同じ古いexpected版での単純retryを許可しない
-- 未保存入力は画面上で保持
-- 最新版読込・差分確認へ誘導
+request単体successを保存成功扱いしない。
 
-BroadcastChannel等の通知は補助にのみ使う候補。
-保存可否の正本判定は必ずIndexedDB transaction内の版比較とする。
+## 10. 「その他」service名規範（F2-R04）
 
-### 全削除 / 全置換復元
+現在の自由文字入力は `otherServiceName` だけ。
 
-成功時に新しいgenerationIdを発行する。
+### 10.1 canonicalization MUST
 
-これにより削除前・復元前のタブはgeneration mismatchとなり、旧recordIdが手元に残っていても再保存できない。
+保存・normal backup・emergency export・import/restore validationで同じ関数規範を使う。
 
-## 7. 同一タブ内の保存順序
+順序:
+1. 入力をUnicode stringとして受理
+2. **Unicode NFC**へnormalizeする
+3. ECMAScript `String.prototype.trim()` 相当で先頭/末尾whitespaceを除く
+4. C0 controls U+0000–U+001F、DEL U+007F、C1 controls U+0080–U+009Fを含む場合は拒否
+5. Unicode bidi control charactersを含む場合は拒否
+   - U+061C
+   - U+200E–U+200F
+   - U+202A–U+202E
+   - U+2066–U+2069
+6. 正規化・trim後が空なら拒否
+7. 正規化・trim後の**UTF-16 code unit length**が1〜60であること
+   - 現R002 `input.maxLength=60` と同じ単位へ合わせる
+8. secret-like regexは補助防御として適用し、該当時は保存しない
 
-同一タブからの保存を並列実行しない。
+**NFKCは採用しない。**
+理由: compatibility文字を別文字へ変換し、利用者が入力したservice表示名の意味・見た目を不要に変える可能性があるため。NFCでcanonical equivalenceだけを統一する。
 
-タブ内にsave coordinatorを置く候補とし、保存処理は1本ずつ直列化する。
+### 10.2 MUST NOT
 
-各入力確定には一時的な `mutationSeq` を付与する。
+- control/bidi文字を黙って削除して保存しない
+- invalid import値を自動修復しない
+- importだけ別validatorにしない
+- raw未正規化文字列を容量計測へ使わない
 
-例:
-- seq 10 保存開始
-- 保存中に利用者がseq 11へ変更
-- seq 10 transaction complete
-- DB上はseq 10相当までcommit済み
-- 画面はseq 11が存在するため「現在の入力が保存済み」とは表示しない
-- seq 11を次の保存対象として処理
+### 10.3 capacityとの順序
 
-古い保存完了イベントが新しい入力へ「保存済み」を誤表示しないことを必須とする。
+otherServiceNameは**NFC + trim + validation後のcanonical string**をprospective datasetへ入れ、その値を容量計測する。
 
-`mutationSeq` はUI一時状態でありIndexedDB正本へ保存しない。
+pending UIの未確定raw文字列は通常capacity projectionに入れない。
 
-## 8. 削除の安全境界
+## 11. canonical capacity projection（F2-R05）
 
-### サービス1件削除
-- recordIdで対象を特定
-- 配列indexやサービス名で特定しない
-- R001全体回答を否定方向へ自動変更しない
-- transaction complete後に削除済み表示
+### 11.1 対象
 
-### カテゴリ削除
-「使っていないへ変更」と「カテゴリ保存データ削除」を別操作として維持。
+10MBはprospective **committed dataset** に対するアプリ定義上限。
 
-明示確認後:
-- category record
-- そのcategoryId配下のservice records
+- normal committed dataset: 対象
+- save candidate: mutation適用後のprospective committed datasetとして対象
+- pending overlay単体: 未commitなので現在のcommitted容量には含めない
+- emergency export file wrapper/metadata: 10MB IndexedDB上限の対象外。F3でfile制限を別定義
 
-を同一transactionで削除する。
+### 11.2 top-level property order
 
-### 全削除
-- 全利用者整理recordを1transactionで削除
-- metaは新generationへ更新
-- 途中失敗時は旧データ集合を維持
-- 古いタブはgeneration mismatchで保存拒否
-
-ブラウザー保存版ではサーバーバックアップやサーバーtombstoneは存在しない。
-F3ファイルバックアップからの復元で削除データを復活させる問題は復元時generation切替と明示確認で扱う。
-
-## 9. 復元へのF2安全要件
-
-詳細ファイル形式・最大入力ファイルサイズはF3で決定し、本書では正式承認しない。
-
-F3へ以下を必須要件として引き継ぐ。
-
-復元前に:
-- raw file byte上限
-- parse後データ量
-- schemaVersion
-- 必須field
-- unknown field
-- field type
-- enum
-- 文字長
-- 禁止情報field
-- 予期しないnested object
-- duplicate recordId
-- duplicate category
-- category/service整合
-- 条件分岐整合
-- 10MBアプリ上限
-
-をallowlist検証する。
-
-不正・未知・破損・空データを「新規利用状態」とみなして現在データを上書きしない。
-
-全置換復元は利用者の明示確認後、全対象store + metaを同一transactionで置換する。
-commit失敗時は既存データを維持する。
-
-成功時:
-- generationId更新
-- globalRevision更新
-- 古いタブを無効化
-
-## 10. 秘密情報・XSS・外部流出防止
-
-### 入力 / 保存
-既存R003 D区分をそのまま継承する。
-
-専用fieldを作らない:
-- password
-- PIN / passcode
-- OTP / OTP seed
-- recovery code
-- private key / seed phrase
-- full card number
-- CVV / CVC
-- passkey secret
-- API key
-- access / refresh token
-- SSH private key
-- cookie / session token
-- その他、直接ログイン・本人確認突破・送金・資産操作に使用できる秘密
-
-### 「その他」サービス名
-- 用途はサービス表示名だけ
-- 現行R002に合わせ最大60文字
-- NFKC等の正規化候補
-- 制御文字・bidi制御等を拒否候補
-- 外部識別情報らしい入力を保存しない
-- 秘密語検知regexは補助防御であり安全保証に使わない
-- 保存 / 復元時も同じvalidatorを通す
-
-### 描画
-利用者入力文字列をHTMLとして解釈しない。
-`textContent` 相当の安全なテキスト挿入を使用する。
-
-### JSON取込
-unknown keyを柔軟に保持しない。
-想定外nestをそのまま保存しない。
-
-### 外部送信
-整理内容を以下へ送らない:
-- analytics
-- error monitoring
-- APM
-- session replay
-- screen recording
-- crash report
-- remote logging
-
-エラーには内容本文ではなく:
-- error category
-- operation type
-- internal opaque IDが本当に必要な場合のみ
-等のallowlist情報だけを使用する。
-
-公開origin・第三者script・CSPはF4開始前に別途構成審査する。
-F2設計だけで外部流出防止をPASS扱いしない。
-
-## 11. 容量判定
-
-### canonical capacity projection
-
-IndexedDB内部の物理サイズではなく、人間承認済みのアプリ定義サイズを算定する。
-
-容量計測用に固定順序のprojectionを生成する候補:
+容量計測用projectionは必ず以下の順序で構築する。
 
 ```text
 {
   schemaVersion,
-  questionSchemaVersion?,
+  questionSchemaVersion,
   generationId,
   globalRevision,
   overview,
-  categories: categoryId順,
-  services: recordId順
+  categories,
+  services
 }
 ```
 
-各record内のproperty順も実装で固定する。
+### 11.3 overview order
 
-含める:
-- ID
-- revisions
-- schemaVersion
-- 保存対象の構造化回答
-- 「その他」サービス名
+```text
+{
+  recordId,
+  identity,
+  billing,
+  finance,
+  data,
+  family,
+  revision,
+  schemaVersion
+}
+```
 
-除外:
-- UI一時状態
-- 派生結果
-- 保存禁止情報
+全field必須。`unanswered` は文字列として明示。
 
-`JSON.stringify(canonicalProjection)` を `TextEncoder` でUTF-8化しbyteLengthを測る。
+### 11.4 categories order
 
-判定:
-- <= 10,000,000: アプリ側容量条件PASS
-- >= 10,000,001: 書込拒否
+配列順は固定mapping順:
+`device, base, mail, social, cloud, subscription, finance, commerce, auth, license, carrier, business`
 
-ブラウザー実quotaとは別。
-`navigator.storage.estimate()` 等を使う場合も参考値に留め、保存成功判定には使わない。
+各property順:
+```text
+{
+  recordId,
+  categoryKey,
+  usageStatus,
+  intention,
+  revision,
+  schemaVersion
+}
+```
 
-### performance
+12件すべて含める。unanswered recordも除外しない。
 
-最大近傍の全量serializationはPCよりiPhone Safariで負荷が高い可能性がある。
+### 11.5 services order
 
-安全性を落として古いsnapshotを使う最適化はF5/F6前に採用しない。
+service recordsは `recordId` のASCII/Unicode code unit昇順。
+recordId format自体はF4前レビューで確定するが、同一dataset内で一意・安定であること。
 
-F5/F6で10MB近傍の処理時間・UI停止・transaction維持を測り、許容できない場合は容量計算方式の安全な最適化を再設計して再審査する。
+property順:
+```text
+{
+  recordId,
+  categoryKey,
+  serviceCatalogId,
+  otherServiceName,
+  recordState,
+  usageStatus,
+  answers,
+  intentionOverride,
+  revision,
+  schemaVersion
+}
+```
 
-## 12. 保存失敗
+- known service: otherServiceName = null
+- other service: serviceCatalogId = "other"
+- partial / completed両方を含める
+- pending overlayは含めない
 
-既承認の6分類を維持。
+### 11.6 answers order
 
-保存処理中の候補データは「保存済み」と区別する。
+R2Qで定義されたquestion順でpropertyを構築する。
 
-成功:
-- transaction complete
-- expected mutation/versionと対応している
-場合のみ保存済み表示。
+- unconditional: key必須。未回答は `unanswered`
+- active conditional: key必須。未回答は `unanswered`
+- inactive conditional: key自体を含めない
 
-失敗:
-- transaction error / abort
-- app上限
-- quota関連
-- storage利用不可
-- conflict
-- その他
+unknown answer keyは禁止。
 
-では画面上の未保存入力を保持する。
+### 11.7 JSON / UTF-8
 
-競合は一般retryでは解決させない。
-最新版確認を先に要求する。
+- 上記projectionを新規objectとして構築
+- `JSON.stringify`
+- `TextEncoder` 相当でUTF-8 bytes
+- 10,000,000以下: app capacity gate通過
+- 10,000,001以上: write拒否
 
-再試行で回復しない保存失敗では既承認の緊急ファイル退避を提示する。
+ID、revision、version、unanswered、partial serviceを恣意的に除外しない。
 
-## 13. 通常バックアップ / 緊急退避の境界
+## 12. normal backup / emergency export / restore（F2-R06）
 
-F3詳細形式は未承認。
+### 12.1 normal backup
 
-F2からF3へ以下の意味分離を要求する。
+対象:
+- transaction complete済みのcommitted datasetだけ
+- completed service
+- committed partial service
+- R001 unansweredを含むbaseline/partial state
 
-### committed snapshot
-IndexedDB transaction complete済みの正本。
+含めない:
+- pending overlay
+- UI screen/history
+- mutationSeq
 
-### pending overlay
-画面には存在するがIndexedDBへcommitされていない直近入力。
+したがってnormal backupは「完了済みだけのbackup」ではない。
+**commit済みの途中整理も正本なので含む。**
 
-緊急退避ではpendingを含めてよいが、committedと同じ意味で混ぜない。
+### 12.2 emergency export
 
-F3共通形式は:
-- committed部分
-- pendingが存在するか
-- pendingがどのrecord / operationへ適用される候補か
-- base generation / base revision
-を判別できる必要がある。
+保存失敗・競合等で未commit mutationが残る場合:
 
-pendingも書出し前に:
-- allowlist
-- type
-- enum
-- length
-- 禁止field
-- dependency
-を検証する。
+- committed datasetを通常backup相当領域に入れる
+- pending overlayを**別領域**に追加できる
+- pendingはcommitted recordへmergeして書出さない
+- pendingにはbase generation/global/target record revision等、どの正本に対するmutationかを判別するmetadataを付ける要件をF3へ渡す
 
-復元時、pendingを自動でcommittedへ昇格させず、復元後の最新データへ再適用できるか検証して利用者確認へ回す設計をF3で審査する。
+pendingも書出し前に同じinput validatorを通す。
 
-ファイル生成開始だけを成功扱いしない。
-ブラウザーが保存完了を直接保証できない場合は利用者へファイル存在確認を促す。
+invalid pending:
+- emergency fileへ含めない
+- 「未保存入力を退避できた」と表示しない
+- committed部分だけ書き出せた場合はpending非退避を明示する
 
-## 14. 端末保存の長期消失
+### 12.3 emergency fileと10MB
 
-IndexedDBはブラウザー保存であり、保存成功と長期保持は別。
+10MBはIndexedDBのprospective committed dataset上限。
 
-維持する表示:
-- 利用開始時にデータ消失可能性
-- Safari等の長期未利用リスク
-- 適宜ファイルバックアップ推奨
-- 共用端末では他者閲覧可能性
+保存失敗原因が10MB超過なら、pending mutationを足すと10MBを超える可能性がある。
+そのため:
+- emergency export fileが10MBを超える可能性を認める
+- file size上限はF3で別途確定
+- emergency pendingをrestore時に自動commitしない
 
-追加しない:
-- 完了時催促
-- 回答変更時催促
-- 定期通知
-- プライベートモード専用検知 / 遮断
+### 12.4 restore
 
-「保存済み」は直近transaction commit済みを意味するだけで、「消えない」「永久保存」を意味しない。
+normal backup:
+- strict validation後、committed datasetとしてatomic full replace
+- partial/completed状態をそのまま復元
+- restore成功時generationIdを切替
+- 旧tabをgeneration mismatchで無効化
 
-## 15. 修正前後の主な違い
+emergency export:
+1. committed dataset部分をstrict validation
+2. atomic restore
+3. pending overlayは**未commitのまま**別扱い
+4. silent apply禁止
+5. 利用者が再適用する場合、通常save pipelineを通す
+6. 再適用後のprospective committed datasetが10MBを超えるなら再度保存拒否
 
-### 修正前
-- R002の配列 / editIndexが保存版へ入り得る境界
-- inheritedIntention複写
-- record revisionだけでは全削除 / 復元競合が不足
-- request successとtransaction completeの境界が未定義
-- pending入力とcommittedデータのバックアップ境界が未定義
-- 復元 / 全削除後の古いタブ復活防止が未定義
+F3でfile envelope、raw file上限、parsed size上限、pending再適用UIを確定する。
+本F2文書はF3詳細形式を承認しない。
 
-### 修正後案
-- stable recordIdで個別記録を管理
-- intentionOverrideだけ保存し親意向は都度参照
-- record revision + globalRevision + generationId
-- 保存系経路を共通transaction guardへ集約
-- transaction completeだけを保存成功
-- save coordinatorで同一タブの順序逆流を防止
-- restore / delete-allでgeneration切替
-- committed snapshotとpending overlayを明確に分離
-- canonical JSON/UTF-8容量判定
-- F3へ安全な復元境界を明示
+## 13. conflict / delete / restore世代
 
-## 16. 設計段階で残るもの
+- record revision + globalRevision + generationIdを維持
+- partial serviceも通常service recordと同じ版管理
+- 全削除 / full replace restore成功時generation切替
+- 古いtabからpartial/completed recordどちらも再書込不可
+- BroadcastChannel等は補助であり、保存可否はtransaction内version比較
 
-本書はF2修正設計案であり、以下を証明しない。
+## 14. S06 / secret / XSS / external send
 
-- IndexedDB実装が正しい
-- Chrome / Safariで同じように動く
-- 10MB近傍で十分な性能
-- 長期データ保持
-- ファイルバックアップ成功
-- 復元成功
-- XSS不存在
-- 外部送信不存在
-- 複数タブ競合防止の実動作
-- 保存失敗分類精度
+変更なし:
+- R003 D区分fieldを作らない
+- 自由メモなし
+- external account identifier実値なし
+- user textはtextContent相当
+- unknown JSON key/nest拒否
+- analytics/APM/session replay/error logへ整理内容を送らない
+- origin / CSP / third-party scriptはF4前審査
 
-これらはF5 / F6およびF7以降のゲート対象。
+## 15. private mode / long-term loss / backup prompt
 
-## 17. 停止位置
+既承認どおり維持。
 
-本書を制作管理室へ提出し、正式レビュー待ちで停止する。
+- 利用開始時の赤文字private mode注意
+- long-term loss説明
+- 適宜backup推奨を同じ利用開始時に表示
+- 完了時/回答変更時/定期催促は追加しない
+- private mode専用検知/遮断は追加しない
+- 「保存済み」はtransaction commit済みの意味で、長期保持保証ではない
+
+## 16. F2-R01〜R06対応要約
+
+| 差戻し | 対応 |
+|---|---|
+| F2-R01 | categoryKeyを既存内部ID 12種へ固定。A〜Lは表示専用 |
+| F2-R02 | unanswered / committed partial / completed / pendingを定義。R001/R002の保存イベント表を固定 |
+| F2-R03 | detail positive、parent negative、service negative/delete、category moveを操作方向別に分離 |
+| F2-R04 | otherServiceNameはNFC+trim、control/bidi拒否、UTF-16 1〜60、importも同一規範 |
+| F2-R05 | category fixed order、explicit unanswered、partial serviceを含むcanonical projectionを確定 |
+| F2-R06 | normal backup=committedのみ、emergency=pending別領域、restoreでpending silent commit禁止 |
+
+## 17. 残る未承認事項
+
+- IndexedDB object store名 / keyPath
+- recordId生成方式の具体実装
+- schemaVersion / questionSchemaVersionの具体値
+- F3 file envelope / file size上限 / pending再適用UI
+- 保存エラー例外mappingの実装
+- F4コード
+- F5/F6実測
+
+本設計の完成は安全性試験PASSを意味しない。
+
+## 18. 停止位置
+
+制作管理室へ再提出し、再レビュー待ちで停止。
 
 禁止:
-- F2全体の自己承認
-- F3詳細仕様の正式承認
+- F2全体自己承認
+- F3詳細承認
 - F4実装開始
+- F5/F6未試験をPASS扱い
 - 本番公開
 - R005凍結解除
-- 認証 / クラウド基盤再開
+- 認証 / クラウド同期再開
