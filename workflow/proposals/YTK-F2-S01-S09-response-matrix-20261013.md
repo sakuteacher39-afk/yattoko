@@ -1,10 +1,11 @@
-# YTK-F2 S01〜S09 / F2-R01〜R08 指摘対応表
+# YTK-F2 S01〜S09 / F2-R01〜R09 指摘対応表
 
 - 更新日: 2026-10-13
 - 状態: **REVISED / 制作管理室 再レビュー待ち**
 - 前回正式レビューcommit: `e2fa1bb23c8c57219d4d6c87467879a7f62a684e`
 - 正式再レビューcommit: `8d1845b21d3e096bfce3d7482066cbe85defee2e`
-- 正式再レビュー判定: F2-R01/R03/R04/R05/R06 RESOLVED、F2-R02 CHANGES_REQUIRED
+- 正式再々レビューcommit: `b802b1dae3646b09f526b6dd0af76cc329831681`
+- 正式再々レビュー判定: F2-R01/R03〜R08 RESOLVED / MAINTAINED、F2-R02はF2-R09残存でCHANGES_REQUIRED
 - F2全体APPROVED・F5/F6 PASSを意味しない
 
 ## 1. 正式レビュー差戻し対応
@@ -26,15 +27,24 @@
 | F2-R08 | completed service invariant不足 | completedはusageStatus∈{using,dormant,unknown}必須。load/import/restoreも同一cross-field validation |
 | TEST-REGRESSION | 旧試験の重要項目が脱落 | delete atomicity、strict restore、emergency export fail-closed、保存エラー6分類、browser restart保持をF5/F6へ復元 |
 
+### 正式再々レビュー追加差戻し
+
+| Review ID | 正式再々レビュー指摘 | 今回の修正 |
+|---|---|---|
+| F2-R09 | parent intention=unanswered + service override=null時の表示/effective再構成が未定義 | parent正本はunansweredのまま、画面/effectiveだけundecidedへfallback。serviceへ複写保存せずreload/restart/restore/importで同じresolverから再計算 |
+| F2-R09 parent follow | 後からparent intention確定時の追随 | override=nullだけ新parent値へ派生追随。overrideありは維持 |
+| F2-R09 child using | 未回答parent配下でchild using確定時のR03/R07連携 | parent usage=using + intention=undecidedをserviceと同一transactionでatomic commit |
+| TEST-R09 | R09経路のF5/F6不足 | R09-01〜R09-11、PC/iPhone reload・restart系列を追加 |
+
 ## 2. S01〜S09対応状況
 
 | ID | 正式レビュー判定 | 今回の是正 |
 |---|---|---|
 | S01 | CHANGES_REQUIRED | A〜L保存案を撤回。canonical categoryKeyを既存内部IDへ一致。stable recordId管理は維持 |
-| S02 | CHANGES_REQUIRED（再レビュー時） | R07でR001 intention初期化互換、R08でcompleted invariantを追加し再レビュー対象とした |
+| S02 | CHANGES_REQUIRED（再々レビュー時） | R07/R08は解消済み。R09でparent unanswered時の派生fallbackと後追随を規範化し再レビュー対象とした |
 | S03 | PASS（設計是正・再レビュー判定） | partial/completedもrecord/global/generationで版管理。成功transaction単位を正本境界に固定 |
-| S04 | CHANGES_REQUIRED（再レビュー時） | R07のstatus副作用とR08 complete preconditionを保存イベントへ反映し再レビュー対象とした |
-| S05 | CHANGES_REQUIRED（再レビュー時） | restoreへR08 cross-field invariantとstrict invalid-state拒否を追加し再レビュー対象とした |
+| S04 | CHANGES_REQUIRED（再々レビュー時） | 未回答parentからservice partial保存後のreload/restart表示をR09 resolverで一意化し再レビュー対象とした |
+| S05 | CHANGES_REQUIRED（再々レビュー時） | backup restore / import restoreでもR09 resolverからderived fallbackを再計算する規範を追加し再レビュー対象とした |
 | S06 | CHANGES_REQUIRED | normalization/rejectをMUST化しF5と一致 |
 | S07 | CHANGES_REQUIRED | categoryKey/unanswered/partial/property orderを含むcapacity projection確定 |
 | S08 | PASS（設計是正のみ） | 変更なし。長期保持保証なし、開始時警告/backup推奨/NOT VERIFIED維持 |
@@ -93,6 +103,16 @@ A〜Lは保存対象決定のkeyに使用しない。
 - service delete: R001 summary/categoryをnegative自動更新しない
 - ordinary service edit: categoryKey変更禁止
 - future dedicated move: target positive / source no negative auto-update
+
+### R09 effective intention要約
+
+- parent intention=unanswered + override=null -> canonical保存は変更せず、display/effectiveだけundecided
+- fallback値をserviceへ保存しない
+- reload / browser restart / backup restore / import restoreで同じresolverから再計算
+- parent意向確定後、override=null serviceだけ派生追随
+- overrideありserviceは維持
+- child usage=usingでparent usageを肯定整合する場合、parent intention=unansweredならR07も同一transaction
+- R09 atomic transactionではchanged service/category revisionを各1回、globalRevisionを1回増加
 
 ## 7. 変更していない人間承認事項
 

@@ -1,13 +1,13 @@
-# YTK-F2 保存設計 正式再レビュー差戻し対応 再審査依頼
+# YTK-F2 保存設計 正式再々レビュー F2-R09差戻し対応 再審査依頼
 
 制作管理室 御中
 
-2026-10-13付正式再レビュー
-`workflow/reviews/YTK-F2-storage-safety-formal-rereview-20261013.md`
-（commit `8d1845b21d3e096bfce3d7482066cbe85defee2e`）
-でCHANGES_REQUIREDとなったF2-R02の残存事項F2-R07 / F2-R08、およびF5/F6試験計画の回帰漏れについて、既存5成果物を再更新しました。
+2026-10-13付正式再々レビュー
+`workflow/reviews/YTK-F2-storage-safety-formal-rereview2-20261013.md`
+（commit `b802b1dae3646b09f526b6dd0af76cc329831681`）
+で新規CHANGES_REQUIREDとなったF2-R09と、その対応F5/F6試験について既存5成果物を更新しました。
 
-前回F2-R01 / R03 / R04 / R05 / R06のRESOLVED判定を前提に、その規範は変更していません。
+直前レビューでRESOLVED / MAINTAINEDとなったF2-R01・R03〜R08、および復元済みF5/F6回帰試験は変更・後退させていません。
 
 本再提出は**F2全体の自己承認ではありません**。
 F5/F6は未実施であり、安全性試験PASSも宣言しません。
@@ -88,6 +88,21 @@ F5/F6は未実施であり、安全性試験PASSも宣言しません。
 - PC Chrome browser restart後のpartial/completed
 - iPhone Safari通常の終了/再起動後のpartial/completed
 
+### F2-R09 unanswered parent intention fallback
+- R001未回答categoryからR002 service identityを追加しただけではparent usage/intention正本を変更しない
+- intentionOverride=null + parent intention=unansweredでは画面/effectiveだけundecidedへfallback
+- fallback値をservice recordへ保存しない
+- reload / browser restart / normal backup restore / file import restoreで同じresolverから再計算
+- parent意向確定後、override=null serviceだけ新parent値へ追随
+- overrideありserviceは維持
+- child usage=usingでparent usageを肯定整合する場合、parent intention=unansweredならF2-R07も同一transactionで適用
+- changed service/category revision各+1、globalRevision+1、abort時片側commitなし
+
+### F5/F6 R09追加
+- F5へR09-01〜R09-11を番号そのままで追加
+- PC Chromeへ未回答category→service partial→reload→browser restart→fallback再構成系列を追加
+- iPhone Safari通常へ同系列を追加
+
 ## 既承認事項の維持確認
 
 変更していない:
@@ -107,20 +122,21 @@ F5/F6は未実施であり、安全性試験PASSも宣言しません。
 
 ## 再審査で確認してほしい事項
 
-1. F2-R07が現行R001 prototypeのstatus→undecided初期化と一致するか
-2. F2-R07で既存keep/delete/family/undecidedを上書きしないか
-3. F2-R08のcompleted cross-field invariantが現行R002 UXと一致するか
-4. normal load / import / restoreで同じcompleted invariantがfail closedで適用されるか
-5. delete atomicity / strict restore / emergency export fail-closed / 保存エラー6分類がF5へ復元されたか
-6. PC Chrome / iPhone Safari通常のbrowser restart保持がF6へ復元されたか
-7. 前回RESOLVEDのF2-R01/R03/R04/R05/R06を崩していないか
+1. parent canonical intention=unansweredをservice選択だけで変更していないか
+2. override=null時だけdisplay/effectiveをundecidedへfallbackする規則が一意か
+3. fallback値をserviceへ複写保存していないか
+4. reload / browser restart / backup restore / import restoreで同じresolverから再計算できるか
+5. parent intention確定後にoverride=null serviceだけ追随し、overrideありを上書きしないか
+6. child usage=using時にR03 parent usage整合 + R07 intention初期化を同一transactionで行うか
+7. F5 R09-01〜R09-11をすべて含むか
+8. PC Chrome / iPhone Safari通常のreload・restart系列を含むか
+9. F2-R01・R03〜R08および既存回帰試験を後退させていないか
 
 ## 希望判定形式
 
-- F2-R07: RESOLVED / CHANGES_REQUIRED
-- F2-R08: RESOLVED / CHANGES_REQUIRED
+- F2-R09: RESOLVED / CHANGES_REQUIRED
 - F2-R02残存不備: RESOLVED / CHANGES_REQUIRED
-- F2-R01/R03/R04/R05/R06 regression: MAINTAINED / REGRESSED
+- F2-R01/R03/R04/R05/R06/R07/R08 regression: MAINTAINED / REGRESSED
 - S01〜S09設計是正全体: PASS / CHANGES_REQUIRED
 - F5/F6試験計画: SUFFICIENT / CHANGES_REQUIRED
 - F2全体: REVIEWED / NOT APPROVED

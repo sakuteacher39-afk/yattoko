@@ -2,7 +2,7 @@
 
 - 更新日: 2026-10-13
 - 状態: **OPEN RISKS / 再レビュー待ち**
-- F2正式再レビュー F2-R07〜R08差戻し対応後の残存リスク
+- F2正式再々レビュー F2-R09差戻し対応後の残存リスク
 - 設計是正を試験PASS扱いしない
 
 | Risk ID | 残存リスク | 今回の制御 | 次工程 |
@@ -39,6 +39,9 @@
 | R-F2-30 | schema/question version migration誤解釈 | unknown version拒否/別migration経路 | F3/F5 |
 | R-F2-31 | R001 status回答済みなのにintention=unansweredが残り、既存R001/R002 semanticsとずれる | 初回status確定でintention=unansweredなら同一transactionでundecided。既存4値は維持 | F5-R07 / F6 |
 | R-F2-32 | invalid completed service（usageStatus=unanswered、invalid other名、conditional presence不整合）がload/restoreされる | completed cross-field invariantをsave/load/import/restore共通validatorへ固定しfail closed | F5-R08 / F5-RST / F6 |
+| R-F2-33 | parent intention=unansweredなのにR002画面だけundecided表示され、reload/restore経路でsemantic driftする | fallbackを単一resolver規範へ固定し、canonical parent/serviceへ複写せず全再構成経路で再計算 | F5-R09 / F6-PC-R09 / F6-IOS-R09 |
+| R-F2-34 | parent意向確定後もoverride=null serviceが古いfallback表示のまま残る | inherited/fallbackを保存せず、表示時に現在parentから毎回resolve | F5-R09 |
+| R-F2-35 | child usingの肯定整合でparent usageだけ更新されintention=unansweredが残る | R03 parent usage整合とR07 intention初期化を同一transactionへ結合 | F5-R09-09〜11 / F6 |
 
 ## 制作管理室レビュー後も残る可能性が高いもの
 

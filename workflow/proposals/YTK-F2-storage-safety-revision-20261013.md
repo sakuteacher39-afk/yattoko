@@ -1,13 +1,16 @@
 # YTK-F2 保存安全性 修正設計書
 
-- 文書種別: F2正式再レビュー差戻し F2-R07〜R08・試験回帰対応版
+- 文書種別: F2正式再々レビュー差戻し F2-R09対応版
 - 初版作成日: 2026-10-13
 - 初回差戻し対応日: 2026-10-13
 - 正式再レビュー差戻し対応日: 2026-10-13
+- 正式再々レビュー差戻し対応日: 2026-10-13
 - 参照正式レビュー: `workflow/reviews/YTK-F2-storage-safety-formal-review-20261013.md`
 - 前回正式レビューcommit: `e2fa1bb23c8c57219d4d6c87467879a7f62a684e`
 - 参照正式再レビュー: `workflow/reviews/YTK-F2-storage-safety-formal-rereview-20261013.md`
 - 正式再レビューcommit: `8d1845b21d3e096bfce3d7482066cbe85defee2e`
+- 参照正式再々レビュー: `workflow/reviews/YTK-F2-storage-safety-formal-rereview2-20261013.md`
+- 正式再々レビューcommit: `b802b1dae3646b09f526b6dd0af76cc329831681`
 - 状態: **REVISED / 制作管理室 再レビュー待ち**
 - F2全体承認: 未承認
 - F3詳細仕様承認: 未承認
@@ -21,11 +24,12 @@
 
 前回正式レビューF2-R01〜R06のうち、正式再レビューではF2-R01・R03・R04・R05・R06がRESOLVED、F2-R02がCHANGES_REQUIREDとなった。
 
+正式再々レビューではF2-R07 / F2-R08および直前要求のF5/F6回帰はRESOLVED / 復元済みとなった。
+
 今回の追加差戻しを対象とする。
 
-- F2-R07: R001 category status初回確定時のintention互換
-- F2-R08: R002 completed service cross-field invariant
-- F5/F6回帰: delete atomicity、strict restore、emergency export fail-closed、保存エラー6分類、browser restart保持
+- F2-R09: R001未回答categoryからR002へ入る場合の本人意向derived fallback
+- F5/F6追加: R09-01〜R09-11、PC Chrome / iPhone Safari通常のreload・browser restart再構成
 
 前回RESOLVEDとなった以下の規範は変更しない。
 
@@ -255,9 +259,60 @@ schemaVersion
 
 `inheritedIntention` は保存しない。
 
+### 5.1.1 F2-R09: effective intention / display fallback
+
+serviceの本人意向は、保存値と画面表示・派生effective値を分ける。
+
+**canonical保存値**:
+- parent categoryの `intention` はR001正本の値をそのまま保持する。
+- R001未回答categoryからservice identityを追加しただけでは、parent `usageStatus=unanswered` / `intention=unanswered` を変更しない。
+- serviceは `intentionOverride=null` を保持できる。
+- `inheritedIntention` やfallback後の `undecided` をservice recordへ複写保存しない。
+
+**effective/display resolutionのMUST規範**:
+
+```text
+resolveServiceIntention(service, parentCategory):
+  if service.intentionOverride != null:
+    return service.intentionOverride
+
+  if parentCategory.intention in {keep, delete, family, undecided}:
+    return parentCategory.intention
+
+  if parentCategory.intention == unanswered:
+    return undecided
+```
+
+最後の `unanswered -> undecided` は**画面表示・派生effective値だけのfallback**であり、parent canonical intentionを更新しない。
+
+このresolverは以下すべてで同じ規範から再計算する:
+- service初回表示
+- reload
+- browser restart
+- normal backup restore
+- file import / restore
+- 一覧 / 詳細 / 完了画面の本人意向表示
+
+MUST NOT:
+- fallback `undecided` をservice recordへ保存しない。
+- service identity選択だけを理由にparent intentionを `undecided` へ永続変更しない。
+- parent `unanswered` をrestore/import時に自動補正しない。
+
+**parent後変更**:
+- 後からparent intentionが `keep / delete / family / undecided` へ確定した場合、`intentionOverride=null` のserviceはservice recordを書き換えず、次回resolver実行時から新parent値へ追随する。
+- overrideありserviceはparent変更で上書きしない。
+
+**child usage=using時のR03 + R07連携**:
+- parent `usageStatus=unanswered` のcategory配下serviceで `usageStatus=using` を確定した場合、F2-R03の肯定方向整合によりparent `usageStatus=using` へ更新する。
+- 同じparentの `intention=unanswered` ならF2-R07を**同一readwrite transaction**で適用し `intention=undecided` へ初期化する。
+- service + parent categoryをatomic commitする。
+- changed service record revisionとchanged category record revisionは各1回増加し、globalRevisionは1transaction分だけ1回増加する。
+- transaction abortではservice/parentの片側だけを残さない。
+
 effective intention:
-- intentionOverride == null -> 現在のparent category intentionを参照
-- overrideあり -> override
+- `intentionOverride != null` -> override
+- `intentionOverride == null` かつparent intentionが既存4値 -> parent値
+- `intentionOverride == null` かつparent intention=`unanswered` -> 派生表示だけ `undecided`
 
 ### 5.2 partial / completedの意味
 
@@ -351,7 +406,7 @@ normal load / import / restore:
 
 | 操作 | 保存 | 保存内容 |
 |---|---|---|
-| 既知serviceボタンを選択確定 | MUST | 新recordId、categoryKey、serviceCatalogId、recordState=partial、usageStatus=unanswered、初期answers |
+| 既知serviceボタンを選択確定 | MUST | 新recordId、categoryKey、serviceCatalogId、recordState=partial、usageStatus=unanswered、初期answers。parent未回答でもparent正本は変更せず、intention表示はR09 resolverで派生 |
 | usageStatus値変更 | MUST | usageStatus、recordState=partial |
 | optional answer値変更 | MUST | answer + dependent child prune/materialize、recordState=partial |
 | intentionOverride値変更 | MUST | override、recordState=partial |
@@ -365,7 +420,7 @@ normal load / import / restore:
 |---|---|---|
 | 「その他」を選択しただけ | MUST NOT | identity未確定 |
 | service名を入力中 | MUST NOT | pending UI |
-| valid service名で「利用状態へ」を押し確定 | MUST | 新recordId、categoryKey、serviceCatalogId=other、normalized otherServiceName、recordState=partial、usageStatus=unanswered、初期answers |
+| valid service名で「利用状態へ」を押し確定 | MUST | 新recordId、categoryKey、serviceCatalogId=other、normalized otherServiceName、recordState=partial、usageStatus=unanswered、初期answers。parent未回答でもparent正本は変更せず、intention表示はR09 resolverで派生 |
 | 以降のusage/answer/intention/complete | MUST | known serviceと同じ |
 
 空文字・validator不合格のservice名は保存しない。
@@ -412,7 +467,7 @@ R002 detailの確定値により存在が論理的に証明された場合は、
 
 | R002 mutation | R001が否定値なら |
 |---|---|
-| usageStatus=using | parent category `not_using -> using` |
+| usageStatus=using | parent category `not_using/unanswered -> using`。parent intention=unansweredならF2-R07を同一transactionで適用しundecidedへ初期化 |
 | billing=yes | overview `billing: no -> yes` |
 | finance系 asset=yes | overview `finance: no -> yes` |
 | importantData=yes | overview `data: no -> yes` |
@@ -739,7 +794,7 @@ F3でfile envelope、raw file上限、parsed size上限、pending再適用UIを�
 - private mode専用検知/遮断は追加しない
 - 「保存済み」はtransaction commit済みの意味で、長期保持保証ではない
 
-## 16. F2-R01〜R08対応要約
+## 16. F2-R01〜R09対応要約
 
 | 差戻し | 対応 |
 |---|---|
@@ -751,6 +806,7 @@ F3でfile envelope、raw file上限、parsed size上限、pending再適用UIを�
 | F2-R06 | normal backup=committedのみ、emergency=pending別領域、restoreでpending silent commit禁止 |
 | F2-R07 | category status初回確定時、intention=unansweredなら同一transactionでundecidedへ初期化。既存4値は上書きしない |
 | F2-R08 | completed serviceはusageStatus非unanswered等のcross-field invariantを必須化。load/import/restoreも同一validation |
+| F2-R09 | parent intention=unanswered + override=nullではcanonicalを変更せず、画面/effectiveだけundecidedへfallback。reload/restart/restore/importで同じresolverから再計算。child using時はR03+R07を同一transactionで適用 |
 
 ## 17. 残る未承認事項
 

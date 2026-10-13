@@ -2,7 +2,7 @@
 
 - 更新日: 2026-10-13
 - 状態: **REVISED TEST PLAN / NOT RUN**
-- 正式再レビュー F2-R07〜R08 と回帰必須試験を反映
+- 正式再々レビュー F2-R09（R09-01〜R09-11）とPC/iPhone reload・restart系列を反映
 - 本文は試験計画でありPASS記録ではない
 
 ## F5 自動試験
@@ -99,6 +99,20 @@
 - [ ] R08-11 inactive conditional field presentをreject
 - [ ] R08-12 invalid completedをpartialへ自動補正しない
 - [ ] R08-13 intentionOverrideはnull/keep/delete/family/undecided以外をreject
+
+### F5-R09: unanswered parent intention derived fallback
+
+- [ ] R09-01 parent usageStatus=unanswered / intention=unansweredのcategoryを「ほかのカテゴリも見る」相当経路から選びservice identityを確定
+- [ ] R09-02 service partial commit後もparent usageStatus=unanswered / intention=unansweredを維持し、serviceにはfallback intentionを複写保存しない
+- [ ] R09-03 parent intention=unanswered + intentionOverride=nullで画面/effectiveはundecided（未決定）へfallback
+- [ ] R09-04 reload後もparent canonicalはunansweredのまま、同じresolverで画面/effective=undecidedを再構成
+- [ ] R09-05 browser restart後もparent canonicalはunansweredのまま、同じresolverで画面/effective=undecidedを再構成
+- [ ] R09-06 normal backup→restoreおよびfile import/restore後もfallback値を保存データから読まず同じresolverでundecidedを再構成
+- [ ] R09-07 parent intentionをkeepへ確定後、intentionOverride=null serviceはservice recordを書換えずeffective/display=keepへ追随
+- [ ] R09-08 service intentionOverride=delete等がある場合、parent intention変更でもoverride値を維持し上書きしない
+- [ ] R09-09 child usageStatus=using確定時、parent usageStatus=unansweredならparent usageStatus=using、parent intention=unansweredならundecidedをserviceと同一transactionでcommit
+- [ ] R09-10 R09-09 transaction abort時、service / parent usage / parent intentionの片側だけcommitされない
+- [ ] R09-11 R09-09成功時、changed service record revision+1、changed category record revision+1、globalRevision+1だけ増加
 
 ### F5-DIR: R001/R002 operation direction
 
@@ -289,6 +303,11 @@
 - [ ] PC-RESTART-02 browser完全終了→再起動後もcompletedを保持
 - [ ] PC-DEL-01 category delete成功後にcategory/childrenが一貫して消える
 - [ ] PC-DEL-02 delete-all成功後の新generationで再開でき旧tabは保存拒否
+- [ ] PC-R09-01 R001未回答categoryを「ほかのカテゴリも見る」相当経路から選択→service partial commit→親正本unanswered維持・画面は未決定
+- [ ] PC-R09-02 PC-R09-01直後にreload→parent canonical unansweredを維持し画面/effective未決定を再構成
+- [ ] PC-R09-03 PC-R09-01状態でbrowser完全終了→再起動→同じ未決定fallbackを再構成
+- [ ] PC-R09-04 後からparent intention=keepへ確定→override=null serviceだけkeepへ追随
+- [ ] PC-R09-05 child usage=using確定→parent usage=using + intention=undecidedをatomic反映
 
 ### F6-iPhone Safari 通常: 中断→reload→続行 必須系列
 
@@ -309,6 +328,11 @@
 - [ ] IOS-RESTART-02 Safari通常を終了→再起動後のcompleted保持
 - [ ] IOS-R07-01 category status初回確定後、再起動してintention=undecidedを再構成
 - [ ] IOS-R08-01 completed serviceがusageStatus非unansweredのinvariantを維持
+- [ ] IOS-R09-01 R001未回答categoryを「ほかのカテゴリも見る」相当経路から選択→service partial commit→親正本unanswered維持・画面は未決定
+- [ ] IOS-R09-02 IOS-R09-01直後にreload→同じ未決定fallbackを再構成
+- [ ] IOS-R09-03 Safari通常を終了→再起動後も同じ未決定fallbackを再構成
+- [ ] IOS-R09-04 parent intention確定後、override=null serviceだけ新parent値へ追随
+- [ ] IOS-R09-05 child usage=using確定時、parent usage=using + intention=undecidedを同一transactionで反映
 
 ### F6-iPhone Safari private
 
