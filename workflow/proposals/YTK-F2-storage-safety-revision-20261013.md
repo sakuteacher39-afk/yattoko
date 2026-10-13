@@ -1,10 +1,13 @@
 # YTK-F2 保存安全性 修正設計書
 
-- 文書種別: F2正式レビュー差戻し F2-R01〜R06 対応版
+- 文書種別: F2正式再レビュー差戻し F2-R07〜R08・試験回帰対応版
 - 初版作成日: 2026-10-13
-- 差戻し対応日: 2026-10-13
+- 初回差戻し対応日: 2026-10-13
+- 正式再レビュー差戻し対応日: 2026-10-13
 - 参照正式レビュー: `workflow/reviews/YTK-F2-storage-safety-formal-review-20261013.md`
-- 正式レビューcommit: `e2fa1bb23c8c57219d4d6c87467879a7f62a684e`
+- 前回正式レビューcommit: `e2fa1bb23c8c57219d4d6c87467879a7f62a684e`
+- 参照正式再レビュー: `workflow/reviews/YTK-F2-storage-safety-formal-rereview-20261013.md`
+- 正式再レビューcommit: `8d1845b21d3e096bfce3d7482066cbe85defee2e`
 - 状態: **REVISED / 制作管理室 再レビュー待ち**
 - F2全体承認: 未承認
 - F3詳細仕様承認: 未承認
@@ -16,10 +19,17 @@
 
 ## 1. 今回の差戻し対応範囲
 
-正式レビューのF2-R01〜R06をすべて対象とする。
+前回正式レビューF2-R01〜R06のうち、正式再レビューではF2-R01・R03・R04・R05・R06がRESOLVED、F2-R02がCHANGES_REQUIREDとなった。
+
+今回の追加差戻しを対象とする。
+
+- F2-R07: R001 category status初回確定時のintention互換
+- F2-R08: R002 completed service cross-field invariant
+- F5/F6回帰: delete atomicity、strict restore、emergency export fail-closed、保存エラー6分類、browser restart保持
+
+前回RESOLVEDとなった以下の規範は変更しない。
 
 - F2-R01: category canonical identity
-- F2-R02: unanswered / committed partial / pending と回答確定ごとの保存
 - F2-R03: R001 / R002矛盾処理の操作方向
 - F2-R04: 「その他」サービス名の正規化・拒否規範
 - F2-R05: canonical capacity projection
@@ -140,6 +150,26 @@ schemaVersion
 - intention = `unanswered`
 - revision = 0
 
+#### F2-R07: status初回確定時のintention互換
+
+既存R001 prototypeの挙動を保存正本でも維持する。
+
+MUST:
+- categoryの `usageStatus` が初めて `unanswered -> using / not_using / unknown` へ変わるmutationで、同じcategory recordの `intention` が `unanswered` なら、**同一readwrite transaction内で `intention=undecided` へ初期化する**。
+- usageStatusとintentionは同じcategory recordの1回の更新としてcommitする。
+- category record revisionは1回だけ増加する。
+- globalRevisionもそのtransaction分の1回だけ増加する。
+- transactionがabortした場合、usageStatusだけ・intentionだけの片側commitを残さない。
+
+MUST NOT:
+- 既に `intention=keep / delete / family / undecided` のcategoryについて、status変更を理由にintentionを上書きしない。
+- untouched categoryの `intention=unanswered` を先回りして `undecided` にしない。
+
+結果として:
+- untouched categoryだけが `usageStatus=unanswered && intention=unanswered` を取り得る。
+- statusを一度確定したcategoryは、既存R001 semanticsどおり最低でも `intention=undecided` を持つ。
+- R002の `intentionOverride=null` は、回答済みparent categoryに対して `unanswered` ではなく既存4値のcategory intentionを参照できる。
+
 ### 4.2 overview record
 
 R001 prototypeの既存keyをcanonical keyとして維持する。
@@ -237,10 +267,43 @@ effective intention:
 - 中断後にreloadして再構成できる保存正本。
 - UIのscreen番号やquestionPageは保存しない。
 
-`completed`:
+completed:
 - 「この1件を整理完了」操作がtransaction complete済み。
 - optional questionが `unanswered` のままでもcompletedになれる。
 - completedかどうかをoptional fieldの充足率から推測しない。
+
+#### F2-R08: service cross-field invariant
+
+すべてのservice recordは、save / normal load / import / restore / backup validationで同じcross-field validatorを通す。
+
+`partial` のMUST invariant:
+- valid `recordId`
+- valid canonical `categoryKey`
+- valid service identity
+- known serviceならapproved `serviceCatalogId` かつ `otherServiceName=null`
+- other serviceなら `serviceCatalogId="other"` かつ正規化・検証済み `otherServiceName`
+- `usageStatus` は `unanswered / using / dormant / unknown`
+- active optional answerはkey必須で `unanswered` を許可
+- inactive conditional answer keyは存在禁止
+- `intentionOverride` は `null / keep / delete / family / undecided`
+
+`completed` のMUST invariant:
+- 上記identity / category / answers / intentionOverride規則をすべて満たす
+- **`usageStatus` は `using / dormant / unknown` のいずれか**
+- **`usageStatus=unanswered` を禁止**
+- active optional answerは `unanswered` を許可
+- inactive conditional answer keyは存在禁止
+
+「この1件を整理完了」操作:
+- completed invariantを満たす場合だけ `recordState=completed` をcommitする。
+- invariant不成立ならtransactionを開始しない、またはcommitせずvalidation errorとする。
+- 不正状態を自動補正してcompletedにしない。
+
+normal load / import / restore:
+- `recordState=completed && usageStatus=unanswered` をrejectする。
+- completed other serviceのinvalid/empty `otherServiceName` をrejectする。
+- active conditional key missing / inactive conditional key presentをrejectする。
+- 不正completedをpartialへ自動downgradeして救済しない。
 
 既存completed recordを編集する場合:
 - 画面を開いただけでは変更しない。
@@ -272,7 +335,8 @@ effective intention:
 
 | 操作 | 保存 | 保存内容 |
 |---|---|---|
-| category statusをタップして値変更 | MUST | 対象category usageStatus |
+| category statusを初めて unanswered から確定 | MUST | usageStatus。intention=unansweredなら同一transactionでintention=undecidedも確定 |
+| category statusを既回答値から別値へ変更 | MUST | usageStatus。既存keep/delete/family/undecidedは上書きしない |
 | category statusで同じ値を再タップ | NO-OP | revision増加なし |
 | overview各問をタップして値変更 | MUST | 対象overview field |
 | category intentionをタップして値変更 | MUST | 対象category intention |
@@ -291,7 +355,7 @@ effective intention:
 | usageStatus値変更 | MUST | usageStatus、recordState=partial |
 | optional answer値変更 | MUST | answer + dependent child prune/materialize、recordState=partial |
 | intentionOverride値変更 | MUST | override、recordState=partial |
-| 「この1件を整理完了」 | MUST | recordState=completed |
+| 「この1件を整理完了」 | MUST（invariant成立時のみ） | usageStatus≠unanswered等のcompleted invariant検証後、recordState=completed |
 | 一覧を開く / 詳細を見るだけ | MUST NOT | no change |
 | 「いったん詳細整理を終わる」 | MUST NOT（単独では） | 直前までtransaction complete済みの値だけ残る |
 
@@ -628,6 +692,11 @@ normal backup:
 - partial/completed状態をそのまま復元
 - restore成功時generationIdを切替
 - 旧tabをgeneration mismatchで無効化
+- required field欠落、unexpected field / unexpected nested object、duplicate category、duplicate recordId、unknown schema/question version、unknown categoryKey、categoryKey/displayCode不一致をreject
+- service recordはF2-R08 cross-field invariantを検証
+- `completed + usageStatus=unanswered` をreject
+- active conditional field missing / inactive conditional field presentをreject
+- invalid completed stateを自動補正しない
 
 emergency export:
 1. committed dataset部分をstrict validation
@@ -670,7 +739,7 @@ F3でfile envelope、raw file上限、parsed size上限、pending再適用UIを�
 - private mode専用検知/遮断は追加しない
 - 「保存済み」はtransaction commit済みの意味で、長期保持保証ではない
 
-## 16. F2-R01〜R06対応要約
+## 16. F2-R01〜R08対応要約
 
 | 差戻し | 対応 |
 |---|---|
@@ -680,6 +749,8 @@ F3でfile envelope、raw file上限、parsed size上限、pending再適用UIを�
 | F2-R04 | otherServiceNameはNFC+trim、control/bidi拒否、UTF-16 1〜60、importも同一規範 |
 | F2-R05 | category fixed order、explicit unanswered、partial serviceを含むcanonical projectionを確定 |
 | F2-R06 | normal backup=committedのみ、emergency=pending別領域、restoreでpending silent commit禁止 |
+| F2-R07 | category status初回確定時、intention=unansweredなら同一transactionでundecidedへ初期化。既存4値は上書きしない |
+| F2-R08 | completed serviceはusageStatus非unanswered等のcross-field invariantを必須化。load/import/restoreも同一validation |
 
 ## 17. 残る未承認事項
 

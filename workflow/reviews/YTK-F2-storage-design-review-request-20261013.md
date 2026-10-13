@@ -1,11 +1,13 @@
-# YTK-F2 保存設計 差戻し対応 再レビュー依頼
+# YTK-F2 保存設計 正式再レビュー差戻し対応 再審査依頼
 
 制作管理室 御中
 
-2026-10-13付正式レビュー
-`workflow/reviews/YTK-F2-storage-safety-formal-review-20261013.md`
-（commit `e2fa1bb23c8c57219d4d6c87467879a7f62a684e`）
-でCHANGES_REQUIREDとなったF2-R01〜R06について、既存5成果物を更新しました。
+2026-10-13付正式再レビュー
+`workflow/reviews/YTK-F2-storage-safety-formal-rereview-20261013.md`
+（commit `8d1845b21d3e096bfce3d7482066cbe85defee2e`）
+でCHANGES_REQUIREDとなったF2-R02の残存事項F2-R07 / F2-R08、およびF5/F6試験計画の回帰漏れについて、既存5成果物を再更新しました。
+
+前回F2-R01 / R03 / R04 / R05 / R06のRESOLVED判定を前提に、その規範は変更していません。
 
 本再提出は**F2全体の自己承認ではありません**。
 F5/F6は未実施であり、安全性試験PASSも宣言しません。
@@ -18,7 +20,7 @@ F5/F6は未実施であり、安全性試験PASSも宣言しません。
 4. `workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md`
 5. `workflow/reviews/YTK-F2-storage-design-review-request-20261013.md`
 
-## F2-R01〜R06対応
+## 前回F2-R01〜R06対応（RESOLVED 5件を維持）
 
 ### F2-R01 category identity
 - canonical persisted keyを既存R001/R002内部IDへ固定
@@ -65,6 +67,27 @@ F5/F6は未実施であり、安全性試験PASSも宣言しません。
 - restoreでpendingをsilent commitしない
 - pending再適用は通常save pipelineと10MB gateを再通過
 
+### F2-R07 R001 intention compatibility
+- category status初回 `unanswered -> answered` 時、intention=unansweredなら同一transactionでundecided
+- category/global revisionは1transaction分だけ進む
+- keep/delete/family/undecidedはstatus変更で上書きしない
+- untouched categoryだけintention=unansweredを維持
+
+### F2-R08 completed invariant
+- completedはusageStatus∈{using,dormant,unknown}必須
+- usageStatus=unansweredのcompletedは禁止
+- service identity / otherServiceName / conditional presence / intentionOverrideをcross-field validation
+- save/load/import/restoreで同一validator
+- invalid completedを自動補正しない
+
+### F5/F6回帰復元
+- category delete / delete-all atomicity
+- strict restore validation
+- emergency export fail-closed
+- 保存エラー6分類
+- PC Chrome browser restart後のpartial/completed
+- iPhone Safari通常の終了/再起動後のpartial/completed
+
 ## 既承認事項の維持確認
 
 変更していない:
@@ -82,25 +105,22 @@ F5/F6は未実施であり、安全性試験PASSも宣言しません。
 - R003秘密情報禁止
 - R005凍結
 
-## 再レビューで確認してほしい事項
+## 再審査で確認してほしい事項
 
-1. categoryKeyを既存内部IDへ固定したことでF2-R01が解消したか
-2. unanswered / committed partial / completed / pendingの意味分離が十分か
-3. event単位の保存境界が「回答確定ごと保存」を満たすか
-4. operation-direction matrixがR003 APPROVEDと一致するか
-5. otherServiceName規範とF5試験が一致しているか
-6. canonical capacity projectionが一意か
-7. normal backup / emergency / restoreの語彙・境界がF3引継ぎとして十分か
-8. 追加F5/F6 test IDsが正式レビュー要求を網羅したか
+1. F2-R07が現行R001 prototypeのstatus→undecided初期化と一致するか
+2. F2-R07で既存keep/delete/family/undecidedを上書きしないか
+3. F2-R08のcompleted cross-field invariantが現行R002 UXと一致するか
+4. normal load / import / restoreで同じcompleted invariantがfail closedで適用されるか
+5. delete atomicity / strict restore / emergency export fail-closed / 保存エラー6分類がF5へ復元されたか
+6. PC Chrome / iPhone Safari通常のbrowser restart保持がF6へ復元されたか
+7. 前回RESOLVEDのF2-R01/R03/R04/R05/R06を崩していないか
 
 ## 希望判定形式
 
-- F2-R01: RESOLVED / CHANGES_REQUIRED
-- F2-R02: RESOLVED / CHANGES_REQUIRED
-- F2-R03: RESOLVED / CHANGES_REQUIRED
-- F2-R04: RESOLVED / CHANGES_REQUIRED
-- F2-R05: RESOLVED / CHANGES_REQUIRED
-- F2-R06: RESOLVED / CHANGES_REQUIRED
+- F2-R07: RESOLVED / CHANGES_REQUIRED
+- F2-R08: RESOLVED / CHANGES_REQUIRED
+- F2-R02残存不備: RESOLVED / CHANGES_REQUIRED
+- F2-R01/R03/R04/R05/R06 regression: MAINTAINED / REGRESSED
 - S01〜S09設計是正全体: PASS / CHANGES_REQUIRED
 - F5/F6試験計画: SUFFICIENT / CHANGES_REQUIRED
 - F2全体: REVIEWED / NOT APPROVED

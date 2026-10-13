@@ -1,8 +1,10 @@
-# YTK-F2 S01〜S09 / F2-R01〜R06 指摘対応表
+# YTK-F2 S01〜S09 / F2-R01〜R08 指摘対応表
 
 - 更新日: 2026-10-13
 - 状態: **REVISED / 制作管理室 再レビュー待ち**
-- 対象正式レビューcommit: `e2fa1bb23c8c57219d4d6c87467879a7f62a684e`
+- 前回正式レビューcommit: `e2fa1bb23c8c57219d4d6c87467879a7f62a684e`
+- 正式再レビューcommit: `8d1845b21d3e096bfce3d7482066cbe85defee2e`
+- 正式再レビュー判定: F2-R01/R03/R04/R05/R06 RESOLVED、F2-R02 CHANGES_REQUIRED
 - F2全体APPROVED・F5/F6 PASSを意味しない
 
 ## 1. 正式レビュー差戻し対応
@@ -16,15 +18,23 @@
 | F2-R05 | capacity projection完成 | fixed category order、explicit unanswered、partial/completed service含有、answers順序、null/missing規則、property順を固定 | S07 | F5-CAP系 |
 | F2-R06 | backup/restore語彙修正 | normal backupはcompleted + committed partialを含むcommitted正本のみ。emergency exportだけpendingを別領域へ追加。restoreでpending silent commit禁止 | S05, S09 | F5-BKP/RST系 |
 
+### 正式再レビュー追加差戻し
+
+| Review ID | 正式再レビュー指摘 | 今回の修正 |
+|---|---|---|
+| F2-R07 | R001 status初回確定時のintention semantics | intention=unansweredならstatus確定と同一transactionでundecided。既存keep/delete/family/undecidedは上書きしない |
+| F2-R08 | completed service invariant不足 | completedはusageStatus∈{using,dormant,unknown}必須。load/import/restoreも同一cross-field validation |
+| TEST-REGRESSION | 旧試験の重要項目が脱落 | delete atomicity、strict restore、emergency export fail-closed、保存エラー6分類、browser restart保持をF5/F6へ復元 |
+
 ## 2. S01〜S09対応状況
 
 | ID | 正式レビュー判定 | 今回の是正 |
 |---|---|---|
 | S01 | CHANGES_REQUIRED | A〜L保存案を撤回。canonical categoryKeyを既存内部IDへ一致。stable recordId管理は維持 |
-| S02 | CHANGES_REQUIRED | R001 explicit unanswered、R002 partial/completed、field/eventごとのcommit、operation-direction matrixを追加 |
-| S03 | CHANGES_REQUIRED | partial serviceもrecord/global/generationで版管理。成功transaction単位を正本境界に固定 |
-| S04 | CHANGES_REQUIRED | 「回答確定」を具体イベント化。save coordinator + complete判定を維持。中断時は直前commitまで正本 |
-| S05 | CHANGES_REQUIRED | restore対象にcompleted/partialを含め、pendingは別領域・silent commit禁止。atomic replace維持 |
+| S02 | CHANGES_REQUIRED（再レビュー時） | R07でR001 intention初期化互換、R08でcompleted invariantを追加し再レビュー対象とした |
+| S03 | PASS（設計是正・再レビュー判定） | partial/completedもrecord/global/generationで版管理。成功transaction単位を正本境界に固定 |
+| S04 | CHANGES_REQUIRED（再レビュー時） | R07のstatus副作用とR08 complete preconditionを保存イベントへ反映し再レビュー対象とした |
+| S05 | CHANGES_REQUIRED（再レビュー時） | restoreへR08 cross-field invariantとstrict invalid-state拒否を追加し再レビュー対象とした |
 | S06 | CHANGES_REQUIRED | normalization/rejectをMUST化しF5と一致 |
 | S07 | CHANGES_REQUIRED | categoryKey/unanswered/partial/property orderを含むcapacity projection確定 |
 | S08 | PASS（設計是正のみ） | 変更なし。長期保持保証なし、開始時警告/backup推奨/NOT VERIFIED維持 |
@@ -61,7 +71,8 @@ A〜Lは保存対象決定のkeyに使用しない。
 
 ## 5. 保存イベント要約
 
-- R001 category status値変更: save
+- R001 category status初回確定: save。intention=unansweredなら同一transactionでundecidedも確定
+- R001 category status既回答値変更: save。既存intentionは上書きしない
 - R001 overview各問値変更: save
 - R001 category intention値変更: save
 - known service選択確定: partial record作成/save
@@ -70,7 +81,7 @@ A〜Lは保存対象決定のkeyに使用しない。
 - R002 usageStatus値変更: save
 - optional answer値変更: save
 - intentionOverride値変更: save
-- 「この1件を整理完了」: recordState=completed/save
+- 「この1件を整理完了」: completed invariant成立時のみrecordState=completed/save。usageStatus=unansweredは禁止
 - screen移動/戻る/一覧表示/終了ボタン単独: no new save
 - 同じcanonical値の再選択: idempotent no-op
 

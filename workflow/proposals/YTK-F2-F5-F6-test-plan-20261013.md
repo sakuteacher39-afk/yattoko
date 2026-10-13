@@ -2,7 +2,7 @@
 
 - 更新日: 2026-10-13
 - 状態: **REVISED TEST PLAN / NOT RUN**
-- 正式レビュー F2-R01〜R06 の追加必須試験を反映
+- 正式再レビュー F2-R07〜R08 と回帰必須試験を反映
 - 本文は試験計画でありPASS記録ではない
 
 ## F5 自動試験
@@ -46,6 +46,20 @@
 - [ ] PART-12 transaction abortした回答は未commit、直前commit済み回答は維持
 - [ ] PART-13 STEP移動だけではrevisionを増やさない
 
+### F5-R07: R001 intention compatibility
+
+- [ ] R07-01 usageStatus=unanswered + intention=unansweredのcategoryで初回status確定 -> intention=undecidedも同一transaction
+- [ ] R07-02 R07-01でcategory record revisionは1回だけ増加
+- [ ] R07-03 R07-01でglobalRevisionは1transaction分だけ増加
+- [ ] R07-04 R07-01 transaction abortでusageStatus/intentionの片側だけ残らない
+- [ ] R07-05 status確定後reloadでintention=undecidedを再構成
+- [ ] R07-06 R002 intentionOverride=nullのeffective表示がparent undecidedと一致
+- [ ] R07-07 intention=keepのcategoryでstatus変更してもkeep維持
+- [ ] R07-08 intention=deleteのcategoryでstatus変更してもdelete維持
+- [ ] R07-09 intention=familyのcategoryでstatus変更してもfamily維持
+- [ ] R07-10 intention=undecidedのcategoryでstatus変更してもundecided維持
+- [ ] R07-11 untouched categoryだけusageStatus=unanswered/intention=unansweredを維持
+
 ### F5-R2INT: R002 interrupted save
 
 - [ ] R2INT-01 known service選択確定直後にpartial recordをcommit
@@ -69,6 +83,22 @@
 - [ ] R2INT-19 edit再完了でcompletedへ戻る
 - [ ] R2INT-20 「いったん詳細整理を終わる」単独でsave/revisionしない
 - [ ] R2INT-21 save abortではそのmutationだけpending、直前committed partialは維持
+
+### F5-R08: completed service invariant
+
+- [ ] R08-01 partial + usageStatus=unansweredはvalid
+- [ ] R08-02 complete押下 + usageStatus=unansweredはrejectしcompletedをcommitしない
+- [ ] R08-03 completed + usageStatus=usingはvalid
+- [ ] R08-04 completed + usageStatus=dormantはvalid
+- [ ] R08-05 completed + usageStatus=unknownはvalid
+- [ ] R08-06 importでcompleted + usageStatus=unansweredをreject
+- [ ] R08-07 restoreでcompleted + usageStatus=unansweredをreject
+- [ ] R08-08 normal loadでcompleted + usageStatus=unansweredをreject
+- [ ] R08-09 completed other service + empty/invalid otherServiceNameをreject
+- [ ] R08-10 active conditional field missingをreject
+- [ ] R08-11 inactive conditional field presentをreject
+- [ ] R08-12 invalid completedをpartialへ自動補正しない
+- [ ] R08-13 intentionOverrideはnull/keep/delete/family/undecided以外をreject
 
 ### F5-DIR: R001/R002 operation direction
 
@@ -172,6 +202,9 @@
 - [ ] BKP-06 pending metadataからbase generation/revisionを判別可能
 - [ ] BKP-07 invalid pendingはfileへ入れず「退避成功」と表示しない
 - [ ] BKP-08 emergency fileが10MB超でもIndexedDB上限違反と即断しない
+- [ ] BKP-09 export file generation failureで成功表示しない
+- [ ] BKP-10 pending dependency不整合をsilent exportしない
+- [ ] BKP-11 pending validator不合格でcommitted部分だけexportした場合、「未保存入力は退避できていない」と区別表示
 - [ ] RST-01 normal restoreでpartial/completed状態を保持
 - [ ] RST-02 restore atomic replace失敗時は旧dataset維持
 - [ ] RST-03 restore成功でgeneration変更
@@ -182,6 +215,37 @@
 - [ ] RST-08 unknown categoryKey拒否
 - [ ] RST-09 duplicate recordId拒否
 - [ ] RST-10 malformed/empty datasetを新規状態として上書きしない
+- [ ] RST-11 required field欠落拒否
+- [ ] RST-12 unexpected field拒否
+- [ ] RST-13 unexpected nested object拒否
+- [ ] RST-14 duplicate category拒否
+- [ ] RST-15 categoryKey/displayCode不一致を拒否（file形式にdisplayCodeが存在する場合）
+- [ ] RST-16 completed + usageStatus=unansweredをreject
+- [ ] RST-17 completed other serviceのinvalid otherServiceNameをreject
+- [ ] RST-18 active conditional missing / inactive conditional presentをreject
+- [ ] RST-19 invalid completed stateを自動補正しない
+
+### F5-DEL: delete atomicity regression
+
+- [ ] DEL-01 category deleteでcategory record + child servicesを同一transactionで削除
+- [ ] DEL-02 category delete途中abortでcategory/childrenとも旧状態維持
+- [ ] DEL-03 category delete成功後に一部childだけ残らない
+- [ ] DEL-04 delete-all途中abortで旧datasetを全体維持
+- [ ] DEL-05 delete-all成功で新generationIdへ切替
+- [ ] DEL-06 delete-all成功後、旧generation tabの保存を拒否
+
+### F5-ERR: 保存エラー6分類 regression
+
+- [ ] ERR-01 ①app 10MB超過を正しく分類し既存committed stateを維持
+- [ ] ERR-02 ②browser/device保存領域不足の疑いを根拠あるquota系失敗から分類し断定しすぎない
+- [ ] ERR-03 ③保存機能制限をstorage unavailable/permission相当の根拠で分類
+- [ ] ERR-04 ④multi-tab conflictをversion mismatchから分類し単純retryでforce overwriteさせない
+- [ ] ERR-05 ⑤一時的保存失敗は合理的根拠がある場合だけ分類
+- [ ] ERR-06 ⑥原因不明は根拠不足時に使用しprivate mode可能性の補足を表示
+- [ ] ERR-07 全6分類で未保存入力を保持し保存済み誤表示なし
+- [ ] ERR-08 retry可能/不可能の導線が分類に一致
+- [ ] ERR-09 conflictでは「再試行」だけで保存せず最新版確認を要求
+- [ ] ERR-10 technical exception name/secret/bodyを利用者文言やlogへそのまま出さない
 
 ### F5-SEC: XSS / external flow
 
@@ -221,6 +285,10 @@
 - [ ] PC-CON-02 restore/delete-all後の旧tab拒否
 - [ ] PC-CAP-01 10MB近傍の操作応答/保存結果
 - [ ] PC-NET-01 Network観測で整理内容外部送信なし
+- [ ] PC-RESTART-01 browser完全終了→再起動後もcommitted partialを保持
+- [ ] PC-RESTART-02 browser完全終了→再起動後もcompletedを保持
+- [ ] PC-DEL-01 category delete成功後にcategory/childrenが一貫して消える
+- [ ] PC-DEL-02 delete-all成功後の新generationで再開でき旧tabは保存拒否
 
 ### F6-iPhone Safari 通常: 中断→reload→続行 必須系列
 
@@ -237,6 +305,10 @@
 - [ ] IOS-BKP-01 file backup/restore
 - [ ] IOS-CAP-01 10MB近傍でUI停止/crash/transaction失敗の有無
 - [ ] IOS-TXT-01 日本語/emoji/結合文字のnormalization/length
+- [ ] IOS-RESTART-01 Safari通常を終了→再起動後のcommitted partial保持
+- [ ] IOS-RESTART-02 Safari通常を終了→再起動後のcompleted保持
+- [ ] IOS-R07-01 category status初回確定後、再起動してintention=undecidedを再構成
+- [ ] IOS-R08-01 completed serviceがusageStatus非unansweredのinvariantを維持
 
 ### F6-iPhone Safari private
 

@@ -2,7 +2,7 @@
 
 - 更新日: 2026-10-13
 - 状態: **OPEN RISKS / 再レビュー待ち**
-- F2-R01〜R06差戻し対応後の残存リスク
+- F2正式再レビュー F2-R07〜R08差戻し対応後の残存リスク
 - 設計是正を試験PASS扱いしない
 
 | Risk ID | 残存リスク | 今回の制御 | 次工程 |
@@ -37,6 +37,8 @@
 | R-F2-28 | unknown/破損/巨大file | strict validation/atomic restore | F3/F5 |
 | R-F2-29 | restore/delete-all後に古いtabが復活 | generation切替 | F5/F6 |
 | R-F2-30 | schema/question version migration誤解釈 | unknown version拒否/別migration経路 | F3/F5 |
+| R-F2-31 | R001 status回答済みなのにintention=unansweredが残り、既存R001/R002 semanticsとずれる | 初回status確定でintention=unansweredなら同一transactionでundecided。既存4値は維持 | F5-R07 / F6 |
+| R-F2-32 | invalid completed service（usageStatus=unanswered、invalid other名、conditional presence不整合）がload/restoreされる | completed cross-field invariantをsave/load/import/restore共通validatorへ固定しfail closed | F5-R08 / F5-RST / F6 |
 
 ## 制作管理室レビュー後も残る可能性が高いもの
 
