@@ -1,10 +1,12 @@
-# YTK-F3｜バックアップ・緊急退避・復元 F5/F6試験計画案 v0.2
+# YTK-F3｜バックアップ・緊急退避・復元 F5/F6試験計画案 v0.3
 
 - 起案：2026-10-14
 - 正式レビュー差戻し対応：2026-10-14
-- 状態：**REVISED DRAFT / NOT RUN / NOT APPROVED**
+- 正式再レビュー差戻し対応：2026-10-14
+- 状態：**REVISED DRAFT v0.3 / NOT RUN / NOT APPROVED**
 - 対応設計：workflow/proposals/YTK-F3-backup-restore-design-draft-20261014.md
 - 正式レビュー：workflow/reviews/YTK-F3-backup-restore-formal-review-20261014.md（commit 597c8ab531f2bd68990f1e652696c1ba34f665d7）
+- 正式再レビュー：workflow/reviews/YTK-F3-backup-restore-formal-rereview-20261014.md（commit 06c1b7617c947e70fccd4cc7a22082cd19def3c7）
 - F2正式承認：workflow/reviews/YTK-F2-human-approval-20261014.md
 - 全チェック欄は未実施。試験計画の追加をPASS扱いしない。
 
@@ -151,7 +153,7 @@
 - [ ] R02-39 V-HASH-02 checksum一致でもreject。
 - [ ] R02-40 V-TRUNC-01 reject。
 
-## 4. F5｜F3-R03 atomic restore / conflict / corrupt current
+## 4. F5｜F3-R03 atomic restore / transaction activity
 
 ### R03-A：current state classification
 
@@ -166,41 +168,59 @@
 
 ### R03-B：preview conflict
 
-- [ ] R03-08 preview後別tab normal edit。
-  - 期待：guard mismatch→abort→再preview要求。
-- [ ] R03-09 preview後delete-all。
-- [ ] R03-10 preview後別restore。
-- [ ] R03-11 corrupt raw-state preview後raw content変化。
-  - 期待：abort。
-- [ ] R03-12 EMPTY preview後別tabがdataset作成。
-  - 期待：empty guard mismatch→abort。
+- [ ] R03-08 preview後別tab normal edit→B1 guard mismatch、clear前abort。
+- [ ] R03-09 preview後delete-all→abort。
+- [ ] R03-10 preview後別restore→abort。
+- [ ] R03-11 corrupt raw-state preview後raw content変化→同期bytes mismatchでabort。
+- [ ] R03-12 EMPTY preview後別tabがdataset作成→empty guard mismatch。
 - [ ] R03-13 guard mismatchで自動再確認→即commitしない。
 
-### R03-C：prospective capacity / transaction
+### R03-C：preflight / capacity
 
 - [ ] R03-14 new generation/meta込み9,999,999 bytes。
 - [ ] R03-15 exactly10,000,000 bytes accept candidate。
-- [ ] R03-16 10,000,001 bytes reject before clear。
-- [ ] R03-17 precompute bytesとtransaction内re-serialize bytes一致。
-- [ ] R03-18 precompute digestとtransaction内candidate digest一致。
-- [ ] R03-19 clear後最初のput failure→abort、旧全件維持。
-- [ ] R03-20 category put途中failure→abort、旧全件維持。
-- [ ] R03-21 service put途中failure→abort、旧全件維持。
-- [ ] R03-22 final meta write failure→abort、旧全件維持。
-- [ ] R03-23 quota exception→abort、旧全件維持。
-- [ ] R03-24 read-back canonical mismatch→abort、旧全件維持。
-- [ ] R03-25 transaction request単体successでは復元成功表示しない。
-- [ ] R03-26 transaction complete後のみ成功表示。
+- [ ] R03-16 10,000,001 bytesをtransaction開始前にreject。
+- [ ] R03-17 preflightでFile decode / strict validation / SHA-256 / expectedCanonicalBytes生成が全部完了してからreadwrite transactionをopen。
+- [ ] R03-18 transaction開始後にcrypto.subtle.digest / File API / Blob.arrayBuffer / network / timerを呼ばない。
 
-### R03-D：generation / revisions / old tab
+### R03-D：request-chain / transaction inactive / premature auto-commit
 
-- [ ] R03-27 restore successでnew generationId。
-- [ ] R03-28 new generation globalRevision=1。
-- [ ] R03-29 imported record revisionsを保持。
-- [ ] R03-30 restore後旧tab save→generation mismatch拒否。
-- [ ] R03-31 BroadcastChannel通知を落としても旧tab save拒否。
-- [ ] R03-32 recordId collisionはfile strict validation段階でreject。
-- [ ] R03-33 restore後のF2 canonical 10MB再計測がtransaction read-backと一致。
+- [ ] R03-19 transaction handlerがasync functionではなく、await / Promise.then / queueMicrotask / setTimeoutを使用しないことを静的検査。
+- [ ] R03-20 trace順序がGUARD_READ→GUARD_VERIFIED→CLEAR→PUT→READBACK→READBACK_VERIFIED→TX_COMPLETE。
+- [ ] R03-21 各phase最後のsuccess callbackがreturn前に次phase requestをenqueueしている。
+- [ ] R03-22 readbackVerified=falseのままtransaction.oncompleteが発火した場合、テストをFAILにするsentinel。
+- [ ] R03-23 fault injectionで次phase request enqueue時にTransactionInactiveError相当を発生。
+  - 期待：restore成功表示なし。clear前なら旧正本完全維持。
+- [ ] R03-24 clear request途中abort→旧正本全件維持。
+- [ ] R03-25 clear完了後put途中abort→旧正本全件維持。
+- [ ] R03-26 category put途中failure→旧正本全件維持。
+- [ ] R03-27 service put途中failure→旧正本全件維持。
+- [ ] R03-28 final meta write failure→旧正本全件維持。
+- [ ] R03-29 quota exception→旧正本全件維持。
+- [ ] R03-30 request単体success / clear success / put success / meta successでは成功表示しない。
+
+### R03-E：synchronous readback verification
+
+- [ ] R03-31 readbackからF2 canonical projectionを同期再構築。
+- [ ] R03-32 TextEncoderでreadbackCanonicalBytesを同期生成。
+- [ ] R03-33 readback byteLength == expectedByteLengthかつ全byte一致。
+- [ ] R03-34 readback byte 1つだけ差し替えるfault injection→callback内abort、旧正本維持。
+- [ ] R03-35 readback canonical sizeを10,000,001へするfault injection→abort、旧正本維持。
+- [ ] R03-36 readback generationId mismatch→abort。
+- [ ] R03-37 readback globalRevision !=1→abort。
+- [ ] R03-38 readback record count / recordRevision mismatch→abort。
+- [ ] R03-39 transaction内でdigest比較を行わずbytes一致を正否根拠にする。
+- [ ] R03-40 全readback一致→readbackVerified=true→その後の正常auto-commit→oncompleteで初めて成功。
+
+### R03-F：generation / old tab
+
+- [ ] R03-41 restore successでnew generationId。
+- [ ] R03-42 new generation globalRevision=1。
+- [ ] R03-43 imported record revisionsを保持。
+- [ ] R03-44 restore後旧tab save→generation mismatch拒否。
+- [ ] R03-45 BroadcastChannel通知を落としても旧tab save拒否。
+- [ ] R03-46 recordId collisionはfile strict validation段階でreject。
+- [ ] R03-47 transaction readback bytesがpreflight prospective bytesと一致。
 
 ## 5. F5｜F3-R04 capacity / resource exhaustion
 
@@ -225,48 +245,78 @@
 - [ ] R04-14 parse failure後も既存IDB不変。
 - [ ] R04-15 resource errorをapp 10MB超と誤分類しない。
 
-## 6. F5｜F3-R05 pending reapply lifecycle
+## 6. F5｜F3-R05 pending reapply provenance / double apply
 
-### R05-A：restore後状態
+### R05-A：restore provenance
 
 - [ ] R05-01 emergency snapshot restore後pendingはIDB正本に入らない。
-- [ ] R05-02 SNAPSHOT_RESTORED_PENDING_AVAILABLEで未適用件数を表示。
-- [ ] R05-03 manual confirmなしでpending commitなし。
-- [ ] R05-04 reloadでin-memory pending review stateが消えてもcommitted snapshotは維持。
-- [ ] R05-05 reload後、同じemergency file再選択導線を表示可能。
-- [ ] R05-06 browser restart後も同じfile再選択からpending recovery可能。
-- [ ] R05-07 fileが無い場合、pending復旧可能と誤保証しない。
+- [ ] R05-02 restore transaction complete後だけReapplyContextをmemory生成。
+- [ ] R05-03 restore abort時はReapplyContextを生成しない。
+- [ ] R05-04 sourceFileIdがfileFormatVersion + validated checksum.hexから一意に導出される。
+- [ ] R05-05 ReapplyContextにsourceFileId / sourceSnapshotGenerationId / restoredGenerationId / lastKnownGlobalRevision / orderedOperationIds / receiptMapを保持。
+- [ ] R05-06 current generationがrestoredGenerationIdと異なる場合context invalid。
+- [ ] R05-07 別tab editでglobalRevisionがlastKnownから変わった場合context invalid。
 
-### R05-B：pending-only recovery / double apply
+### R05-B：safe already-applied / ambiguous same value
 
-- [ ] R05-08 current content fingerprintがrestored snapshot expected fingerprintと一致。
-  - 期待：full replaceを繰返さずpending-only review候補。
-- [ ] R05-09 operation current==expected-before。
-  - 期待：手動確認後のみF2 save gateで適用。
-- [ ] R05-10 current==intended-after。
-  - 期待：already-applied、再commit/revision増加なし。
-- [ ] R05-11 currentがbefore/afterどちらでもない。
-  - 期待：conflict、silent applyなし。
-- [ ] R05-12 二重tap。
-  - 期待：同operationを二重commitしない。
-- [ ] R05-13 同じemergency file二回import。
-  - 期待：already-applied判定で重複適用防止。
-- [ ] R05-14 service create operation再実行時、同recordId exact matchならalready-applied、内容差ならconflict。
-- [ ] R05-15 deleted targetへupdate pending。
-  - 期待：別recordへmappingせずconflict。
+- [ ] R05-08 APPLIED receiptなしでcurrent==intended-after。
+  - 期待：AMBIGUOUS_SAME_VALUE。already-appliedにせず自動skip/auto applyなし。
+- [ ] R05-09 content fingerprint一致だがgenerationが異なる。
+  - 期待：同じrestoreと扱わない。
+- [ ] R05-10 異なるsource snapshot generationで内容だけ同一。
+  - 期待：sourceFileId/provenance不一致、pending-only自動判定なし。
+- [ ] R05-11 operation current==expected-before、ACTIVE context一致。
+  - 期待：利用者確認後のみF2 save gateで適用可能。
+- [ ] R05-12 operation transaction complete後にだけAPPLIED receiptを作成。
+- [ ] R05-13 receipt sourceFileId + restoredGenerationId + operationId + current globalRevisionが一致。
+  - 期待：safe already-appliedとして再commitしない。
+- [ ] R05-14 receiptはあるがglobalRevisionが外部変更で進んだ。
+  - 期待：receiptだけでskipせずcontext invalid。
+- [ ] R05-15 same recordId / same valueだけではalready-appliedにしない。
+- [ ] R05-16 expected-before==intended-afterのpending opをinvalid/no-opとして受け入れない。
 
-### R05-C：partial application
+### R05-C：double tap / duplicate import
 
-- [ ] R05-16 dependency chain op1成功/op2失敗。
-  - 期待：op1 committed維持、op2以降remaining表示。
-- [ ] R05-17 retryでop1再commitなし。
-- [ ] R05-18 10MB超で途中停止。
-- [ ] R05-19 generation conflictで途中停止。
-- [ ] R05-20 parent R001 conflictでF2通常save gate停止。
-- [ ] R05-21 remaining/conflicted/already-applied件数が正確。
-- [ ] R05-22 pendingをoperation順と異なる順で適用しない。
-- [ ] R05-23 completion opはusageStatus等R08 invariantを再検証。
-- [ ] R05-24 R09 parent fallbackは保存せず再計算。
+- [ ] R05-17 operation tapでIN_FLIGHT、同operationの二重tapをreject/ignore。
+- [ ] R05-18 abortしたoperationへAPPLIED receiptを作らない。
+- [ ] R05-19 同一tab ACTIVE context中に同じemergency fileを二回import。
+  - 期待：receiptありoperationだけsafe skip、未receiptは再検証。
+- [ ] R05-20 別tabで同じfileをimport。
+  - 期待：tab-local receiptなし。already-applied推測禁止。
+- [ ] R05-21 同じ内容へ利用者が別操作で先に変更。
+  - 期待：intended-after一致だけではskipしない。
+
+### R05-D：partial apply
+
+- [ ] R05-22 dependency chain op1 complete/op2 abort。
+  - 期待：同一sessionではop1 receiptあり、op2以降remaining。
+- [ ] R05-23 same session retryでop1を二重commitしない。
+- [ ] R05-24 op1後に別tab edit→globalRevision差でcontext invalid、op2自動適用なし。
+- [ ] R05-25 10MB超で途中停止。
+- [ ] R05-26 parent R001 conflictで通常save gate停止。
+- [ ] R05-27 deleted targetを別recordへmappingしない。
+- [ ] R05-28 completion opでR08 invariant再検証。
+- [ ] R05-29 R09 fallbackは保存せず再計算。
+
+### R05-E：reload / browser restart / proof loss
+
+- [ ] R05-30 snapshot restore直後reloadでmemory ReapplyContext消失。
+  - 期待：同じfile再選択でも自動skip/auto applyしない。
+- [ ] R05-31 partial apply後reload。
+  - 期待：current valueから適用済みprefixを推測しない。
+- [ ] R05-32 browser完全終了→再起動→同file再import。
+  - 期待：persistent receiptがないためUNPROVEN、利用者再確認。
+- [ ] R05-33 restart後current==intended-after。
+  - 期待：AMBIGUOUS_SAME_VALUE、already-applied扱い禁止。
+- [ ] R05-34 restart後current==expected-before。
+  - 期待：自動適用せず利用者確認後のみ適用。
+- [ ] R05-35 file紛失時、pending復旧可能と誤保証しない。
+
+### R05-F：F2 schema boundary
+
+- [ ] R05-36 F2正本にsourceFileId / operationId receipt ledgerを保存していないこと。
+- [ ] R05-37 current v0.3はrestart跨ぎautomatic exactly-once resumeを保証しないとUI/設計へ明記。
+- [ ] R05-38 persistent exact-onceを要求する将来案はF2変更として別承認が必要と記録。
 
 ## 7. F5｜F3-R06 privacy
 
@@ -327,13 +377,23 @@
 - [ ] PC-11 emergency full capture→file→snapshot restore→manual pending reapply。
 - [ ] PC-12 emergency partial captureで未退避件数/範囲を表示。
 - [ ] PC-13 emergency download failureで画面回答保持・成功表示なし。
-- [ ] PC-14 snapshot restore後reload→同file再選択→pending-only recovery。
-- [ ] PC-15 一部pending適用→browser restart→同file再取込→already-appliedを二重commitしない。
+- [ ] PC-14 snapshot restore後reload→同file再選択。receipt消失時は自動適用/skipせず再確認。
+- [ ] PC-15 一部pending適用→browser restart→同file再取込。current value一致だけでalready-appliedにしない。
 - [ ] PC-16 invalid duplicate-key/escape-equivalent/key reorder/exponent fileを拒否。
 - [ ] PC-17 plaintext warningを確認。
 - [ ] PC-18 network/DevToolsでsnapshot/pending外部送信0。
 - [ ] PC-19 16MB/1MB/256候補boundaryで安全失敗または計画どおり処理。
 - [ ] PC-20 physical download existenceを人間確認し、UIが完了保証していないことを確認。
+- [ ] PC-21 debug instrumentationでtransaction phase順 GUARD→CLEAR→PUT→READBACK→COMPLETEを確認し、readback前auto-commitなし。
+- [ ] PC-22 transaction callback中にasync Web Crypto待機が発生しないことをinstrumentationで確認。
+- [ ] PC-23 readback 1byte mismatch fault injection→abort、旧正本全件維持。
+- [ ] PC-24 transaction途中abort fault injection→旧正本全件維持。
+- [ ] PC-25 TransactionInactiveError相当fault→成功表示なし、destructive partial commitなし。
+- [ ] PC-26 異なるgenerationだが同一内容のemergency file/contextを同一restoreと誤認しない。
+- [ ] PC-27 未適用operationなのにcurrentがintended-afterと同値→自動skip禁止。
+- [ ] PC-28 同一session二重tap→receiptにより二重commitなし。
+- [ ] PC-29 別tab編集後pending reapply→globalRevision差で停止。
+- [ ] PC-30 partial apply後browser再起動→receipt消失を検知しUNPROVENで再確認。
 
 ## 11. F6｜iPhone Safari通常
 
@@ -353,13 +413,27 @@
 - [ ] IOS-09 partial invalid dependency→partial/none表示と未退避件数。
 - [ ] IOS-10 emergency download cancel/failure→画面回答保持。
 - [ ] IOS-11 emergency snapshot restore後pendingをsilent commitしない。
-- [ ] IOS-12 restore後reload→同file再選択→pending-only review。
-- [ ] IOS-13 Safari終了→再起動→同file再選択→pending recovery。
-- [ ] IOS-14 二重tap/二回importでduplicate commitなし。
-- [ ] IOS-15 partial reapply failure後remaining件数を保持/再取込可能。
-- [ ] IOS-16 app background→foregroundで誤auto commitなし。
+- [ ] IOS-12 restore後reload→同file再選択。provenance receipt消失時は自動skip/applyなし。
+- [ ] IOS-13 Safari終了→再起動→同file再選択→UNPROVEN表示と利用者再確認。
+- [ ] IOS-14 二重tapは同一ACTIVE contextのIN_FLIGHT/APPLIED receiptでduplicate commitなし。
+- [ ] IOS-15 partial reapply failure後、同一sessionではreceipt/remainingを維持。
+- [ ] IOS-16 app background→foregroundでmeta revision再確認。差があればcontext invalid。
+- [ ] IOS-17 異なるgenerationだが同内容のcurrent dataを同一restoreと誤認しない。
+- [ ] IOS-18 未適用operationなのにcurrent==intended-after→AMBIGUOUS_SAME_VALUE、auto skipなし。
+- [ ] IOS-19 partial apply後Safari kill→同file再import。適用済みprefixをcontentだけから推測しない。
+- [ ] IOS-20 duplicate tabで別tab edit→globalRevision差によりpending reapply停止。
 
-### IOS-C：performance / memory
+### IOS-C：transaction activity / atomic restore
+
+- [ ] IOS-TX-01 Safari実機でGUARD→CLEAR→PUT→READBACK→COMPLETEのtraceを取得。
+- [ ] IOS-TX-02 readbackVerified前にoncompleteが発火しない。
+- [ ] IOS-TX-03 transaction callback内にWeb Crypto / async waitなし。
+- [ ] IOS-TX-04 put途中abort fault→旧正本維持。
+- [ ] IOS-TX-05 readback mismatch fault→abort、旧正本維持。
+- [ ] IOS-TX-06 quota fault→abort、旧正本維持。
+- [ ] IOS-TX-07 TransactionInactiveError相当faultで成功表示なし。
+
+### IOS-D：performance / memory
 
 各caseをforegroundで5回。
 
@@ -384,7 +458,7 @@
 - [ ] IOS-PERF-19 memory warning/white screen/page killが1回でもあればFAIL。
 - [ ] IOS-PERF-20 FAIL時はcap引下げ案を作り、上限引上げはしない。
 
-### IOS-D：file privacy / picker edge
+### IOS-E：file privacy / picker edge
 
 - [ ] IOS-21 iCloud Drive等の同期可能性注意文を確認。
 - [ ] IOS-22 file pickerから戻る/キャンセルでdata mutationなし。
@@ -423,9 +497,9 @@ F6後、次を数値で提出する。
 |---|---|
 | F3-R01 | R01-01〜31、PC-11〜15、IOS-08〜16 |
 | F3-R02 | R02-01〜40、PC-16 |
-| F3-R03 | R03-01〜33、PC-04〜10 |
+| F3-R03 | R03-01〜47、PC-04〜10/21〜25、IOS-TX-01〜07 |
 | F3-R04 | R04-01〜15、IOS-PERF-01〜20 |
-| F3-R05 | R05-01〜24、PC-14〜15、IOS-11〜16 |
+| F3-R05 | R05-01〜38、PC-14〜15/26〜30、IOS-12〜20 |
 | F3-R06 | R06-01〜10、PC-17〜18、IOS-21 |
 | F3-R07 | R07-01〜15、N-01〜10、IOS-05 |
 

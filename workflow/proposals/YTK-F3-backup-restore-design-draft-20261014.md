@@ -1,13 +1,16 @@
-# YTK-F3｜バックアップ・緊急退避・復元 詳細設計案 v0.2
+# YTK-F3｜バックアップ・緊急退避・復元 詳細設計案 v0.3
 
 - 起案：2026-10-14
 - 正式レビュー差戻し対応：2026-10-14
-- 状態：**REVISED DRAFT / FORMAL RE-REVIEW PENDING / NOT APPROVED / NO IMPLEMENTATION**
+- 正式再レビュー差戻し対応：2026-10-14
+- 状態：**REVISED DRAFT v0.3 / FORMAL RE-REVIEW2 PENDING / NOT APPROVED / NO IMPLEMENTATION**
 - 対象：端末保存型無料版。外部通信・ログイン・サーバー保存なし。
 - F2正本：workflow/reviews/YTK-F2-human-approval-20261014.md（commit 263efbf030693efb5d8071fcba6f93e4970971b1）
 - F2承認対象設計：workflow/proposals/YTK-F2-storage-safety-revision-20261013.md（commit 0d5dfa387f924e5dc3dc9196b9f236986c910281）
 - F3初回設計commit：b1a6f6a08d21f677eab0450b9d620df960c412be
 - F3正式レビュー：workflow/reviews/YTK-F3-backup-restore-formal-review-20261014.md（commit 597c8ab531f2bd68990f1e652696c1ba34f665d7）
+- F3正式再レビュー：workflow/reviews/YTK-F3-backup-restore-formal-rereview-20261014.md（commit 06c1b7617c947e70fccd4cc7a22082cd19def3c7）
+- 正式再レビュー判定：R01/R02/R04/R06/R07 RESOLVED、R03/R05 CHANGES_REQUIRED
 - 本書はF3-R01〜R07差戻し対応案であり、F3全体承認・F4実装・F5/F6試験PASS・本番公開・R005凍結解除を行わない。
 
 ## 1. 不変条件
@@ -338,7 +341,7 @@ download生成/起動失敗：
 - navigation/reload/OS killは画面値喪失の可能性があるため、成功が確認できない間は「画面を閉じない」表示を出す。
 - beforeunload等は補助であり、保護保証として依存しない。
 
-## 6. F3-R03｜復元と既存データ保護
+## 6. F3-R03｜復元と既存データ保護（R03-A対応）
 
 ### 6.1 既存ローカル状態の分類
 
@@ -368,61 +371,136 @@ UI：
 
 - 通常のreplace確認とは別に「破損している可能性のある現在データを破棄して復元」の二段階確認を要求。
 - preview時raw-state guardを保持。
-- commit transaction内でraw-stateを再読込し完全一致しなければabortして再preview。
+- commit transaction内でraw-stateを再読込し、**同期的canonical bytes比較**で一致しなければabortして再preview。
 - CORRUPT_UNCOMPARABLEは上書き禁止。「安全に競合確認できないため、この画面から復元できません」と停止する。
 - 手動でbrowser site dataを消す等は利用者の別操作であり、アプリが自動実行しない。
 
-### 6.3 precompute
+### 6.3 Phase A：transaction開始前preflight
 
-readwrite transaction開始前に行う。
+**Web Crypto、file decode、strict validator、prospective dataset生成、digestはすべてreadwrite transaction開始前に完了させる。**
 
-1. file strict parse / checksum / F2 semantic validation。
-2. current state classificationとpreview guard取得。
-3. 利用者preview表示。
-4. new generationIdを生成。
-5. file snapshotのrecordsを保持したまま、new generationId、globalRevision=1を適用したprospective datasetを構築。
-6. record revisionsは検証済みsnapshot値を保持。
-7. F2 canonical capacity projectionを生成しUTF-8 bytesを計測。
-8. new generation/metaを含め10,000,000 bytes以下であることを確認。
-9. prospective canonical bytes / size / digestをfreezeしてcommit candidateとする。
-10. explicit replace confirmationを取得。
+1. file raw size / UTF-8 fatal decode / lexical duplicate-key / canonical raw / SHA-256 / F2 semantic validationを完了。
+2. current state classificationとpreview guardをreadonly transactionで取得。
+3. 利用者previewを表示。
+4. ACTIVE registry規則でnew generationIdを生成。
+5. file snapshotへnew generationId / globalRevision=1を反映したprospective datasetを構築。
+6. imported record revisionsは検証済み値を保持。
+7. F2 canonical serializerでexpectedCanonicalTextを生成。
+8. TextEncoderでexpectedCanonicalBytesを生成。
+9. expectedByteLengthを計測し10,000,000以下を確認。
+10. expectedCanonicalBytesのSHA-256を**transaction外で**計算しpreflight監査値として保持してよい。ただしtransaction内の正否判定にはdigestを使わない。
+11. VALID currentならpreview generation/global/record guard、CORRUPT_COMPARABLEならpreviewRawGuardCanonicalBytesをtransaction外でfreeze。
+12. explicit replace confirmationを取得。
+13. 以上がすべて完了してからreadwrite transactionをopenする。
 
-new generationId生成規則はACTIVE version registryに従う。registry未bindingではF4へ進まない。
+transactionへ渡すfreeze済み入力：
+- expected canonical JS records/meta
+- expectedCanonicalBytes
+- expectedByteLength
+- preview guard
+- current state class
+- newGenerationId
 
-### 6.4 atomic readwrite transaction
+transaction開始後にFile API、TextDecoder、Web Crypto digest、network、timer、Promise待機で追加情報を取りに行かない。
 
-同一readwrite transactionで次を行う。
+### 6.4 Phase B：readwrite transaction内の同期request-chain
 
-1. current stores/metaを再読込。
-2. VALIDならpreview generation/global guard、EMPTYならempty guard、CORRUPT_COMPARABLEならraw-state guardと一致確認。
-3. 不一致ならabort。再確認なしで上書きしない。
-4. freeze済みprospective candidateを同期的canonical serializerで再serializeし、precomputed bytes/digestと一致かつ10MB以下を再確認。
-5. 全対象store clear。
-6. overview/categories/servicesをput。
-7. metaをnew generationId / globalRevision=1でput。
-8. 同じtransaction内でput後records/metaをread-backし、canonical projectionを再構築。
-9. read-back canonical bytes / size / digestがprecomputed prospective candidateと完全一致することを確認。
-10. 1件でもrequest error、quota error、final meta write error、read-back mismatchならtransaction.abort。
-11. transaction completeだけをrestore成功とする。
+transaction対象storeを最初から全てscopeに含める。
 
-transaction中にnetwork、digest Web Crypto、timer等の無関係awaitを挟まない。IndexedDB request chainだけで処理する。
+**transaction event handlerをasync functionにしない。await / Promise.then / queueMicrotask / setTimeout / requestAnimationFrame / crypto.subtle.digest / Blob.arrayBuffer等をtransaction内で使用しない。**
 
-### 6.5 rollbackと旧タブ
+処理はIndexedDB request callback内で次phaseのrequestを**callbackからreturnする前にenqueue**する。
 
-- abort時はclear/put/metaを含め旧正本をtransaction atomicityで維持。
+#### Phase B1：guard read
+
+1. transaction開始直後にmeta・対象storeのguard確認に必要なget/getAll requestを全てenqueue。
+2. 各onsuccessは結果をmemoryへ集約。
+3. 最後のguard request callback内で、VALID / EMPTY / CORRUPT_COMPARABLEのpreview guardを同期比較。
+4. mismatch / synchronous validation exceptionならそのcallback内でtransaction.abort()。
+5. guard合格なら同じcallbackからreturnする前にB2のclear requestsをenqueue。
+
+CORRUPT_COMPARABLEのraw-state比較もcanonical serializer + TextEncoderによる同期bytes比較だけを使う。digestは計算しない。
+
+#### Phase B2：clear
+
+1. 対象storeのclear requestを全てenqueue。
+2. request errorはtransaction abortへ伝播させる。
+3. 最後のclear success callback内でB3のput requestsをenqueueしてからreturn。
+
+#### Phase B3：put
+
+1. freeze済みprospective overview/categories/services/metaをput。
+2. request error / quota error / DataError等はabort。
+3. 最後のput success callback内でB4のreadback get/getAll requestsをenqueueしてからreturn。
+
+#### Phase B4：readback
+
+1. 書込対象全store/metaを同じtransactionでreadback。
+2. 最後のreadback success callback内でF2 canonical projectionを**同期的に**再構築。
+3. canonical serializerでreadbackCanonicalTextを生成。
+4. TextEncoderでreadbackCanonicalBytesを生成。
+5. 次を同期確認：
+   - readbackCanonicalBytes.byteLength <= 10,000,000
+   - byteLength == expectedByteLength
+   - 全byteがexpectedCanonicalBytesと完全一致
+   - meta generationId == newGenerationId
+   - meta globalRevision == 1
+   - record count / recordId / recordRevisionがprospective candidateと一致
+6. 1byteでも不一致、容量超過、例外があれば**callback内でtransaction.abort()**。
+7. 全項目一致ならmemory flag readbackVerified=true を設定してreturn。
+8. ここで初めてpending requestが0になってよく、その後のIndexedDBの通常auto-commitを許可する。
+
+**premature auto-commitは禁止だが、readbackVerified=true後の正常auto-commitは意図した完了動作。**
+
+### 6.5 transaction complete / abort規範
+
+- transaction.oncompleteで readbackVerified===true の場合だけrestore success。
+- oncompleteがreadbackVerified=falseで発火した場合は実装不備としてFAIL扱い。成功UIを出さない。
+- request error、TransactionInactiveError、同期serializer例外、quota error、readback mismatchではabortを要求。
+- onabort/onerrorでは旧正本が維持されていることを前提に失敗表示。
+- request単体success、clear success、put success、meta write successでは成功表示しない。
+- transaction中に次phase requestをenqueueできないコードpathはproduction実装禁止。
+
+### 6.6 transaction inactivity / auto-commit対策
+
+安全性は「長時間transactionを保持する」ことではなく、**event callback内で次requestを必ずenqueueする有限state machine**で担保する。
+
+許可する同期処理：
+- plain JS field/type check
+- schema-defined canonical serializer
+- JSON.stringify相当の同期生成
+- TextEncoder.encode
+- Uint8Array length/byte compare
+- counter / map / set操作
+
+禁止：
+- async/await
+- Promise callbackへ制御を渡す
+- Web Crypto
+- network
+- File/Blob async read
+- timer / idle callback
+- UI modal待機
+- user interaction待機
+
+UI確認はtransaction開始前に終える。
+
+### 6.7 rollbackと旧タブ
+
+- B2 clear後、B3途中、B4 readback後のどこでabortしてもIndexedDB transaction atomicityにより旧正本を維持。
 - transaction complete後だけ新generationが正本。
 - 他tabは次回save時にgeneration mismatchで拒否。
 - BroadcastChannel等の通知は補助で、正否を通知到達に依存しない。
 - restore後に旧tabの古い正本をforce overwriteするretryを禁止。
 
-### 6.6 preview競合
+### 6.8 preview競合
 
-preview後に他tab edit / delete-all /別restoreが入った場合：
-- commit guard mismatchでabort。
+preview後に他tab edit / delete-all / 別restoreが入った場合：
+- B1 guard mismatchでabort。
 - 「確認後に端末データが変更されました。もう一度内容を確認してください」と表示。
 - 自動で再preview→即commitしない。
 
-## 7. F3-R05｜emergency restore後のpending再適用
+## 7. F3-R05｜emergency restore後のpending再適用（R05-A対応）
 
 ### 7.1 原則
 
@@ -430,52 +508,147 @@ preview後に他tab edit / delete-all /別restoreが入った場合：
 - snapshot restore成功後もpendingは未commit。
 - pendingをIndexedDBへ自動保存しない。
 - 利用者が明示的に「未保存の回答を確認する」→「この回答を適用する」を選ぶまでcommitしない。
+- **data contentの一致だけを「同じ復元」「適用済み」の証拠にしない。**
+- current == intended-after だけでalready-applied判定しない。
 
-### 7.2 state machine
+### 7.2 source file identity / restore provenance
 
-FILE_SELECTED
-→ FILE_VALIDATED
-→ SNAPSHOT_PREVIEW
-→ SNAPSHOT_RESTORE_CONFIRMED
-→ SNAPSHOT_RESTORED_PENDING_AVAILABLE
-→ PENDING_REVIEW
-→ REAPPLY_CONFIRM
-→ REAPPLY_IN_PROGRESS
-→ ALL_APPLIED / PARTIALLY_APPLIED / CONFLICTED / FAILED
+strict validationとchecksum検証が完了したemergency fileについて、transaction開始前に次を作る。
 
-reload/画面終了/Safari killでin-memory stateは消え得る。
-そのためSNAPSHOT_RESTORED_PENDING_AVAILABLE以降で未適用が残る間、次を表示する。
+sourceFileId = "f3:" + fileFormatVersion + ":" + checksum.hex
 
-「未保存の回答はまだ端末の保存データへ確定されていません。この画面を閉じると確認状態は消えることがあります。緊急ファイルを保管し、必要ならもう一度同じファイルを選んでください。」
+checksum payloadにはkind / exportedAt / snapshot（source generation含む）/ pendingを含むため、異なるgenerationの同内容snapshotやpending差分は通常別sourceFileIdになる。
 
-### 7.3 二回目import / pending-only recovery
+注意：
+- sourceFileIdは**ローカルな復元元識別子**であり、真正性・作成者証明ではない。
+- checksumを書き換えた攻撃fileもstrict validation対象であり、sourceFileId自体をtrust anchorにしない。
 
-emergency fileにはbaseContentFingerprintSha256を持つ。
+snapshot restore transactionがcompleteした後だけ、現在tab memoryに次のReapplyContextを生成する。
 
-再選択時：
-1. fileを最初からstrict validate。
-2. current committed datasetのcontent fingerprintを生成。
-3. file snapshotをrestoreした直後のexpected content fingerprintと一致する場合、full replaceを再実行せず「未保存回答だけ確認」導線を出せる。
-4. current dataが既に一部reapply済みで完全一致しない場合、各operationのexpected-before / intended-afterを順番に確認する。
+- sourceFileId
+- sourceSnapshotGenerationId
+- restoredGenerationId
+- restoredBaselineGlobalRevision（restore直後は1）
+- lastKnownGlobalRevision
+- orderedOperationIds
+- receiptMap
+- contextState = ACTIVE
 
-operation判定：
-- current state == expected-before：利用者確認後に通常F2 save pipelineで適用可能。
-- current state == intended-afterかつ依存contextも一致：already-appliedとして再commitしない。
-- どちらでもない：conflict。自動適用しない。
+restore transaction abort時はReapplyContextを作らない。
 
-### 7.4 partial reapply
+### 7.3 operation receipt
 
+operation適用前：
+- operation key = sourceFileId + ":" + operationId。
+- context sourceFileId / restoredGenerationIdが現在file/current metaと一致すること。
+- current meta generationId == restoredGenerationId。
+- current globalRevision == context.lastKnownGlobalRevision。
+- operationIdがorderedOperationIds内で一意。
+- dependency prefixがcontext内で確認できること。
+- current stateがoperationのexpected-beforeと一致すること。
+- intended-afterとexpected-beforeが同値のoperationはF2 idempotent no-opなのでpending operationとして受け入れない。
+
+利用者が適用を確認した後、F2通常save pipelineのtransactionを実行する。
+
+transaction complete後だけreceiptMapへ：
+- operationKey
+- operationId
+- resultingGenerationId
+- resultingGlobalRevision
+- affected recordId/categoryKey
+- resulting record revision(s)
+- status=APPLIED
+
+を**memory上だけ**記録し、context.lastKnownGlobalRevisionを更新する。
+
+abort/error時はAPPLIED receiptを作らない。
+
+### 7.4 safely already-appliedと判定できる条件
+
+自動skip可能なalready-appliedは、以下を**すべて満たす同一tab・同一memory context内**に限る。
+
+1. 選択fileのsourceFileId == context.sourceFileId。
+2. current meta generationId == context.restoredGenerationId。
+3. current meta globalRevision == context.lastKnownGlobalRevision。
+4. operationKeyのAPPLIED receiptがreceiptMapに存在。
+5. receiptがtransaction complete後に作られたもの。
+6. dependency componentの適用順がreceipt列と矛盾しない。
+7. 別tab更新・別restore・delete-all等を示すrevision/generation差がない。
+
+この条件を満たす場合だけ、同じoperationを再commitせず「この操作はこの復元セッション内で適用済み」と表示できる。
+
+**current valueがintended-afterと同じ、recordIdが同じ、content fingerprintが同じ、という理由だけではalready-appliedにしない。**
+
+### 7.5 ambiguous / unproven cases
+
+以下はUNPROVENまたはAMBIGUOUS_SAME_VALUEとして**自動適用も自動skipもしない**。
+
+- current == intended-afterだがAPPLIED receiptがない。
+- content fingerprintは一致するがgenerationが異なる。
+- sourceFileIdは同じだがbrowser reload/restartでReapplyContextが失われた。
+- 別tab編集でglobalRevisionが変化。
+- 同じ内容へ利用者が別経路で編集した可能性がある。
+- 同一recordIdでも復元世代とのprovenanceを確認できない。
+- partial reapply後にbrowser restartして、どこまで適用済みかmemory receiptを失った。
+
+UI：
+「この未保存回答がすでに適用済みか安全に確認できません。自動では適用もスキップもしません。現在の内容と緊急ファイルの回答を確認してください。」
+
+### 7.6 二重tap / 同一session二回import
+
+同一ACTIVE context中：
+- operationを押した時点でmemory statusをIN_FLIGHTにし、同operationの二重tapを受け付けない。
+- transaction complete後APPLIED、abortでREADY/FAILEDへ戻す。
+- 同じfileを二回選択してもsourceFileIdとACTIVE contextが一致する場合、APPLIED receiptがあるoperationだけsafe already-applied。
+- receiptなしoperationはexpected-beforeを再検証し、利用者確認後だけ適用。
+
+別tab：
+- ReapplyContextはtab-local。
+- 別tabにはreceiptがないためalready-appliedを推測しない。
+- meta globalRevision/generationの差を見て停止・再確認。
+
+### 7.7 reload / browser restart
+
+ReapplyContext / receiptMapはF2正本へ保存しないため、reload/browser restartで失われ得る。
+
+再起動後に同じemergency fileを選んだ場合：
+- fileは最初からstrict validation。
+- current generation/contentを見ても「前回と同じ復元」と自動断定しない。
+- receiptが失われているため、operationをalready-appliedと自動skipしない。
+- expected-beforeが現在成立するoperationも、自動適用せず利用者確認を要求。
+- intended-after一致はAMBIGUOUS_SAME_VALUEとして停止・確認。
+- 必要に応じてsnapshot full replaceからやり直す選択肢を表示できるが、現在data喪失警告と明示確認が必要。
+
+### 7.8 partial reapply
+
+同一ACTIVE context中：
 - dependency component単位で順序を維持。
-- あるoperation成功後、次operationで失敗した場合、成功済みcommitはF2正本として残る。
-- remaining / conflicted / already-applied件数を表示。
-- retryで成功済みoperationを二重適用してrevisionを増やさない。
-- deleted/missing target、recordId collision、parent state change、10MB超、generation conflictは停止して利用者確認。
-- pending operationを勝手に別recordへmappingしない。
+- op1 transaction complete後、op2で失敗した場合、op1 receiptを保持しop2以降をremainingとする。
+- retryでop1はreceiptにより再commitしない。
+- 10MB超、generation/global conflict、deleted/missing target、parent conflictで停止。
+- pending operationを別recordへmappingしない。
 
-### 7.5 background / reload
+reload/restart後：
+- memory receiptがないためpartial progressを自動再構成しない。
+- current valueだけから「ここまで済み」と推測しない。
+- unresolved operationごとに利用者へ再確認する。
 
-- visibilitychange/pageshow等で未適用警告を再表示できるが、永続保護保証にしない。
-- browser restart後は同じemergency file再選択がdurable recovery source。
+### 7.9 persistent exactly-once境界
+
+現行F2 approved schemaには、sourceFileId + restoredGenerationId + operationIdの適用済みprovenance ledgerが存在しない。
+
+したがってv0.3では：
+- persistent applied-operation ledgerを追加しない。
+- F2 schemaを変更しない。
+- browser restartを跨いだ**自動exactly-once resumeは保証しない**。
+- 証明できない場合はfail closedで利用者確認へ戻す。
+
+将来「再起動後も操作ごとに自動で適用済み判定し、exactly-once resumeする」UXを必須にするなら、永続provenance recordが必要になる可能性が高い。これはF2承認範囲外なので、**F2変更として制作管理室・人間の別承認が必要**。F3で独断追加しない。
+
+### 7.10 background
+
+- visibilitychange/pageshowでACTIVE memory contextが残る場合はmeta generation/globalを再確認してから操作再開。
+- mismatchならcontextをINVALIDATEし自動適用/skipを停止。
 - fileがなければ未保存pendingを復元できると約束しない。
 
 ## 8. F3-R07｜F2 authoritative connection / version registry
@@ -639,9 +812,9 @@ pending restore後：
 |---|---|
 | F3-R01 | pendingをconfirmed/dependent/current draftに分離。dependency component all-or-nothing、capture summary、未退避件数/範囲、UI保持、download失敗fail-closedを定義 |
 | F3-R02 | duplicate decoded key scanner、canonical raw一致、非負整数lexical規範、Unicode/unknown reject、SHA対象/順序、規範vectorを固定 |
-| F3-R03 | valid/empty/corrupt-comparable/uncomparable分類、明示確認、競合guard、precompute→single transaction→readback verify→completeを規範化 |
+| F3-R03 | preflightでWeb Crypto等を完了し、transaction内はIndexedDB request-chain＋同期canonical bytes比較だけに限定。premature auto-commitを防ぎ、readbackVerified後のみ正常auto-commitを許可 |
 | F3-R04 | 16MB/1MB/256をprovisionalとし根拠・境界・iPhone計測・PASS/NOT VERIFIABLE規則を追加 |
-| F3-R05 | restore後pending state machine、再取込、partial apply、already-applied判定、二重適用防止を追加 |
+| F3-R05 | sourceFileId＋restoredGenerationId＋operationId＋同一session APPLIED receiptをprovenance条件に固定。content一致だけのalready-applied禁止。restart後は証明不能なら自動適用/skipせず確認へ停止 |
 | F3-R06 | 平文・共有端末・iCloud等同期・SHA限界・自動uploadなしのUI文案を追加 |
 | F3-R07 | F2 category/R07-R09/capacityを固定参照し、未確定version/ID grammarをUNBOUND registry gateとして明示 |
 

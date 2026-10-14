@@ -1,11 +1,13 @@
-# YTK-F3｜バックアップ・緊急退避・復元 詳細設計 正式再レビュー依頼
+# YTK-F3｜バックアップ・緊急退避・復元 詳細設計 正式再々レビュー依頼
 
 制作管理室 御中
 
-2026-10-14付正式レビュー
-workflow/reviews/YTK-F3-backup-restore-formal-review-20261014.md
-（commit 597c8ab531f2bd68990f1e652696c1ba34f665d7）
-でCHANGES_REQUIREDとなったF3-R01〜R07について、既存3成果物を更新しました。
+2026-10-14付正式再レビュー
+workflow/reviews/YTK-F3-backup-restore-formal-rereview-20261014.md
+（commit 06c1b7617c947e70fccd4cc7a22082cd19def3c7）
+でCHANGES_REQUIREDとなったF3-R03-A / F3-R05-Aについて、既存3成果物を更新しました。
+
+前回RESOLVEDとなったF3-R01 / R02 / R04 / R06 / R07は変更・後退させていません。
 
 本再提出は**F3全体の自己承認ではありません**。
 F5/F6は未実施であり、安全性試験PASSも宣言しません。
@@ -45,18 +47,19 @@ F2人間承認は維持し、F2の意味変更は行っていません。
 - DIGEST-01のexpected SHAとnormal/corrupt/malicious vector群を追加。
 - SHA-256を真正性・暗号化・作成者証明として扱わない。
 
-### F3-R03｜atomic restore / corrupted current data
+### F3-R03-A｜transaction原子性 / 同期readback
 
-- current local stateをVALID / EMPTY / CORRUPT_COMPARABLE / CORRUPT_UNCOMPARABLEへ分類。
-- corruptをEMPTY扱いしない。
-- CORRUPT_COMPARABLEはraw-state guardと二段階データ喪失確認がある場合だけ復旧候補。
-- CORRUPT_UNCOMPARABLEは競合guardを省略せずin-app restoreを停止。
-- precomputeでstrict file validation、新generation候補、globalRevision=1、record revisions保持、10MB prospective bytes/digestをfreeze。
-- commit時は単一readwrite transactionでcurrent guard再確認→candidate再serialization/size確認→clear→all put→meta→read-back verification。
-- clear/put/meta/read-backのどこで失敗してもabortし旧正本を維持。
-- transaction complete後だけ復元成功。
-- preview後別tab更新はguard mismatchで停止。
-- restore後旧tabはgeneration mismatchでsave拒否。
+- preflightとreadwrite transaction内検証を明確分離。
+- File decode、strict validation、SHA-256、prospective dataset、expectedCanonicalBytes、10MB判定はtransaction開始前に完了。
+- transaction callbackはasync禁止。await / Promise / Web Crypto / File/Blob async read / timer / UI待機を入れない。
+- transaction内はIndexedDB request callback chainのみ。
+- GUARD→CLEAR→PUT→READBACKの各phaseで、最後のsuccess callbackがreturnする前に次phase requestをenqueue。
+- readbackはF2 canonical serializer + TextEncoderによる同期canonical bytesを生成。
+- expectedCanonicalBytesとbyteLength/全byteを同期比較し、10MB、generation/global/record count/revisionも検証。
+- readback不一致はcallback内transaction.abort。
+- readbackVerified=true後にrequestが尽きることを許し、その後の正常auto-commitを意図した完了とする。
+- oncompleteはreadbackVerified=trueの場合だけ成功。premature oncompleteは実装不備。
+- clear後/put途中/meta failure/readback mismatch/TransactionInactiveError/quotaで旧正本維持を試験。
 
 ### F3-R04｜16MB / 1MB / 256件と性能
 
@@ -68,17 +71,20 @@ F2人間承認は維持し、F2の意味変更は行っていません。
 - peak memoryを観測できなければ16MB安全性はNOT VERIFIABLEとしてPASSにしない。
 - FAILならcap引下げ→再試験。測定前に安全値と断定しない。
 
-### F3-R05｜restore後pending
+### F3-R05-A｜pending provenance / double apply
 
-- snapshot restoreとpending reapplyを別operationへ分離。
-- pendingはrestore後もsilent commitしない。
-- FILE_SELECTED→...→ALL_APPLIED/PARTIALLY_APPLIED/CONFLICTEDのstate machineを追加。
-- reload / browser restart / Safari kill時はin-memory pendingが消え得ることを明示し、同じemergency file再選択をdurable recovery sourceとする。
-- baseContentFingerprintでpending-only recovery候補を判断。
-- current==expected-beforeなら手動確認後適用、current==intended-afterならalready-applied、どちらでもなければconflict。
-- 二重tap / 二回importで重複commitを防止。
-- partial reapply後のremaining/conflicted/already-applied件数を表示。
-- deleted targetやrecord mismatchを別recordへ自動mappingしない。
+- content fingerprint一致だけのpending-only recoveryを廃止。
+- validated file checksumからsourceFileIdを導出し、snapshot restore complete後にtab-local ReapplyContextを生成。
+- ReapplyContextはsourceFileId / sourceSnapshotGenerationId / restoredGenerationId / lastKnownGlobalRevision / orderedOperationIds / APPLIED receiptMapを保持。
+- operation receiptはF2 save transaction complete後だけmemoryへ作成。
+- safe already-appliedは、sourceFileId・restoredGenerationId・current globalRevision・operationId receipt・dependency orderがすべて一致する同一session内だけ。
+- current==intended-after、same recordId、same contentだけではalready-appliedにしない。
+- receiptなしでintended-after一致はAMBIGUOUS_SAME_VALUEとして自動skip/auto applyせず利用者確認。
+- 別tab更新はglobalRevision差でcontext invalid。
+- browser reload/restartでmemory receiptが失われた場合、同じfileでも自動適用/skipしない。
+- persistent sourceFileId/operationId ledgerは現行F2 schemaへ追加していない。
+- restart跨ぎautomatic exactly-once resumeを将来必須にする場合はF2変更・人間別承認が必要と明記。
+- 異世代同内容、未適用なのに同値、途中適用、二重取込、別tab、restartをF5/F6へ追加。
 
 ### F3-R06｜plaintext file privacy
 
@@ -148,25 +154,21 @@ F2意味変更が必要ならF3内で独断変更しない。
 
 ## 再レビューで確認してほしい事項
 
-1. R01 dependency component / omitted summary / UI保持が未保存回答のfail-closed退避として十分か。
-2. R02 duplicate decoded key / raw canonical一致 / checksum順序でparser差が閉じているか。
-3. R03 CORRUPT_COMPARABLE / UNCOMPARABLEの分離とsingle transaction read-back検証で旧正本保護が十分か。
-4. R04のprovisional cap説明・resource guard・iPhone測定/NOT VERIFIABLE規則が十分か。
-5. R05のfile再選択・already-applied判定・partial reapplyで二重適用を防げるか。
-6. R06 plaintext注意文とSHA限界説明が十分か。
-7. R07のUNBOUND registry gateがF2未確定技術値を勝手に変更せずfail closedにできているか。
-8. F5/F6計画がR01〜R07の失敗経路を網羅したか。
-9. 人間判断へ進める項目と、なお設計差戻しが必要な項目を分離できるか。
+1. R03-Aでpreflightのasync処理とtransaction内同期処理が十分分離されたか。
+2. IndexedDB request-chainがpremature auto-commit / TransactionInactiveErrorを避ける実装可能な規範になっているか。
+3. readback canonical bytes同期比較とtransaction abortで途中失敗時の旧正本を守れるか。
+4. R05-AでsourceFileId / restoredGenerationId / operationId receiptのprovenanceが一意か。
+5. current==intended-afterやsame contentだけでalready-appliedにしていないか。
+6. reload/restartでprovenanceを証明できない場合に自動適用/skipをせずfail closedになっているか。
+7. restart跨ぎautomatic exactly-onceのためのpersistent ledgerをF2へ無断追加していないか。
+8. R01/R02/R04/R06/R07 RESOLVED仕様を後退させていないか。
+9. 追加F5/F6がtransaction inactive・auto-commit・readback mismatch・途中abort・異世代同内容・未適用同値・partial apply・double import・別tab・restartを網羅したか。
 
 ## 希望判定形式
 
-- F3-R01：RESOLVED / CHANGES_REQUIRED
-- F3-R02：RESOLVED / CHANGES_REQUIRED
-- F3-R03：RESOLVED / CHANGES_REQUIRED
-- F3-R04：RESOLVED / CHANGES_REQUIRED
-- F3-R05：RESOLVED / CHANGES_REQUIRED
-- F3-R06：RESOLVED / CHANGES_REQUIRED
-- F3-R07：RESOLVED / CHANGES_REQUIRED
+- F3-R03-A：RESOLVED / CHANGES_REQUIRED
+- F3-R05-A：RESOLVED / CHANGES_REQUIRED
+- F3-R01/R02/R04/R06/R07 regression：MAINTAINED / REGRESSED
 - F2 approved constraints：MAINTAINED / REGRESSED
 - F5 plan：SUFFICIENT / CHANGES_REQUIRED / NOT RUN
 - F6 plan：SUFFICIENT / CHANGES_REQUIRED / NOT RUN
