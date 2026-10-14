@@ -1,171 +1,680 @@
-# YTK-F3｜バックアップ・緊急退避・復元 詳細設計案 v0.1
+# YTK-F3｜バックアップ・緊急退避・復元 詳細設計案 v0.2
 
 - 起案：2026-10-14
-- 状態：**DRAFT / NOT REVIEWED / NOT APPROVED / NO IMPLEMENTATION**
+- 正式レビュー差戻し対応：2026-10-14
+- 状態：**REVISED DRAFT / FORMAL RE-REVIEW PENDING / NOT APPROVED / NO IMPLEMENTATION**
 - 対象：端末保存型無料版。外部通信・ログイン・サーバー保存なし。
-- 正本：F2人間正式承認記録 `workflow/reviews/YTK-F2-human-approval-20261014.md`（commit `263efbf030693efb5d8071fcba6f93e4970971b1`）。
-- F2承認対象設計：`workflow/proposals/YTK-F2-storage-safety-revision-20261013.md`（commit `0d5dfa387f924e5dc3dc9196b9f236986c910281`）。
-- R003：`workflow/research/YTK-R003-storage-data.md`。
-- 本書は**技術的な提案**であってF3の正式仕様ではない。F2承認内容の変更、F3正式承認、F4実装、F5/F6のPASS、本番公開、R005凍結解除を行わない。
+- F2正本：workflow/reviews/YTK-F2-human-approval-20261014.md（commit 263efbf030693efb5d8071fcba6f93e4970971b1）
+- F2承認対象設計：workflow/proposals/YTK-F2-storage-safety-revision-20261013.md（commit 0d5dfa387f924e5dc3dc9196b9f236986c910281）
+- F3初回設計commit：b1a6f6a08d21f677eab0450b9d620df960c412be
+- F3正式レビュー：workflow/reviews/YTK-F3-backup-restore-formal-review-20261014.md（commit 597c8ab531f2bd68990f1e652696c1ba34f665d7）
+- 本書はF3-R01〜R07差戻し対応案であり、F3全体承認・F4実装・F5/F6試験PASS・本番公開・R005凍結解除を行わない。
 
-## 1. 利用者向けの約束と対象外
+## 1. 不変条件
 
-- 通常バックアップ：IndexedDBでtransaction `complete` 済みの**全確定データ**を端末上のファイルに書き出す。R001未回答、R002 `partial` と `completed` をすべて含む。`pending`、画面履歴、入力途中の「その他」未確定名は含めない。
-- 緊急退避：保存失敗・競合で未commit操作が画面に残り、再試行不能または再試行で復旧しない場合、**確定済みsnapshot＋未保存操作（別領域）**をファイルに出す。未保存操作を確定済みデータとして偽らない。pending自体を退避できない場合は、確定済み部分のみのファイルであると**明示**してよいが、未保存部分の退避成功とは表示しない。
-- 復元：ユーザーが手元のファイルを選択し、内容の厳格な検査と上書き確認が通った場合のみ、現在の端末データを**丸ごと置換**する。無断merge・欠損自動修復・削除済みデータの無断復活をしない。
-- データ移行：PC ChromeとiPhone Safariなど、異なる端末／ブラウザー間を同じファイル形式で移せることを目標にする。ブラウザー側の端末領域やOSがファイルを消す可能性は残る。
-- ファイルは**暗号化なしのJSONを初期候補**とする。サービス名・本人意向等が含まれるため、端末の共有・ファイル共有・クラウドドライブへの自動同期を含め、利用者への注意が必要。暗号化を無断採用せず、必要性は人間判断項目とする。アプリ側の無断クラウドアップロードは行わない。
-- 自動的な繰返しバックアップ催促は追加しない。利用開始時の「消失リスク＋適宜バックアップ推奨」はF2承認どおり維持。復元／緊急退避時の必要な確認表示は催促とは別の、安全操作のためのUI。
+F2で人間承認された以下を変更しない。
 
-## 2. 共通ファイル仕様案
+- IndexedDBのcommitted dataset上限は10,000,000 UTF-8 bytes。
+- normal backupはtransaction complete済みのcommitted datasetを対象とし、R001 unanswered、R002 partial/completedを含む。
+- normal backupにpending overlayを含めない。
+- emergency exportだけがpendingを別領域へ持てる。pendingをcommittedへ混ぜない。
+- restoreはstrict validation後のatomic full replace。silent mergeをしない。
+- pendingのsilent commitをしない。
+- R07、R08、R09、category mapping、条件付き回答presence、秘密情報禁止、外部送信禁止を維持する。
+- R005はFROZENのまま。
 
-### 2.1 ファイル名・媒体
-- ファイル名：通常 `yattoko-backup-YYYYMMDD-HHMMSS-XXXXXXXX.json`、緊急 `yattoko-emergency-YYYYMMDD-HHMMSS-XXXXXXXX.json`。時刻はローカル表示用、8桁部分はランダム値等（ユーザーデータやアカウント識別子ではない）。ファイル名の重複を避ける目安にすぎず、保存先での重複・上書きを防ぐ保証ではない。
-- Content-Type候補：`application/json;charset=utf-8`、UTF-8（BOMなし）。ファイル選択UIは`.json`優先。ただし拡張子・MIMEは信用せず内容で判定する。
-- 初期形式：非圧縮単一ファイル。ZIP・GZIP・暗号化ZIP・HTML・CSV・アーカイブ等はv1で扱わない。
-- 形式互換性：`fileFormat="yattoko-backup"`、`fileFormatVersion=1`、snapshot内の`schemaVersion` / `questionSchemaVersion`を独立に検証する。F2の後二者の実値はF4前のversion registry審査で確定する。未登録のバージョンは推測変換せず拒否。
+## 2. 共通ファイル形式
 
-### 2.2 v1 envelope概形（すべて候補、最終キーは要審査）
-```json
-{
-  "fileFormat": "yattoko-backup",
-  "fileFormatVersion": 1,
-  "kind": "normal",
-  "exportedAt": "2026-10-14T00:00:00.000Z",
-  "snapshot": {
-    "schemaVersion": 1,
-    "questionSchemaVersion": 1,
-    "generationId": "example-opaque-id",
-    "globalRevision": 1,
-    "overview": {},
-    "categories": [],
-    "services": []
-  },
-  "pending": null,
-  "checksum": {
-    "algorithm": "SHA-256",
-    "hex": "64 lowercase hex characters here"
-  }
-}
-```
-- 上は**形状を示す非実用例**であり、`overview={}`・`categories=[]` は有効なバックアップ内容ではない。実ファイルはF2正本のすべての必須項目と12カテゴリー等を含む。
-- `kind` は`normal` または`emergency`のみ。normalの場合`pending=null`を必須にする。emergencyの場合もpending部分が退避できなければ`pending=null`を許し、**UIに「未保存回答は含まれない」と示す**。
-- rootキーと順序は`fileFormat,fileFormatVersion,kind,exportedAt,snapshot,pending,checksum`。unknown root key / nested key、重複JSONキー、非法整数、不正文字列を拒否。完全な正規化形式および二重キー検知方法は制作管理室のレビュー対象。
-- snapshotはF2のcanonical capacity projection（`schemaVersion,questionSchemaVersion,generationId,globalRevision,overview,categories,services`）と同じ意味・キー・並び順。categoriesは既承認の12キー順、servicesはrecordId順。**確定済みpartial serviceも出力する**。
-- `exportedAt` は情報提供用で、正当性・新しさの証明には使わない。端末時計は信用しない。機微な識別子・メール・ログイントークン・端末ID・外部サービスアカウントIDを別途追加しない。
+### 2.1 ファイルと媒体
 
-### 2.3 整合性チェック
-- v1候補はSHA-256を使用。`checksum`を除くroot6フィールドを**定義順のJSON/UTF-8の決定的な直列化**でバイト列にしてdigestし、lowercase hexへ格納。再読込時にも同じ表現から検証する。
-- digest不一致・形式不一致・重複キー・不正構造は**復元開始前に拒否**。`checksum`は偶発的破損の検出に役立つが、**認証・改ざん防止・暗号化ではない**。攻撃者は中身とdigestを同時に書き換え得る。
-- Web Cryptoの`SubtleCrypto.digest`等の使用はHTTPS secure context前提で互換性を実機確認。digest生成失敗時は成功表示禁止。
-- digest計算はIndexedDB transaction外で行い、読込transaction内に無関係な`await`を挟まない。
-- 書出したファイルをブラウザーが**実際に保存したか**を常に判定できるわけではない。アプリは`ファイル保存の操作を開始しました。保存先のファイルを確認してください`等の事実だけを表示し、端末保管完了を断定しない。
+- 通常ファイル名：yattoko-backup-YYYYMMDD-HHMMSS-XXXXXXXX.json
+- 緊急ファイル名：yattoko-emergency-YYYYMMDD-HHMMSS-XXXXXXXX.json
+- UTF-8、BOMなし、非圧縮単一JSON。
+- MIMEや拡張子は信用せず、raw bytesと内容を検査する。
+- ZIP/GZIP/HTML/CSV/暗号化アーカイブ等はv1対象外。
+- fileFormatは yattoko-backup、fileFormatVersionは1候補。
+- schemaVersion / questionSchemaVersion / recordId grammarはF2で実値未確定のため、8章のversion registry gateに従う。仮の1を本番値として扱わない。
 
-## 3. ファイルサイズ・メモリ保護（初期候補／人間未承認）
+### 2.2 envelopeの規範形
 
-F2の**IndexedDB側10,000,000 byte上限と別**の境界を提案する。
+root field orderは固定する。
 
-| 境界 | v0.1候補 | 判定 |
-|---|---:|---|
-| ローカルに読込む生ファイル | 16,000,000 bytes 以下 | 超過は読込・parse前に拒否 |
-| snapshot内F2正本の容量projection | 10,000,000 UTF-8 bytes 以下 | 1 byte超過でも拒否 |
-| 緊急pending領域の直列化量 | 1,000,000 UTF-8 bytes 以下 | 超過はpendingの退避不可と明示 |
-| 緊急pending操作数 | 最大256件 | 超過を無断切捨てしない |
-| JSON構造の深さ | 最大16 | 過深は拒否、v1の本来の階層はもっと浅い |
-| JSON展開後の容量 | raw限界だけでなくsnapshot/pendingごとの上限と構造allowlistで制限 | サイズだけで安全とみなさない |
+1. fileFormat
+2. fileFormatVersion
+3. kind
+4. exportedAt
+5. snapshot
+6. pending
+7. checksum
 
-- 通常ファイルは10MBのsnapshotにenvelopeを足すため、ファイル上限を10MBと同一にしない。緊急時はpendingがさらに追加される。
-- pendingが上限を超過／validation失敗でも**古いpendingを黙って消去しない**。committed snapshotのみを出す代替を明示できるが、「未保存分は退避されていません」と必ず表示。元の画面の未保存入力を保持する。
-- 上限値はF5境界・性能試験とF6 iPhone Safari実機負荷から修正提案があり得る。**この数値の正式決定はF3独立レビューと人間承認の後**。
-- decode/parseの時間・ピークメモリ制約もF5/F6で評価する。読込エラー・メモリ不足は既存保存正本に影響させない。
+kindはnormalまたはemergencyのみ。
 
-## 4. 通常バックアップ手順
+normal：
+- pendingはnull。
+- committed snapshotだけを持つ。
 
-1. 利用者が通常の「バックアップファイルを保存」操作を選ぶ。
-2. IndexedDBの関連storeを**同じreadonly transaction**で読取り、完了時点で整合するcommitted snapshotを得る。別々の非原子的読取りを混ぜない。dataset未作成時は「保存済みデータがありません」と説明し、空ファイルを正常バックアップと誤認させない。
-3. すべてのrecord・R001/R002 cross-field・schema・10MB計測をstrict validatorで確認。不整合があれば書出しを止め、「記録を確認できませんでした」と案内。勝手に修復しない。
-4. snapshotのcanonical JSONを生成し、envelope・checksumを生成し、16MB制限を満たすことを確認する。新たなID/revisionは書出しによって増加させない。
-5. Blob/object URL +ユーザー起点のダウンロード操作を候補とし、PC Chrome/iPhone Safariで実機確認。特定ブラウザーのFile System Access APIだけを必須にはしない。Object URLは早過ぎるrevokeで保存失敗しないよう安全に解放。
-6. UIは「ファイル保存が開始された可能性」を正しく表現し、必要な場合保存先確認を促す。通常バックアップは`pending`を含めない。未保存入力が画面上にある場合は同操作内に「未保存の回答は含まれません」と明示するが、定期通知は追加しない。
+emergency：
+- committed snapshotを必須とする。
+- 未保存候補が存在する場合、pendingは5章のcapture summaryとoperationsを持つ。
+- 未保存候補が0件ならpending=nullでもよい。
+- 未保存候補があるのに1件も安全に退避できない場合、pendingはoperations空配列とcapture summaryを持たせ、未退避件数を残す。committed-onlyであることをUIにも表示する。
 
-## 5. 緊急退避：pendingを分離する
+exportedAtはUTCの固定形式 YYYY-MM-DDTHH:mm:ss.sssZ。端末時計由来の参考値であり、真正性・新しさの根拠にしない。
 
-- F2における未commit mutationの集合を`pending.operations`（操作順）としてファイルへ記録する**案**。単に画面全体のUI stateをdumpしない。
-- pending領域候補：
-  - `baseGenerationId`、`baseGlobalRevision`、対象`baseRecordRevision`等
-  - `operations`：操作ID（ファイル内一意）、対象内部recordId/categoryKey、承認された操作種別、必要最小限のcanonical値／dependent answer、操作の順序
-  - snapshot全体から計算した`baseChecksumSha256`等（pendingとcommittedの関係確認に使用）。これは真正性保証ではない。
-- 許可操作はF2保存イベント表（R001 category/overview/intention、R002 known/other identity/usage/optional/override/completed）に限定。削除・全消去・復元を未commit操作として勝手に再実行させない。秘密情報／自由メモ／画面位置／mutationSeqの内部実値は含めない。
-- 複数pendingの依存順・baseVersionが一致するかを検証し、未保存操作が**何件あるか**表示。検証できない操作は自動適用せず、未退避部分を明示。静かに一部だけ退避成功と扱わない。
-- 同時に別タブで更新された場合も、古い画面から取得したcommitted snapshotとpendingを混ぜて**有効な新正本へ見せかけない**。世代・版・snapshotHashの整合を検証できなければ、pending非退避を表示して確定済みデータだけの退避にとどめる。
-- 保存エラーの再試行、未保存入力の画面保持、6分類（原因不明時のプライベートモード補足）はF2承認を維持する。
-- ダウンロードの失敗・キャンセル・ファイル不在・容量不足・暗号化未対応などに対して、成功断定を禁止する。
+### 2.3 snapshot
 
-## 6. インポート／復元の安全な手順
+snapshotはF2 canonical capacity projectionと同じ意味を持つ。
 
-**プレビューまで端末の既存データを一切変更しない。**
+field order：
+1. schemaVersion
+2. questionSchemaVersion
+3. generationId
+4. globalRevision
+5. overview
+6. categories
+7. services
 
-1. 利用者が選択した`File`の`size`を検査（16MB超は読込前拒否）。raw bytesをUTF-8で**fatal decode**（置換文字による黙ったデータ変更なし）。v1非対応のBOM/圧縮形式は拒否。
-2. JSON parse前後で過深／キー重複／巨大配列／重複内部ID・不正値等のリソース上限とallowlistを厳密に検査。標準の`JSON.parse`単体は重複keyを検知できないため、v1実装にはduplicate-key検出またはcanonical byte一致検証が必要。
-3. rootの`fileFormat`/version/kind/checksumを確認し、checksumを検証。正常digestだけでファイル内容を「安全・本物」とみなさない。
-4. snapshotのF2 schema（12カテゴリ、overview5問、categoryKey、serviceCatalogId、R002条件付き回答のpresence、recordState、`unanswered/unknown`、R07/R08/R09、ID重複、revision/meta/外部ID禁止）を**同じstrict validator**で検証。解釈不能な旧版・未知questionVersionを推測補正しない。category intention表示の`undecided`派生値はsnapshotに複写しない。
-5. 厳密に正規化・検査したsnapshotの**復元後prospective容量**をF2 canonical JSON/UTF-8で計算し、10,000,000 bytes超は拒否。保存先新generationId・globalRevision設定の差分も反映して最終審査。
-6. ファイル種別、ファイル作成日時（自己申告値）、カテゴリ12件、サービス件数（partial/completed別）、未保存操作件数、復元による置換範囲をプレビュー。サービス名など必要以上の個人内容はプレビューへ晒さない。
-7. 端末に保存済みデータまたは画面に未保存入力があれば、**既存データは置き換わる**と具体的に説明し、ユーザーが明示的に「復元して置き換える」を選択しなければ何もしない。確認画面とキャンセル経路必須。自動mergeなし、無断「現在のデータを先に書き出し」なし。バックアップを取る操作は利用者が任意に選べる。
-8. 復元前のpreview時点の`generationId/globalRevision`を保持。実際のcommit時に**同一readwrite transaction**で最新metaと比較し、プレビュー後に他タブ編集・全削除・別復元があれば置換を停止して再確認を促す。削除＋新snapshot＋新metaを一括処理し、失敗・abort時は旧正本を維持。
-9. 復元成功では**新しいgenerationId**を割り当て、globalRevision・各record revisionはF2が許す整合規則へ合わせて計算する。提案：globalRevisionを当該新世代で1にし、各record revisionは検証済みsnapshot値を保持する（世代の変更が競合境界）。この具体案は制作管理室審査とF5検証待ち。上限容量はこの最終状態で再算定。
-10. `transaction complete`を確認して初めて「復元されました」と表示。別タブの旧世代書込を停止。キャンセル・quota・破損・不正・版衝突・容量超過では既存正本を変えず、データ内容を外部ログへ送信しない。
-11. 復元後、通常ファイルはcommit済み部分を利用可能にする。緊急ファイルのpendingは**自動commit禁止**。画面に「未保存の回答が別にあります」と説明し、内容を再確認する。利用者が再適用を選択した場合だけ、復元snapshotから新世代への対応関係を検証し、F2の通常save pipeline（入力検証／R001-R002整合／revision競合／10MB判定／transaction complete）を通す。条件が合わなければ停止・再確認。pendingはlocal正本へ事前保存しない。
-12. 既存ローカルデータが読めない場合でもファイル自体は検査・プレビュー可能にし、明示確認を経て置換復元する**復旧経路案**を設ける。読込不能を「初回利用」と黙認して自動上書きしない。
+categories順：
+device, base, mail, social, cloud, subscription, finance, commerce, auth, license, carrier, business
 
-## 7. リスクと利用者の意思決定
+services順：
+recordIdのF2 canonical order。
 
-| 候補 | 提案 | 保留理由・判断境界 |
+normal backupではcommitted partialとcompletedを双方含む。
+
+## 3. F3-R02｜JSON・canonical serialization・SHA-256
+
+### 3.1 受入れ処理順序
+
+importは必ず次の順序で行う。
+
+1. File.sizeを確認しraw上限超過ならbytesを読まず拒否。
+2. raw bytesをUTF-8 fatal decode。BOM、不正UTF-8を拒否。
+3. JSON lexical scannerを実行。
+4. lexical scanner合格後のみJSON.parse。
+5. envelopeのexact allowlist、型、version、Unicode scalar、field presenceを検証。
+6. parsed objectからschema-defined canonical full JSONを再生成し、raw decoded textと**byte-for-byte一致**することを要求。不一致はnon-canonical inputとして拒否。
+7. checksumを除く6 root fieldsをschema-defined canonical serializerで直列化し、UTF-8 bytesへ変換。
+8. SHA-256を計算しchecksum.hexとconstant-time相当の比較を行う。
+9. checksum一致後もF2 cross-field / category / R07-R09 / capacity / pending semantic validatorを必ず実施。
+10. 全検査合格後だけpreviewへ進む。
+
+checksum一致は「破損していない可能性」を示すだけで、真正性、作成者、改ざん耐性、暗号化、安全性を保証しない。
+
+### 3.2 duplicate keyの一意な拒否方法
+
+JSON.parse単体に依存しない。
+
+lexical scannerはobjectごとにdecoded property nameのsetを持つ。
+
+- property nameのJSON escapeを解釈してUnicode文字列へ戻してから重複比較する。
+- "kind" と "\u006bind" は同じdecoded keyとして重複拒否。
+- rootだけでなくsnapshot、overview、category、service、answers、pending、operation、checksumを含む全object scopeで行う。
+- 重複を検出した時点でfail closed。
+- 後勝ち・前勝ち・自動修復をしない。
+
+### 3.3 数値のlexical規則
+
+v1でJSON numberとして受け入れるのは非負整数だけ。
+
+- tokenは 0 または [1-9][0-9]* のみ。
+- -0、負数、小数、指数表記、+付き数値、leading zeroを拒否。
+- parsed後はNumber.isSafeInteger相当かつfield-specific rangeを検査。
+- fileFormatVersion、revision、globalRevision等に1e0を許可しない。
+- NaN / InfinityはJSON外であり当然拒否。
+
+### 3.4 Unicode規則
+
+- raw bytesはUTF-8 fatal decode。
+- BOMは禁止。
+- parsed stringにunpaired UTF-16 surrogateがあれば拒否。
+- F2がNFCを要求するotherServiceName等は「NFCへ変換」せず、「既にNFCか」を検査し不一致なら拒否。
+- control / bidi rulesはF2 validatorをそのまま利用。
+- escaped Unicodeとliteral Unicodeで同じ意味でも、raw canonical一致を満たさない非canonical表現は拒否できる。
+
+### 3.5 unknown field・構造
+
+- root/nestedのunknown fieldを全て拒否。
+- required field欠落を拒否。
+- unexpected nested object / arrayを拒否。
+- category重複、recordId重複、未知categoryKey、未知question、inactive conditional field present、active conditional field missingを拒否。
+- invalid completed serviceをpartialへ自動補正しない。
+
+### 3.6 canonical serializer
+
+canonical JSONは「受け取ったobjectを一般的にsortする」のではなく、**schema-defined field orderで新しいobjectを構築してJSON.stringify相当（replacerなし、spaceなし）**で生成する。
+
+- root、snapshot、overview、category、service、answers、pending、operation、checksumごとにfield orderを仕様化。
+- categories/services/answers orderはF2規則に従う。
+- numberは上記非負safe integerのみなのでdecimal canonical表現。
+- user textをhash前に勝手にnormalizationしない。F2 validatorでcanonical形を要求する。
+- full input raw textはcanonical full JSONと完全一致しなければ拒否するため、key並替・余分な空白・非canonical escapeによるparser再解釈差を排除する。
+
+### 3.7 checksum対象
+
+digest payloadは以下6 fieldをこの順で持つcanonical object。
+
+fileFormat, fileFormatVersion, kind, exportedAt, snapshot, pending
+
+checksum object自体はdigest対象外。
+
+checksum：
+- algorithmはSHA-256のみ。
+- hexは64文字のlowercase hexadecimalのみ。
+- Web Crypto digest失敗時はexport/import成功扱いしない。
+
+### 3.8 規範test vector
+
+#### DIGEST-01：serializer/digest正常vector（F2 restore-validityを表すものではない）
+
+canonical digest payload text：
+
+~~~json
+{"fileFormat":"yattoko-backup","fileFormatVersion":1,"kind":"normal","exportedAt":"2026-10-14T00:00:00.000Z","snapshot":null,"pending":null}
+~~~
+
+UTF-8 SHA-256 expected：
+
+15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d
+
+これはdigest実装だけのvector。snapshot=nullはrestore可能なYattoko backupではない。semantic acceptance testはACTIVE version registryから生成した完全snapshot fixtureを使う。
+
+#### JSON-VECTOR群
+
+| ID | 入力差分 | 期待 |
 |---|---|---|
-| 通常バックアップ | 非暗号化JSONファイル、現状保存済み全件 | 透明性と機器間互換性優先。ファイル自体は平文であることを表示。暗号化したい場合は明示UX／パスフレーズ管理の別検討 |
-| 復元 | **全置換のみ**。詳細確認後commit | mergeは削除済み復活・親子矛盾リスクが高い。merge追加は別の人間判断 |
-| raw file size | 16,000,000 bytes | F2の10MBとは別。性能・安全性試験で検証し必要なら再提案 |
-| pending cap | 1,000,000 bytes、256 events | 非常時の負荷・破損拒否。超過時の未保存部分は退避不可と明示 |
-| digest | SHA-256／平文 | 破損検出のみ、真正性保証でない |
-| ブラウザー保存 | Blob/download等の共通方式 | iPhone Safari実機で操作手順・保管実態を確認。File System Access専用実装は不可 |
-| 成功表示 | 「操作開始」と「復元のtransaction完了」を区別 | 保存先の物理ファイルの存在はブラウザーから常に確認できない |
-| 定期催促 | 追加なし | 人間がF2で承認済み。開始時だけ注意 |
-| 外部送信・分析 | なし | R003／R005凍結と一致 |
+| V-VALID-01 | ACTIVE registryから生成したcanonical full file | accept preview |
+| V-DUP-01 | 同一objectに同じkeyを2回 | lexical reject |
+| V-DUP-02 | kind と \u006bind を同一objectに置く | decoded duplicate reject |
+| V-ORDER-01 | root keyを並替 | canonical raw mismatch reject |
+| V-NUM-01 | fileFormatVersion:1e0 | lexical reject |
+| V-NUM-02 | revision:-0 | lexical reject |
+| V-UNK-01 | snapshotにunknown nested field | strict reject |
+| V-UTF-01 | escaped lone surrogate | Unicode reject |
+| V-BOM-01 | UTF-8 BOM付き | reject |
+| V-HASH-01 | canonical body 1 byte変更、checksum据置 | checksum reject |
+| V-HASH-02 | bodyとchecksumを両方作り直すがschema不正 | semantic reject |
+| V-TRUNC-01 | file途中切断 | parse reject |
+| V-ESC-01 | canonical stringを不要なunicode escapeへ変更 | canonical raw mismatch reject |
 
-**人間の追加判断が必要な候補**：平文でよいか／暗号化要否、全置換のみか、16MB上限や緊急pending capが利用上妥当か。制作管理室が安全性とUXを独立審査してから、最終的に人間がF3仕様を承認する。現段階ではいずれも正式採用していない。
+## 4. 通常バックアップ
 
-## 8. F5 / F6へ渡す必須試験
+1. 利用者が「バックアップファイルを保存」を選ぶ。
+2. 関連storeを同じreadonly transactionで取得しcommitted snapshotを作る。
+3. F2 strict validator、version registry、10MB canonical projectionを検証。
+4. canonical envelopeを構築しchecksumを生成。
+5. provisional raw file limitを確認。
+6. Blob/download等、PC ChromeとiPhone Safari双方で成立する方式を使用候補とする。
+7. download開始要求が成功しても物理ファイル保存完了とは断定しない。
+8. UIは「ファイル保存の操作を開始しました。保存先にファイルがあることを確認してください」等とする。
+9. 画面に未commit入力がある場合、normal backupには含まれないと同操作内で明示。
+10. export自体はgeneration/revisionを変更しない。
 
-別紙`workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md`参照。最低限：
-- 正常／途中保存含むbackup、別端末復元、ブラウザ再起動後の復元状態。
-- 10MB committed / 16MB raw / 1MB pending／256 eventsの全境界。
-- hash破損／unknown version／duplicate keys／不正型・列挙値／他カテゴリのquestion混入／active/inactive条件付き回答／R08 completed invariant／R09表示。
-- 復元preflight合格後にタブ競合で上書き停止、トランザクションabortで旧データ全件維持、世代切替後の旧タブ再書込拒否。
-- 緊急pendingの別領域出力・不正pending除外時の誤成功表示防止・復元後のsilent commit禁止と再適用時の通常save gate。
-- File API/Safari共通挙動、物理的なdownload完了の検出限界、端末容量不足、メモリ不足、ファイル名、平文注意、外部送信ゼロ。
+dataset未作成なら空backupを作らず「保存済みデータがありません」と表示する。
 
-## 9. 制作管理室レビューへ渡す重要論点（必ず明示）
+## 5. F3-R01｜緊急退避pending完全性
 
-1. F2の`schemaVersion`/`questionSchemaVersion`・recordId形式が未凍結のため、v1ファイル形式が将来の実体と食い違わないためのversion registry・schema検証仕様の確定方法。
-2. readwrite transaction内で全snapshotを構築・サイズ算定する実装はIndexedDBのinactive/自動commit／Safari性能の影響を受ける。precompute→競合版照合→sync request等の具体方式をF4開始前に設計審査する。
-3. 重複JSONキー検出方法、canonical hashのテストベクタ、UTF-8 fatal decoding、完全なallowlistに基づくfile parser仕様。
-4. pending複数操作の依存・base snapshotの整合、保存失敗時の1MB超・自動部分退避禁止と利用者への説明。
-5. 復元でgeneration切替した後のrevision更新と、pending再適用に用いる旧revision/recordIdの正当性検証。
-6. 端末内の旧正本が破損していた場合の救済、ファイル保存に失敗した場合の出口、容量不足時の再実行と旧内容維持。
-7. 無暗号ファイルの紛失・誤共有リスク、最小表示、ブラウザ自動保存の限界とPC/iPhoneでのテスト計画。
-8. データ内容やファイル本文をanalytics・error logs・URLクエリ・第三者scriptへ流さないこと。第三者タグ未承認。
-9. R003のクラウド側バックアップ保持期間・削除ジャーナル候補は凍結中R005に属する。ユーザー自身が書出すF3ファイルにクラウドの30日保持・自動削除を誤って適用しない。
+### 5.1 未保存状態の3区分
 
-## 10. 停止位置
+A. confirmed-pending mutation
+- 利用者がtap/確定操作を終えcanonical値が決まったが、IndexedDB transaction complete前、または保存失敗後のmutation。
 
-**F3 DRAFT v0.1 提出後、制作管理室の設計レビュー／人間判断待ち。**
-- F2：2026-10-14人間APPROVEDを維持し、勝手に既承認内容を上書きしない。
-- F3：DRAFT / NOT APPROVED。
-- F4：NOT AUTHORIZED。F5/F6：NOT RUN。本番公開：NOT AUTHORIZED。R005：FROZEN。
-- コード変更・本番公開・有料化・外部resource作成・認証/クラウド同期再開は禁止。
+B. dependent-pending mutation
+- 先行pendingに依存する後続mutation。
+- 例：service identity作成pendingに続くusageStatus / optional answer / intentionOverride。
 
-## 参考：Web標準（検証すべき実装上の根拠）
-- MDN: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
-- MDN: https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
-- MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a
-- MDN: https://developer.mozilla.org/en-US/docs/Web/API/File
+C. current UI draft
+- 利用者がまだ確定操作をしていない画面上入力。
+- v1で自由文字として存在し得るのはF2が許可するotherServiceName等だけ。
+- emergency fileへ入れる場合もF2 validatorを通過したcanonical candidateだけ。invalid raw draftはfileへ入れず、画面上に保持し「退避できなかった」に数える。
+
+画面位置、DOM dump、任意メモ、秘密情報、mutationSeq内部値は退避対象にしない。
+
+### 5.2 pending operation規範
+
+各operationは最低限：
+
+- operationId：emergency capture内で一意なopaque ID。
+- ordinal：利用者操作順。並替禁止。
+- operationType：F2保存イベントallowlist内のみ。
+- targetKind：overview/category/service。
+- target identity：categoryKeyまたはrecordId。
+- baseGenerationId。
+- baseGlobalRevision。
+- baseRecordRevision（対象が既存recordの場合）。
+- dependsOnOperationIds：先行依存。
+- canonical value：そのoperationに必要な最小値。
+- dependency context：conditional answer等に必要な親回答のexpected state。
+
+operationIdは再適用の真正性証明ではない。秘密や外部IDを埋め込まない。
+
+### 5.3 dependency chain
+
+operationsを有向依存graphとして扱う。
+
+- ordinalに逆行するdependencyは禁止。
+- cycle禁止。
+- missing dependency禁止。
+- target identity不整合禁止。
+- conditional childは親mutation/committed親stateと整合必須。
+- service作成に依存する後続操作は同じdependency componentに属する。
+- operation順を自動入替して「直す」ことは禁止。
+
+**component単位でall-or-nothing capture**する。
+1つのoperationがinvalidなら、そのoperationを必要とする同component全体をpending fileから除外する。独立componentは退避してよい。
+
+これにより「一部退避」は可能だが、依存連鎖を途中で切った危険なpendingは生成しない。
+
+### 5.4 snapshot/base照合
+
+緊急capture開始時：
+
+1. 画面上pending候補をfreezeしたin-memory capture candidateとして複製する。元UI入力は消さない。
+2. readonly transactionでcommitted snapshotとgeneration/global/record revisionsを取得。
+3. pending各operationのbaseがsnapshotと一致するか照合。
+4. 別tab更新でbaseが変わっていた場合、そのcomponentは退避不可。古いpendingを新snapshotへ勝手にrebasingしない。
+5. snapshot checksumとpending baseSnapshotChecksumSha256を対応させる。
+6. recordsの内容比較用にbaseContentFingerprintSha256も持つ。真正性保証には使わない。
+
+### 5.5 capture summary
+
+emergency pending objectは次を持つ。
+
+- captureStatus：full / partial / none
+- candidateCount
+- exportedCount
+- omittedCount
+- omittedScopes：値そのものを含めず、categoryKey / targetKind / operationType / ordinal range / reasonCodeのみ
+- baseGenerationId
+- baseGlobalRevision
+- baseSnapshotChecksumSha256
+- baseContentFingerprintSha256
+- operations
+
+reasonCode例：
+- INVALID_VALUE
+- DEPENDENCY_INVALID
+- DEPENDENCY_MISSING
+- BASE_CONFLICT
+- PENDING_BYTES_LIMIT
+- PENDING_COUNT_LIMIT
+- UNSUPPORTED_OPERATION
+
+### 5.6 上限超過
+
+provisional cap：
+- pending canonical serialized bytes <=1,000,000
+- operations <=256
+
+超過時は無断truncationしない。
+
+- cap内に収めるため古い/新しいoperationを勝手に落とさない。
+- candidate全体がcapを超える場合、pending captureStatus=noneとし、committed snapshotのみのemergency fileを作る選択肢を表示する。
+- UIはcandidateCount / exportedCount=0 / omittedCountを明示。
+- 元画面の未保存入力を保持。
+- 依存component単位のpartial validation failureの場合だけ、独立valid componentをpartial captureできる。
+
+### 5.7 利用者表示
+
+full：
+「未保存の回答 X件を緊急ファイルに含めました。ファイルが実際に保存されたか保存先を確認してください。」
+
+partial：
+「未保存の回答 X件のうち Y件を退避対象にできました。Z件は退避できていません。退避できなかった範囲：カテゴリ／項目種別…。この画面を閉じる前に内容を確認してください。」
+
+none：
+「未保存の回答 X件は緊急ファイルへ退避できませんでした。確定済みデータだけのファイルを作成できます。この画面の未保存回答はまだ画面上に残っています。」
+
+download生成/起動失敗：
+「緊急ファイルを作成できませんでした。未保存回答は退避されていません。この画面を閉じず、内容を確認してください。」
+
+「救済完了」「保存できました」は、物理ファイル存在を確認できない限り表示しない。
+
+### 5.8 UI入力保護
+
+- emergency capture用snapshotを作っても元フォーム値をclearしない。
+- validation failure、checksum failure、Blob/download failure、cap超過で元画面をresetしない。
+- retryは同じ画面値から新captureを作る。
+- navigation/reload/OS killは画面値喪失の可能性があるため、成功が確認できない間は「画面を閉じない」表示を出す。
+- beforeunload等は補助であり、保護保証として依存しない。
+
+## 6. F3-R03｜復元と既存データ保護
+
+### 6.1 既存ローカル状態の分類
+
+preview前にreadonlyで現在状態を分類する。
+
+VALID：
+- metaと全recordsがF2 strict validatorを通る。
+- guardはgenerationId + globalRevision +必要なrecord revisions。
+
+EMPTY：
+- metaなし、対象storesにもYattoko recordsなし。
+- 「壊れて読めない」をEMPTYとして扱わない。
+
+CORRUPT_COMPARABLE：
+- F2 semantic validatorには失敗するが、対象storeのraw structured-clone値を全件読め、決定的raw-state representationでpreview時とcommit時の完全一致比較が可能。
+
+CORRUPT_UNCOMPARABLE：
+- raw read自体が失敗、unsupported/cyclic等で決定的比較不能、store列挙不能など。
+- in-app full replaceを**停止**する。競合guardを省略して復元しない。
+
+### 6.2 corrupt既存データの復旧
+
+CORRUPT_COMPARABLEだけ別復旧経路を許す。
+
+UI：
+「現在の端末データを正常な保存データとして確認できません。通常バックアップを作れない可能性があります。このファイルから復元すると、現在の保存領域をすべて置き換えます。」
+
+- 通常のreplace確認とは別に「破損している可能性のある現在データを破棄して復元」の二段階確認を要求。
+- preview時raw-state guardを保持。
+- commit transaction内でraw-stateを再読込し完全一致しなければabortして再preview。
+- CORRUPT_UNCOMPARABLEは上書き禁止。「安全に競合確認できないため、この画面から復元できません」と停止する。
+- 手動でbrowser site dataを消す等は利用者の別操作であり、アプリが自動実行しない。
+
+### 6.3 precompute
+
+readwrite transaction開始前に行う。
+
+1. file strict parse / checksum / F2 semantic validation。
+2. current state classificationとpreview guard取得。
+3. 利用者preview表示。
+4. new generationIdを生成。
+5. file snapshotのrecordsを保持したまま、new generationId、globalRevision=1を適用したprospective datasetを構築。
+6. record revisionsは検証済みsnapshot値を保持。
+7. F2 canonical capacity projectionを生成しUTF-8 bytesを計測。
+8. new generation/metaを含め10,000,000 bytes以下であることを確認。
+9. prospective canonical bytes / size / digestをfreezeしてcommit candidateとする。
+10. explicit replace confirmationを取得。
+
+new generationId生成規則はACTIVE version registryに従う。registry未bindingではF4へ進まない。
+
+### 6.4 atomic readwrite transaction
+
+同一readwrite transactionで次を行う。
+
+1. current stores/metaを再読込。
+2. VALIDならpreview generation/global guard、EMPTYならempty guard、CORRUPT_COMPARABLEならraw-state guardと一致確認。
+3. 不一致ならabort。再確認なしで上書きしない。
+4. freeze済みprospective candidateを同期的canonical serializerで再serializeし、precomputed bytes/digestと一致かつ10MB以下を再確認。
+5. 全対象store clear。
+6. overview/categories/servicesをput。
+7. metaをnew generationId / globalRevision=1でput。
+8. 同じtransaction内でput後records/metaをread-backし、canonical projectionを再構築。
+9. read-back canonical bytes / size / digestがprecomputed prospective candidateと完全一致することを確認。
+10. 1件でもrequest error、quota error、final meta write error、read-back mismatchならtransaction.abort。
+11. transaction completeだけをrestore成功とする。
+
+transaction中にnetwork、digest Web Crypto、timer等の無関係awaitを挟まない。IndexedDB request chainだけで処理する。
+
+### 6.5 rollbackと旧タブ
+
+- abort時はclear/put/metaを含め旧正本をtransaction atomicityで維持。
+- transaction complete後だけ新generationが正本。
+- 他tabは次回save時にgeneration mismatchで拒否。
+- BroadcastChannel等の通知は補助で、正否を通知到達に依存しない。
+- restore後に旧tabの古い正本をforce overwriteするretryを禁止。
+
+### 6.6 preview競合
+
+preview後に他tab edit / delete-all /別restoreが入った場合：
+- commit guard mismatchでabort。
+- 「確認後に端末データが変更されました。もう一度内容を確認してください」と表示。
+- 自動で再preview→即commitしない。
+
+## 7. F3-R05｜emergency restore後のpending再適用
+
+### 7.1 原則
+
+- emergency fileのsnapshot restoreとpending reapplyは別操作。
+- snapshot restore成功後もpendingは未commit。
+- pendingをIndexedDBへ自動保存しない。
+- 利用者が明示的に「未保存の回答を確認する」→「この回答を適用する」を選ぶまでcommitしない。
+
+### 7.2 state machine
+
+FILE_SELECTED
+→ FILE_VALIDATED
+→ SNAPSHOT_PREVIEW
+→ SNAPSHOT_RESTORE_CONFIRMED
+→ SNAPSHOT_RESTORED_PENDING_AVAILABLE
+→ PENDING_REVIEW
+→ REAPPLY_CONFIRM
+→ REAPPLY_IN_PROGRESS
+→ ALL_APPLIED / PARTIALLY_APPLIED / CONFLICTED / FAILED
+
+reload/画面終了/Safari killでin-memory stateは消え得る。
+そのためSNAPSHOT_RESTORED_PENDING_AVAILABLE以降で未適用が残る間、次を表示する。
+
+「未保存の回答はまだ端末の保存データへ確定されていません。この画面を閉じると確認状態は消えることがあります。緊急ファイルを保管し、必要ならもう一度同じファイルを選んでください。」
+
+### 7.3 二回目import / pending-only recovery
+
+emergency fileにはbaseContentFingerprintSha256を持つ。
+
+再選択時：
+1. fileを最初からstrict validate。
+2. current committed datasetのcontent fingerprintを生成。
+3. file snapshotをrestoreした直後のexpected content fingerprintと一致する場合、full replaceを再実行せず「未保存回答だけ確認」導線を出せる。
+4. current dataが既に一部reapply済みで完全一致しない場合、各operationのexpected-before / intended-afterを順番に確認する。
+
+operation判定：
+- current state == expected-before：利用者確認後に通常F2 save pipelineで適用可能。
+- current state == intended-afterかつ依存contextも一致：already-appliedとして再commitしない。
+- どちらでもない：conflict。自動適用しない。
+
+### 7.4 partial reapply
+
+- dependency component単位で順序を維持。
+- あるoperation成功後、次operationで失敗した場合、成功済みcommitはF2正本として残る。
+- remaining / conflicted / already-applied件数を表示。
+- retryで成功済みoperationを二重適用してrevisionを増やさない。
+- deleted/missing target、recordId collision、parent state change、10MB超、generation conflictは停止して利用者確認。
+- pending operationを勝手に別recordへmappingしない。
+
+### 7.5 background / reload
+
+- visibilitychange/pageshow等で未適用警告を再表示できるが、永続保護保証にしない。
+- browser restart後は同じemergency file再選択がdurable recovery source。
+- fileがなければ未保存pendingを復元できると約束しない。
+
+## 8. F3-R07｜F2 authoritative connection / version registry
+
+### 8.1 F2からそのまま参照する規範
+
+categoryKey：
+device, base, mail, social, cloud, subscription, finance, commerce, auth, license, carrier, business
+
+R07：
+category usageStatusが初回unanswered→answeredでintention=unansweredなら同一transactionでundecided。既存keep/delete/family/undecidedは上書きしない。
+
+R08：
+completed serviceはusageStatusがusing/dormant/unknown。completed + unansweredは禁止。save/load/import/restoreで同じcross-field validator。
+
+R09：
+parent intention=unanswered + service intentionOverride=nullではparent canonicalを変えずdisplay/effectiveだけundecided。fallbackをserviceへ保存しない。reload/restart/restore/importで再計算。child usingでparent usageをpositive整合する場合R07も同一transaction。
+
+conditional：
+- unconditional / active conditionalはkey必須、未回答はunanswered。
+- inactive conditional keyは禁止。
+
+capacity：
+- F2 canonical field orderを使用。
+- 12 categories全件。
+- servicesはcanonical recordId order。
+- partial/completed双方。
+- new generation/metaを含むprospective committed datasetをJSON/UTF-8で測り10,000,000以下。
+
+### 8.2 version registry gate
+
+F2承認設計はschemaVersion、questionSchemaVersion、recordId具体grammarを「後続で確定」として残している。F3が独断で1やUUIDを本番値にしてはならない。
+
+F3 v0.2 registry：
+
+| Registry item | 状態 | 規範 |
+|---|---|---|
+| fileFormatVersion | CANDIDATE 1 | F3 human approval対象 |
+| schemaVersion accepted set | **UNBOUND / BLOCKING** | F2意味変更なしで具体値をbindingする承認記録が必要 |
+| questionSchemaVersion accepted set | **UNBOUND / BLOCKING** | 同上 |
+| recordId grammar | **UNBOUND / BLOCKING** | stable/uniqueのF2意味を狭めない具体grammar承認が必要 |
+| generationId grammar/generator | **UNBOUND / BLOCKING** | F2世代境界を維持する具体方式承認が必要 |
+| category mapping | BOUND | 上記12 internal keys |
+| R07-R09 | BOUND | F2承認設計をそのまま参照 |
+| capacity serializer | BOUND | F2 canonical projection |
+
+**ACTIVE registry rowが存在しない状態ではproduction export/import実装を有効化してはならない。**
+F4開始前にregistry bindingを別記録で人間確認する。これはF2の意味変更ではなく未確定技術値のbinding候補だが、もしF2の既承認meaning/fieldを変更する必要が出た場合はF2変更として人間へ差戻す。
+
+### 8.3 version validation
+
+- fileFormatVersionとACTIVE registry rowをexact match。
+- schemaVersion/questionSchemaVersionは登録pairのみ。
+- recordId/generationIdはACTIVE grammarのみ。
+- unknown/old/future versionは推測migrationしない。
+- migration追加は別設計・別承認。
+
+## 9. F3-R04｜raw 16MB / pending 1MB / 256件と性能
+
+### 9.1 暫定候補の根拠
+
+16,000,000 raw bytes：
+- F2 committed最大10,000,000 bytesにenvelope/checksum/pendingを足す余裕を確保する候補。
+- 「Safariで安全」という根拠ではない。
+
+1,000,000 pending bytes：
+- committed上限の10%相当を緊急未保存領域の候補budgetとし、異常時の巨大化を抑える。
+- 妥当性は未実測。
+
+256 operations：
+- 保存障害中の多数操作をある程度保持しつつ、dependency validationの病的増大を抑える候補。
+- 多すぎる／少なすぎる可能性をF5/F6で評価する。
+
+3値とも**PROVISIONAL / HUMAN DECISION REQUIRED**。
+
+### 9.2 parse前resource guard
+
+raw bytesをJSON.parseへ渡す前にlexical scannerで：
+
+- raw 16,000,000超を拒否。
+- depth 16超を拒否。
+- root/snapshot等の既知pathではschema上あり得るmember数を超えた時点で拒否。
+- categoriesは12以外をsemantic reject。
+- pending operationsは256超をparse前scan段階で拒否候補。
+- fieldごとのstring token長はACTIVE registry/F2 validator上限を超えた時点で拒否。
+- services countはACTIVE registryから計算した「10MB canonical datasetで理論上成立し得る最大件数」を超えた時点で拒否。registry未bindingではこのgateをACTIVEにできない。
+- scanner自体はraw bytes/textを全objectへ展開した別巨大treeとして保持しない。
+
+### 9.3 F6 iPhone Safari計測方法
+
+最終採用前に、リリース時の**最も古いサポート対象iPhone/Safari**を含めて測定する。
+
+各境界caseをforegroundで5連続実行。
+
+計測：
+- File read時間
+- fatal decode時間
+- lexical scan時間
+- JSON.parse時間
+- canonical serialize時間
+- SHA-256時間
+- semantic validation時間
+- total preflight時間
+- 100ms heartbeatでforeground event-loop最大gap
+- page reload / white screen / OS kill / memory warningの有無
+- Safari Web InspectorまたはInstrumentsが利用可能ならpeak memory / resident memory deltaを記録
+
+暫定functional gate：
+- 5/5でcrash、OS kill、意図しないreloadなし。
+- 5/5で既存IndexedDBにmutationなし。
+- max foreground heartbeat gap <=2,000ms。
+- total preflight <=15,000ms。
+- UIが操作不能のまま復帰しない状態なし。
+
+memory：
+- 標準Web APIだけではiPhone Safariのpeak memoryを信頼できる形で取得できないため、Web Inspector/Instruments測定値を証拠として保存する。
+- peak memoryを測定できない場合、**16MB上限の安全性判定はNOT VERIFIABLE**とし最終PASSにしない。
+- 測定値を人間レビューへ提示し、16MB/1MB/256の維持または引下げを決める。
+
+性能gateに1つでもFAILがあれば閾値を下げて再試験し、勝手に上げない。
+
+## 10. F3-R06｜平文JSONプライバシー
+
+### 10.1 書出し前の短い注意文案
+
+「このバックアップファイルは暗号化されていません。整理したサービス名・利用状況・本人意向などを、ファイルを開ける人が読めます。共有端末や共有フォルダへの保存、不要な共有は避けてください。保存先によってはiCloud Driveなどへ自動同期されることがあります。ヤットコがこのファイルを自動でアップロードすることはありません。」
+
+補足：
+「SHA-256はファイルの破損確認用です。内容を隠したり、作成者を証明したりする機能ではありません。」
+
+### 10.2 境界
+
+- 暗号化はこの差戻しで追加しない。
+- クラウドupload/share機能を追加しない。
+- OS/Filesアプリ側の同期はヤットコが制御できない。
+- 共有PCではdownload folderを他人が閲覧できる可能性を説明する。
+- filenameにはservice名等を入れない。
+- previewで個人内容を必要以上に表示しない。
+- plaintext採用の最終判断は人間F3承認事項。
+
+## 11. 復元UIと明示確認
+
+正常既存データ：
+「この端末の現在のデータは、選んだファイルの内容で丸ごと置き換わります。現在のデータと自動で結合しません。」
+
+画面に未保存入力あり：
+「この画面の未保存回答は復元に含まれません。必要なら先に緊急退避してください。」
+
+corrupt comparable：
+「現在の端末データを正常に確認できません。復元すると現在の保存領域を破棄して置き換えます。通常バックアップを作れない可能性があります。」
+
+preview後競合：
+「確認後に端末データが変更されました。復元を止めました。もう一度内容を確認してください。」
+
+pending restore後：
+「未保存回答はまだ確定されていません。画面を閉じると確認状態が消えることがあります。緊急ファイルを保管してください。」
+
+## 12. F3-R01〜R07対応表
+
+| ID | 修正 |
+|---|---|
+| F3-R01 | pendingをconfirmed/dependent/current draftに分離。dependency component all-or-nothing、capture summary、未退避件数/範囲、UI保持、download失敗fail-closedを定義 |
+| F3-R02 | duplicate decoded key scanner、canonical raw一致、非負整数lexical規範、Unicode/unknown reject、SHA対象/順序、規範vectorを固定 |
+| F3-R03 | valid/empty/corrupt-comparable/uncomparable分類、明示確認、競合guard、precompute→single transaction→readback verify→completeを規範化 |
+| F3-R04 | 16MB/1MB/256をprovisionalとし根拠・境界・iPhone計測・PASS/NOT VERIFIABLE規則を追加 |
+| F3-R05 | restore後pending state machine、再取込、partial apply、already-applied判定、二重適用防止を追加 |
+| F3-R06 | 平文・共有端末・iCloud等同期・SHA限界・自動uploadなしのUI文案を追加 |
+| F3-R07 | F2 category/R07-R09/capacityを固定参照し、未確定version/ID grammarをUNBOUND registry gateとして明示 |
+
+## 13. 未解決・人間判断事項
+
+### F3人間判断が必要
+
+1. plaintext JSONをv1で採用するか。
+2. restoreをfull replace onlyで採用するか。
+3. provisional raw 16,000,000 / pending 1,000,000 / 256 operationsをF6実測後に維持するか引下げるか。
+4. fileFormatVersion=1を正式採用するか。
+5. ACTIVE version registryのschemaVersion / questionSchemaVersion / recordId / generationId具体binding。
+
+### F2変更が必要になった場合
+
+以下はF3単独で変更しない。
+- categoryKey meaning
+- R07/R08/R09 semantics
+- 10,000,000 byte committed limit
+- F2 canonical capacity projection
+- record/revision/generation semantics
+- secret field policy
+
+変更案が必要になれば**F2変更として人間判断へ差戻す**。
+
+## 14. 停止位置
+
+- F2：APPROVED維持。
+- F3：REVISED DRAFT / NOT APPROVED / FORMAL RE-REVIEW PENDING。
+- F4：NOT AUTHORIZED。
+- F5/F6：PLAN ONLY / NOT RUN。
+- 本番公開：NOT AUTHORIZED。
+- R005：FROZEN。
+- 認証・クラウド保存：再開しない。
+
+制作管理室の正式再レビュー完了まで停止する。
