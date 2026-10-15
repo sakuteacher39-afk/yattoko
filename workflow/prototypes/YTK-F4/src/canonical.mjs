@@ -11,6 +11,16 @@ const member=(v,def)=>{if(!def.values.includes(v))fail();};
 const version=v=>{if(v!==registry.schemaVersion)fail('version');};
 const revision=v=>{if(!Number.isSafeInteger(v)||v<0)fail();};
 const uuid='[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}';
+// At most three attempts; generator exceptions or malformed output fail closed immediately.
+export function generateServiceId(existingIds,candidateIds,generator=id){
+const occupied=new Set([...existingIds,...candidateIds]);
+for(let attempt=0;attempt<3;attempt++){
+let candidate;try{candidate=generator('svc');}catch{fail('collision');}
+if(typeof candidate!=='string'||!new RegExp(`^svc_${uuid}$`).test(candidate))fail('collision');
+if(!occupied.has(candidate))return candidate;
+}
+fail('collision');
+}
 export function id(prefix){const c=globalThis.crypto;if(!c)fail('restricted');let u;if(c.randomUUID)u=c.randomUUID();else{const b=c.getRandomValues(new Uint8Array(16));b[6]=(b[6]&15)|64;b[8]=(b[8]&63)|128;const h=Array.from(b,x=>x.toString(16).padStart(2,'0')).join('');u=`${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20)}`;}if(!['svc','gen'].includes(prefix)||!new RegExp(`^${uuid}$`).test(u))fail();return `${prefix}_${u}`;}
 export function normalizeName(v){if(typeof v!=='string')fail();v=v.normalize('NFC').trim();if(!v.length||v.length>60||/[\u0000-\u001f\u007f-\u009f\u061c\u200e-\u200f\u202a-\u202e\u2066-\u2069]/u.test(v)||/(password|passwd|パスワード|暗証番号|pin\b|otp\b|ワンタイム|復旧コード|recovery\s*code|秘密鍵|private\s*key|seed\s*phrase|シードフレーズ|cvv|cvc|api\s*key|access\s*token|ssh\s*private)/i.test(v)||/(?:\d[ -]*?){13,19}/.test(v))fail();return v;}
 const active=(q,a)=>q.presence.type==='always'||a[q.presence.questionKey]===q.presence.value;
@@ -48,4 +58,4 @@ if(equal(d,before))return current;
 const oldRecords=new Map(recordList(before).map(r=>[r.recordId,r]));for(const r of recordList(d)){const old=oldRecords.get(r.recordId);r.revision=old?(equal(r,old)?old.revision:old.revision+1):1;revision(r.revision);}
 d.globalRevision=(current?.globalRevision??0)+1;validate(d);assertCapacity(capacity(d));return d;}
 export function classify(e){if(e instanceof SaveError)return e.code;if(e?.name==='QuotaExceededError')return 'quota';if(['SecurityError','NotSupportedError','InvalidStateError'].includes(e?.name))return 'restricted';if(['AbortError','TransactionInactiveError'].includes(e?.name))return 'temporary';return 'unknown';}
-export const messages={capacity:'ヤットコの保存上限（10MB）を超えます。未保存の回答を画面に保持しています。',quota:'ブラウザー・端末の保存領域が不足している可能性があります。',restricted:'保存機能が制限されています。',conflict:'別のタブで更新されました。このタブの保存を停止しました。未保存回答を確認し、再読み込みしてください。',temporary:'一時的に保存できませんでした。未保存回答を保持しています。',unknown:'原因不明の保存失敗です。プライベートモードなど保存制限の可能性もあります。',validation:'入力内容を確認してください。',contradiction:'詳細整理と矛盾します。該当サービスの回答を先に確認してください。',version:'未対応の保存形式です。保存を停止しました。',collision:'記録IDが重複したため保存を停止しました。'};
+export const messages={capacity:'ヤットコの保存上限（10MB）を超えます。未保存の回答を画面に保持しています。',quota:'ブラウザー・端末の保存領域が不足している可能性があります。',restricted:'保存機能が制限されています。',conflict:'別のタブで更新されました。このタブの保存を停止しました。未保存回答を確認し、再読み込みしてください。',temporary:'一時的に保存できませんでした。未保存回答を保持しています。',unknown:'原因不明の保存失敗です。プライベートモードなど保存制限の可能性もあります。',validation:'入力内容を確認してください。',contradiction:'詳細整理と矛盾します。該当サービスの回答を先に確認してください。',version:'未対応の保存形式です。保存を停止しました。',collision:'記録IDを作成できないため保存を停止しました。'};
