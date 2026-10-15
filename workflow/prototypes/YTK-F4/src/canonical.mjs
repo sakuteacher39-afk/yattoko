@@ -41,7 +41,7 @@ export const capacity=d=>new TextEncoder().encode(JSON.stringify(projection(d)))
 export function assertCapacity(bytes){if(bytes>LIMIT)fail('capacity');}
 const recordList=d=>[d.overview,...d.categories,...d.services];
 export function guard(current,expected){if(!current||!expected){if(current!==null||expected!==null)fail('conflict');return;}if(current.generationId!==expected.generationId||current.globalRevision!==expected.globalRevision)fail('conflict');const actual=new Map(recordList(current).map(r=>[r.recordId,r.revision])),old=recordList(expected);if(actual.size!==old.length||old.some(r=>actual.get(r.recordId)!==r.revision))fail('conflict');}
-export function mutate(current,op,freshGeneration){let d=structuredClone(current??baseline(freshGeneration));const before=structuredClone(d);let s,c;
+export function mutate(current,op,freshGeneration,{checkCapacity=true}={}){let d=structuredClone(current??baseline(freshGeneration));const before=structuredClone(d);let s,c;
 switch(op.type){
 case 'category':fields(op,['type','categoryKey','field','value']);c=d.categories.find(c=>c.categoryKey===op.categoryKey);if(!c||!own(M.r001.category,op.field))fail();member(op.value,M.r001.category[op.field]);if(op.field==='usageStatus'&&c.usageStatus==='unanswered'&&op.value!=='unanswered'&&c.intention==='unanswered')c.intention='undecided';c[op.field]=op.value;break;
 case 'overview':fields(op,['type','field','value']);if(!own(M.r001.overview,op.field))fail();member(op.value,M.r001.overview[op.field]);d.overview[op.field]=op.value;break;
@@ -56,6 +56,6 @@ default:fail();}
 if(['service','completeService'].includes(op.type))for(const b of M.validatorBindings.positiveDirection){if(b.categoryKey&&b.categoryKey!==s.categoryKey)continue;if((b.source?s.usageStatus:s.answers[b.sourceQuestionKey])!==b.when)continue;if(b.target==='r001.category.usageStatus'){c=d.categories.find(c=>c.categoryKey===s.categoryKey);if(['not_using','unanswered'].includes(c.usageStatus)){c.usageStatus='using';if(c.intention==='unanswered')c.intention='undecided';}}else d.overview[b.target.split('.').at(-1)]=b.target.endsWith('.family')?'hidden':'yes';}
 if(equal(d,before))return current;
 const oldRecords=new Map(recordList(before).map(r=>[r.recordId,r]));for(const r of recordList(d)){const old=oldRecords.get(r.recordId);r.revision=old?(equal(r,old)?old.revision:old.revision+1):1;revision(r.revision);}
-d.globalRevision=(current?.globalRevision??0)+1;validate(d);assertCapacity(capacity(d));return d;}
+d.globalRevision=(current?.globalRevision??0)+1;validate(d);if(checkCapacity)assertCapacity(capacity(d));return d;}
 export function classify(e){if(e instanceof SaveError)return e.code;if(e?.name==='QuotaExceededError')return 'quota';if(['SecurityError','NotSupportedError','InvalidStateError'].includes(e?.name))return 'restricted';if(['AbortError','TransactionInactiveError'].includes(e?.name))return 'temporary';return 'unknown';}
 export const messages={capacity:'ヤットコの保存上限（10MB）を超えます。未保存の回答を画面に保持しています。',quota:'ブラウザー・端末の保存領域が不足している可能性があります。',restricted:'保存機能が制限されています。',conflict:'別のタブで更新されました。このタブの保存を停止しました。未保存回答を確認し、再読み込みしてください。',temporary:'一時的に保存できませんでした。未保存回答を保持しています。',unknown:'原因不明の保存失敗です。プライベートモードなど保存制限の可能性もあります。',validation:'入力内容を確認してください。',contradiction:'詳細整理と矛盾します。該当サービスの回答を先に確認してください。',version:'未対応の保存形式です。保存を停止しました。',collision:'記録IDを作成できないため保存を停止しました。'};

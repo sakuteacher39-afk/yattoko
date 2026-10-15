@@ -3,7 +3,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 const root=new URL('./',import.meta.url);
 let html=readFileSync(new URL('../YTK-R002/prototype.html',root),'utf8').replace(/\r\n/g,'\n');
 function replace(a,b){if(!html.includes(a))throw Error('UI source drift: '+a.slice(0,70));html=html.replace(a,b);}
-replace('<script>','<script type="module">\nimport {CanonicalStore,SaveCoordinator,openDatabase} from "./src/storage.mjs";\nimport {id,normalizeName,effectiveIntention,manifest,messages,classify} from "./src/canonical.mjs";');
+replace('<script>','<script type="module">\nimport {installBackupUI} from "./src/backup-ui.mjs";\nimport {CanonicalStore,SaveCoordinator,openDatabase} from "./src/storage.mjs";\nimport {id,normalizeName,effectiveIntention,manifest,messages,classify} from "./src/canonical.mjs";');
 replace('(function(){','(async function(){');
 replace('x.addEventListener("click",fn);','x.addEventListener("click",function(e){if(!f4Ready||f4State?.saving||f4State?.pending.length)return;fn(e);});');
 replace('S.status[c.id]=o[0];if(!S.intent[c.id])S.intent[c.id]="undecided";render();','f4Save({type:"category",categoryKey:c.id,field:"usageStatus",value:o[0]});');
