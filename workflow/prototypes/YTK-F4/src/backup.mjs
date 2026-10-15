@@ -7,12 +7,12 @@ const scalar=value=>{if(typeof value==='string')for(let i=0;i<value.length;i++){
 export async function sha256(bytes,crypto=globalThis.crypto){try{const hash=await crypto.subtle.digest('SHA-256',bytes);if(hash.byteLength!==32)fail('DIGEST_FAILED');return Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('');}catch{fail('DIGEST_FAILED');}}
 export function assertRawLimit(bytes){if(!Number.isSafeInteger(bytes)||bytes<0||bytes>PROVISIONAL_LIMITS.rawBytes)fail('RAW_BYTES_LIMIT');}
 export function pendingLimitReason(bytes,count){if(count>PROVISIONAL_LIMITS.operations)return 'PENDING_COUNT_LIMIT';if(bytes>PROVISIONAL_LIMITS.pendingBytes)return 'PENDING_BYTES_LIMIT';return null;}
-const TYPES=['category','overview','addService','service','completeService','deleteService','deleteCategory','deleteAll'];
-const targetKind=op=>['category','deleteCategory'].includes(op.type)?'category':['overview','deleteAll'].includes(op.type)?'overview':'service';
-const record=(d,op)=>targetKind(op)==='category'?d.categories.find(c=>c.categoryKey===op.categoryKey):targetKind(op)==='overview'?d.overview:d.services.find(s=>s.recordId===op.recordId);
+export const TYPES=['category','overview','addService','service','completeService','deleteService','deleteCategory','deleteAll'];
+export const targetKind=op=>['category','deleteCategory'].includes(op.type)?'category':['overview','deleteAll'].includes(op.type)?'overview':'service';
+export const record=(d,op)=>targetKind(op)==='category'?d.categories.find(c=>c.categoryKey===op.categoryKey):targetKind(op)==='overview'?d.overview:d.services.find(s=>s.recordId===op.recordId);
 // Omitted scopes never include names, values, unknown keys, or arbitrary input strings.
 function scope(item,reasonCode){const op=item.op??{},categoryKey=manifest.categoryKeys.includes(op.categoryKey)?op.categoryKey:null;return {categoryKey,targetKind:TYPES.includes(op.type)?targetKind(op):'unknown',operationType:TYPES.includes(op.type)?op.type:'unsupported',ordinalStart:item.ordinal,ordinalEnd:item.ordinal,reasonCode};}
-function footprint(op,snapshot){
+export function footprint(op,snapshot){
 if(op.type==='deleteAll')return new Set(['*']);
 if(op.type==='overview')return new Set(['overview']);
 if(['category','deleteCategory'].includes(op.type)){const f=new Set(['category:'+op.categoryKey]);if(op.type==='deleteCategory')for(const s of snapshot.services.filter(s=>s.categoryKey===op.categoryKey))f.add('service:'+s.recordId);return f;}
@@ -21,10 +21,10 @@ const categoryKey=op.categoryKey??snapshot.services.find(s=>s.recordId===op.reco
 const f=new Set(['service:'+op.recordId]);if(categoryKey)f.add('category:'+categoryKey);
 if(['service','completeService'].includes(op.type))f.add('overview');return f;
 }
-const overlaps=(a,b)=>a.has('*')||b.has('*')||[...a].some(k=>b.has(k));
+export const overlaps=(a,b)=>a.has('*')||b.has('*')||[...a].some(k=>b.has(k));
 function canonicalValue(op){switch(op.type){case 'category':case 'overview':case 'service':return {field:op.field,value:op.value};case 'addService':return {serviceCatalogId:op.serviceCatalogId,otherServiceName:op.otherServiceName};default:return null;}}
-function context(d,op){const s=record(d,op);if(op.type==='service'){const q=manifest.r002.questions[s?.categoryKey]?.find(q=>q.key===op.field);return {expectedValue:op.field==='usageStatus'||op.field==='intentionOverride'?s?.[op.field]??null:s?.answers[op.field]??null,parentQuestionKey:q?.presence.type==='equals'?q.presence.questionKey:null,parentAnswer:q?.presence.type==='equals'?s?.answers[q.presence.questionKey]??null:null};}return {expectedValue:['category','overview'].includes(op.type)?s?.[op.field]??null:null,parentQuestionKey:null,parentAnswer:null};}
-function contentProjection(d){const strip=r=>Object.fromEntries(Object.entries(r).filter(([k])=>!['revision','schemaVersion'].includes(k)));return {overview:strip(d.overview),categories:d.categories.map(strip),services:d.services.map(strip)};}
+export function context(d,op){const s=record(d,op);if(op.type==='service'){const q=manifest.r002.questions[s?.categoryKey]?.find(q=>q.key===op.field);return {expectedValue:op.field==='usageStatus'||op.field==='intentionOverride'?s?.[op.field]??null:s?.answers[op.field]??null,parentQuestionKey:q?.presence.type==='equals'?q.presence.questionKey:null,parentAnswer:q?.presence.type==='equals'?s?.answers[q.presence.questionKey]??null:null};}return {expectedValue:['category','overview'].includes(op.type)?s?.[op.field]??null:null,parentQuestionKey:null,parentAnswer:null};}
+export function contentProjection(d){const strip=r=>Object.fromEntries(Object.entries(r).filter(([k])=>!['revision','schemaVersion'].includes(k)));return {overview:strip(d.overview),categories:d.categories.map(strip),services:d.services.map(strip)};}
 function pendingObject(snapshot,snapshotHash,contentHash,items,operations,omittedScopes){return {captureStatus:operations.length===items.length?'full':operations.length?'partial':'none',candidateCount:items.length,exportedCount:operations.length,omittedCount:items.length-operations.length,omittedScopes,baseGenerationId:snapshot.generationId,baseGlobalRevision:snapshot.globalRevision,baseSnapshotChecksumSha256:snapshotHash,baseContentFingerprintSha256:contentHash,operations};}
 export async function capturePending(snapshot,frozen,crypto=globalThis.crypto){
 const pendingEntries=frozen.pending??[];
