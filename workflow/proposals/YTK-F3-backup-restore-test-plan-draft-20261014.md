@@ -514,3 +514,64 @@ F6後、次を数値で提出する。
 - R005：FROZEN。
 
 制作管理室再レビューと人間判断前に実試験PASSを宣言しない。
+
+## 16. 2026-10-15｜F4-R01 canonical question manifest 追加F5計画
+
+- 状態：**ADDENDUM / NOT RUN**
+- 対象manifest：`workflow/specs/YTK-F4-canonical-question-manifest-v1.json`
+- expected blob：`4a9950b19813e74bc51de2246465096818d375ac`
+- expected questionSchemaVersion：`ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac`
+- 本節は既存F3/F5計画への追加であり、既存試験項目・判定を変更しない。
+
+### MAN-A｜manifest completeness
+
+- [ ] MAN-01 JSON parseとmanifestFormatVersion=1。
+- [ ] MAN-02 categoryKeysがcanonical 12種exact order。
+- [ ] MAN-03 R001 category usageStatus enum exact。
+- [ ] MAN-04 R001 category intention enum exact。
+- [ ] MAN-05 R001 overview 5 keyと各enum exact。
+- [ ] MAN-06 R002 serviceCore recordState / usageStatus / intentionOverride exact。
+- [ ] MAN-07 R002 category=12、question total=33。
+- [ ] MAN-08 R002全33 question keyと全canonical answer enum exact。
+- [ ] MAN-09 conditional question count=1。
+- [ ] MAN-10 conditional exact：subscription.billingSource active iff billing=="yes"。
+
+### MAN-B｜F2 semantic validator consistency
+
+- [ ] MAN-11 unconditional key required + unanswered explicit。
+- [ ] MAN-12 active conditional key required + unanswered explicit。
+- [ ] MAN-13 inactive conditional key forbidden。
+- [ ] MAN-14 parent condition false transitionでchild prune、true transitionでunanswered materialize。
+- [ ] MAN-15 positive usageStatus=using→parent category positive整合＋必要時R07。
+- [ ] MAN-16 billing=yes→overview billing positive整合。
+- [ ] MAN-17 finance.asset=yes→overview finance positive整合。
+- [ ] MAN-18 importantData=yes→overview data positive整合。
+- [ ] MAN-19 familyKnow=no→overview family hidden整合。
+- [ ] MAN-20 F2-R07 exact。
+- [ ] MAN-21 F2-R08 completed+usageStatus=unanswered reject。
+- [ ] MAN-22 F2-R09 derived undecidedを保存せず再計算。
+
+### MAN-C｜version drift detection
+
+- [ ] MAN-23 `git hash-object workflow/specs/YTK-F4-canonical-question-manifest-v1.json` 相当でblob SHAを計算しexpected `4a9950b19813e74bc51de2246465096818d375ac` と一致。
+- [ ] MAN-24 registry questionSchemaVersionが `ytk-qm-gitblob-<calculated SHA>` とexact一致。
+- [ ] MAN-25 manifestのenumを1値変更しversion未更新→FAIL。
+- [ ] MAN-26 manifestのquestion keyを1つ削除しversion未更新→FAIL。
+- [ ] MAN-27 billingSource conditionをyes以外へ変更しversion未更新→FAIL。
+- [ ] MAN-28 manifest bytes不変でquestionSchemaVersionだけ変更→FAIL。
+- [ ] MAN-29 runtime/generated manifestからenumを1つ欠落→deep-equal FAIL。
+- [ ] MAN-30 runtime/generated manifestへunknown key追加→deep-equal FAIL。
+- [ ] MAN-31 validatorがhand-written duplicate tableを参照しmanifestと不一致→static/integration FAIL。
+- [ ] MAN-32 registry未ACTIVEまたはmanifest mismatchでproduction export/import/restore entrypoint disabled。
+
+### MAN-D｜approved source regression
+
+- [ ] MAN-33 R001 approved/current source extractionとmanifestのUI回答enumが一致（canonical unansweredはF2 materialize規則として追加）。
+- [ ] MAN-34 R002 approved/current R2Q extractionとmanifest key/回答enumが一致。
+- [ ] MAN-35 R002 show condition extractionとmanifest condition一致。
+- [ ] MAN-36 F2承認設計のpresence/R07/R08/R09/positive-direction規範とmanifest validatorBindings一致。
+- [ ] MAN-37 display label/CSSのみ変更fixtureではsemantic manifestを変更せずquestionSchemaVersion据置。
+- [ ] MAN-38 canonical key/enum/condition変更fixtureではmanifest blob SHA変化によりversion update必須を検出。
+
+**MAN-01〜38はすべてNOT RUN。計画追加をPASS扱いしない。**
+

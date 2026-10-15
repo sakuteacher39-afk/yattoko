@@ -30,7 +30,7 @@ F4アプリ本体コードは本作業では変更しない。
 |---|---|---|
 | fileFormatVersion | `1` | F3人間承認済み |
 | schemaVersion | `ytk-f2-20261014-0d5dfa38` | F2人間承認対象commit `0d5dfa38...` のcanonical保存schemaにbinding |
-| questionSchemaVersion | `ytk-q-r001r002-20261015-f090acde-7e302dad` | 現行R001/R002質問定義へbinding |
+| questionSchemaVersion | `ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac` | machine-readable canonical question manifest blobへcontent-address binding |
 | recordId format | `record-id-v1` | F2が具体grammarを未確定のため本書でbinding候補を定義 |
 | generationId format | `generation-id-v1` | F2が具体grammar/generatorを未確定のため本書でbinding候補を定義 |
 
@@ -39,7 +39,7 @@ accepted version pairは**1組だけ**とする。
 ~~~text
 fileFormatVersion = 1
 schemaVersion = "ytk-f2-20261014-0d5dfa38"
-questionSchemaVersion = "ytk-q-r001r002-20261015-f090acde-7e302dad"
+questionSchemaVersion = "ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac"
 ~~~
 
 old / future / unknown pairを推測変換しない。
@@ -87,75 +87,96 @@ UI文言、CSS、表示順だけの変更ではschemaVersionを変えない。
 
 ### 4.1 値
 
-`ytk-q-r001r002-20261015-f090acde-7e302dad`
+`ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac`
 
-これはprototype全体のUIバージョンではなく、**保存対象となる質問key・回答enum・条件分岐manifest**へbindingする。
+questionSchemaVersionはprototype SHAの手作業連結ではなく、**canonical semantic manifestのGit blob object IDそのものへbinding**する。
 
-R001 source：
-- `workflow/prototypes/YTK-R001/prototype.html`
-- blob `f090acdea6bb117f49614689ecf725b0cd14f2de`
+normative manifest：
+- `workflow/specs/YTK-F4-canonical-question-manifest-v1.json`
+- Git blob SHA：`4a9950b19813e74bc51de2246465096818d375ac`
+- questionSchemaVersion：`ytk-qm-gitblob-<full 40-hex blob SHA>`
 
-R002 source：
-- `workflow/prototypes/YTK-R002/prototype.html`
-- blob `7e302dad973b827d2ee5d6026369c9656adf0f35`
+Git blob SHAはversion identity / drift detection用であり、真正性や暗号学的署名を意味しない。
 
-### 4.2 R001 manifest
+### 4.2 manifestの正本範囲
 
-category status：
-- `using / not_using / unknown`
-- canonical未回答は`unanswered`
+manifestは表示文言を持たず、保存・validatorに効くsemanticだけを固定する。
 
-category intention：
-- `keep / delete / family / undecided`
-- canonical未回答は`unanswered`
+含むもの：
+- canonical categoryKey 12種
+- R001 category `usageStatus` 全enum
+- R001 category `intention` 全enum
+- R001 overview 5 keyの全enum
+- R002 service core：`recordState` / `usageStatus` / `intentionOverride`
+- R002 12 category / 33 question keyの全canonical enum
+- `unanswered` の明示materialize
+- unconditional / active conditional / inactive conditionalのpresence規則
+- `subscription.billingSource` の唯一の現行条件分岐：`billing == "yes"`
+- F2 positive-direction validator binding
+- F2-R07 / R08 / R09
 
-overview：
-- identity：`configured / not_configured / unknown`
-- billing：`yes / no / unknown`
-- finance：`yes / no / unknown`
-- data：`yes / no / unknown`
-- family：`known / hidden / unknown`
-- canonical未回答は各field `unanswered`
+manifest内のenumは**canonical保存値**なので、prototype UIの選択肢にない `unanswered` もF2承認規範に従って明示する。
 
-### 4.3 R002 manifest
+### 4.3 source evidence
 
-共通：
-- usageStatus：`unanswered / using / dormant / unknown`
-- recordState：`partial / completed`
-- intentionOverride：`null / keep / delete / family / undecided`
+manifest作成時の照合元：
+- R001 prototype blob：`f090acdea6bb117f49614689ecf725b0cd14f2de`
+- R002 prototype blob：`7e302dad973b827d2ee5d6026369c9656adf0f35`
+- F2承認設計commit：`0d5dfa387f924e5dc3dc9196b9f236986c910281`
 
-category別answer key：
+照合結果：
+- R001 status / intention / overview 5 key：一致
+- R002：12 category / 33 questionsのkey・UI answer enum：一致
+- conditional question：1件、`subscription.billingSource` のみ、一致
+- F2 unanswered presence / inactive forbidden：一致
+- F2-R07 / R08 / R09：一致
+- positive-direction validator 5系統：一致
 
-- device：`importantData`, `backup`
-- base：`handover`, `importantData`, `billing`
-- mail：`recoveryUse`, `importantData`
-- social：`importantData`, `handover`, `billing`
-- cloud：`importantData`, `backupUse`, `paid`
-- subscription：`billing`, `billingSource`
-- finance：`asset`, `familyKnow`, `selfIdentify`
-- commerce：`billing`, `balance`, `openTrade`
-- auth：`recovery`, `dependency`
-- license：`purchase`, `subscription`, `importantData`
-- carrier：`recoveryUse`, `mainLine`, `familyKnow`
-- business：`importance`, `billing`, `sharedAdmin`, `importantData`
+### 4.4 実装時のsingle source rule
 
-条件分岐：
-- `subscription.billingSource` は `subscription.billing == "yes"` の時だけactive。
-- inactive conditional keyは保存・import・restoreで存在禁止。
-- active questionが未回答ならkeyは存在し、値は`unanswered`。
+F4実装時は次をMUSTとする。
 
-回答enumはR001/R002現行定義とF2承認設計のallowlistを実装時に単一manifestへ転記し、F5でsource定義との一致をassertする。
+1. `YTK-F4-canonical-question-manifest-v1.json` を直接importするか、build stepで**このJSONだけから**runtime moduleを生成する。
+2. validator / serializer / conditional materializer / F5 fixture generatorは同じmanifest由来の定義を使う。
+3. 同内容のquestion key / enum / condition tableを別ファイルへ手作業で複製しない。
+4. runtime generated manifestとnormative JSONのsemantic deep-equalをF5でassertする。
+5. manifest不読込・不一致ならproduction export/import/restoreを有効化しない。
 
-### 4.4 question version bump条件
+UI表示ラベルはmanifest外。ラベル変更だけではquestionSchemaVersionを変えない。
 
-次の場合は新questionSchemaVersionを作る。
+### 4.5 自動version更新判定
 
-- question key追加・削除・rename
-- 回答enum追加・削除・意味変更
-- conditional dependency変更
-- 「未回答」のmaterialize/presence rule変更
+F5/build verificationで以下を必須とする。
 
-質問表示文の軽微な言い換え、回答ラベルだけの変更は、canonical key/enum/conditionが不変ならversion bump不要。
+1. normative manifest file bytesのGit blob object IDを計算する。
+2. registryのquestionSchemaVersionが `ytk-qm-gitblob-<calculated SHA>` とexact matchすること。
+3. manifest bytesが1byteでも変わればblob SHAが変わるため、questionSchemaVersion未更新を自動FAIL。
+4. questionSchemaVersionだけを変更してmanifestが一致しない場合もFAIL。
+5. current implementation/generated manifestがnormative manifestとdeep-equalでなければFAIL。
+
+canonical semanticを変える場合：
+- manifestを変更
+- questionSchemaVersionを新blob SHAへ更新
+- schemaVersion変更要否をF2 meaning change規則で判定
+- 制作管理室レビュー＋必要な人間承認
+- migrationが必要なら別設計
+
+表示文言/CSSだけの変更：
+- manifestを変更しない
+- questionSchemaVersionを変更しない
+
+### 4.6 version bump対象
+
+manifest変更が必要なのは少なくとも以下。
+
+- canonical question key追加・削除・rename
+- canonical answer enum追加・削除・意味変更
+- conditional dependency / condition value変更
+- unanswered/presence rule変更
+- R07/R08/R09とのquestion-side binding変更
+- positive-direction validator binding変更
+
+手作業で「versionを変えるべきか」を判断するだけにせず、manifest blob mismatchを機械的gateにする。
 
 ## 5. recordId grammar
 
@@ -320,6 +341,16 @@ migrationが必要になった場合は、旧pair→新pairの変換仕様を別
 - REG-05 questionだけcurrent、schema unknownをreject。
 - REG-06 old/future versionをmigrationしない。
 - REG-07 ACTIVE未設定でexport/import/restore entrypoint disabled。
+- MAN-01 normative manifest JSON parse/schema validation。
+- MAN-02 manifest category=12 / R002 questions=33 / conditional=1をassert。
+- MAN-03 R001全key/enum exact一致。
+- MAN-04 R002全key/enum exact一致。
+- MAN-05 billingSource condition exact一致。
+- MAN-06 F2 unanswered/presence、R07/R08/R09、positive-direction binding一致。
+- MAN-07 manifest Git blob SHAとquestionSchemaVersion suffix exact一致。
+- MAN-08 manifest 1byte変更＋version未更新をFAIL。
+- MAN-09 versionだけ変更＋manifest不一致をFAIL。
+- MAN-10 runtime/generated manifestとnormative JSONのdeep-equal。
 - RID-01 overview exact `ovw_main`。
 - RID-02 category 12 exact IDs。
 - RID-03 categoryKey/recordId mismatch reject。
@@ -360,6 +391,6 @@ migrationが必要になった場合は、旧pair→新pairの変換仕様を別
 人間に必要な判断：
 1. 本registry候補をACTIVEとして採用するか。
 2. recordId/generationIdのprefixed UUIDv4 bindingを採用するか。
-3. questionSchemaVersionを上記現行R001/R002 manifestへbindingするか。
+3. questionSchemaVersionをmachine-readable manifest blob `4a9950b19813e74bc51de2246465096818d375ac` へbindingするか。
 
 制作管理室レビュー前・人間承認前は`CANDIDATE`のまま。

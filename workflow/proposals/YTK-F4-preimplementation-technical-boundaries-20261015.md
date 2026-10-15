@@ -138,7 +138,7 @@ otherServiceName以外の自由メモを追加しない。
 
 ## 3. ACTIVE registry gate
 
-別紙`YTK-F4-version-registry-proposal-20261015.md`のregistryがACTIVEになるまでは：
+別紙`YTK-F4-version-registry-proposal-20261015.md`のregistryと、`workflow/specs/YTK-F4-canonical-question-manifest-v1.json` が独立レビューを通りACTIVE bindingされるまでは：
 
 - production normal backup entrypointを有効化しない。
 - production import/restore entrypointを有効化しない。
@@ -146,6 +146,23 @@ otherServiceName以外の自由メモを追加しない。
 - 仮versionで生成したfileを正式backupと表示しない。
 
 F4実装を人間が許可した場合でも、registryが未ACTIVEならversion依存機能はfeature gateで停止する。
+
+## 3.1 canonical question manifest gate
+
+F4-R01対応として、質問semanticのsingle sourceを以下へ固定する。
+
+- `workflow/specs/YTK-F4-canonical-question-manifest-v1.json`
+- blob：`4a9950b19813e74bc51de2246465096818d375ac`
+- questionSchemaVersion：`ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac`
+
+実装時MUST：
+- question key / enum / condition / unanswered presence / validator bindingをmanifestから直接利用または自動生成する。
+- hand-written duplicate tableをvalidator、serializer、importer、restore validatorへ作らない。
+- build/F5でmanifest blob SHAとquestionSchemaVersionをexact照合する。
+- runtime generated manifestとnormative JSONをdeep-equal検証する。
+- mismatch時はbuild/test FAILかつproduction export/import/restore feature gateを閉じる。
+
+manifestのdisplay label非保持方針により、UI文言変更だけではversion bumpしない。canonical semantic変更はmanifest変更→blob SHA変更→questionSchemaVersion更新を必須とする。
 
 ## 4. F4計測・外部通信方針
 
@@ -275,6 +292,9 @@ F4実装はACTIVE registryだけをcompile-time/runtime allowlistとして持つ
 
 F5：
 - registry exact-match。
+- canonical question manifest parse / count / exact enum / condition一致。
+- manifest Git blob SHAとquestionSchemaVersion exact一致。
+- runtime/generated manifest deep-equal。不一致時FAIL。
 - UUID grammar/generator/collision。
 - no-network unit test。
 - sensitive log sink test。
