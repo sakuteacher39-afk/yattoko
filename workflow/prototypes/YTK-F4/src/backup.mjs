@@ -32,7 +32,18 @@ const items=pendingEntries.map((p,i)=>({ordinal:i+1,op:p.operation,base:p.base,s
 if(frozen.draft){const d=frozen.draft;items.push({ordinal:items.length+1,op:{type:'addService',recordId:null,categoryKey:d.categoryKey,serviceCatalogId:'other',otherServiceName:d.otherServiceName},base:frozen.draftBase,source:'current-draft'});}
 if(!items.length)return null;
 const snapshotHash=await sha256(utf8(JSON.stringify(snapshot)),crypto),contentHash=await sha256(utf8(JSON.stringify(contentProjection(snapshot))),crypto);
-const none=reason=>{const ranges=new Map();for(const item of items){const s=scope(item,reason),key=JSON.stringify([s.categoryKey,s.targetKind,s.operationType,s.reasonCode]);if(ranges.has(key))ranges.get(key).ordinalEnd=s.ordinalEnd;else ranges.set(key,s);}return pendingObject(snapshot,snapshotHash,contentHash,items,[],[...ranges.values()]);};
+const none=reason=>{
+const ranges=[];
+for(const item of items){
+const s=scope(item,reason),last=ranges.at(-1);
+if(last&&last.ordinalEnd+1===s.ordinalStart&&last.categoryKey===s.categoryKey&&last.targetKind===s.targetKind&&last.operationType===s.operationType&&last.reasonCode===s.reasonCode)last.ordinalEnd=s.ordinalEnd;
+else ranges.push(s);
+}
+const result=pendingObject(snapshot,snapshotHash,contentHash,items,[],ranges);
+// Exact, discrete ranges can themselves exceed the existing pending budget. Never truncate them.
+if(utf8(JSON.stringify(result)).length>PROVISIONAL_LIMITS.pendingBytes)fail('PENDING_BYTES_LIMIT');
+return result;
+};
 if(items.length>PROVISIONAL_LIMITS.operations)return none('PENDING_COUNT_LIMIT');
 // Draft IDs exist only in this frozen file candidate; the live draft is never altered.
 for(const item of items)if(item.source==='current-draft'){try{item.op.otherServiceName=normalizeName(item.op.otherServiceName);scalar(item.op);item.op.recordId=generateServiceId(snapshot.services.map(s=>s.recordId),items.filter(x=>x!==item).map(x=>x.op?.recordId));}catch{item.invalid=true;}}

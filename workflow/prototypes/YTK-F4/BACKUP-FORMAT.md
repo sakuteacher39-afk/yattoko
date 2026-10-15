@@ -22,7 +22,7 @@ captureStatus / candidateCount / exportedCount / omittedCount / omittedScopes / 
 
 captureStatusはfull / partial / none。candidateCountはfreezeしたconfirmed/dependent operationとcurrent draftの合計。mutationSeq、DOM、画面位置、任意メモ、raw不正値は収録しない。
 
-omittedScopesの各object順: categoryKey / targetKind / operationType / ordinalStart / ordinalEnd / reasonCode。unknown入力値からscope文字列を作らず、固定allowlist以外はnull/unknown/unsupportedへ分類。全件未収録のsummaryでは同じscopeを最小〜最大ordinalの範囲へ集約する（範囲内に他scopeが挟まる場合もある）。不正値やサービス名は未収録scopeに入れない。
+omittedScopesの各object順: categoryKey / targetKind / operationType / ordinalStart / ordinalEnd / reasonCode。unknown入力値からscope文字列を作らず、固定allowlist以外はnull/unknown/unsupportedへ分類。全件未収録のsummaryでは同じscopeかつ連続するordinalだけを集約する。他scopeや収録済み操作を挟む非連続ordinalは別範囲として保持する。各範囲の件数合計はomittedCountに一致し、重複・収録済みordinalの混入を認めない。不正値やサービス名は未収録scopeに入れない。正確な範囲情報だけでも既存pending容量上限を超える場合は、範囲を切り捨てずファイル生成を停止する。
 
 ## operation field order
 
