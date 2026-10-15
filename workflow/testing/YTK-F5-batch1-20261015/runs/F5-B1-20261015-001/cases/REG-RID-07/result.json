@@ -1,0 +1,75 @@
+{
+  "caseId": "REG:RID-07",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 360,
+    "description": "generator collision fixtureでretry、3回failureでfail closed。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.982Z",
+  "finishedAt": "2026-10-15T13:53:18.992Z",
+  "variantCount": 5,
+  "totalObservations": 5,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "collision-existing",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 115,
+        "sha256": "4b0b0e6613ab9c2c20e2963363c47d8b3bd2a8f4eebae9619772ab801c7e3f59"
+      }
+    },
+    {
+      "index": 2,
+      "label": "collision-candidate",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 115,
+        "sha256": "4b0b0e6613ab9c2c20e2963363c47d8b3bd2a8f4eebae9619772ab801c7e3f59"
+      }
+    },
+    {
+      "index": 3,
+      "label": "three-collisions",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 27,
+        "sha256": "107da4cf515cf3bcdd78b667c9d89e1cbaf17e258520c7641bc993ccf853b73f"
+      }
+    },
+    {
+      "index": 4,
+      "label": "throw",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 16,
+        "sha256": "5723316f49f62a07f0785a89cccb8c43e62d77ceeca0586429cbcb5aeb4897c6"
+      }
+    },
+    {
+      "index": 5,
+      "label": "malformed",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "005.input.bin",
+        "bytes": 20,
+        "sha256": "5bb4b26c7e98a3795d7f65a6648cd5f2d16d72273729e5d43511498b6d3274d8"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

@@ -1,0 +1,174 @@
+{
+  "caseId": "F3:R07-14",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 349,
+    "description": "invalid generationId grammar reject（ACTIVE registry binding後）。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:21.057Z",
+  "finishedAt": "2026-10-15T13:53:21.092Z",
+  "variantCount": 14,
+  "totalObservations": 14,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "invalid-generation-gen_00000000-0000-1000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 2325,
+        "sha256": "c32939a73f1d0359b91965a15caa78e9f19d988d1e3b6be942e03a9a26a9a217"
+      }
+    },
+    {
+      "index": 2,
+      "label": "import-generation-gen_00000000-0000-1000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3607,
+        "sha256": "26d95575d28f16a12b5991c05338290a74990c60bb8f0dac58170b06ba920865"
+      }
+    },
+    {
+      "index": 3,
+      "label": "invalid-generation-gen_00000000-0000-7000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 2325,
+        "sha256": "e17acb5dc7790652f83e10c2a6b6eb1bd650e56b31fae74278609317954251e6"
+      }
+    },
+    {
+      "index": 4,
+      "label": "import-generation-gen_00000000-0000-7000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 3607,
+        "sha256": "c7b3fcca72781095bcdb21d8da9eb4a8358b55527ce39c2aa725b81463eaea7b"
+      }
+    },
+    {
+      "index": 5,
+      "label": "invalid-generation-gen_00000000-0000-4000-7000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "005.input.bin",
+        "bytes": 2325,
+        "sha256": "33d6d1307eaaad94e6db4bfdd7e60fd1ce9a51eecfe6b9840e272e712f4b0437"
+      }
+    },
+    {
+      "index": 6,
+      "label": "import-generation-gen_00000000-0000-4000-7000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "006.input.bin",
+        "bytes": 3607,
+        "sha256": "dc0ec64921ce866f0aeff80fd46357ae0101ab0744f11beab3d1d697769e1fbb"
+      }
+    },
+    {
+      "index": 7,
+      "label": "invalid-generation-gen_AAAAAAAA-AAAA-4AAA-8AAA-AAAAAAAAAAAA",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "007.input.bin",
+        "bytes": 2325,
+        "sha256": "a76fd8aeb157515e7c8ecada144369db19aeb3b8e04ae46374c98abfbf89d9d9"
+      }
+    },
+    {
+      "index": 8,
+      "label": "import-generation-gen_AAAAAAAA-AAAA-4AAA-8AAA-AAAAAAAAAAAA",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "008.input.bin",
+        "bytes": 3607,
+        "sha256": "b813fcec7417b18745b5eaf61e9c6f8b75243fdc68fb91de541c065df3097db5"
+      }
+    },
+    {
+      "index": 9,
+      "label": "invalid-generation-gen_{00000000-0000-4000-8000-000000000001}",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "009.input.bin",
+        "bytes": 2327,
+        "sha256": "0e08aa0fae76be5ac4236e415e124dbb85918442d7ee5ce9b81b6c09ff6de49c"
+      }
+    },
+    {
+      "index": 10,
+      "label": "import-generation-gen_{00000000-0000-4000-8000-000000000001}",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "010.input.bin",
+        "bytes": 3609,
+        "sha256": "7c29c07296998276a8730039d3bc0d2f36a266c51613b6235fe769146beb67ee"
+      }
+    },
+    {
+      "index": 11,
+      "label": "invalid-generation-gen_00000000-0000-4000-8000-00000000000g",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "011.input.bin",
+        "bytes": 2325,
+        "sha256": "4dfb065531668d4e61569d2c51f1b5620bdf7a2399e0cd8ce306287847bdb868"
+      }
+    },
+    {
+      "index": 12,
+      "label": "import-generation-gen_00000000-0000-4000-8000-00000000000g",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "012.input.bin",
+        "bytes": 3607,
+        "sha256": "4cdf904f0af0a82330e0d2bfddd6092865ce9545767a9a2b4c417e15e7c2821e"
+      }
+    },
+    {
+      "index": 13,
+      "label": "invalid-generation-generation_00000000-0000-4000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "013.input.bin",
+        "bytes": 2332,
+        "sha256": "7ab426012416ee3e1c290c9405cd49b5550ea413f966653ab050bbabd2aa6934"
+      }
+    },
+    {
+      "index": 14,
+      "label": "import-generation-generation_00000000-0000-4000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "014.input.bin",
+        "bytes": 3614,
+        "sha256": "79d972f958598bb2b0ef7cce3f5e26c2af7f825140ff95c2e86b5c1653f224ca"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

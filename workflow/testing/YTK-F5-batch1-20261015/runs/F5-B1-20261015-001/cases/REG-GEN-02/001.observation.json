@@ -1,0 +1,25 @@
+{
+  "caseId": "REG:GEN-02",
+  "attempt": 1,
+  "label": "initial-dataset-generation",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:19.105Z",
+  "finishedAt": "2026-10-15T13:53:19.106Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 21,
+    "sha256": "63a63047c341a8e06b91c989b3322cfbbc2704fe657a3fb4b1cb1e60dd636053"
+  },
+  "expected": {
+    "hasGeneration": true,
+    "globalRevision": 1
+  },
+  "actual": {
+    "hasGeneration": true,
+    "globalRevision": 1,
+    "raw": "gen_6746f83f-61f9-485f-bd74-87d5b013073d"
+  },
+  "oracle": "First normal mutation creates v4 generation and global1",
+  "status": "PASS",
+  "executionError": null
+}

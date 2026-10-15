@@ -1,0 +1,28 @@
+{
+  "caseId": "REG:RID-07",
+  "attempt": 1,
+  "label": "malformed",
+  "index": 5,
+  "startedAt": "2026-10-15T13:53:18.990Z",
+  "finishedAt": "2026-10-15T13:53:18.991Z",
+  "input": {
+    "path": "005.input.bin",
+    "bytes": 20,
+    "sha256": "5bb4b26c7e98a3795d7f65a6648cd5f2d16d72273729e5d43511498b6d3274d8"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "collision",
+    "calls": 1,
+    "returned": false
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "collision",
+    "calls": 1,
+    "returned": false
+  },
+  "oracle": "3 attempts maximum; generator error/invalid output fails immediately with no ID returned",
+  "status": "PASS",
+  "executionError": null
+}

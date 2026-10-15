@@ -1,0 +1,24 @@
+{
+  "caseId": "REG:MAN-07",
+  "attempt": 1,
+  "label": "git-blob-and-version",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:18.516Z",
+  "finishedAt": "2026-10-15T13:53:18.517Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 12772,
+    "sha256": "772997d001162bd5f225de0afbba623eb86ea7f55e7453b897fbb6d3316b8b63"
+  },
+  "expected": {
+    "blob": "4a9950b19813e74bc51de2246465096818d375ac",
+    "questionSchemaVersion": "ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac"
+  },
+  "actual": {
+    "blob": "4a9950b19813e74bc51de2246465096818d375ac",
+    "questionSchemaVersion": "ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac"
+  },
+  "oracle": "Git blob SHA-1 formula plus approved literal suffix; no generate.mjs call",
+  "status": "PASS",
+  "executionError": null
+}

@@ -1,0 +1,31 @@
+{
+  "caseId": "F3:R02-19",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 121,
+    "description": "escaped lone high surrogate拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:22.125Z",
+  "finishedAt": "2026-10-15T13:53:22.129Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "V-UTF-01",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3595,
+        "sha256": "06a7226584301aa7af9887653071844af1ff26794936b5403e5c88ea2c959d87"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

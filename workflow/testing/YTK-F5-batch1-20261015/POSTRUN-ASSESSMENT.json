@@ -1,0 +1,47 @@
+{
+  "runId": "F5-B1-20261015-001",
+  "assessmentAt": "2026-10-15T13:56:14.657Z",
+  "rawCaseVerdictsUnchanged": true,
+  "correctionsAppliedToRun": false,
+  "findings": [
+    {
+      "caseIds": [
+        "F3:R02-09"
+      ],
+      "kind": "APPROVED_STAGE_ALIGNMENT",
+      "rawVerdict": "FAIL",
+      "expected": "canonical raw mismatch reject",
+      "actual": "LEXICAL reject (3 whitespace/newline variants), digestCalls=0",
+      "disposition": "No unsafe acceptance. Keep FAIL; independent reviewer must decide whether early lexical rejection satisfies approved stage wording. No product/spec patch made."
+    },
+    {
+      "caseIds": [
+        "F3:R02-36",
+        "F3:R02-39"
+      ],
+      "kind": "HARNESS_ORACLE_OVERCONSTRAINT",
+      "rawVerdict": "FAIL",
+      "runnerExpected": "INVALID_FILE",
+      "actual": "MEMBER_LIMIT; rejects before digest",
+      "independentFacts": {
+        "checksumValid": true,
+        "overviewKeys": 9,
+        "approvedOverviewKeys": 8
+      },
+      "disposition": "Approved cases require V-UNK reject / re-signed invalid-schema reject; they do not require INVALID_FILE error code. The input is rejected by schema-path member guard. These failures do not establish a product defect. Keep failed attempts and seek independent review before any amended oracle/re-execution."
+    },
+    {
+      "caseIds": [
+        "F3:R02-38"
+      ],
+      "kind": "FIXTURE_DEFECT",
+      "firstAttempt": "NOT VERIFIABLE",
+      "latestAttempt": "PASS",
+      "originalBytes": 3607,
+      "preparedHashFixtureBytes": 3605,
+      "originalHash": "055a9280747f8b464437c76230736281b77f9b5904898f15f24195c56a88db18",
+      "disposition": "Original prepared V-HASH-01 changes a 3-byte codepoint into ASCII and is not a 1-byte mutation. Original+attempt1 retained. Derived equal-length one-ASCII-date-digit fixture independently proved diff1, stale checksum, then rejected CHECKSUM in attempt2."
+    }
+  ],
+  "nextBatch": "Not started; independent review required"
+}

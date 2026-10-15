@@ -1,0 +1,28 @@
+{
+  "caseId": "REG:RID-07",
+  "attempt": 1,
+  "label": "three-collisions",
+  "index": 3,
+  "startedAt": "2026-10-15T13:53:18.986Z",
+  "finishedAt": "2026-10-15T13:53:18.987Z",
+  "input": {
+    "path": "003.input.bin",
+    "bytes": 27,
+    "sha256": "107da4cf515cf3bcdd78b667c9d89e1cbaf17e258520c7641bc993ccf853b73f"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "collision",
+    "calls": 3,
+    "returned": false
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "collision",
+    "calls": 3,
+    "returned": false
+  },
+  "oracle": "3 attempts maximum; generator error/invalid output fails immediately with no ID returned",
+  "status": "PASS",
+  "executionError": null
+}

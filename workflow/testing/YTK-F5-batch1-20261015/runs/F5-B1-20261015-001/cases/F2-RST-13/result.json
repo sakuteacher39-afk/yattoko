@@ -1,0 +1,1351 @@
+{
+  "caseId": "F2:RST-13",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 234,
+    "description": "unexpected nested object拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-15T13:53:20.409Z",
+  "finishedAt": "2026-10-15T13:53:20.770Z",
+  "variantCount": 121,
+  "totalObservations": 121,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "path--field-fileFormat",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3593,
+        "sha256": "ab6f2d14da5ba130a5746e4a569e29501d3da42f112680dae5f717836be35f03"
+      }
+    },
+    {
+      "index": 2,
+      "label": "path--field-fileFormatVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3608,
+        "sha256": "e5e8cba7a5ecd650639ed5ec01d21a6353ec90c30cb02362e45abbf1174ea36d"
+      }
+    },
+    {
+      "index": 3,
+      "label": "path--field-kind",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3601,
+        "sha256": "ee458d61b2c2bbdac347963016aae504f1ab281c5de28d1c532e617787ca4a52"
+      }
+    },
+    {
+      "index": 4,
+      "label": "path--field-exportedAt",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 3583,
+        "sha256": "3cd3eab5913aa7d1ada711a42eaa43049bd2bf4a13617358ffcd5bad8157d650"
+      }
+    },
+    {
+      "index": 5,
+      "label": "path-snapshot-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "005.input.bin",
+        "bytes": 3583,
+        "sha256": "dc3a2782185c99822dacebc3d9a9a510cd3c1f141e10d8efe83c37c2ee6af883"
+      }
+    },
+    {
+      "index": 6,
+      "label": "path-snapshot-field-questionSchemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "006.input.bin",
+        "bytes": 3552,
+        "sha256": "cf01c6110139b8805a6a4ed99b3f50dc20359cca41d48c0a35da26bd48a96e54"
+      }
+    },
+    {
+      "index": 7,
+      "label": "path-snapshot-field-generationId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "007.input.bin",
+        "bytes": 3567,
+        "sha256": "bd3a77a034cb8ec68781520810ddd8c2db483b61fa20bbd85f275d7d8c8cb9e8"
+      }
+    },
+    {
+      "index": 8,
+      "label": "path-snapshot-field-globalRevision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "008.input.bin",
+        "bytes": 3608,
+        "sha256": "220ec3530af173b164096baa574d9d12390ad5b40185c25d5695768e904547c8"
+      }
+    },
+    {
+      "index": 9,
+      "label": "path-snapshot.overview-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "009.input.bin",
+        "bytes": 3599,
+        "sha256": "2fdb5430b42dcdc23f3790e1ac76d3129ac1128d324fc4323335382092cc3e85"
+      }
+    },
+    {
+      "index": 10,
+      "label": "path-snapshot.overview-field-identity",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "010.input.bin",
+        "bytes": 3597,
+        "sha256": "c4043a79c75e6ba79c3e2ebd2325b43f2bf9439affc74b60f5f3e2e0f0136f82"
+      }
+    },
+    {
+      "index": 11,
+      "label": "path-snapshot.overview-field-billing",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "011.input.bin",
+        "bytes": 3597,
+        "sha256": "68c1416ae37b9cf95e6b189fa067a2732fd9223892189ba655d86bf5def4fdf0"
+      }
+    },
+    {
+      "index": 12,
+      "label": "path-snapshot.overview-field-finance",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "012.input.bin",
+        "bytes": 3597,
+        "sha256": "554a8324db07b63321c12c44c458397ec49bd6c23d641d91db20253359aa520b"
+      }
+    },
+    {
+      "index": 13,
+      "label": "path-snapshot.overview-field-data",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "013.input.bin",
+        "bytes": 3597,
+        "sha256": "76820e45837045f44f4bb05a793051c9a35c07d71a3b30a7532da731c17a4614"
+      }
+    },
+    {
+      "index": 14,
+      "label": "path-snapshot.overview-field-family",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "014.input.bin",
+        "bytes": 3597,
+        "sha256": "22252e1ea8fe34bf1e00a7831be2386dd2d4e8010fb6a89e1f6efc066e2f903d"
+      }
+    },
+    {
+      "index": 15,
+      "label": "path-snapshot.overview-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "015.input.bin",
+        "bytes": 3608,
+        "sha256": "d8fdc21733e05ada7ece8e1ba49d03013279641cad820f580e52f3d1feca457b"
+      }
+    },
+    {
+      "index": 16,
+      "label": "path-snapshot.overview-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "016.input.bin",
+        "bytes": 3583,
+        "sha256": "0c3d5a00ff61ab30cefc7fb36c89cbe21149028036c18db9587d9b881f31d8b7"
+      }
+    },
+    {
+      "index": 17,
+      "label": "path-snapshot.categories.0-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "017.input.bin",
+        "bytes": 3597,
+        "sha256": "a26ecb882d7d4f90d94430f1ba930ce14e5125ff02952e11559b93ed37bf5db3"
+      }
+    },
+    {
+      "index": 18,
+      "label": "path-snapshot.categories.0-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "018.input.bin",
+        "bytes": 3601,
+        "sha256": "62db5b61569e62b0e14b7022e0fdd9d777203e7ff3b4b138dedba9614475df38"
+      }
+    },
+    {
+      "index": 19,
+      "label": "path-snapshot.categories.0-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "019.input.bin",
+        "bytes": 3602,
+        "sha256": "1a8a164f3d1df9dccdc49071fa9e08b3386db7ee62c54ba92403892dd695ea38"
+      }
+    },
+    {
+      "index": 20,
+      "label": "path-snapshot.categories.0-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "020.input.bin",
+        "bytes": 3598,
+        "sha256": "5fbb9be05273dc84520d6c89c3765d829fdcc24b61af7bc6c6d984f047469b37"
+      }
+    },
+    {
+      "index": 21,
+      "label": "path-snapshot.categories.0-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "021.input.bin",
+        "bytes": 3608,
+        "sha256": "f3c8f4fc5ddd25ee68231248f47dfdc5228b1fd89ce51ad5a16fa9c0270f108f"
+      }
+    },
+    {
+      "index": 22,
+      "label": "path-snapshot.categories.0-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "022.input.bin",
+        "bytes": 3583,
+        "sha256": "47568a316efaf08b4043aefa1ea48085c7d3100963c0ea896b1b781ab9cc055f"
+      }
+    },
+    {
+      "index": 23,
+      "label": "path-snapshot.categories.1-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "023.input.bin",
+        "bytes": 3599,
+        "sha256": "2b2fb74fd19a76e260a7384f2c80124d8ade62225e6bca989bb9a36c2fcfc7f0"
+      }
+    },
+    {
+      "index": 24,
+      "label": "path-snapshot.categories.1-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "024.input.bin",
+        "bytes": 3603,
+        "sha256": "989df68392e5b385f57f9afec9b4aa1acf35126806bf3f7e6d0eb5631a792135"
+      }
+    },
+    {
+      "index": 25,
+      "label": "path-snapshot.categories.1-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "025.input.bin",
+        "bytes": 3597,
+        "sha256": "5264b59de02f24ef0cebcd1780b1c50f606a788418ca4d736c0c34b86132a786"
+      }
+    },
+    {
+      "index": 26,
+      "label": "path-snapshot.categories.1-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "026.input.bin",
+        "bytes": 3597,
+        "sha256": "e7e8517456b1b3c4f5cda8b6d6ab726f663561d75217a64f60d81de80a881b94"
+      }
+    },
+    {
+      "index": 27,
+      "label": "path-snapshot.categories.1-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "027.input.bin",
+        "bytes": 3608,
+        "sha256": "c1797dc66d1000330e69d89a656d92dc648641acb8e23dcdfad390729baf5eac"
+      }
+    },
+    {
+      "index": 28,
+      "label": "path-snapshot.categories.1-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "028.input.bin",
+        "bytes": 3583,
+        "sha256": "14913535e01a92fa756ccdd2d85eb80994a05ffc4b71103a02f907626d0c2a95"
+      }
+    },
+    {
+      "index": 29,
+      "label": "path-snapshot.categories.2-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "029.input.bin",
+        "bytes": 3599,
+        "sha256": "e4cad860bf9e5cd4ca991e55827b3304ffe8a30cecc5b26549feaf81697eaec3"
+      }
+    },
+    {
+      "index": 30,
+      "label": "path-snapshot.categories.2-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "030.input.bin",
+        "bytes": 3603,
+        "sha256": "be2a81e9f68f8c5c665d91a3ca664b484fb4d04258cb28ccba2fa0953c8e1346"
+      }
+    },
+    {
+      "index": 31,
+      "label": "path-snapshot.categories.2-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "031.input.bin",
+        "bytes": 3597,
+        "sha256": "978339cf5ab2a1ff240c1965b4805e9c3faf03236d74d1dcd4318866db6c81ba"
+      }
+    },
+    {
+      "index": 32,
+      "label": "path-snapshot.categories.2-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "032.input.bin",
+        "bytes": 3597,
+        "sha256": "ced1dd01cfc385aba5a96ae498147e79d4e4edc4d43a5ffa6cb1222360f6531d"
+      }
+    },
+    {
+      "index": 33,
+      "label": "path-snapshot.categories.2-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "033.input.bin",
+        "bytes": 3608,
+        "sha256": "ad05a88b75dca33388a90fb4ae5d90c5ad4ed9c150d19c2e444794ab37de3898"
+      }
+    },
+    {
+      "index": 34,
+      "label": "path-snapshot.categories.2-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "034.input.bin",
+        "bytes": 3583,
+        "sha256": "4b8c21ee2cb92a6238ab4c67c1f4f33d10f21b1feff14070e4e46d3f49582db7"
+      }
+    },
+    {
+      "index": 35,
+      "label": "path-snapshot.categories.3-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "035.input.bin",
+        "bytes": 3597,
+        "sha256": "57c4a7ac70c62c62863640736b5b5893e43092dd9cd15c9eb1581e5980e80a68"
+      }
+    },
+    {
+      "index": 36,
+      "label": "path-snapshot.categories.3-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "036.input.bin",
+        "bytes": 3601,
+        "sha256": "0eaed4615525f8b98ab18830cb63b8e7f3e9184e29fc3f377f1c7882fbd9d415"
+      }
+    },
+    {
+      "index": 37,
+      "label": "path-snapshot.categories.3-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "037.input.bin",
+        "bytes": 3597,
+        "sha256": "67b5508138b0db252e7e2f20f4a00537c3e55d743fd5d5bf9fdb05459e3820d2"
+      }
+    },
+    {
+      "index": 38,
+      "label": "path-snapshot.categories.3-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "038.input.bin",
+        "bytes": 3597,
+        "sha256": "3a3430341d391f7dce9d6d9359e58d6bbca90ace7013129a0678039e47409ae9"
+      }
+    },
+    {
+      "index": 39,
+      "label": "path-snapshot.categories.3-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "039.input.bin",
+        "bytes": 3608,
+        "sha256": "3a042515dc8ae2a33de83a4a53c0f021b5501b2595d3ad5507d0bde45215c898"
+      }
+    },
+    {
+      "index": 40,
+      "label": "path-snapshot.categories.3-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "040.input.bin",
+        "bytes": 3583,
+        "sha256": "c22ed622bead93548a4a7f21e8be49080f1c737b2753003ed3908b829726f69e"
+      }
+    },
+    {
+      "index": 41,
+      "label": "path-snapshot.categories.4-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "041.input.bin",
+        "bytes": 3598,
+        "sha256": "f5e9ed43473e375b9be04b1df062dbdd3362d8c17a8a35d919160298d83fcede"
+      }
+    },
+    {
+      "index": 42,
+      "label": "path-snapshot.categories.4-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "042.input.bin",
+        "bytes": 3602,
+        "sha256": "765b6e4741c179fb0597704b6134f412896c10c6802b9777d949a02ee888109e"
+      }
+    },
+    {
+      "index": 43,
+      "label": "path-snapshot.categories.4-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "043.input.bin",
+        "bytes": 3597,
+        "sha256": "882ce65eee1aed50935171211cf97c30b4c9060c10fd7b903539fa3e84d9c501"
+      }
+    },
+    {
+      "index": 44,
+      "label": "path-snapshot.categories.4-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "044.input.bin",
+        "bytes": 3597,
+        "sha256": "65f541904f0936782ab583d7b5ead48ab1b500b36c536fe4ba37b662ad84dfae"
+      }
+    },
+    {
+      "index": 45,
+      "label": "path-snapshot.categories.4-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "045.input.bin",
+        "bytes": 3608,
+        "sha256": "33a51ff1b82e11694560531bc5c7997b846289f56e4302dd51456aa380f257b1"
+      }
+    },
+    {
+      "index": 46,
+      "label": "path-snapshot.categories.4-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "046.input.bin",
+        "bytes": 3583,
+        "sha256": "c6a8a6314e8d2af2db763c2f73bd679fb74cffa7e3655c24cfb7e94eeda4e6ba"
+      }
+    },
+    {
+      "index": 47,
+      "label": "path-snapshot.categories.5-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "047.input.bin",
+        "bytes": 3591,
+        "sha256": "d78ddd7e3c4f3cba202ef831c178b5f62f466d53696f6f8e144dda0ff448d43e"
+      }
+    },
+    {
+      "index": 48,
+      "label": "path-snapshot.categories.5-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "048.input.bin",
+        "bytes": 3595,
+        "sha256": "04ae081d33b88f8ea3dea8b5e140a66cbf1a9c27ba91a7f7c196a4d59b8477ce"
+      }
+    },
+    {
+      "index": 49,
+      "label": "path-snapshot.categories.5-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "049.input.bin",
+        "bytes": 3597,
+        "sha256": "78fb857f11d2b11155cf2b97ae3d71dc27819a4e7dfe1f847ff4ad6ef47f1973"
+      }
+    },
+    {
+      "index": 50,
+      "label": "path-snapshot.categories.5-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "050.input.bin",
+        "bytes": 3597,
+        "sha256": "7897c82afe7f15b53e6513e698172efa6a5c9195927489ade14272053c3b6be0"
+      }
+    },
+    {
+      "index": 51,
+      "label": "path-snapshot.categories.5-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "051.input.bin",
+        "bytes": 3608,
+        "sha256": "e9504584e172f1e3bd601905f84013bcae1cf82267551bedfc368c217cef6e0a"
+      }
+    },
+    {
+      "index": 52,
+      "label": "path-snapshot.categories.5-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "052.input.bin",
+        "bytes": 3583,
+        "sha256": "0546b9263111f8c2295a7501b2ab1c24c619345ae382d208eeb1b00ba8002537"
+      }
+    },
+    {
+      "index": 53,
+      "label": "path-snapshot.categories.6-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "053.input.bin",
+        "bytes": 3596,
+        "sha256": "45e298d53c5b28a5c1c1f1204d8a6ce0213b9ef699817a7ddade98b14b0ba887"
+      }
+    },
+    {
+      "index": 54,
+      "label": "path-snapshot.categories.6-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "054.input.bin",
+        "bytes": 3600,
+        "sha256": "200cf5484be27b4773aa0a05f72e20d530f430c93dc295b4063290c3a8f4ee62"
+      }
+    },
+    {
+      "index": 55,
+      "label": "path-snapshot.categories.6-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "055.input.bin",
+        "bytes": 3597,
+        "sha256": "7d5ccc288aa7b002f4dfa11b29f337da4fe62cd78e612dfa6e50b563f384839e"
+      }
+    },
+    {
+      "index": 56,
+      "label": "path-snapshot.categories.6-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "056.input.bin",
+        "bytes": 3597,
+        "sha256": "4f045a18cb192959d251fb927e52baa35d9964c07fc4aa69e4b30b02758ac214"
+      }
+    },
+    {
+      "index": 57,
+      "label": "path-snapshot.categories.6-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "057.input.bin",
+        "bytes": 3608,
+        "sha256": "f98edf05b0b256783bab129c0761445730e17dbc4c9581a65e1a243d59d346bb"
+      }
+    },
+    {
+      "index": 58,
+      "label": "path-snapshot.categories.6-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "058.input.bin",
+        "bytes": 3583,
+        "sha256": "7543ea01e143b0540b25ff6543a68108de2d52e70be095e8d5969957f7062de7"
+      }
+    },
+    {
+      "index": 59,
+      "label": "path-snapshot.categories.7-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "059.input.bin",
+        "bytes": 3595,
+        "sha256": "aad7f4757e78b8914c9d54dab1ebd1bb57d7b145dc740f7036fe220272399c17"
+      }
+    },
+    {
+      "index": 60,
+      "label": "path-snapshot.categories.7-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "060.input.bin",
+        "bytes": 3599,
+        "sha256": "c1eb1316df1957225277adf0f212e1232c0a675c269f9490d73902b249f921dc"
+      }
+    },
+    {
+      "index": 61,
+      "label": "path-snapshot.categories.7-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "061.input.bin",
+        "bytes": 3597,
+        "sha256": "0646acd26393acfdad6f87e210e4713b5ba658b9bfef0109d00325e14e2c13d2"
+      }
+    },
+    {
+      "index": 62,
+      "label": "path-snapshot.categories.7-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "062.input.bin",
+        "bytes": 3597,
+        "sha256": "163f89b198029902842990cbbcfd019330efa6e7abf76eb5115f6e798d998b1e"
+      }
+    },
+    {
+      "index": 63,
+      "label": "path-snapshot.categories.7-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "063.input.bin",
+        "bytes": 3608,
+        "sha256": "453a6853a64742045f3ce71baa530d1854636981e71678444916244864cff8a2"
+      }
+    },
+    {
+      "index": 64,
+      "label": "path-snapshot.categories.7-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "064.input.bin",
+        "bytes": 3583,
+        "sha256": "21da3643ea61ffdafb2406fe86bf6a46b851375fbb32e93bc77731a559478a9d"
+      }
+    },
+    {
+      "index": 65,
+      "label": "path-snapshot.categories.8-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "065.input.bin",
+        "bytes": 3599,
+        "sha256": "dbd803bb7e8a7dffdc459d99fb34bafe813d98b1ecf9ad8fc4eeaa733f189aba"
+      }
+    },
+    {
+      "index": 66,
+      "label": "path-snapshot.categories.8-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "066.input.bin",
+        "bytes": 3603,
+        "sha256": "6d5e548568665ba5e9c2d7e92a9f9547f6c58c1c93715e8b9815e3a12ab2258c"
+      }
+    },
+    {
+      "index": 67,
+      "label": "path-snapshot.categories.8-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "067.input.bin",
+        "bytes": 3597,
+        "sha256": "d77aca06da9bb287ea7df1f78e61738bd271396d3c1c3bc7fa0ccf3d6c01a52a"
+      }
+    },
+    {
+      "index": 68,
+      "label": "path-snapshot.categories.8-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "068.input.bin",
+        "bytes": 3597,
+        "sha256": "b57dd75e0ba9ed77ec67bc6782c1afa504745e82aca08675c059a5bfd47880cc"
+      }
+    },
+    {
+      "index": 69,
+      "label": "path-snapshot.categories.8-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "069.input.bin",
+        "bytes": 3608,
+        "sha256": "d2a4c1fd38092e44ef12746b69d056aebacc61edc72f8e09422e67e4611cbd21"
+      }
+    },
+    {
+      "index": 70,
+      "label": "path-snapshot.categories.8-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "070.input.bin",
+        "bytes": 3583,
+        "sha256": "7a3be4c72d9470cff413e10171509ea22038814693829d64794a10b16912ea5c"
+      }
+    },
+    {
+      "index": 71,
+      "label": "path-snapshot.categories.9-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "071.input.bin",
+        "bytes": 3596,
+        "sha256": "5b99c96ddd9a6a4c9dd0dbe3240ceae28d305954b9596881911546f00a907756"
+      }
+    },
+    {
+      "index": 72,
+      "label": "path-snapshot.categories.9-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "072.input.bin",
+        "bytes": 3600,
+        "sha256": "2d10e7f75cf32f5bad879e330922dd067246531da6c4f2f5d4fdca27e8c85329"
+      }
+    },
+    {
+      "index": 73,
+      "label": "path-snapshot.categories.9-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "073.input.bin",
+        "bytes": 3597,
+        "sha256": "20945d1c9c6c77c7cd6b0e02247db7945842a8c1789380d2b47d99bd1eb3fd8d"
+      }
+    },
+    {
+      "index": 74,
+      "label": "path-snapshot.categories.9-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "074.input.bin",
+        "bytes": 3597,
+        "sha256": "d5c27b8ad2c4ded322e71c87ee2bbb907530f00cc7ba7b90074bf4e49c96e961"
+      }
+    },
+    {
+      "index": 75,
+      "label": "path-snapshot.categories.9-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "075.input.bin",
+        "bytes": 3608,
+        "sha256": "88b2fb9b23e89cbcc8d73fb77440f5eb24ea24b4b14788bf56287265cc70451a"
+      }
+    },
+    {
+      "index": 76,
+      "label": "path-snapshot.categories.9-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "076.input.bin",
+        "bytes": 3583,
+        "sha256": "a17a50aeb40309e12107cc7ead922baad3da07d4b76b989296ae70ce6c017300"
+      }
+    },
+    {
+      "index": 77,
+      "label": "path-snapshot.categories.10-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "077.input.bin",
+        "bytes": 3596,
+        "sha256": "23b04a896c5d32ba185fc2b138195ed141da3285f1eafb9ae5380a28557497d9"
+      }
+    },
+    {
+      "index": 78,
+      "label": "path-snapshot.categories.10-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "078.input.bin",
+        "bytes": 3600,
+        "sha256": "517e2ae5d5bb90f953e6094dc4aa5b02993f33c67ba9b3a783cc462b33a11bed"
+      }
+    },
+    {
+      "index": 79,
+      "label": "path-snapshot.categories.10-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "079.input.bin",
+        "bytes": 3597,
+        "sha256": "9accf83cee06d598a579aad38326c1a1a5cd007e5e492d58cb9883198b9daa6d"
+      }
+    },
+    {
+      "index": 80,
+      "label": "path-snapshot.categories.10-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "080.input.bin",
+        "bytes": 3597,
+        "sha256": "830b6e4ba180a28917c2ad1b6ba687f0a72c7755e3b3367026b0b65891193b8c"
+      }
+    },
+    {
+      "index": 81,
+      "label": "path-snapshot.categories.10-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "081.input.bin",
+        "bytes": 3608,
+        "sha256": "9576ae6588ec79e1a35734d89788ef8de70406a9adcb9ac3b43b14a76ab69d2c"
+      }
+    },
+    {
+      "index": 82,
+      "label": "path-snapshot.categories.10-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "082.input.bin",
+        "bytes": 3583,
+        "sha256": "f8c00998f46b80f70352c1e6e42f21e2cc0f590cc5a0092daa33cd5dac5a2c6d"
+      }
+    },
+    {
+      "index": 83,
+      "label": "path-snapshot.categories.11-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "083.input.bin",
+        "bytes": 3595,
+        "sha256": "10012490ff1b7fd3fab6fa7ec08f8fa7eae6576acd5e382704a0e382760bb11d"
+      }
+    },
+    {
+      "index": 84,
+      "label": "path-snapshot.categories.11-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "084.input.bin",
+        "bytes": 3599,
+        "sha256": "6df7e4514b34a836527e6528fe444cc6278151d0ce5bf3b6b75d85277af1050b"
+      }
+    },
+    {
+      "index": 85,
+      "label": "path-snapshot.categories.11-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "085.input.bin",
+        "bytes": 3597,
+        "sha256": "a05cd3f9aca5274582cac4cb0b54f0d7e9777fad788a321c195995cab38ba084"
+      }
+    },
+    {
+      "index": 86,
+      "label": "path-snapshot.categories.11-field-intention",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "086.input.bin",
+        "bytes": 3597,
+        "sha256": "8a6bfb74307725b669a51d32556795fa89529fa2722d679c5efa707473829d91"
+      }
+    },
+    {
+      "index": 87,
+      "label": "path-snapshot.categories.11-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "087.input.bin",
+        "bytes": 3608,
+        "sha256": "aff338cc89e1a25ab6e6a6a9a4c461fbbb1833e13d7a037c8446e6c9918698fa"
+      }
+    },
+    {
+      "index": 88,
+      "label": "path-snapshot.categories.11-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "088.input.bin",
+        "bytes": 3583,
+        "sha256": "cab878661725a985fdaf659ccee6ba46177df1f84fbbd7fc0632f82a019c57c3"
+      }
+    },
+    {
+      "index": 89,
+      "label": "path-snapshot.services.0-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "089.input.bin",
+        "bytes": 3567,
+        "sha256": "772fd2ebd227e07ed1507f2f78939623bbe464ba6b22641f8fe0aaf086b5d2b9"
+      }
+    },
+    {
+      "index": 90,
+      "label": "path-snapshot.services.0-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "090.input.bin",
+        "bytes": 3601,
+        "sha256": "eee424fe0cd81ce5b838a6f21d256f5b46ccf8cebda5e6dd4b63cc9b4157c4c8"
+      }
+    },
+    {
+      "index": 91,
+      "label": "path-snapshot.services.0-field-serviceCatalogId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "091.input.bin",
+        "bytes": 3602,
+        "sha256": "5ebc83ebff2ce81b6ab65713619ce6b519d190a58ff421242d6482b592c16b3c"
+      }
+    },
+    {
+      "index": 92,
+      "label": "path-snapshot.services.0-field-otherServiceName",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "092.input.bin",
+        "bytes": 3589,
+        "sha256": "c050d69861296988494f7c5878d82111ad4c2f4bacc3e8294fdfe15b60ca8e26"
+      }
+    },
+    {
+      "index": 93,
+      "label": "path-snapshot.services.0-field-recordState",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "093.input.bin",
+        "bytes": 3600,
+        "sha256": "255f684e127f7869dd91cc9fe9592452561c9cba0edf92cff6fefc9ac0ce2e2c"
+      }
+    },
+    {
+      "index": 94,
+      "label": "path-snapshot.services.0-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "094.input.bin",
+        "bytes": 3597,
+        "sha256": "ee05974e89ae151a342f38c61e1bcce53faef3803d2ea2bb9bcb41810cab3bfd"
+      }
+    },
+    {
+      "index": 95,
+      "label": "path-snapshot.services.0-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "095.input.bin",
+        "bytes": 3608,
+        "sha256": "ed718cc095c5e4bc97f085bda5a6729462cb3c340ed6467c996fbac0064614f6"
+      }
+    },
+    {
+      "index": 96,
+      "label": "path-snapshot.services.0-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "096.input.bin",
+        "bytes": 3583,
+        "sha256": "eb23ee43a833b484569fedb1ec1d790074e580d4261922d077367a1245f61ab7"
+      }
+    },
+    {
+      "index": 97,
+      "label": "path-snapshot.services.0.answers-field-importantData",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "097.input.bin",
+        "bytes": 3597,
+        "sha256": "82afab4a44876e1d30b22810b6488ce2d4e33e4f32d520eef40c9aefa99ab7ad"
+      }
+    },
+    {
+      "index": 98,
+      "label": "path-snapshot.services.0.answers-field-backup",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "098.input.bin",
+        "bytes": 3597,
+        "sha256": "8a10e7fae5f449e31c9fb636d2b3bdbb1be1e7d7bc281bb6c7cf02a3a774f467"
+      }
+    },
+    {
+      "index": 99,
+      "label": "path-snapshot.services.1-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "099.input.bin",
+        "bytes": 3567,
+        "sha256": "7cd61436cf058668c5ed4497de40a003ff8365c066096b99735a68c35a4aedce"
+      }
+    },
+    {
+      "index": 100,
+      "label": "path-snapshot.services.1-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "100.input.bin",
+        "bytes": 3601,
+        "sha256": "1b82992d31fbdb65e3ec26e55cb0e9b549a50007de1835f7e4302f02ad18f829"
+      }
+    },
+    {
+      "index": 101,
+      "label": "path-snapshot.services.1-field-serviceCatalogId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "101.input.bin",
+        "bytes": 3602,
+        "sha256": "a85ce2e3c809a9d9592c182fb97bd0a4106e89a38429e8d5babad2c48506277d"
+      }
+    },
+    {
+      "index": 102,
+      "label": "path-snapshot.services.1-field-otherServiceName",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "102.input.bin",
+        "bytes": 3595,
+        "sha256": "bbe8d90265ea674d9a82e2b9dee5e060670daf9bfb2f9f2ad0b18e49cd07be2e"
+      }
+    },
+    {
+      "index": 103,
+      "label": "path-snapshot.services.1-field-recordState",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "103.input.bin",
+        "bytes": 3598,
+        "sha256": "669dfc2a9ec17364ab2a04d0b2893371839ddc55b6e621e79cc3fbd459c81fde"
+      }
+    },
+    {
+      "index": 104,
+      "label": "path-snapshot.services.1-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "104.input.bin",
+        "bytes": 3600,
+        "sha256": "02bb78966e358b54eb4439c9942b368f24ccfe8611a316e56618b448558c8805"
+      }
+    },
+    {
+      "index": 105,
+      "label": "path-snapshot.services.1-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "105.input.bin",
+        "bytes": 3608,
+        "sha256": "c90691c8a346669b04de61130991ceae546332da77071d8422f867db982f4a3c"
+      }
+    },
+    {
+      "index": 106,
+      "label": "path-snapshot.services.1-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "106.input.bin",
+        "bytes": 3583,
+        "sha256": "c9b0c31b80fcecdd7d97cdd8c955c2d80e527c5271869a7a7ddb43018b0a6026"
+      }
+    },
+    {
+      "index": 107,
+      "label": "path-snapshot.services.1.answers-field-importantData",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "107.input.bin",
+        "bytes": 3597,
+        "sha256": "264c41fd81ac6a7ac8e2e8d1b486d24c04a62d7da21ae6ab07e50be407a83e64"
+      }
+    },
+    {
+      "index": 108,
+      "label": "path-snapshot.services.1.answers-field-backup",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "108.input.bin",
+        "bytes": 3597,
+        "sha256": "ac6ce0ace56d0f2ec64074c1be79d4ceb3234578bf0497ca56fcd145820e6b1a"
+      }
+    },
+    {
+      "index": 109,
+      "label": "path-snapshot.services.2-field-recordId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "109.input.bin",
+        "bytes": 3567,
+        "sha256": "0551255af55b03ee9cc6e2e44e8f594962ae6261e8090c929432c7022f59daa9"
+      }
+    },
+    {
+      "index": 110,
+      "label": "path-snapshot.services.2-field-categoryKey",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "110.input.bin",
+        "bytes": 3603,
+        "sha256": "ee9568a36d6c326a5cba8dc4f47f77cd28c35ca102e8f42fd1383e1110cb8f04"
+      }
+    },
+    {
+      "index": 111,
+      "label": "path-snapshot.services.2-field-serviceCatalogId",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "111.input.bin",
+        "bytes": 3602,
+        "sha256": "e50743eb83180480c681ee8e666421392230dd582f8bf83e694191d75dc66edd"
+      }
+    },
+    {
+      "index": 112,
+      "label": "path-snapshot.services.2-field-otherServiceName",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "112.input.bin",
+        "bytes": 3589,
+        "sha256": "f77666702778b3e0217d506264b465efce7cf698d5001e7eaace4b0ed51f2ccc"
+      }
+    },
+    {
+      "index": 113,
+      "label": "path-snapshot.services.2-field-recordState",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "113.input.bin",
+        "bytes": 3600,
+        "sha256": "542bf8285c8f3230ff6ffc88317ef00024171c2e23ac73cf3d4e270bbd8fe232"
+      }
+    },
+    {
+      "index": 114,
+      "label": "path-snapshot.services.2-field-usageStatus",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "114.input.bin",
+        "bytes": 3597,
+        "sha256": "69e6a48dc285a085c3f20063dd9d4f7d2411cf37e8a2c04db2399a820fe682a1"
+      }
+    },
+    {
+      "index": 115,
+      "label": "path-snapshot.services.2-field-revision",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "115.input.bin",
+        "bytes": 3608,
+        "sha256": "c1f83dedfc4805b91debada652da16809b5a02dd448a886e4b8b5ca1696267bc"
+      }
+    },
+    {
+      "index": 116,
+      "label": "path-snapshot.services.2-field-schemaVersion",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "116.input.bin",
+        "bytes": 3583,
+        "sha256": "941a4e6af209f012d95ac83c7727b5cd6da69d196cd3e5bd5fb1cc25f7889276"
+      }
+    },
+    {
+      "index": 117,
+      "label": "path-snapshot.services.2.answers-field-handover",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "117.input.bin",
+        "bytes": 3597,
+        "sha256": "5355db71ace09b8b61c865d6d042ce00982afb6dac38b8e1be129f9c48f1ce0b"
+      }
+    },
+    {
+      "index": 118,
+      "label": "path-snapshot.services.2.answers-field-importantData",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "118.input.bin",
+        "bytes": 3597,
+        "sha256": "2783fea2cda55e418e0c9fef659cbf2cb31646900dedcffc13434703f6b3ee93"
+      }
+    },
+    {
+      "index": 119,
+      "label": "path-snapshot.services.2.answers-field-billing",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "119.input.bin",
+        "bytes": 3597,
+        "sha256": "fb11905dfa6f15f80f71884f662bb30d4b74df8e3f55c979c40aa91522d1f2b1"
+      }
+    },
+    {
+      "index": 120,
+      "label": "path-checksum-field-algorithm",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "120.input.bin",
+        "bytes": 3600,
+        "sha256": "ae9a9ec4aa2d328792b528fc149cfaaaf4c528ac557f090532db67955ef86215"
+      }
+    },
+    {
+      "index": 121,
+      "label": "path-checksum-field-hex",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "121.input.bin",
+        "bytes": 3543,
+        "sha256": "48b7c5086f5408f50515a5f8813f887fed7e7b25884d2d9a3360c9f4d5830c27"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

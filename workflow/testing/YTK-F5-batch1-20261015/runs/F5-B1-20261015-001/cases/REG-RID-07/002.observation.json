@@ -1,0 +1,26 @@
+{
+  "caseId": "REG:RID-07",
+  "attempt": 1,
+  "label": "collision-candidate",
+  "index": 2,
+  "startedAt": "2026-10-15T13:53:18.984Z",
+  "finishedAt": "2026-10-15T13:53:18.985Z",
+  "input": {
+    "path": "002.input.bin",
+    "bytes": 115,
+    "sha256": "4b0b0e6613ab9c2c20e2963363c47d8b3bd2a8f4eebae9619772ab801c7e3f59"
+  },
+  "expected": {
+    "value": "svc_00000000-0000-4000-8000-000000000003",
+    "calls": 2,
+    "inputsUnchanged": true
+  },
+  "actual": {
+    "value": "svc_00000000-0000-4000-8000-000000000003",
+    "calls": 2,
+    "inputsUnchanged": true
+  },
+  "oracle": "Occupied existing/candidate must retry and return fresh third ID",
+  "status": "PASS",
+  "executionError": null
+}

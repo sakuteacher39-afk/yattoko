@@ -1,0 +1,55 @@
+{
+  "caseId": "F3:R02-26",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 134,
+    "description": "checksum algorithm未知。",
+    "details": [
+      "- 期待：reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:22.787Z",
+  "finishedAt": "2026-10-15T13:53:22.797Z",
+  "variantCount": 3,
+  "totalObservations": 3,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "unknown-algorithm-SHA-512",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "00bda38e7fc79a23224b385bbfceac3a8d1810f637df2122fa6087cfbadac3e3"
+      }
+    },
+    {
+      "index": 2,
+      "label": "unknown-algorithm-MD5",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3603,
+        "sha256": "4bda4220121db03d858cedd2a3fd1f0ce940db213b2f505e0a6bf1356fc6bd13"
+      }
+    },
+    {
+      "index": 3,
+      "label": "unknown-algorithm-null",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3602,
+        "sha256": "b5572ec29c22f10b1498a141950fa1a37f6c3b94074af7ad8b61d995465c3a4a"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

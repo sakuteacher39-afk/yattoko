@@ -1,0 +1,53 @@
+{
+  "caseId": "REG:GEN-01",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 362,
+    "description": "valid gen UUIDv4 accept。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:19.045Z",
+  "finishedAt": "2026-10-15T13:53:19.051Z",
+  "variantCount": 3,
+  "totalObservations": 3,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "native-generation",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 17,
+        "sha256": "b2b6490252ab3dead05849eb364716dd6b30fb94ca8eacb712ba8f448a532682"
+      }
+    },
+    {
+      "index": 2,
+      "label": "valid-generation-dataset",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 2325,
+        "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+      }
+    },
+    {
+      "index": 3,
+      "label": "fallback-mask",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 24,
+        "sha256": "8c113d61c5c67ff2367dc76d52eb734e7a996aec6d9b4a225cea9c3e77503cc8"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

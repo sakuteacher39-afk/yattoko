@@ -1,0 +1,31 @@
+{
+  "caseId": "REG:GEN-03",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 364,
+    "description": "normal mutationでgeneration不変。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:19.153Z",
+  "finishedAt": "2026-10-15T13:53:19.157Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "normal-mutation-keeps-generation",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 2325,
+        "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

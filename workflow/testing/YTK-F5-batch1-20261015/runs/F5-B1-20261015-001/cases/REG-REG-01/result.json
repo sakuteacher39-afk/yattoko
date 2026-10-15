@@ -1,0 +1,42 @@
+{
+  "caseId": "REG:REG-01",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 337,
+    "description": "fileFormatVersion exact 1のみaccept。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.049Z",
+  "finishedAt": "2026-10-15T13:53:18.063Z",
+  "variantCount": 2,
+  "totalObservations": 2,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "registry-exact",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 203,
+        "sha256": "31af77ae53af49019082ce09f44e1f781abae9a68e4a9ff64844727066acb8d9"
+      }
+    },
+    {
+      "index": 2,
+      "label": "format-version-1",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3607,
+        "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

@@ -1,0 +1,26 @@
+{
+  "caseId": "F3:R07-14",
+  "attempt": 1,
+  "label": "invalid-generation-generation_00000000-0000-4000-8000-000000000001",
+  "index": 13,
+  "startedAt": "2026-10-15T13:53:21.087Z",
+  "finishedAt": "2026-10-15T13:53:21.087Z",
+  "input": {
+    "path": "013.input.bin",
+    "bytes": 2332,
+    "sha256": "7ab426012416ee3e1c290c9405cd49b5550ea413f966653ab050bbabd2aa6934"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "validation",
+    "errorName": "Error",
+    "inputUnchanged": true
+  },
+  "oracle": "Approved F2 record shape / enum / identity; no SUT validator used as expected oracle",
+  "status": "PASS",
+  "executionError": null
+}

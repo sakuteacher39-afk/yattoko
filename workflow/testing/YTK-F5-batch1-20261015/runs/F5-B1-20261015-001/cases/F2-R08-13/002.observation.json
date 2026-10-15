@@ -1,0 +1,25 @@
+{
+  "caseId": "F2:R08-13",
+  "attempt": 1,
+  "label": "override-\"keep\"",
+  "index": 2,
+  "startedAt": "2026-10-15T13:53:19.645Z",
+  "finishedAt": "2026-10-15T13:53:19.646Z",
+  "input": {
+    "path": "002.input.bin",
+    "bytes": 3365,
+    "sha256": "a3afd4740be8d0168e2d0c8da1ec2cdd5168443d32ac1b0a946925ba29eeed00"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": true,
+    "outputSHA256": "a3afd4740be8d0168e2d0c8da1ec2cdd5168443d32ac1b0a946925ba29eeed00",
+    "inputUnchanged": true
+  },
+  "oracle": "Approved F2 record shape / enum / identity; no SUT validator used as expected oracle",
+  "status": "PASS",
+  "executionError": null
+}

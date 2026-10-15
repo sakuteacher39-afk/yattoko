@@ -1,0 +1,33 @@
+{
+  "caseId": "F3:R02-21",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 123,
+    "description": "F2 NFC必須fieldがnon-NFC。",
+    "details": [
+      "- 期待：normalizeせずreject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:22.245Z",
+  "finishedAt": "2026-10-15T13:53:22.249Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "non-NFC-no-repair",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3592,
+        "sha256": "7f50dbcda0b69a5a928d838a44d65e3c1a53b0b0d860c5f3fbbe20b2ac02b2b4"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

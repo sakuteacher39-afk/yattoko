@@ -1,0 +1,23 @@
+{
+  "caseId": "REG:GEN-01",
+  "attempt": 1,
+  "label": "native-generation",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:19.045Z",
+  "finishedAt": "2026-10-15T13:53:19.046Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 17,
+    "sha256": "b2b6490252ab3dead05849eb364716dd6b30fb94ca8eacb712ba8f448a532682"
+  },
+  "expected": {
+    "valid": true
+  },
+  "actual": {
+    "valid": true,
+    "raw": "gen_337f1dfe-bc24-44b1-ab7a-dce6bfb991a6"
+  },
+  "oracle": "Independent gen UUIDv4 grammar",
+  "status": "PASS",
+  "executionError": null
+}

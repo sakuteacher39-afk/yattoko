@@ -1,0 +1,31 @@
+{
+  "caseId": "REG:MAN-01",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 344,
+    "description": "normative manifest JSON parse/schema validation。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.406Z",
+  "finishedAt": "2026-10-15T13:53:18.409Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "normative-json-schema",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 12772,
+        "sha256": "772997d001162bd5f225de0afbba623eb86ea7f55e7453b897fbb6d3316b8b63"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

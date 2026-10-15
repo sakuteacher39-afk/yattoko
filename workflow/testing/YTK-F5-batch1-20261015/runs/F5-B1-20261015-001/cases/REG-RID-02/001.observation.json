@@ -1,0 +1,120 @@
+{
+  "caseId": "REG:RID-02",
+  "attempt": 1,
+  "label": "exact-category-ids",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:18.673Z",
+  "finishedAt": "2026-10-15T13:53:18.673Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 2325,
+    "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "expected": {
+    "pairs": [
+      [
+        "cat_device",
+        "device"
+      ],
+      [
+        "cat_base",
+        "base"
+      ],
+      [
+        "cat_mail",
+        "mail"
+      ],
+      [
+        "cat_social",
+        "social"
+      ],
+      [
+        "cat_cloud",
+        "cloud"
+      ],
+      [
+        "cat_subscription",
+        "subscription"
+      ],
+      [
+        "cat_finance",
+        "finance"
+      ],
+      [
+        "cat_commerce",
+        "commerce"
+      ],
+      [
+        "cat_auth",
+        "auth"
+      ],
+      [
+        "cat_license",
+        "license"
+      ],
+      [
+        "cat_carrier",
+        "carrier"
+      ],
+      [
+        "cat_business",
+        "business"
+      ]
+    ]
+  },
+  "actual": {
+    "pairs": [
+      [
+        "cat_device",
+        "device"
+      ],
+      [
+        "cat_base",
+        "base"
+      ],
+      [
+        "cat_mail",
+        "mail"
+      ],
+      [
+        "cat_social",
+        "social"
+      ],
+      [
+        "cat_cloud",
+        "cloud"
+      ],
+      [
+        "cat_subscription",
+        "subscription"
+      ],
+      [
+        "cat_finance",
+        "finance"
+      ],
+      [
+        "cat_commerce",
+        "commerce"
+      ],
+      [
+        "cat_auth",
+        "auth"
+      ],
+      [
+        "cat_license",
+        "license"
+      ],
+      [
+        "cat_carrier",
+        "carrier"
+      ],
+      [
+        "cat_business",
+        "business"
+      ]
+    ]
+  },
+  "oracle": "Approved 12 literal IDs and canonical order",
+  "status": "PASS",
+  "executionError": null
+}

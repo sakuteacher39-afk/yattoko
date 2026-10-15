@@ -1,0 +1,53 @@
+{
+  "caseId": "REG:REG-06",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 342,
+    "description": "old/future versionをmigrationしない。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.347Z",
+  "finishedAt": "2026-10-15T13:53:18.358Z",
+  "variantCount": 3,
+  "totalObservations": 3,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "unregistered-ytk-f2-20261013-old",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3566,
+        "sha256": "48d2be29c4d88605163730050ca395c0644d192a8e49c028885c6840a28829af"
+      }
+    },
+    {
+      "index": 2,
+      "label": "unregistered-ytk-f2-20990101-future",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3569,
+        "sha256": "da4131a5aecf92bf9e81425ed44a9a802ffc2386c21aeff76e2c098d3a63b517"
+      }
+    },
+    {
+      "index": 3,
+      "label": "unregistered-unknown",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3554,
+        "sha256": "e0110d7c27a66117300185aee386f213c30b1a1dc193e860bd591914970f7fba"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

@@ -1,0 +1,29 @@
+{
+  "caseId": "F3:R02-09",
+  "attempt": 1,
+  "label": "leading-space",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:21.584Z",
+  "finishedAt": "2026-10-15T13:53:21.586Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 3608,
+    "sha256": "f72f1f60c0556d4f4bee778e7785a9a503bfec7ad6d4c0bd2eca82bf0388ffc6"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "CANONICAL",
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "LEXICAL",
+    "errorName": "Error",
+    "fileReads": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true
+  },
+  "oracle": "Original approved expectation is canonical raw mismatch reject; earlier lexical reject is recorded as a stage mismatch, not silently accepted",
+  "status": "FAIL",
+  "executionError": null
+}

@@ -1,0 +1,24 @@
+{
+  "caseId": "REG:GEN-03",
+  "attempt": 1,
+  "label": "normal-mutation-keeps-generation",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:19.154Z",
+  "finishedAt": "2026-10-15T13:53:19.155Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 2325,
+    "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "expected": {
+    "generation": "gen_00000000-0000-4000-8000-000000000001",
+    "global": 2
+  },
+  "actual": {
+    "generation": "gen_00000000-0000-4000-8000-000000000001",
+    "global": 2
+  },
+  "oracle": "Normal mutation preserves generation, unlike deleteAll/restore",
+  "status": "PASS",
+  "executionError": null
+}

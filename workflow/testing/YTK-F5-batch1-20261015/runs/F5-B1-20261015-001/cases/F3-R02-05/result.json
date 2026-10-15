@@ -1,0 +1,33 @@
+{
+  "caseId": "F3:R02-05",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 97,
+    "description": "root duplicate same key different value。",
+    "details": [
+      "- 期待：lexical reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:21.371Z",
+  "finishedAt": "2026-10-15T13:53:21.374Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "different-value-duplicate",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3626,
+        "sha256": "8c7fc11d2d25313e59df8c3126e7121059e32f501e9cc3ea448180f499e3bbe0"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

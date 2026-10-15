@@ -1,0 +1,29 @@
+{
+  "caseId": "REG:REG-06",
+  "attempt": 1,
+  "label": "unregistered-ytk-f2-20990101-future",
+  "index": 2,
+  "startedAt": "2026-10-15T13:53:18.352Z",
+  "finishedAt": "2026-10-15T13:53:18.353Z",
+  "input": {
+    "path": "002.input.bin",
+    "bytes": 3569,
+    "sha256": "da4131a5aecf92bf9e81425ed44a9a802ffc2386c21aeff76e2c098d3a63b517"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "VERSION",
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "VERSION",
+    "errorName": "Error",
+    "fileReads": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true
+  },
+  "oracle": "Synthetic old/future/unregistered pair: only literal ACTIVE pair registered; input cannot be migrated or returned",
+  "status": "PASS",
+  "executionError": null
+}

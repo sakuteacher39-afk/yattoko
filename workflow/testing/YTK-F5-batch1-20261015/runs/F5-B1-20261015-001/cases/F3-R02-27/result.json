@@ -1,0 +1,66 @@
+{
+  "caseId": "F3:R02-27",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 136,
+    "description": "checksum hex uppercase/長さ63/65/非hex。",
+    "details": [
+      "- 期待：reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:22.850Z",
+  "finishedAt": "2026-10-15T13:53:22.868Z",
+  "variantCount": 4,
+  "totalObservations": 4,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "uppercase",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "783b8cfb592bf88eea09eb6c77cabb97efabec72f99c9d2d626bd3dfba25268a"
+      }
+    },
+    {
+      "index": 2,
+      "label": "short63",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3606,
+        "sha256": "e2e0da04160e87933441813147e15190f38934c2407a96b11cf3f6f9c8659212"
+      }
+    },
+    {
+      "index": 3,
+      "label": "long65",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3608,
+        "sha256": "ed25f3fe8ca9b1f4d9c940130ac79d889214eb1e875902bb616cb9fc12d99f89"
+      }
+    },
+    {
+      "index": 4,
+      "label": "nonhex",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 3607,
+        "sha256": "ac500b8e4252d56b894e2dcdad40c2e909df636e7bd54944a5d5b8c90438101d"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

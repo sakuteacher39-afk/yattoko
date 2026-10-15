@@ -1,0 +1,44 @@
+{
+  "caseId": "F3:R02-24",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 130,
+    "description": "body 1 byte変更/checksum据置。",
+    "details": [
+      "- 期待：checksum reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:22.669Z",
+  "finishedAt": "2026-10-15T13:53:22.677Z",
+  "variantCount": 2,
+  "totalObservations": 2,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "single-byte-independent-precondition",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+      }
+    },
+    {
+      "index": 2,
+      "label": "single-byte-stale-checksum",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3607,
+        "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

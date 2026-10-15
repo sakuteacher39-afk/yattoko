@@ -1,0 +1,28 @@
+{
+  "caseId": "F3:R02-28",
+  "attempt": 1,
+  "label": "SHA-export-failure",
+  "index": 2,
+  "startedAt": "2026-10-15T13:53:22.932Z",
+  "finishedAt": "2026-10-15T13:53:22.933Z",
+  "input": {
+    "path": "002.input.bin",
+    "bytes": 2325,
+    "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "DIGEST_FAILED",
+    "writes": 0,
+    "datasetUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "DIGEST_FAILED",
+    "writes": 0,
+    "datasetUnchanged": true
+  },
+  "oracle": "Failure rejects without archive/destination save; independent before/after dataset hash",
+  "status": "PASS",
+  "executionError": null
+}

@@ -1,0 +1,26 @@
+{
+  "caseId": "F3:MAN-07",
+  "attempt": 1,
+  "label": "manifest-counts",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:19.297Z",
+  "finishedAt": "2026-10-15T13:53:19.298Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 12772,
+    "sha256": "772997d001162bd5f225de0afbba623eb86ea7f55e7453b897fbb6d3316b8b63"
+  },
+  "expected": {
+    "categories": 12,
+    "questions": 33,
+    "conditional": 1
+  },
+  "actual": {
+    "categories": 12,
+    "questions": 33,
+    "conditional": 1
+  },
+  "oracle": "Approved literal counts 12/33/1; normative source blob is independently pinned",
+  "status": "PASS",
+  "executionError": null
+}

@@ -1,0 +1,29 @@
+{
+  "caseId": "F3:R02-40",
+  "attempt": 1,
+  "label": "truncated-parse",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:23.416Z",
+  "finishedAt": "2026-10-15T13:53:23.417Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 3606,
+    "sha256": "45cce1a8680b4446a648520e1e91eacdffec955776433b5914ef6afd1d7fadf0"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "LEXICAL",
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "LEXICAL",
+    "errorName": "Error",
+    "fileReads": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true
+  },
+  "oracle": "Lexical parse stops on truncated object before full JSON.parse; malformed raw file cannot yield a token",
+  "status": "PASS",
+  "executionError": null
+}

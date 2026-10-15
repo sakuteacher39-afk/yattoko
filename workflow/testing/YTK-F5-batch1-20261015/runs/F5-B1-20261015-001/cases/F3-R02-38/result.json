@@ -1,0 +1,61 @@
+{
+  "caseId": "F3:R02-38",
+  "status": "PASS",
+  "attempt": 2,
+  "attemptHistory": [
+    {
+      "caseId": "F3:R02-38",
+      "attempt": 1,
+      "status": "NOT VERIFIABLE",
+      "category": "FIXTURE_DEFECT",
+      "fixtureId": "V-HASH-01",
+      "expected": {
+        "sameLength": true,
+        "differingBytes": 1
+      },
+      "actual": {
+        "bytes": 3605,
+        "sha256": "055a9280747f8b464437c76230736281b77f9b5904898f15f24195c56a88db18",
+        "singleByteDifference": false
+      },
+      "reason": "Prepared fixture replaces a 3-byte Japanese codepoint by ASCII; original retained, derived single-ASCII-byte fixture used in attempt2.",
+      "recordedAt": "2026-10-15T13:53:23.304Z"
+    }
+  ],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 152,
+    "description": "V-HASH-01 reject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:23.302Z",
+  "finishedAt": "2026-10-15T13:53:23.311Z",
+  "variantCount": 2,
+  "totalObservations": 2,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "single-byte-independent-precondition",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+      }
+    },
+    {
+      "index": 2,
+      "label": "single-byte-stale-checksum",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3607,
+        "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

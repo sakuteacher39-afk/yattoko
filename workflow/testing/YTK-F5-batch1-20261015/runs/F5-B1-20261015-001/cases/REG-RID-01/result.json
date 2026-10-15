@@ -1,0 +1,53 @@
+{
+  "caseId": "REG:RID-01",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 354,
+    "description": "overview exact `ovw_main`。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.617Z",
+  "finishedAt": "2026-10-15T13:53:18.625Z",
+  "variantCount": 3,
+  "totalObservations": 3,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "exact-overview",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 2325,
+        "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+      }
+    },
+    {
+      "index": 2,
+      "label": "valid-overview",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 2325,
+        "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+      }
+    },
+    {
+      "index": 3,
+      "label": "invalid-overview",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 2326,
+        "sha256": "c324d518469e7e8d3ce6d8a50e4bf2f0bd63c6cc084b09f1980cdc92d71ab61b"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

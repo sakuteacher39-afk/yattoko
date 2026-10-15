@@ -1,0 +1,64 @@
+{
+  "caseId": "REG:REG-03",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 339,
+    "description": "schema/question exact accepted pairのみaccept。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.180Z",
+  "finishedAt": "2026-10-15T13:53:18.195Z",
+  "variantCount": 4,
+  "totalObservations": 4,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "only-registered-pair",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+      }
+    },
+    {
+      "index": 2,
+      "label": "pair-ytk-f2-20261014-0d5dfa38-unknown",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3559,
+        "sha256": "6fae41f7c505e2ba70e0ce2b511ab407d809f8275da15611875c0d2172ec56df"
+      }
+    },
+    {
+      "index": 3,
+      "label": "pair-unknown-ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3590,
+        "sha256": "4a5b4465dec7d572ddc512cc4b783f5f9a88bfad530de04d68652a438076994d"
+      }
+    },
+    {
+      "index": 4,
+      "label": "pair-unknown-unknown",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 3542,
+        "sha256": "6bc1af3e864f42c07472c2b48a31603a65644962b5da88acd63a9ded45335ac5"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

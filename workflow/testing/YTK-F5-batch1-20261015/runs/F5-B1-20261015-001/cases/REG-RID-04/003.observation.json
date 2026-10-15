@@ -1,0 +1,23 @@
+{
+  "caseId": "REG:RID-04",
+  "attempt": 1,
+  "label": "native-primary-service-id",
+  "index": 3,
+  "startedAt": "2026-10-15T13:53:18.800Z",
+  "finishedAt": "2026-10-15T13:53:18.800Z",
+  "input": {
+    "path": "003.input.bin",
+    "bytes": 17,
+    "sha256": "b2b6490252ab3dead05849eb364716dd6b30fb94ca8eacb712ba8f448a532682"
+  },
+  "expected": {
+    "valid": true
+  },
+  "actual": {
+    "valid": true,
+    "raw": "svc_1ad94382-927b-4367-b78a-89b60d041503"
+  },
+  "oracle": "Independent UUIDv4 lowercase/version/variant regex",
+  "status": "PASS",
+  "executionError": null
+}

@@ -1,0 +1,24 @@
+{
+  "caseId": "REG:GEN-01",
+  "attempt": 1,
+  "label": "fallback-mask",
+  "index": 3,
+  "startedAt": "2026-10-15T13:53:19.050Z",
+  "finishedAt": "2026-10-15T13:53:19.050Z",
+  "input": {
+    "path": "003.input.bin",
+    "bytes": 24,
+    "sha256": "8c113d61c5c67ff2367dc76d52eb734e7a996aec6d9b4a225cea9c3e77503cc8"
+  },
+  "expected": {
+    "service": "svc_ffffffff-ffff-4fff-bfff-ffffffffffff",
+    "generation": "gen_ffffffff-ffff-4fff-bfff-ffffffffffff"
+  },
+  "actual": {
+    "service": "svc_ffffffff-ffff-4fff-bfff-ffffffffffff",
+    "generation": "gen_ffffffff-ffff-4fff-bfff-ffffffffffff"
+  },
+  "oracle": "RFC4122 version4 and variant bits independently calculated from ff entropy",
+  "status": "PASS",
+  "executionError": null
+}

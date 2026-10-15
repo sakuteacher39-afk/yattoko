@@ -1,0 +1,42 @@
+{
+  "caseId": "F3:R02-37",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 151,
+    "description": "V-UTF-01 / V-BOM-01 reject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:23.252Z",
+  "finishedAt": "2026-10-15T13:53:23.257Z",
+  "variantCount": 2,
+  "totalObservations": 2,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "V-UTF-01",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3595,
+        "sha256": "06a7226584301aa7af9887653071844af1ff26794936b5403e5c88ea2c959d87"
+      }
+    },
+    {
+      "index": 2,
+      "label": "V-BOM-01",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3610,
+        "sha256": "a7fc5b8e9c9b7ead6b3d37337c45824a642c4d48b52e7294f2276d9262c2aee8"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

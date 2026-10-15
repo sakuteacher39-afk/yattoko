@@ -1,0 +1,174 @@
+{
+  "caseId": "REG:RID-05",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 358,
+    "description": "uppercase/braces/v1/v7/invalid variant/service prefix typo reject。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.848Z",
+  "finishedAt": "2026-10-15T13:53:18.884Z",
+  "variantCount": 14,
+  "totalObservations": 14,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "grammar-svc_00000000-0000-1000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3363,
+        "sha256": "fbb85d109c8b6a96b3b65a27f54ce6f3f2c2fce5ce4a301e258ed1a95f04041a"
+      }
+    },
+    {
+      "index": 2,
+      "label": "import-grammar-svc_00000000-0000-1000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3607,
+        "sha256": "b567f2727c6170ce3b4c8794d77f94f3022d8f8f4dd3a737e2a7f86ce44a1c03"
+      }
+    },
+    {
+      "index": 3,
+      "label": "grammar-svc_00000000-0000-7000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3363,
+        "sha256": "0e67743e503b772af61c745c2dd6dd700967cb23fb6ec2b85082fafb72131055"
+      }
+    },
+    {
+      "index": 4,
+      "label": "import-grammar-svc_00000000-0000-7000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 3607,
+        "sha256": "d89b1855c3fcf66ce3c10f7b29fcedb4c4e45893d35d72b22ff86895f35aec79"
+      }
+    },
+    {
+      "index": 5,
+      "label": "grammar-svc_00000000-0000-4000-7000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "005.input.bin",
+        "bytes": 3363,
+        "sha256": "522747900e8dd4c78a694ebdff65503e4f4cb3795fffdc4de628809a6b28f221"
+      }
+    },
+    {
+      "index": 6,
+      "label": "import-grammar-svc_00000000-0000-4000-7000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "006.input.bin",
+        "bytes": 3607,
+        "sha256": "1a330ad84cc4d6945fc6fb05937114b50252b219cdd7743ed74ec055624be06b"
+      }
+    },
+    {
+      "index": 7,
+      "label": "grammar-svc_AAAAAAAA-AAAA-4AAA-8AAA-AAAAAAAAAAAA",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "007.input.bin",
+        "bytes": 3363,
+        "sha256": "5c3746354e647d9e6308d3d3633e4c68c80f4462731a5cf7d251898afa99dd17"
+      }
+    },
+    {
+      "index": 8,
+      "label": "import-grammar-svc_AAAAAAAA-AAAA-4AAA-8AAA-AAAAAAAAAAAA",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "008.input.bin",
+        "bytes": 3607,
+        "sha256": "76349d108646db546c98746bf5b92990207e18b3fcfb2e201545297cf2cad1fc"
+      }
+    },
+    {
+      "index": 9,
+      "label": "grammar-svc_{00000000-0000-4000-8000-000000000001}",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "009.input.bin",
+        "bytes": 3365,
+        "sha256": "b72736d5f22a55fcfa03cb279d75ab3b872b42236ef86a360461210b692d2ffb"
+      }
+    },
+    {
+      "index": 10,
+      "label": "import-grammar-svc_{00000000-0000-4000-8000-000000000001}",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "010.input.bin",
+        "bytes": 3609,
+        "sha256": "86305e51f3f9e493a1258a8735ca9f66c72550995a201a7a15878d9bc0dceec0"
+      }
+    },
+    {
+      "index": 11,
+      "label": "grammar-svc_00000000-0000-4000-8000-00000000000g",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "011.input.bin",
+        "bytes": 3363,
+        "sha256": "518430e983863c9a8c2ac406e8321efa86bec2f2a27fb9abe43161552e6920de"
+      }
+    },
+    {
+      "index": 12,
+      "label": "import-grammar-svc_00000000-0000-4000-8000-00000000000g",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "012.input.bin",
+        "bytes": 3607,
+        "sha256": "b68b595b56814ce80a77a45fbedc793696c7253a561ed9e48ef6d6e3b866457c"
+      }
+    },
+    {
+      "index": 13,
+      "label": "grammar-service_00000000-0000-4000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "013.input.bin",
+        "bytes": 3367,
+        "sha256": "1e6c1488b79f9e20a08f76ea98107f8eefd89b61a6fe4b45bb1a820a1bc19e69"
+      }
+    },
+    {
+      "index": 14,
+      "label": "import-grammar-service_00000000-0000-4000-8000-000000000001",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "014.input.bin",
+        "bytes": 3611,
+        "sha256": "fe09f9a5990766463e1937e1a82359d87f9941aac193bdbb952f28e164ecc8e5"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

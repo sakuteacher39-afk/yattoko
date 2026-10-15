@@ -1,0 +1,25 @@
+{
+  "caseId": "F2:R08-04",
+  "attempt": 1,
+  "label": "state-completed-usage-dormant",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:19.546Z",
+  "finishedAt": "2026-10-15T13:53:19.546Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 3362,
+    "sha256": "7a860dbe8f04003f9521e64657ed3468abca0ca9f2f8b1fc79c4377405f6acfa"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": true,
+    "outputSHA256": "7a860dbe8f04003f9521e64657ed3468abca0ca9f2f8b1fc79c4377405f6acfa",
+    "inputUnchanged": true
+  },
+  "oracle": "Approved F2 record shape / enum / identity; no SUT validator used as expected oracle",
+  "status": "PASS",
+  "executionError": null
+}

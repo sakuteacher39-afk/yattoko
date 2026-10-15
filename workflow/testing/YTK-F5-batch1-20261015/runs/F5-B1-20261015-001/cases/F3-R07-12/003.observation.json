@@ -1,0 +1,29 @@
+{
+  "caseId": "F3:R07-12",
+  "attempt": 1,
+  "label": "unregistered-unknown",
+  "index": 3,
+  "startedAt": "2026-10-15T13:53:20.926Z",
+  "finishedAt": "2026-10-15T13:53:20.928Z",
+  "input": {
+    "path": "003.input.bin",
+    "bytes": 3554,
+    "sha256": "e0110d7c27a66117300185aee386f213c30b1a1dc193e860bd591914970f7fba"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "VERSION",
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "VERSION",
+    "errorName": "Error",
+    "fileReads": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true
+  },
+  "oracle": "Synthetic old/future/unregistered pair: only literal ACTIVE pair registered; input cannot be migrated or returned",
+  "status": "PASS",
+  "executionError": null
+}

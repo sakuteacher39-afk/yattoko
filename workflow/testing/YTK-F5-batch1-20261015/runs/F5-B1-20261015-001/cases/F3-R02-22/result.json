@@ -1,0 +1,867 @@
+{
+  "caseId": "F3:R02-22",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 125,
+    "description": "F2 control/bidi rejectをimportでも同一適用。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:22.295Z",
+  "finishedAt": "2026-10-15T13:53:22.542Z",
+  "variantCount": 77,
+  "totalObservations": 77,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "control-U0",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "6eb6e591463ff594eb6e0d762e8fb0c0ad948e21ab3c7532cfe21c38d4502d74"
+      }
+    },
+    {
+      "index": 2,
+      "label": "control-U1",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3607,
+        "sha256": "119082c64c04fa7ab551705ac021da330cd0c46b4275433a1e7ff07ae2edc3b0"
+      }
+    },
+    {
+      "index": 3,
+      "label": "control-U2",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3607,
+        "sha256": "e6aaa01fce554f29c895e359aae1b7dc1f658fdf6d9a9985223164d27ab34230"
+      }
+    },
+    {
+      "index": 4,
+      "label": "control-U3",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 3607,
+        "sha256": "6492e06067a134e0316a286eb09b687f77bb8a4367271c3736ed551bafe055d3"
+      }
+    },
+    {
+      "index": 5,
+      "label": "control-U4",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "005.input.bin",
+        "bytes": 3607,
+        "sha256": "4e484caebd2240807c4c49f7778ea201da60d84637c4d5709bf809f1044d935d"
+      }
+    },
+    {
+      "index": 6,
+      "label": "control-U5",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "006.input.bin",
+        "bytes": 3607,
+        "sha256": "ded1bf7c32e4b8bc8ba592dea70dcb8b769c7ead5df3c5c98a174f8bd8698c7a"
+      }
+    },
+    {
+      "index": 7,
+      "label": "control-U6",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "007.input.bin",
+        "bytes": 3607,
+        "sha256": "6a689639ddd98945e4ace4453107578162b40104f473674c16548d77ff02d474"
+      }
+    },
+    {
+      "index": 8,
+      "label": "control-U7",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "008.input.bin",
+        "bytes": 3607,
+        "sha256": "4aada488f4327f1da544fcc61186ada9ac5e76fe31d551161b1bfc2d92d3ef43"
+      }
+    },
+    {
+      "index": 9,
+      "label": "control-U8",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "009.input.bin",
+        "bytes": 3603,
+        "sha256": "981b5ccb2419513e6041979584cc4621b7f2915fc410f5d8e7356f30664d84e3"
+      }
+    },
+    {
+      "index": 10,
+      "label": "control-U9",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "010.input.bin",
+        "bytes": 3603,
+        "sha256": "9d88bcd4b233d64ebe4f8f5459f03a1d525f4eacf9fb275d03762abf333687c7"
+      }
+    },
+    {
+      "index": 11,
+      "label": "control-Ua",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "011.input.bin",
+        "bytes": 3603,
+        "sha256": "f915a5acba957efe2c4d32be4ea718eb15c7e3d8fe4b4097ac062cab27fe0c0d"
+      }
+    },
+    {
+      "index": 12,
+      "label": "control-Ub",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "012.input.bin",
+        "bytes": 3607,
+        "sha256": "4d1cc513c24f8f552bf8e4cfaea5991589046da6d1866824659d4ae2e9a35d16"
+      }
+    },
+    {
+      "index": 13,
+      "label": "control-Uc",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "013.input.bin",
+        "bytes": 3603,
+        "sha256": "d9491df35b67e57173b3cbc7ca2388e7c48ac065348f3017db6155939a5c826f"
+      }
+    },
+    {
+      "index": 14,
+      "label": "control-Ud",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "014.input.bin",
+        "bytes": 3603,
+        "sha256": "669ca16e30cc0ed5eb18d16c3a032920b52a19a71d8e23ff39983636f4314c83"
+      }
+    },
+    {
+      "index": 15,
+      "label": "control-Ue",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "015.input.bin",
+        "bytes": 3607,
+        "sha256": "be3c4bfa89a1fa880a349e6132b1e52ace681daaf3044f17a67e561650e18602"
+      }
+    },
+    {
+      "index": 16,
+      "label": "control-Uf",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "016.input.bin",
+        "bytes": 3607,
+        "sha256": "1718192e8c81390bb2b35b438490bc531d2b10d0dc8cf3bb4e0db056c556e19f"
+      }
+    },
+    {
+      "index": 17,
+      "label": "control-U10",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "017.input.bin",
+        "bytes": 3607,
+        "sha256": "ab30f3f4853da22b1d3610780db363d1a4b46c87608de4c895d52d42a3fc9ccf"
+      }
+    },
+    {
+      "index": 18,
+      "label": "control-U11",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "018.input.bin",
+        "bytes": 3607,
+        "sha256": "e357b9a4a99f140fde1d3859066b17f152a45dc4a4c3200942b81966927a9916"
+      }
+    },
+    {
+      "index": 19,
+      "label": "control-U12",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "019.input.bin",
+        "bytes": 3607,
+        "sha256": "46ae1a8a33c2372c2253250a66754d3ef3999934abf9272c94681ed9806d469d"
+      }
+    },
+    {
+      "index": 20,
+      "label": "control-U13",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "020.input.bin",
+        "bytes": 3607,
+        "sha256": "e42adb3bddda8272f88d0c3bda53c6aebd0eeab2a8f2ec865a266356faa6a5ba"
+      }
+    },
+    {
+      "index": 21,
+      "label": "control-U14",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "021.input.bin",
+        "bytes": 3607,
+        "sha256": "59e5bc83e81ce9f36524ac513ef1e1728461c4c141ffa1e4e7e138d2dd494d55"
+      }
+    },
+    {
+      "index": 22,
+      "label": "control-U15",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "022.input.bin",
+        "bytes": 3607,
+        "sha256": "128a1a1b4d179433706dabe1ec8e1ca12628b43cd676a27eb55f58b05d3c4bfa"
+      }
+    },
+    {
+      "index": 23,
+      "label": "control-U16",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "023.input.bin",
+        "bytes": 3607,
+        "sha256": "4939685e3b769fb0bc35dcb4963c3d6dd01976e5189476b3918596e018fc6ee8"
+      }
+    },
+    {
+      "index": 24,
+      "label": "control-U17",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "024.input.bin",
+        "bytes": 3607,
+        "sha256": "d4ace7904685800a5a174c99f274f8f89e4650cbd877b3241cdc352952fafad5"
+      }
+    },
+    {
+      "index": 25,
+      "label": "control-U18",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "025.input.bin",
+        "bytes": 3607,
+        "sha256": "20b0ed4b368c98a726cabad592834f312d9a32f8a5efa6f066de80ee380fa864"
+      }
+    },
+    {
+      "index": 26,
+      "label": "control-U19",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "026.input.bin",
+        "bytes": 3607,
+        "sha256": "9caac7dd651247bd7412264fa3ee4c864ed14d83d8441ee31cc5cae6f75ab855"
+      }
+    },
+    {
+      "index": 27,
+      "label": "control-U1a",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "027.input.bin",
+        "bytes": 3607,
+        "sha256": "a272c87b93085537de3c2ccd42d2b90c2f4810ddd4ceb29e0640867e5e02834d"
+      }
+    },
+    {
+      "index": 28,
+      "label": "control-U1b",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "028.input.bin",
+        "bytes": 3607,
+        "sha256": "2b46a704856a5baf6406cc2239806efdb2040b60f1e4ef7945c02d896d891ca2"
+      }
+    },
+    {
+      "index": 29,
+      "label": "control-U1c",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "029.input.bin",
+        "bytes": 3607,
+        "sha256": "57c8ed3140485a92b69e84b67793da5faab3468055f16ae2ff0de7c22d53bec8"
+      }
+    },
+    {
+      "index": 30,
+      "label": "control-U1d",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "030.input.bin",
+        "bytes": 3607,
+        "sha256": "1c5eba36a37caf0da5a18caf051be44460d2f2669a0498b24c98375a0640e1f0"
+      }
+    },
+    {
+      "index": 31,
+      "label": "control-U1e",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "031.input.bin",
+        "bytes": 3607,
+        "sha256": "7337935741a46c5fa81d32133548a8d305595b34509dc9b5739b797564aaa317"
+      }
+    },
+    {
+      "index": 32,
+      "label": "control-U1f",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "032.input.bin",
+        "bytes": 3607,
+        "sha256": "f7a624a6fb961faa595f256c612f97c203c48e7766800e17872dc53117921318"
+      }
+    },
+    {
+      "index": 33,
+      "label": "control-U7f",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "033.input.bin",
+        "bytes": 3602,
+        "sha256": "a0a9f0533ac17ef9d161df236f0c0615735dc2d36eeb71dc793c0443475f3e55"
+      }
+    },
+    {
+      "index": 34,
+      "label": "control-U80",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "034.input.bin",
+        "bytes": 3603,
+        "sha256": "8e1dd3156216c487c08dcc43fcf6fd266d3c4127860222c266a6a05e76f6643e"
+      }
+    },
+    {
+      "index": 35,
+      "label": "control-U81",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "035.input.bin",
+        "bytes": 3603,
+        "sha256": "a95a7b306a3e8b2b4aef5fd9d513775f07db3b0cf936e2ab67bb8b2c2c6bc753"
+      }
+    },
+    {
+      "index": 36,
+      "label": "control-U82",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "036.input.bin",
+        "bytes": 3603,
+        "sha256": "57447df88fa92db44e6c48f31e979ebc503e23d53bdf797db5b02bdf2b7a6765"
+      }
+    },
+    {
+      "index": 37,
+      "label": "control-U83",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "037.input.bin",
+        "bytes": 3603,
+        "sha256": "d686081e30ac578fc89f65cd3fc5e55d76185d215154f3badca5d1ea7665b0a6"
+      }
+    },
+    {
+      "index": 38,
+      "label": "control-U84",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "038.input.bin",
+        "bytes": 3603,
+        "sha256": "144098f00f130e9a77b6d2873137a15c4fe67a4412263c6ba0c14d489c240536"
+      }
+    },
+    {
+      "index": 39,
+      "label": "control-U85",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "039.input.bin",
+        "bytes": 3603,
+        "sha256": "eaf2025eadb2e396c321110155057813ca9fe978fc06acc11926537ef8871818"
+      }
+    },
+    {
+      "index": 40,
+      "label": "control-U86",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "040.input.bin",
+        "bytes": 3603,
+        "sha256": "917f81cf3cb6aacd9ad4129fe80a0e40f6a8d9024285df29c3f4c5ccacb539fe"
+      }
+    },
+    {
+      "index": 41,
+      "label": "control-U87",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "041.input.bin",
+        "bytes": 3603,
+        "sha256": "11e4fd25957b18ad4c3b276be50ad4333a7867521b11e0eb6a14e34d9691e045"
+      }
+    },
+    {
+      "index": 42,
+      "label": "control-U88",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "042.input.bin",
+        "bytes": 3603,
+        "sha256": "94ec3fdeb25a0fb76684ab228ea8cce7c58e34416c9c4c696b849a594c491e9a"
+      }
+    },
+    {
+      "index": 43,
+      "label": "control-U89",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "043.input.bin",
+        "bytes": 3603,
+        "sha256": "0deca8ca468864903c57f0b7e90cf76978be2b68930de5dac6869cc6fbe5269f"
+      }
+    },
+    {
+      "index": 44,
+      "label": "control-U8a",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "044.input.bin",
+        "bytes": 3603,
+        "sha256": "31059caebcd838111e13517ae0d0de2954c1c8fd1f22a2ecc231fe4cf7e783bf"
+      }
+    },
+    {
+      "index": 45,
+      "label": "control-U8b",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "045.input.bin",
+        "bytes": 3603,
+        "sha256": "29beddba4f59532ace01c332cd72d17caccc1a4b4d90d5dbf1f31697cc99fc2e"
+      }
+    },
+    {
+      "index": 46,
+      "label": "control-U8c",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "046.input.bin",
+        "bytes": 3603,
+        "sha256": "c3213fb056c45511c4cd845685cb8d41e07021d97ee5e49ec41b2a35cff0a007"
+      }
+    },
+    {
+      "index": 47,
+      "label": "control-U8d",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "047.input.bin",
+        "bytes": 3603,
+        "sha256": "0ecf6496f269e910cea612bab32c729645e32dee56910a5dc51b80bc15a4a7ff"
+      }
+    },
+    {
+      "index": 48,
+      "label": "control-U8e",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "048.input.bin",
+        "bytes": 3603,
+        "sha256": "ad880c8eea598082c4809192804b7e9b9beaa5795c198519d19392de08a82aa5"
+      }
+    },
+    {
+      "index": 49,
+      "label": "control-U8f",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "049.input.bin",
+        "bytes": 3603,
+        "sha256": "1583a6e311ef788aafd2fc2017cdc27a7c911df15c685b7ba0161d1deb5e5484"
+      }
+    },
+    {
+      "index": 50,
+      "label": "control-U90",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "050.input.bin",
+        "bytes": 3603,
+        "sha256": "d8a1b202bd025bcf6272c2c53ce1164afd7a133a833d283088122e3615db77b6"
+      }
+    },
+    {
+      "index": 51,
+      "label": "control-U91",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "051.input.bin",
+        "bytes": 3603,
+        "sha256": "1cfd77e14459c2f356cd5285fef02456ce589e3b5c5eb58f049e4cbac30c486d"
+      }
+    },
+    {
+      "index": 52,
+      "label": "control-U92",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "052.input.bin",
+        "bytes": 3603,
+        "sha256": "e85ce5dad64d1b3a5df3c2e321808b544dcbfb3b3898ee45529d73a9d96f00b8"
+      }
+    },
+    {
+      "index": 53,
+      "label": "control-U93",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "053.input.bin",
+        "bytes": 3603,
+        "sha256": "8e15c6477f8b7e19110b57f62136ffc8706f46ada92eab0bdc22af3a9d075e6a"
+      }
+    },
+    {
+      "index": 54,
+      "label": "control-U94",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "054.input.bin",
+        "bytes": 3603,
+        "sha256": "80558c36911ea5d89c77818cdfdc85fd3d005ec7e1970692c7983de7df5a12f3"
+      }
+    },
+    {
+      "index": 55,
+      "label": "control-U95",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "055.input.bin",
+        "bytes": 3603,
+        "sha256": "60857313d69208ead8b2eedf997c982046068b67dd69376e29bf6a8226ff56f8"
+      }
+    },
+    {
+      "index": 56,
+      "label": "control-U96",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "056.input.bin",
+        "bytes": 3603,
+        "sha256": "76cf88d3ce0ec3b35a6eaf7805537dafa43bb4390c34786bd0bcf479139d42eb"
+      }
+    },
+    {
+      "index": 57,
+      "label": "control-U97",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "057.input.bin",
+        "bytes": 3603,
+        "sha256": "79a78ddb783d41ef47ff6ccd78a580063350e23dd181046ccc3c17b53cd98258"
+      }
+    },
+    {
+      "index": 58,
+      "label": "control-U98",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "058.input.bin",
+        "bytes": 3603,
+        "sha256": "ab72972e80c6965df34a8583af1d0f9a5a4e5cf2b2a511312161c3c5c12c6142"
+      }
+    },
+    {
+      "index": 59,
+      "label": "control-U99",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "059.input.bin",
+        "bytes": 3603,
+        "sha256": "874ce33f901acc22dc5aebe1267407e43f501f524f5794a4c222afb0431066f2"
+      }
+    },
+    {
+      "index": 60,
+      "label": "control-U9a",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "060.input.bin",
+        "bytes": 3603,
+        "sha256": "9e065d45c8857d1767239c58ccd7183a70d4fe08538f1a01e0a42ff529f7e916"
+      }
+    },
+    {
+      "index": 61,
+      "label": "control-U9b",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "061.input.bin",
+        "bytes": 3603,
+        "sha256": "214f1151e79fbfa60da6ee2f35829818c31e9b3d0545643961efe2524802e827"
+      }
+    },
+    {
+      "index": 62,
+      "label": "control-U9c",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "062.input.bin",
+        "bytes": 3603,
+        "sha256": "2e123841484b534dac928b1d18cded93bf7389a5eaaf155311e457996fd4ace0"
+      }
+    },
+    {
+      "index": 63,
+      "label": "control-U9d",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "063.input.bin",
+        "bytes": 3603,
+        "sha256": "844e4ae28d4709b225deddb2d7e604ad6fc7fe1bd2a2e79ec1038ff96acaec8c"
+      }
+    },
+    {
+      "index": 64,
+      "label": "control-U9e",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "064.input.bin",
+        "bytes": 3603,
+        "sha256": "bc433d6d1f4d739da7d909c46cc5e60436660605024d97684f2b885753527cc1"
+      }
+    },
+    {
+      "index": 65,
+      "label": "control-U9f",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "065.input.bin",
+        "bytes": 3603,
+        "sha256": "8490b9febe0d6ff3c0563352c464da4667a47d085e8328aae0dc826268c12e31"
+      }
+    },
+    {
+      "index": 66,
+      "label": "control-U61c",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "066.input.bin",
+        "bytes": 3603,
+        "sha256": "5aa999cde614cd1f4bcc69994b40aed314751d79482fc9e8ee7e1341afc191c3"
+      }
+    },
+    {
+      "index": 67,
+      "label": "control-U200e",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "067.input.bin",
+        "bytes": 3604,
+        "sha256": "1bd20c59bdec6445f6a8fd35d759e09739d8c19c5a070c93606d22a67679806d"
+      }
+    },
+    {
+      "index": 68,
+      "label": "control-U200f",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "068.input.bin",
+        "bytes": 3604,
+        "sha256": "fd581d51df712542a11a059a18aaac44920a0a8609e32523af3bd8971a53c49b"
+      }
+    },
+    {
+      "index": 69,
+      "label": "control-U202a",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "069.input.bin",
+        "bytes": 3604,
+        "sha256": "4a0fb69791afc567d2d2453f8af76980d06de5518036bf564b8e5e1a42de5b4e"
+      }
+    },
+    {
+      "index": 70,
+      "label": "control-U202b",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "070.input.bin",
+        "bytes": 3604,
+        "sha256": "7fd2f0c51ac8fd4ddacecb0fcb9fc2dbf6eaeac5e26c9da7d636cf7ba9c09c1e"
+      }
+    },
+    {
+      "index": 71,
+      "label": "control-U202c",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "071.input.bin",
+        "bytes": 3604,
+        "sha256": "e882cb335ad0634d14b220199df275b5c01e83b6b507ce551499e1032254a9a8"
+      }
+    },
+    {
+      "index": 72,
+      "label": "control-U202d",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "072.input.bin",
+        "bytes": 3604,
+        "sha256": "7a627d0d2f6ae0cb5a96d68459639a9d3fc27e1b60cd6d8f21e09e494c99e76d"
+      }
+    },
+    {
+      "index": 73,
+      "label": "control-U202e",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "073.input.bin",
+        "bytes": 3604,
+        "sha256": "3874991b82fd3babc957a5c764032809737d6e68922131883eebfb61bd64869d"
+      }
+    },
+    {
+      "index": 74,
+      "label": "control-U2066",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "074.input.bin",
+        "bytes": 3604,
+        "sha256": "aa8f6eb1c935103a679fe4243abd756b16dd8f863a09404369615b7a4fa8b564"
+      }
+    },
+    {
+      "index": 75,
+      "label": "control-U2067",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "075.input.bin",
+        "bytes": 3604,
+        "sha256": "75ad7238580b19c26d2a3fa221068ee736d0d738da15b2a8e7abd377723a5608"
+      }
+    },
+    {
+      "index": 76,
+      "label": "control-U2068",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "076.input.bin",
+        "bytes": 3604,
+        "sha256": "c2dfb017a737b77e94a350428a46d51b6f553d888cf6957cf6d0eee709f68f8d"
+      }
+    },
+    {
+      "index": 77,
+      "label": "control-U2069",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "077.input.bin",
+        "bytes": 3604,
+        "sha256": "26f2de9dff64fec0f1023ed4a36ae66f0e197212d62240282ba6b75e9e93fb69"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

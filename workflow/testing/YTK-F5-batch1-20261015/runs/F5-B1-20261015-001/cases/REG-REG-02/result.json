@@ -1,0 +1,75 @@
+{
+  "caseId": "REG:REG-02",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 338,
+    "description": "unknown/0/2/string \"1\" reject。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.112Z",
+  "finishedAt": "2026-10-15T13:53:18.131Z",
+  "variantCount": 5,
+  "totalObservations": 5,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "format-0",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "32bff2818eefda6bd1085487573550e6d8848d3fcf75e4437e6dcc717e2150f9"
+      }
+    },
+    {
+      "index": 2,
+      "label": "format-2",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3607,
+        "sha256": "b18ba26384e0e33bab47909194ec2f34849d50a8a8250389c2be7e8adcc180eb"
+      }
+    },
+    {
+      "index": 3,
+      "label": "format-\"1\"",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3609,
+        "sha256": "e9bbeaa190b2eebef8cb3df9259762a6763f5201acff9cdbe75fada6ae5b829a"
+      }
+    },
+    {
+      "index": 4,
+      "label": "format-99",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 3608,
+        "sha256": "3cfeba96d2a4c2817f729d04f338cf1bef8ddf2273b1b0c53cdb8a5a82c620c8"
+      }
+    },
+    {
+      "index": 5,
+      "label": "format-null",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "005.input.bin",
+        "bytes": 3610,
+        "sha256": "faaa323eb826ed359c4d62b726897dd86394034b569090507d27dca403b855eb"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

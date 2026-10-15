@@ -1,0 +1,31 @@
+{
+  "caseId": "F3:R02-36",
+  "status": "FAIL",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 150,
+    "description": "V-UNK-01 reject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:23.202Z",
+  "finishedAt": "2026-10-15T13:53:23.206Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "V-UNK-01",
+      "attempt": 1,
+      "status": "FAIL",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3625,
+        "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c"
+      }
+    }
+  ],
+  "reason": "One or more actual observations differ from predeclared expectation"
+}

@@ -1,0 +1,26 @@
+{
+  "caseId": "F3:R02-24",
+  "attempt": 1,
+  "label": "single-byte-independent-precondition",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:22.670Z",
+  "finishedAt": "2026-10-15T13:53:22.672Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 3607,
+    "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+  },
+  "expected": {
+    "sameLength": true,
+    "differingBytes": 1,
+    "oldChecksumRetained": true
+  },
+  "actual": {
+    "sameLength": true,
+    "differingBytes": 1,
+    "oldChecksumRetained": true
+  },
+  "oracle": "Only ASCII date digit changed; still valid timestamp/schema; checksum unchanged",
+  "status": "PASS",
+  "executionError": null
+}

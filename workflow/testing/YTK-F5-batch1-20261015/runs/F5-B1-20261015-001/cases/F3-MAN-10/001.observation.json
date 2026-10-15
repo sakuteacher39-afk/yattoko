@@ -1,0 +1,42 @@
+{
+  "caseId": "F3:MAN-10",
+  "attempt": 1,
+  "label": "exact-condition",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:19.393Z",
+  "finishedAt": "2026-10-15T13:53:19.394Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 12772,
+    "sha256": "772997d001162bd5f225de0afbba623eb86ea7f55e7453b897fbb6d3316b8b63"
+  },
+  "expected": {
+    "conditional": [
+      {
+        "categoryKey": "subscription",
+        "key": "billingSource",
+        "presence": {
+          "type": "equals",
+          "questionKey": "billing",
+          "value": "yes"
+        }
+      }
+    ]
+  },
+  "actual": {
+    "conditional": [
+      {
+        "categoryKey": "subscription",
+        "key": "billingSource",
+        "presence": {
+          "type": "equals",
+          "questionKey": "billing",
+          "value": "yes"
+        }
+      }
+    ]
+  },
+  "oracle": "Approved subscription.billingSource iff billing=yes",
+  "status": "PASS",
+  "executionError": null
+}

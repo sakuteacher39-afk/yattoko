@@ -1,0 +1,55 @@
+{
+  "caseId": "F3:R02-09",
+  "status": "FAIL",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 105,
+    "description": "余分な空白/newline。",
+    "details": [
+      "- 期待：canonical raw mismatch reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:21.583Z",
+  "finishedAt": "2026-10-15T13:53:21.595Z",
+  "variantCount": 3,
+  "totalObservations": 3,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "leading-space",
+      "attempt": 1,
+      "status": "FAIL",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3608,
+        "sha256": "f72f1f60c0556d4f4bee778e7785a9a503bfec7ad6d4c0bd2eca82bf0388ffc6"
+      }
+    },
+    {
+      "index": 2,
+      "label": "trailing-newline",
+      "attempt": 1,
+      "status": "FAIL",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3608,
+        "sha256": "a116d557ba7fb2fd9e8e206f44e0339c599e6cb6ac2f2182aba873dd1b4fce5e"
+      }
+    },
+    {
+      "index": 3,
+      "label": "inner-space",
+      "attempt": 1,
+      "status": "FAIL",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3608,
+        "sha256": "a713b5057f9b8e55dad2b31088a02906191c3a7034785e69790c01e256fd8f0a"
+      }
+    }
+  ],
+  "reason": "One or more actual observations differ from predeclared expectation"
+}

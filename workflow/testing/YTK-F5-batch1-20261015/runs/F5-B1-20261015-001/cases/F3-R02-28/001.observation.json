@@ -1,0 +1,29 @@
+{
+  "caseId": "F3:R02-28",
+  "attempt": 1,
+  "label": "SHA-import-failure",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:22.928Z",
+  "finishedAt": "2026-10-15T13:53:22.931Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 3607,
+    "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+  },
+  "expected": {
+    "accepted": false,
+    "digestCalls": 1,
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "INVALID_FILE",
+    "errorName": "Error",
+    "fileReads": 1,
+    "digestCalls": 1,
+    "inputUnchanged": true
+  },
+  "oracle": "Rejecting SHA dependency cannot produce verified token",
+  "status": "PASS",
+  "executionError": null
+}

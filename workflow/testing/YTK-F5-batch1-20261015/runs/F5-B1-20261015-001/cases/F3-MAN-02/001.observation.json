@@ -1,0 +1,48 @@
+{
+  "caseId": "F3:MAN-02",
+  "attempt": 1,
+  "label": "canonical-12-order",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:19.250Z",
+  "finishedAt": "2026-10-15T13:53:19.251Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 12772,
+    "sha256": "772997d001162bd5f225de0afbba623eb86ea7f55e7453b897fbb6d3316b8b63"
+  },
+  "expected": {
+    "keys": [
+      "device",
+      "base",
+      "mail",
+      "social",
+      "cloud",
+      "subscription",
+      "finance",
+      "commerce",
+      "auth",
+      "license",
+      "carrier",
+      "business"
+    ]
+  },
+  "actual": {
+    "keys": [
+      "device",
+      "base",
+      "mail",
+      "social",
+      "cloud",
+      "subscription",
+      "finance",
+      "commerce",
+      "auth",
+      "license",
+      "carrier",
+      "business"
+    ]
+  },
+  "oracle": "Literal canonical F2 order, not read from SUT",
+  "status": "PASS",
+  "executionError": null
+}

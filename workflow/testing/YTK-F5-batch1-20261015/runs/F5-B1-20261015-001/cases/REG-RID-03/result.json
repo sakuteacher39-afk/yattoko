@@ -1,0 +1,152 @@
+{
+  "caseId": "REG:RID-03",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+    "line": 356,
+    "description": "categoryKey/recordId mismatch reject。",
+    "details": [],
+    "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+  },
+  "startedAt": "2026-10-15T13:53:18.722Z",
+  "finishedAt": "2026-10-15T13:53:18.746Z",
+  "variantCount": 12,
+  "totalObservations": 12,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "mismatch-device",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 2324,
+        "sha256": "6da4e4b2ee11ada5782a21f09a3ee6616d0c59086e0d4c186f0fc0147b73ff0c"
+      }
+    },
+    {
+      "index": 2,
+      "label": "mismatch-base",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 2326,
+        "sha256": "89b8edd5282a7c1f01402ff1a3682313c802f80afd5279a1da55d43891f7b7bc"
+      }
+    },
+    {
+      "index": 3,
+      "label": "mismatch-mail",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 2326,
+        "sha256": "5f15b95321ec576cf9e6f6d777217371a8adb784d2e6b55224a7f463623a3c46"
+      }
+    },
+    {
+      "index": 4,
+      "label": "mismatch-social",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 2324,
+        "sha256": "9bada4543601cbfffc0e6432e13632ff4dcf6d59213bce4cbe036e4eeeae0d35"
+      }
+    },
+    {
+      "index": 5,
+      "label": "mismatch-cloud",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "005.input.bin",
+        "bytes": 2325,
+        "sha256": "966a383e7aa2fdb4c2b73d1a9197ea664b4c0c969dd8d54bf49ad1e8f82ab790"
+      }
+    },
+    {
+      "index": 6,
+      "label": "mismatch-subscription",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "006.input.bin",
+        "bytes": 2318,
+        "sha256": "84a6630c46bd993472c0c14f0bac8aaafb196518a8dd5ccdc716aead500de6d1"
+      }
+    },
+    {
+      "index": 7,
+      "label": "mismatch-finance",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "007.input.bin",
+        "bytes": 2323,
+        "sha256": "c25f743cb6b4691775c6db2010c858cb3a30a728c437ae68366d4a02567e7d8a"
+      }
+    },
+    {
+      "index": 8,
+      "label": "mismatch-commerce",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "008.input.bin",
+        "bytes": 2322,
+        "sha256": "2ed1b310ee10eff72cf96f7c5d7d402cbfbaf7ed1e69616e1ff2eb0a84bdd5d8"
+      }
+    },
+    {
+      "index": 9,
+      "label": "mismatch-auth",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "009.input.bin",
+        "bytes": 2326,
+        "sha256": "e3df448c597f0428224ce5812972e88ce1ab4060eed6f6e576d6392dc37fbeb0"
+      }
+    },
+    {
+      "index": 10,
+      "label": "mismatch-license",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "010.input.bin",
+        "bytes": 2323,
+        "sha256": "e40a2b3c947b532f088303d7e27529176f1347c0a41e503b0b70c106fe6a10e8"
+      }
+    },
+    {
+      "index": 11,
+      "label": "mismatch-carrier",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "011.input.bin",
+        "bytes": 2323,
+        "sha256": "640f39d6477023e36fa1cd48b2a419efe68540a9c19f9dc232e3279071902079"
+      }
+    },
+    {
+      "index": 12,
+      "label": "mismatch-business",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "012.input.bin",
+        "bytes": 2322,
+        "sha256": "4bc5743e5b5ea11b24b7b0714c4282aae358993a69da11367011f18836798b01"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

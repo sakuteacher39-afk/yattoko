@@ -1,0 +1,55 @@
+{
+  "caseId": "F3:R02-10",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 107,
+    "description": "unnecessary unicode escape / slash escape。",
+    "details": [
+      "- 期待：canonical raw mismatch reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:21.648Z",
+  "finishedAt": "2026-10-15T13:53:21.662Z",
+  "variantCount": 3,
+  "totalObservations": 3,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "unnecessary-unicode-escape",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3612,
+        "sha256": "bf5c2e0ecd3f08aff580add5866d984fc624621ab14e79f12985ce3a370ef00b"
+      }
+    },
+    {
+      "index": 2,
+      "label": "slash-control",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3608,
+        "sha256": "35ca1aac250a3f08d3a348af09041fb7f91c302fe381e6ac2fbb1a99afd60001"
+      }
+    },
+    {
+      "index": 3,
+      "label": "unnecessary-slash-escape",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3609,
+        "sha256": "06830daf27f9e70bb06077c476dd385b36a6d44aa58e0fdc133baea3d30ff64b"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

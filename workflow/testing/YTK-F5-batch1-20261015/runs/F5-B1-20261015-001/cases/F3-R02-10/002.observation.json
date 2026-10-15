@@ -1,0 +1,29 @@
+{
+  "caseId": "F3:R02-10",
+  "attempt": 1,
+  "label": "slash-control",
+  "index": 2,
+  "startedAt": "2026-10-15T13:53:21.654Z",
+  "finishedAt": "2026-10-15T13:53:21.657Z",
+  "input": {
+    "path": "002.input.bin",
+    "bytes": 3608,
+    "sha256": "35ca1aac250a3f08d3a348af09041fb7f91c302fe381e6ac2fbb1a99afd60001"
+  },
+  "expected": {
+    "accepted": true,
+    "snapshotSHA256": "b3295fcde175bc6dbe1fe8a333100f9775e66ecbced19e68ece935aea7a0baec",
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": true,
+    "snapshotSHA256": "b3295fcde175bc6dbe1fe8a333100f9775e66ecbced19e68ece935aea7a0baec",
+    "sourceFileId": "f3:1:94094285da0789b5721c8647dfe69b69b803ab267d568aa78ca291dc29f967c3",
+    "fileReads": 1,
+    "digestCalls": 1,
+    "inputUnchanged": true
+  },
+  "oracle": "Node SHA-256 of independent fixture snapshot; strict JSON UTF8 round-trip and fixed accepted pair",
+  "status": "PASS",
+  "executionError": null
+}

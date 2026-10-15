@@ -1,0 +1,18 @@
+{
+  "caseId": "F3:R02-38",
+  "attempt": 1,
+  "status": "NOT VERIFIABLE",
+  "category": "FIXTURE_DEFECT",
+  "fixtureId": "V-HASH-01",
+  "expected": {
+    "sameLength": true,
+    "differingBytes": 1
+  },
+  "actual": {
+    "bytes": 3605,
+    "sha256": "055a9280747f8b464437c76230736281b77f9b5904898f15f24195c56a88db18",
+    "singleByteDifference": false
+  },
+  "reason": "Prepared fixture replaces a 3-byte Japanese codepoint by ASCII; original retained, derived single-ASCII-byte fixture used in attempt2.",
+  "recordedAt": "2026-10-15T13:53:23.304Z"
+}

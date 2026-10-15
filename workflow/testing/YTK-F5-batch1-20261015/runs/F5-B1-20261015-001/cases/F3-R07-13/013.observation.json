@@ -1,0 +1,26 @@
+{
+  "caseId": "F3:R07-13",
+  "attempt": 1,
+  "label": "grammar-service_00000000-0000-4000-8000-000000000001",
+  "index": 13,
+  "startedAt": "2026-10-15T13:53:21.006Z",
+  "finishedAt": "2026-10-15T13:53:21.007Z",
+  "input": {
+    "path": "013.input.bin",
+    "bytes": 3367,
+    "sha256": "1e6c1488b79f9e20a08f76ea98107f8eefd89b61a6fe4b45bb1a820a1bc19e69"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "validation",
+    "errorName": "Error",
+    "inputUnchanged": true
+  },
+  "oracle": "Approved F2 record shape / enum / identity; no SUT validator used as expected oracle",
+  "status": "PASS",
+  "executionError": null
+}

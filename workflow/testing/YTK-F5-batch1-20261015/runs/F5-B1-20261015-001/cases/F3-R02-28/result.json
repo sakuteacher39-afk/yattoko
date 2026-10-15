@@ -1,0 +1,44 @@
+{
+  "caseId": "F3:R02-28",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 138,
+    "description": "SHA API failure。",
+    "details": [
+      "- 期待：export/import成功扱いしない。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:22.927Z",
+  "finishedAt": "2026-10-15T13:53:22.934Z",
+  "variantCount": 2,
+  "totalObservations": 2,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "SHA-import-failure",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+      }
+    },
+    {
+      "index": 2,
+      "label": "SHA-export-failure",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 2325,
+        "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

@@ -1,0 +1,33 @@
+{
+  "caseId": "F3:R02-25",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 132,
+    "description": "body+checksumを攻撃者が再生成したがschema unknown fieldあり。",
+    "details": [
+      "- 期待：checksum一致でもsemantic reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:22.735Z",
+  "finishedAt": "2026-10-15T13:53:22.739Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "resigned-schema-invalid",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3625,
+        "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

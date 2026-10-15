@@ -1,0 +1,31 @@
+{
+  "caseId": "F3:R07-11",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 346,
+    "description": "unknown questionSchemaVersion reject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:20.868Z",
+  "finishedAt": "2026-10-15T13:53:20.872Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "schema-current-question-unknown",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3559,
+        "sha256": "6fae41f7c505e2ba70e0ce2b511ab407d809f8275da15611875c0d2172ec56df"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

@@ -1,0 +1,53 @@
+{
+  "caseId": "F3:R02-12",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 110,
+    "description": "unknown nested snapshot key。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:21.765Z",
+  "finishedAt": "2026-10-15T13:53:21.774Z",
+  "variantCount": 3,
+  "totalObservations": 3,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "unknown-nested-overview",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3623,
+        "sha256": "031b450965ad8bb06e53a8eee948371424ca90d9f8c4a39846cb3adf8e867217"
+      }
+    },
+    {
+      "index": 2,
+      "label": "unknown-nested-category",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3623,
+        "sha256": "fb4493e21b8a9ed18a8378e043e20d73b81538ae4b4c15b2d02dc4f6f4305ded"
+      }
+    },
+    {
+      "index": 3,
+      "label": "unknown-nested-service",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3623,
+        "sha256": "deedab38bfac38b58df5ca1067495504a4c7a44038777a0a9f2e0146cb681a9e"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

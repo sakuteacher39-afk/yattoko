@@ -1,0 +1,33 @@
+{
+  "caseId": "F3:R02-07",
+  "status": "PASS",
+  "attempt": 1,
+  "attemptHistory": [],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 101,
+    "description": "\"kind\" と escaped equivalent key。",
+    "details": [
+      "- 期待：decoded-name duplicate reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-15T13:53:21.478Z",
+  "finishedAt": "2026-10-15T13:53:21.482Z",
+  "variantCount": 1,
+  "totalObservations": 1,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "V-DUP-02",
+      "attempt": 1,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3628,
+        "sha256": "fd47f47ad405146a87e3d55b869d15156af8189aede2c882dbae0a8a9d3ee2d9"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

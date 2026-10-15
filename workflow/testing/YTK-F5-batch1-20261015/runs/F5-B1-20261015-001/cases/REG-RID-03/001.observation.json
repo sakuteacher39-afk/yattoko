@@ -1,0 +1,26 @@
+{
+  "caseId": "REG:RID-03",
+  "attempt": 1,
+  "label": "mismatch-device",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:18.723Z",
+  "finishedAt": "2026-10-15T13:53:18.724Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 2324,
+    "sha256": "6da4e4b2ee11ada5782a21f09a3ee6616d0c59086e0d4c186f0fc0147b73ff0c"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "validation",
+    "errorName": "Error",
+    "inputUnchanged": true
+  },
+  "oracle": "Approved F2 record shape / enum / identity; no SUT validator used as expected oracle",
+  "status": "PASS",
+  "executionError": null
+}

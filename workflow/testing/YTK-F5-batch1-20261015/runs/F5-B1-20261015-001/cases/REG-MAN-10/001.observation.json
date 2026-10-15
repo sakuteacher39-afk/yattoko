@@ -1,0 +1,1202 @@
+{
+  "caseId": "REG:MAN-10",
+  "attempt": 1,
+  "label": "runtime-deep-equal",
+  "index": 1,
+  "startedAt": "2026-10-15T13:53:18.567Z",
+  "finishedAt": "2026-10-15T13:53:18.568Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 12772,
+    "sha256": "772997d001162bd5f225de0afbba623eb86ea7f55e7453b897fbb6d3316b8b63"
+  },
+  "expected": {
+    "manifest": {
+      "manifestFormatVersion": 1,
+      "scope": "ytk-free-v1-r001-r002-canonical-question-semantics",
+      "categoryKeys": [
+        "device",
+        "base",
+        "mail",
+        "social",
+        "cloud",
+        "subscription",
+        "finance",
+        "commerce",
+        "auth",
+        "license",
+        "carrier",
+        "business"
+      ],
+      "r001": {
+        "category": {
+          "usageStatus": {
+            "values": [
+              "unanswered",
+              "using",
+              "not_using",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "intention": {
+            "values": [
+              "unanswered",
+              "keep",
+              "delete",
+              "family",
+              "undecided"
+            ],
+            "presence": "required"
+          }
+        },
+        "overview": {
+          "identity": {
+            "values": [
+              "unanswered",
+              "configured",
+              "not_configured",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "billing": {
+            "values": [
+              "unanswered",
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "finance": {
+            "values": [
+              "unanswered",
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "data": {
+            "values": [
+              "unanswered",
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "family": {
+            "values": [
+              "unanswered",
+              "known",
+              "hidden",
+              "unknown"
+            ],
+            "presence": "required"
+          }
+        }
+      },
+      "r002": {
+        "serviceCore": {
+          "recordState": {
+            "values": [
+              "partial",
+              "completed"
+            ],
+            "presence": "required"
+          },
+          "usageStatus": {
+            "values": [
+              "unanswered",
+              "using",
+              "dormant",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "intentionOverride": {
+            "values": [
+              null,
+              "keep",
+              "delete",
+              "family",
+              "undecided"
+            ],
+            "presence": "required"
+          }
+        },
+        "questions": {
+          "device": [
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "backup",
+              "values": [
+                "unanswered",
+                "checked",
+                "missing",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "base": [
+            {
+              "key": "handover",
+              "values": [
+                "unanswered",
+                "checked",
+                "missing",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "mail": [
+            {
+              "key": "recoveryUse",
+              "values": [
+                "unanswered",
+                "often",
+                "rare",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "social": [
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "handover",
+              "values": [
+                "unanswered",
+                "checked",
+                "unchecked",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "cloud": [
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "backupUse",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "paid",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "subscription": [
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "billingSource",
+              "values": [
+                "unanswered",
+                "apple",
+                "google",
+                "microsoft",
+                "direct",
+                "other",
+                "unknown"
+              ],
+              "presence": {
+                "type": "equals",
+                "questionKey": "billing",
+                "value": "yes"
+              }
+            }
+          ],
+          "finance": [
+            {
+              "key": "asset",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "familyKnow",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "selfIdentify",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "commerce": [
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "balance",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "openTrade",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "auth": [
+            {
+              "key": "recovery",
+              "values": [
+                "unanswered",
+                "checked",
+                "missing",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "dependency",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "license": [
+            {
+              "key": "purchase",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "subscription",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "carrier": [
+            {
+              "key": "recoveryUse",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "mainLine",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "familyKnow",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "business": [
+            {
+              "key": "importance",
+              "values": [
+                "unanswered",
+                "high",
+                "support",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "sharedAdmin",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ]
+        }
+      },
+      "presenceRules": {
+        "unconditional": "key-required; unanswered-is-explicit-value",
+        "conditionalActive": "key-required; unanswered-is-explicit-value",
+        "conditionalInactive": "key-forbidden",
+        "parentTransition": "when-condition-becomes-false-delete-child-in-same-mutation; when-condition-becomes-true-materialize-child-as-unanswered-in-same-mutation"
+      },
+      "validatorBindings": {
+        "positiveDirection": [
+          {
+            "source": "r002.serviceCore.usageStatus",
+            "when": "using",
+            "target": "r001.category.usageStatus",
+            "effect": "not_using|unanswered->using",
+            "alsoApply": "F2_R07_if_parent_intention_unanswered"
+          },
+          {
+            "sourceQuestionKey": "billing",
+            "when": "yes",
+            "target": "r001.overview.billing",
+            "effect": "no|unanswered|unknown->yes_when_logically_proven"
+          },
+          {
+            "categoryKey": "finance",
+            "sourceQuestionKey": "asset",
+            "when": "yes",
+            "target": "r001.overview.finance",
+            "effect": "no|unanswered|unknown->yes_when_logically_proven"
+          },
+          {
+            "sourceQuestionKey": "importantData",
+            "when": "yes",
+            "target": "r001.overview.data",
+            "effect": "no|unanswered|unknown->yes_when_logically_proven"
+          },
+          {
+            "sourceQuestionKey": "familyKnow",
+            "when": "no",
+            "target": "r001.overview.family",
+            "effect": "known|unanswered|unknown->hidden_when_logically_proven"
+          }
+        ],
+        "negativeDirection": "service positive->negative or service delete does not auto-negate R001 summary; R001 negative conflicting with positive child must stop without silent commit",
+        "F2_R07": "on first category usageStatus transition from unanswered to using|not_using|unknown, if intention is unanswered set intention=undecided in same transaction; never overwrite keep|delete|family|undecided",
+        "F2_R08": "recordState=completed requires usageStatus in using|dormant|unknown; completed+unanswered is invalid on save/load/import/restore",
+        "F2_R09": "if intentionOverride is non-null use override; else use parent keep|delete|family|undecided; if parent intention is unanswered derive effective undecided without persisting fallback; recompute after load/restart/import/restore"
+      }
+    }
+  },
+  "actual": {
+    "manifest": {
+      "manifestFormatVersion": 1,
+      "scope": "ytk-free-v1-r001-r002-canonical-question-semantics",
+      "categoryKeys": [
+        "device",
+        "base",
+        "mail",
+        "social",
+        "cloud",
+        "subscription",
+        "finance",
+        "commerce",
+        "auth",
+        "license",
+        "carrier",
+        "business"
+      ],
+      "r001": {
+        "category": {
+          "usageStatus": {
+            "values": [
+              "unanswered",
+              "using",
+              "not_using",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "intention": {
+            "values": [
+              "unanswered",
+              "keep",
+              "delete",
+              "family",
+              "undecided"
+            ],
+            "presence": "required"
+          }
+        },
+        "overview": {
+          "identity": {
+            "values": [
+              "unanswered",
+              "configured",
+              "not_configured",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "billing": {
+            "values": [
+              "unanswered",
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "finance": {
+            "values": [
+              "unanswered",
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "data": {
+            "values": [
+              "unanswered",
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "family": {
+            "values": [
+              "unanswered",
+              "known",
+              "hidden",
+              "unknown"
+            ],
+            "presence": "required"
+          }
+        }
+      },
+      "r002": {
+        "serviceCore": {
+          "recordState": {
+            "values": [
+              "partial",
+              "completed"
+            ],
+            "presence": "required"
+          },
+          "usageStatus": {
+            "values": [
+              "unanswered",
+              "using",
+              "dormant",
+              "unknown"
+            ],
+            "presence": "required"
+          },
+          "intentionOverride": {
+            "values": [
+              null,
+              "keep",
+              "delete",
+              "family",
+              "undecided"
+            ],
+            "presence": "required"
+          }
+        },
+        "questions": {
+          "device": [
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "backup",
+              "values": [
+                "unanswered",
+                "checked",
+                "missing",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "base": [
+            {
+              "key": "handover",
+              "values": [
+                "unanswered",
+                "checked",
+                "missing",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "mail": [
+            {
+              "key": "recoveryUse",
+              "values": [
+                "unanswered",
+                "often",
+                "rare",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "social": [
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "handover",
+              "values": [
+                "unanswered",
+                "checked",
+                "unchecked",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "cloud": [
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "backupUse",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "paid",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "subscription": [
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "billingSource",
+              "values": [
+                "unanswered",
+                "apple",
+                "google",
+                "microsoft",
+                "direct",
+                "other",
+                "unknown"
+              ],
+              "presence": {
+                "type": "equals",
+                "questionKey": "billing",
+                "value": "yes"
+              }
+            }
+          ],
+          "finance": [
+            {
+              "key": "asset",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "familyKnow",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "selfIdentify",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "commerce": [
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "balance",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "openTrade",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "auth": [
+            {
+              "key": "recovery",
+              "values": [
+                "unanswered",
+                "checked",
+                "missing",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "dependency",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "license": [
+            {
+              "key": "purchase",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "subscription",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "carrier": [
+            {
+              "key": "recoveryUse",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "mainLine",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "familyKnow",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ],
+          "business": [
+            {
+              "key": "importance",
+              "values": [
+                "unanswered",
+                "high",
+                "support",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "billing",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "sharedAdmin",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            },
+            {
+              "key": "importantData",
+              "values": [
+                "unanswered",
+                "yes",
+                "no",
+                "unknown"
+              ],
+              "presence": {
+                "type": "always"
+              }
+            }
+          ]
+        }
+      },
+      "presenceRules": {
+        "unconditional": "key-required; unanswered-is-explicit-value",
+        "conditionalActive": "key-required; unanswered-is-explicit-value",
+        "conditionalInactive": "key-forbidden",
+        "parentTransition": "when-condition-becomes-false-delete-child-in-same-mutation; when-condition-becomes-true-materialize-child-as-unanswered-in-same-mutation"
+      },
+      "validatorBindings": {
+        "positiveDirection": [
+          {
+            "source": "r002.serviceCore.usageStatus",
+            "when": "using",
+            "target": "r001.category.usageStatus",
+            "effect": "not_using|unanswered->using",
+            "alsoApply": "F2_R07_if_parent_intention_unanswered"
+          },
+          {
+            "sourceQuestionKey": "billing",
+            "when": "yes",
+            "target": "r001.overview.billing",
+            "effect": "no|unanswered|unknown->yes_when_logically_proven"
+          },
+          {
+            "categoryKey": "finance",
+            "sourceQuestionKey": "asset",
+            "when": "yes",
+            "target": "r001.overview.finance",
+            "effect": "no|unanswered|unknown->yes_when_logically_proven"
+          },
+          {
+            "sourceQuestionKey": "importantData",
+            "when": "yes",
+            "target": "r001.overview.data",
+            "effect": "no|unanswered|unknown->yes_when_logically_proven"
+          },
+          {
+            "sourceQuestionKey": "familyKnow",
+            "when": "no",
+            "target": "r001.overview.family",
+            "effect": "known|unanswered|unknown->hidden_when_logically_proven"
+          }
+        ],
+        "negativeDirection": "service positive->negative or service delete does not auto-negate R001 summary; R001 negative conflicting with positive child must stop without silent commit",
+        "F2_R07": "on first category usageStatus transition from unanswered to using|not_using|unknown, if intention is unanswered set intention=undecided in same transaction; never overwrite keep|delete|family|undecided",
+        "F2_R08": "recordState=completed requires usageStatus in using|dormant|unknown; completed+unanswered is invalid on save/load/import/restore",
+        "F2_R09": "if intentionOverride is non-null use override; else use parent keep|delete|family|undecided; if parent intention is unanswered derive effective undecided without persisting fallback; recompute after load/restart/import/restore"
+      }
+    }
+  },
+  "oracle": "Read-only approved JSON blob versus runtime generated export",
+  "status": "PASS",
+  "executionError": null
+}
