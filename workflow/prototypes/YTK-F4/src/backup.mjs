@@ -7,11 +7,13 @@ const scalar=value=>{if(typeof value==='string')for(let i=0;i<value.length;i++){
 export async function sha256(bytes,crypto=globalThis.crypto){try{const hash=await crypto.subtle.digest('SHA-256',bytes);if(hash.byteLength!==32)fail('DIGEST_FAILED');return Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('');}catch{fail('DIGEST_FAILED');}}
 export function assertRawLimit(bytes){if(!Number.isSafeInteger(bytes)||bytes<0||bytes>PROVISIONAL_LIMITS.rawBytes)fail('RAW_BYTES_LIMIT');}
 export function pendingLimitReason(bytes,count){if(count>PROVISIONAL_LIMITS.operations)return 'PENDING_COUNT_LIMIT';if(bytes>PROVISIONAL_LIMITS.pendingBytes)return 'PENDING_BYTES_LIMIT';return null;}
-export const TYPES=['category','overview','addService','service','completeService','deleteService','deleteCategory','deleteAll'];
+// Normal save operations also describe omitted scopes; only pending-safe operations may be serialized.
+export const NORMAL_OPERATION_TYPES=Object.freeze(['category','overview','addService','service','completeService','deleteService','deleteCategory','deleteAll']);
+export const PENDING_OPERATION_TYPES=Object.freeze(NORMAL_OPERATION_TYPES.filter(type=>type!=='deleteAll'));
 export const targetKind=op=>['category','deleteCategory'].includes(op.type)?'category':['overview','deleteAll'].includes(op.type)?'overview':'service';
 export const record=(d,op)=>targetKind(op)==='category'?d.categories.find(c=>c.categoryKey===op.categoryKey):targetKind(op)==='overview'?d.overview:d.services.find(s=>s.recordId===op.recordId);
 // Omitted scopes never include names, values, unknown keys, or arbitrary input strings.
-function scope(item,reasonCode){const op=item.op??{},categoryKey=manifest.categoryKeys.includes(op.categoryKey)?op.categoryKey:null;return {categoryKey,targetKind:TYPES.includes(op.type)?targetKind(op):'unknown',operationType:TYPES.includes(op.type)?op.type:'unsupported',ordinalStart:item.ordinal,ordinalEnd:item.ordinal,reasonCode};}
+function scope(item,reasonCode){const op=item.op??{},categoryKey=manifest.categoryKeys.includes(op.categoryKey)?op.categoryKey:null;return {categoryKey,targetKind:NORMAL_OPERATION_TYPES.includes(op.type)?targetKind(op):'unknown',operationType:NORMAL_OPERATION_TYPES.includes(op.type)?op.type:'unsupported',ordinalStart:item.ordinal,ordinalEnd:item.ordinal,reasonCode};}
 export function footprint(op,snapshot){
 if(op.type==='deleteAll')return new Set(['*']);
 if(op.type==='overview')return new Set(['overview']);
@@ -55,7 +57,7 @@ const operations=[],omitted=[],operationIds=new Set();
 for(const group of groups.values()){
 let state=structuredClone(snapshot),reason=null;const built=[];
 for(const index of group){const item=items[index],op=item.op;try{
-if(item.invalid)fail('INVALID_VALUE');if(!op||!TYPES.includes(op.type))fail('UNSUPPORTED_OPERATION');
+if(item.invalid)fail('INVALID_VALUE');if(!op||!PENDING_OPERATION_TYPES.includes(op.type))fail('UNSUPPORTED_OPERATION');
 try{guard(snapshot,item.base);}catch{fail('BASE_CONFLICT');}
 scalar(op);
 const before=state,baseRecord=record(snapshot,op),dependencyContext=context(before,op);

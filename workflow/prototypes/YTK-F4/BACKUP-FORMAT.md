@@ -22,7 +22,7 @@ captureStatus / candidateCount / exportedCount / omittedCount / omittedScopes / 
 
 captureStatusはfull / partial / none。candidateCountはfreezeしたconfirmed/dependent operationとcurrent draftの合計。mutationSeq、DOM、画面位置、任意メモ、raw不正値は収録しない。
 
-omittedScopesの各object順: categoryKey / targetKind / operationType / ordinalStart / ordinalEnd / reasonCode。unknown入力値からscope文字列を作らず、固定allowlist以外はnull/unknown/unsupportedへ分類。全件未収録のsummaryでは同じscopeかつ連続するordinalだけを集約する。他scopeや収録済み操作を挟む非連続ordinalは別範囲として保持する。各範囲の件数合計はomittedCountに一致し、重複・収録済みordinalの混入を認めない。不正値やサービス名は未収録scopeに入れない。正確な範囲情報だけでも既存pending容量上限を超える場合は、範囲を切り捨てずファイル生成を停止する。
+omittedScopesの各object順: categoryKey / targetKind / operationType / ordinalStart / ordinalEnd / reasonCode。unknown入力値からscope文字列を作らず、固定allowlist以外はnull/unknown/unsupportedへ分類。全件未収録のsummaryでは同じscopeかつ連続するordinalだけを集約する。他scopeや収録済み操作を挟む非連続ordinalは別範囲として保持する。各範囲の件数合計はomittedCountに一致し、重複・収録済みordinalの混入を認めない。不正値やサービス名は未収録scopeに入れない。通常保存用allowlistで既知のdeleteAllは未収録scopeに限りoperationType=deleteAll / targetKind=overviewとして表すことができる（実行可能operationではない）。UNSUPPORTED_OPERATIONで候補を除外し、依存componentの全件を未収録とする。未知操作はunsupported / unknownへ分類する。正確な範囲情報だけでも既存pending容量上限を超える場合は、範囲を切り捨てずファイル生成を停止する。
 
 ## operation field order
 
@@ -30,10 +30,10 @@ operationId / ordinal / operationType / targetKind / categoryKey / recordId / ba
 
 - operationId: op_ + lowercase UUIDv4。capture内一意、衝突は最大3回試行、生成失敗ならcomponentを除外。認証・真正性証明ではない。
 - ordinal: freeze候補の1始まり順序。除外後も番号を詰めない。
-- operationType: F2保存API type（category / overview / addService / service / completeService / deleteService / deleteCategory / deleteAll）。
-- targetKind: category / overview / service。deleteAllはoverviewをroot targetとし、全recordへのdependency footprintを持つ。
-- categoryKey: 対象category、overview/deleteAllではnull。
-- recordId: service IDまたは対象canonical record ID。deleteAllはovw_main。
+- operationType: 緊急pending専用allowlist（category / overview / addService / service / completeService / deleteService / deleteCategory）。通常保存用allowlistと分離し、deleteAll / restore等は収録・取込・再適用を禁止する（F3 R01-14）。通常のdeleteAll保存と成功時のgeneration更新は維持する。
+- targetKind: category / overview / service。deleteAll候補は収録不可だが、依存関係検査では全recordへのfootprintを持ち、同じcomponent全体を未収録とする。
+- categoryKey: 対象category、overviewではnull。
+- recordId: service IDまたは対象canonical record ID。
 - baseRecordRevision: snapshot時の対象revision、新規serviceではnull。
 - dependsOnOperationIds: 同一component内で対象・親整合・conditional contextが重なる先行操作ID。順序を変更しない。後方参照・cycleを生成しない。
 - captureKind: confirmed-pending / dependent-pending / current-draft。未確定draftを確定回答へ読み替えない。

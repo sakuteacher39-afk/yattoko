@@ -1,4 +1,5 @@
 {
+  "alignmentReportCommit": "eae5400da5105e8710b9ae7795ceeba23aa9a696",
   "baseline": "8797650d0187daa521f859529ec4d9195e1b97bb",
   "sources": [
     {
@@ -2660,9 +2661,9 @@
       "phase": "F5",
       "expectation": "unsupported operation（delete-all/restore等）をpendingへ入れる。",
       "formalStatus": "NOT RUN",
-      "developmentStatus": "REVIEW REQUIRED",
-      "relatedTests": "backup, omitted-ranges, ui",
-      "gap": "計画はdelete-all拒否、合格済みbaselineはdeleteAllを許可。仕様解釈の独立確認が必要。"
+      "developmentStatus": "DEVELOPMENT VERIFIED / RE-REVIEW PENDING",
+      "relatedTests": "s4-r01.test.mjs（収録拒否・SHA正常の取込拒否・独立再適用guard・通常deleteAll・画面統合）",
+      "gap": "照合報告 eae5400da5105e8710b9ae7795ceeba23aa9a696 と人間の修正承認に基づき、deleteAll/restore pendingを拒否。未収録件数・離散ordinal、旧データ保持、通常deleteAll成功/abort/generationを開発テストで確認。修正の独立レビュー待ち。正式F5/F6は未開始。"
     },
     {
       "key": "F3:R01-15",

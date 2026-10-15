@@ -1,8 +1,8 @@
 # F4第4段階｜F5/F6計画との対応表
 
-承認済み計画・計画案の全IDを出典別に採録。F3原文はDRAFT / NOT APPROVED表記のため、正式F5計画の確定は制作管理室へ委ねる。正式判定は全行NOT RUN。関連証拠は開発テストの探索先であり、行ごとの合格証拠ではない。F5/F6正式PASSを宣言しない。
+承認済み計画・計画案の全IDを出典別に採録。F3原文のDRAFT / NOT APPROVED表記は履歴上の記載。照合報告 eae5400da5105e8710b9ae7795ceeba23aa9a696 に従い、R01-14を含むF3試験計画を承認済み境界として扱う。原文・期待値は変更しない。正式判定は全行NOT RUN。関連証拠は開発テストの探索先であり、行ごとの合格証拠ではない。F5/F6正式PASSを宣言しない。
 
-同名MAN等は出典namespaceで区別。raw16MB / pending1MB / 256操作は暫定値。iPhoneの時間・メモリ測定未実施。deleteAllの不一致はF3:R01-14に明記。仕様変更・試験の削除は行わない。
+同名MAN等は出典namespaceで区別。raw16MB / pending1MB / 256操作は暫定値。iPhoneの時間・メモリ測定未実施。F3:R01-14は承認方針に基づくpending拒否の開発証拠へ更新し、修正の独立レビュー待ち。通常deleteAllを維持。仕様変更・試験の削除は行わない。
 
 JSON版は出典SHA-256とケース別の未検証理由を含む。`node plan-map.mjs --check` で出典・全ID・生成結果を照合する。
 
@@ -305,7 +305,7 @@ JSON版は出典SHA-256とケース別の未検証理由を含む。`node plan-m
 |F3:R01-11|F5|omittedScopesに値本文を含めずcategory/target/type/range/reasonだけ。|backup, omitted-ranges, ui|RELATED EVIDENCE ONLY|NOT RUN|
 |F3:R01-12|F5|operation ID重複。|backup, omitted-ranges, ui|RELATED EVIDENCE ONLY|NOT RUN|
 |F3:R01-13|F5|ordinal重複/逆行。|backup, omitted-ranges, ui|RELATED EVIDENCE ONLY|NOT RUN|
-|F3:R01-14|F5|unsupported operation（delete-all/restore等）をpendingへ入れる。|backup, omitted-ranges, ui|REVIEW REQUIRED|NOT RUN|
+|F3:R01-14|F5|unsupported operation（delete-all/restore等）をpendingへ入れる。|s4-r01.test.mjs（収録拒否・SHA正常の取込拒否・独立再適用guard・通常deleteAll・画面統合）|DEVELOPMENT VERIFIED / RE-REVIEW PENDING|NOT RUN|
 |F3:R01-15|F5|capture開始後readonly snapshotのgeneration/globalとpending baseが一致。|backup, omitted-ranges, ui|RELATED EVIDENCE ONLY|NOT RUN|
 |F3:R01-16|F5|別tabがglobalRevision更新済み。|backup, omitted-ranges, ui|RELATED EVIDENCE ONLY|NOT RUN|
 |F3:R01-17|F5|generationが変わった。|backup, omitted-ranges, ui|RELATED EVIDENCE ONLY|NOT RUN|
