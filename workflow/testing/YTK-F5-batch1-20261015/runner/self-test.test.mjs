@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtempSync,readFileSync} from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import {matches,immutableJSON,diffCount,Recorder} from './recorder.mjs';
+import {manifestShape,data} from './oracle.mjs';
+test('HARNESS ONLY: mismatching rejection stages cannot pass',()=>{assert.equal(matches({accepted:false,errorCode:'CANONICAL'},{accepted:false,errorCode:'LEXICAL'}),false);assert.equal(matches({accepted:false,errorCode:'CANONICAL'},{accepted:false,errorCode:'CANONICAL'}),true);});
+test('HARNESS ONLY: evidence cannot overwrite and failed attempts remain',async()=>{const dir=mkdtempSync(path.join(os.tmpdir(),'ytk-f5-harness-')),p=path.join(dir,'once.json');immutableJSON(p,{old:true});assert.throws(()=>immutableJSON(p,{old:false}),{code:'EEXIST'});const r=new Recorder(path.join(dir,'case'),'HARNESS-SELFTEST',{},path.join(dir,'ledger.jsonl'));await r.check('known-fail',Buffer.from('dummy'),{v:1},()=>({v:2}),'synthetic matcher control');assert.equal(r.finalize().status,'FAIL');assert.ok(readFileSync(path.join(dir,'ledger.jsonl'),'utf8').includes('FAIL'));});
+test('HARNESS ONLY: byte difference detects unequal-length defective fixture',()=>{assert.equal(diffCount(Buffer.from('aaa'),Buffer.from('aba')),1);assert.ok(diffCount(Buffer.from('試験サービス'),Buffer.from('試験サービX'))>1);});
+test('HARNESS ONLY: nominal manifest oracle rejects missing root shape',()=>{assert.equal(manifestShape({manifestFormatVersion:1}),false);});

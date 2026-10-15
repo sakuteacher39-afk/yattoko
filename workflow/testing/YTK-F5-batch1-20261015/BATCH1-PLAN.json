@@ -1,0 +1,3090 @@
+{
+  "batchId": "F5-BATCH1-20261015",
+  "createdBeforeExecutionAt": "2026-10-15T13:51:56.739Z",
+  "subjectCommit": "99e566da100ee6924149ec3244893bbddf7e8c4d",
+  "preparationCommit": "8f916e33931b6d4a8807f404fb919951b1ea9970",
+  "subjectTree": "8731785527f3a585c7444a6ef2dcbf9a98e994ae",
+  "scope": {
+    "selected": 78,
+    "originalF5Total": 497,
+    "supplementalF4": 10,
+    "excludedF6": 150
+  },
+  "executionStarted": false,
+  "runtime": {
+    "os": "Microsoft Windows NT 10.0.26300.0",
+    "architecture": "x64",
+    "nodeVersion": "v24.20.0",
+    "nodeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+    "nodeSHA256": "5c976096e04e5c2c1f091938926234cc9fbebfe9787ddd149351b3b0ecc707b5",
+    "dependencies": "Node built-in modules only; no installation, no fake-indexeddb/jsdom/browser used in batch1",
+    "webCrypto": "Node native globalThis.crypto; only deliberate SHA-failure and UUID fallback injections are scoped to one variant",
+    "networkPolicy": "Deny-and-record all application network/console sink calls; no external requests permitted",
+    "data": "Pinned synthetic fixtures only",
+    "subjectRoot": "C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\F5-TARGET-99e566d",
+    "fixtureRoot": "C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\F5-FIXTURES-99e566d"
+  },
+  "inputs": {
+    "casebookSHA256": "dff376aadaf3ebdb4dbcab3cacebf2ea2d9da43551062216b4c9480efb3e5266",
+    "fixturesCatalogSHA256": "e28409fc628b5f40cca2cfc8ef539e7300dec36132d8131d6d43f3487d79baad",
+    "variantRecipesSHA256": "bbee77914e111d58d90f2c54b0ee8ad7494463be56bd0732d78dbe4f147f64aa",
+    "faultCatalogSHA256": "4716172f330dd38adea3d2c51d40546265350d7f94449e8eab1ad95eabd4f05e"
+  },
+  "runnerFiles": [
+    {
+      "path": "runner/cases.mjs",
+      "sha256": "4f11623242b79423d0f1dcf213c0d1179b55ecd419abc577f5c9ecf7caf91cf2"
+    },
+    {
+      "path": "runner/oracle.mjs",
+      "sha256": "7af50a539257930765996fb720384f4ed4e3cd5430004ecf64f0942396ba7c18"
+    },
+    {
+      "path": "runner/prepare-run.mjs",
+      "sha256": "8faf2a16dfcfbcf2569fd1d2e5115a4e754726d9e272f062fbe834185f3c232b"
+    },
+    {
+      "path": "runner/recorder.mjs",
+      "sha256": "6c4eeea5092310bee9fc360f5c47eaa1800d433795636ca46ec5eea05dfbf2d7"
+    },
+    {
+      "path": "runner/run.mjs",
+      "sha256": "33883614b546eb1d4cba20a201eb68fa06ee84938cf81feb03e0d4077f46268d"
+    },
+    {
+      "path": "runner/self-test.test.mjs",
+      "sha256": "860c7009b96cc73fb94f5e0ad88fa45428c01c298a5ebcb4a46b6327ed98ee28"
+    }
+  ],
+  "oracleControls": {
+    "fixtureCount": 40,
+    "digest01Expected": "15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d",
+    "rawSHA256": "15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d"
+  },
+  "cases": [
+    {
+      "caseId": "REG:REG-01",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 337,
+        "description": "fileFormatVersion exact 1のみaccept。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "fileFormatVersion exact 1のみaccept。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: fileFormatVersion exact 1のみaccept。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:REG-01\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:REG-02",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 338,
+        "description": "unknown/0/2/string \"1\" reject。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "unknown/0/2/string \"1\" reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unknown/0/2/string \"1\" reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:REG-02\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:REG-03",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 339,
+        "description": "schema/question exact accepted pairのみaccept。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "schema/question exact accepted pairのみaccept。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: schema/question exact accepted pairのみaccept。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:REG-03\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:REG-04",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 340,
+        "description": "schemaだけcurrent、question unknownをreject。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "schemaだけcurrent、question unknownをreject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: schemaだけcurrent、question unknownをreject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:REG-04\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:REG-05",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 341,
+        "description": "questionだけcurrent、schema unknownをreject。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "questionだけcurrent、schema unknownをreject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: questionだけcurrent、schema unknownをreject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:REG-05\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:REG-06",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 342,
+        "description": "old/future versionをmigrationしない。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "old/future versionをmigrationしない。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: old/future versionをmigrationしない。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:REG-06\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:MAN-01",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 344,
+        "description": "normative manifest JSON parse/schema validation。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "normative manifest JSON parse/schema validation。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: normative manifest JSON parse/schema validation。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:MAN-01\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:MAN-02",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 345,
+        "description": "manifest category=12 / R002 questions=33 / conditional=1をassert。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "manifest category=12 / R002 questions=33 / conditional=1をassert。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: manifest category=12 / R002 questions=33 / conditional=1をassert。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:MAN-02\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:MAN-07",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 350,
+        "description": "manifest Git blob SHAとquestionSchemaVersion suffix exact一致。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "manifest Git blob SHAとquestionSchemaVersion suffix exact一致。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: manifest Git blob SHAとquestionSchemaVersion suffix exact一致。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:MAN-07\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:MAN-10",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 353,
+        "description": "runtime/generated manifestとnormative JSONのdeep-equal。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "runtime/generated manifestとnormative JSONのdeep-equal。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: runtime/generated manifestとnormative JSONのdeep-equal。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:MAN-10\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:RID-01",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 354,
+        "description": "overview exact `ovw_main`。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "overview exact `ovw_main`。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: overview exact `ovw_main`。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:RID-01\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:RID-02",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 355,
+        "description": "category 12 exact IDs。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "category 12 exact IDs。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: category 12 exact IDs。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:RID-02\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:RID-03",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 356,
+        "description": "categoryKey/recordId mismatch reject。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "categoryKey/recordId mismatch reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: categoryKey/recordId mismatch reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:RID-03\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:RID-04",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 357,
+        "description": "valid svc UUIDv4 accept。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "valid svc UUIDv4 accept。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: valid svc UUIDv4 accept。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:RID-04\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:RID-05",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 358,
+        "description": "uppercase/braces/v1/v7/invalid variant/service prefix typo reject。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "uppercase/braces/v1/v7/invalid variant/service prefix typo reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: uppercase/braces/v1/v7/invalid variant/service prefix typo reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:RID-05\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:RID-06",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 359,
+        "description": "duplicate service recordId reject。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "duplicate service recordId reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: duplicate service recordId reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:RID-06\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:RID-07",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 360,
+        "description": "generator collision fixtureでretry、3回failureでfail closed。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "generator collision fixtureでretry、3回failureでfail closed。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: generator collision fixtureでretry、3回failureでfail closed。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:RID-07\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:GEN-01",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 362,
+        "description": "valid gen UUIDv4 accept。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "valid gen UUIDv4 accept。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: valid gen UUIDv4 accept。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX",
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR",
+        "TX-ABORT",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:GEN-01\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:GEN-02",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 363,
+        "description": "initial datasetでgeneration作成。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "initial datasetでgeneration作成。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: initial datasetでgeneration作成。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX",
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR",
+        "TX-ABORT",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:GEN-02\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "REG:GEN-03",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F4-version-registry-proposal-20261015.md",
+        "line": 364,
+        "description": "normal mutationでgeneration不変。",
+        "details": [],
+        "sha256": "591699ceace924cf959e81fb407eb079f49b26a7103f23665459511889e4df3f"
+      },
+      "expectedResult": "normal mutationでgeneration不変。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: normal mutationでgeneration不変。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "DS-MIX",
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "ID-GENERATOR",
+        "TX-ABORT",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"REG:GEN-03\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:MAN-01",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 528,
+        "description": "JSON parseとmanifestFormatVersion=1。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "JSON parseとmanifestFormatVersion=1。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: JSON parseとmanifestFormatVersion=1。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:MAN-01\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:MAN-02",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 529,
+        "description": "categoryKeysがcanonical 12種exact order。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "categoryKeysがcanonical 12種exact order。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: categoryKeysがcanonical 12種exact order。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:MAN-02\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:MAN-07",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 534,
+        "description": "R002 category=12、question total=33。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "R002 category=12、question total=33。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: R002 category=12、question total=33。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:MAN-07\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:MAN-09",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 536,
+        "description": "conditional question count=1。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "conditional question count=1。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: conditional question count=1。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:MAN-09\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:MAN-10",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 537,
+        "description": "conditional exact：subscription.billingSource active iff billing==\"yes\"。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "conditional exact：subscription.billingSource active iff billing==\"yes\"。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: conditional exact：subscription.billingSource active iff billing==\"yes\"。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_STATIC",
+      "fixtureReferences": [
+        "DS-BASE"
+      ],
+      "faultReferences": [
+        "SOURCE-INPUT-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:MAN-10\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:R08-01",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 89,
+        "description": "partial + usageStatus=unansweredはvalid",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "partial + usageStatus=unansweredはvalid",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: partial + usageStatus=unansweredはvalid",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL"
+      ],
+      "faultReferences": [
+        "RAW-CORRUPT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:R08-01\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:R08-03",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 91,
+        "description": "completed + usageStatus=usingはvalid",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "completed + usageStatus=usingはvalid",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: completed + usageStatus=usingはvalid",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL"
+      ],
+      "faultReferences": [
+        "RAW-CORRUPT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:R08-03\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:R08-04",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 92,
+        "description": "completed + usageStatus=dormantはvalid",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "completed + usageStatus=dormantはvalid",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: completed + usageStatus=dormantはvalid",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL"
+      ],
+      "faultReferences": [
+        "RAW-CORRUPT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:R08-04\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:R08-05",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 93,
+        "description": "completed + usageStatus=unknownはvalid",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "completed + usageStatus=unknownはvalid",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: completed + usageStatus=unknownはvalid",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL"
+      ],
+      "faultReferences": [
+        "RAW-CORRUPT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:R08-05\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:R08-13",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 101,
+        "description": "intentionOverrideはnull/keep/delete/family/undecided以外をreject",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "intentionOverrideはnull/keep/delete/family/undecided以外をreject",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: intentionOverrideはnull/keep/delete/family/undecided以外をreject",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL"
+      ],
+      "faultReferences": [
+        "RAW-CORRUPT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:R08-13\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:RST-07",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 228,
+        "description": "unknown schema/question version拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "unknown schema/question version拒否",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unknown schema/question version拒否",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "DS-MIX",
+        "EM-FULL"
+      ],
+      "faultReferences": [
+        "TX-TRACE",
+        "TX-ABORT",
+        "READBACK-ALTER",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:RST-07\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:RST-08",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 229,
+        "description": "unknown categoryKey拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "unknown categoryKey拒否",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unknown categoryKey拒否",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "DS-MIX",
+        "EM-FULL"
+      ],
+      "faultReferences": [
+        "TX-TRACE",
+        "TX-ABORT",
+        "READBACK-ALTER",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:RST-08\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:RST-09",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 230,
+        "description": "duplicate recordId拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "duplicate recordId拒否",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: duplicate recordId拒否",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "DS-MIX",
+        "EM-FULL"
+      ],
+      "faultReferences": [
+        "TX-TRACE",
+        "TX-ABORT",
+        "READBACK-ALTER",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:RST-09\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:RST-11",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 232,
+        "description": "required field欠落拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "required field欠落拒否",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: required field欠落拒否",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "DS-MIX",
+        "EM-FULL"
+      ],
+      "faultReferences": [
+        "TX-TRACE",
+        "TX-ABORT",
+        "READBACK-ALTER",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:RST-11\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:RST-12",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 233,
+        "description": "unexpected field拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "unexpected field拒否",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unexpected field拒否",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "DS-MIX",
+        "EM-FULL"
+      ],
+      "faultReferences": [
+        "TX-TRACE",
+        "TX-ABORT",
+        "READBACK-ALTER",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:RST-12\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F2:RST-13",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 234,
+        "description": "unexpected nested object拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expectedResult": "unexpected nested object拒否",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unexpected nested object拒否",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_FAULT",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "DS-MIX",
+        "EM-FULL"
+      ],
+      "faultReferences": [
+        "TX-TRACE",
+        "TX-ABORT",
+        "READBACK-ALTER",
+        "OTHER-TAB"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F2:RST-13\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R07-10",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 345,
+        "description": "unknown schemaVersion reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "unknown schemaVersion reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unknown schemaVersion reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL",
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R07-10\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R07-11",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 346,
+        "description": "unknown questionSchemaVersion reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "unknown questionSchemaVersion reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unknown questionSchemaVersion reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL",
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R07-11\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R07-12",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 347,
+        "description": "unregistered pair reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "unregistered pair reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unregistered pair reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL",
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R07-12\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R07-13",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 348,
+        "description": "invalid recordId grammar reject（ACTIVE registry binding後）。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "invalid recordId grammar reject（ACTIVE registry binding後）。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: invalid recordId grammar reject（ACTIVE registry binding後）。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL",
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R07-13\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R07-14",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 349,
+        "description": "invalid generationId grammar reject（ACTIVE registry binding後）。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "invalid generationId grammar reject（ACTIVE registry binding後）。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: invalid generationId grammar reject（ACTIVE registry binding後）。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "DS-MIX",
+        "DS-CONDITIONAL",
+        "V-VALID-01"
+      ],
+      "faultReferences": [
+        "REGISTRY-FAULT"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R07-14\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-01",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 92,
+        "description": "UTF-8 valid / BOMなし canonical input。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "UTF-8 valid / BOMなし canonical input。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: UTF-8 valid / BOMなし canonical input。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-01\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-02",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 93,
+        "description": "UTF-8 BOM付き拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "UTF-8 BOM付き拒否。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: UTF-8 BOM付き拒否。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-02\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-03",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 94,
+        "description": "invalid UTF-8 byte sequenceをfatal reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "invalid UTF-8 byte sequenceをfatal reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: invalid UTF-8 byte sequenceをfatal reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-03\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-04",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 95,
+        "description": "root duplicate same key same value。",
+        "details": [
+          "- 期待：lexical reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "lexical reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: lexical reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-04\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-05",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 97,
+        "description": "root duplicate same key different value。",
+        "details": [
+          "- 期待：lexical reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "lexical reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: lexical reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-05\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-06",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 99,
+        "description": "nested answers duplicate key。",
+        "details": [
+          "- 期待：lexical reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "lexical reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: lexical reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-06\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-07",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 101,
+        "description": "\"kind\" と escaped equivalent key。",
+        "details": [
+          "- 期待：decoded-name duplicate reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "decoded-name duplicate reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: decoded-name duplicate reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-07\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-08",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 103,
+        "description": "root key並替。",
+        "details": [
+          "- 期待：canonical raw mismatch reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "canonical raw mismatch reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: canonical raw mismatch reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-08\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-09",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 105,
+        "description": "余分な空白/newline。",
+        "details": [
+          "- 期待：canonical raw mismatch reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "canonical raw mismatch reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: canonical raw mismatch reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-09\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-10",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 107,
+        "description": "unnecessary unicode escape / slash escape。",
+        "details": [
+          "- 期待：canonical raw mismatch reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "canonical raw mismatch reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: canonical raw mismatch reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-10\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-11",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 109,
+        "description": "unknown root key。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "unknown root key。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unknown root key。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-11\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-12",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 110,
+        "description": "unknown nested snapshot key。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "unknown nested snapshot key。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: unknown nested snapshot key。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-12\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-13",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 111,
+        "description": "unexpected answers nested object。",
+        "details": [
+          "- 期待：strict reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "strict reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: strict reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-13\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-14",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 116,
+        "description": "fileFormatVersion 1e0拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "fileFormatVersion 1e0拒否。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: fileFormatVersion 1e0拒否。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-14\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-15",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 117,
+        "description": "revision -0拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "revision -0拒否。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: revision -0拒否。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-15\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-16",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 118,
+        "description": "leading zero数値拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "leading zero数値拒否。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: leading zero数値拒否。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-16\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-17",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 119,
+        "description": "decimal 1.0拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "decimal 1.0拒否。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: decimal 1.0拒否。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-17\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-18",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 120,
+        "description": "Number.MAX_SAFE_INTEGER超過拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "Number.MAX_SAFE_INTEGER超過拒否。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: Number.MAX_SAFE_INTEGER超過拒否。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-18\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-19",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 121,
+        "description": "escaped lone high surrogate拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "escaped lone high surrogate拒否。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: escaped lone high surrogate拒否。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-19\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-20",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 122,
+        "description": "escaped lone low surrogate拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "escaped lone low surrogate拒否。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: escaped lone low surrogate拒否。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-20\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-21",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 123,
+        "description": "F2 NFC必須fieldがnon-NFC。",
+        "details": [
+          "- 期待：normalizeせずreject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "normalizeせずreject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: normalizeせずreject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-21\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-22",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 125,
+        "description": "F2 control/bidi rejectをimportでも同一適用。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "F2 control/bidi rejectをimportでも同一適用。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: F2 control/bidi rejectをimportでも同一適用。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-22\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-23",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 129,
+        "description": "DIGEST-01 expected SHAが15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "DIGEST-01 expected SHAが15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: DIGEST-01 expected SHAが15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d。",
+        "独立oracleによる値・bytes・順序・件数・表示の一致を証拠で確認すること。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-23\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-24",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 130,
+        "description": "body 1 byte変更/checksum据置。",
+        "details": [
+          "- 期待：checksum reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "checksum reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: checksum reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-24\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-25",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 132,
+        "description": "body+checksumを攻撃者が再生成したがschema unknown fieldあり。",
+        "details": [
+          "- 期待：checksum一致でもsemantic reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "checksum一致でもsemantic reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: checksum一致でもsemantic reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-25\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-26",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 134,
+        "description": "checksum algorithm未知。",
+        "details": [
+          "- 期待：reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-26\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-27",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 136,
+        "description": "checksum hex uppercase/長さ63/65/非hex。",
+        "details": [
+          "- 期待：reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-27\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-28",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 138,
+        "description": "SHA API failure。",
+        "details": [
+          "- 期待：export/import成功扱いしない。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "export/import成功扱いしない。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: export/import成功扱いしない。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-28\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-32",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 146,
+        "description": "V-DUP-01 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-DUP-01 reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-DUP-01 reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-32\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-33",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 147,
+        "description": "V-DUP-02 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-DUP-02 reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-DUP-02 reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-33\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-34",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 148,
+        "description": "V-ORDER-01 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-ORDER-01 reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-ORDER-01 reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-34\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-35",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 149,
+        "description": "V-NUM-01 / V-NUM-02 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-NUM-01 / V-NUM-02 reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-NUM-01 / V-NUM-02 reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-35\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-36",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 150,
+        "description": "V-UNK-01 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-UNK-01 reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-UNK-01 reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-36\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-37",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 151,
+        "description": "V-UTF-01 / V-BOM-01 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-UTF-01 / V-BOM-01 reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-UTF-01 / V-BOM-01 reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-37\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-38",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 152,
+        "description": "V-HASH-01 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-HASH-01 reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-HASH-01 reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-38\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-39",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 153,
+        "description": "V-HASH-02 checksum一致でもreject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-HASH-02 checksum一致でもreject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-HASH-02 checksum一致でもreject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-39\")",
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "caseId": "F3:R02-40",
+      "selectionReason": "Registry/manifest/schema/UUID/strict-JSON entry gates; full expectations bound in runner/cases.mjs using Node builtins, no browser dependency",
+      "originalSource": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 154,
+        "description": "V-TRUNC-01 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expectedResult": "V-TRUNC-01 reject。",
+      "passCriteria": [
+        "原文の全条件と同一ケースの列挙variantを全て満たすこと（以下を検証）: V-TRUNC-01 reject。",
+        "拒否/失敗の必要な段階と理由を実証し、禁止write・自動補正・誤成功表示・未保存入力消去がないこと。",
+        "必要なbrowser/人間/計測の証拠も揃うこと。missingならNOT RUNまたはNOT VERIFIABLE。既存開発test成功のみで正式PASSにしない。"
+      ],
+      "independentOracle": [
+        "Approved literal versions/category order/12-33-1 counts and manifest blob SHA",
+        "Independent fixture bytes/signatures, Node SHA256, explicit canonical schema field/enum/UUID contracts",
+        "Exact expected rejection stages when specified; input bytes immutable; no product validator used to generate expected acceptance"
+      ],
+      "executionClass": "AUTO_NODE",
+      "fixtureReferences": [
+        "V-VALID-01",
+        "V-DUP-01",
+        "V-DUP-02",
+        "V-ORDER-01",
+        "V-NUM-01",
+        "V-NUM-02",
+        "V-UNK-01",
+        "V-UTF-01",
+        "V-BOM-01",
+        "V-HASH-01",
+        "V-HASH-02",
+        "V-TRUNC-01",
+        "V-ESC-01",
+        "DIGEST-01"
+      ],
+      "faultReferences": [
+        "SHA-FAIL",
+        "READ-FAIL"
+      ],
+      "procedureBinding": "runner/cases.mjs execute(\"F3:R02-40\")",
+      "formalStatus": "NOT RUN"
+    }
+  ],
+  "fixturePolicy": "Verify original 40 files/hash before execution. Keep originals untouched. All derived inputs saved once with bytes/hash. If candidate violates independent preconditions classify FIXTURE_DEFECT/NOT VERIFIABLE and retain it; corrected derived input becomes a new attempt, never overwrites the prior attempt.",
+  "knownPreparationCaveat": "V-HASH-01 single-byte claim must be calibrated against V-VALID-01. If replacing a Japanese codepoint by ASCII changes length, retain NOT VERIFIABLE attempt1; use a separately recorded, independently proved one-ASCII-date-digit change as attempt2. No product patch.",
+  "stagePolicy": "F3:R02-09 explicitly requires canonical raw mismatch rejection. A different rejection stage is a formal FAIL pending independent review; do not weaken expected stage.",
+  "stopPolicy": "Critical target hash change, network/console data leak, unexpected destructive write => stop immediately; remaining cases stay NOT RUN. Noncritical expected-value mismatch => FAIL, preserve evidence and continue only batch1.",
+  "noDevelopmentTransfer": true,
+  "noBatch2": true
+}
