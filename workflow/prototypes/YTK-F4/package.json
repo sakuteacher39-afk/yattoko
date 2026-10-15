@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "generate": "node generate.mjs && node build-ui.mjs",
-    "test": "node generate.mjs --check && node build-ui.mjs --check && node --test"
+    "test": "node generate.mjs --check && node build-ui.mjs --check && node plan-map.mjs --check && node --test"
   },
   "devDependencies": {
     "fake-indexeddb": "6.2.4",
