@@ -1,0 +1,13 @@
+{
+  "name": "yattoko-f4-stage1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate.mjs && node build-ui.mjs",
+    "test": "node generate.mjs --check && node build-ui.mjs --check && node --test"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "6.2.4",
+    "jsdom": "30.1.2"
+  }
+}
