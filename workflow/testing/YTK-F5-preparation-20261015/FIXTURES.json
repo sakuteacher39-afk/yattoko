@@ -1,0 +1,409 @@
+{
+  "targetCommit": "99e566da100ee6924149ec3244893bbddf7e8c4d",
+  "createdBy": "independent Node serializer; no subject module imported/executed",
+  "location": "work/F5-FIXTURES-99e566d",
+  "formalCalibrationStatus": "NOT RUN; candidate fixtures are not certified accepted until independent formal execution",
+  "boundaryRule": "Measure exact UTF8 bytes of the specified layer; never treat padded raw/depth/helper-only acceptance as full-file acceptance",
+  "fixtures": [
+    {
+      "id": "DS-BASE",
+      "filename": "DS-BASE.json",
+      "bytes": 2325,
+      "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011",
+      "expected": "canonical baseline candidate",
+      "purpose": "device初回回答済、他11カテゴリ未回答、overview5問未回答",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DS-MIX",
+      "filename": "DS-MIX.json",
+      "bytes": 3363,
+      "sha256": "8a198bf072621affe2643c82e1ef6ccf26e3f7e57abafe726d0f82cd58b62a50",
+      "expected": "partial/completed/R09 mixed candidate",
+      "purpose": "配列順入替・同名別IDは各runでcloneして派生",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DS-CONDITIONAL",
+      "filename": "DS-CONDITIONAL.json",
+      "bytes": 2647,
+      "sha256": "dd8f006c2e045f3440e638c5e49f5820ea3ef841485c48002b02e55aa1987f66",
+      "expected": "active conditional candidate",
+      "purpose": "billing=yesのchild存在。falseへ操作した後child不存在を照合",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-VALID-01",
+      "filename": "V-VALID-01.json",
+      "bytes": 3607,
+      "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+      "expected": "accept preview only after strict validation",
+      "purpose": "snapshot fixtureを独立serializerで作成。製品validatorによる合格は未確認",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DIGEST-01",
+      "filename": "DIGEST-01.json",
+      "bytes": 140,
+      "sha256": "15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d",
+      "expected": "SHA256=15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d; not a restore-valid file",
+      "purpose": "F3 normative digest only",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-DUP-01",
+      "filename": "V-DUP-01.json",
+      "bytes": 3623,
+      "sha256": "1af393dcd24d1d3e6141781a5d11a100ec940a4a847f8c0c0b1fc9b3a6a76974",
+      "expected": "lexical reject",
+      "purpose": "root duplicate",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-DUP-02",
+      "filename": "V-DUP-02.json",
+      "bytes": 3628,
+      "sha256": "fd47f47ad405146a87e3d55b869d15156af8189aede2c882dbae0a8a9d3ee2d9",
+      "expected": "decoded duplicate reject",
+      "purpose": "escape equivalent key",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-ORDER-01",
+      "filename": "V-ORDER-01.json",
+      "bytes": 3607,
+      "sha256": "1cff8dede4c6cf54162e5154f7b189f7d90f2d0fc1a34980e650d81825e2d4eb",
+      "expected": "canonical reject",
+      "purpose": "same semantic body; original checksum; root order different",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-NUM-01",
+      "filename": "V-NUM-01.json",
+      "bytes": 3609,
+      "sha256": "97c6a4d48c0a089ddce6eba96e6cdd98dc8cbfdd09ec405a95e72da3db0ea7d4",
+      "expected": "lexical reject",
+      "purpose": "exponent",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-NUM-02",
+      "filename": "V-NUM-02.json",
+      "bytes": 3608,
+      "sha256": "913822eb54ded66a632cf23cd316c6d0f91b66bece9e2749b8633a140ea4301a",
+      "expected": "lexical reject",
+      "purpose": "negative zero",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-UNK-01",
+      "filename": "V-UNK-01.json",
+      "bytes": 3625,
+      "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c",
+      "expected": "semantic reject even with valid checksum",
+      "purpose": "unknown nested field",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-UTF-01",
+      "filename": "V-UTF-01.json",
+      "bytes": 3595,
+      "sha256": "06a7226584301aa7af9887653071844af1ff26794936b5403e5c88ea2c959d87",
+      "expected": "Unicode reject",
+      "purpose": "escaped lone surrogate",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-BOM-01",
+      "filename": "V-BOM-01.json",
+      "bytes": 3610,
+      "sha256": "a7fc5b8e9c9b7ead6b3d37337c45824a642c4d48b52e7294f2276d9262c2aee8",
+      "expected": "BOM reject",
+      "purpose": "UTF8 BOM",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-UTF8-INVALID",
+      "filename": "V-UTF8-INVALID.json",
+      "bytes": 3,
+      "sha256": "5b3430ee8e5c7490d0e154755cdae0c9a7791be87e77b1f91a52f77676bed0c7",
+      "expected": "fatal UTF8 reject",
+      "purpose": "invalid encoding",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-HASH-01",
+      "filename": "V-HASH-01.json",
+      "bytes": 3605,
+      "sha256": "055a9280747f8b464437c76230736281b77f9b5904898f15f24195c56a88db18",
+      "expected": "checksum reject",
+      "purpose": "one UTF8 byte changed; schema otherwise unchanged",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-HASH-02",
+      "filename": "V-HASH-02.json",
+      "bytes": 3625,
+      "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c",
+      "expected": "semantic reject",
+      "purpose": "re-signed unknown field",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-TRUNC-01",
+      "filename": "V-TRUNC-01.json",
+      "bytes": 3606,
+      "sha256": "45cce1a8680b4446a648520e1e91eacdffec955776433b5914ef6afd1d7fadf0",
+      "expected": "parse reject",
+      "purpose": "truncated",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-ESC-01",
+      "filename": "V-ESC-01.json",
+      "bytes": 3612,
+      "sha256": "bf5c2e0ecd3f08aff580add5866d984fc624621ab14e79f12985ce3a370ef00b",
+      "expected": "canonical reject",
+      "purpose": "unnecessary escape",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-FULL",
+      "filename": "EM-FULL.json",
+      "bytes": 4539,
+      "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+      "expected": "manual pending only; no auto-apply",
+      "purpose": "chain ordinal1-3, same-category dependencies",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-PARTIAL",
+      "filename": "EM-PARTIAL.json",
+      "bytes": 3717,
+      "sha256": "1328c91207f00f5319c8d279381f855de96b51e41a9686d2f6b4ea354b51d27c",
+      "expected": "partial exported ordinal2; omitted1/3 separately",
+      "purpose": "離散範囲と件数。非連続範囲を結合しない",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-NONE-DELETEALL",
+      "filename": "EM-NONE-DELETEALL.json",
+      "bytes": 3101,
+      "sha256": "6ae571e24869b961f8bc9d23fca0ce153214ac557a358377fedc7431cc56bfac",
+      "expected": "snapshot-only import allowed; no deletion to apply",
+      "purpose": "R01-14: omitted metadata is not an executable operation",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-FORBIDDEN-DELETEALL",
+      "filename": "EM-FORBIDDEN-DELETEALL.json",
+      "bytes": 3401,
+      "sha256": "3e8bbb4ce008f9ee1691de255a31a7610d7bd70e73c23f4d4c52683156bc77bf",
+      "expected": "OPERATION reject with no destination write",
+      "purpose": "旧実装相当の正しいchecksum付き禁止pending",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DS-BYTES-9999999",
+      "filename": "DS-BYTES-9999999.json",
+      "bytes": 9999999,
+      "sha256": "3b42440e385fdf1f353e8e28b99c9d8e12bdde4278b25fbf69012b3f26dd0b2b",
+      "expected": "canonical capacity allows candidate; other gates still apply",
+      "purpose": "Independent exact UTF8 canonical projection including IDs/meta; new restore generation same grammar length",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "FILE-DS-9999999",
+      "filename": "FILE-DS-9999999.json",
+      "bytes": 10000243,
+      "sha256": "a32bcd46ec4dc8d5cda064829e1ad3f7305d07e20a404ad62d5fe9d52d61fafd",
+      "expected": "strict import capacity candidate",
+      "purpose": "raw file size is different from snapshot capacity",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DS-BYTES-10000000",
+      "filename": "DS-BYTES-10000000.json",
+      "bytes": 10000000,
+      "sha256": "15beb90379147ffa2cc478d6bed37ec483370ac64a6573f2098f7ff4c4345650",
+      "expected": "canonical capacity allows candidate; other gates still apply",
+      "purpose": "Independent exact UTF8 canonical projection including IDs/meta; new restore generation same grammar length",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "FILE-DS-10000000",
+      "filename": "FILE-DS-10000000.json",
+      "bytes": 10000244,
+      "sha256": "75ce8b8f4a4c95d29e6fa61ff0ed7ec01769c21314312b3e6dba7d80d83e084c",
+      "expected": "strict import capacity candidate",
+      "purpose": "raw file size is different from snapshot capacity",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DS-BYTES-10000001",
+      "filename": "DS-BYTES-10000001.json",
+      "bytes": 10000001,
+      "sha256": "80118e6306a34b4ff6aece1c881542714eadffd176f3be9029b14a9a4fef0fe1",
+      "expected": "reject before write",
+      "purpose": "Independent exact UTF8 canonical projection including IDs/meta; new restore generation same grammar length",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "FILE-DS-10000001",
+      "filename": "FILE-DS-10000001.json",
+      "bytes": 10000245,
+      "sha256": "7293573788fba164f0081ec27dcb2f8af4b2c1e3b2a2b801a73ef2bc4b00225a",
+      "expected": "capacity reject",
+      "purpose": "raw file size is different from snapshot capacity",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-PENDING-BYTES-999999",
+      "filename": "EM-PENDING-BYTES-999999.json",
+      "bytes": 1002567,
+      "sha256": "0370df47b9b2617831df77bd9c9a6ccaef74b8dd884475e37ade213c27ef1627",
+      "expected": "pending byte gate candidate; semantic validators still required",
+      "purpose": "pending JSON only measures exactly 999999 bytes; <=256 real operations; deterministic valid dependency recipe",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-PENDING-BYTES-1000000",
+      "filename": "EM-PENDING-BYTES-1000000.json",
+      "bytes": 1002568,
+      "sha256": "dfeb5b21f34999abc64ee63e308e22d9db666fb432db8e0a49a2c113088ed058",
+      "expected": "pending byte gate candidate; semantic validators still required",
+      "purpose": "pending JSON only measures exactly 1000000 bytes; <=256 real operations; deterministic valid dependency recipe",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-PENDING-BYTES-1000001",
+      "filename": "EM-PENDING-BYTES-1000001.json",
+      "bytes": 1002569,
+      "sha256": "73a65bf0bfa4f34826949b71fe8a7038872b70257f443bb6c53fe6eb12ec51db",
+      "expected": "pending byte limit reject",
+      "purpose": "pending JSON only measures exactly 1000001 bytes; <=256 real operations; deterministic valid dependency recipe",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-COUNT-255",
+      "filename": "EM-COUNT-255.json",
+      "bytes": 237064,
+      "sha256": "a0f7e9f265d63d79a489d901646dc4fd21b23c3c5102de71eb1b5ab91af60ee0",
+      "expected": "operation count gate candidate",
+      "purpose": "分散componentでpending1MBと件数を分離",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-COUNT-256",
+      "filename": "EM-COUNT-256.json",
+      "bytes": 238438,
+      "sha256": "38ab2b9ed9236f0606402e64379f5196fcd9120e16473654f01f838111905c19",
+      "expected": "operation count gate candidate",
+      "purpose": "分散componentでpending1MBと件数を分離",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-COUNT-257",
+      "filename": "EM-COUNT-257.json",
+      "bytes": 239810,
+      "sha256": "45bb3dabaf5e369a99246eb3e425d6275e4938be13ec6b6f15ad009940b2b850",
+      "expected": "operation count reject",
+      "purpose": "分散componentでpending1MBと件数を分離",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "RAW-BYTES-15999999",
+      "filename": "RAW-BYTES-15999999.json",
+      "bytes": 15999999,
+      "sha256": "741b2d430348baa237ed031a78e5c1392860c73ada212bbc450fdb3682bdff97",
+      "expected": "raw gate allows read, strict/canonical rejects padded file",
+      "purpose": "Not a valid maximum-size backup. Snapshot10MB + pending1MB limits prevent arbitrary padding. Size-guard evidence only.",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "RAW-BYTES-16000000",
+      "filename": "RAW-BYTES-16000000.json",
+      "bytes": 16000000,
+      "sha256": "f4d77a4b79cdd0513de0af7e401892fefa9d2bef97a981f6133d04641b16f93a",
+      "expected": "raw gate allows read, strict/canonical rejects padded file",
+      "purpose": "Not a valid maximum-size backup. Snapshot10MB + pending1MB limits prevent arbitrary padding. Size-guard evidence only.",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "RAW-BYTES-16000001",
+      "filename": "RAW-BYTES-16000001.json",
+      "bytes": 16000001,
+      "sha256": "32d28713ce42a4a5935d82905d0c15fc49bfabedcec5eb3e451b66728876c246",
+      "expected": "reject before arrayBuffer/read",
+      "purpose": "Not a valid maximum-size backup. Snapshot10MB + pending1MB limits prevent arbitrary padding. Size-guard evidence only.",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "NAME-INPUTS",
+      "filename": "NAME-INPUTS.json",
+      "bytes": 824,
+      "sha256": "4034acf3a75d6b8ed7eda18a5351b06b6da21035ae898dd3e65acbd80b65ce84",
+      "expected": "validate per F2; never normalize import silently",
+      "purpose": "dummy text only; no real secret/account/card",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "SCAN-DEPTH16",
+      "filename": "SCAN-DEPTH16.json",
+      "bytes": 33,
+      "sha256": "f955de38ce972b6a49fa8fae45dd8e2eede435f0d684f7eddec46135e473d6c2",
+      "expected": "depth gate only; not a semantic valid backup",
+      "purpose": "scanner-isolation fixture",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "SCAN-DEPTH17",
+      "filename": "SCAN-DEPTH17.json",
+      "bytes": 35,
+      "sha256": "9141f69529e96caa8db6218b357f341abff4e6b56a7ba2405ff3a9ec457405f9",
+      "expected": "depth reject",
+      "purpose": "scanner-isolation fixture",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    }
+  ]
+}

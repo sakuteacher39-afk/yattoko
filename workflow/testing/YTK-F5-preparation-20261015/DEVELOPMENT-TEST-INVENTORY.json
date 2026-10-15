@@ -1,0 +1,673 @@
+{
+  "targetCommit": "99e566da100ee6924149ec3244893bbddf7e8c4d",
+  "count": 111,
+  "executionInPreparation": false,
+  "tests": [
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "F3 DIGEST-01 normative SHA-256 vector",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "normal export only committed partial/completed/unanswered with canonical envelope and checksum",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "empty/corrupt/unknown-version/crypto/time failure does not produce a backup",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "emergency captures pending separately, freezes before read, preserves original input and revisions",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "dependent create/usage/billing/child chain remains ordered with context and dependencies",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "invalid member drops entire dependency component; independent valid component survives without secret leakage",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "changed base generation/global/record blocks component, missing service and no-op are omitted",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "valid draft normalized in frozen file only; invalid draft omitted without raw value leakage",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "pending exact bytes/count boundary helpers remain provisional",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "256 valid operations included; 257 omit whole candidate without prefix truncation",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "pending serialization over1MB omits whole candidate, preserves original queue",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "emergency zero candidates uses pending null; unknown fields and lone surrogates fail safe",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "over10MB prospective pending can be captured without committing overlimit dataset",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "snapshot fingerprint ignores generation/revisions but snapshot checksum does not",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "inactive conditional child invalidates entire creation component without leaking value",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/backup.test.mjs",
+      "title": "normal snapshot remains coherent when another write races export",
+      "sourceSHA256": "bf3e53fd295d9368a59093345cf6ff58847eb4213d03ebc8bb0fe24ed13e047c",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/file-save-ui.test.mjs",
+      "title": "picker write/close requests save but never reports physical success",
+      "sourceSHA256": "a867332dc2f25505471861edd780fef38c8dd11d6b80854af8da01b69b9e29dd",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/file-save-ui.test.mjs",
+      "title": "picker cancellation is separate; write/close/Blob failure fail safe",
+      "sourceSHA256": "a867332dc2f25505471861edd780fef38c8dd11d6b80854af8da01b69b9e29dd",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/file-save-ui.test.mjs",
+      "title": "anchor fallback cleans up and retains URL until browser can read; click failure revokes immediately",
+      "sourceSHA256": "a867332dc2f25505471861edd780fef38c8dd11d6b80854af8da01b69b9e29dd",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/file-save-ui.test.mjs",
+      "title": "raw16MB boundary checked before Blob generation",
+      "sourceSHA256": "a867332dc2f25505471861edd780fef38c8dd11d6b80854af8da01b69b9e29dd",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/file-save-ui.test.mjs",
+      "title": "UI plaintext warning and scope shown before acknowledgement, normal excludes pending",
+      "sourceSHA256": "a867332dc2f25505471861edd780fef38c8dd11d6b80854af8da01b69b9e29dd",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/file-save-ui.test.mjs",
+      "title": "UI partial/none summary exposes omitted count/scopes and requires explicit save operation",
+      "sourceSHA256": "a867332dc2f25505471861edd780fef38c8dd11d6b80854af8da01b69b9e29dd",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/file-save-ui.test.mjs",
+      "title": "UI generation failure/cancel/save cancellation/write failure preserves live input",
+      "sourceSHA256": "a867332dc2f25505471861edd780fef38c8dd11d6b80854af8da01b69b9e29dd",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/file-save-ui.test.mjs",
+      "title": "revoking plaintext acknowledgement disables saving prepared artifact",
+      "sourceSHA256": "a867332dc2f25505471861edd780fef38c8dd11d6b80854af8da01b69b9e29dd",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/id-retry.test.mjs",
+      "title": "R01 regenerates against both committed IDs and candidate IDs, succeeds on third attempt",
+      "sourceSHA256": "adae873bf88288f4c4fcc66515208c5bd497a468dcdb2358b8c1a4a68c89ac4e",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/id-retry.test.mjs",
+      "title": "R01 three consecutive collisions fail closed with no fourth attempt",
+      "sourceSHA256": "adae873bf88288f4c4fcc66515208c5bd497a468dcdb2358b8c1a4a68c89ac4e",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/id-retry.test.mjs",
+      "title": "R01 generator exceptions and malformed values fail closed immediately",
+      "sourceSHA256": "adae873bf88288f4c4fcc66515208c5bd497a468dcdb2358b8c1a4a68c89ac4e",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/id-retry.test.mjs",
+      "title": "R01 coordinator sees queued candidates, saves only unique regenerated IDs",
+      "sourceSHA256": "adae873bf88288f4c4fcc66515208c5bd497a468dcdb2358b8c1a4a68c89ac4e",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/id-retry.test.mjs",
+      "title": "R01 collision exhaustion/generator failure retains input and stops later writes",
+      "sourceSHA256": "adae873bf88288f4c4fcc66515208c5bd497a468dcdb2358b8c1a4a68c89ac4e",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/id-retry.test.mjs",
+      "title": "R01 explicit retry after generation failure allocates anew and commits retained input",
+      "sourceSHA256": "adae873bf88288f4c4fcc66515208c5bd497a468dcdb2358b8c1a4a68c89ac4e",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/id-retry.test.mjs",
+      "title": "R01 final transaction rejects duplicate even with matching revisions",
+      "sourceSHA256": "adae873bf88288f4c4fcc66515208c5bd497a468dcdb2358b8c1a4a68c89ac4e",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/id-retry.test.mjs",
+      "title": "R01 two tabs allocate identical ID: one commit, other conflict with pending preserved",
+      "sourceSHA256": "adae873bf88288f4c4fcc66515208c5bd497a468dcdb2358b8c1a4a68c89ac4e",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/integration-boundaries.test.mjs",
+      "title": "stage4 approved R001/R002/manifest bytes and ACTIVE registry remain pinned",
+      "sourceSHA256": "8b8d05c01571d56d0d951b893e25d1d01120d4239daf1fc5b3a22164423ab4c3",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/integration-boundaries.test.mjs",
+      "title": "stage4 runtime sources have no network/log/storage alternatives or dynamic code sinks",
+      "sourceSHA256": "8b8d05c01571d56d0d951b893e25d1d01120d4239daf1fc5b3a22164423ab4c3",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/omitted-ranges.test.mjs",
+      "title": "R01 count-limit none preserves alternating scopes as discrete ordinals with exact count and UI ranges",
+      "sourceSHA256": "39135d869c831e309d3c0b048223f2caf8d3e260c1726db2678847b8a9a699de",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/omitted-ranges.test.mjs",
+      "title": "R01 only adjacent identical scopes coalesce and scope changes terminate ranges",
+      "sourceSHA256": "39135d869c831e309d3c0b048223f2caf8d3e260c1726db2678847b8a9a699de",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/omitted-ranges.test.mjs",
+      "title": "R01 partial omitted1/3 excludes exported2 and UI never displays1-through3",
+      "sourceSHA256": "39135d869c831e309d3c0b048223f2caf8d3e260c1726db2678847b8a9a699de",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/omitted-ranges.test.mjs",
+      "title": "R01 full case has no omitted ranges and displays zero omitted",
+      "sourceSHA256": "39135d869c831e309d3c0b048223f2caf8d3e260c1726db2678847b8a9a699de",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/omitted-ranges.test.mjs",
+      "title": "R01 byte-limit none keeps contiguous scope range exact",
+      "sourceSHA256": "39135d869c831e309d3c0b048223f2caf8d3e260c1726db2678847b8a9a699de",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/omitted-ranges.test.mjs",
+      "title": "R01 exact range metadata over existing pending budget fails closed without input truncation",
+      "sourceSHA256": "39135d869c831e309d3c0b048223f2caf8d3e260c1726db2678847b8a9a699de",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/omitted-ranges.test.mjs",
+      "title": "R01 corrected ranges stay in existing file shape and SHA-256 digest contract",
+      "sourceSHA256": "39135d869c831e309d3c0b048223f2caf8d3e260c1726db2678847b8a9a699de",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore-ui.test.mjs",
+      "title": "restore UI previews without mutation, explicit confirmation, then separately reviews/applies pending",
+      "sourceSHA256": "084d245e4090bb5fa32c61553ddf1b5842bdef6fb8dbb10e7f0337963e21e422",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore-ui.test.mjs",
+      "title": "invalid file and cancel preserve original data/input; preview race never overwrites newer data",
+      "sourceSHA256": "084d245e4090bb5fa32c61553ddf1b5842bdef6fb8dbb10e7f0337963e21e422",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore-ui.test.mjs",
+      "title": "corrupt comparable UI requires both confirmations, uncomparable blocks preview",
+      "sourceSHA256": "084d245e4090bb5fa32c61553ddf1b5842bdef6fb8dbb10e7f0337963e21e422",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore-ui.test.mjs",
+      "title": "pending service names rendered as text, not HTML; background update invalidates context",
+      "sourceSHA256": "084d245e4090bb5fa32c61553ddf1b5842bdef6fb8dbb10e7f0337963e21e422",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "normal/emergency roundtrip strict import and pending dependency validation",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "pre-read raw limit, BOM, invalid UTF8 and size mismatch reject",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "duplicate decoded keys at root and every nested object rejected before crypto",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "noncanonical numbers/order/whitespace/escape/truncation/depth are rejected",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "unknown fields/version/IDs/completed/conditional/Unicode/checksum rejected even resigned",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "pending tampering: count, range, IDs, context, dependency, unknown nested fields and fingerprints",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "prepare preview read-only; confirmation required; successful atomic replace fresh generation/global1",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "empty store restore and preview race for edit/delete-all/another restore abort without overwrite",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "corrupt comparable requires second confirmation and guards raw state; cycles uncomparable",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "GUARD CLEAR PUT READBACK order; abort after clear/put/readback preserves entire old dataset",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "readback mismatch or synchronous serializer exception aborts; success only on transaction complete",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "pending is separate, requires explicit confirmation, rejects out of order and double taps; receipts only after commit",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "failed pending save has no receipt; explicit retry, reimport same file, and restarted context cannot infer applied state",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "external update/deletion/generation changes invalidate reapply; other source file never accepted",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "stage2 full/partial/none emergency files all remain strictly importable",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "completed invalid core and conditional presence reject; partial survives successful restore",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "File and SHA-256 finish before readwrite; digest rejection never touches destination",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "quota/DataError synchronously thrown during PUT abort after CLEAR without data loss",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "readback semantic exception and simultaneous restore double tap never produce partial replacement",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "unreadable/closed DB is never classified empty or overwritten",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "scanner rejects unknown resource excess before full semantic processing",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "transaction body contains no async/File/WebCrypto wait or task gap",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "fresh-generation collision failures stay in preflight; record revisions retained",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "same-content new generation invalidates receipts; apply-after-restart cannot use copied provenance",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "pending expected-before content is rechecked inside save transaction even for same-revision tampering",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "an unproven no-op result never earns an APPLIED receipt",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "dependent service create/usage/conditional child reapply commits in order with R07/R09 parent semantics",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/restore.test.mjs",
+      "title": "strict import rejects over10MB canonical dataset within raw16MB and service-count bounds",
+      "sourceSHA256": "097def1c7e18af3a2362da11870cf4a0ae899ee31abc97fb86ec68efe158b7fb",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/s4-r01.test.mjs",
+      "title": "S4-R01 normal and pending allowlists are separate and immutable; decode rejects deleteAll/restore",
+      "sourceSHA256": "0af679a681f634c267d681dfb6e0d2c312cb58bd482fc9081fd6e03206b2e155",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/s4-r01.test.mjs",
+      "title": "S4-R01 deleteAll capture omits exact ordinals and the whole dependent component without mutating pending",
+      "sourceSHA256": "0af679a681f634c267d681dfb6e0d2c312cb58bd482fc9081fd6e03206b2e155",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/s4-r01.test.mjs",
+      "title": "S4-R01 correctly checksummed legacy/crafted deleteAll pending and restore pending reject without writes",
+      "sourceSHA256": "0af679a681f634c267d681dfb6e0d2c312cb58bd482fc9081fd6e03206b2e155",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/s4-r01.test.mjs",
+      "title": "S4-R01 reapply guard rejects deleteAll even if the upstream provenance boundary is bypassed",
+      "sourceSHA256": "0af679a681f634c267d681dfb6e0d2c312cb58bd482fc9081fd6e03206b2e155",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/s4-r01.test.mjs",
+      "title": "S4-R01 normal deleteAll abort protects all old data; successful retry renews generation and rejects stale tab",
+      "sourceSHA256": "0af679a681f634c267d681dfb6e0d2c312cb58bd482fc9081fd6e03206b2e155",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/s4-r01.test.mjs",
+      "title": "S4-R01 failed deleteAll → emergency UI reports exact omitted ranges; restore/import cannot replay deletion",
+      "sourceSHA256": "0af679a681f634c267d681dfb6e0d2c312cb58bd482fc9081fd6e03206b2e155",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "manifest count and directly generated semantic source",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "R07 atomic initialization, explicit intentions preserved, no-op",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "R08 completion core required, optional unanswered allowed, edits partial",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "R09 derived fallback, serialized reload, positive using initializes R07",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "all 33 question enum and presence validators use manifest",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "conditional child materialization/prune and strict inactive/active validation",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "all positive bindings and parent negative contradiction protection",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "strict schema/versions/IDs/duplicate records; no ordinary category move",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "other name NFC/trim UTF16, control/bidi/secret rejection and catalog allowlist",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "capacity exact boundaries + UTF8 canonical order + prospective overlimit",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "UUID generation/collision and each guard independent",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "IndexedDB baseline + mutation commit together and partial survives reopen",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "two tabs empty/existing race blocks stale writes",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "abort after successful put keeps old canonical dataset",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "category deletion includes children, delete-all generation invalidates stale tab",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "coordinator serial queue and saved status only after all pending complete",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "six failures retain pending and committed; conflict no retry overwrite",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "explicit retry clears pending only after success",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "unavailable/closed/corrupt database fails closed",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "no runtime external data transport/logging sinks",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "no-op IndexedDB save preserves revisions; initial abort leaves no baseline",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/stage1.test.mjs",
+      "title": "wrong IndexedDB schema keyPath is rejected without migration",
+      "sourceSHA256": "f6f9847e0e1c5da16ab2104f1f33c27eebc59276a63c7eba05c9cf512d103fa0",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "R001/R002 DOM answers persist separately, complete survives reload, R09 hydration",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "UI save failure retains pending answer and prevents further mutation",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "R09 untouched category entry creates partial without canonical fallback; other not saved until confirmed",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "R01 generator failures keep other-service input visible and disable subsequent saves",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "R01 UI continues with regenerated ID after existing-ID collision",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "full app backup stays usable after save failure, normal excludes pending, emergency retains input",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "restorer attached to full app freezes stale editing after commit without clearing original input state",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "stage4 full UI failure → emergency → restore → confirmed pending → reopen → ordinary save",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "stage4 two UI tabs reject stale writes both before and after restore generation change",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/test/ui.test.mjs",
+      "title": "stage4 XSS-shaped other-service name remains text through save, backup, restore and reload",
+      "sourceSHA256": "f4d943088d8aa3888772adcbf81b4b0a43f0e87d45ed98619b97f027ab99a75d",
+      "role": "DEVELOPMENT REGRESSION ONLY; no automatic formal verdict"
+    }
+  ]
+}

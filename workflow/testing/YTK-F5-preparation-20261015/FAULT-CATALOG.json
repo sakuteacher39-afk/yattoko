@@ -1,0 +1,195 @@
+{
+  "scope": "preparation specification; no fault executed",
+  "faults": [
+    {
+      "id": "NONE",
+      "trigger": "faultなしcontrolを必ず実施",
+      "injectionPoint": "original fixture + production APIs",
+      "constraint": "なし",
+      "oracle": "全source hash/DB初期値が期待どおり",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "TX-TRACE",
+      "trigger": "request dispatch/success・abort/completeを同期event listenerで観測",
+      "injectionPoint": "harness wraps db.transaction/objectStore methods; returned native request/tx remain unchanged",
+      "constraint": "promise/await/timerをproduct transaction callbackへ入れない",
+      "oracle": "GUARD_READ→GUARD_VERIFIED→CLEAR→PUT→READBACK→READBACK_VERIFIED→TX_COMPLETE。内部verified flagが直接見えない場合bytes一致とphase traceの根拠を分け、見えないflagはNOT VERIFIABLE",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "TX-ABORT",
+      "trigger": "case指定のstore/method/第n success直後tx.abort",
+      "injectionPoint": "meta/category/service CLEAR/PUT/READBACKのrequest success listener",
+      "constraint": "本番hook追加なし。each phaseを別run",
+      "oracle": "abort後全store bytes一致。成功表示/receipt0。clear前後を区別",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "REQUEST-HOLD",
+      "trigger": "coordinator.save promiseのみをharness wrapperで保持しqueue/in-flightを観測",
+      "injectionPoint": "store.save delegate promise before/after complete; restore/readbackはnative事件順を観測",
+      "constraint": "native transaction callbackの非同期化禁止",
+      "oracle": "古いcompleteで新pending saved表示なし。IN_FLIGHT二重applyは1回write",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "READBACK-ALTER",
+      "trigger": "guardの4 store getAll後のREADBACK結果だけをalter",
+      "injectionPoint": "native request.result内のfixture record1byte/size/generation/global/count/revisionを同期success listenerで変更",
+      "constraint": "guardやold stored recordsは変更しない。immutable resultの環境は明記し代替auditと区別",
+      "oracle": "complete前abort。独立before/after canonical/raw全件一致",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "OTHER-TAB",
+      "trigger": "同一DBの別接続でcase指定時点に正常mutation/restore/deleteAllをcommit",
+      "injectionPoint": "preview後・capture前・reapply前・restore後のold expected",
+      "constraint": "shared factoryを別profileと誤認しない。browserでは同一origin2tab",
+      "oracle": "guard拒否。victimタブのforce overwriteなし。先行commitだけが残る",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "DROP-NOTIFY",
+      "trigger": "BroadcastChannelをharness stubで無通知にする",
+      "injectionPoint": "他のversion checksを変更しない",
+      "constraint": "native storage guardを除去しない",
+      "oracle": "通知なしでもstale generation/global/record拒否",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "RAW-CORRUPT",
+      "trigger": "専用DBをdirect IDB writeで事前破損/比較不能にする",
+      "injectionPoint": "meta missing/unknown values/cycle/read failure/closed DB",
+      "constraint": "実利用originは禁止。破損はold dataset fixtureとして記録",
+      "oracle": "VALID/EMPTY/CORRUPT_COMPARABLE/UNCOMPARABLEの分類と二段確認。比較不能は全置換禁止",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "QUOTA",
+      "trigger": "case指定のsave/PUTにQuotaExceededErrorをthrowまたはrequest failure",
+      "injectionPoint": "Node wrapperとChrome native wrapperを別証拠",
+      "constraint": "実OS容量不足と人工quotaを混同しない",
+      "oracle": "旧正本全件・pending維持。app10MBと別分類",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "STORAGE-DENIED",
+      "trigger": "IDB unavailable/SecurityError/closed DBを投入",
+      "injectionPoint": "factory/open/read/save入口",
+      "constraint": "private detectorを追加しない",
+      "oracle": "制限または不明の分類が根拠どおり。emptyと誤認しない",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "UNKNOWN-ERROR",
+      "trigger": "fixture sentinel入りのError/不明DOMExceptionを投入",
+      "injectionPoint": "save/import/export/file save入口",
+      "constraint": "raw messageは画面/製品logへ流さない",
+      "oracle": "最小codeのみ。画面の未保存保持。secret/bodyはsink0",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "SHA-FAIL",
+      "trigger": "crypto.subtle.digestのreject/不正長を投入",
+      "injectionPoint": "APIが引数で受けるcryptoは引数mock。その他は外部dependency mock",
+      "constraint": "File/SHAをtransaction内へ移動しない",
+      "oracle": "export/import成功なし、destination write0",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "READ-FAIL",
+      "trigger": "File.arrayBuffer/readのthrow/size mismatchを投入",
+      "injectionPoint": "最初のread前後にcalled count",
+      "constraint": "実ファイルのデータを触らない",
+      "oracle": "preflight停止、destination write0、UI入力維持",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "FILE-SAVE-FAIL",
+      "trigger": "picker cancel/AbortError/createWritable/write/close failure",
+      "injectionPoint": "requestFileSaveの環境dependency mock; browser native cancelも別実施",
+      "constraint": "物理保存成功の保証に変更しない",
+      "oracle": "取消/安全文言。元のpending保持",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "RESOURCE-ERROR",
+      "trigger": "巨大field/count/depth/例外を投入",
+      "injectionPoint": "scanner前後をcall count/heap profileで確認",
+      "constraint": "サイズだけ不正fixtureの拒否を有効最大file成功としない",
+      "oracle": "read/parse前拒否の順序と原因別分類、旧DB不変",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "SAME-VALUE",
+      "trigger": "expected-before/intended-after同値、外部同値editをfixture化",
+      "injectionPoint": "no-op/import/context/receiptの各境界",
+      "constraint": "内容一致から適用済みを推測しない",
+      "oracle": "AMBIGUOUS/UNPROVENまたは相当の拒否、write/receipt0",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "PROVENANCE-LOSS",
+      "trigger": "fresh session/tabまたは実browser reload/restart",
+      "injectionPoint": "session identity/source/generation/receiptをcase指定時点で喪失",
+      "constraint": "Node再生成はrestart実証の代用にしない",
+      "oracle": "auto-apply/skipなし。persistent ledgerなし。明示確認必須",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "ID-GENERATOR",
+      "trigger": "deterministic UUID列をharness dependencyで注入",
+      "injectionPoint": "occupied→fresh / occupied×3 / exception / getRandomValues fallback",
+      "constraint": "固定SUTの通常crypto実装は変更しない",
+      "oracle": "回数・衝突検査・fail closedとpending保持",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "SOURCE-INPUT-FAULT",
+      "trigger": "readFileSync/mock moduleでmanifest/原R001/R002/definitionsの返却値をvariantにする",
+      "injectionPoint": "source bytesは固定のまま、入力returnだけnegative driftを投入",
+      "constraint": "改変した生成物を正式subjectに置換しない。mock成否は本物のfile checksumで検証",
+      "oracle": "unknown/missing enum/key/condition/version mismatchは失敗。label-only semantic不変とunapproved source hash rejectionを分離",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "REGISTRY-FAULT",
+      "trigger": "compile-time registry exportのstatus/pairを外部module mockでvariantにする",
+      "injectionPoint": "原SUTをfresh processでimportする前だけinject",
+      "constraint": "CANDIDATE配備を実際に製造した証拠ではない。UI disabledとAPI fail closedは別assert",
+      "oracle": "unknown/old/future pair拒否、未ACTIVEAPI禁止。必要なUI配備が検証不能ならNOT VERIFIABLE",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    },
+    {
+      "id": "SINK-SPY",
+      "trigger": "fetch/XHR/beacon/WebSocket/EventSource/console全level/analytics相当をexternal observerで捕捉",
+      "injectionPoint": "browserはページ開始前にinstrumentし、外部宛ては送信前blockする",
+      "constraint": "整理内容を記録しない。allowed static requestとexternal attemptを分離",
+      "oracle": "fixture sentinelを含むpayload0、external application attempts0; 計測器のcontrol呼出を別記録",
+      "implementationLocation": "external F5 harness only; never subject sources",
+      "readiness": "PROCEDURE SPECIFIED; per-case adapter to be bound and recorded when formally executing"
+    }
+  ],
+  "cleanup": "restore original property descriptors/listeners after each case, terminate profile/process, discard only its isolated DB. Next control case must pass environment sanity; do not carry mocks across cases."
+}

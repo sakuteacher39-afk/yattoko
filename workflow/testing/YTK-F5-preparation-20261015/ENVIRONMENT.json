@@ -1,0 +1,27 @@
+{
+  "purpose": "F5 preparation inventory only; no SUT or formal test executed",
+  "os": "Microsoft Windows NT 10.0.26300.0",
+  "architecture": "x64",
+  "node": {
+    "version": "v24.20.0",
+    "path": "C:\\Program Files\\nodejs\\node.exe",
+    "sha256": "5c976096e04e5c2c1f091938926234cc9fbebfe9787ddd149351b3b0ecc707b5"
+  },
+  "npm": "11.19.0",
+  "chrome": {
+    "path": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+    "version": "155.0.8059.40",
+    "sha256": "f76f0234efb271041dc84f9f38fb858e01859d5da6f775f5108668eb3ae80975",
+    "executionStatus": "NOT RUN"
+  },
+  "dependencies": {
+    "fakeIndexedDB": "6.2.4",
+    "jsdom": "30.1.2",
+    "packageLockSHA256": "d55006bb819ce48708d92c7ab561980077dd0ebf097909ed032a11bb26fc6402"
+  },
+  "browserOrigin": "http://127.0.0.1:4175",
+  "browserProfile": "work/f5-run/<runId>/chrome-profile",
+  "networkPolicy": "setup dependencies separately; during fixture/SUT runs loopback static assets only; block and record all other attempts without request body logging",
+  "rerunRule": "compare versions/binary hashes before formal execution; any mismatch records a new environment revision, never silently substitutes an engine",
+  "phase": "PREPARATION ONLY"
+}

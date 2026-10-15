@@ -1,0 +1,648 @@
+{
+  "policy": "A case passes only when all original variants are instantiated and recorded; do not infer coverage from the base fixture or a related development title.",
+  "manifestCategoryKeys": [
+    "device",
+    "base",
+    "mail",
+    "social",
+    "cloud",
+    "subscription",
+    "finance",
+    "commerce",
+    "auth",
+    "license",
+    "carrier",
+    "business"
+  ],
+  "r001": {
+    "category": {
+      "usageStatus": {
+        "values": [
+          "unanswered",
+          "using",
+          "not_using",
+          "unknown"
+        ],
+        "presence": "required"
+      },
+      "intention": {
+        "values": [
+          "unanswered",
+          "keep",
+          "delete",
+          "family",
+          "undecided"
+        ],
+        "presence": "required"
+      }
+    },
+    "overview": {
+      "identity": {
+        "values": [
+          "unanswered",
+          "configured",
+          "not_configured",
+          "unknown"
+        ],
+        "presence": "required"
+      },
+      "billing": {
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": "required"
+      },
+      "finance": {
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": "required"
+      },
+      "data": {
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": "required"
+      },
+      "family": {
+        "values": [
+          "unanswered",
+          "known",
+          "hidden",
+          "unknown"
+        ],
+        "presence": "required"
+      }
+    }
+  },
+  "r002Questions": {
+    "device": [
+      {
+        "key": "importantData",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "backup",
+        "values": [
+          "unanswered",
+          "checked",
+          "missing",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "base": [
+      {
+        "key": "handover",
+        "values": [
+          "unanswered",
+          "checked",
+          "missing",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "importantData",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "billing",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "mail": [
+      {
+        "key": "recoveryUse",
+        "values": [
+          "unanswered",
+          "often",
+          "rare",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "importantData",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "social": [
+      {
+        "key": "importantData",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "handover",
+        "values": [
+          "unanswered",
+          "checked",
+          "unchecked",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "billing",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "cloud": [
+      {
+        "key": "importantData",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "backupUse",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "paid",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "subscription": [
+      {
+        "key": "billing",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "billingSource",
+        "values": [
+          "unanswered",
+          "apple",
+          "google",
+          "microsoft",
+          "direct",
+          "other",
+          "unknown"
+        ],
+        "presence": {
+          "type": "equals",
+          "questionKey": "billing",
+          "value": "yes"
+        }
+      }
+    ],
+    "finance": [
+      {
+        "key": "asset",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "familyKnow",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "selfIdentify",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "commerce": [
+      {
+        "key": "billing",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "balance",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "openTrade",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "auth": [
+      {
+        "key": "recovery",
+        "values": [
+          "unanswered",
+          "checked",
+          "missing",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "dependency",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "license": [
+      {
+        "key": "purchase",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "subscription",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "importantData",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "carrier": [
+      {
+        "key": "recoveryUse",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "mainLine",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "familyKnow",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ],
+    "business": [
+      {
+        "key": "importance",
+        "values": [
+          "unanswered",
+          "high",
+          "support",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "billing",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "sharedAdmin",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      },
+      {
+        "key": "importantData",
+        "values": [
+          "unanswered",
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "presence": {
+          "type": "always"
+        }
+      }
+    ]
+  },
+  "serviceCore": {
+    "recordState": {
+      "values": [
+        "partial",
+        "completed"
+      ],
+      "presence": "required"
+    },
+    "usageStatus": {
+      "values": [
+        "unanswered",
+        "using",
+        "dormant",
+        "unknown"
+      ],
+      "presence": "required"
+    },
+    "intentionOverride": {
+      "values": [
+        null,
+        "keep",
+        "delete",
+        "family",
+        "undecided"
+      ],
+      "presence": "required"
+    }
+  },
+  "recipes": [
+    {
+      "id": "ENUM-EXACT",
+      "input": "manifestの全key/enum/presence/condition。unanswered/nullを除外しない",
+      "cases": "MAN/R08/R2INT/REG関連。正例全値＋unknown/missing/nested objectの負例",
+      "oracle": "approved normative manifest, not SUT output"
+    },
+    {
+      "id": "CONTROL-ALL",
+      "codePoints": [
+        "U+0000..001F",
+        "U+007F",
+        "U+0080..009F",
+        "U+061C",
+        "U+200E",
+        "U+200F",
+        "U+202A..202E",
+        "U+2066..2069"
+      ],
+      "input": "各code pointを「試験」前後/中央に挿入。Unicode escape・raw textを分離",
+      "cases": "TXT-05〜11 / R02-22"
+    },
+    {
+      "id": "UUID-ALL",
+      "variants": [
+        "lowercase v4 valid",
+        "uppercase",
+        "braces",
+        "v1",
+        "v7",
+        "invalid variant",
+        "prefix typo",
+        "duplicate",
+        "category ID mismatch",
+        "existing collision→fresh",
+        "collision×3",
+        "generator throw",
+        "primary randomUUID",
+        "fallback getRandomValues"
+      ],
+      "cases": "RID/GEN/ID/REG関連"
+    },
+    {
+      "id": "EXACT-BYTES",
+      "layers": {
+        "canonical": [
+          9999999,
+          10000000,
+          10000001
+        ],
+        "pending": [
+          999999,
+          1000000,
+          1000001
+        ],
+        "raw": [
+          15999999,
+          16000000,
+          16000001
+        ]
+      },
+      "input": "FIXTURES.json記載SHA/サイズを確認。canonical新generation/metaの長さもprospective layerで再照合",
+      "cases": "CAP/R03/R04。layer通過と全file受理を区別"
+    },
+    {
+      "id": "MISSING-UNKNOWN",
+      "input": "root/meta/overview/category/service/answers/pending/operation/context/checksum各objectでrequired1key欠落、unknown1key、__proto__/constructor/prototype、duplicate decoded keyを別byte fixtureへ導入",
+      "cases": "CAT/RST/R02/SEC関連。署名再計算版と据置版を分離"
+    },
+    {
+      "id": "TRANSACTION-PHASES",
+      "stores": [
+        "meta",
+        "overview",
+        "categories",
+        "services"
+      ],
+      "phases": [
+        "GUARD",
+        "CLEAR",
+        "PUT",
+        "READBACK",
+        "COMPLETE"
+      ],
+      "input": "各指定phase/store/first-middle-final request faultを別run。no-op/empty/valid/corruptの前提も個別に記録",
+      "cases": "SAVE/DEL/R03/RST関連"
+    },
+    {
+      "id": "REAPPLY-LIFECYCLE",
+      "input": "full/partial/none × sourceFileId/snapshotGen/restoredGen/global/operationId/receipt一致不一致、before==after、double tap、op1成功op2abort、reload/実restart、file紛失",
+      "cases": "R05/R01/RST関連"
+    },
+    {
+      "id": "ERROR-SIX",
+      "variants": [
+        "capacity",
+        "quota",
+        "restricted",
+        "conflict",
+        "temporary",
+        "unknown"
+      ],
+      "input": "根拠ある例外/根拠不足例外・pendingあり/なし・retry可/不可を分離",
+      "cases": "ERR/SAVE関連"
+    }
+  ]
+}
