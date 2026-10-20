@@ -1,0 +1,324 @@
+{
+  "originals": [
+    {
+      "id": "V-VALID-01",
+      "filename": "V-VALID-01.json",
+      "bytes": 3607,
+      "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+      "expected": "accept preview only after strict validation",
+      "purpose": "snapshot fixtureを独立serializerで作成。製品validatorによる合格は未確認",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-VALID-01.json"
+    },
+    {
+      "id": "DIGEST-01",
+      "filename": "DIGEST-01.json",
+      "bytes": 140,
+      "sha256": "15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d",
+      "expected": "SHA256=15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d; not a restore-valid file",
+      "purpose": "F3 normative digest only",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/DIGEST-01.json"
+    },
+    {
+      "id": "V-DUP-01",
+      "filename": "V-DUP-01.json",
+      "bytes": 3623,
+      "sha256": "1af393dcd24d1d3e6141781a5d11a100ec940a4a847f8c0c0b1fc9b3a6a76974",
+      "expected": "lexical reject",
+      "purpose": "root duplicate",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-DUP-01.json"
+    },
+    {
+      "id": "V-DUP-02",
+      "filename": "V-DUP-02.json",
+      "bytes": 3628,
+      "sha256": "fd47f47ad405146a87e3d55b869d15156af8189aede2c882dbae0a8a9d3ee2d9",
+      "expected": "decoded duplicate reject",
+      "purpose": "escape equivalent key",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-DUP-02.json"
+    },
+    {
+      "id": "V-ORDER-01",
+      "filename": "V-ORDER-01.json",
+      "bytes": 3607,
+      "sha256": "1cff8dede4c6cf54162e5154f7b189f7d90f2d0fc1a34980e650d81825e2d4eb",
+      "expected": "canonical reject",
+      "purpose": "same semantic body; original checksum; root order different",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-ORDER-01.json"
+    },
+    {
+      "id": "V-NUM-01",
+      "filename": "V-NUM-01.json",
+      "bytes": 3609,
+      "sha256": "97c6a4d48c0a089ddce6eba96e6cdd98dc8cbfdd09ec405a95e72da3db0ea7d4",
+      "expected": "lexical reject",
+      "purpose": "exponent",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-NUM-01.json"
+    },
+    {
+      "id": "V-NUM-02",
+      "filename": "V-NUM-02.json",
+      "bytes": 3608,
+      "sha256": "913822eb54ded66a632cf23cd316c6d0f91b66bece9e2749b8633a140ea4301a",
+      "expected": "lexical reject",
+      "purpose": "negative zero",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-NUM-02.json"
+    },
+    {
+      "id": "V-UNK-01",
+      "filename": "V-UNK-01.json",
+      "bytes": 3625,
+      "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c",
+      "expected": "semantic reject even with valid checksum",
+      "purpose": "unknown nested field",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-UNK-01.json"
+    },
+    {
+      "id": "V-UTF-01",
+      "filename": "V-UTF-01.json",
+      "bytes": 3595,
+      "sha256": "06a7226584301aa7af9887653071844af1ff26794936b5403e5c88ea2c959d87",
+      "expected": "Unicode reject",
+      "purpose": "escaped lone surrogate",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-UTF-01.json"
+    },
+    {
+      "id": "V-BOM-01",
+      "filename": "V-BOM-01.json",
+      "bytes": 3610,
+      "sha256": "a7fc5b8e9c9b7ead6b3d37337c45824a642c4d48b52e7294f2276d9262c2aee8",
+      "expected": "BOM reject",
+      "purpose": "UTF8 BOM",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-BOM-01.json"
+    },
+    {
+      "id": "V-UTF8-INVALID",
+      "filename": "V-UTF8-INVALID.json",
+      "bytes": 3,
+      "sha256": "5b3430ee8e5c7490d0e154755cdae0c9a7791be87e77b1f91a52f77676bed0c7",
+      "expected": "fatal UTF8 reject",
+      "purpose": "invalid encoding",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-UTF8-INVALID.json"
+    },
+    {
+      "id": "V-HASH-01",
+      "filename": "V-HASH-01.json",
+      "bytes": 3605,
+      "sha256": "055a9280747f8b464437c76230736281b77f9b5904898f15f24195c56a88db18",
+      "expected": "checksum reject",
+      "purpose": "one UTF8 byte changed; schema otherwise unchanged",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-HASH-01.json"
+    },
+    {
+      "id": "V-HASH-02",
+      "filename": "V-HASH-02.json",
+      "bytes": 3625,
+      "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c",
+      "expected": "semantic reject",
+      "purpose": "re-signed unknown field",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-HASH-02.json"
+    },
+    {
+      "id": "V-TRUNC-01",
+      "filename": "V-TRUNC-01.json",
+      "bytes": 3606,
+      "sha256": "45cce1a8680b4446a648520e1e91eacdffec955776433b5914ef6afd1d7fadf0",
+      "expected": "parse reject",
+      "purpose": "truncated",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-TRUNC-01.json"
+    },
+    {
+      "id": "V-ESC-01",
+      "filename": "V-ESC-01.json",
+      "bytes": 3612,
+      "sha256": "bf5c2e0ecd3f08aff580add5866d984fc624621ab14e79f12985ce3a370ef00b",
+      "expected": "canonical reject",
+      "purpose": "unnecessary escape",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/V-ESC-01.json"
+    },
+    {
+      "id": "EM-FULL",
+      "filename": "EM-FULL.json",
+      "bytes": 4539,
+      "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+      "expected": "manual pending only; no auto-apply",
+      "purpose": "chain ordinal1-3, same-category dependencies",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/EM-FULL.json"
+    },
+    {
+      "id": "EM-PARTIAL",
+      "filename": "EM-PARTIAL.json",
+      "bytes": 3717,
+      "sha256": "1328c91207f00f5319c8d279381f855de96b51e41a9686d2f6b4ea354b51d27c",
+      "expected": "partial exported ordinal2; omitted1/3 separately",
+      "purpose": "離散範囲と件数。非連続範囲を結合しない",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/EM-PARTIAL.json"
+    },
+    {
+      "id": "EM-NONE-DELETEALL",
+      "filename": "EM-NONE-DELETEALL.json",
+      "bytes": 3101,
+      "sha256": "6ae571e24869b961f8bc9d23fca0ce153214ac557a358377fedc7431cc56bfac",
+      "expected": "snapshot-only import allowed; no deletion to apply",
+      "purpose": "R01-14: omitted metadata is not an executable operation",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN",
+      "path": "fixtures/EM-NONE-DELETEALL.json"
+    }
+  ],
+  "knownDefect": {
+    "id": "V-HASH-01",
+    "oldBytes": 3607,
+    "actualBytes": 3605,
+    "differingBytes": 890,
+    "meetsOneByteRule": false,
+    "preserved": true,
+    "existingHistory": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-38/"
+  },
+  "newDerived": {
+    "label": "single-ASCII-byte-stale-checksum",
+    "bytes": 3607,
+    "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed",
+    "differingBytes": 1,
+    "oracle": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": false,
+      "computedChecksum": "9c41c143f173a21a6446befca95cf8cfceed698da5d60c1b65b219a1853974a6",
+      "declaredChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+      "canonicalRawMatches": true,
+      "rawSHA256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed",
+      "snapshotSHA256": "8a198bf072621affe2643c82e1ef6ccf26e3f7e57abafe726d0f82cd58b62a50"
+    },
+    "meetsOneByteRule": true
+  },
+  "policy": "Original fixture is retained and separately rejected. Derived fixture repairs test input only, not product/spec/history. Never use old invalid single-byte premise as new evidence."
+}
