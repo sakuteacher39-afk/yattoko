@@ -1,0 +1,117 @@
+{
+  "caseId": "F3:R02-04",
+  "status": "PASS",
+  "attempt": 2,
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 95,
+    "description": "root duplicate same key same value。",
+    "details": [
+      "- 期待：lexical reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-04/result.json",
+      "attempt": 1,
+      "status": "PASS",
+      "sha256": "7a17d05b0345d264fd2df932c11a64fa24fae2c27ad9de3a079d07fb13747a9b"
+    }
+  ],
+  "plannedVariants": 17,
+  "completedVariants": 17,
+  "counts": {
+    "PASS": 17
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "V-DUP-01",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "root-fileFormat-same",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "root-fileFormatVersion-same",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "root-kind-same",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "label": "root-exportedAt-same",
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "label": "root-snapshot-same",
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "label": "root-pending-same",
+      "status": "PASS"
+    },
+    {
+      "index": 9,
+      "label": "root-checksum-same",
+      "status": "PASS"
+    },
+    {
+      "index": 10,
+      "label": "V-DUP-01-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 11,
+      "label": "root-fileFormat-same-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 12,
+      "label": "root-fileFormatVersion-same-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 13,
+      "label": "root-kind-same-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 14,
+      "label": "root-exportedAt-same-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 15,
+      "label": "root-snapshot-same-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 16,
+      "label": "root-pending-same-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 17,
+      "label": "root-checksum-same-mixed-structural-whitespace",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

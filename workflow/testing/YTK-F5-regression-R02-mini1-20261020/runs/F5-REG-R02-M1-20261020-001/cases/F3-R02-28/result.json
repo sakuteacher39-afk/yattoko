@@ -1,0 +1,82 @@
+{
+  "caseId": "F3:R02-28",
+  "status": "PASS",
+  "attempt": 2,
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 138,
+    "description": "SHA API failure。",
+    "details": [
+      "- 期待：export/import成功扱いしない。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-28/result.json",
+      "attempt": 1,
+      "status": "PASS",
+      "sha256": "17e6ae780068afd5e7cedb28db79c6a66abae1d2774fd8f6457db71cd83ec5ec"
+    }
+  ],
+  "plannedVariants": 10,
+  "completedVariants": 10,
+  "counts": {
+    "PASS": 10
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "export-native-control",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "SHA-import-reject",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "SHA-export-reject",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "SHA-import-length0",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "label": "SHA-export-length0",
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "label": "SHA-import-length31",
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "label": "SHA-export-length31",
+      "status": "PASS"
+    },
+    {
+      "index": 9,
+      "label": "SHA-import-length33",
+      "status": "PASS"
+    },
+    {
+      "index": 10,
+      "label": "SHA-export-length33",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

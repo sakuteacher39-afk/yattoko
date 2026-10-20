@@ -1,0 +1,65 @@
+{
+  "caseId": "F3:R02-02",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "attempt": 2,
+  "index": 3,
+  "label": "BOM-then-whitespace",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 93,
+    "description": "UTF-8 BOM付き拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-20T12:59:32.288Z",
+  "finishedAt": "2026-10-20T12:59:32.288Z",
+  "input": {
+    "path": "inputs/F3-R02-02/003.bin",
+    "bytes": 3614,
+    "sha256": "a631f9fff0cde5018cda1e4bb56f264c920a0dc0c81107ab9b6aecf279482c86"
+  },
+  "expected": {
+    "accepted": false,
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": false
+  },
+  "oracleNote": "Independent Node JSON/UTF8/crypto + decoded duplicate token stack + normative manifest/order + explicit original requirement. No product validator used to produce expected values.",
+  "actual": {
+    "accepted": false,
+    "errorCode": "BOM",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "REJECT:BOM"
+    ],
+    "parsedContentUnchanged": false,
+    "initialParsedSHA256": null,
+    "parsedHashes": [
+      {
+        "stage": "return",
+        "sha256": null
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [],
+    "observedWriteEvents": [],
+    "digestPayloadsMatchOracle": null,
+    "digestInputs": []
+  },
+  "status": "PASS",
+  "executionError": null
+}

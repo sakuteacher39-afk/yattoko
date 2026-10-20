@@ -1,0 +1,169 @@
+{
+  "caseId": "F3:R02-21",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "attempt": 2,
+  "index": 2,
+  "label": "non-NFC-\"é\"",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 123,
+    "description": "F2 NFC必須fieldがnon-NFC。",
+    "details": [
+      "- 期待：normalizeせずreject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-20T13:00:08.350Z",
+  "finishedAt": "2026-10-20T13:00:08.352Z",
+  "input": {
+    "path": "inputs/F3-R02-21/002.bin",
+    "bytes": 3592,
+    "sha256": "7f50dbcda0b69a5a928d838a44d65e3c1a53b0b0d860c5f3fbbe20b2ac02b2b4"
+  },
+  "expected": {
+    "accepted": false,
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "2f5a782595a9c7e4cbd6eed7f56658ca50a156be5b19d047373fefc5177312e8",
+    "declaredChecksum": "2f5a782595a9c7e4cbd6eed7f56658ca50a156be5b19d047373fefc5177312e8",
+    "canonicalRawMatches": true,
+    "rawSHA256": "7f50dbcda0b69a5a928d838a44d65e3c1a53b0b0d860c5f3fbbe20b2ac02b2b4",
+    "snapshotSHA256": "25a7499ca20ca0ced561f464b5030b33cec48b0c322c4d59ae77edbd48c7fc23"
+  },
+  "oracleNote": "NFC(value) differs from original; reject original, no normalization into accepted file.",
+  "actual": {
+    "accepted": false,
+    "errorCode": "INVALID_FILE",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "FULL_DOCUMENT_PARSE",
+      "REJECT:INVALID_FILE"
+    ],
+    "parsedContentUnchanged": true,
+    "initialParsedSHA256": "7f50dbcda0b69a5a928d838a44d65e3c1a53b0b0d860c5f3fbbe20b2ac02b2b4",
+    "parsedHashes": [
+      {
+        "stage": "return",
+        "sha256": "7f50dbcda0b69a5a928d838a44d65e3c1a53b0b0d860c5f3fbbe20b2ac02b2b4"
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [],
+    "observedWriteEvents": [],
+    "digestPayloadsMatchOracle": null,
+    "digestInputs": []
+  },
+  "status": "PASS",
+  "executionError": null
+}

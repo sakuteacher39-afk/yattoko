@@ -1,0 +1,55 @@
+{
+  "caseId": "F3:R02-11",
+  "status": "PASS",
+  "attempt": 2,
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 109,
+    "description": "unknown root key。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-11/result.json",
+      "attempt": 1,
+      "status": "PASS",
+      "sha256": "6aba42f1bb0c978c701aba33d15ed7a3dd5c19509360ba55ac451d5f9c1cb2ca"
+    }
+  ],
+  "plannedVariants": 5,
+  "completedVariants": 5,
+  "counts": {
+    "PASS": 5
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "root-unknown-extra",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "root-unknown-__proto__",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "root-unknown-constructor",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "root-unknown-prototype",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

@@ -1,0 +1,48 @@
+{
+  "caseId": "F3:R02-29",
+  "status": "PASS",
+  "attempt": 1,
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 140,
+    "description": "checksum検証前後でparsed objectを書換えない。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [],
+  "plannedVariants": 5,
+  "completedVariants": 5,
+  "counts": {
+    "PASS": 5
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "parsed-content-unchanged-V-VALID-01",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "parsed-content-unchanged-EM-FULL",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "parsed-content-unchanged-EM-PARTIAL",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "parsed-content-unchanged-EM-NONE-DELETEALL",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "parsed-content-stale-checksum-rejection",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

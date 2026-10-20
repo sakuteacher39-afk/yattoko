@@ -1,0 +1,263 @@
+{
+  "caseId": "F3:R02-29",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "attempt": 1,
+  "index": 2,
+  "label": "parsed-content-unchanged-EM-FULL",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 140,
+    "description": "checksum検証前後でparsed objectを書換えない。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-20T13:00:25.815Z",
+  "finishedAt": "2026-10-20T13:00:25.826Z",
+  "input": {
+    "path": "inputs/F3-R02-29/002.bin",
+    "bytes": 4539,
+    "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+  },
+  "expected": {
+    "accepted": true,
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 3,
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011",
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "parsedContentUnchanged": true,
+    "contentWriteAttempts": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+    "declaredChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+    "canonicalRawMatches": true,
+    "rawSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "oracleNote": "Independent Node JSON/UTF8/crypto + decoded duplicate token stack + normative manifest/order + explicit original requirement. No product validator used to produce expected values.",
+  "actual": {
+    "accepted": true,
+    "errorCode": null,
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 3,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "FULL_DOCUMENT_PARSE",
+      "SHA256",
+      "SHA256",
+      "SHA256",
+      "ACCEPT"
+    ],
+    "parsedContentUnchanged": true,
+    "initialParsedSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+    "parsedHashes": [
+      {
+        "stage": "before-digest-1",
+        "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+      },
+      {
+        "stage": "after-digest-1",
+        "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+      },
+      {
+        "stage": "before-digest-2",
+        "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+      },
+      {
+        "stage": "after-digest-2",
+        "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+      },
+      {
+        "stage": "before-digest-3",
+        "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+      },
+      {
+        "stage": "after-digest-3",
+        "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+      },
+      {
+        "stage": "return",
+        "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [
+      {
+        "type": "define",
+        "path": "$.pending.operations.0.dependsOnOperationIds.length",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.1.dependsOnOperationIds.0",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.1.dependsOnOperationIds.length",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.2.dependsOnOperationIds.0",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.2.dependsOnOperationIds.1",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.2.dependsOnOperationIds.length",
+        "contentChange": false
+      }
+    ],
+    "observedWriteEvents": [
+      {
+        "type": "define",
+        "path": "$.pending.operations.0.dependsOnOperationIds.length",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.1.dependsOnOperationIds.0",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.1.dependsOnOperationIds.length",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.2.dependsOnOperationIds.0",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.2.dependsOnOperationIds.1",
+        "contentChange": false
+      },
+      {
+        "type": "define",
+        "path": "$.pending.operations.2.dependsOnOperationIds.length",
+        "contentChange": false
+      }
+    ],
+    "digestPayloadsMatchOracle": true,
+    "digestInputs": [
+      {
+        "index": 1,
+        "bytes": 4431,
+        "sha256": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+        "matchesOracle": true
+      },
+      {
+        "index": 2,
+        "bytes": 2325,
+        "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011",
+        "matchesOracle": null
+      },
+      {
+        "index": 3,
+        "bytes": 1395,
+        "sha256": "dce663e16c1c6ebaddb2ed199ae82187d843fe236cb4f67362c204cb60a2338b",
+        "matchesOracle": null
+      }
+    ]
+  },
+  "status": "PASS",
+  "executionError": null
+}

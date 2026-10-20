@@ -1,0 +1,17 @@
+{
+  "category": "HARNESS_ORACLE_SERIALIZATION",
+  "productIssue": false,
+  "firstRun": "F5-REG-R02-M1-20261020-001",
+  "caseId": "F3:R02-05",
+  "status": "NOT VERIFIABLE",
+  "affectedVariants": [
+    8,
+    15
+  ],
+  "reason": "Initial run R02-05 two checksum-different duplicate vectors NOT VERIFIABLE before product invocation, because runtime oracle had undefined own property omitted from serialized plan. Compare oracle on the same JSON representation used for plan/evidence. Expected values/inputs unchanged. Preserve all initial evidence; rerun only full R02-05 case. Other38 initial PASS not rejudged.",
+  "initialResultSHA256": "ddfc7f707bc93f1e9523c06753ce7dcf0cb6dad2ee8d71250e03c75828ca74fa",
+  "newRun": "F5-REG-R02-M1-20261020-002",
+  "newAttempt": 3,
+  "oldResultsChanged": false,
+  "recordedAt": "2026-10-20T13:01:36.921Z"
+}

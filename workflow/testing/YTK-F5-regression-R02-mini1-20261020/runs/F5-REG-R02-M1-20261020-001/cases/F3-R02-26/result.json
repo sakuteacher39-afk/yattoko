@@ -1,0 +1,62 @@
+{
+  "caseId": "F3:R02-26",
+  "status": "PASS",
+  "attempt": 2,
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 134,
+    "description": "checksum algorithm未知。",
+    "details": [
+      "- 期待：reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-26/result.json",
+      "attempt": 1,
+      "status": "PASS",
+      "sha256": "febc59e5e121440c8d964f862bbb0301cf459529721113ef789473f537d4a0d6"
+    }
+  ],
+  "plannedVariants": 6,
+  "completedVariants": 6,
+  "counts": {
+    "PASS": 6
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "unknown-algorithm-\"SHA-512\"",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "unknown-algorithm-\"MD5\"",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "unknown-algorithm-\"sha-256\"",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "unknown-algorithm-\"\"",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "label": "unknown-algorithm-null",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

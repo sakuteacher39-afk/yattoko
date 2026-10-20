@@ -1,0 +1,40 @@
+{
+  "caseId": "F3:R02-23",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "attempt": 2,
+  "index": 1,
+  "label": "DIGEST-01",
+  "mode": "digest",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 129,
+    "description": "DIGEST-01 expected SHAが15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-20T13:00:13.839Z",
+  "finishedAt": "2026-10-20T13:00:13.840Z",
+  "input": {
+    "path": "inputs/F3-R02-23/001.bin",
+    "bytes": 140,
+    "sha256": "15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d"
+  },
+  "expected": {
+    "sha256": "15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d",
+    "digestCalls": 1,
+    "inputUnchanged": true
+  },
+  "independentOracle": {
+    "sha256": "15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d"
+  },
+  "oracleNote": "Published F3 vector constant plus independent Node createHash. Not a valid restore file.",
+  "actual": {
+    "sha256": "15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d",
+    "digestCalls": 1,
+    "inputUnchanged": true
+  },
+  "status": "PASS",
+  "executionError": null
+}

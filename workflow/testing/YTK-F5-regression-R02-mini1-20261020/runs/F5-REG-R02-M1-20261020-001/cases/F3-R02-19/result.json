@@ -1,0 +1,60 @@
+{
+  "caseId": "F3:R02-19",
+  "status": "PASS",
+  "attempt": 2,
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 121,
+    "description": "escaped lone high surrogate拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-19/result.json",
+      "attempt": 1,
+      "status": "PASS",
+      "sha256": "e450302dbf7d0a8f61435bd79b693124a4440a92b3f133a39dd2adfa3bba076c"
+    }
+  ],
+  "plannedVariants": 6,
+  "completedVariants": 6,
+  "counts": {
+    "PASS": 6
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "V-UTF-01",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "lone-high-\"\\ud800\"",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "lone-high-\"\\udbff\"",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "lone-high-\"\\ud800x\"",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "label": "lone-high-\"\\ud800\\ud800\"",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

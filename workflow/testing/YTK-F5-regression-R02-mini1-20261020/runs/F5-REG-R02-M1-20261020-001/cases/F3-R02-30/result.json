@@ -1,0 +1,48 @@
+{
+  "caseId": "F3:R02-30",
+  "status": "PASS",
+  "attempt": 1,
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 141,
+    "description": "full canonical rawとdigest canonical payloadがschema-defined orderを共有。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [],
+  "plannedVariants": 5,
+  "completedVariants": 5,
+  "counts": {
+    "PASS": 5
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "schema-order-and-digest-V-VALID-01",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "schema-order-and-digest-EM-FULL",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "schema-order-and-digest-EM-PARTIAL",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "schema-order-and-digest-EM-NONE-DELETEALL",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "export-order-and-digest",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

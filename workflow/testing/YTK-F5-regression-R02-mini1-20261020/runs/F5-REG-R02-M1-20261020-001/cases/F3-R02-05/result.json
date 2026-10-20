@@ -1,0 +1,108 @@
+{
+  "caseId": "F3:R02-05",
+  "status": "NOT VERIFIABLE",
+  "attempt": 2,
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runId": "F5-REG-R02-M1-20261020-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 97,
+    "description": "root duplicate same key different value。",
+    "details": [
+      "- 期待：lexical reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-05/result.json",
+      "attempt": 1,
+      "status": "PASS",
+      "sha256": "5b7453bf84b941246d667dd1019eefb24c6055ea26b69d23995e32b58bf323c9"
+    }
+  ],
+  "plannedVariants": 15,
+  "completedVariants": 15,
+  "counts": {
+    "PASS": 13,
+    "NOT VERIFIABLE": 2
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "root-fileFormat-different",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "root-fileFormatVersion-different",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "root-kind-different",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "root-exportedAt-different",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "label": "root-snapshot-different",
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "label": "root-pending-different",
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "label": "root-checksum-different",
+      "status": "NOT VERIFIABLE"
+    },
+    {
+      "index": 9,
+      "label": "root-fileFormat-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 10,
+      "label": "root-fileFormatVersion-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 11,
+      "label": "root-kind-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 12,
+      "label": "root-exportedAt-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 13,
+      "label": "root-snapshot-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 14,
+      "label": "root-pending-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 15,
+      "label": "root-checksum-different-mixed-structural-whitespace",
+      "status": "NOT VERIFIABLE"
+    }
+  ],
+  "reason": "Evidence or harness execution incomplete"
+}
