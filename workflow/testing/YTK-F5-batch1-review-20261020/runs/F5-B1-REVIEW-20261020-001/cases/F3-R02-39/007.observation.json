@@ -1,0 +1,43 @@
+{
+  "caseId": "F3:R02-39",
+  "attempt": 2,
+  "label": "checksum-negative-control-oracle",
+  "index": 7,
+  "startedAt": "2026-10-20T11:42:13.212Z",
+  "finishedAt": "2026-10-20T11:42:13.214Z",
+  "input": {
+    "path": "007.input.bin",
+    "bytes": 3607,
+    "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+  },
+  "expected": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": true,
+    "unknownFields": [],
+    "missingFields": [],
+    "checksumMatches": false
+  },
+  "actual": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": true,
+    "unknownFields": [],
+    "missingFields": [],
+    "overviewMemberCount": 8,
+    "expectedOverviewMemberCount": 8,
+    "checksumMatches": false,
+    "computedChecksum": "9c41c143f173a21a6446befca95cf8cfceed698da5d60c1b65b219a1853974a6",
+    "declaredChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+    "payloadFieldOrder": [
+      "fileFormat",
+      "fileFormatVersion",
+      "kind",
+      "exportedAt",
+      "snapshot",
+      "pending"
+    ],
+    "serializedRawMatches": true
+  },
+  "oracle": "One ASCII date digit changes body but leaves old checksum. Valid schema and invalid checksum are independent facts.",
+  "status": "PASS",
+  "executionError": null
+}

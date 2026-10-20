@@ -1,0 +1,117 @@
+{
+  "caseId": "F3:R02-39",
+  "status": "PASS",
+  "attempt": 2,
+  "attemptHistory": [
+    {
+      "runId": "F5-B1-20261015-001",
+      "attempt": 1,
+      "status": "FAIL",
+      "evidencePath": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-39/result.json",
+      "sha256": "f372d0408c87cfca99be034018f739028dc932a700a4a5a8d5b32f2d40a5e2d2",
+      "retained": true
+    }
+  ],
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 153,
+    "description": "V-HASH-02 checksum一致でもreject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-20T11:42:13.187Z",
+  "finishedAt": "2026-10-20T11:42:13.219Z",
+  "variantCount": 8,
+  "totalObservations": 8,
+  "evidence": [
+    {
+      "index": 1,
+      "label": "valid-control-independent-oracle",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "001.input.bin",
+        "bytes": 3607,
+        "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+      }
+    },
+    {
+      "index": 2,
+      "label": "valid-control-product",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "002.input.bin",
+        "bytes": 3607,
+        "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+      }
+    },
+    {
+      "index": 3,
+      "label": "resigned-unknown-field-oracle",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "003.input.bin",
+        "bytes": 3625,
+        "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c"
+      }
+    },
+    {
+      "index": 4,
+      "label": "reject-signed-schema-invalid-original",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "004.input.bin",
+        "bytes": 3625,
+        "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c"
+      }
+    },
+    {
+      "index": 5,
+      "label": "same-count-schema-oracle",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "005.input.bin",
+        "bytes": 3604,
+        "sha256": "ee3883a31be15a22a86381e2b6fdd2480590dd60c6407567dbb7ba49156811bf"
+      }
+    },
+    {
+      "index": 6,
+      "label": "reject-schema-invalid-within-member-budget",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "006.input.bin",
+        "bytes": 3604,
+        "sha256": "ee3883a31be15a22a86381e2b6fdd2480590dd60c6407567dbb7ba49156811bf"
+      }
+    },
+    {
+      "index": 7,
+      "label": "checksum-negative-control-oracle",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "007.input.bin",
+        "bytes": 3607,
+        "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+      }
+    },
+    {
+      "index": 8,
+      "label": "checksum-negative-control-product",
+      "attempt": 2,
+      "status": "PASS",
+      "input": {
+        "path": "008.input.bin",
+        "bytes": 3607,
+        "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+      }
+    }
+  ],
+  "reason": "All explicitly bound expectations/variants for this case matched; no development result copied"
+}

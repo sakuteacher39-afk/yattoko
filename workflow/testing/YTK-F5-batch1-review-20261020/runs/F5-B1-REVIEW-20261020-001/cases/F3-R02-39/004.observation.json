@@ -1,0 +1,32 @@
+{
+  "caseId": "F3:R02-39",
+  "attempt": 2,
+  "label": "reject-signed-schema-invalid-original",
+  "index": 4,
+  "startedAt": "2026-10-20T11:42:13.201Z",
+  "finishedAt": "2026-10-20T11:42:13.203Z",
+  "input": {
+    "path": "004.input.bin",
+    "bytes": 3625,
+    "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "MEMBER_LIMIT",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 0,
+    "scalarTokenParseCalls": 32,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "oracle": "Product import measured afresh. For R02-36/39, errorCode is observational metadata, never a fixed INVALID_FILE pass condition.",
+  "status": "PASS",
+  "executionError": null
+}

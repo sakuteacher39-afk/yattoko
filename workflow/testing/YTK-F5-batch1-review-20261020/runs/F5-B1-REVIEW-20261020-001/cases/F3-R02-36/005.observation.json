@@ -1,0 +1,51 @@
+{
+  "caseId": "F3:R02-36",
+  "attempt": 2,
+  "label": "same-count-schema-oracle",
+  "index": 5,
+  "startedAt": "2026-10-20T11:42:12.275Z",
+  "finishedAt": "2026-10-20T11:42:12.276Z",
+  "input": {
+    "path": "005.input.bin",
+    "bytes": 3604,
+    "sha256": "ee3883a31be15a22a86381e2b6fdd2480590dd60c6407567dbb7ba49156811bf"
+  },
+  "expected": {
+    "overviewSchemaValid": false,
+    "unknownFields": [
+      "extra"
+    ],
+    "missingFields": [
+      "identity"
+    ],
+    "overviewMemberCount": 8,
+    "checksumMatches": true
+  },
+  "actual": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": false,
+    "unknownFields": [
+      "extra"
+    ],
+    "missingFields": [
+      "identity"
+    ],
+    "overviewMemberCount": 8,
+    "expectedOverviewMemberCount": 8,
+    "checksumMatches": true,
+    "computedChecksum": "216a8d8b33e0f53596fec06f098fd1e74f5b06553b1e21def96ced9f3b98ec16",
+    "declaredChecksum": "216a8d8b33e0f53596fec06f098fd1e74f5b06553b1e21def96ced9f3b98ec16",
+    "payloadFieldOrder": [
+      "fileFormat",
+      "fileFormatVersion",
+      "kind",
+      "exportedAt",
+      "snapshot",
+      "pending"
+    ],
+    "serializedRawMatches": true
+  },
+  "oracle": "Independent allowlist rejects unknown/missing keys even when total count remains8",
+  "status": "PASS",
+  "executionError": null
+}

@@ -1,0 +1,48 @@
+{
+  "caseId": "F3:R02-36",
+  "attempt": 2,
+  "label": "resigned-unknown-field-oracle",
+  "index": 3,
+  "startedAt": "2026-10-20T11:42:12.268Z",
+  "finishedAt": "2026-10-20T11:42:12.270Z",
+  "input": {
+    "path": "003.input.bin",
+    "bytes": 3625,
+    "sha256": "9d02fde4c2e94817d1a438728d5c2814d30fc675a83eaa32648f376c0af9b76c"
+  },
+  "expected": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": false,
+    "unknownFields": [
+      "extra"
+    ],
+    "missingFields": [],
+    "overviewMemberCount": 9,
+    "checksumMatches": true
+  },
+  "actual": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": false,
+    "unknownFields": [
+      "extra"
+    ],
+    "missingFields": [],
+    "overviewMemberCount": 9,
+    "expectedOverviewMemberCount": 8,
+    "checksumMatches": true,
+    "computedChecksum": "4f5d6c0e17c6f367994dd4a0e37f0378fab40503ee0707d3863f3620cdf45fd8",
+    "declaredChecksum": "4f5d6c0e17c6f367994dd4a0e37f0378fab40503ee0707d3863f3620cdf45fd8",
+    "payloadFieldOrder": [
+      "fileFormat",
+      "fileFormatVersion",
+      "kind",
+      "exportedAt",
+      "snapshot",
+      "pending"
+    ],
+    "serializedRawMatches": true
+  },
+  "oracle": "Unknown overview.extra is independently forbidden; 9 actual members vs approved8. Correct checksum does not establish schema validity.",
+  "status": "PASS",
+  "executionError": null
+}

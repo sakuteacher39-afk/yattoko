@@ -1,0 +1,35 @@
+{
+  "caseId": "F3:R02-09",
+  "attempt": 2,
+  "label": "valid-control-product",
+  "index": 2,
+  "startedAt": "2026-10-20T11:42:14.075Z",
+  "finishedAt": "2026-10-20T11:42:14.079Z",
+  "input": {
+    "path": "002.input.bin",
+    "bytes": 3607,
+    "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+  },
+  "expected": {
+    "accepted": true,
+    "snapshotSHA256": "8a198bf072621affe2643c82e1ef6ccf26e3f7e57abafe726d0f82cd58b62a50",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "actual": {
+    "accepted": true,
+    "snapshotSHA256": "8a198bf072621affe2643c82e1ef6ccf26e3f7e57abafe726d0f82cd58b62a50",
+    "errorCode": null,
+    "fullDocumentParseCalls": 1,
+    "scalarTokenParseCalls": 236,
+    "digestCalls": 1,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "oracle": "Product import measured afresh. For R02-36/39, errorCode is observational metadata, never a fixed INVALID_FILE pass condition.",
+  "status": "PASS",
+  "executionError": null
+}

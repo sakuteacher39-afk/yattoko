@@ -1,0 +1,44 @@
+{
+  "caseId": "F3:R02-09",
+  "attempt": 2,
+  "label": "leading-space-independent-oracle",
+  "index": 3,
+  "startedAt": "2026-10-20T11:42:14.081Z",
+  "finishedAt": "2026-10-20T11:42:14.082Z",
+  "input": {
+    "path": "003.input.bin",
+    "bytes": 3608,
+    "sha256": "f72f1f60c0556d4f4bee778e7785a9a503bfec7ad6d4c0bd2eca82bf0388ffc6"
+  },
+  "expected": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": true,
+    "checksumMatches": true,
+    "serializedRawMatches": false,
+    "sameParsedValueAsControl": true
+  },
+  "actual": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": true,
+    "unknownFields": [],
+    "missingFields": [],
+    "overviewMemberCount": 8,
+    "expectedOverviewMemberCount": 8,
+    "checksumMatches": true,
+    "computedChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+    "declaredChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+    "payloadFieldOrder": [
+      "fileFormat",
+      "fileFormatVersion",
+      "kind",
+      "exportedAt",
+      "snapshot",
+      "pending"
+    ],
+    "serializedRawMatches": false,
+    "sameParsedValueAsControl": true
+  },
+  "oracle": "JSON.parse accepts standard inter-token whitespace. Parsed ordered schema/data/checksum equal the accepted control; only raw representation differs.",
+  "status": "PASS",
+  "executionError": null
+}

@@ -1,0 +1,44 @@
+{
+  "caseId": "F3:R02-39",
+  "attempt": 2,
+  "label": "valid-control-independent-oracle",
+  "index": 1,
+  "startedAt": "2026-10-20T11:42:13.189Z",
+  "finishedAt": "2026-10-20T11:42:13.191Z",
+  "input": {
+    "path": "001.input.bin",
+    "bytes": 3607,
+    "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+  },
+  "expected": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": true,
+    "unknownFields": [],
+    "missingFields": [],
+    "checksumMatches": true,
+    "serializedRawMatches": true
+  },
+  "actual": {
+    "jsonSyntaxValid": true,
+    "overviewSchemaValid": true,
+    "unknownFields": [],
+    "missingFields": [],
+    "overviewMemberCount": 8,
+    "expectedOverviewMemberCount": 8,
+    "checksumMatches": true,
+    "computedChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+    "declaredChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+    "payloadFieldOrder": [
+      "fileFormat",
+      "fileFormatVersion",
+      "kind",
+      "exportedAt",
+      "snapshot",
+      "pending"
+    ],
+    "serializedRawMatches": true
+  },
+  "oracle": "F2 overview allowlist/enum/meta and F3 ordered six-field SHA256 via independent Node crypto",
+  "status": "PASS",
+  "executionError": null
+}

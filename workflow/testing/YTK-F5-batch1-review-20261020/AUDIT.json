@@ -1,0 +1,50 @@
+{
+  "clientDate": "2026-10-20",
+  "runId": "F5-B1-REVIEW-20261020-001",
+  "subjectFilesVerified": 123,
+  "subjectBeforeAfterIdentical": true,
+  "legacyProtectedFiles": 1156,
+  "legacyArtifactsEqualOriginalGitBlobs": true,
+  "baselineCountsUnmodified": {
+    "PASS": 75,
+    "FAIL": 3
+  },
+  "existing75Rejudged": false,
+  "evidenceFilesVerified": 56,
+  "evidenceManifestSHA256": "257508424e8aa1f7ddf4d31a280e3141c7255a49212fa7010ce1ca1fc62084ae",
+  "observations": 22,
+  "latestRetestOnly": {
+    "PASS": 2,
+    "FAIL": 1
+  },
+  "cases": [
+    {
+      "caseId": "F3:R02-36",
+      "attempt": 2,
+      "previousRunVerdict": "FAIL",
+      "newAttemptVerdict": "PASS",
+      "observations": 6,
+      "sha256": "744d9aa7313083e766daef5c48963901c68ece565f1542b3c205e59f3a30e947",
+      "evidencePath": "cases/F3-R02-36/result.json"
+    },
+    {
+      "caseId": "F3:R02-39",
+      "attempt": 2,
+      "previousRunVerdict": "FAIL",
+      "newAttemptVerdict": "PASS",
+      "observations": 8,
+      "sha256": "33fa1ed94c546fc8aa0e29bccce9bdfe996c0bdd65bd4b46a34cd8955002f52e",
+      "evidencePath": "cases/F3-R02-39/result.json"
+    },
+    {
+      "caseId": "F3:R02-09",
+      "attempt": 2,
+      "previousRunVerdict": "FAIL",
+      "newAttemptVerdict": "FAIL",
+      "observations": 8,
+      "sha256": "e1ea6fd682caf0611988c81018525dbb6c538cd11b02f742c9160ed3d6e8fe3d",
+      "evidencePath": "cases/F3-R02-09/result.json"
+    }
+  ],
+  "scope": "Only three reviewed cases; no batch2/F6/product patch"
+}

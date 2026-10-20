@@ -1,0 +1,35 @@
+{
+  "caseId": "F3:R02-09",
+  "attempt": 2,
+  "label": "trailing-newline-specified-rejection-stage",
+  "index": 6,
+  "startedAt": "2026-10-20T11:42:14.090Z",
+  "finishedAt": "2026-10-20T11:42:14.093Z",
+  "input": {
+    "path": "006.input.bin",
+    "bytes": 3608,
+    "sha256": "a116d557ba7fb2fd9e8e206f44e0339c599e6cb6ac2f2182aba873dd1b4fce5e"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "CANONICAL",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "LEXICAL",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 0,
+    "scalarTokenParseCalls": 236,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "oracle": "Product import measured afresh. For R02-36/39, errorCode is observational metadata, never a fixed INVALID_FILE pass condition.",
+  "status": "FAIL",
+  "executionError": null
+}

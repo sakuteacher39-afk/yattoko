@@ -1,0 +1,35 @@
+{
+  "caseId": "F3:R02-39",
+  "attempt": 2,
+  "label": "checksum-negative-control-product",
+  "index": 8,
+  "startedAt": "2026-10-20T11:42:13.215Z",
+  "finishedAt": "2026-10-20T11:42:13.217Z",
+  "input": {
+    "path": "008.input.bin",
+    "bytes": 3607,
+    "sha256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "CHECKSUM",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "CHECKSUM",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 1,
+    "scalarTokenParseCalls": 236,
+    "digestCalls": 1,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "oracle": "Product import measured afresh. For R02-36/39, errorCode is observational metadata, never a fixed INVALID_FILE pass condition.",
+  "status": "PASS",
+  "executionError": null
+}
