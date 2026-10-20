@@ -1,0 +1,563 @@
+{
+  "recordedAt": "2026-10-20T12:41:18.310Z",
+  "auditor": "external runner/audit.mjs; no subject code execution",
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "runnerCommit": "a969aa9c3d45aeb0cd2297c2e269ae155059b19e",
+  "targetFiles": 1377,
+  "targetBytesSHA256AndBlobsUnchanged": true,
+  "archiveSHA256": "984063331d087dc6365d2720da8c1a4e2dd15504c4dbcb831a294419dc3da1da",
+  "historicalFilesProtected": 1267,
+  "oldBatchRunsMatchOriginalArtifact": true,
+  "reviewRunsMatchRemediationArtifact": true,
+  "immutableIncompleteAttempt": {
+    "runId": "F5-R02-09-R2-20261020-001",
+    "status": "NOT VERIFIABLE",
+    "filesChecked": 182
+  },
+  "formalResult": {
+    "caseId": "F3:R02-09",
+    "runId": "F5-R02-09-R2-20261020-002",
+    "attempt": 4,
+    "status": "PASS",
+    "observations": 87
+  },
+  "allOtherF5CasesNotRun": 496,
+  "supplementalGatesNotRun": 10,
+  "F6CasesNotRun": 150,
+  "overallF5": "NO OVERALL PASS",
+  "fixture": {
+    "id": "V-VALID-01",
+    "bytes": 3607,
+    "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+    "independentOracleReplayed": true
+  },
+  "evidenceManifest": {
+    "path": "runs/F5-R02-09-R2-20261020-002/EVIDENCE-MANIFEST.json",
+    "sha256": "a6fc16e027e8b775f5315d34fa41aaf8a052d8daeedcd474c737a7285e22a0eb",
+    "files": 182
+  },
+  "checks": [
+    {
+      "index": 1,
+      "label": "canonical-control",
+      "status": "PASS",
+      "inputSHA256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+    },
+    {
+      "index": 2,
+      "label": "space:leading",
+      "status": "PASS",
+      "inputSHA256": "f72f1f60c0556d4f4bee778e7785a9a503bfec7ad6d4c0bd2eca82bf0388ffc6"
+    },
+    {
+      "index": 3,
+      "label": "space:trailing",
+      "status": "PASS",
+      "inputSHA256": "6966522ecdce8bf0685a647ae8f92bb93bc1571d506fc22eda75406094b378ad"
+    },
+    {
+      "index": 4,
+      "label": "space:{→string",
+      "status": "PASS",
+      "inputSHA256": "41a1f39fdd7af768e30f8fb8bc5ee720632f6b9dbd580cfcb61ab90b6383db63"
+    },
+    {
+      "index": 5,
+      "label": "space:string→:",
+      "status": "PASS",
+      "inputSHA256": "c9ad0fa2f07fa652cac1fc7c3c3ab4e5d87df613440af9566d5087770d50f4ef"
+    },
+    {
+      "index": 6,
+      "label": "space::→string",
+      "status": "PASS",
+      "inputSHA256": "4a74d83f95ba6ef2228f4b36bee5ccbba1a75dcb2725c1130c30fa2e567812e1"
+    },
+    {
+      "index": 7,
+      "label": "space:string→,",
+      "status": "PASS",
+      "inputSHA256": "1c719cf5f1144e44d498cdec695c521ecc098408aace69495b8d64d1e1b30646"
+    },
+    {
+      "index": 8,
+      "label": "space:,→string",
+      "status": "PASS",
+      "inputSHA256": "353eb6684746ff16e62c46680cf9f30b00bc7c7b62560e43f2174493f97906a6"
+    },
+    {
+      "index": 9,
+      "label": "space::→number",
+      "status": "PASS",
+      "inputSHA256": "ed56369c8b6b0f0ca6c1dac25ace7b930b3ab91d07e62e51df8bf118ada846f5"
+    },
+    {
+      "index": 10,
+      "label": "space:number→,",
+      "status": "PASS",
+      "inputSHA256": "153fcff0499114cbd490681d39259ba0304987ac923067ab0bd777d8a8291e43"
+    },
+    {
+      "index": 11,
+      "label": "space::→{",
+      "status": "PASS",
+      "inputSHA256": "3352a9b669d806daee50fcd5bdec82b154bdf1367ec41d184ee30e37a811d0a5"
+    },
+    {
+      "index": 12,
+      "label": "space:string→}",
+      "status": "PASS",
+      "inputSHA256": "3571478ce2de8547e7cd7a7733e078d974f852baac36f024be0d994da26ec39e"
+    },
+    {
+      "index": 13,
+      "label": "space:}→,",
+      "status": "PASS",
+      "inputSHA256": "fa28b00c4b50bebad43be734abf48b85fd51cb9776c6d2d6e58ae61273837712"
+    },
+    {
+      "index": 14,
+      "label": "space::→[",
+      "status": "PASS",
+      "inputSHA256": "7aa645b81e5b879ab1f61ffd0d59973c01b75cc18e82a765e037b878311de2bf"
+    },
+    {
+      "index": 15,
+      "label": "space:[→{",
+      "status": "PASS",
+      "inputSHA256": "ea0c6fcf3c77605cce9d3000b45d92283cc672a40e30c89399582b69e1db3435"
+    },
+    {
+      "index": 16,
+      "label": "space:,→{",
+      "status": "PASS",
+      "inputSHA256": "f62bc1d941894b121248320dd8e5ca28eb64aa58d594476556c609f299724847"
+    },
+    {
+      "index": 17,
+      "label": "space:}→]",
+      "status": "PASS",
+      "inputSHA256": "04a80e8ab67a020fcb98d61a4e93c1a3fe0990d2d781ea1b77b98a55f2c035b5"
+    },
+    {
+      "index": 18,
+      "label": "space:]→,",
+      "status": "PASS",
+      "inputSHA256": "8018e0829c70d19565cdef5546316fe46388e5a1e761e9d9ec5161bdcede833f"
+    },
+    {
+      "index": 19,
+      "label": "space::→null",
+      "status": "PASS",
+      "inputSHA256": "c4d4da183e83360e0cfc03f9f1869e9adf7f0a8c77c11e4026497660f2aeed53"
+    },
+    {
+      "index": 20,
+      "label": "space:null→,",
+      "status": "PASS",
+      "inputSHA256": "018957f3ec08990ae83ea70c23ce12a258778378668e78058e5c273eb2d5a7f8"
+    },
+    {
+      "index": 21,
+      "label": "space:]→}",
+      "status": "PASS",
+      "inputSHA256": "47944dab627ebba82818ef74851dca982aefa340290b21af725e565df0fd317a"
+    },
+    {
+      "index": 22,
+      "label": "space:}→}",
+      "status": "PASS",
+      "inputSHA256": "43ac1b6a1be27ebd7ea663d5e15e5eeb927cc8d37477f4d4ff8f54a1dd0522a0"
+    },
+    {
+      "index": 23,
+      "label": "tab:leading",
+      "status": "PASS",
+      "inputSHA256": "a3e9c9b5831a91ae6254cd6e773378e0f1b22cf9d19b21e03dc4a864b4d8097f"
+    },
+    {
+      "index": 24,
+      "label": "tab:trailing",
+      "status": "PASS",
+      "inputSHA256": "960454bc6adaaf933c801899b4338e72deac27a998361e90d66fd3e6cf87a390"
+    },
+    {
+      "index": 25,
+      "label": "tab:{→string",
+      "status": "PASS",
+      "inputSHA256": "41fc0086a29b03b9231ddc4860557f0e7a6a6a4d81e4b2521ded8020d92c8926"
+    },
+    {
+      "index": 26,
+      "label": "tab:string→:",
+      "status": "PASS",
+      "inputSHA256": "fada8b20e1eb83c331e683ef4ad9b839392976231c8d156b13711a306bce1ac2"
+    },
+    {
+      "index": 27,
+      "label": "tab::→string",
+      "status": "PASS",
+      "inputSHA256": "03e6dd212cbe1702499dc2a39bf324323dd1e08fd7cf04d51a65f1ce94c58d59"
+    },
+    {
+      "index": 28,
+      "label": "tab:string→,",
+      "status": "PASS",
+      "inputSHA256": "844474739693ed7e061d9a2dee1c706595bd8e724f652b0f8817194b21f93b9f"
+    },
+    {
+      "index": 29,
+      "label": "tab:,→string",
+      "status": "PASS",
+      "inputSHA256": "503ea115b45d03d53a53abb337feb23fa2a0e0b5ca846dadfa9cae3461397ce4"
+    },
+    {
+      "index": 30,
+      "label": "tab::→number",
+      "status": "PASS",
+      "inputSHA256": "16ab001f19a31e646fad57380dec287e57b741a4ae1436af7709685f33e2f92b"
+    },
+    {
+      "index": 31,
+      "label": "tab:number→,",
+      "status": "PASS",
+      "inputSHA256": "6597b7820803df56c4fd2f069df1d13ed0b3f31bd784ab28a73cf0ed22b837e3"
+    },
+    {
+      "index": 32,
+      "label": "tab::→{",
+      "status": "PASS",
+      "inputSHA256": "192f186d05f8176e6b87988135a0b632d4069d3e30f2e74ff44f88e624cc30e1"
+    },
+    {
+      "index": 33,
+      "label": "tab:string→}",
+      "status": "PASS",
+      "inputSHA256": "46066cc137c6187240d58d219e2048e98f9a7af03629e0a450ec9c9dcff17dd7"
+    },
+    {
+      "index": 34,
+      "label": "tab:}→,",
+      "status": "PASS",
+      "inputSHA256": "56d6e882b21f1c9aff847587cc8486c285b6cb5459bd6bb26d1d51ab07c02d2e"
+    },
+    {
+      "index": 35,
+      "label": "tab::→[",
+      "status": "PASS",
+      "inputSHA256": "1e1864b33e77d7633e2bd8242df154806f2440b573fd7414fcbe82fbe6cd5ac7"
+    },
+    {
+      "index": 36,
+      "label": "tab:[→{",
+      "status": "PASS",
+      "inputSHA256": "c73c363e376c0ff304cd45a1b9389377724d6dc3da1ab40c5e68cd3d460ba5e3"
+    },
+    {
+      "index": 37,
+      "label": "tab:,→{",
+      "status": "PASS",
+      "inputSHA256": "bf1ffe70aca7bdc59318d6b5a1c70633ea7c8a3dac7ff559148408c67050ed22"
+    },
+    {
+      "index": 38,
+      "label": "tab:}→]",
+      "status": "PASS",
+      "inputSHA256": "429f67d398d26e9d094275bbf02adb5693410a20b44e79bf630fbec8f2edc488"
+    },
+    {
+      "index": 39,
+      "label": "tab:]→,",
+      "status": "PASS",
+      "inputSHA256": "d2acf33ae5a0053a3fcd5f04cc985abcb335739aaae352eeb8615a772d5d18ec"
+    },
+    {
+      "index": 40,
+      "label": "tab::→null",
+      "status": "PASS",
+      "inputSHA256": "9bd763c2a6eebb7e62c0cfbcd9857f5b7bd2f865a754b91b025c2764468e5ec9"
+    },
+    {
+      "index": 41,
+      "label": "tab:null→,",
+      "status": "PASS",
+      "inputSHA256": "827450d2c841a2cc410a38b8583d62791266eeae7d1a81b5e24f431fde09edeb"
+    },
+    {
+      "index": 42,
+      "label": "tab:]→}",
+      "status": "PASS",
+      "inputSHA256": "88b77758c5f84d41bb09f2e19f08c3b788a43d5d70d7fbb28102f962a93f8161"
+    },
+    {
+      "index": 43,
+      "label": "tab:}→}",
+      "status": "PASS",
+      "inputSHA256": "1c0cbac301f3e48a839438590d9b3c60a012357b9e669a4fdf7b65288b85a235"
+    },
+    {
+      "index": 44,
+      "label": "LF:leading",
+      "status": "PASS",
+      "inputSHA256": "32d3b500a1d8263e2fab3c97ddaee5dd81e9870d3a17c07838dec8c55e8ab45b"
+    },
+    {
+      "index": 45,
+      "label": "LF:trailing",
+      "status": "PASS",
+      "inputSHA256": "a116d557ba7fb2fd9e8e206f44e0339c599e6cb6ac2f2182aba873dd1b4fce5e"
+    },
+    {
+      "index": 46,
+      "label": "LF:{→string",
+      "status": "PASS",
+      "inputSHA256": "e34ba30614347cb50515acf28aab3552beb5e60e0557b59b3ec683f516cbed4e"
+    },
+    {
+      "index": 47,
+      "label": "LF:string→:",
+      "status": "PASS",
+      "inputSHA256": "e8fed5bcb6b69fba6b51d7fee312f2f1020c379a7fa7266ea6d52738e668ea99"
+    },
+    {
+      "index": 48,
+      "label": "LF::→string",
+      "status": "PASS",
+      "inputSHA256": "f402bf2ca060ebc780a48a8355160a0a35c4abd1b5a61a7212a32218a9df5c5e"
+    },
+    {
+      "index": 49,
+      "label": "LF:string→,",
+      "status": "PASS",
+      "inputSHA256": "8ecb1ab1cb8ce46055f5b9a389e6b338309ca5936ad6f12ff43b41919da33baa"
+    },
+    {
+      "index": 50,
+      "label": "LF:,→string",
+      "status": "PASS",
+      "inputSHA256": "ecd1db85a263300e331f79cd7420a224141252e5a47c31e532cb658afaa55e5d"
+    },
+    {
+      "index": 51,
+      "label": "LF::→number",
+      "status": "PASS",
+      "inputSHA256": "b003f85ce37ba4c472fe52e5918280371334c2c6607b0c04206d2d8dd04a0bfd"
+    },
+    {
+      "index": 52,
+      "label": "LF:number→,",
+      "status": "PASS",
+      "inputSHA256": "77e719ffe8ccdb0a75682653a6b78a9da0f423758adcbb502eceabe4c19d1d28"
+    },
+    {
+      "index": 53,
+      "label": "LF::→{",
+      "status": "PASS",
+      "inputSHA256": "4b67ca549acfaf545384689a44bf44926512337bd022df9165f51d1902ba700e"
+    },
+    {
+      "index": 54,
+      "label": "LF:string→}",
+      "status": "PASS",
+      "inputSHA256": "98f1b8ac2131dbb6fd1e8c6e19fa9848780d2e256b3c857188dec65df59a6414"
+    },
+    {
+      "index": 55,
+      "label": "LF:}→,",
+      "status": "PASS",
+      "inputSHA256": "1d8aa8a623a23cd82c30a2b1de18ead5092da7512bae351ff104ba3933889a34"
+    },
+    {
+      "index": 56,
+      "label": "LF::→[",
+      "status": "PASS",
+      "inputSHA256": "11f294f6298e327a7281b0aedd8810e028ccbf8c9794b18258326608d0f722a1"
+    },
+    {
+      "index": 57,
+      "label": "LF:[→{",
+      "status": "PASS",
+      "inputSHA256": "b4588eac9ba2f8e65b4dbb19c76662be574cc50005174a8fa670a1ff1c83607c"
+    },
+    {
+      "index": 58,
+      "label": "LF:,→{",
+      "status": "PASS",
+      "inputSHA256": "6ccf9782c02d3c8b379035c67c446f426d4c2e10f10bd01e4ea314949181239d"
+    },
+    {
+      "index": 59,
+      "label": "LF:}→]",
+      "status": "PASS",
+      "inputSHA256": "e96aecbb852cf47608dbf537a699932a12034f57c3ee68488562cc35b321f6a4"
+    },
+    {
+      "index": 60,
+      "label": "LF:]→,",
+      "status": "PASS",
+      "inputSHA256": "8bd537d7605cc96f7665399d9e34f556bdd61180724a2a89b444139e08eeb51c"
+    },
+    {
+      "index": 61,
+      "label": "LF::→null",
+      "status": "PASS",
+      "inputSHA256": "85bfbe74edd6178fc68feb45d4d2e0d99de5652071c84d3b0e6e159bf30685aa"
+    },
+    {
+      "index": 62,
+      "label": "LF:null→,",
+      "status": "PASS",
+      "inputSHA256": "fba2c1d6969ce87fcb91f88dc40d478a974550cd2dce669d2dd6e65e4dbd50d3"
+    },
+    {
+      "index": 63,
+      "label": "LF:]→}",
+      "status": "PASS",
+      "inputSHA256": "ddee149394fdf81d1e1f66a278468be2e24e70d254e2ef321990cddf8c912e42"
+    },
+    {
+      "index": 64,
+      "label": "LF:}→}",
+      "status": "PASS",
+      "inputSHA256": "4884a402e79f388f5e42582760f3d715db5f8a456244a8884390f20e2a84efc8"
+    },
+    {
+      "index": 65,
+      "label": "CR:leading",
+      "status": "PASS",
+      "inputSHA256": "e68d5a1afad93eb445fb046402f4298720a3aef1dee915bd7e6c2fa9380871a1"
+    },
+    {
+      "index": 66,
+      "label": "CR:trailing",
+      "status": "PASS",
+      "inputSHA256": "69d40ff2b3aa768d192dfff782afa526b63c81ed5d02e22ab0016ea6dc799f7a"
+    },
+    {
+      "index": 67,
+      "label": "CR:{→string",
+      "status": "PASS",
+      "inputSHA256": "edfca899f48fdd72d7f66385d9b681ffda39afb09058ff27bed0930f929112ef"
+    },
+    {
+      "index": 68,
+      "label": "CR:string→:",
+      "status": "PASS",
+      "inputSHA256": "162a62f674d85e7a77919f782db4517d92fb3f580aac15b0d4f3e45729b1bb4a"
+    },
+    {
+      "index": 69,
+      "label": "CR::→string",
+      "status": "PASS",
+      "inputSHA256": "0a645acb9b90e658f4bc5883141261b491f568280496ca226ac5702fb829449c"
+    },
+    {
+      "index": 70,
+      "label": "CR:string→,",
+      "status": "PASS",
+      "inputSHA256": "39c47ca6fa482dc41a9d64155bc44cc78e852084f72ff05f39867493d6658cef"
+    },
+    {
+      "index": 71,
+      "label": "CR:,→string",
+      "status": "PASS",
+      "inputSHA256": "bb6eaed8909dbc1906eab4c932c1c8051721dda4cb898650dd0df3f211b2eeff"
+    },
+    {
+      "index": 72,
+      "label": "CR::→number",
+      "status": "PASS",
+      "inputSHA256": "8b77dc766f1be8214a5f1884b7919dbb90aa87c288f116c4f6fc6b42f65bf059"
+    },
+    {
+      "index": 73,
+      "label": "CR:number→,",
+      "status": "PASS",
+      "inputSHA256": "96d0a15fecb4bdfe270a2d9c232e647bc3c1a6c471f799dda114d16b13793876"
+    },
+    {
+      "index": 74,
+      "label": "CR::→{",
+      "status": "PASS",
+      "inputSHA256": "cf62aecd8d529300c82d9368ff8c8864ffd84a00a7843ae200a2452c158228cc"
+    },
+    {
+      "index": 75,
+      "label": "CR:string→}",
+      "status": "PASS",
+      "inputSHA256": "b5c1683600358135148fc916e8ee8676902ed2565479020b99428b18cbea0650"
+    },
+    {
+      "index": 76,
+      "label": "CR:}→,",
+      "status": "PASS",
+      "inputSHA256": "8b33abbc593f55838a75a55d3eb9f901eeb2ea248d3949937059716ad441ee3f"
+    },
+    {
+      "index": 77,
+      "label": "CR::→[",
+      "status": "PASS",
+      "inputSHA256": "98030ba5c652071bc63883019f90c8992ae6413f9af0c822cf31ae3bf676260f"
+    },
+    {
+      "index": 78,
+      "label": "CR:[→{",
+      "status": "PASS",
+      "inputSHA256": "f46cf7341d8684a09bd2bdbf59decaeca937a3b681f0e62d152ed8f5528db06e"
+    },
+    {
+      "index": 79,
+      "label": "CR:,→{",
+      "status": "PASS",
+      "inputSHA256": "ec2b4530733a043d7fdf7ecd64726dc5983e751d4b293ba34051b921fb5d7bf4"
+    },
+    {
+      "index": 80,
+      "label": "CR:}→]",
+      "status": "PASS",
+      "inputSHA256": "423ccaaac98effc8abb90d2ae28a18ea17eaeb678461cd2f5de92e57772a837b"
+    },
+    {
+      "index": 81,
+      "label": "CR:]→,",
+      "status": "PASS",
+      "inputSHA256": "4b22d48cf8c372f978296e38a7614a4bcb96e8077ea394b4f4cde78647b85c27"
+    },
+    {
+      "index": 82,
+      "label": "CR::→null",
+      "status": "PASS",
+      "inputSHA256": "19835f4d242a18cd223b55ccb9249ceeb7ce6227d49ac80884487858dfbaa11a"
+    },
+    {
+      "index": 83,
+      "label": "CR:null→,",
+      "status": "PASS",
+      "inputSHA256": "c492d4c6b65baae18a6cdf3539522603eb52ee9b2c09e5c8b1839d3a550186fa"
+    },
+    {
+      "index": 84,
+      "label": "CR:]→}",
+      "status": "PASS",
+      "inputSHA256": "c96798385b3a90a81850c7ccc951cedfa796e529d77577632fea7267b9ab5bd0"
+    },
+    {
+      "index": 85,
+      "label": "CR:}→}",
+      "status": "PASS",
+      "inputSHA256": "943ece4307863e65e46701946a3469eb0d2afc6d65afc21cd81f8145a149409a"
+    },
+    {
+      "index": 86,
+      "label": "mixed-all-token-boundaries",
+      "status": "PASS",
+      "inputSHA256": "5148d3809b5f91a90d27aa2d90707beb18ef4479a8d88f05cf7272f8d3254e6a"
+    },
+    {
+      "index": 87,
+      "label": "pretty-JSON-LF",
+      "status": "PASS",
+      "inputSHA256": "810a85c4d392bd1b8d05b722078709d76910c6bd5e2dc2c77b2570843ca32d88"
+    }
+  ]
+}

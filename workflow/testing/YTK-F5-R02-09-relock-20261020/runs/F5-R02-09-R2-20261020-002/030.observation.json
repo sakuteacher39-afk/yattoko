@@ -1,0 +1,61 @@
+{
+  "caseId": "F3:R02-09",
+  "runId": "F5-R02-09-R2-20261020-002",
+  "attempt": 4,
+  "index": 30,
+  "label": "tab::→number",
+  "recipe": {
+    "whitespace": "tab",
+    "codePoint": 9,
+    "label": ":→number",
+    "offset": 51
+  },
+  "startedAt": "2026-10-20T12:38:33.683Z",
+  "finishedAt": "2026-10-20T12:38:33.686Z",
+  "input": {
+    "path": "030.input.bin",
+    "bytes": 3608,
+    "sha256": "16ab001f19a31e646fad57380dec287e57b741a4ae1436af7709685f33e2f92b"
+  },
+  "expected": {
+    "accepted": false,
+    "errorCode": "CANONICAL",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "expectedOracle": {
+    "validJSON": true,
+    "sameParsedValue": true,
+    "sameOrderedSerialization": true,
+    "checksumMatches": true,
+    "rawMatchesCanonical": false
+  },
+  "independentOracle": {
+    "validJSON": true,
+    "sameParsedValue": true,
+    "sameOrderedSerialization": true,
+    "checksumMatches": true,
+    "rawMatchesCanonical": false,
+    "snapshotSHA256": "8a198bf072621affe2643c82e1ef6ccf26e3f7e57abafe726d0f82cd58b62a50",
+    "computedChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8"
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": "CANONICAL",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "FULL_DOCUMENT_PARSE",
+      "REJECT:CANONICAL"
+    ]
+  },
+  "status": "PASS",
+  "executionError": null
+}
