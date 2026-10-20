@@ -1,0 +1,18 @@
+{
+  "runId": "F5-R02-09-R2-20261020-001",
+  "attempt": 3,
+  "caseId": "F3:R02-09",
+  "status": "NOT VERIFIABLE",
+  "category": "HARNESS_ERROR",
+  "error": {
+    "name": "ReferenceError",
+    "message": "prep is not defined",
+    "source": "runner/run.mjs:44, CASE-STATUS finalization"
+  },
+  "observationsRetained": 87,
+  "provisionalSummary": "SUMMARY.json was written before finalization failed; its PASS is not a final formal verdict. FINAL-VERDICT.json controls this incomplete run.",
+  "productDefect": false,
+  "productChanged": false,
+  "retry": "New runner commit, new run id 002 and attempt4; never overwrite this run.",
+  "recordedAt": "2026-10-20T12:37:37.797Z"
+}
