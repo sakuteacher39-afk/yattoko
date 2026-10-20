@@ -1,0 +1,60 @@
+{
+  "recordedAt": "2026-10-20T13:04:49.244Z",
+  "auditor": "runner/audit.mjs; artifacts/oracle replay only, no product execution",
+  "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+  "referenceArtifact": "cc08a1fda4cf6256bdb3edcce0bc1a4625e3b70c",
+  "runAudits": [
+    {
+      "runId": "F5-REG-R02-M1-20261020-001",
+      "runnerCommit": "563a777126bd7fa80e416dc603f57d0f2283478d",
+      "counts": {
+        "PASS": 38,
+        "NOT VERIFIABLE": 1
+      },
+      "observations": 740,
+      "evidenceFiles": 861,
+      "evidenceManifestSHA256": "98d0000dffe0587eb6e096b35fe917e8171b68aea4e425f13661a97307da3ae8",
+      "targetFiles": 1377,
+      "historicalFiles": 1763,
+      "integrityVerified": true
+    },
+    {
+      "runId": "F5-REG-R02-M1-20261020-002",
+      "runnerCommit": "b15c54d9e19efdbad859d7fe2accc4205e3a9d2a",
+      "counts": {
+        "PASS": 1
+      },
+      "observations": 15,
+      "evidenceFiles": 24,
+      "evidenceManifestSHA256": "74c9ca1b85a937aab354fb64ab4d81e52f236c6d24489db731c20c172b525af8",
+      "targetFiles": 1377,
+      "historicalFiles": 1763,
+      "integrityVerified": true
+    }
+  ],
+  "totalObservations": 755,
+  "observationCounts": {
+    "PASS": 753,
+    "NOT VERIFIABLE": 2
+  },
+  "formalCounts": {
+    "PASS": 38,
+    "NOT VERIFIABLE": 1
+  },
+  "candidateCases": 39,
+  "initialInputs": 740,
+  "retryInputs": 15,
+  "remaining55Executed": false,
+  "otherF5Executed": false,
+  "R0209Reexecuted": false,
+  "F6Executed": false,
+  "targetFiles": 1377,
+  "historicalFilesProtected": 1763,
+  "productAndApprovedSpecsDiff": false,
+  "targetBytesHashesBlobsUnchanged": true,
+  "oldEvidenceUnchanged": true,
+  "externalSinks": 0,
+  "R05RetryPreservesNV": true,
+  "R29FormalPassWithheld": true,
+  "overallF5": "NO OVERALL PASS"
+}

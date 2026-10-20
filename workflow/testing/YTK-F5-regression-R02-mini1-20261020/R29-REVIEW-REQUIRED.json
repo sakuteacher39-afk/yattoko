@@ -1,0 +1,95 @@
+{
+  "caseId": "F3:R02-29",
+  "formalStatus": "NOT VERIFIABLE",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 140,
+    "description": "checksum検証前後でparsed objectを書換えない。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "immutableRunnerStatus": "PASS under JSON-content-only draft criterion; insufficient for an unqualified formal PASS",
+  "descriptorEvents": 7,
+  "observations": [
+    {
+      "label": "parsed-content-unchanged-V-VALID-01",
+      "inputSHA256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+      "contentUnchanged": true,
+      "contentWriteAttempts": 0,
+      "descriptorOnlyChanges": [],
+      "evidence": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-29/001.observation.json"
+    },
+    {
+      "label": "parsed-content-unchanged-EM-FULL",
+      "inputSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+      "contentUnchanged": true,
+      "contentWriteAttempts": 0,
+      "descriptorOnlyChanges": [
+        {
+          "type": "define",
+          "path": "$.pending.operations.0.dependsOnOperationIds.length",
+          "contentChange": false
+        },
+        {
+          "type": "define",
+          "path": "$.pending.operations.1.dependsOnOperationIds.0",
+          "contentChange": false
+        },
+        {
+          "type": "define",
+          "path": "$.pending.operations.1.dependsOnOperationIds.length",
+          "contentChange": false
+        },
+        {
+          "type": "define",
+          "path": "$.pending.operations.2.dependsOnOperationIds.0",
+          "contentChange": false
+        },
+        {
+          "type": "define",
+          "path": "$.pending.operations.2.dependsOnOperationIds.1",
+          "contentChange": false
+        },
+        {
+          "type": "define",
+          "path": "$.pending.operations.2.dependsOnOperationIds.length",
+          "contentChange": false
+        }
+      ],
+      "evidence": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-29/002.observation.json"
+    },
+    {
+      "label": "parsed-content-unchanged-EM-PARTIAL",
+      "inputSHA256": "1328c91207f00f5319c8d279381f855de96b51e41a9686d2f6b4ea354b51d27c",
+      "contentUnchanged": true,
+      "contentWriteAttempts": 0,
+      "descriptorOnlyChanges": [
+        {
+          "type": "define",
+          "path": "$.pending.operations.0.dependsOnOperationIds.length",
+          "contentChange": false
+        }
+      ],
+      "evidence": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-29/003.observation.json"
+    },
+    {
+      "label": "parsed-content-unchanged-EM-NONE-DELETEALL",
+      "inputSHA256": "6ae571e24869b961f8bc9d23fca0ce153214ac557a358377fedc7431cc56bfac",
+      "contentUnchanged": true,
+      "contentWriteAttempts": 0,
+      "descriptorOnlyChanges": [],
+      "evidence": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-29/004.observation.json"
+    },
+    {
+      "label": "parsed-content-stale-checksum-rejection",
+      "inputSHA256": "80bf04a1ed2daf56b178ee1304e1b6c2b4e09bb38ee9215235208fc7586546ed",
+      "contentUnchanged": true,
+      "contentWriteAttempts": 0,
+      "descriptorOnlyChanges": [],
+      "evidence": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-29/005.observation.json"
+    }
+  ],
+  "productCodeChanged": false,
+  "interpretation": "Descriptor hardening changes object metadata without altering JSON value/keys or SHA payload. Whether this is permitted by original parsed-object-no-rewrite requirement is not established by the approved plan.",
+  "nextAction": "Independent review must resolve criterion; if descriptor immutability is required, seek separate product fix authorization to avoid sharing parsed dependsOnOperationIds arrays with frozen verified token. No change implemented."
+}
