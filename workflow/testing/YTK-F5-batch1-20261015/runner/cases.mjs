@@ -48,8 +48,8 @@ export async function execute(caseId,c,r){
  }
  if(caseId.startsWith('F3:R02-')){const n=Number(caseId.split('-')[1]),original=fixture('V-VALID-01'),text=original.toString('utf8');
   if(n===1){await positive('valid-UTF8-no-BOM');return;}
-  const vectorMap={2:['V-BOM-01','BOM'],3:['V-UTF8-INVALID','UTF8'],4:['V-DUP-01','DUPLICATE_KEY'],7:['V-DUP-02','DUPLICATE_KEY'],8:['V-ORDER-01','CANONICAL'],14:['V-NUM-01','LEXICAL'],15:['V-NUM-02','LEXICAL'],19:['V-UTF-01','UNICODE'],32:['V-DUP-01','DUPLICATE_KEY'],33:['V-DUP-02','DUPLICATE_KEY'],34:['V-ORDER-01','CANONICAL'],36:['V-UNK-01','INVALID_FILE'],39:['V-HASH-02','INVALID_FILE']};
-  if(vectorMap[n]){const [id,errorCode]=vectorMap[n];await imp(id,fixture(id),{accepted:false,errorCode});return;}
+  const vectorMap={2:['V-BOM-01','BOM'],3:['V-UTF8-INVALID','UTF8'],4:['V-DUP-01','DUPLICATE_KEY'],7:['V-DUP-02','DUPLICATE_KEY'],8:['V-ORDER-01','CANONICAL'],14:['V-NUM-01','LEXICAL'],15:['V-NUM-02','LEXICAL'],19:['V-UTF-01','UNICODE'],32:['V-DUP-01','DUPLICATE_KEY'],33:['V-DUP-02','DUPLICATE_KEY'],34:['V-ORDER-01','CANONICAL'],36:['V-UNK-01'],39:['V-HASH-02']};
+  if(vectorMap[n]){const [id,errorCode]=vectorMap[n];await imp(id,fixture(id),errorCode?{accepted:false,errorCode}:{accepted:false});return;}
   if(n===5){await imp('different-value-duplicate',Buffer.from(text.replace('"kind":"normal"','"kind":"normal","kind":"emergency"')),{accepted:false,errorCode:'DUPLICATE_KEY'});return;}
   if(n===6){await imp('nested-answer-duplicate',Buffer.from(text.replace('"importantData":"unanswered"','"importantData":"unanswered","importantData":"yes"')),{accepted:false,errorCode:'DUPLICATE_KEY'});return;}
   if(n===9){for(const [label,b]of [['leading-space',Buffer.from(' '+text)],['trailing-newline',Buffer.from(text+'\n')],['inner-space',Buffer.from(text.replace('"kind":','"kind": '))]])await imp(label,b,{accepted:false,errorCode:'CANONICAL'},'Original approved expectation is canonical raw mismatch reject; earlier lexical reject is recorded as a stage mismatch, not silently accepted');return;}

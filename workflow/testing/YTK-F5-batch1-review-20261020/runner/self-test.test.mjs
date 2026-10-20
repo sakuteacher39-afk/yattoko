@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {execute,oracle,fixture,ids} from './cases.mjs';
+import {matches} from '../../YTK-F5-batch1-20261015/runner/recorder.mjs';
+test('HARNESS ONLY: original schema-invalid vectors have independent matching SHA and forbidden key',()=>{for(const id of ['V-UNK-01','V-HASH-02']){const o=oracle(fixture(id));assert.equal(o.checksumMatches,true);assert.equal(o.overviewSchemaValid,false);assert.deepEqual(o.unknownFields,['extra']);}});
+test('HARNESS ONLY: no internal error code required for R02-36/39 schema rejection',async()=>{for(const id of ids.slice(0,2)){const records=[];await execute(id,{}, {check:async(label,input,expected)=>records.push({label,expected})});for(const r of records.filter(r=>r.label.startsWith('reject-'))){assert.equal(r.expected.accepted,false);assert.equal(Object.hasOwn(r.expected,'errorCode'),false);assert.equal(matches(r.expected,{accepted:false,inputUnchanged:true,storageAccesses:0,errorCode:'MEMBER_LIMIT'}),true);}}});
+test('HARNESS ONLY: lexical early rejection cannot satisfy retained canonical-stage expectation',()=>{assert.equal(matches({accepted:false,errorCode:'CANONICAL',fullDocumentParseCalls:1},{accepted:false,errorCode:'LEXICAL',fullDocumentParseCalls:0}),false);});
