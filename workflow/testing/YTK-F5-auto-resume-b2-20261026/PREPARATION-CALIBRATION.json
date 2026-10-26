@@ -1,0 +1,15 @@
+{
+  "formalProductExecutions": 0,
+  "originalDraftSHA256": "a4c878e1f02ab964939411a255c85c29bb6cd913559ba11536323ee845e843cb",
+  "changes": [
+    {
+      "caseId": "F2:R07-04",
+      "removedPreFormalGuardAbortVariants": 72,
+      "reason": "Keep abort after actual write success (meta/overview/target/last category). A premature guard abort can interfere with unrelated request-result callbacks instead of exercising the required write rollback."
+    }
+  ],
+  "digestOracle": "DIGEST-01 is an independent SHA constant vector, not a backup JSON semantic oracle. Runtime and predeclared expected hash now use the same explicit digest-only representation.",
+  "executionStopCounter": "Use completed observation count for stop record, without out-of-scope loop index.",
+  "productOrApprovedSpecChanged": false,
+  "revision": "F5-AUTO-RESUME-B2-20261026-R2"
+}

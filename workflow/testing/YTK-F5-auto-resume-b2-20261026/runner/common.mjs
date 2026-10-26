@@ -1,0 +1,5 @@
+import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
+export {repo,target,subject,sha,json,put,git,verify,dependencies} from '../../YTK-F5-browser-preparation-20261026/runner/common.mjs';export {oracle,matches,encode,fixture,versions} from '../../YTK-F5-auto-resume-b1-20261026/runner/common.mjs';
+import {repo,sha,dependencies} from '../../YTK-F5-browser-preparation-20261026/runner/common.mjs';import {tree} from '../../YTK-F5-R02-29-relock-20261026/runner/common.mjs';
+export const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),prep=path.resolve(base,'../YTK-F5-preparation-20261015'),reference='d27b3d342f2d600d11d2d60597e0add22567639b',ids=[...[21,22,23,32,33,34,35,37,38].map(n=>'F3:R02-'+n),...[1,2,3,4].map(n=>'F2:R07-0'+n),...[6,7,8,9,10,11,12].map(n=>'F2:R08-'+String(n).padStart(2,'0'))];export const dependencyInventory=dependencies;
+export function history(){return tree(reference).map(f=>{const b=fs.readFileSync(path.join(repo,f.path));return{...f,bytes:b.length,sha256:sha(b)};});}
