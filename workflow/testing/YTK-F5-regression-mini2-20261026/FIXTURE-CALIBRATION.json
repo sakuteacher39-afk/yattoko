@@ -1,0 +1,242 @@
+{
+  "originals": [
+    {
+      "id": "V-VALID-01",
+      "filename": "V-VALID-01.json",
+      "bytes": 3607,
+      "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+      "expected": "accept preview only after strict validation",
+      "purpose": "snapshot fixtureを独立serializerで作成。製品validatorによる合格は未確認",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DS-BASE",
+      "filename": "DS-BASE.json",
+      "bytes": 2325,
+      "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011",
+      "expected": "canonical baseline candidate",
+      "purpose": "device初回回答済、他11カテゴリ未回答、overview5問未回答",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DS-MIX",
+      "filename": "DS-MIX.json",
+      "bytes": 3363,
+      "sha256": "8a198bf072621affe2643c82e1ef6ccf26e3f7e57abafe726d0f82cd58b62a50",
+      "expected": "partial/completed/R09 mixed candidate",
+      "purpose": "配列順入替・同名別IDは各runでcloneして派生",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "DS-CONDITIONAL",
+      "filename": "DS-CONDITIONAL.json",
+      "bytes": 2647,
+      "sha256": "dd8f006c2e045f3440e638c5e49f5820ea3ef841485c48002b02e55aa1987f66",
+      "expected": "active conditional candidate",
+      "purpose": "billing=yesのchild存在。falseへ操作した後child不存在を照合",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-FULL",
+      "filename": "EM-FULL.json",
+      "bytes": 4539,
+      "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+      "expected": "manual pending only; no auto-apply",
+      "purpose": "chain ordinal1-3, same-category dependencies",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-PARTIAL",
+      "filename": "EM-PARTIAL.json",
+      "bytes": 3717,
+      "sha256": "1328c91207f00f5319c8d279381f855de96b51e41a9686d2f6b4ea354b51d27c",
+      "expected": "partial exported ordinal2; omitted1/3 separately",
+      "purpose": "離散範囲と件数。非連続範囲を結合しない",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-NONE-DELETEALL",
+      "filename": "EM-NONE-DELETEALL.json",
+      "bytes": 3101,
+      "sha256": "6ae571e24869b961f8bc9d23fca0ce153214ac557a358377fedc7431cc56bfac",
+      "expected": "snapshot-only import allowed; no deletion to apply",
+      "purpose": "R01-14: omitted metadata is not an executable operation",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "EM-FORBIDDEN-DELETEALL",
+      "filename": "EM-FORBIDDEN-DELETEALL.json",
+      "bytes": 3401,
+      "sha256": "3e8bbb4ce008f9ee1691de255a31a7610d7bd70e73c23f4d4c52683156bc77bf",
+      "expected": "OPERATION reject with no destination write",
+      "purpose": "旧実装相当の正しいchecksum付き禁止pending",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "V-TRUNC-01",
+      "filename": "V-TRUNC-01.json",
+      "bytes": 3606,
+      "sha256": "45cce1a8680b4446a648520e1e91eacdffec955776433b5914ef6afd1d7fadf0",
+      "expected": "parse reject",
+      "purpose": "truncated",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    },
+    {
+      "id": "RAW-BYTES-16000001",
+      "filename": "RAW-BYTES-16000001.json",
+      "bytes": 16000001,
+      "sha256": "32d28713ce42a4a5935d82905d0c15fc49bfabedcec5eb3e451b66728876c246",
+      "expected": "reject before arrayBuffer/read",
+      "purpose": "Not a valid maximum-size backup. Snapshot10MB + pending1MB limits prevent arbitrary padding. Size-guard evidence only.",
+      "preparationOnly": true,
+      "formalStatus": "NOT RUN"
+    }
+  ],
+  "generatedPipeline": {
+    "operations": [
+      {
+        "type": "overview",
+        "field": "identity",
+        "value": "configured"
+      },
+      {
+        "type": "category",
+        "categoryKey": "mail",
+        "field": "usageStatus",
+        "value": "using"
+      },
+      {
+        "type": "addService",
+        "recordId": "svc_abcdef01-0000-4000-8000-000000000001",
+        "categoryKey": "device",
+        "serviceCatalogId": "other",
+        "otherServiceName": "再適用ダミー"
+      },
+      {
+        "type": "service",
+        "recordId": "svc_abcdef01-0000-4000-8000-000000000001",
+        "field": "usageStatus",
+        "value": "unknown"
+      },
+      {
+        "type": "service",
+        "recordId": "svc_abcdef01-0000-4000-8000-000000000001",
+        "field": "importantData",
+        "value": "unknown"
+      },
+      {
+        "type": "completeService",
+        "recordId": "svc_abcdef01-0000-4000-8000-000000000001"
+      },
+      {
+        "type": "deleteService",
+        "recordId": "svc_abcdef01-0000-4000-8000-000000000001"
+      },
+      {
+        "type": "deleteCategory",
+        "categoryKey": "mail"
+      }
+    ],
+    "rawSHA256": "f3aedeed047dbe34e1566ec7e31ea118c31f955cba4e3113ca7ba00b7ca4d86e",
+    "oracle": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "b500f3bab74d1633d356befc53f22e8c994cd208b81e67994721110a433a28ec",
+      "declaredChecksum": "b500f3bab74d1633d356befc53f22e8c994cd208b81e67994721110a433a28ec",
+      "canonicalRawMatches": true,
+      "rawSHA256": "f3aedeed047dbe34e1566ec7e31ea118c31f955cba4e3113ca7ba00b7ca4d86e",
+      "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+    }
+  },
+  "sourcePolicy": "All generated files from independent JSON edits/serializer; full source object scopes for missing/unknown/container variants, both resigned and checksum-retained where meaningful; checksum fields themselves never repaired by signing."
+}

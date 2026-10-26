@@ -1,0 +1,3848 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "referenceArtifact": "6228444745abd253381e5dc97acad64c491584c6",
+  "source55": {
+    "path": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/PREEXECUTION-R2.json",
+    "sha256": "6f73a25376ae97c24f4896aef58fd9a69cf86fb2ffaa3c4fa72cc146c62f3cde"
+  },
+  "source30": {
+    "path": "workflow/testing/YTK-F5-R02-29-relock-20261026/REGRESSION-IMPACT.json",
+    "sha256": "46671851484bef2664e722099ab0ee0838f32515e96a7992f3b1e3e4a42d7eb1"
+  },
+  "sourceCounts": {
+    "previous55": 55,
+    "additional30": 30,
+    "overlap": 9,
+    "unique": 76
+  },
+  "overlap": [
+    "F2:RST-04",
+    "F2:RST-05",
+    "F3:R01-12",
+    "F3:R01-13",
+    "F3:R01-14",
+    "F3:R03-17",
+    "F3:R04-04",
+    "F3:R04-05",
+    "F3:R04-12"
+  ],
+  "cases": [
+    {
+      "caseId": "F2:RST-01",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 222,
+        "description": "normal restoreでpartial/completed状態を保持",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "normal restoreでpartial/completed状態を保持",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F2:RST-02",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 223,
+        "description": "restore atomic replace失敗時は旧dataset維持",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "restore atomic replace失敗時は旧dataset維持",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 1,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-03",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 224,
+        "description": "restore成功でgeneration変更",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "restore成功でgeneration変更",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F2:RST-04",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 225,
+        "description": "emergency pendingをsilent commitしない",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "emergency pendingをsilent commitしない",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 18,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-05",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 226,
+        "description": "pending再適用は通常save pipelineを通す",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "pending再適用は通常save pipelineを通す",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 19,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-06",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 227,
+        "description": "pending再適用で10MB超なら保存拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "pending再適用で10MB超なら保存拒否",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F2:RST-07",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 228,
+        "description": "unknown schema/question version拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "unknown schema/question version拒否",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 9,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-08",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 229,
+        "description": "unknown categoryKey拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "unknown categoryKey拒否",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F2:RST-09",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 230,
+        "description": "duplicate recordId拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "duplicate recordId拒否",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 10,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-10",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 231,
+        "description": "malformed/empty datasetを新規状態として上書きしない",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "malformed/empty datasetを新規状態として上書きしない",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 2,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-11",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 232,
+        "description": "required field欠落拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "required field欠落拒否",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 11,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-12",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 233,
+        "description": "unexpected field拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "unexpected field拒否",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 12,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-13",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 234,
+        "description": "unexpected nested object拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "unexpected nested object拒否",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 13,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-14",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 235,
+        "description": "duplicate category拒否",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "duplicate category拒否",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 14,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-15",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 236,
+        "description": "categoryKey/displayCode不一致を拒否（file形式にdisplayCodeが存在する場合）",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "categoryKey/displayCode不一致を拒否（file形式にdisplayCodeが存在する場合）",
+      "classification": "AUTO_STATIC_AND_HUMAN",
+      "nodeOnlyEligible": false,
+      "environment": "Real browser and/or human evidence required; not selected for Node-only execution",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:browser/human evidence absent",
+      "reason": "Cannot certify full requirement in Node alone"
+    },
+    {
+      "caseId": "F2:RST-16",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 237,
+        "description": "completed + usageStatus=unansweredをreject",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "completed + usageStatus=unansweredをreject",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 15,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-17",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 238,
+        "description": "completed other serviceのinvalid otherServiceNameをreject",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "completed other serviceのinvalid otherServiceNameをreject",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F2:RST-18",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 239,
+        "description": "active conditional missing / inactive conditional presentをreject",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "active conditional missing / inactive conditional presentをreject",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 16,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F2:RST-19",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 240,
+        "description": "invalid completed stateを自動補正しない",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "expected": "invalid completed stateを自動補正しない",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Normative manifest/field-presence/order/enum/ID constraints; raw all-store equality and independent prospective dataset; no SUT validator for expected value",
+      "priority": 17,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F3:R01-12",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 47,
+        "description": "operation ID重複。",
+        "details": [
+          "- 期待：pending validator reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "pending validator reject。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-BASE",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-NONE-DELETEALL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FORBIDDEN-DELETEALL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent pending operation/ordinal/footprint/dependency/context rules + Node payload SHA",
+      "priority": 6,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F3:R01-13",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 49,
+        "description": "ordinal重複/逆行。",
+        "details": [
+          "- 期待：reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "reject。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-BASE",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-NONE-DELETEALL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FORBIDDEN-DELETEALL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent pending operation/ordinal/footprint/dependency/context rules + Node payload SHA",
+      "priority": 7,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F3:R01-14",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 51,
+        "description": "unsupported operation（delete-all/restore等）をpendingへ入れる。",
+        "details": [
+          "- 期待：reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "reject。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-BASE",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-NONE-DELETEALL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FORBIDDEN-DELETEALL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent pending operation/ordinal/footprint/dependency/context rules + Node payload SHA",
+      "priority": 5,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F3:R03-17",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 183,
+        "description": "preflightでFile decode / strict validation / SHA-256 / expectedCanonicalBytes生成が全部完了してからreadwrite transactionをopen。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "preflightでFile decode / strict validation / SHA-256 / expectedCanonicalBytes生成が全部完了してからreadwrite transactionをopen。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "FILE-DS-9999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "FILE-DS-10000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "FILE-DS-10000001",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R03-18",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 184,
+        "description": "transaction開始後にcrypto.subtle.digest / File API / Blob.arrayBuffer / network / timerを呼ばない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "transaction開始後にcrypto.subtle.digest / File API / Blob.arrayBuffer / network / timerを呼ばない。",
+      "classification": "AUTO_FAULT_AND_BROWSER",
+      "nodeOnlyEligible": false,
+      "environment": "Real browser and/or human evidence required; not selected for Node-only execution",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "FILE-DS-9999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "FILE-DS-10000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "FILE-DS-10000001",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:browser/human evidence absent",
+      "reason": "Cannot certify full requirement in Node alone"
+    },
+    {
+      "caseId": "F3:R04-01",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 229,
+        "description": "raw 15,999,999 bytes。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "raw 15,999,999 bytes。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-02",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 230,
+        "description": "raw 16,000,000 bytes。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "raw 16,000,000 bytes。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-03",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 231,
+        "description": "raw 16,000,001 bytesを内容read/parse前拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "raw 16,000,001 bytesを内容read/parse前拒否。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": 4,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F3:R04-04",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 232,
+        "description": "pending 999,999 / 1,000,000 / 1,000,001 bytes。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "pending 999,999 / 1,000,000 / 1,000,001 bytes。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-05",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 233,
+        "description": "pending 255 / 256 / 257 operations。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "pending 255 / 256 / 257 operations。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-06",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 234,
+        "description": "depth16 / depth17。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "depth16 / depth17。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-07",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 235,
+        "description": "huge single stringをfield-specific scannerでparse前拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "huge single stringをfield-specific scannerでparse前拒否。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-08",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 236,
+        "description": "huge key countをschema path count超過でparse前拒否。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "huge key countをschema path count超過でparse前拒否。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-09",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 237,
+        "description": "categories array >12をreject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "categories array >12をreject。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-10",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 238,
+        "description": "ACTIVE registry理論最大service count超過をparse前reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "ACTIVE registry理論最大service count超過をparse前reject。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-11",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 242,
+        "description": "1MB/256件が不足するscenario（長時間save failure）をfixture化し未退避表示を確認。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "1MB/256件が不足するscenario（長時間save failure）をfixture化し未退避表示を確認。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-12",
+      "origins": [
+        "previous55",
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 243,
+        "description": "1MB/256件が過剰なscenarioでvalidation時間を計測。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "1MB/256件が過剰なscenarioでvalidation時間を計測。",
+      "classification": "BROWSER_MEASUREMENT",
+      "nodeOnlyEligible": false,
+      "environment": "Real browser and/or human evidence required; not selected for Node-only execution",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:browser/human evidence absent",
+      "reason": "Cannot certify full requirement in Node alone"
+    },
+    {
+      "caseId": "F3:R04-13",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 244,
+        "description": "raw16MBでduplicate scannerが別巨大ASTを作らない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "raw16MBでduplicate scannerが別巨大ASTを作らない。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R04-14",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 245,
+        "description": "parse failure後も既存IDB不変。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "parse failure後も既存IDB不変。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": 3,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F3:R04-15",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 246,
+        "description": "resource errorをapp 10MB超と誤分類しない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "resource errorをapp 10MB超と誤分類しない。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "RAW-BYTES-15999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "RAW-BYTES-16000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-999999",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000000",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PENDING-BYTES-1000001",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-255",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-256",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-COUNT-257",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH16",
+          "catalogAvailable": true
+        },
+        {
+          "id": "SCAN-DEPTH17",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Exact UTF8 byte counts and layer-specific bounds; never helper-pass as full file accept",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R06-09",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 331,
+        "description": "analytics/APM/crash log/session replay/networkにfile/snapshot/pending本文0。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "analytics/APM/crash log/session replay/networkにfile/snapshot/pending本文0。",
+      "classification": "AUTO_FAULT_AND_BROWSER",
+      "nodeOnlyEligible": false,
+      "environment": "Real browser and/or human evidence required; not selected for Node-only execution",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:browser/human evidence absent",
+      "reason": "Cannot certify full requirement in Node alone"
+    },
+    {
+      "caseId": "F3:R06-10",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 332,
+        "description": "console logにも本文を出さない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "console logにも本文を出さない。",
+      "classification": "AUTO_FAULT_AND_BROWSER",
+      "nodeOnlyEligible": false,
+      "environment": "Real browser and/or human evidence required; not selected for Node-only execution",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:browser/human evidence absent",
+      "reason": "Cannot certify full requirement in Node alone"
+    },
+    {
+      "caseId": "F3:R07-01",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 336,
+        "description": "categoryKey 12種がF2承認値とexact match。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "categoryKey 12種がF2承認値とexact match。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-02",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 337,
+        "description": "categories canonical orderがF2と一致。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "categories canonical orderがF2と一致。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-03",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 338,
+        "description": "R07初回intention ruleをimport/restore後も維持。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "R07初回intention ruleをimport/restore後も維持。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-04",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 339,
+        "description": "R08 completed invariantをimport/restoreで維持。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "R08 completed invariantをimport/restoreで維持。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-05",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 340,
+        "description": "R09 unanswered parent fallbackをsnapshotへ複写せず表示時再計算。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "R09 unanswered parent fallbackをsnapshotへ複写せず表示時再計算。",
+      "classification": "AUTO_DOM_AND_BROWSER",
+      "nodeOnlyEligible": false,
+      "environment": "Real browser and/or human evidence required; not selected for Node-only execution",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:browser/human evidence absent",
+      "reason": "Cannot certify full requirement in Node alone"
+    },
+    {
+      "caseId": "F3:R07-06",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 341,
+        "description": "inactive conditional fieldをreject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "inactive conditional fieldをreject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-07",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 342,
+        "description": "active conditional unansweredを保持。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "active conditional unansweredを保持。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-08",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 343,
+        "description": "normal snapshot / emergency snapshot / prospective restoreで同一F2 canonical capacity serializer。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "normal snapshot / emergency snapshot / prospective restoreで同一F2 canonical capacity serializer。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-09",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 344,
+        "description": "ACTIVE registryなしではproduction export/importを有効化しない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "ACTIVE registryなしではproduction export/importを有効化しない。",
+      "classification": "AUTO_FAULT_AND_HUMAN",
+      "nodeOnlyEligible": false,
+      "environment": "Real browser and/or human evidence required; not selected for Node-only execution",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:browser/human evidence absent",
+      "reason": "Cannot certify full requirement in Node alone"
+    },
+    {
+      "caseId": "F3:R07-10",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 345,
+        "description": "unknown schemaVersion reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "unknown schemaVersion reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-11",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 346,
+        "description": "unknown questionSchemaVersion reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "unknown questionSchemaVersion reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-12",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 347,
+        "description": "unregistered pair reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "unregistered pair reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-13",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 348,
+        "description": "invalid recordId grammar reject（ACTIVE registry binding後）。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "invalid recordId grammar reject（ACTIVE registry binding後）。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R07-14",
+      "origins": [
+        "previous55"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 349,
+        "description": "invalid generationId grammar reject（ACTIVE registry binding後）。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "invalid generationId grammar reject（ACTIVE registry binding後）。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R01-02",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 29,
+        "description": "dependent-pending chain（service create→usage→answer）をordinal順で保持。",
+        "details": [
+          "- 期待：dependsOnOperationIdsが先行operationを指し、並替なし。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "dependsOnOperationIdsが先行operationを指し、並替なし。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-BASE",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-NONE-DELETEALL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FORBIDDEN-DELETEALL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent pending operation/ordinal/footprint/dependency/context rules + Node payload SHA",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R01-06",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 37,
+        "description": "dependency cycle。",
+        "details": [
+          "- 期待：component全体reject。自動並替/修復なし。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "component全体reject。自動並替/修復なし。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-BASE",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-NONE-DELETEALL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FORBIDDEN-DELETEALL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent pending operation/ordinal/footprint/dependency/context rules + Node payload SHA",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R01-07",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 39,
+        "description": "conditional childがparent expected stateと不整合。",
+        "details": [
+          "- 期待：component reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "component reject。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "DS-BASE",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-NONE-DELETEALL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-FORBIDDEN-DELETEALL",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent pending operation/ordinal/footprint/dependency/context rules + Node payload SHA",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-08",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 103,
+        "description": "root key並替。",
+        "details": [
+          "- 期待：canonical raw mismatch reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "canonical raw mismatch reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-09",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 105,
+        "description": "余分な空白/newline。",
+        "details": [
+          "- 期待：canonical raw mismatch reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "canonical raw mismatch reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-10",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 107,
+        "description": "unnecessary unicode escape / slash escape。",
+        "details": [
+          "- 期待：canonical raw mismatch reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "canonical raw mismatch reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-13",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 111,
+        "description": "unexpected answers nested object。",
+        "details": [
+          "- 期待：strict reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "strict reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-25",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 132,
+        "description": "body+checksumを攻撃者が再生成したがschema unknown fieldあり。",
+        "details": [
+          "- 期待：checksum一致でもsemantic reject。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "checksum一致でもsemantic reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-28",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 138,
+        "description": "SHA API failure。",
+        "details": [
+          "- 期待：export/import成功扱いしない。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "export/import成功扱いしない。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-30",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 141,
+        "description": "full canonical rawとdigest canonical payloadがschema-defined orderを共有。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "full canonical rawとdigest canonical payloadがschema-defined orderを共有。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-31",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 145,
+        "description": "ACTIVE registryからV-VALID-01を生成しpreview accept。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "ACTIVE registryからV-VALID-01を生成しpreview accept。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-36",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 150,
+        "description": "V-UNK-01 reject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "V-UNK-01 reject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R02-39",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 153,
+        "description": "V-HASH-02 checksum一致でもreject。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "V-HASH-02 checksum一致でもreject。",
+      "classification": "AUTO_NODE",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "V-VALID-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-DUP-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ORDER-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-NUM-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UNK-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-UTF-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-BOM-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-HASH-02",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-TRUNC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "V-ESC-01",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DIGEST-01",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Approved exact source literals/order/semantics with independent JSON/crypto and explicit pipeline trace",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R05-04",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 255,
+        "description": "sourceFileIdがfileFormatVersion + validated checksum.hexから一意に導出される。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "sourceFileIdがfileFormatVersion + validated checksum.hexから一意に導出される。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-BYTES-10000000",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent source/receipt/operation ordering and expected-before/after fixture + raw-store revisions",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R05-05",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 256,
+        "description": "ReapplyContextにsourceFileId / sourceSnapshotGenerationId / restoredGenerationId / lastKnownGlobalRevision / orderedOperationIds / receiptMapを保持。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "ReapplyContextにsourceFileId / sourceSnapshotGenerationId / restoredGenerationId / lastKnownGlobalRevision / orderedOperationIds / receiptMapを保持。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-BYTES-10000000",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent source/receipt/operation ordering and expected-before/after fixture + raw-store revisions",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R05-11",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 268,
+        "description": "operation current==expected-before、ACTIVE context一致。",
+        "details": [
+          "- 期待：利用者確認後のみF2 save gateで適用可能。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "利用者確認後のみF2 save gateで適用可能。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-BYTES-10000000",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent source/receipt/operation ordering and expected-before/after fixture + raw-store revisions",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R05-12",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 270,
+        "description": "operation transaction complete後にだけAPPLIED receiptを作成。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "operation transaction complete後にだけAPPLIED receiptを作成。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-BYTES-10000000",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent source/receipt/operation ordering and expected-before/after fixture + raw-store revisions",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R05-16",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 276,
+        "description": "expected-before==intended-afterのpending opをinvalid/no-opとして受け入れない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "expected-before==intended-afterのpending opをinvalid/no-opとして受け入れない。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-BYTES-10000000",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent source/receipt/operation ordering and expected-before/after fixture + raw-store revisions",
+      "priority": 8,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F3:R05-19",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 282,
+        "description": "同一tab ACTIVE context中に同じemergency fileを二回import。",
+        "details": [
+          "- 期待：receiptありoperationだけsafe skip、未receiptは再検証。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "receiptありoperationだけsafe skip、未receiptは再検証。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-BYTES-10000000",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent source/receipt/operation ordering and expected-before/after fixture + raw-store revisions",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    },
+    {
+      "caseId": "F3:R05-22",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 291,
+        "description": "dependency chain op1 complete/op2 abort。",
+        "details": [
+          "- 期待：同一sessionではop1 receiptあり、op2以降remaining。"
+        ],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "同一sessionではop1 receiptあり、op2以降remaining。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-BYTES-10000000",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent source/receipt/operation ordering and expected-before/after fixture + raw-store revisions",
+      "priority": 20,
+      "selected": true,
+      "readiness": "Bound by PREEXECUTION vectors",
+      "reason": "Safety priority: rollback/invalid data or forbidden pending protection before manual reapply; complete Node-observable criteria bound"
+    },
+    {
+      "caseId": "F3:R05-23",
+      "origins": [
+        "additional30"
+      ],
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 293,
+        "description": "same session retryでop1を二重commitしない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "expected": "same session retryでop1を二重commitしない。",
+      "classification": "AUTO_FAULT",
+      "nodeOnlyEligible": true,
+      "environment": "Node24 + fake-indexeddb6.2.4 for DB/fault/restore; pure import cases still seed DB to prove protection",
+      "fixtureRefs": [
+        {
+          "id": "EM-FULL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "EM-PARTIAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-MIX",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-CONDITIONAL",
+          "catalogAvailable": true
+        },
+        {
+          "id": "DS-BYTES-10000000",
+          "catalogAvailable": true
+        }
+      ],
+      "independentOracle": "Independent source/receipt/operation ordering and expected-before/after fixture + raw-store revisions",
+      "priority": null,
+      "selected": false,
+      "readiness": "NOT RUN:20-case cap; per-case adapter/calibration still required",
+      "reason": "Held for next authorized batch under20-case limit"
+    }
+  ],
+  "selected": 20,
+  "remainingUnselected": 56
+}
