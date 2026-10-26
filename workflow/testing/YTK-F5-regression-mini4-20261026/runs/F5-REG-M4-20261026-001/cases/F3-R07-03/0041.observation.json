@@ -1,0 +1,132 @@
+{
+  "caseId": "F3:R07-03",
+  "runId": "F5-REG-M4-20261026-001",
+  "attempt": 1,
+  "index": 41,
+  "label": "mail-using-undecided",
+  "input": {
+    "path": "inputs/F3-R07-03/0041.bin",
+    "bytes": 2568,
+    "sha256": "7e7aa7401e34b75e7419301f8b73e55d06f6233d014a141ba77540a27ddb3f4d"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": true,
+    "initialIntentionCorrect": true,
+    "intentionAfter": "undecided",
+    "prospectiveMatches": true,
+    "transactionCompleted": true
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "afbfd0695fe950e001b908e5ee2a120b222649be6b50a999708a240c3699bc27",
+    "declaredChecksum": "afbfd0695fe950e001b908e5ee2a120b222649be6b50a999708a240c3699bc27",
+    "canonicalRawMatches": true,
+    "rawSHA256": "7e7aa7401e34b75e7419301f8b73e55d06f6233d014a141ba77540a27ddb3f4d",
+    "snapshotSHA256": "d5544305bdafc0548bf94c64d84fa45ed267f4b5de47f9e8cd90f515b6f22460"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 1,
+    "accepted": true,
+    "errorCode": null,
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": null,
+    "restoredContentMatches": true,
+    "newGeneration": true,
+    "globalRevision": 1,
+    "transactionCompleted": true,
+    "stateAndAnswersPreserved": true,
+    "activeConditionalUnansweredPreserved": false,
+    "initialIntentionCorrect": true,
+    "intentionAfter": "undecided",
+    "prospectiveMatches": true
+  },
+  "error": null,
+  "status": "PASS"
+}

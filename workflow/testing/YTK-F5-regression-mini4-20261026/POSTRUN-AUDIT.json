@@ -1,0 +1,40 @@
+{
+  "runId": "F5-REG-M4-20261026-001",
+  "evidenceFilesVerified": 1921,
+  "evidenceManifestSHA256": "abf09684a4eb60dd7f6bedcc9155c76bd6c8194c07fe7c82a8e1a80d6c3496b3",
+  "executedVariants": 300,
+  "plannedVariants": 1017,
+  "unexecutedVariants": 717,
+  "executedVariantCounts": {
+    "PASS": 299,
+    "FAIL": 1
+  },
+  "allExecutedInputHashesAndIndependentOraclesRechecked": true,
+  "all8PassCaseExpectationsAndEvidenceRechecked": true,
+  "rejectOldStoreEqualityAndNoReadwriteRechecked": true,
+  "allR07SavesAndRestoreContentsRechecked": true,
+  "failedObservation": [
+    {
+      "caseId": "F3:R07-06",
+      "label": "normal-no-unanswered",
+      "status": "FAIL",
+      "delta": [
+        {
+          "key": "accepted",
+          "expected": false,
+          "actual": true
+        }
+      ]
+    }
+  ],
+  "stopEnforcedAfterFail": true,
+  "noPostStopProductCases": true,
+  "noFixOrRetest": true,
+  "targetFiles": 3441,
+  "historicalFiles": 20131,
+  "targetDependenciesHistoryBeforeAfterMatch": true,
+  "old40AcceptedResultReferencesUnchanged": true,
+  "oldFailuresRetestsFixtureHistoryPreserved": true,
+  "changedFilesOnlyNewFolder": true,
+  "limitations": "Node/fake-indexeddb only; no browser/physical save/quota/iPhone/F6 claims."
+}

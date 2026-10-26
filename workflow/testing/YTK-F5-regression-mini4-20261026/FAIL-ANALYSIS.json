@@ -1,0 +1,35 @@
+{
+  "runId": "F5-REG-M4-20261026-001",
+  "caseId": "F3:R07-06",
+  "rawVerdict": "FAIL_PRESERVED",
+  "completedVariant": 2,
+  "label": "normal-no-unanswered",
+  "fixtureSHA256": "254f3897ae1340fa6b593ffcffdb788a09261cb7495587fbe4eeee09cba67851",
+  "classification": "FIXTURE_GENERATION_ERROR",
+  "productDefectConfirmed": false,
+  "observedAnswers": {
+    "billing": "no"
+  },
+  "intendedMutation": {
+    "kind": "normal",
+    "parent": "no",
+    "child": "unanswered",
+    "inactive": true
+  },
+  "rootCause": "conditional() inserts billingSource, then envelope() invokes independent canonicalSnapshot(), which removes inactive billingSource before signing. The actual input is a valid no-child file, while frozen expectation says reject.",
+  "independentEvidence": "Object.hasOwn(parsed.snapshot.services[0].answers,billingSource) is false; checksum and canonical raw match. Product accepted valid fixture without readwrite.",
+  "missingPreparationCheck": "Preparation checked raw/checksum/canonical controls but did not assert that inactive child mutation survives serialization.",
+  "sourceBindings": [
+    {
+      "path": "runner/fixtures.mjs",
+      "sha256": "d2bc3de84a470c22921c20415d1ff51e1811ee27180b0165e455e624e47472fd"
+    },
+    {
+      "path": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runner/common.mjs",
+      "sha256": "32da0a3c4456078b8a8df093adbcfcd44339918ab5041e32cde3d9063c8d12b2"
+    }
+  ],
+  "fixApplied": false,
+  "retestExecuted": false,
+  "proposal": "For separately authorized new attempt: build canonical baseline first, insert inactive child directly into raw envelope after projection, sign without re-projecting, independently assert child exists/value and parent inactive for all48 variants before commit. Preserve this run, FAIL, inputs and oracle unchanged."
+}
