@@ -1,0 +1,32 @@
+file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/prototypes/YTK-F4/test/r02-29-parsed-immutability.test.mjs:23
+ try{token=await importBackup({size:buffer.length,arrayBuffer:async()=>buffer.buffer},{crypto:{subtle:{digest:async(...args)=>{digests++;unchanged(nodes);assert.equal(JSON.stringify(parsed),initialJSON);stages.push('before');try{if(failDigest)throw Error('dummy SHA failure');return await globalThis.crypto.subtle.digest(...args);}finally{unchanged(nodes);stages.push('after');}}}});}catch(e){error=e;}finally{JSON.parse=originalParse;}
+                                                                                                                                                                                                                                                                                                                                                                                             ^
+
+SyntaxError: Unexpected token ')'
+    at compileSourceTextModule (node:internal/modules/esm/utils:319:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:438:20)
+    at afterLoad (node:internal/modules/esm/loader:506:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:511:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:564:36)
+    at afterResolve (node:internal/modules/esm/loader:611:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:617:12)
+    at node:internal/modules/esm/loader:636:32
+    at TracingChannel.tracePromise (node:diagnostics_channel:361:14)
+
+Node.js v24.20.0
+✖ workflow\prototypes\YTK-F4\test\r02-29-parsed-immutability.test.mjs (88.0925ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 108.9426
+
+✖ failing tests:
+
+test at workflow\prototypes\YTK-F4\test\r02-29-parsed-immutability.test.mjs:1:1
+✖ workflow\prototypes\YTK-F4\test\r02-29-parsed-immutability.test.mjs (88.0925ms)
+  'test failed'

@@ -1,0 +1,50 @@
+✖ R02-29 development: normal/full/partial/none preserve complete parsed graph and independent frozen tokens (48.7372ms)
+✖ R02-29 development: malformed dependency types/order/duplicates and correct-checksum invalid schema reject without parsed mutation (8.2885ms)
+✔ R02-29 development: checksum/digest failures for normal/full/partial/none never freeze parsed input or yield a token (32.4044ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 212.4868
+
+✖ failing tests:
+
+test at workflow\prototypes\YTK-F4\test\r02-29-parsed-immutability.test.mjs:28:1
+✖ R02-29 development: normal/full/partial/none preserve complete parsed graph and independent frozen tokens (48.7372ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at unchanged (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/prototypes/YTK-F4/test/r02-29-parsed-immutability.test.mjs:19:163)
+      at inspect (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/prototypes/YTK-F4/test/r02-29-parsed-immutability.test.mjs:24:29)
+      at async TestContext.<anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/prototypes/YTK-F4/test/r02-29-parsed-immutability.test.mjs:29:67)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at workflow\prototypes\YTK-F4\test\r02-29-parsed-immutability.test.mjs:35:1
+✖ R02-29 development: malformed dependency types/order/duplicates and correct-checksum invalid schema reject without parsed mutation (8.2885ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at inspect (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/prototypes/YTK-F4/test/r02-29-parsed-immutability.test.mjs:24:9)
+      at async TestContext.<anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/prototypes/YTK-F4/test/r02-29-parsed-immutability.test.mjs:36:145)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
