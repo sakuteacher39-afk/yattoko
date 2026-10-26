@@ -1,0 +1,9 @@
+import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
+export {repo,target,subject,sha,json,put,git,verify,dependencies} from '../../YTK-F5-browser-preparation-20261026/runner/common.mjs';
+export {matches,encode,fixture,versions} from '../../YTK-F5-regression-R02-mini1-20261020/runner/common.mjs';
+import {repo,sha,dependencies} from '../../YTK-F5-browser-preparation-20261026/runner/common.mjs';import {tree} from '../../YTK-F5-R02-29-relock-20261026/runner/common.mjs';
+export const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),prep=path.resolve(base,'../YTK-F5-preparation-20261015'),reference='c51932447f29e4f7c5b155c31318f56b9f64a68f',ids=[1,2,3,4,5,6,7,11,12,14,15,16,17,18,19,20,24,26,27,40].map(n=>'F3:R02-'+String(n).padStart(2,'0'));
+export const dependencyInventory=dependencies;
+export function history(){return tree(reference).map(f=>{const b=fs.readFileSync(path.join(repo,f.path));return{...f,bytes:b.length,sha256:sha(b)};});}
+import {oracle as schemaOracle} from '../../YTK-F5-regression-R02-mini1-20261020/runner/common.mjs';
+export function oracle(raw){const o=schemaOracle(raw);let parsed;try{parsed=JSON.parse(new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(raw));}catch{return {...o,rawPayloadChecksumComparable:false};}if(!parsed?.checksum||o.duplicateKeys?.length)return {...o,rawPayloadChecksumComparable:false};const {checksum,...body}=parsed;return {...o,rawPayloadChecksumComparable:true,rawPayloadSHA256:sha(Buffer.from(JSON.stringify(body))),rawPayloadChecksumMatches:checksum.algorithm==='SHA-256'&&sha(Buffer.from(JSON.stringify(body)))===checksum.hex};}

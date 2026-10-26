@@ -1,0 +1,51 @@
+{
+  "kind": "PREEXECUTION_CALIBRATION_NO_FORMAL_RESULT",
+  "originalDraftPreserved": "preparation-revisions/R1/PREEXECUTION.json",
+  "draftSHA256": "e3317cf7dd1c606122d696b71769d21b79774532792a8b359c00a9b97d82dfed",
+  "finding": "Legacy unknown-root generator signs only known root fields. Keep those fixtures and histories, but do not claim raw-payload checksum validity. Add4 unknown-root fixtures signed over all raw own fields without projection.",
+  "notes": [
+    {
+      "input": {
+        "path": "inputs/F3-R02-11/002.bin",
+        "bytes": 3631,
+        "sha256": "246970bac4710c330534e283503b2cf373338d9f9c7335c791d96f636dfc8f9b"
+      },
+      "label": "root-unknown-extra",
+      "legacySchemaDirectedChecksumMatches": true,
+      "allRawPayloadChecksumMatches": false
+    },
+    {
+      "input": {
+        "path": "inputs/F3-R02-11/003.bin",
+        "bytes": 3635,
+        "sha256": "2b2ff06045447ffd97aa4c176681f6a93567d7a3aff37bae8e4a83c306becca5"
+      },
+      "label": "root-unknown-__proto__",
+      "legacySchemaDirectedChecksumMatches": true,
+      "allRawPayloadChecksumMatches": false
+    },
+    {
+      "input": {
+        "path": "inputs/F3-R02-11/004.bin",
+        "bytes": 3637,
+        "sha256": "7bbd0aac2949a07fe3beb7e737efc36a60cbda8b2e2ca79d38e8a98b3ca3b965"
+      },
+      "label": "root-unknown-constructor",
+      "legacySchemaDirectedChecksumMatches": true,
+      "allRawPayloadChecksumMatches": false
+    },
+    {
+      "input": {
+        "path": "inputs/F3-R02-11/005.bin",
+        "bytes": 3635,
+        "sha256": "7ca00e1ab974d96a12ae82e6535340fff85172626f3d556316421b597c5afda7"
+      },
+      "label": "root-unknown-prototype",
+      "legacySchemaDirectedChecksumMatches": true,
+      "allRawPayloadChecksumMatches": false
+    }
+  ],
+  "addedVariants": 4,
+  "productCodeChanged": false,
+  "formalCasesExecuted": 0
+}
