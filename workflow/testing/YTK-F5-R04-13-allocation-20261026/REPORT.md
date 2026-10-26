@@ -62,3 +62,5 @@ heap取得にはstop-the-world/GCの観測効果がある。記録したmemory�
 新attemptの当該Node scanner要求はPASSとして提出し、制作管理室の独立レビューを待つ。旧NOT VERIFIABLEを上書きしていない。他19 PASSは再実行・移植していない。実ブラウザー必須7ケースはNOT RUN、F6はNOT RUN、16MB全体安全性は未認定。F5全体PASS、本番公開、mainマージ、R005凍結解除を宣言・実施しない。監査・commit・push完了で停止する。
 
 Windows Gitの既定path長制限で証拠ファイルのindex追加が一度失敗したため、Git操作にcore.longpaths=trueを指定した。証拠のpathやbytesは変更していない。Windowsで同じ深いworkspaceへcheckoutする場合もlongpaths対応が必要。
+
+試験toolingへ同梱したAcornのMIT noticeと由来をtooling/LICENSE-acorn.txt、tooling/PROVENANCE.mdへ添付した。実行済みparser source・runner・入力・証拠のbytesは変更していない。
