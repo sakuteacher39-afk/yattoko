@@ -1,0 +1,37 @@
+{
+  "caseId": "F3:R04-07",
+  "status": "PASS",
+  "attempt": 1,
+  "runId": "F5-REG-M3-20261026-001",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 235,
+    "description": "huge single stringをfield-specific scannerでparse前拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "plannedVariants": 3,
+  "completedVariants": 3,
+  "counts": {
+    "PASS": 3
+  },
+  "evidence": [
+    {
+      "index": 1,
+      "label": "string-token-4096",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "string-token-4097",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "string-token-1000000",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared source-specific conditions and independent observations matched on Node/fake-IDB. No browser claim or old/development result transfer"
+}

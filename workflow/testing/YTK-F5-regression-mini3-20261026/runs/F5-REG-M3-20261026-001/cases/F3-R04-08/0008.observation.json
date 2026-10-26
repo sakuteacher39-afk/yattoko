@@ -1,0 +1,156 @@
+{
+  "caseId": "F3:R04-08",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 8,
+  "label": "members-categories-7",
+  "mode": "reject",
+  "recipe": {
+    "schemaPath": "categories",
+    "memberLimit": 6,
+    "members": 7,
+    "layerOnlyAtLimit": true
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R04-08/0008.bin",
+    "bytes": 3617,
+    "sha256": "007fd6bafdf95d88cee814ab487a483a17fc881b2f2f34bfa62eebf5405cec87"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 236,
+    "description": "huge key countをschema path count超過でparse前拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true,
+    "fullParses": 0,
+    "digestCalls": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [
+      "snapshot.categories.0.x0",
+      "snapshot.categories.0.x1",
+      "snapshot.categories.0.x2",
+      "snapshot.categories.0.x3",
+      "snapshot.categories.0.x4",
+      "snapshot.categories.0.x5",
+      "snapshot.categories.0.x6"
+    ],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": false,
+    "computedChecksum": "7733ef9254d86463a7dd50612969d4b9b52a717f4f365e7752f91a1b967164a4",
+    "declaredChecksum": "81512b7f708bc0fd71454f3ea26ab22aff1ae14ef7dd7d62dfe0189a5233bf0c",
+    "canonicalRawMatches": false,
+    "rawSHA256": "007fd6bafdf95d88cee814ab487a483a17fc881b2f2f34bfa62eebf5405cec87",
+    "snapshotSHA256": "7f8fb20398378979d4944c57e89cf81b21b8a04014c12d6e4f7186ab6ef12b2a"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 0,
+    "digestCalls": 0,
+    "importError": {
+      "name": "Error",
+      "code": "MEMBER_LIMIT"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:19:04.827Z",
+  "finishedAt": "2026-10-26T05:19:04.831Z"
+}

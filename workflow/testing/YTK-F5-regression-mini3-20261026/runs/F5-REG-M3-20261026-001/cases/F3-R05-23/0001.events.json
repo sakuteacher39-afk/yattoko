@@ -1,0 +1,59 @@
+[
+  {
+    "event": "FILE_READ"
+  },
+  {
+    "event": "FULL_PARSE"
+  },
+  {
+    "event": "DIGEST_START",
+    "invocation": 1
+  },
+  {
+    "event": "DIGEST_END",
+    "invocation": 1
+  },
+  {
+    "event": "DIGEST_START",
+    "invocation": 2
+  },
+  {
+    "event": "DIGEST_END",
+    "invocation": 2
+  },
+  {
+    "event": "DIGEST_START",
+    "invocation": 3
+  },
+  {
+    "event": "DIGEST_END",
+    "invocation": 3
+  },
+  {
+    "event": "IMPORT_COMPLETE"
+  },
+  {
+    "event": "APPLY_RESOLVED",
+    "index": 0,
+    "status": "APPLIED",
+    "completes": 1
+  },
+  {
+    "event": "APPLY_RESOLVED",
+    "index": 0,
+    "status": "ALREADY_APPLIED",
+    "completes": 1
+  },
+  {
+    "event": "APPLY_RESOLVED",
+    "index": 1,
+    "status": "APPLIED",
+    "completes": 2
+  },
+  {
+    "event": "APPLY_RESOLVED",
+    "index": 2,
+    "status": "APPLIED",
+    "completes": 3
+  }
+]

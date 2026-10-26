@@ -1,0 +1,141 @@
+{
+  "caseId": "F3:R02-28",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 1,
+  "label": "sha-failure-at-1",
+  "mode": "crypto-fail",
+  "recipe": {
+    "digestInvocation": 1
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R02-28/0001.bin",
+    "bytes": 4539,
+    "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 138,
+    "description": "SHA API failure。",
+    "details": [
+      "- 期待：export/import成功扱いしない。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "digestFailureObserved": true,
+    "inputUnchanged": true
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+    "declaredChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+    "canonicalRawMatches": true,
+    "rawSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "actual": {
+    "error": {
+      "name": "Error",
+      "code": "INVALID_FILE"
+    },
+    "inputUnchanged": true,
+    "digestCalls": 1,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestFailureObserved": true,
+    "accepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:19:12.100Z",
+  "finishedAt": "2026-10-26T05:19:12.106Z"
+}

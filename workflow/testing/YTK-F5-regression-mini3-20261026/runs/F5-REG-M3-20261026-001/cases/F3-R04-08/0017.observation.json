@@ -1,0 +1,153 @@
+{
+  "caseId": "F3:R04-08",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 17,
+  "label": "members-omittedScopes-6",
+  "mode": "reject",
+  "recipe": {
+    "schemaPath": "omittedScopes",
+    "memberLimit": 6,
+    "members": 6,
+    "layerOnlyAtLimit": true
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R04-08/0017.bin",
+    "bytes": 3626,
+    "sha256": "955f128861165fb8d39c73d30740758443f03856f5f1180185f3abc5040f6816"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 236,
+    "description": "huge key countをschema path count超過でparse前拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true,
+    "fullParses": 1,
+    "digestCalls": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": false,
+    "computedChecksum": "53fe8a69f1ea30053e26fdd8548938740b9e3afd6f4080d07952c414c9f26f87",
+    "declaredChecksum": "81512b7f708bc0fd71454f3ea26ab22aff1ae14ef7dd7d62dfe0189a5233bf0c",
+    "canonicalRawMatches": false,
+    "rawSHA256": "955f128861165fb8d39c73d30740758443f03856f5f1180185f3abc5040f6816",
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "importError": {
+      "name": "Error",
+      "code": "FIELDS"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:19:04.886Z",
+  "finishedAt": "2026-10-26T05:19:04.891Z"
+}

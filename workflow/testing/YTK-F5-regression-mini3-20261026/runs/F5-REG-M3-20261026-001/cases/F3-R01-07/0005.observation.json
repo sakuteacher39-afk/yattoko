@@ -1,0 +1,156 @@
+{
+  "caseId": "F3:R01-07",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 5,
+  "label": "parent-context-null",
+  "mode": "reject",
+  "recipe": {
+    "expectedParent": "yes",
+    "mutatedParent": null
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R01-07/0005.bin",
+    "bytes": 3808,
+    "sha256": "fd0391337ed61995c441594c8da1e27a7f4f6de89335ce71639730462e361417"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 39,
+    "description": "conditional childがparent expected stateと不整合。",
+    "details": [
+      "- 期待：component reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "31e4b7ff4561d0a65f05a3bd74ce5697c5c372206d1e22d9ec303822992dec39",
+    "declaredChecksum": "31e4b7ff4561d0a65f05a3bd74ce5697c5c372206d1e22d9ec303822992dec39",
+    "canonicalRawMatches": true,
+    "rawSHA256": "fd0391337ed61995c441594c8da1e27a7f4f6de89335ce71639730462e361417",
+    "snapshotSHA256": "dd8f006c2e045f3440e638c5e49f5820ea3ef841485c48002b02e55aa1987f66"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 3,
+    "importError": {
+      "name": "Error",
+      "code": "CONTEXT"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:18:40.959Z",
+  "finishedAt": "2026-10-26T05:18:40.965Z"
+}

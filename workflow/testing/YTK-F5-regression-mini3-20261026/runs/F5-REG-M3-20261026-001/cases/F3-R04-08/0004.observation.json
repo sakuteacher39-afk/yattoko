@@ -1,0 +1,92 @@
+{
+  "caseId": "F3:R04-08",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 4,
+  "label": "members-snapshot-8",
+  "mode": "reject",
+  "recipe": {
+    "schemaPath": "snapshot",
+    "memberLimit": 7,
+    "members": 8,
+    "layerOnlyAtLimit": true
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R04-08/0004.bin",
+    "bytes": 1449,
+    "sha256": "9cfe696111ad78039c162767062d3679f93ba28ec133fc2e74167b01b06be688"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 236,
+    "description": "huge key countをschema path count超過でparse前拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true,
+    "fullParses": 0,
+    "digestCalls": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [
+      "snapshot.x0",
+      "snapshot.x1",
+      "snapshot.x2",
+      "snapshot.x3",
+      "snapshot.x4",
+      "snapshot.x5",
+      "snapshot.x6",
+      "snapshot.x7"
+    ],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": false,
+    "computedChecksum": "c39d49d5550a834b1702b125da95daacd71d381f1df2a2ea7a0a83c67169ed50",
+    "declaredChecksum": "81512b7f708bc0fd71454f3ea26ab22aff1ae14ef7dd7d62dfe0189a5233bf0c",
+    "canonicalRawMatches": false,
+    "rawSHA256": "9cfe696111ad78039c162767062d3679f93ba28ec133fc2e74167b01b06be688",
+    "snapshotSHA256": "6bd126b11fb4e2a6f15c59e1c7f22b02767c7c924a9d12b2525c0a0fdc04e4d9"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 0,
+    "digestCalls": 0,
+    "importError": {
+      "name": "Error",
+      "code": "MEMBER_LIMIT"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:19:04.798Z",
+  "finishedAt": "2026-10-26T05:19:04.803Z"
+}

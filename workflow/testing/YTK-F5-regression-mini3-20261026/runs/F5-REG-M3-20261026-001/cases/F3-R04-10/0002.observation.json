@@ -1,0 +1,167 @@
+{
+  "caseId": "F3:R04-10",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 2,
+  "label": "service-count-34723",
+  "mode": "reject",
+  "recipe": {
+    "minimumRecordBytes": 288,
+    "maximum": 34722,
+    "witness": {
+      "recordId": "svc_00000000-0000-4000-8000-000000000000",
+      "categoryKey": "subscription",
+      "serviceCatalogId": "other",
+      "otherServiceName": "a",
+      "recordState": "partial",
+      "usageStatus": "using",
+      "answers": {
+        "billing": "no"
+      },
+      "intentionOverride": null,
+      "revision": 0,
+      "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+    },
+    "count": 34723,
+    "layerOnlyAtLimit": true
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R04-10/0002.bin",
+    "bytes": 106737,
+    "sha256": "79e316b0ce99ece92c2d694266ef80844ec02dda2d16ec174f9e95650d93fd59"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 238,
+    "description": "ACTIVE registry理論最大service count超過をparse前reject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true,
+    "fullParses": 0,
+    "digestCalls": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "41d6ad5be5758686a3f42bd97c3a2c7992661bf6be445dfe43cb95558a002128",
+    "declaredChecksum": "41d6ad5be5758686a3f42bd97c3a2c7992661bf6be445dfe43cb95558a002128",
+    "canonicalRawMatches": false,
+    "rawSHA256": "79e316b0ce99ece92c2d694266ef80844ec02dda2d16ec174f9e95650d93fd59",
+    "snapshotSHA256": "e2363dc1029c96b0d4781c600da2a6991ad3855c9b5160a0e4a3650d9bf380b5"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 0,
+    "digestCalls": 0,
+    "importError": {
+      "name": "Error",
+      "code": "ARRAY_LIMIT"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:19:09.725Z",
+  "finishedAt": "2026-10-26T05:19:09.758Z"
+}

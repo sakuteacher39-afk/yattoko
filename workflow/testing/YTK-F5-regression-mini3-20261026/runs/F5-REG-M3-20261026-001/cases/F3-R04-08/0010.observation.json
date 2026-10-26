@@ -1,0 +1,165 @@
+{
+  "caseId": "F3:R04-08",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 10,
+  "label": "members-services-11",
+  "mode": "reject",
+  "recipe": {
+    "schemaPath": "services",
+    "memberLimit": 10,
+    "members": 11,
+    "layerOnlyAtLimit": true
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R04-08/0010.bin",
+    "bytes": 3796,
+    "sha256": "ab560bb5d14e639a85b7008195781acf5def5fc3365574f840a5be7b0d8e76de"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 236,
+    "description": "huge key countをschema path count超過でparse前拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true,
+    "fullParses": 0,
+    "digestCalls": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [
+      "snapshot.services.0.x0",
+      "snapshot.services.0.x1",
+      "snapshot.services.0.x2",
+      "snapshot.services.0.x3",
+      "snapshot.services.0.x4",
+      "snapshot.services.0.x5",
+      "snapshot.services.0.x6",
+      "snapshot.services.0.x7",
+      "snapshot.services.0.x8",
+      "snapshot.services.0.x9",
+      "snapshot.services.0.x10"
+    ],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": false,
+    "computedChecksum": "f18b6238e779e46f4f9209dfc82d1e39beb9bfb6f40d0f04dd53d5160f567543",
+    "declaredChecksum": "81512b7f708bc0fd71454f3ea26ab22aff1ae14ef7dd7d62dfe0189a5233bf0c",
+    "canonicalRawMatches": false,
+    "rawSHA256": "ab560bb5d14e639a85b7008195781acf5def5fc3365574f840a5be7b0d8e76de",
+    "snapshotSHA256": "eeb5d813ddad977d2c55021549d51b1a4401d870b75bf1f3c2717bc7dc52c0c2"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 0,
+    "digestCalls": 0,
+    "importError": {
+      "name": "Error",
+      "code": "MEMBER_LIMIT"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:19:04.839Z",
+  "finishedAt": "2026-10-26T05:19:04.844Z"
+}

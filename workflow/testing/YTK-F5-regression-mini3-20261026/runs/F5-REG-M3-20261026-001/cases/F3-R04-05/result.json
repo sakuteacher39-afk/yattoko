@@ -1,0 +1,38 @@
+{
+  "caseId": "F3:R04-05",
+  "status": "FAIL",
+  "attempt": 1,
+  "runId": "F5-REG-M3-20261026-001",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 233,
+    "description": "pending 255 / 256 / 257 operations。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "plannedVariants": 3,
+  "completedVariants": 3,
+  "counts": {
+    "FAIL": 2,
+    "PASS": 1
+  },
+  "evidence": [
+    {
+      "index": 1,
+      "label": "pending-count-255",
+      "status": "FAIL"
+    },
+    {
+      "index": 2,
+      "label": "pending-count-256",
+      "status": "FAIL"
+    },
+    {
+      "index": 3,
+      "label": "pending-count-257",
+      "status": "PASS"
+    }
+  ],
+  "reason": "Expected versus measured mismatch; product unchanged"
+}

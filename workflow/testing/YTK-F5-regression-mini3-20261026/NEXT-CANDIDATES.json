@@ -1,0 +1,158 @@
+{
+  "status": "PROPOSED_ONLY_NOT_RUN",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "unexecutedRemaining": 36,
+  "unresolvedFailed": 2,
+  "totalNotPassedIn56": 38,
+  "candidates": [
+    {
+      "caseId": "F2:RST-06",
+      "kind": "NEW_ATTEMPT_REQUIRED_TEST_SIDE_FIX",
+      "priority": 1,
+      "reason": "pending再適用で10MB超なら保存拒否",
+      "condition": "Preserve run001 FAIL; independently correct fixture/oracle and commit new full variant plan/runner before authorized re-execution"
+    },
+    {
+      "caseId": "F3:R04-05",
+      "kind": "NEW_ATTEMPT_REQUIRED_TEST_SIDE_FIX",
+      "priority": 2,
+      "reason": "pending 255 / 256 / 257 operations。",
+      "condition": "Preserve run001 FAIL; independently correct fixture/oracle and commit new full variant plan/runner before authorized re-execution"
+    },
+    {
+      "caseId": "F3:R04-01",
+      "kind": "NOT RUN",
+      "priority": 3,
+      "reason": "raw 15,999,999 bytes。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R04-02",
+      "kind": "NOT RUN",
+      "priority": 4,
+      "reason": "raw 16,000,000 bytes。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R04-15",
+      "kind": "NOT RUN",
+      "priority": 5,
+      "reason": "resource errorをapp 10MB超と誤分類しない。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R01-02",
+      "kind": "NOT RUN",
+      "priority": 6,
+      "reason": "dependsOnOperationIdsが先行operationを指し、並替なし。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R07-03",
+      "kind": "NOT RUN",
+      "priority": 7,
+      "reason": "R07初回intention ruleをimport/restore後も維持。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R07-04",
+      "kind": "NOT RUN",
+      "priority": 8,
+      "reason": "R08 completed invariantをimport/restoreで維持。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R07-06",
+      "kind": "NOT RUN",
+      "priority": 9,
+      "reason": "inactive conditional fieldをreject。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R07-07",
+      "kind": "NOT RUN",
+      "priority": 10,
+      "reason": "active conditional unansweredを保持。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R07-08",
+      "kind": "NOT RUN",
+      "priority": 11,
+      "reason": "normal snapshot / emergency snapshot / prospective restoreで同一F2 canonical capacity serializer。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R07-13",
+      "kind": "NOT RUN",
+      "priority": 12,
+      "reason": "invalid recordId grammar reject（ACTIVE registry binding後）。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R07-14",
+      "kind": "NOT RUN",
+      "priority": 13,
+      "reason": "invalid generationId grammar reject（ACTIVE registry binding後）。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R02-08",
+      "kind": "NOT RUN",
+      "priority": 14,
+      "reason": "canonical raw mismatch reject。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R02-09",
+      "kind": "NOT RUN",
+      "priority": 15,
+      "reason": "canonical raw mismatch reject。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R02-10",
+      "kind": "NOT RUN",
+      "priority": 16,
+      "reason": "canonical raw mismatch reject。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R02-25",
+      "kind": "NOT RUN",
+      "priority": 17,
+      "reason": "checksum一致でもsemantic reject。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F3:R02-39",
+      "kind": "NOT RUN",
+      "priority": 18,
+      "reason": "V-HASH-02 checksum一致でもreject。",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F2:RST-01",
+      "kind": "NOT RUN",
+      "priority": 19,
+      "reason": "normal restoreでpartial/completed状態を保持",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    },
+    {
+      "caseId": "F2:RST-03",
+      "kind": "NOT RUN",
+      "priority": 20,
+      "reason": "restore成功でgeneration変更",
+      "condition": "New preexecution plan, fixture calibration and runner binding required"
+    }
+  ],
+  "browserOrHumanBlocked": [
+    "F2:RST-15",
+    "F3:R03-18",
+    "F3:R04-12",
+    "F3:R06-09",
+    "F3:R06-10",
+    "F3:R07-05",
+    "F3:R07-09"
+  ]
+}

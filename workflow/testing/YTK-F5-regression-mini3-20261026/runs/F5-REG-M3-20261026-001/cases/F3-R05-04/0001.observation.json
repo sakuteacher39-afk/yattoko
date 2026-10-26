@@ -1,0 +1,150 @@
+{
+  "caseId": "F3:R05-04",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 1,
+  "label": "identity-V-VALID-01",
+  "mode": "source-id",
+  "recipe": {
+    "source": "V-VALID-01"
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R05-04/0001.bin",
+    "bytes": 3607,
+    "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 255,
+    "description": "sourceFileIdがfileFormatVersion + validated checksum.hexから一意に導出される。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": true,
+    "sourceIdMatches": true,
+    "repeatedImportSameId": true
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+    "declaredChecksum": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+    "canonicalRawMatches": true,
+    "rawSHA256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+    "snapshotSHA256": "8a198bf072621affe2643c82e1ef6ccf26e3f7e57abafe726d0f82cd58b62a50"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "digestCalls": 1,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestFailureObserved": false,
+    "accepted": true,
+    "sourceIdMatches": true,
+    "repeatedImportSameId": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:18:55.203Z",
+  "finishedAt": "2026-10-26T05:18:55.214Z"
+}

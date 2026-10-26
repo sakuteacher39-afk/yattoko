@@ -1,0 +1,142 @@
+{
+  "caseId": "F3:R05-11",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 1,
+  "label": "apply-confirmed",
+  "mode": "session",
+  "recipe": {
+    "source": "EM-FULL"
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F3-R05-11/0001.bin",
+    "bytes": 4539,
+    "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 268,
+    "description": "operation current==expected-before、ACTIVE context一致。",
+    "details": [
+      "- 期待：利用者確認後のみF2 save gateで適用可能。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "expected": {
+    "accepted": true,
+    "confirmationGate": true,
+    "allStatesMatch": true,
+    "saveCalls": 1,
+    "receiptCount": 1
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+    "declaredChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+    "canonicalRawMatches": true,
+    "rawSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "digestCalls": 3,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestFailureObserved": false,
+    "confirmationGate": true,
+    "accepted": true,
+    "errorCode": null,
+    "oldStateUnchanged": false,
+    "allStatesMatch": true,
+    "receiptCount": 1,
+    "remainingCount": 2,
+    "saveCalls": 1
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:18:52.800Z",
+  "finishedAt": "2026-10-26T05:18:52.817Z"
+}

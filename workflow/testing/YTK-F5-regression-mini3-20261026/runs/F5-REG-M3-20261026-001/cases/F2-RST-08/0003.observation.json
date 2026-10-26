@@ -1,0 +1,164 @@
+{
+  "caseId": "F2:RST-08",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 3,
+  "label": "unknown-category-base",
+  "mode": "reject",
+  "recipe": {
+    "source": "V-VALID-01",
+    "mutation": "unknown-category-base"
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F2-RST-08/0003.bin",
+    "bytes": 3610,
+    "sha256": "b448d0478e7bd46994234b7ed123ba6b06914f27f61113d97dbca295e45529b8"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 229,
+    "description": "unknown categoryKey拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "e84eafe7f2bd882568b6cb950a35fdb5e93fd4026398d3b17758d9a88c16500e",
+    "declaredChecksum": "e84eafe7f2bd882568b6cb950a35fdb5e93fd4026398d3b17758d9a88c16500e",
+    "canonicalRawMatches": false,
+    "rawSHA256": "b448d0478e7bd46994234b7ed123ba6b06914f27f61113d97dbca295e45529b8",
+    "snapshotSHA256": "4fa311cb668d4aada7c4caedfd8914510e1cc58b3dc51099913eed32d5e7944d"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "importError": {
+      "name": "Error",
+      "code": "INVALID_FILE"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:19:14.475Z",
+  "finishedAt": "2026-10-26T05:19:14.480Z"
+}

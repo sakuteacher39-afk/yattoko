@@ -1,0 +1,164 @@
+{
+  "caseId": "F2:RST-08",
+  "runId": "F5-REG-M3-20261026-001",
+  "attempt": 1,
+  "index": 11,
+  "label": "unknown-category-license",
+  "mode": "reject",
+  "recipe": {
+    "source": "V-VALID-01",
+    "mutation": "unknown-category-license"
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F2-RST-08/0011.bin",
+    "bytes": 3607,
+    "sha256": "885b2851001e82075eef20a58122f3ab5ed902bb2f42178e7fa1773cd5cd7e12"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 229,
+    "description": "unknown categoryKey拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "480a8fa050f1a79afe32a78e2d9b4e5040aa22bc879edda0b906e045f730157a",
+    "declaredChecksum": "480a8fa050f1a79afe32a78e2d9b4e5040aa22bc879edda0b906e045f730157a",
+    "canonicalRawMatches": false,
+    "rawSHA256": "885b2851001e82075eef20a58122f3ab5ed902bb2f42178e7fa1773cd5cd7e12",
+    "snapshotSHA256": "ceb64cc29eb502b418c86117384c99db2d8e9542920377c34b05323ef0101864"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "importError": {
+      "name": "Error",
+      "code": "INVALID_FILE"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:19:14.528Z",
+  "finishedAt": "2026-10-26T05:19:14.534Z"
+}

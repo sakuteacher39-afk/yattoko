@@ -1,0 +1,46 @@
+{
+  "runId": "F5-REG-M3-20261026-001",
+  "rawStatusesPreserved": true,
+  "formalRetestExecuted": false,
+  "issues": [
+    {
+      "caseId": "F2:RST-06",
+      "classification": "RUNNER_EXPECTATION_ERROR",
+      "rawVerdict": "FAIL",
+      "observed": "capacity rejection, old stores unchanged, receipt0, remaining1, saveCalls0",
+      "rootCause": "Predeclared saveCalls1 is not a requirement in approved RST-06; production ReapplySession checks prospective capacity before CanonicalStore.save.",
+      "sourceSHA256": "03a33c619fa634f3c3bcb5903eb5098bd0510b38037240307bc159e3d18bee67",
+      "requiredBehaviorObserved": true,
+      "promotedToPass": false,
+      "proposal": "New attempt, new preexecution commit: require capacity rejection/unchanged4stores/receipt0/remaining1 and no readwrite; record saveCalls0 as preflight behavior. Never modify this attempt."
+    },
+    {
+      "caseId": "F3:R04-05",
+      "classification": "FIXTURE_ERROR",
+      "rawVerdict": "FAIL",
+      "rootCause": "DS-BASE device usageStatus already using; first generated category operation also uses using. Thus255/256 fixtures contain invalid no-op, independently proven below. Count257 rejected before parse as expected.",
+      "fixtureIssues": [
+        {
+          "label": "pending-count-255",
+          "inputSHA256": "7ba4d33454d51197c8209149b67f3e78759ff4d9a1688a03f05c16695dd52a75",
+          "firstOperationId": "op_00000001-0000-4000-8000-000000000001",
+          "expectedBefore": "using",
+          "intendedAfter": "using",
+          "noOp": true
+        },
+        {
+          "label": "pending-count-256",
+          "inputSHA256": "6f563a25a3a23d5072e0bc30379254d9731e3018c3d81f6310f52815d99f9403",
+          "firstOperationId": "op_00000001-0000-4000-8000-000000000001",
+          "expectedBefore": "using",
+          "intendedAfter": "using",
+          "noOp": true
+        }
+      ],
+      "promotedToPass": false,
+      "proposal": "New attempt, new preexecution commit: generate each operation with a value different from independently tracked current state, independently verify all contexts and no-op absence for255/256/257, then execute all3 boundaries."
+    }
+  ],
+  "productDefectConfirmed": false,
+  "productNotExoneratedByFixtureFailure": true
+}
