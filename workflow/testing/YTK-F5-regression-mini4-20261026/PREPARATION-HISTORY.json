@@ -1,0 +1,17 @@
+{
+  "formalExecutionStarted": false,
+  "events": [
+    {
+      "type": "DRAFT_SYNTAX_ERROR",
+      "resolution": "Fixed redundant parenthesis before fixture generation; product not executed"
+    },
+    {
+      "type": "FIXTURE_CALIBRATION_FAILURE",
+      "caseId": "F3:R07-13",
+      "label": "normal-valid-service-8",
+      "cause": "Changing service ID changes canonical service ordering. Independent serializer rejected this positive control before SUT execution.",
+      "resolution": "Reorder positive-control snapshot via independent canonical serializer; preserve and hash-check already generated draft inputs on rerun",
+      "productExecuted": false
+    }
+  ]
+}
