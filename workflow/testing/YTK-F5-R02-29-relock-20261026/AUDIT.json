@@ -1,0 +1,387 @@
+{
+  "recordedAt": "2026-10-26T04:36:15.172Z",
+  "method": "Independent artifact/oracle replay and graph comparison; no subject code execution",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runnerCommit": "bd117b38f281dced9f6a265402a9c3119e5a2e52",
+  "caseId": "F3:R02-29",
+  "formalStatus": "PASS",
+  "runId": "F5-R02-29-R3-20261026-001",
+  "attempt": 2,
+  "variants": 39,
+  "acceptedControls": 5,
+  "rejectedOrFailureVariants": 34,
+  "graphSnapshots": 219,
+  "digestByteFiles": 68,
+  "allParsedValuesKeysDescriptorsPrototypesExtensibilityUnchanged": true,
+  "allWriteAttemptsIncludingDescriptorOnly": 0,
+  "allValidTokensDeepFrozenAndDisjoint": true,
+  "targetFiles": 3441,
+  "historicalFiles": 3441,
+  "targetUnchanged": true,
+  "oldEvidenceUnchanged": true,
+  "oldR29NVPreserved": true,
+  "old38PASSNotTransferred": true,
+  "newTargetOther496NotRun": true,
+  "remaining55NotRun": true,
+  "F6NotRun": true,
+  "evidenceManifest": {
+    "path": "runs/F5-R02-29-R3-20261026-001/EVIDENCE-MANIFEST.json",
+    "files": 333,
+    "sha256": "2fc2f3319d71b46a2217dd7b6473f7b091283add776c2610be3a91e29689b4be"
+  },
+  "impactRecommendations": 30,
+  "checks": [
+    {
+      "index": 1,
+      "label": "V-VALID-01-success",
+      "status": "PASS",
+      "parsedNodes": 24,
+      "checkpoints": 5,
+      "writeAttempts": 0,
+      "inputSHA256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+    },
+    {
+      "index": 2,
+      "label": "V-VALID-01-checksum-mismatch",
+      "status": "PASS",
+      "parsedNodes": 24,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "eb670e47f9a39186faab4aba42232c8beeaa0574a0cea8b0c6b489ade6232f21"
+    },
+    {
+      "index": 3,
+      "label": "V-VALID-01-SHA-reject",
+      "status": "PASS",
+      "parsedNodes": 24,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7"
+    },
+    {
+      "index": 4,
+      "label": "V-VALID-01-schema-invalid",
+      "status": "PASS",
+      "parsedNodes": 24,
+      "checkpoints": 2,
+      "writeAttempts": 0,
+      "inputSHA256": "09cbb324e818f97712a28bf4d46b2caeec7bf0c003e1d30c9e84926cf9a49aac"
+    },
+    {
+      "index": 5,
+      "label": "EM-FULL-success",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 9,
+      "writeAttempts": 0,
+      "inputSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+    },
+    {
+      "index": 6,
+      "label": "EM-FULL-checksum-mismatch",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "be03595aff1415020fd21e68c8b0ccf9ca1f2bedfb552c0bbaa4f65854483617"
+    },
+    {
+      "index": 7,
+      "label": "EM-FULL-SHA-reject",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+    },
+    {
+      "index": 8,
+      "label": "EM-FULL-schema-invalid",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 2,
+      "writeAttempts": 0,
+      "inputSHA256": "1d666c874cbf39cb34f39b36cd034cbbe7c794a218a1e84425bf80688e8bddcd"
+    },
+    {
+      "index": 9,
+      "label": "EM-PARTIAL-success",
+      "status": "PASS",
+      "parsedNodes": 27,
+      "checkpoints": 9,
+      "writeAttempts": 0,
+      "inputSHA256": "1328c91207f00f5319c8d279381f855de96b51e41a9686d2f6b4ea354b51d27c"
+    },
+    {
+      "index": 10,
+      "label": "EM-PARTIAL-checksum-mismatch",
+      "status": "PASS",
+      "parsedNodes": 27,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "e45614a9058109d4a27a913fab9cb62b7f471847f5f8553982a67291f5880082"
+    },
+    {
+      "index": 11,
+      "label": "EM-PARTIAL-SHA-reject",
+      "status": "PASS",
+      "parsedNodes": 27,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "1328c91207f00f5319c8d279381f855de96b51e41a9686d2f6b4ea354b51d27c"
+    },
+    {
+      "index": 12,
+      "label": "EM-PARTIAL-schema-invalid",
+      "status": "PASS",
+      "parsedNodes": 27,
+      "checkpoints": 2,
+      "writeAttempts": 0,
+      "inputSHA256": "341cafc4b8f5332487c15d23c7e290e3829322cf8d7deac350bc09e54ead8bcc"
+    },
+    {
+      "index": 13,
+      "label": "EM-NONE-DELETEALL-success",
+      "status": "PASS",
+      "parsedNodes": 22,
+      "checkpoints": 9,
+      "writeAttempts": 0,
+      "inputSHA256": "6ae571e24869b961f8bc9d23fca0ce153214ac557a358377fedc7431cc56bfac"
+    },
+    {
+      "index": 14,
+      "label": "EM-NONE-DELETEALL-checksum-mismatch",
+      "status": "PASS",
+      "parsedNodes": 22,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "b32847e11e2a9e05635262d29645cd1eb9908b06f5f702426b4925382a941a01"
+    },
+    {
+      "index": 15,
+      "label": "EM-NONE-DELETEALL-SHA-reject",
+      "status": "PASS",
+      "parsedNodes": 22,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "6ae571e24869b961f8bc9d23fca0ce153214ac557a358377fedc7431cc56bfac"
+    },
+    {
+      "index": 16,
+      "label": "EM-NONE-DELETEALL-schema-invalid",
+      "status": "PASS",
+      "parsedNodes": 22,
+      "checkpoints": 2,
+      "writeAttempts": 0,
+      "inputSHA256": "19c2efd0f0fa008c3f7dfe97df87311bab5bf61281b0ff0ccbb872df9eceb02b"
+    },
+    {
+      "index": 17,
+      "label": "EM-EMPTY-DERIVED-success",
+      "status": "PASS",
+      "parsedNodes": 24,
+      "checkpoints": 5,
+      "writeAttempts": 0,
+      "inputSHA256": "9f36734683818f03ff6a6cfaba4557e3f96ceace802ce24ad41d584a4c109935"
+    },
+    {
+      "index": 18,
+      "label": "EM-EMPTY-DERIVED-checksum-mismatch",
+      "status": "PASS",
+      "parsedNodes": 24,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "15fc0cad3efcc013c79533159fd28acfe754ef7216bbd78df2874cbda22a14b7"
+    },
+    {
+      "index": 19,
+      "label": "EM-EMPTY-DERIVED-SHA-reject",
+      "status": "PASS",
+      "parsedNodes": 24,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "9f36734683818f03ff6a6cfaba4557e3f96ceace802ce24ad41d584a4c109935"
+    },
+    {
+      "index": 20,
+      "label": "EM-EMPTY-DERIVED-schema-invalid",
+      "status": "PASS",
+      "parsedNodes": 24,
+      "checkpoints": 2,
+      "writeAttempts": 0,
+      "inputSHA256": "51125ae8525ed0d6913efb1ff33463f225fece3923f7999b3a074703d5f86231"
+    },
+    {
+      "index": 21,
+      "label": "missing-dependency",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "73fa7c40f228224f7db326135364a61e06a07050ae0426f19f0bb116ab2d9dc9"
+    },
+    {
+      "index": 22,
+      "label": "duplicate-dependency",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "df519d0d171d5638f7b1e311c65313eabf37e9f69cc0f20643c1791e06cd26cc"
+    },
+    {
+      "index": 23,
+      "label": "reversed-dependencies",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "5368bea53c766b420c576febce2d8c131ed2f4825afdabd4bd26f80a1e04de65"
+    },
+    {
+      "index": 24,
+      "label": "invalid-dependency-0",
+      "status": "PASS",
+      "parsedNodes": 32,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "632eb63e6416b00cc53d61816070fe3d2f0617d61e2715ee48743a54c5ede611"
+    },
+    {
+      "index": 25,
+      "label": "invalid-dependency-1",
+      "status": "PASS",
+      "parsedNodes": 32,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "4bad385243b3914024854d94fdbff0a193ed5f67938e2ccb90eb8bc3ea57dea4"
+    },
+    {
+      "index": 26,
+      "label": "invalid-dependency-2",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "57ab3ed3fa5b1f99fa62d821f854d5fcd123aa1915c01c23f6dfe44fce6bc036"
+    },
+    {
+      "index": 27,
+      "label": "invalid-dependency-3",
+      "status": "PASS",
+      "parsedNodes": 32,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "3d90627c19c7e92f4a65f6b3cede8f91ac465289a755fb7fa3308c169dc4621c"
+    },
+    {
+      "index": 28,
+      "label": "invalid-dependency-4",
+      "status": "PASS",
+      "parsedNodes": 32,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "ee9667392db365c8d94ed23eb13c6b4f6c30d6862320bee651e54ef99e37c395"
+    },
+    {
+      "index": 29,
+      "label": "invalid-dependency-5",
+      "status": "PASS",
+      "parsedNodes": 34,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "1684f9d954bd83e4169333a9108ddccb13c8941878305e3dd72d0e70bcc97a3c"
+    },
+    {
+      "index": 30,
+      "label": "invalid-dependency-6",
+      "status": "PASS",
+      "parsedNodes": 34,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "2037b4deced634711bedf1c634b8313b96f34113701d9080980b3ea36940760e"
+    },
+    {
+      "index": 31,
+      "label": "invalid-dependency-7",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "7cc800f2265d3a98c88d143f558d7e5157ba0d0aeaee46317a39396def317071"
+    },
+    {
+      "index": 32,
+      "label": "count-invalid",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "5e8b0eba647d964db623f6f113feecc7c546aacd4e07deac9e5c004205ede321"
+    },
+    {
+      "index": 33,
+      "label": "snapshot-base-checksum-invalid",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 6,
+      "writeAttempts": 0,
+      "inputSHA256": "c19059a702d860c75d25ea0fdd072915bbf4bea3866d46838a2d9b9e5f232d60"
+    },
+    {
+      "index": 34,
+      "label": "content-base-checksum-invalid",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "657d6310d76f37353bcbc73c3fa6a029fac236d54daead86e8245e82c4fd94e9"
+    },
+    {
+      "index": 35,
+      "label": "EM-FULL-SHA-reject-at-2",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 6,
+      "writeAttempts": 0,
+      "inputSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+    },
+    {
+      "index": 36,
+      "label": "EM-FULL-SHA-reject-at-3",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 8,
+      "writeAttempts": 0,
+      "inputSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+    },
+    {
+      "index": 37,
+      "label": "EM-FULL-invalid-SHA-length-0",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+    },
+    {
+      "index": 38,
+      "label": "EM-FULL-invalid-SHA-length-31",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+    },
+    {
+      "index": 39,
+      "label": "EM-FULL-invalid-SHA-length-33",
+      "status": "PASS",
+      "parsedNodes": 33,
+      "checkpoints": 4,
+      "writeAttempts": 0,
+      "inputSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+    }
+  ],
+  "overallF5": "NO OVERALL PASS"
+}

@@ -1,0 +1,226 @@
+{
+  "caseId": "F3:R02-29",
+  "runId": "F5-R02-29-R3-20261026-001",
+  "attempt": 2,
+  "index": 29,
+  "label": "invalid-dependency-5",
+  "source": "EM-FULL",
+  "input": {
+    "path": "inputs/029.bin",
+    "bytes": 4541,
+    "sha256": "1684f9d954bd83e4169333a9108ddccb13c8941878305e3dd72d0e70bcc97a3c"
+  },
+  "expected": {
+    "accepted": false,
+    "fullParses": 1,
+    "digestCalls": 3,
+    "parsedGraphUnchanged": true,
+    "writeAttempts": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "tokenProduced": false
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "9f8659ed73c0a090d96c4018b5fb8109489ad49c7685fb1b6d06781a6c1ade2b",
+    "declaredChecksum": "9f8659ed73c0a090d96c4018b5fb8109489ad49c7685fb1b6d06781a6c1ade2b",
+    "canonicalRawMatches": true,
+    "rawSHA256": "1684f9d954bd83e4169333a9108ddccb13c8941878305e3dd72d0e70bcc97a3c",
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "failAt": null,
+  "invalidDigestLength": null,
+  "startedAt": "2026-10-26T04:31:37.567Z",
+  "finishedAt": "2026-10-26T04:31:37.576Z",
+  "actual": {
+    "accepted": false,
+    "tokenProduced": false,
+    "fullParses": 1,
+    "scalarParses": 272,
+    "fileReads": 1,
+    "digestCalls": 3,
+    "parsedGraphUnchanged": true,
+    "writeAttempts": 0,
+    "writeEvents": [],
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "tokenJSONMatchesRaw": false,
+    "parsedNodes": 34,
+    "checkpoints": [
+      {
+        "stage": "parse",
+        "path": "029.graph-parse.json",
+        "bytes": 28516,
+        "sha256": "4e4ebc97eb91dbe10de10d4307caeb28951124ccb89e358395c0174bf02065e6",
+        "matchesInitial": true
+      },
+      {
+        "stage": "before-SHA-1",
+        "path": "029.graph-before-SHA-1.json",
+        "bytes": 28516,
+        "sha256": "4e4ebc97eb91dbe10de10d4307caeb28951124ccb89e358395c0174bf02065e6",
+        "matchesInitial": true
+      },
+      {
+        "stage": "after-SHA-1",
+        "path": "029.graph-after-SHA-1.json",
+        "bytes": 28516,
+        "sha256": "4e4ebc97eb91dbe10de10d4307caeb28951124ccb89e358395c0174bf02065e6",
+        "matchesInitial": true
+      },
+      {
+        "stage": "before-SHA-2",
+        "path": "029.graph-before-SHA-2.json",
+        "bytes": 28516,
+        "sha256": "4e4ebc97eb91dbe10de10d4307caeb28951124ccb89e358395c0174bf02065e6",
+        "matchesInitial": true
+      },
+      {
+        "stage": "after-SHA-2",
+        "path": "029.graph-after-SHA-2.json",
+        "bytes": 28516,
+        "sha256": "4e4ebc97eb91dbe10de10d4307caeb28951124ccb89e358395c0174bf02065e6",
+        "matchesInitial": true
+      },
+      {
+        "stage": "before-SHA-3",
+        "path": "029.graph-before-SHA-3.json",
+        "bytes": 28516,
+        "sha256": "4e4ebc97eb91dbe10de10d4307caeb28951124ccb89e358395c0174bf02065e6",
+        "matchesInitial": true
+      },
+      {
+        "stage": "after-SHA-3",
+        "path": "029.graph-after-SHA-3.json",
+        "bytes": 28516,
+        "sha256": "4e4ebc97eb91dbe10de10d4307caeb28951124ccb89e358395c0174bf02065e6",
+        "matchesInitial": true
+      },
+      {
+        "stage": "return",
+        "path": "029.graph-return.json",
+        "bytes": 28516,
+        "sha256": "4e4ebc97eb91dbe10de10d4307caeb28951124ccb89e358395c0174bf02065e6",
+        "matchesInitial": true
+      }
+    ],
+    "digestInputs": [
+      {
+        "index": 1,
+        "path": "029.digest-1.bin",
+        "bytes": 4433,
+        "sha256": "9f8659ed73c0a090d96c4018b5fb8109489ad49c7685fb1b6d06781a6c1ade2b",
+        "algorithm": "SHA-256",
+        "firstPayloadMatchesOracle": true
+      },
+      {
+        "index": 2,
+        "path": "029.digest-2.bin",
+        "bytes": 2325,
+        "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011",
+        "algorithm": "SHA-256",
+        "firstPayloadMatchesOracle": null
+      },
+      {
+        "index": 3,
+        "path": "029.digest-3.bin",
+        "bytes": 1395,
+        "sha256": "dce663e16c1c6ebaddb2ed199ae82187d843fe236cb4f67362c204cb60a2338b",
+        "algorithm": "SHA-256",
+        "firstPayloadMatchesOracle": null
+      }
+    ],
+    "productError": {
+      "name": "Error",
+      "code": "DEPENDENCY"
+    }
+  },
+  "productError": {
+    "name": "Error",
+    "code": "DEPENDENCY"
+  },
+  "observationError": null,
+  "status": "PASS"
+}

@@ -1,0 +1,226 @@
+{
+  "caseId": "F3:R02-29",
+  "runId": "F5-R02-29-R3-20261026-001",
+  "attempt": 2,
+  "index": 21,
+  "label": "missing-dependency",
+  "source": "EM-FULL",
+  "input": {
+    "path": "inputs/021.bin",
+    "bytes": 4498,
+    "sha256": "73fa7c40f228224f7db326135364a61e06a07050ae0426f19f0bb116ab2d9dc9"
+  },
+  "expected": {
+    "accepted": false,
+    "fullParses": 1,
+    "digestCalls": 3,
+    "parsedGraphUnchanged": true,
+    "writeAttempts": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "tokenProduced": false
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "46a18ad93574f48b7cb543f0fe14cf1729c570e14aa8e6b28f19f7835c5afee1",
+    "declaredChecksum": "46a18ad93574f48b7cb543f0fe14cf1729c570e14aa8e6b28f19f7835c5afee1",
+    "canonicalRawMatches": true,
+    "rawSHA256": "73fa7c40f228224f7db326135364a61e06a07050ae0426f19f0bb116ab2d9dc9",
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "failAt": null,
+  "invalidDigestLength": null,
+  "startedAt": "2026-10-26T04:31:37.472Z",
+  "finishedAt": "2026-10-26T04:31:37.484Z",
+  "actual": {
+    "accepted": false,
+    "tokenProduced": false,
+    "fullParses": 1,
+    "scalarParses": 271,
+    "fileReads": 1,
+    "digestCalls": 3,
+    "parsedGraphUnchanged": true,
+    "writeAttempts": 0,
+    "writeEvents": [],
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "tokenJSONMatchesRaw": false,
+    "parsedNodes": 33,
+    "checkpoints": [
+      {
+        "stage": "parse",
+        "path": "021.graph-parse.json",
+        "bytes": 28145,
+        "sha256": "7adf54a20a10fb0f010a7dfde01e1420760cdac201b6664b15a94c02fdc000f7",
+        "matchesInitial": true
+      },
+      {
+        "stage": "before-SHA-1",
+        "path": "021.graph-before-SHA-1.json",
+        "bytes": 28145,
+        "sha256": "7adf54a20a10fb0f010a7dfde01e1420760cdac201b6664b15a94c02fdc000f7",
+        "matchesInitial": true
+      },
+      {
+        "stage": "after-SHA-1",
+        "path": "021.graph-after-SHA-1.json",
+        "bytes": 28145,
+        "sha256": "7adf54a20a10fb0f010a7dfde01e1420760cdac201b6664b15a94c02fdc000f7",
+        "matchesInitial": true
+      },
+      {
+        "stage": "before-SHA-2",
+        "path": "021.graph-before-SHA-2.json",
+        "bytes": 28145,
+        "sha256": "7adf54a20a10fb0f010a7dfde01e1420760cdac201b6664b15a94c02fdc000f7",
+        "matchesInitial": true
+      },
+      {
+        "stage": "after-SHA-2",
+        "path": "021.graph-after-SHA-2.json",
+        "bytes": 28145,
+        "sha256": "7adf54a20a10fb0f010a7dfde01e1420760cdac201b6664b15a94c02fdc000f7",
+        "matchesInitial": true
+      },
+      {
+        "stage": "before-SHA-3",
+        "path": "021.graph-before-SHA-3.json",
+        "bytes": 28145,
+        "sha256": "7adf54a20a10fb0f010a7dfde01e1420760cdac201b6664b15a94c02fdc000f7",
+        "matchesInitial": true
+      },
+      {
+        "stage": "after-SHA-3",
+        "path": "021.graph-after-SHA-3.json",
+        "bytes": 28145,
+        "sha256": "7adf54a20a10fb0f010a7dfde01e1420760cdac201b6664b15a94c02fdc000f7",
+        "matchesInitial": true
+      },
+      {
+        "stage": "return",
+        "path": "021.graph-return.json",
+        "bytes": 28145,
+        "sha256": "7adf54a20a10fb0f010a7dfde01e1420760cdac201b6664b15a94c02fdc000f7",
+        "matchesInitial": true
+      }
+    ],
+    "digestInputs": [
+      {
+        "index": 1,
+        "path": "021.digest-1.bin",
+        "bytes": 4390,
+        "sha256": "46a18ad93574f48b7cb543f0fe14cf1729c570e14aa8e6b28f19f7835c5afee1",
+        "algorithm": "SHA-256",
+        "firstPayloadMatchesOracle": true
+      },
+      {
+        "index": 2,
+        "path": "021.digest-2.bin",
+        "bytes": 2325,
+        "sha256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011",
+        "algorithm": "SHA-256",
+        "firstPayloadMatchesOracle": null
+      },
+      {
+        "index": 3,
+        "path": "021.digest-3.bin",
+        "bytes": 1395,
+        "sha256": "dce663e16c1c6ebaddb2ed199ae82187d843fe236cb4f67362c204cb60a2338b",
+        "algorithm": "SHA-256",
+        "firstPayloadMatchesOracle": null
+      }
+    ],
+    "productError": {
+      "name": "Error",
+      "code": "DEPENDENCY"
+    }
+  },
+  "productError": {
+    "name": "Error",
+    "code": "DEPENDENCY"
+  },
+  "observationError": null,
+  "status": "PASS"
+}

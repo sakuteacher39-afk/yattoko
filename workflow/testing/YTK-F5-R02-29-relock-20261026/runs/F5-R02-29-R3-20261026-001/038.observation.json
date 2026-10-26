@@ -1,0 +1,182 @@
+{
+  "caseId": "F3:R02-29",
+  "runId": "F5-R02-29-R3-20261026-001",
+  "attempt": 2,
+  "index": 38,
+  "label": "EM-FULL-invalid-SHA-length-31",
+  "source": "EM-FULL",
+  "input": {
+    "path": "inputs/038.bin",
+    "bytes": 4539,
+    "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+  },
+  "expected": {
+    "accepted": false,
+    "fullParses": 1,
+    "digestCalls": 1,
+    "parsedGraphUnchanged": true,
+    "writeAttempts": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "tokenProduced": false
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+    "declaredChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+    "canonicalRawMatches": true,
+    "rawSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+    "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+  },
+  "failAt": null,
+  "invalidDigestLength": 31,
+  "startedAt": "2026-10-26T04:31:37.666Z",
+  "finishedAt": "2026-10-26T04:31:37.671Z",
+  "actual": {
+    "accepted": false,
+    "tokenProduced": false,
+    "fullParses": 1,
+    "scalarParses": 272,
+    "fileReads": 1,
+    "digestCalls": 1,
+    "parsedGraphUnchanged": true,
+    "writeAttempts": 0,
+    "writeEvents": [],
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "tokenJSONMatchesRaw": false,
+    "parsedNodes": 33,
+    "checkpoints": [
+      {
+        "stage": "parse",
+        "path": "038.graph-parse.json",
+        "bytes": 28314,
+        "sha256": "ab5f8f0f4ad49f0f89a696d5e8a1e6dafa4d8bda57bbfa513bb22557e9fca8f5",
+        "matchesInitial": true
+      },
+      {
+        "stage": "before-SHA-1",
+        "path": "038.graph-before-SHA-1.json",
+        "bytes": 28314,
+        "sha256": "ab5f8f0f4ad49f0f89a696d5e8a1e6dafa4d8bda57bbfa513bb22557e9fca8f5",
+        "matchesInitial": true
+      },
+      {
+        "stage": "after-SHA-1",
+        "path": "038.graph-after-SHA-1.json",
+        "bytes": 28314,
+        "sha256": "ab5f8f0f4ad49f0f89a696d5e8a1e6dafa4d8bda57bbfa513bb22557e9fca8f5",
+        "matchesInitial": true
+      },
+      {
+        "stage": "return",
+        "path": "038.graph-return.json",
+        "bytes": 28314,
+        "sha256": "ab5f8f0f4ad49f0f89a696d5e8a1e6dafa4d8bda57bbfa513bb22557e9fca8f5",
+        "matchesInitial": true
+      }
+    ],
+    "digestInputs": [
+      {
+        "index": 1,
+        "path": "038.digest-1.bin",
+        "bytes": 4431,
+        "sha256": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+        "algorithm": "SHA-256",
+        "firstPayloadMatchesOracle": true
+      }
+    ],
+    "productError": {
+      "name": "Error",
+      "code": "INVALID_FILE"
+    }
+  },
+  "productError": {
+    "name": "Error",
+    "code": "INVALID_FILE"
+  },
+  "observationError": null,
+  "status": "PASS"
+}

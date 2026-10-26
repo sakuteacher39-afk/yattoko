@@ -1,0 +1,176 @@
+{
+  "caseId": "F3:R02-29",
+  "runId": "F5-R02-29-R3-20261026-001",
+  "attempt": 2,
+  "index": 4,
+  "label": "V-VALID-01-schema-invalid",
+  "source": "V-VALID-01",
+  "input": {
+    "path": "inputs/004.bin",
+    "bytes": 3623,
+    "sha256": "09cbb324e818f97712a28bf4d46b2caeec7bf0c003e1d30c9e84926cf9a49aac"
+  },
+  "expected": {
+    "accepted": false,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "parsedGraphUnchanged": true,
+    "writeAttempts": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "tokenProduced": false
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [
+      "snapshot.services.0.answers.extra"
+    ],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "9bb9d8fa4ed9cef5bb9c872539543cce8c632bb50f2599edeb267150dc56fa94",
+    "declaredChecksum": "9bb9d8fa4ed9cef5bb9c872539543cce8c632bb50f2599edeb267150dc56fa94",
+    "canonicalRawMatches": false,
+    "rawSHA256": "09cbb324e818f97712a28bf4d46b2caeec7bf0c003e1d30c9e84926cf9a49aac",
+    "snapshotSHA256": "4144c52abda59e37eadee7b864ae5fa3c2a409efbaeaff63591dc78e9e367d43"
+  },
+  "failAt": null,
+  "invalidDigestLength": null,
+  "startedAt": "2026-10-26T04:31:37.331Z",
+  "finishedAt": "2026-10-26T04:31:37.335Z",
+  "actual": {
+    "accepted": false,
+    "tokenProduced": false,
+    "fullParses": 1,
+    "scalarParses": 238,
+    "fileReads": 1,
+    "digestCalls": 0,
+    "parsedGraphUnchanged": true,
+    "writeAttempts": 0,
+    "writeEvents": [],
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "tokenJSONMatchesRaw": false,
+    "parsedNodes": 24,
+    "checkpoints": [
+      {
+        "stage": "parse",
+        "path": "004.graph-parse.json",
+        "bytes": 22603,
+        "sha256": "f45368d745a0348bd7b8df1bfc3b2e30b225305bbb5f691738ccbec58090ec27",
+        "matchesInitial": true
+      },
+      {
+        "stage": "return",
+        "path": "004.graph-return.json",
+        "bytes": 22603,
+        "sha256": "f45368d745a0348bd7b8df1bfc3b2e30b225305bbb5f691738ccbec58090ec27",
+        "matchesInitial": true
+      }
+    ],
+    "digestInputs": [],
+    "productError": {
+      "name": "Error",
+      "code": "INVALID_FILE"
+    }
+  },
+  "productError": {
+    "name": "Error",
+    "code": "INVALID_FILE"
+  },
+  "observationError": null,
+  "status": "PASS"
+}
