@@ -1,0 +1,174 @@
+{
+  "caseId": "F3:R02-22",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "attempt": 3,
+  "index": 404,
+  "label": "U200f-before-raw",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": {
+    "cp": 8207,
+    "position": "before",
+    "encoding": "raw"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 125,
+    "description": "F2 control/bidi rejectをimportでも同一適用。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-26T10:18:34.627Z",
+  "finishedAt": "2026-10-26T10:18:34.629Z",
+  "input": {
+    "path": "inputs/84ad3427730a6b09754bea311bd862a12204ced054f6eb42ec6264ce25dffa40.bin",
+    "bytes": 3598,
+    "sha256": "84ad3427730a6b09754bea311bd862a12204ced054f6eb42ec6264ce25dffa40"
+  },
+  "expected": {
+    "accepted": false,
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "82c7cab7924c6835a513ee719e00163ca919d32b5013d655836b53aed48d0bb5",
+    "declaredChecksum": "82c7cab7924c6835a513ee719e00163ca919d32b5013d655836b53aed48d0bb5",
+    "canonicalRawMatches": true,
+    "rawSHA256": "84ad3427730a6b09754bea311bd862a12204ced054f6eb42ec6264ce25dffa40",
+    "snapshotSHA256": "87959fdcf6633067c751719a7ee6f6e02a14c9e75523df1fbfc99bb6fd9d1c1f",
+    "rawPayloadChecksumComparable": true,
+    "rawPayloadSHA256": "82c7cab7924c6835a513ee719e00163ca919d32b5013d655836b53aed48d0bb5",
+    "rawPayloadChecksumMatches": true
+  },
+  "oracleNote": "CONTROL-ALL recipe: exact forbidden code point at each before/middle/after position; raw and escaped representations kept distinct.",
+  "actual": {
+    "accepted": false,
+    "errorCode": "INVALID_FILE",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "FULL_DOCUMENT_PARSE",
+      "REJECT:INVALID_FILE"
+    ],
+    "parsedContentUnchanged": true,
+    "initialParsedSHA256": "84ad3427730a6b09754bea311bd862a12204ced054f6eb42ec6264ce25dffa40",
+    "parsedHashes": [
+      {
+        "stage": "return",
+        "sha256": "84ad3427730a6b09754bea311bd862a12204ced054f6eb42ec6264ce25dffa40"
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [],
+    "observedWriteEvents": [],
+    "digestPayloadsMatchOracle": null,
+    "digestInputs": []
+  },
+  "status": "PASS",
+  "executionError": null
+}

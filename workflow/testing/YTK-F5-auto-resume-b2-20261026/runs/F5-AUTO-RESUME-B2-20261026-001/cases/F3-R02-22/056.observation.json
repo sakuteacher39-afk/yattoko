@@ -1,0 +1,70 @@
+{
+  "caseId": "F3:R02-22",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "attempt": 3,
+  "index": 56,
+  "label": "U0009-before-raw",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": {
+    "cp": 9,
+    "position": "before",
+    "encoding": "raw"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 125,
+    "description": "F2 control/bidi rejectをimportでも同一適用。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-26T10:18:33.503Z",
+  "finishedAt": "2026-10-26T10:18:33.504Z",
+  "input": {
+    "path": "inputs/e4cd9e054c54e951def1d57856ae58c35acf05acf17ef06283d59cfc7ac2caad.bin",
+    "bytes": 3596,
+    "sha256": "e4cd9e054c54e951def1d57856ae58c35acf05acf17ef06283d59cfc7ac2caad"
+  },
+  "expected": {
+    "accepted": false,
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": false,
+    "rawPayloadChecksumComparable": false
+  },
+  "oracleNote": "CONTROL-ALL recipe: exact forbidden code point at each before/middle/after position; raw and escaped representations kept distinct.",
+  "actual": {
+    "accepted": false,
+    "errorCode": "LEXICAL",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "REJECT:LEXICAL"
+    ],
+    "parsedContentUnchanged": false,
+    "initialParsedSHA256": null,
+    "parsedHashes": [
+      {
+        "stage": "return",
+        "sha256": null
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [],
+    "observedWriteEvents": [],
+    "digestPayloadsMatchOracle": null,
+    "digestInputs": []
+  },
+  "status": "PASS",
+  "executionError": null
+}

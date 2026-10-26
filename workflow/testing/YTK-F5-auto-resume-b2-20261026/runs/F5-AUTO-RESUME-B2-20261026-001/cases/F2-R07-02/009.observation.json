@@ -1,0 +1,64 @@
+{
+  "caseId": "F2:R07-02",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "attempt": 1,
+  "index": 9,
+  "label": "base-not_using-EMPTY-control",
+  "mode": "r07",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 52,
+    "description": "R07-01でcategory record revisionは1回だけ増加",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:18:56.888Z",
+  "finishedAt": "2026-10-26T10:18:56.891Z",
+  "input": {
+    "path": "inputs/a0b8a8d3c3e503519319a41b00925c2dd5e4131372bcc3ce0f00e765e38e4642.bin",
+    "bytes": 111,
+    "sha256": "a0b8a8d3c3e503519319a41b00925c2dd5e4131372bcc3ce0f00e765e38e4642"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "generationRuleSatisfied": true,
+    "datasetMatchesOracle": true,
+    "categoryRevision": 1,
+    "globalRevision": 1,
+    "resolveAfterComplete": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "rawPayloadChecksumComparable": false
+  },
+  "oracleNote": "Independent expected category status/intention/revision and global delta. All untouched records exact. Abort after seeded guard or request success must preserve all4 stores; no partial initial baseline.",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "oldStateUnchanged": false,
+    "generationRuleSatisfied": true,
+    "datasetMatchesOracle": true,
+    "categoryRevision": 1,
+    "globalRevision": 1,
+    "resolveAfterComplete": true,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "08c95eb815db01727297e860a7ee0fbe7cf33690d4e7cfcbe7ff8acf012e928b",
+    "afterStoresSHA256": "5c6309052a28ce7de35a48731f9725360ddb0cd55ab7f2f708d2e3bc34b241e2"
+  },
+  "status": "PASS",
+  "executionError": null
+}

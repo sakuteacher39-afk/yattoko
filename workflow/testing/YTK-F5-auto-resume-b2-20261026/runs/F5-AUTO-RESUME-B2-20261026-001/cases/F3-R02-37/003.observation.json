@@ -1,0 +1,66 @@
+{
+  "caseId": "F3:R02-37",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "attempt": 3,
+  "index": 3,
+  "label": "V-BOM-01",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 151,
+    "description": "V-UTF-01 / V-BOM-01 reject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-26T10:18:49.288Z",
+  "finishedAt": "2026-10-26T10:18:49.289Z",
+  "input": {
+    "path": "inputs/a7fc5b8e9c9b7ead6b3d37337c45824a642c4d48b52e7294f2276d9262c2aee8.bin",
+    "bytes": 3610,
+    "sha256": "a7fc5b8e9c9b7ead6b3d37337c45824a642c4d48b52e7294f2276d9262c2aee8"
+  },
+  "expected": {
+    "accepted": false,
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": false,
+    "rawPayloadChecksumComparable": false
+  },
+  "oracleNote": "Approved F2/F3 rules + normative manifest, independent explicit baseline/delta, raw payload SHA256, before/after all-store bytes and synchronous transaction observer. No product validator generates expected values.",
+  "actual": {
+    "accepted": false,
+    "errorCode": "BOM",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "REJECT:BOM"
+    ],
+    "parsedContentUnchanged": false,
+    "initialParsedSHA256": null,
+    "parsedHashes": [
+      {
+        "stage": "return",
+        "sha256": null
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [],
+    "observedWriteEvents": [],
+    "digestPayloadsMatchOracle": null,
+    "digestInputs": []
+  },
+  "status": "PASS",
+  "executionError": null
+}

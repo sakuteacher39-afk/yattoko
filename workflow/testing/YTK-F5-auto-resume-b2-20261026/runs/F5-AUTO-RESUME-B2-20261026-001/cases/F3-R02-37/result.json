@@ -1,0 +1,69 @@
+{
+  "caseId": "F3:R02-37",
+  "status": "PASS",
+  "attempt": 3,
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 151,
+    "description": "V-UTF-01 / V-BOM-01 reject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "caseId": "F3:R02-37",
+      "status": "PASS",
+      "subjectCommit": "99e566da100ee6924149ec3244893bbddf7e8c4d",
+      "runId": "F5-B1-20261015-001",
+      "attempt": 1,
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-37/result.json",
+      "bytes": 1160,
+      "sha256": "f229a7c68e3c1fa3b7c0769d9828e21b697afa0a48ae1055e7548e9f9c80efa9",
+      "gitBlob": "56c0a33da5d6ad6c345fde1cfbbeb24bb5cf916b",
+      "revisionSource": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/SUMMARY.json",
+      "complete": true,
+      "lastRecordedCommit": "0a077ba793de538491c023be39c05d25bd3ba97a",
+      "commitOrdinal": 1
+    },
+    {
+      "caseId": "F3:R02-37",
+      "status": "PASS",
+      "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+      "runId": "F5-REG-R02-M1-20261020-001",
+      "attempt": 2,
+      "path": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-37/result.json",
+      "bytes": 1226,
+      "sha256": "5383ccc39accb20d3f064aead54efe7a2d1daca5d248191ed4e8e07acc85a4ef",
+      "gitBlob": "f11ab6e240355250f440afa8d7292d50962daaa6",
+      "revisionSource": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-37/result.json",
+      "complete": true,
+      "lastRecordedCommit": "b15c54d9e19efdbad859d7fe2accc4205e3a9d2a",
+      "commitOrdinal": 5
+    }
+  ],
+  "plannedVariants": 3,
+  "completedVariants": 3,
+  "counts": {
+    "PASS": 3
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "V-UTF-01",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "V-BOM-01",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

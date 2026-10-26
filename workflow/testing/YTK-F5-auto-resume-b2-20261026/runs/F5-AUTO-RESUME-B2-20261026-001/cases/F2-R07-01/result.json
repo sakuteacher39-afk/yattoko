@@ -1,0 +1,383 @@
+{
+  "caseId": "F2:R07-01",
+  "status": "PASS",
+  "attempt": 1,
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 51,
+    "description": "usageStatus=unanswered + intention=unansweredのcategoryで初回status確定 -> intention=undecidedも同一transaction",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "priorAttempts": [],
+  "plannedVariants": 72,
+  "completedVariants": 72,
+  "counts": {
+    "PASS": 72
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "device-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "device-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "device-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "device-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "device-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "label": "device-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "label": "base-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "label": "base-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 9,
+      "label": "base-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 10,
+      "label": "base-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 11,
+      "label": "base-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 12,
+      "label": "base-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 13,
+      "label": "mail-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 14,
+      "label": "mail-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 15,
+      "label": "mail-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 16,
+      "label": "mail-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 17,
+      "label": "mail-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 18,
+      "label": "mail-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 19,
+      "label": "social-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 20,
+      "label": "social-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 21,
+      "label": "social-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 22,
+      "label": "social-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 23,
+      "label": "social-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 24,
+      "label": "social-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 25,
+      "label": "cloud-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 26,
+      "label": "cloud-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 27,
+      "label": "cloud-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 28,
+      "label": "cloud-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 29,
+      "label": "cloud-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 30,
+      "label": "cloud-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 31,
+      "label": "subscription-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 32,
+      "label": "subscription-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 33,
+      "label": "subscription-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 34,
+      "label": "subscription-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 35,
+      "label": "subscription-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 36,
+      "label": "subscription-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 37,
+      "label": "finance-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 38,
+      "label": "finance-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 39,
+      "label": "finance-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 40,
+      "label": "finance-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 41,
+      "label": "finance-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 42,
+      "label": "finance-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 43,
+      "label": "commerce-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 44,
+      "label": "commerce-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 45,
+      "label": "commerce-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 46,
+      "label": "commerce-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 47,
+      "label": "commerce-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 48,
+      "label": "commerce-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 49,
+      "label": "auth-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 50,
+      "label": "auth-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 51,
+      "label": "auth-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 52,
+      "label": "auth-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 53,
+      "label": "auth-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 54,
+      "label": "auth-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 55,
+      "label": "license-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 56,
+      "label": "license-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 57,
+      "label": "license-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 58,
+      "label": "license-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 59,
+      "label": "license-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 60,
+      "label": "license-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 61,
+      "label": "carrier-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 62,
+      "label": "carrier-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 63,
+      "label": "carrier-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 64,
+      "label": "carrier-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 65,
+      "label": "carrier-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 66,
+      "label": "carrier-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 67,
+      "label": "business-using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 68,
+      "label": "business-using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 69,
+      "label": "business-not_using-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 70,
+      "label": "business-not_using-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    },
+    {
+      "index": 71,
+      "label": "business-unknown-EMPTY-control",
+      "status": "PASS"
+    },
+    {
+      "index": 72,
+      "label": "business-unknown-EXISTING_UNTOUCHED-control",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

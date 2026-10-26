@@ -1,0 +1,64 @@
+{
+  "caseId": "F2:R07-01",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "attempt": 1,
+  "index": 69,
+  "label": "business-not_using-EMPTY-control",
+  "mode": "r07",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 51,
+    "description": "usageStatus=unanswered + intention=unansweredのcategoryで初回status確定 -> intention=undecidedも同一transaction",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:18:54.407Z",
+  "finishedAt": "2026-10-26T10:18:54.411Z",
+  "input": {
+    "path": "inputs/ed37b6aaf606f5e7a21aad83d0ccff161c3008009b86b764e8de393d1ffb3a6b.bin",
+    "bytes": 115,
+    "sha256": "ed37b6aaf606f5e7a21aad83d0ccff161c3008009b86b764e8de393d1ffb3a6b"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "generationRuleSatisfied": true,
+    "datasetMatchesOracle": true,
+    "categoryRevision": 1,
+    "globalRevision": 1,
+    "resolveAfterComplete": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "rawPayloadChecksumComparable": false
+  },
+  "oracleNote": "Independent expected category status/intention/revision and global delta. All untouched records exact. Abort after seeded guard or request success must preserve all4 stores; no partial initial baseline.",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "oldStateUnchanged": false,
+    "generationRuleSatisfied": true,
+    "datasetMatchesOracle": true,
+    "categoryRevision": 1,
+    "globalRevision": 1,
+    "resolveAfterComplete": true,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "08c95eb815db01727297e860a7ee0fbe7cf33690d4e7cfcbe7ff8acf012e928b",
+    "afterStoresSHA256": "56398a57a9c7442a31487fc3ed2bdde981684b21bcc2d6600311d4d1314cdf0d"
+  },
+  "status": "PASS",
+  "executionError": null
+}

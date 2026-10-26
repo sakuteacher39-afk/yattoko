@@ -1,0 +1,172 @@
+{
+  "caseId": "F3:R02-21",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "attempt": 3,
+  "index": 3,
+  "label": "non-NFC-\"が\"",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 123,
+    "description": "F2 NFC必須fieldがnon-NFC。",
+    "details": [
+      "- 期待：normalizeせずreject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-26T10:18:30.911Z",
+  "finishedAt": "2026-10-26T10:18:30.913Z",
+  "input": {
+    "path": "inputs/e14e7662ff878abf6e94e1f7df6202d1a17a34adda3203cb843a72ab29f99803.bin",
+    "bytes": 3595,
+    "sha256": "e14e7662ff878abf6e94e1f7df6202d1a17a34adda3203cb843a72ab29f99803"
+  },
+  "expected": {
+    "accepted": false,
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "243579c0c903447cdf366db46c520de748cd2428ae5c3995b61f72b339bd9831",
+    "declaredChecksum": "243579c0c903447cdf366db46c520de748cd2428ae5c3995b61f72b339bd9831",
+    "canonicalRawMatches": true,
+    "rawSHA256": "e14e7662ff878abf6e94e1f7df6202d1a17a34adda3203cb843a72ab29f99803",
+    "snapshotSHA256": "7ce030c30bd82d4a288e8db7c7400e1120e79e3f1d29dd014255403297f6fe5b",
+    "rawPayloadChecksumComparable": true,
+    "rawPayloadSHA256": "243579c0c903447cdf366db46c520de748cd2428ae5c3995b61f72b339bd9831",
+    "rawPayloadChecksumMatches": true
+  },
+  "oracleNote": "NFC(value) differs from original; reject original, no normalization into accepted file.",
+  "actual": {
+    "accepted": false,
+    "errorCode": "INVALID_FILE",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 1,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "FULL_DOCUMENT_PARSE",
+      "REJECT:INVALID_FILE"
+    ],
+    "parsedContentUnchanged": true,
+    "initialParsedSHA256": "e14e7662ff878abf6e94e1f7df6202d1a17a34adda3203cb843a72ab29f99803",
+    "parsedHashes": [
+      {
+        "stage": "return",
+        "sha256": "e14e7662ff878abf6e94e1f7df6202d1a17a34adda3203cb843a72ab29f99803"
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [],
+    "observedWriteEvents": [],
+    "digestPayloadsMatchOracle": null,
+    "digestInputs": []
+  },
+  "status": "PASS",
+  "executionError": null
+}

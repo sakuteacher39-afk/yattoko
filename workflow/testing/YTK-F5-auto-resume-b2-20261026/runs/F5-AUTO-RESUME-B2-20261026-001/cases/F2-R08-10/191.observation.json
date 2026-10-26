@@ -1,0 +1,148 @@
+{
+  "caseId": "F2:R08-10",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "attempt": 1,
+  "index": 191,
+  "label": "partial-active-other-import-emergency",
+  "mode": "r08",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 98,
+    "description": "active conditional field missingをreject",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:19:29.407Z",
+  "finishedAt": "2026-10-26T10:19:29.412Z",
+  "input": {
+    "path": "inputs/0b9bc5548fe25e956adf3fea048322323a49a0e3971fc1b94d974bd2069eb5db.bin",
+    "bytes": 2906,
+    "sha256": "0b9bc5548fe25e956adf3fea048322323a49a0e3971fc1b94d974bd2069eb5db"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "restorePrepared": false,
+    "noPartialRepair": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "15aa8276e436f019d75d44bb072a57e1f623477af9d5ebfb3a2f049675bc4ece",
+    "declaredChecksum": "15aa8276e436f019d75d44bb072a57e1f623477af9d5ebfb3a2f049675bc4ece",
+    "canonicalRawMatches": true,
+    "rawSHA256": "0b9bc5548fe25e956adf3fea048322323a49a0e3971fc1b94d974bd2069eb5db",
+    "snapshotSHA256": "a9240fe1e03cc671b5452cc9f2ad6d2c10acab50a2862090fcce82597c5d1ca3",
+    "rawPayloadChecksumComparable": true,
+    "rawPayloadSHA256": "15aa8276e436f019d75d44bb072a57e1f623477af9d5ebfb3a2f049675bc4ece",
+    "rawPayloadChecksumMatches": true
+  },
+  "oracleNote": "Canonical baseline first, raw field mutation second, independent sign without projection. Raw payload digest valid including forbidden inactive child. Normal/emergency files remain distinct; no product validator expected.",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "fileReads": 1,
+    "restorePrepared": false,
+    "noPartialRepair": true,
+    "unauthorizedMutation": false,
+    "sourceServiceState": "partial",
+    "beforeStoresSHA256": "a45d176ef880aa4fc1c68703889cbd7f2ce841118fab5ef08f014ce6607127d6",
+    "afterStoresSHA256": "a45d176ef880aa4fc1c68703889cbd7f2ce841118fab5ef08f014ce6607127d6"
+  },
+  "status": "PASS",
+  "executionError": null
+}

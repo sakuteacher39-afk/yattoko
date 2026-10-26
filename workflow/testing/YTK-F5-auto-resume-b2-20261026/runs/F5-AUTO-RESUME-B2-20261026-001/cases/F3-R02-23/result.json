@@ -1,0 +1,59 @@
+{
+  "caseId": "F3:R02-23",
+  "status": "PASS",
+  "attempt": 3,
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B2-20261026-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 129,
+    "description": "DIGEST-01 expected SHAが15ef7730c4760d29e3c2ea43866783cf23c7d1f50d15db09acaa8ee353e0904d。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "caseId": "F3:R02-23",
+      "status": "PASS",
+      "subjectCommit": "99e566da100ee6924149ec3244893bbddf7e8c4d",
+      "runId": "F5-B1-20261015-001",
+      "attempt": 1,
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-23/result.json",
+      "bytes": 962,
+      "sha256": "a72ef78c7139e72ba1aa9db3cb6b591dcc190267fe417c693c3adbf48a395276",
+      "gitBlob": "96ffda58b711359d58d54d9f4d1392b4790e0256",
+      "revisionSource": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/SUMMARY.json",
+      "complete": true,
+      "lastRecordedCommit": "0a077ba793de538491c023be39c05d25bd3ba97a",
+      "commitOrdinal": 1
+    },
+    {
+      "caseId": "F3:R02-23",
+      "status": "PASS",
+      "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+      "runId": "F5-REG-R02-M1-20261020-001",
+      "attempt": 2,
+      "path": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-23/result.json",
+      "bytes": 1113,
+      "sha256": "c24dbe8ea851601e09a31355d6657b70fd54e0297dca6ff8d7cb8b49e46f71be",
+      "gitBlob": "1462aaddb1ee9ec24cfbd9e9550d75ca3fb0036f",
+      "revisionSource": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-23/result.json",
+      "complete": true,
+      "lastRecordedCommit": "b15c54d9e19efdbad859d7fe2accc4205e3a9d2a",
+      "commitOrdinal": 5
+    }
+  ],
+  "plannedVariants": 1,
+  "completedVariants": 1,
+  "counts": {
+    "PASS": 1
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "DIGEST-01",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}
