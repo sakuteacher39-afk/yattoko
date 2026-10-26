@@ -1,0 +1,152 @@
+{
+  "caseId": "F3:R07-10",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 34,
+  "label": "snapshot.categories.6-unknown",
+  "input": {
+    "path": "inputs/F3-R07-10/0034.bin",
+    "bytes": 3590,
+    "sha256": "3cd7d8d73ae1839379ef2d0336ae379ab63daa6f18e9a8f8ad03f5ea3b766cf8"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": false,
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "independentOracle": {
+    "checks": [
+      "unknown version retained"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "32b878fd896c03e5f6afc2bfff68fbf0d9b3d50496453ba9865f36c1a76f7c9a",
+      "declaredChecksum": "32b878fd896c03e5f6afc2bfff68fbf0d9b3d50496453ba9865f36c1a76f7c9a",
+      "canonicalRawMatches": true,
+      "rawSHA256": "3cd7d8d73ae1839379ef2d0336ae379ab63daa6f18e9a8f8ad03f5ea3b766cf8",
+      "snapshotSHA256": "94cf2a5eaaa928c768785e8c36be52c34bd23fc1ae619f41bc852707bd2e5d7f"
+    },
+    "recipe": {
+      "path": [
+        "snapshot",
+        "categories",
+        6
+      ],
+      "versionField": "schemaVersion",
+      "value": "unknown"
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "accepted": false,
+    "errorCode": "INVALID_FILE",
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": "Error",
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "error": null,
+  "status": "PASS"
+}

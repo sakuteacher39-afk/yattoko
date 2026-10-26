@@ -1,0 +1,139 @@
+{
+  "caseId": "F3:R02-13",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 47,
+  "label": "DS-CONDITIONAL-normal-0-billingSource-array",
+  "input": {
+    "path": "inputs/F3-R02-13/0047.bin",
+    "bytes": 2886,
+    "sha256": "8aefb45c16f614b7d4a16242a6f42ff1f90768b8c2b881f2de225502e27b1437"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": false,
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "independentOracle": {
+    "checks": [
+      "nested invalid answer survives serialization"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "cfc966919d21602fed54d5b2d57d13efcfb2b7223144c3aa426e011b1d7bc8b1",
+      "declaredChecksum": "cfc966919d21602fed54d5b2d57d13efcfb2b7223144c3aa426e011b1d7bc8b1",
+      "canonicalRawMatches": true,
+      "rawSHA256": "8aefb45c16f614b7d4a16242a6f42ff1f90768b8c2b881f2de225502e27b1437",
+      "snapshotSHA256": "c064d99cf1f7c2d567b724363917ae761a672c3c4753ad1262c1a343f3697595"
+    },
+    "recipe": {
+      "source": "DS-CONDITIONAL",
+      "kind": "normal",
+      "service": 0,
+      "question": "billingSource"
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "accepted": false,
+    "errorCode": "INVALID_FILE",
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": "Error",
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "error": null,
+  "status": "PASS"
+}

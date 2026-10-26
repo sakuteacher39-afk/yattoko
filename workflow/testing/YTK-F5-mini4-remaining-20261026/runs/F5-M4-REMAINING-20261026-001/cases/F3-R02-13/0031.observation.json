@@ -1,0 +1,149 @@
+{
+  "caseId": "F3:R02-13",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 31,
+  "label": "DS-MIX-emergency-1-backup-empty-object",
+  "input": {
+    "path": "inputs/F3-R02-13/0031.bin",
+    "bytes": 3600,
+    "sha256": "47f89c4c6fadc795c89e2f074978f38a7b0be230b2c828466391c3e23aa06ecc"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": false,
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "independentOracle": {
+    "checks": [
+      "nested invalid answer survives serialization"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "3a69e4f98897deabe39914534624d9647a64723cb394744bdd5433e56457c876",
+      "declaredChecksum": "3a69e4f98897deabe39914534624d9647a64723cb394744bdd5433e56457c876",
+      "canonicalRawMatches": true,
+      "rawSHA256": "47f89c4c6fadc795c89e2f074978f38a7b0be230b2c828466391c3e23aa06ecc",
+      "snapshotSHA256": "a3b6977a640b23c178841c3d0a6d656f6d14523cf424322051525cb79dc3830e"
+    },
+    "recipe": {
+      "source": "DS-MIX",
+      "kind": "emergency",
+      "service": 1,
+      "question": "backup"
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "accepted": false,
+    "errorCode": "INVALID_FILE",
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": "Error",
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "error": null,
+  "status": "PASS"
+}

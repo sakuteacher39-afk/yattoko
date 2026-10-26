@@ -1,0 +1,140 @@
+{
+  "caseId": "F3:R02-25",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 58,
+  "label": "EM-PARTIAL-snapshot.categories.0-constructor",
+  "input": {
+    "path": "inputs/F3-R02-25/0058.bin",
+    "bytes": 3752,
+    "sha256": "fd4b8fa6777b7ee3ec9aa4a6e9c5e53c4e4172ba9298d13aa80bc65a973c958b"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": false,
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "independentOracle": {
+    "checks": [
+      "unknown own field retained + independent checksum matches"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [
+        "snapshot.categories.0.constructor"
+      ],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "308c32f8694d4f413912b68da879255cedea0cfe786d9f6940e5c951cfc5a7cb",
+      "declaredChecksum": "308c32f8694d4f413912b68da879255cedea0cfe786d9f6940e5c951cfc5a7cb",
+      "canonicalRawMatches": false,
+      "rawSHA256": "fd4b8fa6777b7ee3ec9aa4a6e9c5e53c4e4172ba9298d13aa80bc65a973c958b",
+      "snapshotSHA256": "62ab99b13252d885ee295a36b2c2dda14e11b052cbfd13ea6b9de2f762f30bf9"
+    },
+    "recipe": {
+      "source": "EM-PARTIAL",
+      "path": [
+        "snapshot",
+        "categories",
+        0
+      ],
+      "key": "constructor",
+      "attackerResigned": true
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 0,
+    "digestCalls": 0,
+    "accepted": false,
+    "errorCode": "MEMBER_LIMIT",
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": "Error",
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "error": null,
+  "status": "PASS"
+}

@@ -1,0 +1,1426 @@
+{
+  "caseId": "F3:R04-11",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 3,
+  "label": "long-save-failure-256",
+  "input": {
+    "path": "inputs/F3-R04-11/0003.bin",
+    "bytes": 2569,
+    "sha256": "0cc4b0f38e0c84826bf66bd56fce6445ad75761193e548b5bce87d2758b9137e"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "saveStopped": true,
+    "allPendingRetained": true,
+    "committedFourStoresUnchanged": true,
+    "captureStatus": "none",
+    "candidateCount": 256,
+    "exportedCount": 0,
+    "omittedCount": 256,
+    "omittedReason": "PENDING_BYTES_LIMIT",
+    "omittedRangeCorrect": true,
+    "displayCountAndScopeCorrect": true,
+    "screenInputRetained": true,
+    "noPhysicalSaveRequested": true
+  },
+  "independentOracle": {
+    "checks": [
+      "positive raw/checksum canonical"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "0397d96afbc0dd3b71dec81f2caaace36feb8d298f396dec2b726fcc2b972235",
+      "declaredChecksum": "0397d96afbc0dd3b71dec81f2caaace36feb8d298f396dec2b726fcc2b972235",
+      "canonicalRawMatches": true,
+      "rawSHA256": "0cc4b0f38e0c84826bf66bd56fce6445ad75761193e548b5bce87d2758b9137e",
+      "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+    },
+    "recipe": {
+      "n": 256,
+      "reason": "PENDING_BYTES_LIMIT",
+      "ops": [
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "configured"
+        },
+        {
+          "type": "overview",
+          "field": "identity",
+          "value": "not_configured"
+        }
+      ],
+      "scenario": "actual coordinator first save quota failure; all pending retained"
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "saveStopped": true,
+    "allPendingRetained": true,
+    "committedFourStoresUnchanged": true,
+    "captureStatus": "none",
+    "candidateCount": 256,
+    "exportedCount": 0,
+    "omittedCount": 256,
+    "omittedReason": "PENDING_BYTES_LIMIT",
+    "omittedRangeCorrect": true,
+    "displayCountAndScopeCorrect": true,
+    "screenInputRetained": true,
+    "noPhysicalSaveRequested": true
+  },
+  "error": null,
+  "status": "PASS"
+}

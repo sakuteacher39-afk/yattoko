@@ -1,0 +1,163 @@
+{
+  "caseId": "F3:R07-02",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 12,
+  "label": "reorder-10",
+  "input": {
+    "path": "inputs/F3-R07-02/0012.bin",
+    "bytes": 3607,
+    "sha256": "86a71ed2fdf1ecc9658f509ca26e21f4c1bff91f70dfcebe63111dc37c4d5897"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": false,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "errorCode": "CANONICAL",
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "independentOracle": {
+    "checks": [
+      "canonical mutation exists with unchanged semantic payload checksum",
+      "category order mutation retained"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "28e628544b0c88cc649ef056b860ca33057ba6b4c28e0a4e9d96d213f4f76649",
+      "declaredChecksum": "28e628544b0c88cc649ef056b860ca33057ba6b4c28e0a4e9d96d213f4f76649",
+      "canonicalRawMatches": false,
+      "rawSHA256": "86a71ed2fdf1ecc9658f509ca26e21f4c1bff91f70dfcebe63111dc37c4d5897",
+      "snapshotSHA256": "ad7c4a22aa542e3a7967a857c532deb488c3bb40b621bd57f2e09c8695a2f250"
+    },
+    "recipe": {
+      "order": [
+        "device",
+        "base",
+        "mail",
+        "social",
+        "cloud",
+        "subscription",
+        "finance",
+        "commerce",
+        "auth",
+        "license",
+        "business",
+        "carrier"
+      ]
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "accepted": false,
+    "errorCode": "CANONICAL",
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": "Error",
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "error": null,
+  "status": "PASS"
+}

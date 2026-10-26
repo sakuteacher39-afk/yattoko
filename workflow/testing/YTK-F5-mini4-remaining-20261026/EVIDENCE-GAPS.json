@@ -1,0 +1,31 @@
+{
+  "caseId": "F3:R04-13",
+  "status": "NOT VERIFIABLE",
+  "predeclared": true,
+  "required": "Independent allocation graph that demonstrates duplicate scanner does not build second huge AST for raw16MB vectors",
+  "observed": "One whole-input parse, scalar token parse and process heap samples + source hash",
+  "insufficient": "These observations do not rule out a temporary alternate AST allocation. No allocation graph captured.",
+  "actuals": [
+    {
+      "caseId": "F3:R04-13",
+      "label": "raw16000000-parser-observation-32",
+      "error": {
+        "name": "EvidenceGap",
+        "message": "Independent allocation graph unavailable; parse/heap/source observations do not prove no second huge AST",
+        "code": "ALLOCATION_EVIDENCE_MISSING"
+      },
+      "evidence": "cases/F3-R04-13/0002.allocation-observations.json"
+    },
+    {
+      "caseId": "F3:R04-13",
+      "label": "raw16000000-parser-observation-10",
+      "error": {
+        "name": "EvidenceGap",
+        "message": "Independent allocation graph unavailable; parse/heap/source observations do not prove no second huge AST",
+        "code": "ALLOCATION_EVIDENCE_MISSING"
+      },
+      "evidence": "cases/F3-R04-13/0003.allocation-observations.json"
+    }
+  ],
+  "nextProposal": "Separate approved preparation for allocation timeline/heap profiling with independent oracle and sensitivity control that intentionally constructs second AST; never promote current result or modify fixed product."
+}

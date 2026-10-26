@@ -1,0 +1,158 @@
+{
+  "caseId": "F3:R07-08",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 3,
+  "label": "serializer-DS-MIX-normal",
+  "input": {
+    "path": "inputs/F3-R07-08/0003.bin",
+    "bytes": 3612,
+    "sha256": "f8202d4032fd860472a3d9f4dae751a028fc7ed4bc1d9c1a4f4cd044b92b2032"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": true,
+    "inputCapacityMatches": true,
+    "prospectiveCapacityMatches": true,
+    "normalAndEmergencySnapshotsMatch": true,
+    "exportsCanonicalAndChecksumMatch": true
+  },
+  "independentOracle": {
+    "checks": [
+      "positive raw/checksum canonical"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "999999",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "c24655b484b7b042223ed2b1b85e70f736975f75fb1bb133336fb45880e2a60b",
+      "declaredChecksum": "c24655b484b7b042223ed2b1b85e70f736975f75fb1bb133336fb45880e2a60b",
+      "canonicalRawMatches": true,
+      "rawSHA256": "f8202d4032fd860472a3d9f4dae751a028fc7ed4bc1d9c1a4f4cd044b92b2032",
+      "snapshotSHA256": "a39bde9c009d58ca7ac24759bd3968b16be2583213d8642813c133231b9903d7"
+    },
+    "recipe": {
+      "source": "DS-MIX",
+      "kind": "normal",
+      "originalGlobal": 999999
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 1,
+    "accepted": true,
+    "errorCode": null,
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": null,
+    "restoredContentMatches": true,
+    "newGeneration": true,
+    "globalRevision": 1,
+    "transactionCompleted": true,
+    "stateAndAnswersPreserved": true,
+    "activeConditionalUnansweredPreserved": false,
+    "inputCapacityMatches": true,
+    "prospectiveCapacityMatches": true,
+    "normalAndEmergencySnapshotsMatch": true,
+    "exportsCanonicalAndChecksumMatch": true
+  },
+  "error": null,
+  "status": "PASS"
+}

@@ -1,0 +1,46 @@
+{
+  "started": {
+    "rss": 503402496,
+    "heapTotal": 246931456,
+    "heapUsed": 143088744,
+    "external": 77264776,
+    "arrayBuffers": 37321903
+  },
+  "ended": {
+    "rss": 621522944,
+    "heapTotal": 230379520,
+    "heapUsed": 60536384,
+    "external": 200972124,
+    "arrayBuffers": 65029531
+  },
+  "records": [
+    {
+      "phase": "string-token",
+      "count": 128,
+      "memory": {
+        "rss": 615677952,
+        "heapTotal": 247193600,
+        "heapUsed": 144123800,
+        "external": 189280637,
+        "arrayBuffers": 53337916
+      }
+    },
+    {
+      "phase": "full-parse-returned",
+      "memory": {
+        "rss": 609648640,
+        "heapTotal": 230379520,
+        "heapUsed": 60257376,
+        "external": 189280641,
+        "arrayBuffers": 49834904
+      }
+    }
+  ],
+  "smallParses": 236,
+  "nonStringTokenResults": 0,
+  "maxTokenLength": 66,
+  "sourceSHA256": "46b71b4485c9953bda144c4c3662574ab5e64a415048c78b1a4863006dbff165",
+  "sourceContainsStringParse": true,
+  "allocationGraphCaptured": false,
+  "reason": "Whole-input parse counts, scalar-token traces and process heap observations cannot prove absence of a second transient huge AST. No allocation graph instrumented; do not certify PASS."
+}

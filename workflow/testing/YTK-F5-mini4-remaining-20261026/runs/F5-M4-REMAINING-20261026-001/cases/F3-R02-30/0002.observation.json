@@ -1,0 +1,134 @@
+{
+  "caseId": "F3:R02-30",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 2,
+  "label": "order-EM-FULL",
+  "input": {
+    "path": "inputs/F3-R02-30/0002.bin",
+    "bytes": 4539,
+    "sha256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": true,
+    "rawMatchesIndependentCanonical": true,
+    "digestPayloadMatches": true,
+    "allSchemaOrdersMatch": true
+  },
+  "independentOracle": {
+    "checks": [
+      "positive raw/checksum canonical"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+      "declaredChecksum": "5416c3b3986e6488a9cfeb777944f96a3821c5a07fdd9b68346d3ea270a77167",
+      "canonicalRawMatches": true,
+      "rawSHA256": "d3abeadfab04fb0e524edeb29fea3411092c213504bb232c3c4138b7931d44a1",
+      "snapshotSHA256": "507b89c54732645f8f342cde47dbb08f570e54cc4625add98c4d066e6597a011"
+    },
+    "recipe": {
+      "source": "EM-FULL"
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 3,
+    "accepted": true,
+    "errorCode": null,
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": null,
+    "rawMatchesIndependentCanonical": true,
+    "digestPayloadMatches": true,
+    "allSchemaOrdersMatch": true,
+    "oldStoresUnchanged": true
+  },
+  "error": null,
+  "status": "PASS"
+}

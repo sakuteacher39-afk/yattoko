@@ -1,0 +1,153 @@
+{
+  "caseId": "F3:R02-31",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 4,
+  "label": "manifest-emergency-true",
+  "input": {
+    "path": "inputs/F3-R02-31/0004.bin",
+    "bytes": 3622,
+    "sha256": "01fa75c69df57c754b3f786af739a09b765dbb839178ec07cb6a47641732fa99"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": true,
+    "activeRegistryMatches": true,
+    "generatedFromManifest": true,
+    "oldStoresUnchanged": true
+  },
+  "independentOracle": {
+    "checks": [
+      "positive raw/checksum canonical"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "8db9af184845b821a13611ff8776333e50f9964411da84d54b32ecfe676499ab",
+      "declaredChecksum": "8db9af184845b821a13611ff8776333e50f9964411da84d54b32ecfe676499ab",
+      "canonicalRawMatches": true,
+      "rawSHA256": "01fa75c69df57c754b3f786af739a09b765dbb839178ec07cb6a47641732fa99",
+      "snapshotSHA256": "36a736efb920835d87830b0eb4b22ecaa3a2aaa4824e2b4399256f4c01b7f36b"
+    },
+    "recipe": {
+      "check": "manifest",
+      "services": true,
+      "kind": "emergency"
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 1,
+    "accepted": true,
+    "errorCode": null,
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": null,
+    "oldStoresUnchanged": true,
+    "readwriteTransactions": 0,
+    "approvedCategoryKeysMatch": true,
+    "approvedOrderMatch": true,
+    "activeRegistryMatches": true,
+    "generatedFromManifest": true
+  },
+  "error": null,
+  "status": "PASS"
+}

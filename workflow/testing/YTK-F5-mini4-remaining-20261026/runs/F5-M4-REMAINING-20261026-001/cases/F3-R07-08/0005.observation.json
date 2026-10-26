@@ -1,0 +1,148 @@
+{
+  "caseId": "F3:R07-08",
+  "runId": "F5-M4-REMAINING-20261026-001",
+  "attempt": 1,
+  "index": 5,
+  "label": "serializer-DS-CONDITIONAL-normal",
+  "input": {
+    "path": "inputs/F3-R07-08/0005.bin",
+    "bytes": 2896,
+    "sha256": "8de67a130c6703dc794b05dbc2c827b226dc643683b334891cf9fc4b142330bc"
+  },
+  "expected": {
+    "inputUnchanged": true,
+    "accepted": true,
+    "inputCapacityMatches": true,
+    "prospectiveCapacityMatches": true,
+    "normalAndEmergencySnapshotsMatch": true,
+    "exportsCanonicalAndChecksumMatch": true
+  },
+  "independentOracle": {
+    "checks": [
+      "positive raw/checksum canonical"
+    ],
+    "independent": {
+      "utf8Valid": true,
+      "jsonValid": true,
+      "unicodeScalarValid": true,
+      "duplicateKeys": [],
+      "schemaUnknownFields": [],
+      "numericLexemes": [
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "999999",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "0",
+          "nonnegativeInteger": true,
+          "safe": true
+        },
+        {
+          "token": "1",
+          "nonnegativeInteger": true,
+          "safe": true
+        }
+      ],
+      "checksumMatches": true,
+      "computedChecksum": "aa76f0cdc4e2f9de57e4efc4f3a97af39ae08b81f099d952ca8b419a6a6d5d81",
+      "declaredChecksum": "aa76f0cdc4e2f9de57e4efc4f3a97af39ae08b81f099d952ca8b419a6a6d5d81",
+      "canonicalRawMatches": true,
+      "rawSHA256": "8de67a130c6703dc794b05dbc2c827b226dc643683b334891cf9fc4b142330bc",
+      "snapshotSHA256": "f1f8e224d21358d744ae02329867d2ca760aa69142309a1387fc8197aec0f1ca"
+    },
+    "recipe": {
+      "source": "DS-CONDITIONAL",
+      "kind": "normal",
+      "originalGlobal": 999999
+    }
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 1,
+    "accepted": true,
+    "errorCode": null,
+    "faultInjected": false,
+    "rawGatePassed": true,
+    "errorName": null,
+    "restoredContentMatches": true,
+    "newGeneration": true,
+    "globalRevision": 1,
+    "transactionCompleted": true,
+    "stateAndAnswersPreserved": true,
+    "activeConditionalUnansweredPreserved": false,
+    "inputCapacityMatches": true,
+    "prospectiveCapacityMatches": true,
+    "normalAndEmergencySnapshotsMatch": true,
+    "exportsCanonicalAndChecksumMatch": true
+  },
+  "error": null,
+  "status": "PASS"
+}
