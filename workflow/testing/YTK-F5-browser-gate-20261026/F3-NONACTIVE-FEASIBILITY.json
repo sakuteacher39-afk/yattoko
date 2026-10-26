@@ -1,0 +1,43 @@
+{
+  "caseId": "F3:R07-09",
+  "formalStatus": "NOT RUN",
+  "gateAssessment": "NOT VERIFIABLE",
+  "scope": "Fixed product non-ACTIVE registry execution path",
+  "facts": [
+    "canonical.mjs exports module lexical Object.freeze registry with literal ACTIVE",
+    "backup checks registry.status before generating payload",
+    "import checks same module registry.status before canonical/checksum validation",
+    "No registry argument, loader injection seam or runtime configuration accepts non-ACTIVE status",
+    "Fixed bytes plus native ES module semantics cannot replace immutable lexical binding through page global variables"
+  ],
+  "rejectedAlternatives": [
+    {
+      "method": "Input file unknown version",
+      "reason": "Checks incoming version, not absent ACTIVE registry"
+    },
+    {
+      "method": "Block canonical/definitions module",
+      "reason": "Module load failure differs from non-ACTIVE registry guard"
+    },
+    {
+      "method": "CDP local override, transformed response, VM import rewriting or modified module",
+      "reason": "Changes executed target bytes/semantics; forbidden and not current fixed-product evidence"
+    },
+    {
+      "method": "Mutate frozen registry or globalThis.registry",
+      "reason": "Cannot supply the module lexical non-ACTIVE object; mutation failure is not guard execution"
+    }
+  ],
+  "allowedEvidence": "Static source/build provenance and ACTIVE control connection only; neither demonstrates missing-ACTIVE dynamic rejection",
+  "necessarySeparateApproval": [
+    {
+      "option": "Approved negative build/test seam",
+      "requirements": "Explicit product/design authorization, new commit/hash/relock and impact assessment; do not transfer its verdict automatically to this frozen revision"
+    },
+    {
+      "option": "Production build-gate applicability evidence",
+      "requirements": "Management approves original requirement applicability and sufficient build/deployment evidence; no unilateral relaxation or formal PASS by this task"
+    }
+  ],
+  "ledgerUnchanged": true
+}

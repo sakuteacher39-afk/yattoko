@@ -1,0 +1,83 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "reference": "1725d1fa939bd12b8dac896e72ed41e3ccabe58a",
+  "formalExecutionAuthorized": false,
+  "formalCasesExecuted": 0,
+  "formalLedgerCounts": {
+    "PASS": 70,
+    "NOT RUN": 427
+  },
+  "caseCount": 7,
+  "cases": [
+    {
+      "caseId": "F2:RST-15",
+      "formalStatus": "NOT RUN",
+      "gateState": "BLOCKED_APPLICABILITY",
+      "unresolvedGate": "Conditional field absent; await management disposition",
+      "independentDecisionCriterion": "No invented mismatch branch; exact schema rejection and binding table are distinct evidence",
+      "executeNow": false,
+      "afterSeparateFormalApproval": "Not executable until applicability/verification disposition",
+      "humanSignoffReceived": false
+    },
+    {
+      "caseId": "F3:R03-18",
+      "formalStatus": "NOT RUN",
+      "gateState": "CONNECTION_READY_CONDITIONAL",
+      "unresolvedGate": "Native connection proven; full planned variants/fault phase binding and human UI review must be fixed before formal run",
+      "independentDecisionCriterion": "All required native transaction windows complete; no forbidden call after start; missing window => NOT VERIFIABLE",
+      "executeNow": false,
+      "afterSeparateFormalApproval": "Native Chromium applicable; listed method/coverage/human gates must first be completed",
+      "humanSignoffReceived": false
+    },
+    {
+      "caseId": "F3:R04-12",
+      "formalStatus": "NOT RUN",
+      "gateState": "MEASUREMENT_GATE_OPEN",
+      "unresolvedGate": "Small canary is not stress measurement; stage separation, overhead calibration, process sampling and human limits review remain required",
+      "independentDecisionCriterion": "All planned timing/stress samples and stage evidence; no invented speed threshold or sampled-heap safety inference",
+      "executeNow": false,
+      "afterSeparateFormalApproval": "Native Chromium applicable; listed method/coverage/human gates must first be completed",
+      "humanSignoffReceived": false
+    },
+    {
+      "caseId": "F3:R06-09",
+      "formalStatus": "NOT RUN",
+      "gateState": "COVERAGE_GATE_OPEN",
+      "unresolvedGate": "Main page loopback path connected; frame/worker/service-worker coverage and all-workflow network canaries not fully connected in this product run",
+      "independentDecisionCriterion": "Every required context/workflow/sink observed; blocked leak attempt FAIL; coverage gap NOT VERIFIABLE",
+      "executeNow": false,
+      "afterSeparateFormalApproval": "Native Chromium applicable; listed method/coverage/human gates must first be completed",
+      "humanSignoffReceived": false
+    },
+    {
+      "caseId": "F3:R06-10",
+      "formalStatus": "NOT RUN",
+      "gateState": "COVERAGE_GATE_OPEN",
+      "unresolvedGate": "Native observation component exists; all-workflow console exceptions/remote-object and human Console review remain required",
+      "independentDecisionCriterion": "Any organising-content output FAIL; missing context/manual review cannot PASS",
+      "executeNow": false,
+      "afterSeparateFormalApproval": "Native Chromium applicable; listed method/coverage/human gates must first be completed",
+      "humanSignoffReceived": false
+    },
+    {
+      "caseId": "F3:R07-05",
+      "formalStatus": "NOT RUN",
+      "gateState": "PROCEDURE_READY_HUMAN_GATE_OPEN",
+      "unresolvedGate": "All600 variant plan has full row-level manual obligations, none signed. Service list/detail/reload/restart/change driver coverage not demonstrated by empty connection",
+      "independentDecisionCriterion": "All600 variants ×2 states ×5 phases, independent raw/data/DOM/screenshot and human signoff; no representative PASS",
+      "executeNow": false,
+      "afterSeparateFormalApproval": "Native Chromium applicable; listed method/coverage/human gates must first be completed",
+      "humanSignoffReceived": false
+    },
+    {
+      "caseId": "F3:R07-09",
+      "formalStatus": "NOT RUN",
+      "gateState": "NOT VERIFIABLE",
+      "unresolvedGate": "Non-ACTIVE lexical registry cannot be supplied without target change; separate approval required",
+      "independentDecisionCriterion": "No module failure/version mismatch substitution; no formal PASS at fixed artifact on current evidence",
+      "executeNow": false,
+      "afterSeparateFormalApproval": "Not executable until applicability/verification disposition",
+      "humanSignoffReceived": false
+    }
+  ]
+}

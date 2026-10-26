@@ -1,0 +1,72 @@
+{
+  "caseId": "F2:RST-15",
+  "formalStatus": "NOT RUN",
+  "scope": "file format contains displayCode only",
+  "conditionalSubcaseAppliesToCurrentSchema": false,
+  "categoryCanonicalKeys": [
+    "recordId",
+    "categoryKey",
+    "usageStatus",
+    "intention",
+    "revision",
+    "schemaVersion"
+  ],
+  "mapping": [
+    {
+      "categoryKey": "device",
+      "displayCode": "A"
+    },
+    {
+      "categoryKey": "base",
+      "displayCode": "B"
+    },
+    {
+      "categoryKey": "mail",
+      "displayCode": "C"
+    },
+    {
+      "categoryKey": "social",
+      "displayCode": "D"
+    },
+    {
+      "categoryKey": "cloud",
+      "displayCode": "E"
+    },
+    {
+      "categoryKey": "subscription",
+      "displayCode": "F"
+    },
+    {
+      "categoryKey": "finance",
+      "displayCode": "G"
+    },
+    {
+      "categoryKey": "commerce",
+      "displayCode": "H"
+    },
+    {
+      "categoryKey": "auth",
+      "displayCode": "I"
+    },
+    {
+      "categoryKey": "license",
+      "displayCode": "J"
+    },
+    {
+      "categoryKey": "carrier",
+      "displayCode": "K"
+    },
+    {
+      "categoryKey": "business",
+      "displayCode": "L"
+    }
+  ],
+  "independentOracle": {
+    "currentSchema": "Exact allowed keys; any displayCode field rejected even if mapping happens to match; no inference/remapping; raw checksum includes injected field; old stores unchanged",
+    "futureSchema": "Only if separately approved to contain displayCode: compare explicit independent table, reject mismatch; never derive categoryKey from displayCode",
+    "UI": "A-L derived only for display; canonical IDs/keys remain fixed semantic values"
+  },
+  "gate": "AWAITING_MANAGEMENT_APPLICABILITY_ADJUDICATION",
+  "forbiddenSubstitution": "Unknown-field rejection is not evidence that a dedicated displayCode mismatch branch ran.",
+  "separateApprovalNeeded": "Management case applicability/evidence disposition. Adding displayCode requires separate schema/design/product approval and relock; not authorized here."
+}

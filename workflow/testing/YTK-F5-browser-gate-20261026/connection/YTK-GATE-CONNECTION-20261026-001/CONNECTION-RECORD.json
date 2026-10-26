@@ -1,0 +1,1862 @@
+{
+  "kind": "PRE_FORMAL_CONNECTION_ONLY",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runnerCommit": "14f07dabb93b92537732c8571129a78a87315d81",
+  "runId": "YTK-GATE-CONNECTION-20261026-001",
+  "formalCasesExecuted": 0,
+  "F5VerdictsChanged": 0,
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/155.0.8059.86",
+    "revision": "@804d6b05f089b27af8342622a36558c49401a1d4",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "jsVersion": "15.5.35.25"
+  },
+  "commandLine": {
+    "arguments": [
+      "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+      "--user-data-dir=C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\testing\\YTK-F5-browser-gate-20261026\\runtime\\YTK-GATE-CONNECTION-20261026-001",
+      "--remote-debugging-address=127.0.0.1",
+      "--remote-debugging-port=0",
+      "--enable-automation",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--disable-background-networking",
+      "--disable-component-update",
+      "--disable-default-apps",
+      "--disable-sync",
+      "--disable-extensions",
+      "--disable-breakpad",
+      "--disable-crash-reporter",
+      "--disable-domain-reliability",
+      "--disable-client-side-phishing-detection",
+      "--safebrowsing-disable-auto-update",
+      "--proxy-server=http://127.0.0.1:47852",
+      "--proxy-bypass-list=localhost;127.0.0.1;[::1]",
+      "--host-resolver-rules=EXCLUDE 127.0.0.1, EXCLUDE localhost, MAP * ~NOTFOUND",
+      "--lang=ja-JP",
+      "--window-size=1280,900",
+      "--force-device-scale-factor=1",
+      "--flag-switches-begin",
+      "--flag-switches-end",
+      "about:blank"
+    ]
+  },
+  "window": {
+    "windowId": 1336441477,
+    "bounds": {
+      "left": 10,
+      "top": 10,
+      "width": 1280,
+      "height": 900,
+      "windowState": "normal"
+    }
+  },
+  "checks": {
+    "headedCommand": true,
+    "visible": true,
+    "nativeFileRead": true,
+    "nativeWebCrypto": true,
+    "nativeIDB": true,
+    "phaseObserverConnected": true,
+    "nativeTransactionComplete": true,
+    "driverReachedPreviewAndCommit": true,
+    "noObserverErrors": true,
+    "onlyLoopbackProductRequests": true
+  },
+  "collapsedNativeRequestPhases": [
+    "GUARD",
+    "CLEAR",
+    "PUT",
+    "READBACK"
+  ],
+  "categoryLabels": [
+    {
+      "letter": "A",
+      "title": "端末・通信"
+    },
+    {
+      "letter": "B",
+      "title": "基盤アカウント"
+    },
+    {
+      "letter": "C",
+      "title": "メール"
+    },
+    {
+      "letter": "D",
+      "title": "SNS・メッセージ"
+    },
+    {
+      "letter": "E",
+      "title": "クラウド・写真・バックアップ"
+    },
+    {
+      "letter": "F",
+      "title": "サブスク・継続課金"
+    },
+    {
+      "letter": "G",
+      "title": "金融系デジタルサービス"
+    },
+    {
+      "letter": "H",
+      "title": "通販・配送・フリマ"
+    },
+    {
+      "letter": "I",
+      "title": "認証・復旧手段"
+    },
+    {
+      "letter": "J",
+      "title": "デジタル購入物・ライセンス"
+    },
+    {
+      "letter": "K",
+      "title": "携帯電話会社・通信契約"
+    },
+    {
+      "letter": "L",
+      "title": "個人事業・副業・Web関連"
+    }
+  ],
+  "observations": {
+    "api": {
+      "events": [
+        {
+          "seq": 1,
+          "time": 341.29999999981374,
+          "activeReadwrite": 0,
+          "kind": "transaction",
+          "api": "start",
+          "mode": "readonly"
+        },
+        {
+          "seq": 2,
+          "time": 341.70000000018626,
+          "activeReadwrite": 0,
+          "kind": "transaction",
+          "api": "start",
+          "mode": "readonly"
+        },
+        {
+          "seq": 3,
+          "time": 342.70000000018626,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "meta"
+        },
+        {
+          "seq": 4,
+          "time": 342.79999999981374,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "overview"
+        },
+        {
+          "seq": 5,
+          "time": 342.79999999981374,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "categories"
+        },
+        {
+          "seq": 6,
+          "time": 342.79999999981374,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "services"
+        },
+        {
+          "seq": 7,
+          "time": 343,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "meta"
+        },
+        {
+          "seq": 8,
+          "time": 343.09999999962747,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "overview"
+        },
+        {
+          "seq": 9,
+          "time": 343.09999999962747,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "categories"
+        },
+        {
+          "seq": 10,
+          "time": 343.20000000018626,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "services"
+        },
+        {
+          "seq": 11,
+          "time": 343.20000000018626,
+          "activeReadwrite": 0,
+          "kind": "transaction",
+          "api": "complete",
+          "mode": "readonly"
+        },
+        {
+          "seq": 12,
+          "time": 343.20000000018626,
+          "activeReadwrite": 0,
+          "kind": "transaction",
+          "api": "complete",
+          "mode": "readonly"
+        },
+        {
+          "seq": 13,
+          "time": 770.9000000003725,
+          "activeReadwrite": 0,
+          "kind": "file-api",
+          "api": "arrayBuffer"
+        },
+        {
+          "seq": 14,
+          "time": 780.9000000003725,
+          "activeReadwrite": 0,
+          "kind": "crypto",
+          "api": "digest"
+        },
+        {
+          "seq": 15,
+          "time": 781.4000000003725,
+          "activeReadwrite": 0,
+          "kind": "transaction",
+          "api": "start",
+          "mode": "readonly"
+        },
+        {
+          "seq": 16,
+          "time": 781.7000000001863,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "meta"
+        },
+        {
+          "seq": 17,
+          "time": 781.7000000001863,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "overview"
+        },
+        {
+          "seq": 18,
+          "time": 781.7000000001863,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "categories"
+        },
+        {
+          "seq": 19,
+          "time": 781.7999999998137,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "services"
+        },
+        {
+          "seq": 20,
+          "time": 781.7999999998137,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "meta"
+        },
+        {
+          "seq": 21,
+          "time": 781.7999999998137,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "overview"
+        },
+        {
+          "seq": 22,
+          "time": 781.7999999998137,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "categories"
+        },
+        {
+          "seq": 23,
+          "time": 781.7999999998137,
+          "activeReadwrite": 0,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "services"
+        },
+        {
+          "seq": 24,
+          "time": 781.9000000003725,
+          "activeReadwrite": 0,
+          "kind": "transaction",
+          "api": "complete",
+          "mode": "readonly"
+        },
+        {
+          "seq": 25,
+          "time": 995.2000000001863,
+          "activeReadwrite": 1,
+          "kind": "transaction",
+          "api": "start",
+          "mode": "readwrite"
+        },
+        {
+          "seq": 26,
+          "time": 995.4000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "meta"
+        },
+        {
+          "seq": 27,
+          "time": 995.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "overview"
+        },
+        {
+          "seq": 28,
+          "time": 995.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "categories"
+        },
+        {
+          "seq": 29,
+          "time": 995.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "services"
+        },
+        {
+          "seq": 30,
+          "time": 999.2999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "meta"
+        },
+        {
+          "seq": 31,
+          "time": 999.4000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "overview"
+        },
+        {
+          "seq": 32,
+          "time": 999.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "categories"
+        },
+        {
+          "seq": 33,
+          "time": 999.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "services"
+        },
+        {
+          "seq": 34,
+          "time": 999.7999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "clear",
+          "store": "meta"
+        },
+        {
+          "seq": 35,
+          "time": 999.7999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "clear",
+          "store": "overview"
+        },
+        {
+          "seq": 36,
+          "time": 999.9000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "clear",
+          "store": "categories"
+        },
+        {
+          "seq": 37,
+          "time": 999.9000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "clear",
+          "store": "services"
+        },
+        {
+          "seq": 38,
+          "time": 1000.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "clear-success",
+          "store": "meta"
+        },
+        {
+          "seq": 39,
+          "time": 1000.5999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "clear-success",
+          "store": "overview"
+        },
+        {
+          "seq": 40,
+          "time": 1000.7000000001863,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "clear-success",
+          "store": "categories"
+        },
+        {
+          "seq": 41,
+          "time": 1000.7000000001863,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "clear-success",
+          "store": "services"
+        },
+        {
+          "seq": 42,
+          "time": 1000.7000000001863,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "meta"
+        },
+        {
+          "seq": 43,
+          "time": 1000.9000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "overview"
+        },
+        {
+          "seq": 44,
+          "time": 1000.9000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 45,
+          "time": 1001,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 46,
+          "time": 1001,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 47,
+          "time": 1001,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 48,
+          "time": 1001,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 49,
+          "time": 1001.0999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 50,
+          "time": 1001.0999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 51,
+          "time": 1001.0999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 52,
+          "time": 1001.0999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 53,
+          "time": 1001.2000000001863,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 54,
+          "time": 1001.2000000001863,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 55,
+          "time": 1001.2000000001863,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put",
+          "store": "categories"
+        },
+        {
+          "seq": 56,
+          "time": 1001.2999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "meta"
+        },
+        {
+          "seq": 57,
+          "time": 1001.5999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "overview"
+        },
+        {
+          "seq": 58,
+          "time": 1001.7999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 59,
+          "time": 1001.9000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 60,
+          "time": 1001.9000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 61,
+          "time": 1002,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 62,
+          "time": 1002.0999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 63,
+          "time": 1002.0999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 64,
+          "time": 1002.0999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 65,
+          "time": 1002.0999999996275,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 66,
+          "time": 1002.2999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 67,
+          "time": 1002.2999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 68,
+          "time": 1002.2999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 69,
+          "time": 1002.2999999998137,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "put-success",
+          "store": "categories"
+        },
+        {
+          "seq": 70,
+          "time": 1002.4000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "meta"
+        },
+        {
+          "seq": 71,
+          "time": 1002.4000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "overview"
+        },
+        {
+          "seq": 72,
+          "time": 1002.4000000003725,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "categories"
+        },
+        {
+          "seq": 73,
+          "time": 1002.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll",
+          "store": "services"
+        },
+        {
+          "seq": 74,
+          "time": 1002.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "meta"
+        },
+        {
+          "seq": 75,
+          "time": 1002.5,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "overview"
+        },
+        {
+          "seq": 76,
+          "time": 1002.7000000001863,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "categories"
+        },
+        {
+          "seq": 77,
+          "time": 1002.7000000001863,
+          "activeReadwrite": 1,
+          "kind": "idb-request",
+          "api": "getAll-success",
+          "store": "services"
+        },
+        {
+          "seq": 78,
+          "time": 1003.2000000001863,
+          "activeReadwrite": 0,
+          "kind": "transaction",
+          "api": "complete",
+          "mode": "readwrite"
+        }
+      ],
+      "activeReadwrite": 0
+    },
+    "phase": [
+      {
+        "seq": 1,
+        "time": 341.29999999981374,
+        "kind": "tx-start",
+        "id": 1,
+        "mode": "readonly",
+        "database": "yattoko-free-v1",
+        "afterPut": false
+      },
+      {
+        "seq": 2,
+        "time": 341.70000000018626,
+        "kind": "tx-start",
+        "id": 2,
+        "mode": "readonly",
+        "database": "yattoko-free-v1",
+        "afterPut": false
+      },
+      {
+        "seq": 3,
+        "time": 342.70000000018626,
+        "kind": "request",
+        "tx": 2,
+        "mode": "readonly",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "meta",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at http://127.0.0.1:47851/src/storage.mjs:5:385",
+          "    at new Promise (<anonymous>)",
+          "    at transact (http://127.0.0.1:47851/src/storage.mjs:5:44)"
+        ]
+      },
+      {
+        "seq": 4,
+        "time": 342.79999999981374,
+        "kind": "request",
+        "tx": 2,
+        "mode": "readonly",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "overview",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at http://127.0.0.1:47851/src/storage.mjs:5:385",
+          "    at new Promise (<anonymous>)",
+          "    at transact (http://127.0.0.1:47851/src/storage.mjs:5:44)"
+        ]
+      },
+      {
+        "seq": 5,
+        "time": 342.79999999981374,
+        "kind": "request",
+        "tx": 2,
+        "mode": "readonly",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at http://127.0.0.1:47851/src/storage.mjs:5:385",
+          "    at new Promise (<anonymous>)",
+          "    at transact (http://127.0.0.1:47851/src/storage.mjs:5:44)"
+        ]
+      },
+      {
+        "seq": 6,
+        "time": 342.79999999981374,
+        "kind": "request",
+        "tx": 2,
+        "mode": "readonly",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "services",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at http://127.0.0.1:47851/src/storage.mjs:5:385",
+          "    at new Promise (<anonymous>)",
+          "    at transact (http://127.0.0.1:47851/src/storage.mjs:5:44)"
+        ]
+      },
+      {
+        "seq": 7,
+        "time": 343,
+        "kind": "request-success",
+        "tx": 2,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "meta"
+      },
+      {
+        "seq": 8,
+        "time": 343.09999999962747,
+        "kind": "request-success",
+        "tx": 2,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "overview"
+      },
+      {
+        "seq": 9,
+        "time": 343.09999999962747,
+        "kind": "request-success",
+        "tx": 2,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "categories"
+      },
+      {
+        "seq": 10,
+        "time": 343.20000000018626,
+        "kind": "request-success",
+        "tx": 2,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "services"
+      },
+      {
+        "seq": 11,
+        "time": 343.20000000018626,
+        "kind": "tx-complete",
+        "id": 1,
+        "mode": "readonly"
+      },
+      {
+        "seq": 12,
+        "time": 343.20000000018626,
+        "kind": "tx-complete",
+        "id": 2,
+        "mode": "readonly"
+      },
+      {
+        "seq": 13,
+        "time": 765.0999999996275,
+        "kind": "restore-ui-status",
+        "completed": false
+      },
+      {
+        "seq": 14,
+        "time": 771.0999999996275,
+        "kind": "restore-ui-status",
+        "completed": false
+      },
+      {
+        "seq": 15,
+        "time": 781.4000000003725,
+        "kind": "tx-start",
+        "id": 3,
+        "mode": "readonly",
+        "database": "yattoko-free-v1",
+        "afterPut": false
+      },
+      {
+        "seq": 16,
+        "time": 781.7000000001863,
+        "kind": "request",
+        "tx": 3,
+        "mode": "readonly",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "meta",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:12:112",
+          "    at new Promise (<anonymous>)"
+        ]
+      },
+      {
+        "seq": 17,
+        "time": 781.7000000001863,
+        "kind": "request",
+        "tx": 3,
+        "mode": "readonly",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "overview",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:12:112",
+          "    at new Promise (<anonymous>)"
+        ]
+      },
+      {
+        "seq": 18,
+        "time": 781.7000000001863,
+        "kind": "request",
+        "tx": 3,
+        "mode": "readonly",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:12:112",
+          "    at new Promise (<anonymous>)"
+        ]
+      },
+      {
+        "seq": 19,
+        "time": 781.7999999998137,
+        "kind": "request",
+        "tx": 3,
+        "mode": "readonly",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "services",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:12:112",
+          "    at new Promise (<anonymous>)"
+        ]
+      },
+      {
+        "seq": 20,
+        "time": 781.7999999998137,
+        "kind": "request-success",
+        "tx": 3,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "meta"
+      },
+      {
+        "seq": 21,
+        "time": 781.7999999998137,
+        "kind": "request-success",
+        "tx": 3,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "overview"
+      },
+      {
+        "seq": 22,
+        "time": 781.7999999998137,
+        "kind": "request-success",
+        "tx": 3,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "categories"
+      },
+      {
+        "seq": 23,
+        "time": 781.7999999998137,
+        "kind": "request-success",
+        "tx": 3,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "services"
+      },
+      {
+        "seq": 24,
+        "time": 781.9000000003725,
+        "kind": "tx-complete",
+        "id": 3,
+        "mode": "readonly"
+      },
+      {
+        "seq": 25,
+        "time": 782.5,
+        "kind": "restore-ui-status",
+        "completed": false
+      },
+      {
+        "seq": 26,
+        "time": 995.2000000001863,
+        "kind": "tx-start",
+        "id": 4,
+        "mode": "readwrite",
+        "database": "yattoko-free-v1",
+        "afterPut": false
+      },
+      {
+        "seq": 27,
+        "time": 995.4000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "meta",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:18:1",
+          "    at new Promise (<anonymous>)"
+        ]
+      },
+      {
+        "seq": 28,
+        "time": 995.4000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "overview",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:18:1",
+          "    at new Promise (<anonymous>)"
+        ]
+      },
+      {
+        "seq": 29,
+        "time": 995.5,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:18:1",
+          "    at new Promise (<anonymous>)"
+        ]
+      },
+      {
+        "seq": 30,
+        "time": 995.5,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "services",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:18:1",
+          "    at new Promise (<anonymous>)"
+        ]
+      },
+      {
+        "seq": 31,
+        "time": 995.5,
+        "kind": "restore-ui-status",
+        "completed": false
+      },
+      {
+        "seq": 32,
+        "time": 999.2999999998137,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "meta"
+      },
+      {
+        "seq": 33,
+        "time": 999.4000000003725,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "overview"
+      },
+      {
+        "seq": 34,
+        "time": 999.5,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "categories"
+      },
+      {
+        "seq": 35,
+        "time": 999.5,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "getAll",
+        "phase": "GUARD",
+        "store": "services"
+      },
+      {
+        "seq": 36,
+        "time": 999.7999999998137,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "clear",
+        "phase": "CLEAR",
+        "store": "meta",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as clear] (<anonymous>:1:900)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:19:81",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:11:192)"
+        ]
+      },
+      {
+        "seq": 37,
+        "time": 999.7999999998137,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "clear",
+        "phase": "CLEAR",
+        "store": "overview",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as clear] (<anonymous>:1:900)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:19:81",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:11:192)"
+        ]
+      },
+      {
+        "seq": 38,
+        "time": 999.9000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "clear",
+        "phase": "CLEAR",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as clear] (<anonymous>:1:900)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:19:81",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:11:192)"
+        ]
+      },
+      {
+        "seq": 39,
+        "time": 999.9000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "clear",
+        "phase": "CLEAR",
+        "store": "services",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as clear] (<anonymous>:1:900)",
+          "    at http://127.0.0.1:47851/src/restore.mjs:19:81",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:11:192)"
+        ]
+      },
+      {
+        "seq": 40,
+        "time": 1000.5,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "clear",
+        "phase": "CLEAR",
+        "store": "meta"
+      },
+      {
+        "seq": 41,
+        "time": 1000.5999999996275,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "clear",
+        "phase": "CLEAR",
+        "store": "overview"
+      },
+      {
+        "seq": 42,
+        "time": 1000.7000000001863,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "clear",
+        "phase": "CLEAR",
+        "store": "categories"
+      },
+      {
+        "seq": 43,
+        "time": 1000.7000000001863,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "clear",
+        "phase": "CLEAR",
+        "store": "services"
+      },
+      {
+        "seq": 44,
+        "time": 1000.7000000001863,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "meta",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 45,
+        "time": 1000.9000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "overview",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 46,
+        "time": 1000.9000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 47,
+        "time": 1001,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 48,
+        "time": 1001,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 49,
+        "time": 1001,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 50,
+        "time": 1001,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 51,
+        "time": 1001.0999999996275,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 52,
+        "time": 1001.0999999996275,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 53,
+        "time": 1001.0999999996275,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 54,
+        "time": 1001.0999999996275,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 55,
+        "time": 1001.2000000001863,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 56,
+        "time": 1001.2000000001863,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 57,
+        "time": 1001.2000000001863,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as put] (<anonymous>:1:900)",
+          "    at r.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:420)"
+        ]
+      },
+      {
+        "seq": 58,
+        "time": 1001.2999999998137,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "meta"
+      },
+      {
+        "seq": 59,
+        "time": 1001.5999999996275,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "overview"
+      },
+      {
+        "seq": 60,
+        "time": 1001.7999999998137,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 61,
+        "time": 1001.9000000003725,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 62,
+        "time": 1001.9000000003725,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 63,
+        "time": 1002,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 64,
+        "time": 1002.0999999996275,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 65,
+        "time": 1002.0999999996275,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 66,
+        "time": 1002.0999999996275,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 67,
+        "time": 1002.0999999996275,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 68,
+        "time": 1002.2999999998137,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 69,
+        "time": 1002.2999999998137,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 70,
+        "time": 1002.2999999998137,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 71,
+        "time": 1002.2999999998137,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "put",
+        "phase": "PUT",
+        "store": "categories"
+      },
+      {
+        "seq": 72,
+        "time": 1002.4000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "getAll",
+        "phase": "READBACK",
+        "store": "meta",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at put.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:471)"
+        ]
+      },
+      {
+        "seq": 73,
+        "time": 1002.4000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "getAll",
+        "phase": "READBACK",
+        "store": "overview",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at put.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:471)"
+        ]
+      },
+      {
+        "seq": 74,
+        "time": 1002.4000000003725,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "getAll",
+        "phase": "READBACK",
+        "store": "categories",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at put.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:471)"
+        ]
+      },
+      {
+        "seq": 75,
+        "time": 1002.5,
+        "kind": "request",
+        "tx": 4,
+        "mode": "readwrite",
+        "api": "getAll",
+        "phase": "READBACK",
+        "store": "services",
+        "stack": [
+          "    at IDBObjectStore.<computed> [as getAll] (<anonymous>:1:900)",
+          "    at readRequests (http://127.0.0.1:47851/src/restore.mjs:11:129)",
+          "    at put.onsuccess (http://127.0.0.1:47851/src/restore.mjs:19:471)"
+        ]
+      },
+      {
+        "seq": 76,
+        "time": 1002.5,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "getAll",
+        "phase": "READBACK",
+        "store": "meta"
+      },
+      {
+        "seq": 77,
+        "time": 1002.5,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "getAll",
+        "phase": "READBACK",
+        "store": "overview"
+      },
+      {
+        "seq": 78,
+        "time": 1002.7000000001863,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "getAll",
+        "phase": "READBACK",
+        "store": "categories"
+      },
+      {
+        "seq": 79,
+        "time": 1002.7000000001863,
+        "kind": "request-success",
+        "tx": 4,
+        "api": "getAll",
+        "phase": "READBACK",
+        "store": "services"
+      },
+      {
+        "seq": 80,
+        "time": 1003.2000000001863,
+        "kind": "tx-complete",
+        "id": 4,
+        "mode": "readwrite"
+      },
+      {
+        "seq": 81,
+        "time": 1003.5,
+        "kind": "restore-ui-status",
+        "completed": true
+      }
+    ],
+    "status": "復元transactionが完了しました。ファイル内の未保存回答はまだ適用していません。元の画面入力は保持し、旧画面からの保存を停止します。",
+    "capabilities": {
+      "secure": true,
+      "nativeIDB": "object",
+      "File": "function",
+      "Blob": "function",
+      "crypto": "object",
+      "savePicker": "function",
+      "visibility": "visible"
+    },
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+  },
+  "events": [
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/index.html",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/restore-ui.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/backup-ui.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/storage.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/canonical.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/import-backup.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/restore.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/reapply.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/backup.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/file-save.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/definitions.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/src/import-json.mjs",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:47851/favicon.ico",
+      "method": "GET"
+    }
+  ],
+  "serverEvents": [
+    {
+      "kind": "blocked-proxy",
+      "method": "GET",
+      "url": "http://clients2.google.com/time/1/current?cup2key=10:L-6GS-C27r6PSJfyoBdbNcvNFoDtw_LE_2-uPzI43Mc&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.gstatic.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "update.googleapis.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "accounts.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/index.html"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/restore-ui.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/backup-ui.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/storage.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/canonical.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/import-backup.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/restore.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/reapply.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/backup.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/file-save.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/definitions.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/src/import-json.mjs"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/favicon.ico"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "accounts.google.com:443"
+    }
+  ],
+  "productResourceCount": 12,
+  "OS": {
+    "version": "Windows 11 Home",
+    "arch": "x64"
+  },
+  "humanObserved": false,
+  "OSDialogExercised": false,
+  "selectionMethod": "CDP DOM.setFileInputFiles bypassed native OS dialog; real File object read by unchanged product UI",
+  "acknowledgement": "Driver clicked checkbox/button on isolated dummy data; not human signoff or formal result",
+  "limits": "Single empty dummy connection path only. No case variant matrix, fault injection, quota, persistence, performance claim or formal verdict."
+}

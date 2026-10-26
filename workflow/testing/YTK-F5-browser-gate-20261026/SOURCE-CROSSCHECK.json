@@ -1,0 +1,173 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "approvedRelevantExcerptsUnchangedAtFrozenProduct": true,
+  "fullDocumentDifference": "F3 test-plan later appended MAN-01..38. Original cited clauses unchanged; full-file equality not asserted.",
+  "citations": [
+    {
+      "file": "workflow/proposals/YTK-F2-storage-safety-revision-20261013.md",
+      "revision": "0d5dfa387f924e5dc3dc9196b9f236986c910281",
+      "gitBlob": "e1e08c4da80c879895a172c94375539ab4827718",
+      "bytes": 31388,
+      "sha256": "e0642e31143dcdc0f674239787f52ac5ca397d8e289800fe92c2b7e2d67f8ea8",
+      "identicalAtFrozenProduct": true,
+      "frozenHasApprovedPrefix": true,
+      "relevantExcerptsUnchanged": true,
+      "excerpts": [
+        {
+          "start": 47,
+          "end": 72,
+          "text": "\n永続化・整合判定・R2CAT / R2Q参照に使うcategoryの正本は、既存R001/R002 prototypeの内部IDと一致させる。\n\n| displayCode | canonical `categoryKey` |\n|---|---|\n| A | `device` |\n| B | `base` |\n| C | `mail` |\n| D | `social` |\n| E | `cloud` |\n| F | `subscription` |\n| G | `finance` |\n| H | `commerce` |\n| I | `auth` |\n| J | `license` |\n| K | `carrier` |\n| L | `business` |\n\n規範:\n- **MUST**: IndexedDBのcategory/service recordは `categoryKey` に上表の内部IDだけを保存する。\n- **MUST NOT**: A〜Lを永続正本として使用しない。\n- **MUST**: `recordId`、`categoryKey`、displayCodeは別概念として扱う。\n- **MUST**: unknown `categoryKey` を保存・import・restoreで拒否する。\n- **MUST**: R2CAT / R2Q参照は `categoryKey` を使う。\n- **SHOULD**: displayCodeはUI定義から導出し、保存正本へ重複保持しない。\n- 将来file形式にdisplayCodeを含める場合は、上表と不一致ならrestoreを拒否する。displayCodeからcategoryKeyを推測補正しない。"
+        },
+        {
+          "start": 124,
+          "end": 138,
+          "text": "dataset作成後、12 category recordは常に存在する。\n\n### 4.1 category record\n\n```text\nrecordId\ncategoryKey\nusageStatus\nintention\nrevision\nschemaVersion\n```\n\n`usageStatus`:\n- `unanswered`"
+        }
+      ]
+    },
+    {
+      "file": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+      "revision": "0d5dfa387f924e5dc3dc9196b9f236986c910281",
+      "gitBlob": "1821370db9420032ba6feb71f74aa7e0645d9df5",
+      "bytes": 20467,
+      "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47",
+      "identicalAtFrozenProduct": true,
+      "frozenHasApprovedPrefix": true,
+      "relevantExcerptsUnchanged": true,
+      "excerpts": [
+        {
+          "start": 236,
+          "end": 236,
+          "text": "- [ ] RST-15 categoryKey/displayCode不一致を拒否（file形式にdisplayCodeが存在する場合）"
+        }
+      ]
+    },
+    {
+      "file": "workflow/proposals/YTK-F3-backup-restore-design-draft-20261014.md",
+      "revision": "3b54acbe7d85f60b3f8b4ffcd9b723cdc02b5641",
+      "gitBlob": "3558cea58f93419de2c990cfd5d1a2b5ff82d05d",
+      "bytes": 42419,
+      "sha256": "a47297b2a84084629c7ecd70f202ed7f4d42d8a8e3d102d5139abeeba9c21f7d",
+      "identicalAtFrozenProduct": true,
+      "frozenHasApprovedPrefix": true,
+      "relevantExcerptsUnchanged": true,
+      "excerpts": [
+        {
+          "start": 664,
+          "end": 670,
+          "text": "R08：\ncompleted serviceはusageStatusがusing/dormant/unknown。completed + unansweredは禁止。save/load/import/restoreで同じcross-field validator。\n\nR09：\nparent intention=unanswered + service intentionOverride=nullではparent canonicalを変えずdisplay/effectiveだけundecided。fallbackをserviceへ保存しない。reload/restart/restore/importで再計算。child usingでparent usageをpositive整合する場合R07も同一transaction。\n\nconditional："
+        },
+        {
+          "start": 681,
+          "end": 708,
+          "text": "### 8.2 version registry gate\n\nF2承認設計はschemaVersion、questionSchemaVersion、recordId具体grammarを「後続で確定」として残している。F3が独断で1やUUIDを本番値にしてはならない。\n\nF3 v0.2 registry：\n\n| Registry item | 状態 | 規範 |\n|---|---|---|\n| fileFormatVersion | CANDIDATE 1 | F3 human approval対象 |\n| schemaVersion accepted set | **UNBOUND / BLOCKING** | F2意味変更なしで具体値をbindingする承認記録が必要 |\n| questionSchemaVersion accepted set | **UNBOUND / BLOCKING** | 同上 |\n| recordId grammar | **UNBOUND / BLOCKING** | stable/uniqueのF2意味を狭めない具体grammar承認が必要 |\n| generationId grammar/generator | **UNBOUND / BLOCKING** | F2世代境界を維持する具体方式承認が必要 |\n| category mapping | BOUND | 上記12 internal keys |\n| R07-R09 | BOUND | F2承認設計をそのまま参照 |\n| capacity serializer | BOUND | F2 canonical projection |\n\n**ACTIVE registry rowが存在しない状態ではproduction export/import実装を有効化してはならない。**\nF4開始前にregistry bindingを別記録で人間確認する。これはF2の意味変更ではなく未確定技術値のbinding候補だが、もしF2の既承認meaning/fieldを変更する必要が出た場合はF2変更として人間へ差戻す。\n\n### 8.3 version validation\n\n- fileFormatVersionとACTIVE registry rowをexact match。\n- schemaVersion/questionSchemaVersionは登録pairのみ。\n- recordId/generationIdはACTIVE grammarのみ。\n- unknown/old/future versionは推測migrationしない。\n- migration追加は別設計・別承認。\n"
+        }
+      ]
+    },
+    {
+      "file": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+      "revision": "3b54acbe7d85f60b3f8b4ffcd9b723cdc02b5641",
+      "gitBlob": "7a9ef7a6c4c8d138d5a00264bbb5d5e767c39830",
+      "bytes": 27552,
+      "sha256": "4ad733d2c79b43cec80dbafd8da0f99c749fcf3b78498b643ff67c66869c230a",
+      "identicalAtFrozenProduct": false,
+      "frozenHasApprovedPrefix": true,
+      "relevantExcerptsUnchanged": true,
+      "excerpts": [
+        {
+          "start": 184,
+          "end": 184,
+          "text": "- [ ] R03-18 transaction開始後にcrypto.subtle.digest / File API / Blob.arrayBuffer / network / timerを呼ばない。"
+        },
+        {
+          "start": 243,
+          "end": 243,
+          "text": "- [ ] R04-12 1MB/256件が過剰なscenarioでvalidation時間を計測。"
+        },
+        {
+          "start": 340,
+          "end": 344,
+          "text": "- [ ] R07-05 R09 unanswered parent fallbackをsnapshotへ複写せず表示時再計算。\n- [ ] R07-06 inactive conditional fieldをreject。\n- [ ] R07-07 active conditional unansweredを保持。\n- [ ] R07-08 normal snapshot / emergency snapshot / prospective restoreで同一F2 canonical capacity serializer。\n- [ ] R07-09 ACTIVE registryなしではproduction export/importを有効化しない。"
+        }
+      ]
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/src/canonical.mjs",
+      "revision": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "gitBlob": "6c41be1f1bccf40be26f2e9f65e1ab7832fe4236",
+      "bytes": 12358,
+      "sha256": "52f267480c90af9b0ff26460ff738c567f6987bd49e2624a884ef69be20f6d9f",
+      "identicalAtFrozenProduct": true,
+      "frozenHasApprovedPrefix": true,
+      "relevantExcerptsUnchanged": true,
+      "excerpts": [
+        {
+          "start": 1,
+          "end": 11,
+          "text": "import {manifest as M,catalog} from './definitions.mjs';\nexport {M as manifest};\nexport const registry=Object.freeze({id:'ytk-free-v1-registry-20261015',status:'ACTIVE',fileFormatVersion:1,schemaVersion:'ytk-f2-20261014-0d5dfa38',questionSchemaVersion:'ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac'});\nexport const LIMIT=10_000_000;\nexport class SaveError extends Error {constructor(code){super(code);this.code=code;}}\nconst fail=(code='validation')=>{throw new SaveError(code);};\nconst own=(o,k)=>Object.hasOwn(o,k);\nconst equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);\nconst fields=(o,keys)=>{if(!o||typeof o!=='object'||Array.isArray(o)||!equal(Object.keys(o).sort(),[...keys].sort()))fail();};\nconst member=(v,def)=>{if(!def.values.includes(v))fail();};\nconst version=v=>{if(v!==registry.schemaVersion)fail('version');};"
+        },
+        {
+          "start": 30,
+          "end": 39,
+          "text": "const overviewKeys=['recordId',...Object.keys(M.r001.overview),'revision','schemaVersion'];\nconst categoryKeys=['recordId','categoryKey','usageStatus','intention','revision','schemaVersion'];\nconst serviceKeys=['recordId','categoryKey','serviceCatalogId','otherServiceName','recordState','usageStatus','answers','intentionOverride','revision','schemaVersion'];\nexport function validate(d){fields(d,['schemaVersion','questionSchemaVersion','generationId','globalRevision','overview','categories','services']);version(d.schemaVersion);if(d.questionSchemaVersion!==registry.questionSchemaVersion)fail('version');if(!new RegExp(`^gen_${uuid}$`).test(d.generationId))fail();revision(d.globalRevision);fields(d.overview,overviewKeys);if(d.overview.recordId!=='ovw_main')fail();version(d.overview.schemaVersion);revision(d.overview.revision);for(const [k,def] of Object.entries(M.r001.overview))member(d.overview[k],def);\nif(!Array.isArray(d.categories)||d.categories.length!==M.categoryKeys.length||!Array.isArray(d.services))fail();const seen=new Set();for(const c of d.categories){fields(c,categoryKeys);if(!M.categoryKeys.includes(c.categoryKey)||c.recordId!==`cat_${c.categoryKey}`||seen.has(c.recordId))fail();seen.add(c.recordId);version(c.schemaVersion);revision(c.revision);for(const [k,def]of Object.entries(M.r001.category))member(c[k],def);if(c.usageStatus!=='unanswered'&&c.intention==='unanswered')fail();}\nfor(const s of d.services){fields(s,serviceKeys);if(!new RegExp(`^svc_${uuid}$`).test(s.recordId)||seen.has(s.recordId)||!M.categoryKeys.includes(s.categoryKey))fail();seen.add(s.recordId);version(s.schemaVersion);revision(s.revision);for(const[k,def]of Object.entries(M.r002.serviceCore))member(s[k],def);if(s.recordState==='completed'&&s.usageStatus==='unanswered')fail();if(s.serviceCatalogId==='other'){if(normalizeName(s.otherServiceName)!==s.otherServiceName)fail();}else if(!catalog[s.categoryKey].filter(x=>x!=='その他').includes(s.serviceCatalogId)||s.otherServiceName!==null)fail();const qs=M.r002.questions[s.categoryKey];fields(s.answers,qs.filter(q=>active(q,s.answers)).map(q=>q.key));for(const q of qs)if(active(q,s.answers))member(s.answers[q.key],q);}\nfor(const s of d.services)for(const b of M.validatorBindings.positiveDirection){if(b.categoryKey&&b.categoryKey!==s.categoryKey)continue;const value=b.source?s.usageStatus:s.answers[b.sourceQuestionKey];if(value!==b.when)continue;if(b.target==='r001.category.usageStatus'){if(d.categories.find(c=>c.categoryKey===s.categoryKey).usageStatus==='not_using')fail('contradiction');}else{const k=b.target.split('.').at(-1);if(d.overview[k]===(k==='family'?'known':'no'))fail('contradiction');}}\nreturn d;}\nconst ordered=(o,keys)=>Object.fromEntries(keys.map(k=>[k,o[k]]));\nexport function projection(d){return {schemaVersion:d.schemaVersion,questionSchemaVersion:d.questionSchemaVersion,generationId:d.generationId,globalRevision:d.globalRevision,overview:ordered(d.overview,overviewKeys),categories:M.categoryKeys.map(k=>ordered(d.categories.find(c=>c.categoryKey===k),categoryKeys)),services:[...d.services].sort((a,b)=>a.recordId<b.recordId?-1:a.recordId>b.recordId?1:0).map(s=>({...ordered(s,serviceKeys),answers:Object.fromEntries(M.r002.questions[s.categoryKey].filter(q=>active(q,s.answers)).map(q=>[q.key,s.answers[q.key]]))}))};}"
+        }
+      ]
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/src/import-backup.mjs",
+      "revision": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "gitBlob": "6f67bc051986574120bf1cc6e62fb6be522183d0",
+      "bytes": 9982,
+      "sha256": "6eb81070423905f95fbe9cca45805a37209e2a5bf2d946fba9b8a2cf5267a2d3",
+      "identicalAtFrozenProduct": true,
+      "frozenHasApprovedPrefix": true,
+      "relevantExcerptsUnchanged": true,
+      "excerpts": [
+        {
+          "start": 26,
+          "end": 30,
+          "text": "export async function importBackup(file,{crypto=globalThis.crypto}={}){try{\ninteger(file?.size);assertRawLimit(file.size);const buffer=await file.arrayBuffer();if(buffer.byteLength!==file.size)reject('SIZE');const raw=new Uint8Array(buffer);if(raw[0]===239&&raw[1]===187&&raw[2]===191)reject('BOM');let text;try{text=new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(raw);}catch{reject('UTF8');}\nscanJSON(text,maximumServiceCount());let e;try{e=JSON.parse(text);}catch{reject('JSON');}exact(e,['fileFormat','fileFormatVersion','kind','exportedAt','snapshot','pending','checksum']);exact(e.checksum,['algorithm','hex']);if(e.fileFormat!=='yattoko-backup'||e.fileFormatVersion!==registry.fileFormatVersion||registry.status!=='ACTIVE'||!['normal','emergency'].includes(e.kind)||e.snapshot?.schemaVersion!==registry.schemaVersion||e.snapshot?.questionSchemaVersion!==registry.questionSchemaVersion)reject('VERSION');if(!/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$/.test(e.exportedAt)||new Date(e.exportedAt).toISOString()!==e.exportedAt)reject('DATE');if(e.kind==='normal'&&e.pending!==null)reject('PENDING');validate(e.snapshot);assertCapacity(capacity(e.snapshot));const snapshot=projection(e.snapshot),pending=pendingCanonical(e.pending);if(e.checksum.algorithm!=='SHA-256'||!hashPattern.test(e.checksum.hex))reject('CHECKSUM');const payload={fileFormat:e.fileFormat,fileFormatVersion:e.fileFormatVersion,kind:e.kind,exportedAt:e.exportedAt,snapshot,pending};const canonical={...payload,checksum:{algorithm:'SHA-256',hex:e.checksum.hex}};if(!sameBytes(raw,bytes(JSON.stringify(canonical))))reject('CANONICAL');if(!sameBytes(bytes(await sha256(bytes(JSON.stringify(payload)),crypto)),bytes(e.checksum.hex)))reject('CHECKSUM');validate(snapshot);assertCapacity(capacity(snapshot));await validatePending(pending,snapshot,crypto);\nconst token=freeze({envelope:canonical,sourceFileId:`f3:${e.fileFormatVersion}:${e.checksum.hex}`});tokens.add(token);return token;\n}catch(e){if(e instanceof ImportError)throw e;throw new ImportError(e?.code==='RAW_BYTES_LIMIT'?'RAW_BYTES_LIMIT':'INVALID_FILE');}}"
+        }
+      ]
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/src/backup.mjs",
+      "revision": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "gitBlob": "f6af575fb1b0f36ae5d9d44aa82f48c9e292ce6f",
+      "bytes": 10986,
+      "sha256": "9567b60f0610b91023920c574365eeae05e93858b3c0a9ca18475b567bcd53de",
+      "identicalAtFrozenProduct": true,
+      "frozenHasApprovedPrefix": true,
+      "relevantExcerptsUnchanged": true,
+      "excerpts": [
+        {
+          "start": 81,
+          "end": 86,
+          "text": "}\nexport async function createBackup(store,{kind='normal',pending=[],draft=null,draftBase=null,crypto=globalThis.crypto,now=()=>new Date()}={}){\nif(!['normal','emergency'].includes(kind)||registry.status!=='ACTIVE')fail('VERSION');\n// Freeze before the first asynchronous read/digest. Export never mutates the coordinator.\nconst frozen=kind==='emergency'?structuredClone({pending,draft,draftBase}):null;\nconst dataset=await store.read();if(dataset===null)fail('EMPTY');validate(dataset);assertCapacity(capacity(dataset));scalar(dataset);"
+        }
+      ]
+    },
+    {
+      "file": "workflow/prototypes/YTK-F4/index.html",
+      "revision": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "gitBlob": "74a0d84420435c482a669f796702383afec50698",
+      "bytes": 49449,
+      "sha256": "58ef8a4b5096f0c941b1b78794b3fcf45928a0109076d428205671021c2de6dc",
+      "identicalAtFrozenProduct": true,
+      "frozenHasApprovedPrefix": true,
+      "relevantExcerptsUnchanged": true,
+      "excerpts": [
+        {
+          "start": 38,
+          "end": 52,
+          "text": "(async function(){\n\"use strict\";\nvar C=[\n{id:\"device\",l:\"A\",t:\"端末・通信\",h:\"スマホ、PC、SIM/eSIM、電話番号\"},\n{id:\"base\",l:\"B\",t:\"基盤アカウント\",h:\"Apple、Google、Microsoftなど\"},\n{id:\"mail\",l:\"C\",t:\"メール\",h:\"Gmail、iCloudメール、Outlookなど\"},\n{id:\"social\",l:\"D\",t:\"SNS・メッセージ\",h:\"LINE、Instagram、Xなど\"},\n{id:\"cloud\",l:\"E\",t:\"クラウド・写真・バックアップ\",h:\"iCloud、Google Photos、Driveなど\"},\n{id:\"subscription\",l:\"F\",t:\"サブスク・継続課金\",h:\"アプリ、動画、音楽、ソフトなど\"},\n{id:\"finance\",l:\"G\",t:\"金融系デジタルサービス\",h:\"銀行、証券、カード、決済、暗号資産\"},\n{id:\"commerce\",l:\"H\",t:\"通販・配送・フリマ\",h:\"通販、フリマ、配送サービス\"},\n{id:\"auth\",l:\"I\",t:\"認証・復旧手段\",h:\"パスワード管理、認証アプリ、復旧設定\"},\n{id:\"license\",l:\"J\",t:\"デジタル購入物・ライセンス\",h:\"電子書籍、ゲーム、ソフトウェア\"},\n{id:\"carrier\",l:\"K\",t:\"携帯電話会社・通信契約\",h:\"回線契約、電話番号に紐づくサービス\"},\n{id:\"business\",l:\"L\",t:\"個人事業・副業・Web関連\",h:\"サイト、ドメイン、クラウド、販売サービス\"}"
+        },
+        {
+          "start": 272,
+          "end": 278,
+          "text": "\nf4BackupUI=installBackupUI(document,{getCategoryLabel:key=>C.find(c=>c.id===key)?.t??'対象不明',getStore:()=>f4Coordinator?.store??null,getCapture:()=>{var draft=R2.active&&R2.screen==='other'&&R2.draft?.serviceName.length&&!R2.draft.recordId&&!f4State.pending.some(p=>p.operation.type==='addService')?{categoryKey:R2.draft.categoryId,otherServiceName:R2.draft.serviceName}:null;return {pending:f4Coordinator.pending,draft,draftBase:f4Coordinator.committed};}});\nf4RestoreUI=installRestoreUI(document,{getStore:()=>f4Coordinator?.store??null,getLocalState:()=>({pending:f4Coordinator?.pending.length??0,draft:Boolean(R2.active&&R2.screen==='other'&&R2.draft?.serviceName)}),getOperationLabel:o=>{var v=o.canonicalValue;if(o.operationType==='addService')return (C.find(c=>c.id===o.categoryKey)?.t??'サービス')+'：'+(v.otherServiceName??v.serviceCatalogId);if(v?.field){var labels={using:'利用中',not_using:'使っていない',unknown:'わからない',yes:'ある',no:'ない',keep:'残したい',delete:'削除したい',family:'家族に任せる',undecided:'未決定',dormant:'休眠・停止中'};return (C.find(c=>c.id===o.categoryKey)?.t??'概要')+'：'+(['intention','intentionOverride'].includes(v.field)?'本人意向':v.field==='usageStatus'?'利用状態':o.targetKind==='overview'?RL[v.field]:r2AnswerTitle(v.field))+'：'+(labels[v.value]??v.value??'カテゴリと同じ');}return ({deleteAll:'整理データの全削除',deleteCategory:'カテゴリの削除',deleteService:'サービスの削除',completeService:'サービスの整理完了'})[o.operationType]??'整理内容の変更';},onRestored:()=>{f4Ready=false;f4Coordinator.stopped=true;f4State={...f4State,error:'conflict',saving:false,message:'復元transactionが完了しました。旧画面からの保存は停止しています。未保存入力がある場合はここに保持しています。ファイル内の未保存回答の確認・適用が終わってから、必要に応じて再読み込みしてください。'};f4Status();}});\nwindow.addEventListener('beforeunload',e=>{if(f4State?.pending.length){e.preventDefault();e.returnValue='';}});\ntry{const db=await openDatabase();f4Coordinator=new SaveCoordinator(new CanonicalStore(db),state=>{f4State=state;const creation=state.pending.find(p=>p.operation.type==='addService'&&p.operation.recordId);if(creation&&R2.draft)R2.draft.recordId=creation.operation.recordId;if(!state.pending.length){f4Hydrate(state.committed);const done=f4Success;f4Success=null;if(done)done();}render();});await f4Coordinator.load();f4Ready=true;render();}catch(e){f4State={message:messages[classify(e)],pending:[],saving:false};render();}\n}\n"
+        }
+      ]
+    }
+  ]
+}
