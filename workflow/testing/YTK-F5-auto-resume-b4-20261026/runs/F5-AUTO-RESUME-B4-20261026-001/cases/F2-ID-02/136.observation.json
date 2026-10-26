@@ -1,0 +1,88 @@
+{
+  "caseId": "F2:ID-02",
+  "runId": "F5-AUTO-RESUME-B4-20261026-001",
+  "attempt": 1,
+  "index": 136,
+  "label": "subscription-completed-021-target3",
+  "mode": "sequence",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 146,
+    "description": "中央record削除後も誤更新なし",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T11:28:34.292Z",
+  "finishedAt": "2026-10-26T11:28:34.300Z",
+  "input": {
+    "path": "inputs/b1000a0882812d7e6177457d8311d6ef3c749c60d0116a4adadca6ea45f067ca.bin",
+    "bytes": 3678,
+    "sha256": "b1000a0882812d7e6177457d8311d6ef3c749c60d0116a4adadca6ea45f067ca"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 2,
+    "completeCount": 2,
+    "abortCount": 0,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "cf61b42ede8fbbbfe2aecc783694392a7fef121443fca989b0a07a0bab7deb88",
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "operationsSHA256": "e536027e226ae0df48c60e06733119c320f3cfddba550fecc5a28c873093aad7",
+    "initialRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003",
+      "svc_00000003-0000-4000-8000-000000000003"
+    ],
+    "initialNames": [
+      "試験用サービス1",
+      "試験用サービス2",
+      "試験用サービス3"
+    ],
+    "queueMode": null,
+    "collisionRecipe": null
+  },
+  "oracleNote": "Independent F2 model/manifest, canonical record-ID targeting, per-commit full store states and explicit revision/global deltas. No product validator generates expected values.",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": false,
+    "readwriteTransactions": 2,
+    "completeCount": 2,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveCalls": 0,
+    "maxInFlight": 0,
+    "committedSeqs": [],
+    "attemptedSeqs": [],
+    "noDoubleCommittedSeq": true,
+    "pendingCount": 0,
+    "pendingSeqs": [],
+    "pendingOperations": [],
+    "coordinatorStopped": false,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 0,
+    "hookObserved": false,
+    "hookDuringFirstWrite": false,
+    "generatedRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000003-0000-4000-8000-000000000003"
+    ],
+    "unauthorizedMutation": false,
+    "initialStoresSHA256": "133c7686bd351148eda8a2c197795d897c2f580df0b52f4f9f1c8ea018ae8d3f",
+    "afterStoresSHA256": "1d4d3f2ffb9e1484ecfee9c86ff17d906d5941628f9d56919d4de3cb59019768"
+  },
+  "status": "PASS",
+  "executionError": null
+}

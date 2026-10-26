@@ -1,0 +1,663 @@
+{
+  "calls": [
+    {
+      "kind": "SAVE_START",
+      "ordinal": 1,
+      "seq": 1,
+      "expectedGlobal": 9,
+      "operation": {
+        "categoryKey": "social",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003"
+      }
+    },
+    {
+      "kind": "SAVE_COMPLETE",
+      "ordinal": 1,
+      "seq": 1,
+      "global": 10,
+      "readwriteCompleteCount": 1
+    },
+    {
+      "kind": "SAVE_START",
+      "ordinal": 2,
+      "seq": 2,
+      "expectedGlobal": 10,
+      "operation": {
+        "categoryKey": "social",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": "svc_00000004-0000-4000-8000-000000000003"
+      }
+    },
+    {
+      "kind": "SAVE_COMPLETE",
+      "ordinal": 2,
+      "seq": 2,
+      "global": 11,
+      "readwriteCompleteCount": 2
+    }
+  ],
+  "notifications": [
+    {
+      "pendingSeqs": [],
+      "saving": false,
+      "saved": true,
+      "error": null
+    },
+    {
+      "pendingSeqs": [
+        1
+      ],
+      "saving": false,
+      "saved": false,
+      "error": null
+    },
+    {
+      "pendingSeqs": [
+        1
+      ],
+      "saving": true,
+      "saved": false,
+      "error": null
+    },
+    {
+      "pendingSeqs": [
+        1
+      ],
+      "saving": true,
+      "saved": false,
+      "error": null
+    },
+    {
+      "pendingSeqs": [
+        1,
+        2
+      ],
+      "saving": true,
+      "saved": false,
+      "error": null
+    },
+    {
+      "pendingSeqs": [
+        2
+      ],
+      "saving": true,
+      "saved": false,
+      "error": null
+    },
+    {
+      "pendingSeqs": [
+        2
+      ],
+      "saving": true,
+      "saved": false,
+      "error": null
+    },
+    {
+      "pendingSeqs": [],
+      "saving": true,
+      "saved": true,
+      "error": null
+    },
+    {
+      "pendingSeqs": [],
+      "saving": false,
+      "saved": true,
+      "error": null
+    }
+  ],
+  "pending": [],
+  "committed": {
+    "schemaVersion": "ytk-f2-20261014-0d5dfa38",
+    "questionSchemaVersion": "ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac",
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 11,
+    "overview": {
+      "recordId": "ovw_main",
+      "identity": "unanswered",
+      "billing": "unanswered",
+      "finance": "unanswered",
+      "data": "unanswered",
+      "family": "unanswered",
+      "revision": 4,
+      "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+    },
+    "categories": [
+      {
+        "recordId": "cat_device",
+        "categoryKey": "device",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_base",
+        "categoryKey": "base",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_mail",
+        "categoryKey": "mail",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_social",
+        "categoryKey": "social",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_cloud",
+        "categoryKey": "cloud",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_subscription",
+        "categoryKey": "subscription",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_finance",
+        "categoryKey": "finance",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_commerce",
+        "categoryKey": "commerce",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_auth",
+        "categoryKey": "auth",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_license",
+        "categoryKey": "license",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_carrier",
+        "categoryKey": "carrier",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "cat_business",
+        "categoryKey": "business",
+        "usageStatus": "unanswered",
+        "intention": "unanswered",
+        "revision": 3,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      }
+    ],
+    "services": [
+      {
+        "recordId": "svc_00000001-0000-4000-8000-000000000003",
+        "categoryKey": "social",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "recordState": "completed",
+        "usageStatus": "unknown",
+        "answers": {
+          "importantData": "unanswered",
+          "handover": "unanswered",
+          "billing": "unanswered"
+        },
+        "intentionOverride": null,
+        "revision": 5,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "svc_00000002-0000-4000-8000-000000000003",
+        "categoryKey": "social",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "recordState": "completed",
+        "usageStatus": "unknown",
+        "answers": {
+          "importantData": "unanswered",
+          "handover": "unanswered",
+          "billing": "unanswered"
+        },
+        "intentionOverride": null,
+        "revision": 6,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "categoryKey": "social",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "recordState": "partial",
+        "usageStatus": "unanswered",
+        "answers": {
+          "importantData": "unanswered",
+          "handover": "unanswered",
+          "billing": "unanswered"
+        },
+        "intentionOverride": null,
+        "revision": 1,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      },
+      {
+        "recordId": "svc_00000004-0000-4000-8000-000000000003",
+        "categoryKey": "social",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "recordState": "partial",
+        "usageStatus": "unanswered",
+        "answers": {
+          "importantData": "unanswered",
+          "handover": "unanswered",
+          "billing": "unanswered"
+        },
+        "intentionOverride": null,
+        "revision": 1,
+        "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+      }
+    ]
+  },
+  "hookSnapshot": null,
+  "stageEvidence": [
+    {
+      "stage": "COMMITTED",
+      "seq": 1,
+      "stores": {
+        "meta": [
+          {
+            "key": "current",
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38",
+            "questionSchemaVersion": "ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac",
+            "generationId": "gen_73000000-0000-4000-8000-000000000003",
+            "globalRevision": 10
+          }
+        ],
+        "overview": [
+          {
+            "recordId": "ovw_main",
+            "identity": "unanswered",
+            "billing": "unanswered",
+            "finance": "unanswered",
+            "data": "unanswered",
+            "family": "unanswered",
+            "revision": 4,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          }
+        ],
+        "categories": [
+          {
+            "recordId": "cat_auth",
+            "categoryKey": "auth",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_base",
+            "categoryKey": "base",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_business",
+            "categoryKey": "business",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_carrier",
+            "categoryKey": "carrier",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_cloud",
+            "categoryKey": "cloud",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_commerce",
+            "categoryKey": "commerce",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_device",
+            "categoryKey": "device",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_finance",
+            "categoryKey": "finance",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_license",
+            "categoryKey": "license",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_mail",
+            "categoryKey": "mail",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_social",
+            "categoryKey": "social",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_subscription",
+            "categoryKey": "subscription",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          }
+        ],
+        "services": [
+          {
+            "recordId": "svc_00000001-0000-4000-8000-000000000003",
+            "categoryKey": "social",
+            "serviceCatalogId": "other",
+            "otherServiceName": "同名ダミー",
+            "recordState": "completed",
+            "usageStatus": "unknown",
+            "answers": {
+              "importantData": "unanswered",
+              "handover": "unanswered",
+              "billing": "unanswered"
+            },
+            "intentionOverride": null,
+            "revision": 5,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "svc_00000002-0000-4000-8000-000000000003",
+            "categoryKey": "social",
+            "serviceCatalogId": "other",
+            "otherServiceName": "同名ダミー",
+            "recordState": "completed",
+            "usageStatus": "unknown",
+            "answers": {
+              "importantData": "unanswered",
+              "handover": "unanswered",
+              "billing": "unanswered"
+            },
+            "intentionOverride": null,
+            "revision": 6,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "svc_00000003-0000-4000-8000-000000000003",
+            "categoryKey": "social",
+            "serviceCatalogId": "other",
+            "otherServiceName": "同名ダミー",
+            "recordState": "partial",
+            "usageStatus": "unanswered",
+            "answers": {
+              "importantData": "unanswered",
+              "handover": "unanswered",
+              "billing": "unanswered"
+            },
+            "intentionOverride": null,
+            "revision": 1,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "COMMITTED",
+      "seq": 2,
+      "stores": {
+        "meta": [
+          {
+            "key": "current",
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38",
+            "questionSchemaVersion": "ytk-qm-gitblob-4a9950b19813e74bc51de2246465096818d375ac",
+            "generationId": "gen_73000000-0000-4000-8000-000000000003",
+            "globalRevision": 11
+          }
+        ],
+        "overview": [
+          {
+            "recordId": "ovw_main",
+            "identity": "unanswered",
+            "billing": "unanswered",
+            "finance": "unanswered",
+            "data": "unanswered",
+            "family": "unanswered",
+            "revision": 4,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          }
+        ],
+        "categories": [
+          {
+            "recordId": "cat_auth",
+            "categoryKey": "auth",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_base",
+            "categoryKey": "base",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_business",
+            "categoryKey": "business",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_carrier",
+            "categoryKey": "carrier",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_cloud",
+            "categoryKey": "cloud",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_commerce",
+            "categoryKey": "commerce",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_device",
+            "categoryKey": "device",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_finance",
+            "categoryKey": "finance",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_license",
+            "categoryKey": "license",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_mail",
+            "categoryKey": "mail",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_social",
+            "categoryKey": "social",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "cat_subscription",
+            "categoryKey": "subscription",
+            "usageStatus": "unanswered",
+            "intention": "unanswered",
+            "revision": 3,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          }
+        ],
+        "services": [
+          {
+            "recordId": "svc_00000001-0000-4000-8000-000000000003",
+            "categoryKey": "social",
+            "serviceCatalogId": "other",
+            "otherServiceName": "同名ダミー",
+            "recordState": "completed",
+            "usageStatus": "unknown",
+            "answers": {
+              "importantData": "unanswered",
+              "handover": "unanswered",
+              "billing": "unanswered"
+            },
+            "intentionOverride": null,
+            "revision": 5,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "svc_00000002-0000-4000-8000-000000000003",
+            "categoryKey": "social",
+            "serviceCatalogId": "other",
+            "otherServiceName": "同名ダミー",
+            "recordState": "completed",
+            "usageStatus": "unknown",
+            "answers": {
+              "importantData": "unanswered",
+              "handover": "unanswered",
+              "billing": "unanswered"
+            },
+            "intentionOverride": null,
+            "revision": 6,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "svc_00000003-0000-4000-8000-000000000003",
+            "categoryKey": "social",
+            "serviceCatalogId": "other",
+            "otherServiceName": "同名ダミー",
+            "recordState": "partial",
+            "usageStatus": "unanswered",
+            "answers": {
+              "importantData": "unanswered",
+              "handover": "unanswered",
+              "billing": "unanswered"
+            },
+            "intentionOverride": null,
+            "revision": 1,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          },
+          {
+            "recordId": "svc_00000004-0000-4000-8000-000000000003",
+            "categoryKey": "social",
+            "serviceCatalogId": "other",
+            "otherServiceName": "同名ダミー",
+            "recordState": "partial",
+            "usageStatus": "unanswered",
+            "answers": {
+              "importantData": "unanswered",
+              "handover": "unanswered",
+              "billing": "unanswered"
+            },
+            "intentionOverride": null,
+            "revision": 1,
+            "schemaVersion": "ytk-f2-20261014-0d5dfa38"
+          }
+        ]
+      }
+    }
+  ]
+}

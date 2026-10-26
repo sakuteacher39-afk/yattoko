@@ -1,0 +1,86 @@
+{
+  "caseId": "F2:SAVE-08",
+  "runId": "F5-AUTO-RESUME-B4-20261026-001",
+  "attempt": 1,
+  "index": 137,
+  "label": "F2:DIR-02-positive-2-subscription-partial-unanswered-unknown-control",
+  "mode": "sequence",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 165,
+    "description": "changed record revisionは各1回",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T11:28:01.715Z",
+  "finishedAt": "2026-10-26T11:28:01.721Z",
+  "input": {
+    "path": "inputs/258dbc5ef3cf3909cd47eb3fb5a203646544af054c7aa1410d9d7e428323989c.bin",
+    "bytes": 3105,
+    "sha256": "258dbc5ef3cf3909cd47eb3fb5a203646544af054c7aa1410d9d7e428323989c"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "76c4cc94b815eebb42c2e6c6d4fac6c8aaeab8f56ce1558f510ee3bb96eea0d5",
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "operationsSHA256": "baa4a12f41f2719c6ea1aa8669c9ba1696bf3ec5028d548de09496246ec84566",
+    "initialRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003"
+    ],
+    "initialNames": [
+      "試験用サービス1",
+      "試験用サービス2"
+    ],
+    "queueMode": null,
+    "collisionRecipe": null
+  },
+  "oracleNote": "Independent F2 model/manifest, canonical record-ID targeting, per-commit full store states and explicit revision/global deltas. No product validator generates expected values.",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": false,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveCalls": 0,
+    "maxInFlight": 0,
+    "committedSeqs": [],
+    "attemptedSeqs": [],
+    "noDoubleCommittedSeq": true,
+    "pendingCount": 0,
+    "pendingSeqs": [],
+    "pendingOperations": [],
+    "coordinatorStopped": false,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 0,
+    "hookObserved": false,
+    "hookDuringFirstWrite": false,
+    "generatedRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003"
+    ],
+    "unauthorizedMutation": false,
+    "initialStoresSHA256": "402203baa35fa4b2c3682b7d40178af1a0ad8ba631e425d80b83b508d5bd2e8b",
+    "afterStoresSHA256": "fcd5d56538e34784cafa957df78dde2416b2f546b0a3b36b3dda877987f9ee25"
+  },
+  "status": "PASS",
+  "executionError": null
+}

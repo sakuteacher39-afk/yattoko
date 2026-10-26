@@ -1,0 +1,130 @@
+{
+  "caseId": "F2:ID-03",
+  "runId": "F5-AUTO-RESUME-B4-20261026-001",
+  "attempt": 1,
+  "index": 166,
+  "label": "carrier-partial-generator-malformed",
+  "mode": "identity",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 147,
+    "description": "同名service複数でもmergeしない",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T11:28:39.957Z",
+  "finishedAt": "2026-10-26T11:28:39.962Z",
+  "input": {
+    "path": "inputs/19bfa77584f334ff2d0721962dad67df2b4c456ea248835eefd0ad7cc47091d3.bin",
+    "bytes": 3568,
+    "sha256": "19bfa77584f334ff2d0721962dad67df2b4c456ea248835eefd0ad7cc47091d3"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 1,
+    "saveCalls": 0,
+    "readwriteTransactions": 0,
+    "completeCount": 0,
+    "abortCount": 0,
+    "pendingCount": 2,
+    "coordinatorStopped": true,
+    "noDoubleCommittedSeq": true,
+    "oldStateUnchanged": true,
+    "unauthorizedMutation": false,
+    "pendingOperations": [
+      {
+        "categoryKey": "carrier",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": null
+      },
+      {
+        "categoryKey": "carrier",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": null
+      }
+    ]
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "1283ab4d18f402e2d1cd758d310a7f4df9e0f15bb16a607ed88dc629c9e60501",
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "operationsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "initialRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003"
+    ],
+    "initialNames": [
+      "同名ダミー",
+      "同名ダミー"
+    ],
+    "queueMode": null,
+    "collisionRecipe": "generator-malformed"
+  },
+  "oracleNote": "Independent F2 model/manifest, canonical record-ID targeting, per-commit full store states and explicit revision/global deltas. No product validator generates expected values.",
+  "actual": {
+    "accepted": false,
+    "error": {
+      "name": "SaveError",
+      "code": "collision"
+    },
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "completeCount": 0,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveCalls": 0,
+    "maxInFlight": 0,
+    "committedSeqs": [],
+    "attemptedSeqs": [],
+    "noDoubleCommittedSeq": true,
+    "pendingCount": 2,
+    "pendingSeqs": [
+      1,
+      2
+    ],
+    "pendingOperations": [
+      {
+        "categoryKey": "carrier",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": null
+      },
+      {
+        "categoryKey": "carrier",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": null
+      }
+    ],
+    "coordinatorStopped": true,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 1,
+    "hookObserved": false,
+    "hookDuringFirstWrite": false,
+    "generatedRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003"
+    ],
+    "unauthorizedMutation": false,
+    "initialStoresSHA256": "b7d0c355ecb6caa4074be01afcf36cfdf386801a9d927bd3a800cc564223b5e9",
+    "afterStoresSHA256": "b7d0c355ecb6caa4074be01afcf36cfdf386801a9d927bd3a800cc564223b5e9"
+  },
+  "status": "PASS",
+  "executionError": null
+}

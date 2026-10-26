@@ -1,0 +1,119 @@
+{
+  "caseId": "F2:ID-03",
+  "runId": "F5-AUTO-RESUME-B4-20261026-001",
+  "attempt": 1,
+  "index": 15,
+  "label": "device-completed-second-fails",
+  "mode": "identity",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 147,
+    "description": "同名service複数でもmergeしない",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T11:28:38.476Z",
+  "finishedAt": "2026-10-26T11:28:38.483Z",
+  "input": {
+    "path": "inputs/5f0df64a9d99fda45e1f271138a6fe14d45617bd5de33aab29f18533e0bf6f72.bin",
+    "bytes": 3700,
+    "sha256": "5f0df64a9d99fda45e1f271138a6fe14d45617bd5de33aab29f18533e0bf6f72"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 2,
+    "saveCalls": 1,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "pendingCount": 1,
+    "coordinatorStopped": true,
+    "noDoubleCommittedSeq": true,
+    "unauthorizedMutation": false,
+    "pendingOperations": [
+      {
+        "categoryKey": "device",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": null
+      }
+    ]
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "64e395d8bdfbe9437371a5a2db04871df53af9a190421f023286995dde18f13a",
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "operationsSHA256": "1da0cb08a5eef8868228dd128d4d9d1d0b925e98acdf03edd0e4b354af0650bb",
+    "initialRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003"
+    ],
+    "initialNames": [
+      "同名ダミー",
+      "同名ダミー"
+    ],
+    "queueMode": null,
+    "collisionRecipe": "second-fails"
+  },
+  "oracleNote": "Independent F2 model/manifest, canonical record-ID targeting, per-commit full store states and explicit revision/global deltas. No product validator generates expected values.",
+  "actual": {
+    "accepted": false,
+    "error": {
+      "name": "SaveError",
+      "code": "collision"
+    },
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": false,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveCalls": 1,
+    "maxInFlight": 1,
+    "committedSeqs": [
+      1
+    ],
+    "attemptedSeqs": [
+      1
+    ],
+    "noDoubleCommittedSeq": true,
+    "pendingCount": 1,
+    "pendingSeqs": [
+      2
+    ],
+    "pendingOperations": [
+      {
+        "categoryKey": "device",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": null
+      }
+    ],
+    "coordinatorStopped": true,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 2,
+    "hookObserved": false,
+    "hookDuringFirstWrite": false,
+    "generatedRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003",
+      "svc_00000003-0000-4000-8000-000000000003"
+    ],
+    "unauthorizedMutation": false,
+    "initialStoresSHA256": "43e802deb73614b6d98485d03cd721f5a8d702f088ae7fd5df29405be831b09e",
+    "afterStoresSHA256": "8d37ccc8b429eb1de4d76c086441ac8ccfc8933e23e71e979d485843c7830400"
+  },
+  "status": "PASS",
+  "executionError": null
+}

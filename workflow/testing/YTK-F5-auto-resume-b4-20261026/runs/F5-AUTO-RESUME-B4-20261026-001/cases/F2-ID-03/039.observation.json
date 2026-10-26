@@ -1,0 +1,119 @@
+{
+  "caseId": "F2:ID-03",
+  "runId": "F5-AUTO-RESUME-B4-20261026-001",
+  "attempt": 1,
+  "index": 39,
+  "label": "mail-partial-second-fails",
+  "mode": "identity",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 147,
+    "description": "同名service複数でもmergeしない",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T11:28:38.695Z",
+  "finishedAt": "2026-10-26T11:28:38.701Z",
+  "input": {
+    "path": "inputs/f7a76efb2d4ab4993ed99168cf3fc57584d39ac6a7b6705f9b179fd02f6beb52.bin",
+    "bytes": 3700,
+    "sha256": "f7a76efb2d4ab4993ed99168cf3fc57584d39ac6a7b6705f9b179fd02f6beb52"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 2,
+    "saveCalls": 1,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "pendingCount": 1,
+    "coordinatorStopped": true,
+    "noDoubleCommittedSeq": true,
+    "unauthorizedMutation": false,
+    "pendingOperations": [
+      {
+        "categoryKey": "mail",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": null
+      }
+    ]
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "ed84158631915d980148b9079e6fda20370bcfa871df8d5f0e4bf80325564353",
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "operationsSHA256": "8fb0c514a0e20d6050f814ff8b8207730bf7e163d9bd0487484fa1f3e90a2b9f",
+    "initialRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003"
+    ],
+    "initialNames": [
+      "同名ダミー",
+      "同名ダミー"
+    ],
+    "queueMode": null,
+    "collisionRecipe": "second-fails"
+  },
+  "oracleNote": "Independent F2 model/manifest, canonical record-ID targeting, per-commit full store states and explicit revision/global deltas. No product validator generates expected values.",
+  "actual": {
+    "accepted": false,
+    "error": {
+      "name": "SaveError",
+      "code": "collision"
+    },
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": false,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveCalls": 1,
+    "maxInFlight": 1,
+    "committedSeqs": [
+      1
+    ],
+    "attemptedSeqs": [
+      1
+    ],
+    "noDoubleCommittedSeq": true,
+    "pendingCount": 1,
+    "pendingSeqs": [
+      2
+    ],
+    "pendingOperations": [
+      {
+        "categoryKey": "mail",
+        "serviceCatalogId": "other",
+        "otherServiceName": "同名ダミー",
+        "type": "addService",
+        "recordId": null
+      }
+    ],
+    "coordinatorStopped": true,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 2,
+    "hookObserved": false,
+    "hookDuringFirstWrite": false,
+    "generatedRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003",
+      "svc_00000003-0000-4000-8000-000000000003"
+    ],
+    "unauthorizedMutation": false,
+    "initialStoresSHA256": "613e4b3fd39e060c99b682cd54197d10ad189bf8ea2eac4e5e5a6032c7090133",
+    "afterStoresSHA256": "a0557386b633f3ab70a169cf39ee965a8678e12f4a6d05d6129b3614f662bb5a"
+  },
+  "status": "PASS",
+  "executionError": null
+}

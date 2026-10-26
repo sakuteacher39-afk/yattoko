@@ -1,0 +1,112 @@
+{
+  "caseId": "F2:SAVE-04",
+  "runId": "F5-AUTO-RESUME-B4-20261026-001",
+  "attempt": 1,
+  "index": 8,
+  "label": "completed-overview-write-success",
+  "mode": "queue",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 161,
+    "description": "save中の次mutationをqueue",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T11:27:44.877Z",
+  "finishedAt": "2026-10-26T11:27:44.887Z",
+  "input": {
+    "path": "inputs/e5fc1add3771cd57582729e41a03263c044594fc6e4dd96b9aa42395dae51eb2.bin",
+    "bytes": 3260,
+    "sha256": "e5fc1add3771cd57582729e41a03263c044594fc6e4dd96b9aa42395dae51eb2"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "coordinatorCommittedMatches": true,
+    "readwriteTransactions": 3,
+    "completeCount": 3,
+    "abortCount": 0,
+    "saveCalls": 3,
+    "maxInFlight": 1,
+    "committedSeqs": [
+      1,
+      2,
+      3
+    ],
+    "attemptedSeqs": [
+      1,
+      2,
+      3
+    ],
+    "noDoubleCommittedSeq": true,
+    "pendingCount": 0,
+    "coordinatorStopped": false,
+    "hookObserved": true,
+    "hookDuringFirstWrite": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "f380a96bac1c17422ed34800056aca82663a33d2aed3dff383ca6c2b9acc56c5",
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "operationsSHA256": "5ead5b50d7c428af5c65a1867c146e12dd0d3afc0f4c9693d478bdcd82c75f88",
+    "initialRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003"
+    ],
+    "initialNames": [
+      "試験用サービス1",
+      "試験用サービス2"
+    ],
+    "queueMode": "write-success",
+    "collisionRecipe": null
+  },
+  "oracleNote": "Independent F2 model/manifest, canonical record-ID targeting, per-commit full store states and explicit revision/global deltas. No product validator generates expected values.",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": false,
+    "readwriteTransactions": 3,
+    "completeCount": 3,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveCalls": 3,
+    "maxInFlight": 1,
+    "committedSeqs": [
+      1,
+      2,
+      3
+    ],
+    "attemptedSeqs": [
+      1,
+      2,
+      3
+    ],
+    "noDoubleCommittedSeq": true,
+    "pendingCount": 0,
+    "pendingSeqs": [],
+    "pendingOperations": [],
+    "coordinatorStopped": false,
+    "coordinatorCommittedMatches": true,
+    "generatorCalls": 0,
+    "hookObserved": true,
+    "hookDuringFirstWrite": true,
+    "generatedRecordIds": [
+      "svc_00000001-0000-4000-8000-000000000003",
+      "svc_00000002-0000-4000-8000-000000000003"
+    ],
+    "unauthorizedMutation": false,
+    "initialStoresSHA256": "d5f839c6d6ebd242c0f07e32672ee34d8f48853b3962c3c3991b6365ddf82ecc",
+    "afterStoresSHA256": "b1f86a0baf400cf30f001dc5cf7c04a33b0e075dccadbf609ab275a5d42b6fd2"
+  },
+  "status": "PASS",
+  "executionError": null
+}
