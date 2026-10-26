@@ -1,0 +1,259 @@
+{
+  "pass": true,
+  "parserVersion": "8.18.0",
+  "scannerStartLine": 11,
+  "scannerEndLine": 21,
+  "sourceSHA256": "46b71b4485c9953bda144c4c3662574ab5e64a415048c78b1a4863006dbff165",
+  "allocationTypes": {
+    "constantNumericLimitsObject": 1,
+    "constantLiteralArray": 1,
+    "localDecodedKeySet": 1
+  },
+  "noDynamicObjectArrayConstruction": true,
+  "noPropertyAssignments": true,
+  "noUnknownProducerCalls": true,
+  "onlyNonVoidReturnIsScalarString": true,
+  "JSONParseArgumentOnlyQuotedBoundedToken": true,
+  "localSetOnlyAddsDecodedScalarKey": true,
+  "calls": [
+    {
+      "callee": "text.charCodeAt",
+      "line": 14,
+      "text": "text.charCodeAt(i++)"
+    },
+    {
+      "callee": "reject",
+      "line": 14,
+      "text": "reject('LEXICAL')"
+    },
+    {
+      "callee": "text.slice",
+      "line": 14,
+      "text": "text.slice(start,i)"
+    },
+    {
+      "callee": "reject",
+      "line": 14,
+      "text": "reject('TOKEN_LIMIT')"
+    },
+    {
+      "callee": "JSON.parse",
+      "line": 14,
+      "text": "JSON.parse(token)"
+    },
+    {
+      "callee": "reject",
+      "line": 14,
+      "text": "reject('LEXICAL')"
+    },
+    {
+      "callee": "unicode",
+      "line": 14,
+      "text": "unicode(s)"
+    },
+    {
+      "callee": "reject",
+      "line": 14,
+      "text": "reject('LEXICAL')"
+    },
+    {
+      "callee": "reject",
+      "line": 15,
+      "text": "reject('DEPTH')"
+    },
+    {
+      "callee": "whitespace",
+      "line": 15,
+      "text": "whitespace()"
+    },
+    {
+      "callee": "whitespace",
+      "line": 15,
+      "text": "whitespace()"
+    },
+    {
+      "callee": "reject",
+      "line": 15,
+      "text": "reject('LEXICAL')"
+    },
+    {
+      "callee": "string",
+      "line": 15,
+      "text": "string()"
+    },
+    {
+      "callee": "seen.has",
+      "line": 15,
+      "text": "seen.has(key)"
+    },
+    {
+      "callee": "reject",
+      "line": 15,
+      "text": "reject('DUPLICATE_KEY')"
+    },
+    {
+      "callee": "seen.add",
+      "line": 15,
+      "text": "seen.add(key)"
+    },
+    {
+      "callee": "reject",
+      "line": 15,
+      "text": "reject('MEMBER_LIMIT')"
+    },
+    {
+      "callee": "whitespace",
+      "line": 15,
+      "text": "whitespace()"
+    },
+    {
+      "callee": "reject",
+      "line": 15,
+      "text": "reject('LEXICAL')"
+    },
+    {
+      "callee": "value",
+      "line": 15,
+      "text": "value(depth+1,key)"
+    },
+    {
+      "callee": "whitespace",
+      "line": 15,
+      "text": "whitespace()"
+    },
+    {
+      "callee": "reject",
+      "line": 15,
+      "text": "reject('LEXICAL')"
+    },
+    {
+      "callee": "whitespace",
+      "line": 16,
+      "text": "whitespace()"
+    },
+    {
+      "callee": "reject",
+      "line": 16,
+      "text": "reject('ARRAY_LIMIT')"
+    },
+    {
+      "callee": "value",
+      "line": 16,
+      "text": "value(depth+1,path)"
+    },
+    {
+      "callee": "whitespace",
+      "line": 16,
+      "text": "whitespace()"
+    },
+    {
+      "callee": "reject",
+      "line": 16,
+      "text": "reject('LEXICAL')"
+    },
+    {
+      "callee": "string",
+      "line": 17,
+      "text": "string()"
+    },
+    {
+      "callee": "text.startsWith",
+      "line": 18,
+      "text": "text.startsWith(literal,i)"
+    },
+    {
+      "callee": "REGEXP.exec",
+      "line": 19,
+      "text": "/^(?:0|[1-9][0-9]*)/.exec(text.slice(i))"
+    },
+    {
+      "callee": "text.slice",
+      "line": 19,
+      "text": "text.slice(i)"
+    },
+    {
+      "callee": "reject",
+      "line": 19,
+      "text": "reject('LEXICAL')"
+    },
+    {
+      "callee": "Number.isSafeInteger",
+      "line": 19,
+      "text": "Number.isSafeInteger(Number(match[0]))"
+    },
+    {
+      "callee": "Number",
+      "line": 19,
+      "text": "Number(match[0])"
+    },
+    {
+      "callee": "reject",
+      "line": 19,
+      "text": "reject('NUMBER')"
+    },
+    {
+      "callee": "whitespace",
+      "line": 20,
+      "text": "whitespace()"
+    },
+    {
+      "callee": "consume",
+      "line": 20,
+      "text": "consume(depth,path)"
+    },
+    {
+      "callee": "bytes",
+      "line": 20,
+      "text": "bytes(text.slice(start,i))"
+    },
+    {
+      "callee": "text.slice",
+      "line": 20,
+      "text": "text.slice(start,i)"
+    },
+    {
+      "callee": "reject",
+      "line": 20,
+      "text": "reject('PENDING_LIMIT')"
+    },
+    {
+      "callee": "value",
+      "line": 21,
+      "text": "value(0,'root')"
+    },
+    {
+      "callee": "whitespace",
+      "line": 21,
+      "text": "whitespace()"
+    },
+    {
+      "callee": "reject",
+      "line": 21,
+      "text": "reject('LEXICAL')"
+    }
+  ],
+  "scope": "Exact fixed scanJSON source under captured native intrinsics. No claim about post-scan projection, V8 internals, native browser memory or alternate sources.",
+  "positiveSourceSensitivity": [
+    {
+      "kind": "whole-parse",
+      "testSideCopyOnly": true,
+      "rejected": true,
+      "reason": "Unexpected token (5:79)",
+      "sourceSHA256": "4b1f1bfee3bad8a9308b4172161247e26b1010703a8bfd350dbc57d10f7bfe31"
+    },
+    {
+      "kind": "manual-object",
+      "testSideCopyOnly": true,
+      "rejected": true,
+      "reason": "Unexpected token (5:79)",
+      "sourceSHA256": "bb6d88b9d8a66235fecb6f4058a113ac73b1e4d5097d1e5e28c4f91ec90e549d"
+    },
+    {
+      "kind": "manual-array",
+      "testSideCopyOnly": true,
+      "rejected": true,
+      "reason": "Unexpected token (5:79)",
+      "sourceSHA256": "e27c8096c92344dace4678da28021a08699dafb5103b39068167912c40d370b7"
+    }
+  ]
+}

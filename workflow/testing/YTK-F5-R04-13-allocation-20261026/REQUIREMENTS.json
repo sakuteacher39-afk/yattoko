@@ -1,0 +1,73 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "sources": [
+    {
+      "path": "workflow/proposals/YTK-F3-backup-restore-design-draft-20261014.md",
+      "bytes": 42419,
+      "sha256": "a47297b2a84084629c7ecd70f202ed7f4d42d8a8e3d102d5139abeeba9c21f7d",
+      "gitBlob": "3558cea58f93419de2c990cfd5d1a2b5ff82d05d",
+      "quotes": [
+        {
+          "line": 90,
+          "text": "### 3.1 受入れ処理順序"
+        },
+        {
+          "line": 111,
+          "text": "lexical scannerはobjectごとにdecoded property nameのsetを持つ。"
+        },
+        {
+          "line": 727,
+          "text": "### 9.2 parse前resource guard"
+        },
+        {
+          "line": 738,
+          "text": "- scanner自体はraw bytes/textを全objectへ展開した別巨大treeとして保持しない。"
+        },
+        {
+          "line": 766,
+          "text": "memory："
+        },
+        {
+          "line": 768,
+          "text": "- peak memoryを測定できない場合、**16MB上限の安全性判定はNOT VERIFIABLE**とし最終PASSにしない。"
+        }
+      ]
+    },
+    {
+      "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+      "bytes": 31308,
+      "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80",
+      "gitBlob": "32aad05cf69779c70b5fae1cfda24ca52165e6e1",
+      "quotes": [
+        {
+          "line": 244,
+          "text": "- [ ] R04-13 raw16MBでduplicate scannerが別巨大ASTを作らない。"
+        }
+      ]
+    },
+    {
+      "path": "workflow/prototypes/YTK-F4/src/import-json.mjs",
+      "bytes": 3265,
+      "sha256": "46b71b4485c9953bda144c4c3662574ab5e64a415048c78b1a4863006dbff165",
+      "gitBlob": "754c9164fbc9f7166fece40c37ff02c5ea3a458a",
+      "quotes": []
+    },
+    {
+      "path": "workflow/prototypes/YTK-F4/src/import-backup.mjs",
+      "bytes": 9982,
+      "sha256": "6eb81070423905f95fbe9cca45805a37209e2a5bf2d946fba9b8a2cf5267a2d3",
+      "gitBlob": "6f67bc051986574120bf1cc6e62fb6be522183d0",
+      "quotes": []
+    }
+  ],
+  "exactRequirement": "Scanner itself does not retain raw bytes/text expanded into a separate huge tree covering all objects; per-object decoded key sets, then whole JSON.parse, schema canonical regeneration and checksum in order.",
+  "distinctions": [
+    "R04-13 scanner tree property is distinct from the overall16MB Safari safety gate. F6 and peak Safari measurements not attempted.",
+    "Post-parse projection/payload/canonical object copies are legitimate; count only scanner window for violation.",
+    "Low heap size or one JSON.parse alone cannot prove no second AST."
+  ],
+  "scopeAudit": "Acorn independently inventories all scanner constructors, objects/arrays, producer calls, assignments and return flows; exact source whitelist plus runtime scalar observations. Does not claim a general JS theorem or alternate code support.",
+  "runtimeOracle": "Heap object graph recognizer: fileFormat + snapshot.services element recordId/answers and exact service count; groups snapshot node ID. Retained and transient positive controls + allocation profiles; snapshots by phase.",
+  "nodeDocs": "https://nodejs.org/api/inspector.html",
+  "protocolDocs": "https://chromedevtools.github.io/devtools-protocol/tot/HeapProfiler/"
+}
