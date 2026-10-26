@@ -1,0 +1,72 @@
+{
+  "caseId": "F2:DIR-04",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "attempt": 1,
+  "index": 121,
+  "label": "positive-4-business-completed-unanswered-unanswered-control",
+  "mode": "mutation",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 123,
+    "description": "R001 data=no + service importantData=yes -> data=yes",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:49:11.686Z",
+  "finishedAt": "2026-10-26T10:49:11.691Z",
+  "input": {
+    "path": "inputs/58828208439c02fdb9edfbbbc957e3f4b928c97f954687286a1c1114daee7331.bin",
+    "bytes": 3265,
+    "sha256": "58828208439c02fdb9edfbbbc957e3f4b928c97f954687286a1c1114daee7331"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "c94f0e223cfb2a9ec714d5d4e1167f2f463a847117b4d1ce4245141169373c1e",
+    "datasetUTF8Bytes": 3130,
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "recordStates": [
+      "completed",
+      "completed"
+    ],
+    "operationType": "service",
+    "semanticCorruptionRetained": "ordinary"
+  },
+  "oracleNote": "Independent F2 semantic model, normative manifest, full4-store expected dataset/hash, explicit generation/revision deltas and UTF8 Buffer byte boundary; no product validator generates expected values",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "oldStateUnchanged": false,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "sourceGenerationNotReused": true,
+    "saveCalls": 0,
+    "retriesRejected": false,
+    "pendingRetained": 0,
+    "pendingMatches": true,
+    "coordinatorStopped": false,
+    "notificationAbsent": false,
+    "capacityBytes": 3115,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "72e8348b7f73f8fedd264243e8e6bc236bff629f3202f20c6a3329b9892e6c9a",
+    "afterStoresSHA256": "9d22d839936940c112183d7fd000e5f0c9fb7c7d34ba2c9f74d354a31a7c2fa3"
+  },
+  "status": "PASS",
+  "executionError": null
+}

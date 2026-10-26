@@ -1,0 +1,82 @@
+{
+  "caseId": "F2:DIR-06",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "attempt": 1,
+  "index": 459,
+  "label": "positive-1-license-family-partial-abort2",
+  "mode": "mutation",
+  "fault": {
+    "store": "overview",
+    "method": "put",
+    "recordId": "ovw_main"
+  },
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 125,
+    "description": "positive整合transaction abortでchildだけ/summaryだけ残らない",
+    "details": [
+      "#### R001 negative変更起点"
+    ],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:49:20.506Z",
+  "finishedAt": "2026-10-26T10:49:20.511Z",
+  "input": {
+    "path": "inputs/66c08309e9b0b8272ce3d0a738698ac27197a8bb518feb957f9be6845bd2f798.bin",
+    "bytes": 3212,
+    "sha256": "66c08309e9b0b8272ce3d0a738698ac27197a8bb518feb957f9be6845bd2f798"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "d3e99f41b21945c8b33d341dbea5f796718f9d3e2daaafd87331a16069a02684",
+    "datasetUTF8Bytes": 3077,
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "recordStates": [
+      "partial",
+      "partial"
+    ],
+    "operationType": "service",
+    "semanticCorruptionRetained": "ordinary"
+  },
+  "oracleNote": "Independent F2 semantic model, normative manifest, full4-store expected dataset/hash, explicit generation/revision deltas and UTF8 Buffer byte boundary; no product validator generates expected values",
+  "actual": {
+    "accepted": false,
+    "error": {
+      "name": "AbortError",
+      "code": 20
+    },
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": true,
+    "sourceGenerationNotReused": true,
+    "saveCalls": 0,
+    "retriesRejected": false,
+    "pendingRetained": 0,
+    "pendingMatches": true,
+    "coordinatorStopped": false,
+    "notificationAbsent": false,
+    "capacityBytes": 3077,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "3cf2129b13a83be476ee05441fa9cffa2f207113fb70349f9e3388c2c375d7d1",
+    "afterStoresSHA256": "3cf2129b13a83be476ee05441fa9cffa2f207113fb70349f9e3388c2c375d7d1"
+  },
+  "status": "PASS",
+  "executionError": null
+}

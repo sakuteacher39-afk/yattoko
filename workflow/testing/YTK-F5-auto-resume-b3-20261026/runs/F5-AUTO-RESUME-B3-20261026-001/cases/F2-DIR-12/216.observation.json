@@ -1,0 +1,78 @@
+{
+  "caseId": "F2:DIR-12",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "attempt": 1,
+  "index": 216,
+  "label": "5-finance-completed-known-yes-negative-blocked",
+  "mode": "mutation",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 133,
+    "description": "reject時にchildを削除/変更しない",
+    "details": [
+      "#### detail negative / delete"
+    ],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:49:52.424Z",
+  "finishedAt": "2026-10-26T10:49:52.429Z",
+  "input": {
+    "path": "inputs/956fc50b86b3090f6d89c111526a8a43ca46f65f65c4348af0ced4dde51be125.bin",
+    "bytes": 3134,
+    "sha256": "956fc50b86b3090f6d89c111526a8a43ca46f65f65c4348af0ced4dde51be125"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": false,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "ad7f5d6d8daf6127ea8c69e75f2ae9c5788a840e80c449008b77c5aedccc64af",
+    "datasetUTF8Bytes": 3057,
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 10,
+    "recordStates": [
+      "completed",
+      "completed"
+    ],
+    "operationType": "overview",
+    "semanticCorruptionRetained": "ordinary"
+  },
+  "oracleNote": "Positive child fact and attempted negative parent/overview remain in raw input. Rejection must preserve both child records, all summaries and every revision.",
+  "actual": {
+    "accepted": false,
+    "error": {
+      "name": "Error",
+      "code": "contradiction"
+    },
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": false,
+    "sourceGenerationNotReused": true,
+    "saveCalls": 0,
+    "retriesRejected": false,
+    "pendingRetained": 0,
+    "pendingMatches": true,
+    "coordinatorStopped": false,
+    "notificationAbsent": false,
+    "capacityBytes": 3057,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "83ae8a8456bbcff70da1a0892a43889f692b0a104b0ce491ecbc6543bfb8cf51",
+    "afterStoresSHA256": "83ae8a8456bbcff70da1a0892a43889f692b0a104b0ce491ecbc6543bfb8cf51"
+  },
+  "status": "PASS",
+  "executionError": null
+}

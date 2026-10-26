@@ -1,0 +1,82 @@
+{
+  "caseId": "F2:DIR-06",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "attempt": 1,
+  "index": 850,
+  "label": "positive-2-subscription-completed-no-unanswered-abort3",
+  "mode": "mutation",
+  "fault": {
+    "store": "categories",
+    "method": "put",
+    "recordId": "cat_business"
+  },
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 125,
+    "description": "positive整合transaction abortでchildだけ/summaryだけ残らない",
+    "details": [
+      "#### R001 negative変更起点"
+    ],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:49:23.633Z",
+  "finishedAt": "2026-10-26T10:49:23.642Z",
+  "input": {
+    "path": "inputs/affc87d6f764cd2bbb839e9c55ffa0d8e4e96907f88c7db7b271ed63e23c0243.bin",
+    "bytes": 3095,
+    "sha256": "affc87d6f764cd2bbb839e9c55ffa0d8e4e96907f88c7db7b271ed63e23c0243"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "f0b2cfdde5033fc15331ab082f945ea806a9f2b79e9c5dfece56630b7d821706",
+    "datasetUTF8Bytes": 2966,
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "recordStates": [
+      "completed",
+      "completed"
+    ],
+    "operationType": "service",
+    "semanticCorruptionRetained": "ordinary"
+  },
+  "oracleNote": "Independent F2 semantic model, normative manifest, full4-store expected dataset/hash, explicit generation/revision deltas and UTF8 Buffer byte boundary; no product validator generates expected values",
+  "actual": {
+    "accepted": false,
+    "error": {
+      "name": "AbortError",
+      "code": 20
+    },
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": true,
+    "sourceGenerationNotReused": true,
+    "saveCalls": 0,
+    "retriesRejected": false,
+    "pendingRetained": 0,
+    "pendingMatches": true,
+    "coordinatorStopped": false,
+    "notificationAbsent": false,
+    "capacityBytes": 2966,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "7329fc21510b98f959950ac826d710da314ac70259ca0386b4b8d7add75634be",
+    "afterStoresSHA256": "7329fc21510b98f959950ac826d710da314ac70259ca0386b4b8d7add75634be"
+  },
+  "status": "PASS",
+  "executionError": null
+}

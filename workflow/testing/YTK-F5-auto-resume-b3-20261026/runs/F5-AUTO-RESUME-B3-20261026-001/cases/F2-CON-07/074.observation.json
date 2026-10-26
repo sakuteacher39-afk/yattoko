@@ -1,0 +1,76 @@
+{
+  "caseId": "F2:CON-07",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "attempt": 1,
+  "index": 74,
+  "label": "commerce-partial-stale-category-record-only",
+  "mode": "con",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 154,
+    "description": "BroadcastChannel通知なしでもversion checkで拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:48:59.177Z",
+  "finishedAt": "2026-10-26T10:48:59.184Z",
+  "input": {
+    "path": "inputs/251bc122161637596e1d081046402c8ed23c8695dc67ddad6e2955c5a28111d2.bin",
+    "bytes": 3427,
+    "sha256": "251bc122161637596e1d081046402c8ed23c8695dc67ddad6e2955c5a28111d2"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "sourceGenerationNotReused": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "2001a68fb4e4a794e3dc4d26ea0170aecf494a02009499204064c0277ca6fe6a",
+    "datasetUTF8Bytes": 3064,
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "recordStates": [
+      "partial",
+      "partial"
+    ],
+    "operationType": "service",
+    "semanticCorruptionRetained": "ordinary"
+  },
+  "oracleNote": "B stale expected state was captured before A commit. Global aligned variants isolate record/generation mismatches. Fresh control proves operation valid. Logical two connections, not native browser tabs.",
+  "actual": {
+    "accepted": false,
+    "error": {
+      "name": "Error",
+      "code": "conflict"
+    },
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": false,
+    "sourceGenerationNotReused": true,
+    "saveCalls": 0,
+    "retriesRejected": false,
+    "pendingRetained": 0,
+    "pendingMatches": true,
+    "coordinatorStopped": false,
+    "notificationAbsent": true,
+    "capacityBytes": 3061,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "9e298596b0e6594e151a5c34964f436bfa95f995ad0effb6efefc4587ec03aa2",
+    "afterStoresSHA256": "9e298596b0e6594e151a5c34964f436bfa95f995ad0effb6efefc4587ec03aa2"
+  },
+  "status": "PASS",
+  "executionError": null
+}

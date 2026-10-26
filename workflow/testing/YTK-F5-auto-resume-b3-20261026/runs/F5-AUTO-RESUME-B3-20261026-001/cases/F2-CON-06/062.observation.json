@@ -1,0 +1,76 @@
+{
+  "caseId": "F2:CON-06",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "attempt": 1,
+  "index": 62,
+  "label": "carrier-partial-stale-global-or-generation",
+  "mode": "con",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 153,
+    "description": "restore後旧generation save拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:48:55.953Z",
+  "finishedAt": "2026-10-26T10:48:55.961Z",
+  "input": {
+    "path": "inputs/628c67f03da54c58d035c19660fda1c3162bd32f087788603656c27303b27171.bin",
+    "bytes": 6505,
+    "sha256": "628c67f03da54c58d035c19660fda1c3162bd32f087788603656c27303b27171"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "sourceGenerationNotReused": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "8046b27bb92d17d139f9460ab3e8590d86347518f701f3b652fb74e8b5f2b8b7",
+    "datasetUTF8Bytes": 3074,
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "recordStates": [
+      "partial",
+      "partial"
+    ],
+    "operationType": "service",
+    "semanticCorruptionRetained": "restore"
+  },
+  "oracleNote": "B stale expected state was captured before A commit. Global aligned variants isolate record/generation mismatches. Fresh control proves operation valid. Logical two connections, not native browser tabs.",
+  "actual": {
+    "accepted": false,
+    "error": {
+      "name": "Error",
+      "code": "conflict"
+    },
+    "inputUnchanged": true,
+    "oldStateUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": false,
+    "sourceGenerationNotReused": true,
+    "saveCalls": 0,
+    "retriesRejected": false,
+    "pendingRetained": 0,
+    "pendingMatches": true,
+    "coordinatorStopped": false,
+    "notificationAbsent": false,
+    "capacityBytes": 3073,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "c09e0fe14263d95301abd5d2528878411c89a6700a632d1272d594274238bc1a",
+    "afterStoresSHA256": "c09e0fe14263d95301abd5d2528878411c89a6700a632d1272d594274238bc1a"
+  },
+  "status": "PASS",
+  "executionError": null
+}

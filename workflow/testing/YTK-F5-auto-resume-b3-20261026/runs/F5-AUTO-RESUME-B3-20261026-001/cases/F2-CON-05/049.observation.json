@@ -1,0 +1,72 @@
+{
+  "caseId": "F2:CON-05",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "attempt": 1,
+  "index": 49,
+  "label": "auth-partial-fresh-control",
+  "mode": "con",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 152,
+    "description": "delete-all後旧generation save拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:48:52.702Z",
+  "finishedAt": "2026-10-26T10:48:52.708Z",
+  "input": {
+    "path": "inputs/59ca009df0a95f927649ad01f5dcf0daae6b3cd9fa9f6556b7b9f411dcf88566.bin",
+    "bytes": 3353,
+    "sha256": "59ca009df0a95f927649ad01f5dcf0daae6b3cd9fa9f6556b7b9f411dcf88566"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "sourceGenerationNotReused": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "f575d92a6e05a3e9ad5abf92760ff3146cb937bd8d9eb80a905f130e31c6a7e6",
+    "datasetUTF8Bytes": 3014,
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 1,
+    "recordStates": [
+      "partial",
+      "partial"
+    ],
+    "operationType": "service",
+    "semanticCorruptionRetained": "ordinary"
+  },
+  "oracleNote": "B stale expected state was captured before A commit. Global aligned variants isolate record/generation mismatches. Fresh control proves operation valid. Logical two connections, not native browser tabs.",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "oldStateUnchanged": false,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "sourceGenerationNotReused": true,
+    "saveCalls": 0,
+    "retriesRejected": false,
+    "pendingRetained": 0,
+    "pendingMatches": true,
+    "coordinatorStopped": false,
+    "notificationAbsent": false,
+    "capacityBytes": 3016,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "abb0142fb5b80209247bcf797faddf72428fd3c1fdcfb47dd291d2555217601a",
+    "afterStoresSHA256": "698531481027e96654a15b8a3868d9b6c8f52c4739d07127cd1a27b3b2c4670e"
+  },
+  "status": "PASS",
+  "executionError": null
+}

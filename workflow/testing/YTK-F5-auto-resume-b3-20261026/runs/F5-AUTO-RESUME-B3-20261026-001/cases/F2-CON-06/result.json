@@ -1,0 +1,383 @@
+{
+  "caseId": "F2:CON-06",
+  "status": "PASS",
+  "attempt": 1,
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 153,
+    "description": "restore後旧generation save拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "priorAttempts": [],
+  "plannedVariants": 72,
+  "completedVariants": 72,
+  "counts": {
+    "PASS": 72
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "device-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "device-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "device-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "device-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "device-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "label": "device-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "label": "base-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "label": "base-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 9,
+      "label": "base-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 10,
+      "label": "base-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 11,
+      "label": "base-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 12,
+      "label": "base-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 13,
+      "label": "mail-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 14,
+      "label": "mail-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 15,
+      "label": "mail-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 16,
+      "label": "mail-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 17,
+      "label": "mail-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 18,
+      "label": "mail-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 19,
+      "label": "social-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 20,
+      "label": "social-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 21,
+      "label": "social-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 22,
+      "label": "social-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 23,
+      "label": "social-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 24,
+      "label": "social-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 25,
+      "label": "cloud-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 26,
+      "label": "cloud-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 27,
+      "label": "cloud-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 28,
+      "label": "cloud-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 29,
+      "label": "cloud-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 30,
+      "label": "cloud-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 31,
+      "label": "subscription-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 32,
+      "label": "subscription-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 33,
+      "label": "subscription-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 34,
+      "label": "subscription-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 35,
+      "label": "subscription-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 36,
+      "label": "subscription-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 37,
+      "label": "finance-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 38,
+      "label": "finance-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 39,
+      "label": "finance-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 40,
+      "label": "finance-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 41,
+      "label": "finance-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 42,
+      "label": "finance-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 43,
+      "label": "commerce-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 44,
+      "label": "commerce-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 45,
+      "label": "commerce-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 46,
+      "label": "commerce-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 47,
+      "label": "commerce-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 48,
+      "label": "commerce-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 49,
+      "label": "auth-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 50,
+      "label": "auth-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 51,
+      "label": "auth-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 52,
+      "label": "auth-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 53,
+      "label": "auth-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 54,
+      "label": "auth-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 55,
+      "label": "license-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 56,
+      "label": "license-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 57,
+      "label": "license-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 58,
+      "label": "license-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 59,
+      "label": "license-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 60,
+      "label": "license-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 61,
+      "label": "carrier-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 62,
+      "label": "carrier-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 63,
+      "label": "carrier-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 64,
+      "label": "carrier-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 65,
+      "label": "carrier-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 66,
+      "label": "carrier-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 67,
+      "label": "business-partial-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 68,
+      "label": "business-partial-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 69,
+      "label": "business-partial-align-global-stale-generation-or-record",
+      "status": "PASS"
+    },
+    {
+      "index": 70,
+      "label": "business-completed-fresh-control",
+      "status": "PASS"
+    },
+    {
+      "index": 71,
+      "label": "business-completed-stale-global-or-generation",
+      "status": "PASS"
+    },
+    {
+      "index": 72,
+      "label": "business-completed-align-global-stale-generation-or-record",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

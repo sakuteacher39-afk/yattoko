@@ -1,0 +1,74 @@
+{
+  "caseId": "F2:DIR-06",
+  "runId": "F5-AUTO-RESUME-B3-20261026-001",
+  "attempt": 1,
+  "index": 1279,
+  "label": "positive-4-device-completed-no-unanswered-control",
+  "mode": "mutation",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 125,
+    "description": "positive整合transaction abortでchildだけ/summaryだけ残らない",
+    "details": [
+      "#### R001 negative変更起点"
+    ],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-26T10:49:27.057Z",
+  "finishedAt": "2026-10-26T10:49:27.062Z",
+  "input": {
+    "path": "inputs/86dd5ef0cae4c81a10e250389842bbf8488b7a90cd67719de3e420af67243cdd.bin",
+    "bytes": 3145,
+    "sha256": "86dd5ef0cae4c81a10e250389842bbf8488b7a90cd67719de3e420af67243cdd"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "551bbae717df0a00b3fa71f15f86d6f61dd0b3ebc441bd6e7a3c0d1346231b19",
+    "datasetUTF8Bytes": 3010,
+    "generationId": "gen_73000000-0000-4000-8000-000000000003",
+    "globalRevision": 9,
+    "recordStates": [
+      "completed",
+      "completed"
+    ],
+    "operationType": "service",
+    "semanticCorruptionRetained": "ordinary"
+  },
+  "oracleNote": "Independent F2 semantic model, normative manifest, full4-store expected dataset/hash, explicit generation/revision deltas and UTF8 Buffer byte boundary; no product validator generates expected values",
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "oldStateUnchanged": false,
+    "datasetMatchesOracle": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "sourceGenerationNotReused": true,
+    "saveCalls": 0,
+    "retriesRejected": false,
+    "pendingRetained": 0,
+    "pendingMatches": true,
+    "coordinatorStopped": false,
+    "notificationAbsent": false,
+    "capacityBytes": 3003,
+    "unauthorizedMutation": false,
+    "beforeStoresSHA256": "bc28dcf1d0e77ec6740bd7466aeaf991fea3198311038d5123fe78e60da72ddd",
+    "afterStoresSHA256": "57a0439cb3e790b191cf38898190e87d106e11045d264ae84087b652be9aaa81"
+  },
+  "status": "PASS",
+  "executionError": null
+}
