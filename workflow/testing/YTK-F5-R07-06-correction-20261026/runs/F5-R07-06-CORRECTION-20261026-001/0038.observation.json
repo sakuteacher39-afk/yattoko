@@ -1,0 +1,75 @@
+{
+  "runId": "F5-R07-06-CORRECTION-20261026-001",
+  "caseId": "F3:R07-06",
+  "attempt": 2,
+  "index": 38,
+  "label": "emergency-unknown-other-after",
+  "recipe": {
+    "kind": "emergency",
+    "parent": "unknown",
+    "child": "other",
+    "position": "after",
+    "invalid": true,
+    "origin": "old42-invalid"
+  },
+  "input": {
+    "path": "inputs/0038.bin",
+    "bytes": 2898,
+    "sha256": "e7e21ba523d041f39af6a242e6ddeafaa965dcd98c142f1d3ec3f0a39634c872"
+  },
+  "expected": {
+    "accepted": false,
+    "verifiedTokenCreated": false,
+    "previewAccepted": false,
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "oldFourStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "independentOracle": {
+    "invalid": true,
+    "parentInactive": true,
+    "parentQuestion": "billing",
+    "parentValue": "unknown",
+    "conditionActiveOnlyWhen": "yes",
+    "childPresent": true,
+    "childValue": "other",
+    "location": {
+      "path": "$.snapshot.services[0].answers.billingSource",
+      "keyIndex": 1,
+      "rawKeyStart": 2666,
+      "rawValueStart": 2682,
+      "rawValueEnd": 2689,
+      "rawFragment": "\"billingSource\":\"other\""
+    },
+    "onlySchemaViolation": "inactive billingSource present",
+    "baselineBodySHA256": "9d4f3b2cc8ea09abd26976f1b060ee9f3ec156bba916aa5aeed24709c4c93d1a",
+    "rawBytes": 2898,
+    "rawSHA256": "e7e21ba523d041f39af6a242e6ddeafaa965dcd98c142f1d3ec3f0a39634c872",
+    "payloadBytes": 2790,
+    "payloadSHA256": "4b6556bf883b0b477551aef59b435d05af23597ed66ec865bd7df1533bcc5d4d",
+    "checksumMatches": true,
+    "checksumCoversChild": true,
+    "baselineOtherFieldsAndOrderUnchanged": true,
+    "rawFragmentVerified": true
+  },
+  "actual": {
+    "accepted": false,
+    "verifiedTokenCreated": false,
+    "previewAccepted": false,
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "error": {
+      "name": "Error",
+      "code": "INVALID_FILE"
+    },
+    "oldFourStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "error": null,
+  "status": "PASS"
+}

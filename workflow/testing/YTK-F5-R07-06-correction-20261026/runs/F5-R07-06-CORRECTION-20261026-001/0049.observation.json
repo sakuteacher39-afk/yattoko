@@ -1,0 +1,63 @@
+{
+  "runId": "F5-R07-06-CORRECTION-20261026-001",
+  "caseId": "F3:R07-06",
+  "attempt": 2,
+  "index": 49,
+  "label": "normal-no-child-absent-control",
+  "recipe": {
+    "kind": "normal",
+    "parent": "no",
+    "invalid": false,
+    "origin": "old6-control"
+  },
+  "input": {
+    "path": "inputs/0049.bin",
+    "bytes": 2866,
+    "sha256": "757215c599e755f45d3efccbdb50ea808f48984b25559d2fc0622a5093c2bc7d"
+  },
+  "expected": {
+    "accepted": true,
+    "verifiedTokenCreated": true,
+    "previewAccepted": true,
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 1,
+    "oldFourStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "independentOracle": {
+    "invalid": false,
+    "parentInactive": true,
+    "parentQuestion": "billing",
+    "parentValue": "no",
+    "conditionActiveOnlyWhen": "yes",
+    "childPresent": false,
+    "childValue": null,
+    "location": null,
+    "onlySchemaViolation": "NONE",
+    "baselineBodySHA256": "e989ae6920b00db01ef7684cfaa2f518606ca489eed65bd6e6e4f937068b0bb8",
+    "rawBytes": 2866,
+    "rawSHA256": "757215c599e755f45d3efccbdb50ea808f48984b25559d2fc0622a5093c2bc7d",
+    "payloadBytes": 2758,
+    "payloadSHA256": "e989ae6920b00db01ef7684cfaa2f518606ca489eed65bd6e6e4f937068b0bb8",
+    "checksumMatches": true,
+    "checksumCoversChild": null,
+    "baselineOtherFieldsAndOrderUnchanged": true,
+    "rawFragmentVerified": true
+  },
+  "actual": {
+    "accepted": true,
+    "verifiedTokenCreated": true,
+    "previewAccepted": true,
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 1,
+    "error": null,
+    "oldFourStoresUnchanged": true,
+    "readwriteTransactions": 0
+  },
+  "error": null,
+  "status": "PASS"
+}
