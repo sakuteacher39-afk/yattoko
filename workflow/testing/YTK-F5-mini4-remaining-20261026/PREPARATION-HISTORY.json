@@ -1,0 +1,10 @@
+{
+  "formalExecutionStarted": false,
+  "events": [
+    {
+      "type": "PREPARATION_CHECKER_ERROR",
+      "cause": "order recipe denotes root keys in R02-08 but category keys in R07-02; checker conflated them.",
+      "resolution": "Separate root/category order checks. Preserve and hash-check all previously generated draft inputs on rerun. No product executed."
+    }
+  ]
+}
