@@ -1,0 +1,43 @@
+{
+  "caseId": "F3:R04-12",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "status": "NOT RUN",
+  "formalExecuted": false,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 243,
+    "description": "1MB/256件が過剰なscenarioでvalidation時間を計測。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+  "originalExpected": "1MB/256件が過剰なscenarioでvalidation時間を計測。",
+  "classification": "BROWSER_MEASUREMENT",
+  "readiness": "PREPARED_MEASUREMENT_PLAN_HUMAN_DECISION_REQUIRED",
+  "variants": "PERF-COUNT1/128/255/256, pending999999/1000000, dense snapshot+pending1M. Five foreground repeats each; cold/warm states separately tagged.",
+  "fixtureFilter": "PERF-*",
+  "steps": [
+    "Record headed browser version/profile, CPU/RAM/OS/power/viewport/foreground status; no other workloads; exact input hash.",
+    "Measure native File read, decode, scan/full parse boundaries, canonical full/payload generation, SHA, validation and total preflight using public wrapper boundaries and fixed-source audit. Unseparable stage marked NOT VERIFIABLE, never guessed.",
+    "Use100ms heartbeat/long-task observation outside readwrite; keep foreground; record max gap and all5 samples with ordering/cache state.",
+    "Collect CDP JS heap/DOM metrics + process CPU/private working set if available; label sampled versus true peak. Do not treat CDP JS heap as renderer/browser total.",
+    "Human reviews crash/white-screen/reload/OS warning, machine state and measurement completeness. Preserve even outliers; never tune limits or remove failed samples."
+  ],
+  "oracle": "Independent byte/count/context fixture proof + same clock stage spans and observer sensitivity/calibration. Original R04-12 requires measurements; no invented automatic safe threshold.",
+  "expected": "Accurate timing distribution for1MB/256 stress, including slow/failing outcomes. PROVISIONAL values remain human decision required.",
+  "manual": [
+    "Confirm foreground/power/no crash and inspect slow UI.",
+    "Review whether limits are excessive. Safari/iPhone threshold adoption not decided here."
+  ],
+  "verdict": "PASS only original measurement requirement and all evidence satisfied; missing stage/heap evidence => NOT VERIFIABLE for affected claim. Never infer16MB safety from this case.",
+  "limitations": "Performance instrumentation overhead recorded; samples can miss peak memory. F6 iPhone gates (2s heartbeat/15s/peak memory) are not automatically imported as new Chromium thresholds.",
+  "evidence": [
+    "target/runner/browser/protocol hashes",
+    "fixture raw bytes/hash + independent oracle",
+    "native event sequence/transaction windows/4-store dumps with hashes",
+    "sanitized network/console events and source locations",
+    "DOM text + screenshot hash + required human signoff",
+    "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+    "immutable run+attempt ledger including failures and evidence gaps"
+  ]
+}

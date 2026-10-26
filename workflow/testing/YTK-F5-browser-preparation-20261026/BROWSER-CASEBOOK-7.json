@@ -1,0 +1,305 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "status": "PREPARATION_ONLY_ALL7_NOT_RUN",
+  "cases": [
+    {
+      "caseId": "F2:RST-15",
+      "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "status": "NOT RUN",
+      "formalExecuted": false,
+      "source": {
+        "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+        "line": 236,
+        "description": "categoryKey/displayCode不一致を拒否（file形式にdisplayCodeが存在する場合）",
+        "details": [],
+        "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+      },
+      "sourceFileSHA256": "d80648db366bdb80b622ff8f7cabfd663ed6994a4d221fbe244b09c3d9d05d58",
+      "originalExpected": "categoryKey/displayCode不一致を拒否（file形式にdisplayCodeが存在する場合）",
+      "classification": "AUTO_STATIC_AND_HUMAN",
+      "readiness": "REVIEW_REQUIRED_CONDITIONAL_PREMISE",
+      "variants": "2 childless normal/emergency controls +48 displayCode unknown-field vectors (12category×same/mismatch×2kind)",
+      "fixtureFilter": "CONTROL-* and RST15-*",
+      "steps": [
+        "Source audit confirms canonical record has no displayCode. Record this before testing.",
+        "In fresh native profile seed dummy committed data; select control file with native file input; verify preview; human inspect category/ID labels.",
+        "Select each matching/mismatching displayCode vector, native File read and strict import; capture rejection and4store unchanged; no write, no auto-remap.",
+        "Human compare scope/category UI and source precondition; do not relabel unknown-field rejection as dedicated mismatch gate."
+      ],
+      "oracle": "Exact unknown own field presence/raw checksum + native IDB equality; canonical schema has no displayCode.",
+      "expected": "Controls accepted; injected displayCode rejected as unknown field; binding mismatch branch itself absent.",
+      "manual": [
+        "Confirm A-L/category labeling and no misleading success/input deletion.",
+        "Adjudicate original conditional premise. No synthetic mismatch model may count as product PASS."
+      ],
+      "verdict": "Case remains NOT RUN during preparation. Future PASS only after explicit applicability adjudication with evidence; if dedicated displayCode branch is required but absent, NOT VERIFIABLE.",
+      "limitations": "Chromium cannot create a missing schema branch without product modification; this is a specification-applicability question, not a Node limitation.",
+      "evidence": [
+        "target/runner/browser/protocol hashes",
+        "fixture raw bytes/hash + independent oracle",
+        "native event sequence/transaction windows/4-store dumps with hashes",
+        "sanitized network/console events and source locations",
+        "DOM text + screenshot hash + required human signoff",
+        "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+        "immutable run+attempt ledger including failures and evidence gaps"
+      ]
+    },
+    {
+      "caseId": "F3:R03-18",
+      "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "status": "NOT RUN",
+      "formalExecuted": false,
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 184,
+        "description": "transaction開始後にcrypto.subtle.digest / File API / Blob.arrayBuffer / network / timerを呼ばない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+      "originalExpected": "transaction開始後にcrypto.subtle.digest / File API / Blob.arrayBuffer / network / timerを呼ばない。",
+      "classification": "AUTO_FAULT_AND_BROWSER",
+      "readiness": "PREPARED_PENDING_FORMAL_EXECUTION_APPROVAL",
+      "variants": "Control normal/emergency DS-MIX, DS-CONDITIONAL, dense snapshot9,999,999 and10,000,000; reject10,000,001; abort atGUARD/CLEAR/PUT/READBACK per phase.",
+      "fixtureFilter": "CONTROL-*, DENSE-CANONICAL, RESTORE-CAPACITY-*",
+      "steps": [
+        "New headed native profile/origin; arm observer before product module evaluation; native file input selects exact hashed fixture.",
+        "Capture File/SHA start before verify and verified-token/preview completion; screenshot explicit restore acknowledgement.",
+        "Click native restore through UI after confirmation. Track real readwrite transaction from native start to complete/abort, source request order and all forbidden API calls.",
+        "Abort variants trigger only synchronous request success hook at designated phase. Compare all4stores/gen/global/record revisions and no false success.",
+        "Record native transaction complete before UI success; human verifies input retention and actual native transaction behavior."
+      ],
+      "oracle": "Monotonic native sequence ID + transaction lifetime. During active restore readwrite, no digest/File/Blob read/network/timer entry, independent before/after committed snapshots.",
+      "expected": "File/SHA/canonical preflight finishes before readwrite; active window forbidden API counts0; guard→clear→put→readback→complete. Abort keeps old4stores.",
+      "manual": [
+        "Review real UI confirmation/success/cancel/abort screens and input retention.",
+        "Confirm no DevTools pause/breakpoint artificially extends transaction."
+      ],
+      "verdict": "PASS only all required windows and fault variants measured with human UI evidence. Missing callback/timeline coverage => NOT VERIFIABLE.",
+      "limitations": "fake-IDB does not model native transaction scheduling/autocommit. Observer adds synchronous metadata only; no await/CDP roundtrip in native callbacks.",
+      "evidence": [
+        "target/runner/browser/protocol hashes",
+        "fixture raw bytes/hash + independent oracle",
+        "native event sequence/transaction windows/4-store dumps with hashes",
+        "sanitized network/console events and source locations",
+        "DOM text + screenshot hash + required human signoff",
+        "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+        "immutable run+attempt ledger including failures and evidence gaps"
+      ]
+    },
+    {
+      "caseId": "F3:R04-12",
+      "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "status": "NOT RUN",
+      "formalExecuted": false,
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 243,
+        "description": "1MB/256件が過剰なscenarioでvalidation時間を計測。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+      "originalExpected": "1MB/256件が過剰なscenarioでvalidation時間を計測。",
+      "classification": "BROWSER_MEASUREMENT",
+      "readiness": "PREPARED_MEASUREMENT_PLAN_HUMAN_DECISION_REQUIRED",
+      "variants": "PERF-COUNT1/128/255/256, pending999999/1000000, dense snapshot+pending1M. Five foreground repeats each; cold/warm states separately tagged.",
+      "fixtureFilter": "PERF-*",
+      "steps": [
+        "Record headed browser version/profile, CPU/RAM/OS/power/viewport/foreground status; no other workloads; exact input hash.",
+        "Measure native File read, decode, scan/full parse boundaries, canonical full/payload generation, SHA, validation and total preflight using public wrapper boundaries and fixed-source audit. Unseparable stage marked NOT VERIFIABLE, never guessed.",
+        "Use100ms heartbeat/long-task observation outside readwrite; keep foreground; record max gap and all5 samples with ordering/cache state.",
+        "Collect CDP JS heap/DOM metrics + process CPU/private working set if available; label sampled versus true peak. Do not treat CDP JS heap as renderer/browser total.",
+        "Human reviews crash/white-screen/reload/OS warning, machine state and measurement completeness. Preserve even outliers; never tune limits or remove failed samples."
+      ],
+      "oracle": "Independent byte/count/context fixture proof + same clock stage spans and observer sensitivity/calibration. Original R04-12 requires measurements; no invented automatic safe threshold.",
+      "expected": "Accurate timing distribution for1MB/256 stress, including slow/failing outcomes. PROVISIONAL values remain human decision required.",
+      "manual": [
+        "Confirm foreground/power/no crash and inspect slow UI.",
+        "Review whether limits are excessive. Safari/iPhone threshold adoption not decided here."
+      ],
+      "verdict": "PASS only original measurement requirement and all evidence satisfied; missing stage/heap evidence => NOT VERIFIABLE for affected claim. Never infer16MB safety from this case.",
+      "limitations": "Performance instrumentation overhead recorded; samples can miss peak memory. F6 iPhone gates (2s heartbeat/15s/peak memory) are not automatically imported as new Chromium thresholds.",
+      "evidence": [
+        "target/runner/browser/protocol hashes",
+        "fixture raw bytes/hash + independent oracle",
+        "native event sequence/transaction windows/4-store dumps with hashes",
+        "sanitized network/console events and source locations",
+        "DOM text + screenshot hash + required human signoff",
+        "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+        "immutable run+attempt ledger including failures and evidence gaps"
+      ]
+    },
+    {
+      "caseId": "F3:R06-09",
+      "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "status": "NOT RUN",
+      "formalExecuted": false,
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 331,
+        "description": "analytics/APM/crash log/session replay/networkにfile/snapshot/pending本文0。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+      "originalExpected": "analytics/APM/crash log/session replay/networkにfile/snapshot/pending本文0。",
+      "classification": "AUTO_FAULT_AND_BROWSER",
+      "readiness": "PREPARED_NATIVE_NETWORK_AND_WORKER_COVERAGE_TO_REVALIDATE",
+      "variants": "Normal backup, emergency backup, import/preview/confirmed restore, rejected file, abort/failure, manual pending application; each uses onlyPRIVACY dummy sentinels.",
+      "fixtureFilter": "PRIVACY-*",
+      "steps": [
+        "Before navigation enable native CDP Network/Fetch/Runtime and early observer; attach all page/frame/worker contexts.",
+        "Calibrate allowlisted local canary and blocked external canary in harness-only page; reset evidence boundary before product.",
+        "Run each specified workflow; record all app-origin network/API/sink attempts with URL/length/hash/canary-match flags, never plaintext bodies in telemetry.",
+        "Local static module GET bytes allowed only when matching frozen source; Blob download handled as file action, not external upload. All nonloopback traffic denied.",
+        "Correlate source audit, native CDP records, observer API entries and worker/frame coverage; human inspect Network pane filter and UI."
+      ],
+      "oracle": "No file/snapshot/pending body toanalytics/APM/crash/session replay/network. Distinct dummy snapshot/pending markers, exact allowed static resources, request/body hashes and context coverage.",
+      "expected": "No organising-body sink calls/requests; attempted leak is failure even if blocked. No third-party analytics/error logging introduced.",
+      "manual": [
+        "Review native Network context/filter coverage and privacy warnings.",
+        "Check no hidden worker/frame or browser-extension gap; if coverage missing do not PASS."
+      ],
+      "verdict": "PASS only all product workflows/sinks/contexts covered. CDP/observer inability or browser-process-only ambiguity => NOT VERIFIABLE, not silent0.",
+      "limitations": "CDP is not OS packet capture and cannot certify all browser/vendor telemetry. Dedicated profile/extensions disabled + local deny proxy/DNS barrier prevents test data leaving; no real customer data.",
+      "evidence": [
+        "target/runner/browser/protocol hashes",
+        "fixture raw bytes/hash + independent oracle",
+        "native event sequence/transaction windows/4-store dumps with hashes",
+        "sanitized network/console events and source locations",
+        "DOM text + screenshot hash + required human signoff",
+        "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+        "immutable run+attempt ledger including failures and evidence gaps"
+      ]
+    },
+    {
+      "caseId": "F3:R06-10",
+      "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "status": "NOT RUN",
+      "formalExecuted": false,
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 332,
+        "description": "console logにも本文を出さない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+      "originalExpected": "console logにも本文を出さない。",
+      "classification": "AUTO_FAULT_AND_BROWSER",
+      "readiness": "PREPARED_NATIVE_CONSOLE_EVIDENCE_PENDING_HUMAN",
+      "variants": "Same product workflows asR06-09 plus File/SHA/IDB failures.",
+      "fixtureFilter": "PRIVACY-* and one rejectedRST15 fixture",
+      "steps": [
+        "Enable Runtime.consoleAPICalled and exceptions before any product scripts; preserve native console output behavior.",
+        "Canary console message on separate harness page proves detector, but is never counted as product content.",
+        "Execute formal workflows after separate boundary and record console source/type/arg count/length/hash and dummy-sentinel flags only.",
+        "Human inspect actual Console using all levels, preserve-log and no hidden filter; correlate native browser errors versus app logging."
+      ],
+      "oracle": "No organising body/file/snapshot/pending content in any console arguments. Explicit own snapshots are separate authorised dummy evidence, not app telemetry.",
+      "expected": "Zero body-bearing app console entries; fixed generic native errors are not automatically treated as content leak.",
+      "manual": [
+        "Verify no plaintext content in all Console levels/contexts.",
+        "Sign off screenshots plus sanitized native events; no old Node sink result substituted."
+      ],
+      "verdict": "Any body output => FAIL; missing console/context evidence => NOT VERIFIABLE. Pure source scan or Node spy alone insufficient.",
+      "limitations": "Remote object console values may be lazily rendered; inspect immediately in disposable dummy profile. Do not serialize user/customer data or raw console arguments into logging pipeline.",
+      "evidence": [
+        "target/runner/browser/protocol hashes",
+        "fixture raw bytes/hash + independent oracle",
+        "native event sequence/transaction windows/4-store dumps with hashes",
+        "sanitized network/console events and source locations",
+        "DOM text + screenshot hash + required human signoff",
+        "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+        "immutable run+attempt ledger including failures and evidence gaps"
+      ]
+    },
+    {
+      "caseId": "F3:R07-05",
+      "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "status": "NOT RUN",
+      "formalExecuted": false,
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 340,
+        "description": "R09 unanswered parent fallbackをsnapshotへ複写せず表示時再計算。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+      "originalExpected": "R09 unanswered parent fallbackをsnapshotへ複写せず表示時再計算。",
+      "classification": "AUTO_DOM_AND_BROWSER",
+      "readiness": "PREPARED600_BROWSER_VARIANTS_PENDING_HUMAN_REVIEW",
+      "variants": "600 files=12category×5parent intentions×5overrides×2kind; each containspartial+completed service. All1200 display checks automatic;72 representative screens +all discrepancies human reviewed.",
+      "fixtureFilter": "R09-*",
+      "steps": [
+        "Native import→preview→explicit restore using each hashed file; inspect4stores and export snapshot before/after: parent value and override remain literal.",
+        "Reload actual native page after restore UI stops old writer; navigate service list/detail; assert expected Japanese effective intention label.",
+        "On appropriate matrix rows change parent through real UI, keep override semantics; reload/reopen same isolated profile; effective intention recomputed, not copied as persistent fallback.",
+        "Compare stored parentunanswered/override null with visible未決定（カテゴリと同じ）. Compare explicitparent/override values and changed-parent refresh.",
+        "Human reviews all72 required representatives (all25parent/override combinations×2kind ondevice +unanswered/inherit on11othercategories×2kind), plus every automatic difference."
+      ],
+      "oracle": "effective=override??(parent===unanswered?undecided:parent). Canonical parent/override unchanged by viewing; no inherited/effective fallback field in native stored/exported records.",
+      "expected": "Display recalculates after load/restore/reload, whilecanonical unanswered/null stay unchanged.",
+      "manual": [
+        "Review72 mapped screenshots and real UI list/detail readability, plus all differences.",
+        "Review sampling coverage before formal run; absent required manual signatures prevents PASS."
+      ],
+      "verdict": "PASS only all600 automated file/storage/display checks and required human evidence. No jsdom/Node effectiveIntention result is browser PASS.",
+      "limitations": "UI timing/reload/native IDB persistence cannot be shown by fake-IDB. Graceful browser restart does not prove sudden power-loss durability.",
+      "evidence": [
+        "target/runner/browser/protocol hashes",
+        "fixture raw bytes/hash + independent oracle",
+        "native event sequence/transaction windows/4-store dumps with hashes",
+        "sanitized network/console events and source locations",
+        "DOM text + screenshot hash + required human signoff",
+        "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+        "immutable run+attempt ledger including failures and evidence gaps"
+      ]
+    },
+    {
+      "caseId": "F3:R07-09",
+      "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+      "status": "NOT RUN",
+      "formalExecuted": false,
+      "source": {
+        "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+        "line": 344,
+        "description": "ACTIVE registryなしではproduction export/importを有効化しない。",
+        "details": [],
+        "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+      },
+      "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+      "originalExpected": "ACTIVE registryなしではproduction export/importを有効化しない。",
+      "classification": "AUTO_FAULT_AND_HUMAN",
+      "readiness": "REVIEW_REQUIRED_FIXED_ACTIVE_BRANCH_UNAVAILABLE",
+      "variants": "ACTIVE controls normal/emergency; dependency-unavailable transport faults forcanonical.mjs/definitions.mjs. No altered-source/mock ACTIVE value counted as product result.",
+      "fixtureFilter": "CONTROL-* plus transport fault rules",
+      "steps": [
+        "Record exact frozenregistry literal/status/version and source hash; active control must expose normal intended UI.",
+        "In disposable native profile block module request via Fetch.failRequest (do not rewrite response/body). Record load failure and export/import unavailable.",
+        "Human distinguishes module-unavailable fail-closed behavior from nonACTIVE production package startup gate.",
+        "Do not mutate frozenregistry,const/export, loader response bytes or create new product revision to manufacture branch."
+      ],
+      "oracle": "ACTIVE registry missing must not enable production export/import. Missing-module transport behavior is supplemental, not proof of a nonACTIVE compiled package.",
+      "expected": "ACTIVE control works; absentmodule cannot expose functional export/import. Actual status!=ACTIVE deployment branch cannot be supplied under current immutable artifact.",
+      "manual": [
+        "Adjudicate startup/deployment premise and UI reachability.",
+        "If required nonACTIVE artifact is unavailable under fixed revision, record NOT VERIFIABLE; no synthetic model PASS."
+      ],
+      "verdict": "NOT RUN now. Future PASS requires all original premise evidence; dependency transport failure alone insufficient. Likely NOT VERIFIABLE unless management resolves applicability without changing approved target/spec.",
+      "limitations": "Registry is frozen compile-time ACTIVE. Browser cannot exercise nonACTIVE value without forbidden target alteration. No runtime rewrite in this plan.",
+      "evidence": [
+        "target/runner/browser/protocol hashes",
+        "fixture raw bytes/hash + independent oracle",
+        "native event sequence/transaction windows/4-store dumps with hashes",
+        "sanitized network/console events and source locations",
+        "DOM text + screenshot hash + required human signoff",
+        "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+        "immutable run+attempt ledger including failures and evidence gaps"
+      ]
+    }
+  ],
+  "automatedVsHuman": "Automatic native/data assertions and evidence collection never substitute human conditions. PASS disabled until every declared evidence and manual field is complete."
+}

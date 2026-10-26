@@ -1,0 +1,43 @@
+{
+  "caseId": "F3:R07-05",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "status": "NOT RUN",
+  "formalExecuted": false,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 340,
+    "description": "R09 unanswered parent fallbackをsnapshotへ複写せず表示時再計算。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+  "originalExpected": "R09 unanswered parent fallbackをsnapshotへ複写せず表示時再計算。",
+  "classification": "AUTO_DOM_AND_BROWSER",
+  "readiness": "PREPARED600_BROWSER_VARIANTS_PENDING_HUMAN_REVIEW",
+  "variants": "600 files=12category×5parent intentions×5overrides×2kind; each containspartial+completed service. All1200 display checks automatic;72 representative screens +all discrepancies human reviewed.",
+  "fixtureFilter": "R09-*",
+  "steps": [
+    "Native import→preview→explicit restore using each hashed file; inspect4stores and export snapshot before/after: parent value and override remain literal.",
+    "Reload actual native page after restore UI stops old writer; navigate service list/detail; assert expected Japanese effective intention label.",
+    "On appropriate matrix rows change parent through real UI, keep override semantics; reload/reopen same isolated profile; effective intention recomputed, not copied as persistent fallback.",
+    "Compare stored parentunanswered/override null with visible未決定（カテゴリと同じ）. Compare explicitparent/override values and changed-parent refresh.",
+    "Human reviews all72 required representatives (all25parent/override combinations×2kind ondevice +unanswered/inherit on11othercategories×2kind), plus every automatic difference."
+  ],
+  "oracle": "effective=override??(parent===unanswered?undecided:parent). Canonical parent/override unchanged by viewing; no inherited/effective fallback field in native stored/exported records.",
+  "expected": "Display recalculates after load/restore/reload, whilecanonical unanswered/null stay unchanged.",
+  "manual": [
+    "Review72 mapped screenshots and real UI list/detail readability, plus all differences.",
+    "Review sampling coverage before formal run; absent required manual signatures prevents PASS."
+  ],
+  "verdict": "PASS only all600 automated file/storage/display checks and required human evidence. No jsdom/Node effectiveIntention result is browser PASS.",
+  "limitations": "UI timing/reload/native IDB persistence cannot be shown by fake-IDB. Graceful browser restart does not prove sudden power-loss durability.",
+  "evidence": [
+    "target/runner/browser/protocol hashes",
+    "fixture raw bytes/hash + independent oracle",
+    "native event sequence/transaction windows/4-store dumps with hashes",
+    "sanitized network/console events and source locations",
+    "DOM text + screenshot hash + required human signoff",
+    "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+    "immutable run+attempt ledger including failures and evidence gaps"
+  ]
+}

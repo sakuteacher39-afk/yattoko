@@ -1,0 +1,42 @@
+{
+  "caseId": "F3:R07-09",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "status": "NOT RUN",
+  "formalExecuted": false,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 344,
+    "description": "ACTIVE registryなしではproduction export/importを有効化しない。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+  "originalExpected": "ACTIVE registryなしではproduction export/importを有効化しない。",
+  "classification": "AUTO_FAULT_AND_HUMAN",
+  "readiness": "REVIEW_REQUIRED_FIXED_ACTIVE_BRANCH_UNAVAILABLE",
+  "variants": "ACTIVE controls normal/emergency; dependency-unavailable transport faults forcanonical.mjs/definitions.mjs. No altered-source/mock ACTIVE value counted as product result.",
+  "fixtureFilter": "CONTROL-* plus transport fault rules",
+  "steps": [
+    "Record exact frozenregistry literal/status/version and source hash; active control must expose normal intended UI.",
+    "In disposable native profile block module request via Fetch.failRequest (do not rewrite response/body). Record load failure and export/import unavailable.",
+    "Human distinguishes module-unavailable fail-closed behavior from nonACTIVE production package startup gate.",
+    "Do not mutate frozenregistry,const/export, loader response bytes or create new product revision to manufacture branch."
+  ],
+  "oracle": "ACTIVE registry missing must not enable production export/import. Missing-module transport behavior is supplemental, not proof of a nonACTIVE compiled package.",
+  "expected": "ACTIVE control works; absentmodule cannot expose functional export/import. Actual status!=ACTIVE deployment branch cannot be supplied under current immutable artifact.",
+  "manual": [
+    "Adjudicate startup/deployment premise and UI reachability.",
+    "If required nonACTIVE artifact is unavailable under fixed revision, record NOT VERIFIABLE; no synthetic model PASS."
+  ],
+  "verdict": "NOT RUN now. Future PASS requires all original premise evidence; dependency transport failure alone insufficient. Likely NOT VERIFIABLE unless management resolves applicability without changing approved target/spec.",
+  "limitations": "Registry is frozen compile-time ACTIVE. Browser cannot exercise nonACTIVE value without forbidden target alteration. No runtime rewrite in this plan.",
+  "evidence": [
+    "target/runner/browser/protocol hashes",
+    "fixture raw bytes/hash + independent oracle",
+    "native event sequence/transaction windows/4-store dumps with hashes",
+    "sanitized network/console events and source locations",
+    "DOM text + screenshot hash + required human signoff",
+    "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+    "immutable run+attempt ledger including failures and evidence gaps"
+  ]
+}

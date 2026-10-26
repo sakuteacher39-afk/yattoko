@@ -1,0 +1,42 @@
+{
+  "caseId": "F3:R06-10",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "status": "NOT RUN",
+  "formalExecuted": false,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 332,
+    "description": "console logにも本文を出さない。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+  "originalExpected": "console logにも本文を出さない。",
+  "classification": "AUTO_FAULT_AND_BROWSER",
+  "readiness": "PREPARED_NATIVE_CONSOLE_EVIDENCE_PENDING_HUMAN",
+  "variants": "Same product workflows asR06-09 plus File/SHA/IDB failures.",
+  "fixtureFilter": "PRIVACY-* and one rejectedRST15 fixture",
+  "steps": [
+    "Enable Runtime.consoleAPICalled and exceptions before any product scripts; preserve native console output behavior.",
+    "Canary console message on separate harness page proves detector, but is never counted as product content.",
+    "Execute formal workflows after separate boundary and record console source/type/arg count/length/hash and dummy-sentinel flags only.",
+    "Human inspect actual Console using all levels, preserve-log and no hidden filter; correlate native browser errors versus app logging."
+  ],
+  "oracle": "No organising body/file/snapshot/pending content in any console arguments. Explicit own snapshots are separate authorised dummy evidence, not app telemetry.",
+  "expected": "Zero body-bearing app console entries; fixed generic native errors are not automatically treated as content leak.",
+  "manual": [
+    "Verify no plaintext content in all Console levels/contexts.",
+    "Sign off screenshots plus sanitized native events; no old Node sink result substituted."
+  ],
+  "verdict": "Any body output => FAIL; missing console/context evidence => NOT VERIFIABLE. Pure source scan or Node spy alone insufficient.",
+  "limitations": "Remote object console values may be lazily rendered; inspect immediately in disposable dummy profile. Do not serialize user/customer data or raw console arguments into logging pipeline.",
+  "evidence": [
+    "target/runner/browser/protocol hashes",
+    "fixture raw bytes/hash + independent oracle",
+    "native event sequence/transaction windows/4-store dumps with hashes",
+    "sanitized network/console events and source locations",
+    "DOM text + screenshot hash + required human signoff",
+    "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+    "immutable run+attempt ledger including failures and evidence gaps"
+  ]
+}

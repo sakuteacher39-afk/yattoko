@@ -1,0 +1,43 @@
+{
+  "caseId": "F3:R03-18",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "status": "NOT RUN",
+  "formalExecuted": false,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 184,
+    "description": "transaction開始後にcrypto.subtle.digest / File API / Blob.arrayBuffer / network / timerを呼ばない。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+  "originalExpected": "transaction開始後にcrypto.subtle.digest / File API / Blob.arrayBuffer / network / timerを呼ばない。",
+  "classification": "AUTO_FAULT_AND_BROWSER",
+  "readiness": "PREPARED_PENDING_FORMAL_EXECUTION_APPROVAL",
+  "variants": "Control normal/emergency DS-MIX, DS-CONDITIONAL, dense snapshot9,999,999 and10,000,000; reject10,000,001; abort atGUARD/CLEAR/PUT/READBACK per phase.",
+  "fixtureFilter": "CONTROL-*, DENSE-CANONICAL, RESTORE-CAPACITY-*",
+  "steps": [
+    "New headed native profile/origin; arm observer before product module evaluation; native file input selects exact hashed fixture.",
+    "Capture File/SHA start before verify and verified-token/preview completion; screenshot explicit restore acknowledgement.",
+    "Click native restore through UI after confirmation. Track real readwrite transaction from native start to complete/abort, source request order and all forbidden API calls.",
+    "Abort variants trigger only synchronous request success hook at designated phase. Compare all4stores/gen/global/record revisions and no false success.",
+    "Record native transaction complete before UI success; human verifies input retention and actual native transaction behavior."
+  ],
+  "oracle": "Monotonic native sequence ID + transaction lifetime. During active restore readwrite, no digest/File/Blob read/network/timer entry, independent before/after committed snapshots.",
+  "expected": "File/SHA/canonical preflight finishes before readwrite; active window forbidden API counts0; guard→clear→put→readback→complete. Abort keeps old4stores.",
+  "manual": [
+    "Review real UI confirmation/success/cancel/abort screens and input retention.",
+    "Confirm no DevTools pause/breakpoint artificially extends transaction."
+  ],
+  "verdict": "PASS only all required windows and fault variants measured with human UI evidence. Missing callback/timeline coverage => NOT VERIFIABLE.",
+  "limitations": "fake-IDB does not model native transaction scheduling/autocommit. Observer adds synchronous metadata only; no await/CDP roundtrip in native callbacks.",
+  "evidence": [
+    "target/runner/browser/protocol hashes",
+    "fixture raw bytes/hash + independent oracle",
+    "native event sequence/transaction windows/4-store dumps with hashes",
+    "sanitized network/console events and source locations",
+    "DOM text + screenshot hash + required human signoff",
+    "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+    "immutable run+attempt ledger including failures and evidence gaps"
+  ]
+}

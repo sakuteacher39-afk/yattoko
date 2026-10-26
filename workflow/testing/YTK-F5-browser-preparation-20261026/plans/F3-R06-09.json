@@ -1,0 +1,43 @@
+{
+  "caseId": "F3:R06-09",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "status": "NOT RUN",
+  "formalExecuted": false,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 331,
+    "description": "analytics/APM/crash log/session replay/networkにfile/snapshot/pending本文0。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "sourceFileSHA256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+  "originalExpected": "analytics/APM/crash log/session replay/networkにfile/snapshot/pending本文0。",
+  "classification": "AUTO_FAULT_AND_BROWSER",
+  "readiness": "PREPARED_NATIVE_NETWORK_AND_WORKER_COVERAGE_TO_REVALIDATE",
+  "variants": "Normal backup, emergency backup, import/preview/confirmed restore, rejected file, abort/failure, manual pending application; each uses onlyPRIVACY dummy sentinels.",
+  "fixtureFilter": "PRIVACY-*",
+  "steps": [
+    "Before navigation enable native CDP Network/Fetch/Runtime and early observer; attach all page/frame/worker contexts.",
+    "Calibrate allowlisted local canary and blocked external canary in harness-only page; reset evidence boundary before product.",
+    "Run each specified workflow; record all app-origin network/API/sink attempts with URL/length/hash/canary-match flags, never plaintext bodies in telemetry.",
+    "Local static module GET bytes allowed only when matching frozen source; Blob download handled as file action, not external upload. All nonloopback traffic denied.",
+    "Correlate source audit, native CDP records, observer API entries and worker/frame coverage; human inspect Network pane filter and UI."
+  ],
+  "oracle": "No file/snapshot/pending body toanalytics/APM/crash/session replay/network. Distinct dummy snapshot/pending markers, exact allowed static resources, request/body hashes and context coverage.",
+  "expected": "No organising-body sink calls/requests; attempted leak is failure even if blocked. No third-party analytics/error logging introduced.",
+  "manual": [
+    "Review native Network context/filter coverage and privacy warnings.",
+    "Check no hidden worker/frame or browser-extension gap; if coverage missing do not PASS."
+  ],
+  "verdict": "PASS only all product workflows/sinks/contexts covered. CDP/observer inability or browser-process-only ambiguity => NOT VERIFIABLE, not silent0.",
+  "limitations": "CDP is not OS packet capture and cannot certify all browser/vendor telemetry. Dedicated profile/extensions disabled + local deny proxy/DNS barrier prevents test data leaving; no real customer data.",
+  "evidence": [
+    "target/runner/browser/protocol hashes",
+    "fixture raw bytes/hash + independent oracle",
+    "native event sequence/transaction windows/4-store dumps with hashes",
+    "sanitized network/console events and source locations",
+    "DOM text + screenshot hash + required human signoff",
+    "exact OS/browser/profile/origin/viewport/power/visibility metadata",
+    "immutable run+attempt ledger including failures and evidence gaps"
+  ]
+}
