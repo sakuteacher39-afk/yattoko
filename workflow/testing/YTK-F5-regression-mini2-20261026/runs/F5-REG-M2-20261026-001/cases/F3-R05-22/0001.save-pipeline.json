@@ -1,0 +1,26 @@
+[
+  {
+    "type": "SAVE_START",
+    "global": 1,
+    "operation": {
+      "type": "category",
+      "categoryKey": "mail",
+      "field": "usageStatus",
+      "value": "using"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 2
+  },
+  {
+    "type": "SAVE_START",
+    "global": 2,
+    "operation": {
+      "type": "category",
+      "categoryKey": "mail",
+      "field": "usageStatus",
+      "value": "not_using"
+    }
+  }
+]

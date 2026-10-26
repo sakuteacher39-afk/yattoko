@@ -1,0 +1,157 @@
+{
+  "caseId": "F2:RST-11",
+  "runId": "F5-REG-M2-20261026-001",
+  "attempt": 1,
+  "index": 687,
+  "label": "EM-PARTIAL:snapshot.categories.5:categoryKey:signed:null",
+  "mode": "reject",
+  "recipe": {
+    "source": "EM-PARTIAL",
+    "path": [
+      "snapshot",
+      "categories",
+      5
+    ],
+    "key": "categoryKey",
+    "profile": "signed",
+    "mutation": "missing",
+    "container": null
+  },
+  "fault": null,
+  "input": {
+    "path": "inputs/F2-RST-11/0687.bin",
+    "bytes": 3688,
+    "sha256": "8b340c079e0f1612faf5400978a1357e5682d1a84a5672d6e0f0999413d958d4"
+  },
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 232,
+    "description": "required field欠落拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "expected": {
+    "accepted": false,
+    "importAccepted": false,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "inputUnchanged": true
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "b34b20074b017e036239b460383da835e6a8f4fe1f799210e058c0db74e48645",
+    "declaredChecksum": "b34b20074b017e036239b460383da835e6a8f4fe1f799210e058c0db74e48645",
+    "canonicalRawMatches": false,
+    "rawSHA256": "8b340c079e0f1612faf5400978a1357e5682d1a84a5672d6e0f0999413d958d4",
+    "snapshotSHA256": "febf383c7abb5f313e391655a5392b56dc272a664e0e5568aa3cd0bf075afe7c"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fileReads": 1,
+    "fullParses": 1,
+    "digestCalls": 0,
+    "importError": {
+      "name": "Error",
+      "code": "INVALID_FILE"
+    },
+    "accepted": false,
+    "importAccepted": false,
+    "previewError": null,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "previewClassification": null,
+    "beforeStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "afterStoresSHA256": "7cda39f7c72aa4f7c1e05eb77f319ee1f8c8e04e8193dfd1f74e8b3bf2ac826e",
+    "traceCounts": {
+      "readwrite": 0,
+      "complete": 0,
+      "abort": 0
+    }
+  },
+  "executionError": null,
+  "status": "PASS",
+  "startedAt": "2026-10-26T05:04:03.898Z",
+  "finishedAt": "2026-10-26T05:04:03.902Z"
+}

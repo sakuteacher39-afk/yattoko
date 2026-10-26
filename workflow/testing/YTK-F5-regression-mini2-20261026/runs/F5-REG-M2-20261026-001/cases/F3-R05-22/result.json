@@ -1,0 +1,34 @@
+{
+  "caseId": "F3:R05-22",
+  "status": "PASS",
+  "attempt": 1,
+  "runId": "F5-REG-M2-20261026-001",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 291,
+    "description": "dependency chain op1 complete/op2 abort。",
+    "details": [
+      "- 期待：同一sessionではop1 receiptあり、op2以降remaining。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "plannedVariants": 2,
+  "completedVariants": 2,
+  "counts": {
+    "PASS": 2
+  },
+  "evidence": [
+    {
+      "index": 1,
+      "label": "op1-committed-op2-abort",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "op1-committed-op2-quota",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared source-specific conditions and independent observations matched on Node/fake-IDB. No browser claim or old/development result transfer"
+}

@@ -1,0 +1,148 @@
+[
+  {
+    "type": "SAVE_START",
+    "global": 1,
+    "operation": {
+      "type": "overview",
+      "field": "identity",
+      "value": "configured"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 2
+  },
+  {
+    "type": "RECEIPT_OBSERVED",
+    "operationId": "op_00000001-0000-4000-8000-000000000001",
+    "global": 2
+  },
+  {
+    "type": "SAVE_START",
+    "global": 2,
+    "operation": {
+      "type": "category",
+      "categoryKey": "mail",
+      "field": "usageStatus",
+      "value": "using"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 3
+  },
+  {
+    "type": "RECEIPT_OBSERVED",
+    "operationId": "op_00000002-0000-4000-8000-000000000001",
+    "global": 3
+  },
+  {
+    "type": "SAVE_START",
+    "global": 3,
+    "operation": {
+      "type": "addService",
+      "recordId": "svc_abcdef01-0000-4000-8000-000000000001",
+      "categoryKey": "device",
+      "serviceCatalogId": "other",
+      "otherServiceName": "再適用ダミー"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 4
+  },
+  {
+    "type": "RECEIPT_OBSERVED",
+    "operationId": "op_00000003-0000-4000-8000-000000000001",
+    "global": 4
+  },
+  {
+    "type": "SAVE_START",
+    "global": 4,
+    "operation": {
+      "type": "service",
+      "recordId": "svc_abcdef01-0000-4000-8000-000000000001",
+      "field": "usageStatus",
+      "value": "unknown"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 5
+  },
+  {
+    "type": "RECEIPT_OBSERVED",
+    "operationId": "op_00000004-0000-4000-8000-000000000001",
+    "global": 5
+  },
+  {
+    "type": "SAVE_START",
+    "global": 5,
+    "operation": {
+      "type": "service",
+      "recordId": "svc_abcdef01-0000-4000-8000-000000000001",
+      "field": "importantData",
+      "value": "unknown"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 6
+  },
+  {
+    "type": "RECEIPT_OBSERVED",
+    "operationId": "op_00000005-0000-4000-8000-000000000001",
+    "global": 6
+  },
+  {
+    "type": "SAVE_START",
+    "global": 6,
+    "operation": {
+      "type": "completeService",
+      "recordId": "svc_abcdef01-0000-4000-8000-000000000001"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 7
+  },
+  {
+    "type": "RECEIPT_OBSERVED",
+    "operationId": "op_00000006-0000-4000-8000-000000000001",
+    "global": 7
+  },
+  {
+    "type": "SAVE_START",
+    "global": 7,
+    "operation": {
+      "type": "deleteService",
+      "recordId": "svc_abcdef01-0000-4000-8000-000000000001"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 8
+  },
+  {
+    "type": "RECEIPT_OBSERVED",
+    "operationId": "op_00000007-0000-4000-8000-000000000001",
+    "global": 8
+  },
+  {
+    "type": "SAVE_START",
+    "global": 8,
+    "operation": {
+      "type": "deleteCategory",
+      "categoryKey": "mail"
+    }
+  },
+  {
+    "type": "SAVE_COMPLETE",
+    "global": 9
+  },
+  {
+    "type": "RECEIPT_OBSERVED",
+    "operationId": "op_00000008-0000-4000-8000-000000000001",
+    "global": 9
+  }
+]
