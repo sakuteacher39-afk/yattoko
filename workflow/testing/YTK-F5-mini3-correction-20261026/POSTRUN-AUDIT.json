@@ -1,0 +1,222 @@
+{
+  "runId": "F5-M3-CORRECTION-20261026-001",
+  "attempt": 2,
+  "evidenceFilesVerified": 38,
+  "evidenceManifestSHA256": "6751426d25910eec8e0cda5282b27de96ea0dccbbe69bc63c997faf82cfaefe7",
+  "allSixVariantHashesOraclesExpectationsAndActualsRechecked": true,
+  "rawFourStoreEqualityAndNoReadwriteOnRejectRechecked": true,
+  "oldTwoFailAnd18PassUnchanged": true,
+  "oldRunnerFixturesLedgerPreserved": true,
+  "targetFileCount": 3441,
+  "historicalFileCount": 20066,
+  "targetAndHistoryBeforeAfterMatch": true,
+  "allFrozenRunnersUnchanged": true,
+  "oracleManifestMatchesFixedSubject": true,
+  "changedPathsLimitedToNewTestFolder": true,
+  "extraProductCasesExecutedByAudit": 0,
+  "reviewed": [
+    {
+      "caseId": "F2:RST-06",
+      "label": "prospective-9999999",
+      "attempt": 2,
+      "status": "PASS",
+      "expected": {
+        "accepted": true,
+        "inputUnchanged": true,
+        "confirmedRequired": true,
+        "operationIdsIntact": true,
+        "prospectiveMatches": true,
+        "canonicalBytes": 9999999,
+        "receiptCount": 1,
+        "remainingOperationIds": [],
+        "transactionCompleteBeforeReceipt": true
+      },
+      "actual": {
+        "inputUnchanged": true,
+        "fullParses": 1,
+        "digestCalls": 3,
+        "accepted": true,
+        "importError": null,
+        "confirmedRequired": true,
+        "capacityRejected": false,
+        "oldFourStoresUnchanged": false,
+        "receiptCount": 1,
+        "remainingOperationIds": [],
+        "readwriteTransactions": 1,
+        "operationIdsIntact": true,
+        "prospectiveMatches": true,
+        "canonicalBytes": 9999999,
+        "transactionCompleteBeforeReceipt": true,
+        "saveCallsDiagnosticOnly": 1,
+        "error": null
+      },
+      "inputSHA256": "6975940723ce3e1c729d896bcabbca1cc5ac4b1c6e28fb61ca99c2d418187b2b"
+    },
+    {
+      "caseId": "F2:RST-06",
+      "label": "prospective-10000000",
+      "attempt": 2,
+      "status": "PASS",
+      "expected": {
+        "accepted": true,
+        "inputUnchanged": true,
+        "confirmedRequired": true,
+        "operationIdsIntact": true,
+        "prospectiveMatches": true,
+        "canonicalBytes": 10000000,
+        "receiptCount": 1,
+        "remainingOperationIds": [],
+        "transactionCompleteBeforeReceipt": true
+      },
+      "actual": {
+        "inputUnchanged": true,
+        "fullParses": 1,
+        "digestCalls": 3,
+        "accepted": true,
+        "importError": null,
+        "confirmedRequired": true,
+        "capacityRejected": false,
+        "oldFourStoresUnchanged": false,
+        "receiptCount": 1,
+        "remainingOperationIds": [],
+        "readwriteTransactions": 1,
+        "operationIdsIntact": true,
+        "prospectiveMatches": true,
+        "canonicalBytes": 10000000,
+        "transactionCompleteBeforeReceipt": true,
+        "saveCallsDiagnosticOnly": 1,
+        "error": null
+      },
+      "inputSHA256": "477696e74c132f0e38239721188d0abbb33cb2f7bfdc757bae4ecb80f88bba52"
+    },
+    {
+      "caseId": "F2:RST-06",
+      "label": "prospective-10000001",
+      "attempt": 2,
+      "status": "PASS",
+      "expected": {
+        "accepted": false,
+        "inputUnchanged": true,
+        "confirmedRequired": true,
+        "operationIdsIntact": true,
+        "capacityRejected": true,
+        "oldFourStoresUnchanged": true,
+        "receiptCount": 0,
+        "remainingOperationIds": [
+          "op_00000001-0000-4000-8000-000000000001"
+        ],
+        "readwriteTransactions": 0
+      },
+      "actual": {
+        "inputUnchanged": true,
+        "fullParses": 1,
+        "digestCalls": 3,
+        "accepted": false,
+        "importError": null,
+        "confirmedRequired": true,
+        "capacityRejected": true,
+        "oldFourStoresUnchanged": true,
+        "receiptCount": 0,
+        "remainingOperationIds": [
+          "op_00000001-0000-4000-8000-000000000001"
+        ],
+        "readwriteTransactions": 0,
+        "operationIdsIntact": true,
+        "prospectiveMatches": false,
+        "canonicalBytes": 9999666,
+        "transactionCompleteBeforeReceipt": false,
+        "saveCallsDiagnosticOnly": 0,
+        "error": {
+          "name": "Error",
+          "code": "capacity"
+        }
+      },
+      "inputSHA256": "664f432d6fe1a785921ba4bade6288129f438d3a9c2e9b5966c0245f5924f71d"
+    },
+    {
+      "caseId": "F3:R04-05",
+      "label": "pending-255",
+      "attempt": 2,
+      "status": "PASS",
+      "expected": {
+        "accepted": true,
+        "inputUnchanged": true,
+        "oldStoresUnchanged": true,
+        "readwriteTransactions": 0,
+        "operationIdsIntact": true,
+        "fullParses": 1,
+        "previewAccepted": true
+      },
+      "actual": {
+        "inputUnchanged": true,
+        "fullParses": 1,
+        "digestCalls": 3,
+        "accepted": true,
+        "importError": null,
+        "previewAccepted": true,
+        "oldStoresUnchanged": true,
+        "readwriteTransactions": 0,
+        "operationIdsIntact": true
+      },
+      "inputSHA256": "9013eedcc354db1c4bbb582a0ca9ae3cbe3201841bd73c16442b282eed5a96f5"
+    },
+    {
+      "caseId": "F3:R04-05",
+      "label": "pending-256",
+      "attempt": 2,
+      "status": "PASS",
+      "expected": {
+        "accepted": true,
+        "inputUnchanged": true,
+        "oldStoresUnchanged": true,
+        "readwriteTransactions": 0,
+        "operationIdsIntact": true,
+        "fullParses": 1,
+        "previewAccepted": true
+      },
+      "actual": {
+        "inputUnchanged": true,
+        "fullParses": 1,
+        "digestCalls": 3,
+        "accepted": true,
+        "importError": null,
+        "previewAccepted": true,
+        "oldStoresUnchanged": true,
+        "readwriteTransactions": 0,
+        "operationIdsIntact": true
+      },
+      "inputSHA256": "47c3dff4e1effc0e349042f2f466292d4625af1df8b7fcb72ae67a0ce04570c7"
+    },
+    {
+      "caseId": "F3:R04-05",
+      "label": "pending-257",
+      "attempt": 2,
+      "status": "PASS",
+      "expected": {
+        "accepted": false,
+        "inputUnchanged": true,
+        "oldStoresUnchanged": true,
+        "readwriteTransactions": 0,
+        "operationIdsIntact": true,
+        "fullParses": 0,
+        "digestCalls": 0
+      },
+      "actual": {
+        "inputUnchanged": true,
+        "fullParses": 0,
+        "digestCalls": 0,
+        "accepted": false,
+        "importError": {
+          "name": "Error",
+          "code": "ARRAY_LIMIT"
+        },
+        "previewAccepted": false,
+        "oldStoresUnchanged": true,
+        "readwriteTransactions": 0,
+        "operationIdsIntact": true
+      },
+      "inputSHA256": "709e9aa2562fa526c2712a2a1ff00e16c1833297a03e4390b10fc97c2d1db077"
+    }
+  ],
+  "limitations": "No native browser/physical quota/file durability/iPhone/F6 claims."
+}

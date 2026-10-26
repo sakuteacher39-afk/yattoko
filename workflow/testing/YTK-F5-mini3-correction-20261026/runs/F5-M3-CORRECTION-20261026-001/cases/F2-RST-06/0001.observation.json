@@ -1,0 +1,57 @@
+{
+  "caseId": "F2:RST-06",
+  "runId": "F5-M3-CORRECTION-20261026-001",
+  "attempt": 2,
+  "index": 1,
+  "label": "prospective-9999999",
+  "input": {
+    "path": "inputs/F2-RST-06/0001.bin",
+    "bytes": 10000838,
+    "sha256": "6975940723ce3e1c729d896bcabbca1cc5ac4b1c6e28fb61ca99c2d418187b2b"
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "confirmedRequired": true,
+    "operationIdsIntact": true,
+    "prospectiveMatches": true,
+    "canonicalBytes": 9999999,
+    "receiptCount": 1,
+    "remainingOperationIds": [],
+    "transactionCompleteBeforeReceipt": true
+  },
+  "independent": {
+    "snapshotBytes": 9999664,
+    "prospectiveBytes": 9999999,
+    "limit": 10000000,
+    "withinCapacity": true,
+    "servicesBefore": 19995,
+    "servicesAfter": 19996,
+    "rawBytes": 10000838,
+    "pendingBytes": 931,
+    "idsUnique": true,
+    "normalNamesAndAnswersValid": true,
+    "expectedProspectiveSHA256": "0023c5a3bd2dc822c2b8ebd3cbced149f27ac6b6986d7625e44ea9edfab48456"
+  },
+  "actual": {
+    "inputUnchanged": true,
+    "fullParses": 1,
+    "digestCalls": 3,
+    "accepted": true,
+    "importError": null,
+    "confirmedRequired": true,
+    "capacityRejected": false,
+    "oldFourStoresUnchanged": false,
+    "receiptCount": 1,
+    "remainingOperationIds": [],
+    "readwriteTransactions": 1,
+    "operationIdsIntact": true,
+    "prospectiveMatches": true,
+    "canonicalBytes": 9999999,
+    "transactionCompleteBeforeReceipt": true,
+    "saveCallsDiagnosticOnly": 1,
+    "error": null
+  },
+  "error": null,
+  "status": "PASS"
+}
