@@ -1,0 +1,65 @@
+{
+  "caseId": "F3:R02-03",
+  "runId": "F5-AUTO-RESUME-B1-20261026-001",
+  "attempt": 3,
+  "index": 5,
+  "label": "truncated2",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 94,
+    "description": "invalid UTF-8 byte sequenceをfatal reject。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-26T09:59:25.617Z",
+  "finishedAt": "2026-10-26T09:59:25.617Z",
+  "input": {
+    "path": "inputs/F3-R02-03/005.bin",
+    "bytes": 9,
+    "sha256": "4e9eb97784c29556d57275b87d0a02c54a10528664357eefe23186bfb18e5c91"
+  },
+  "expected": {
+    "accepted": false,
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "independentOracle": {
+    "utf8Valid": false,
+    "rawPayloadChecksumComparable": false
+  },
+  "oracleNote": "Independent UTF8 decoder, decoded duplicate token stack, normative exact field sets and serializer, BigInt token bound and Node createHash. No product validator used for expected values.",
+  "actual": {
+    "accepted": false,
+    "errorCode": "UTF8",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "REJECT:UTF8"
+    ],
+    "parsedContentUnchanged": false,
+    "initialParsedSHA256": null,
+    "parsedHashes": [
+      {
+        "stage": "return",
+        "sha256": null
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [],
+    "observedWriteEvents": [],
+    "digestPayloadsMatchOracle": null,
+    "digestInputs": []
+  },
+  "status": "PASS",
+  "executionError": null
+}

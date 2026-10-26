@@ -1,0 +1,169 @@
+{
+  "caseId": "F3:R02-12",
+  "runId": "F5-AUTO-RESUME-B1-20261026-001",
+  "attempt": 3,
+  "index": 47,
+  "label": "unknown-snapshot.categories.9-__proto__",
+  "mode": "import",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 110,
+    "description": "unknown nested snapshot key。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "startedAt": "2026-10-26T09:59:40.523Z",
+  "finishedAt": "2026-10-26T09:59:40.524Z",
+  "input": {
+    "path": "inputs/F3-R02-12/047.bin",
+    "bytes": 3635,
+    "sha256": "e0f8fa9ca51b272a02a0bc1ba72b084ccce566e62c71a3a9ade6ce83a89b69cf"
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "storageAccesses": 0
+  },
+  "independentOracle": {
+    "utf8Valid": true,
+    "jsonValid": true,
+    "unicodeScalarValid": true,
+    "duplicateKeys": [],
+    "schemaUnknownFields": [
+      "snapshot.categories.9.__proto__"
+    ],
+    "numericLexemes": [
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "0",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      },
+      {
+        "token": "1",
+        "nonnegativeInteger": true,
+        "safe": true
+      }
+    ],
+    "checksumMatches": true,
+    "computedChecksum": "cbeae1b2e34dbf644503215f55b444d32ed1a1693d9345e81c721b00f8bc60b3",
+    "declaredChecksum": "cbeae1b2e34dbf644503215f55b444d32ed1a1693d9345e81c721b00f8bc60b3",
+    "canonicalRawMatches": false,
+    "rawSHA256": "e0f8fa9ca51b272a02a0bc1ba72b084ccce566e62c71a3a9ade6ce83a89b69cf",
+    "snapshotSHA256": "f22a0598957a231fd816b6d8d7f577e5b7dc421aa0012883a1882c59df620d73",
+    "rawPayloadChecksumComparable": true,
+    "rawPayloadSHA256": "cbeae1b2e34dbf644503215f55b444d32ed1a1693d9345e81c721b00f8bc60b3",
+    "rawPayloadChecksumMatches": true
+  },
+  "oracleNote": "Schema path exact allowlist rejects unknown own key; checksum independently regenerated, no generic INVALID_FILE expectation.",
+  "actual": {
+    "accepted": false,
+    "errorCode": "MEMBER_LIMIT",
+    "errorName": "Error",
+    "fullDocumentParseCalls": 0,
+    "digestCalls": 0,
+    "fileReads": 1,
+    "inputUnchanged": true,
+    "storageAccesses": 0,
+    "trace": [
+      "FILE_READ",
+      "REJECT:MEMBER_LIMIT"
+    ],
+    "parsedContentUnchanged": false,
+    "initialParsedSHA256": null,
+    "parsedHashes": [
+      {
+        "stage": "return",
+        "sha256": null
+      }
+    ],
+    "contentWriteAttempts": 0,
+    "descriptorOnlyHardeningEvents": [],
+    "observedWriteEvents": [],
+    "digestPayloadsMatchOracle": null,
+    "digestInputs": []
+  },
+  "status": "PASS",
+  "executionError": null
+}

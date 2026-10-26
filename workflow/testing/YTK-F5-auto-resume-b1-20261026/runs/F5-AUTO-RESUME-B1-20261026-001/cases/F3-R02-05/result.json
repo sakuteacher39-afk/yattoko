@@ -1,0 +1,146 @@
+{
+  "caseId": "F3:R02-05",
+  "status": "PASS",
+  "attempt": 4,
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B1-20261026-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 97,
+    "description": "root duplicate same key different value。",
+    "details": [
+      "- 期待：lexical reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "caseId": "F3:R02-05",
+      "status": "PASS",
+      "subjectCommit": "99e566da100ee6924149ec3244893bbddf7e8c4d",
+      "runId": "F5-B1-20261015-001",
+      "attempt": 1,
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-05/result.json",
+      "bytes": 963,
+      "sha256": "5b7453bf84b941246d667dd1019eefb24c6055ea26b69d23995e32b58bf323c9",
+      "gitBlob": "38ba9ca34dbd17b8e11ee2511f334e83173e3498",
+      "revisionSource": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/SUMMARY.json",
+      "complete": true,
+      "lastRecordedCommit": "0a077ba793de538491c023be39c05d25bd3ba97a",
+      "commitOrdinal": 1
+    },
+    {
+      "caseId": "F3:R02-05",
+      "status": "NOT VERIFIABLE",
+      "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+      "runId": "F5-REG-R02-M1-20261020-001",
+      "attempt": 2,
+      "path": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-05/result.json",
+      "bytes": 2647,
+      "sha256": "ddfc7f707bc93f1e9523c06753ce7dcf0cb6dad2ee8d71250e03c75828ca74fa",
+      "gitBlob": "d09ab454141eef1c1483d386770e96963b4103df",
+      "revisionSource": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-05/result.json",
+      "complete": true,
+      "lastRecordedCommit": "b15c54d9e19efdbad859d7fe2accc4205e3a9d2a",
+      "commitOrdinal": 5
+    },
+    {
+      "caseId": "F3:R02-05",
+      "status": "PASS",
+      "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+      "runId": "F5-REG-R02-M1-20261020-002",
+      "attempt": 3,
+      "path": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-002/cases/F3-R02-05/result.json",
+      "bytes": 2964,
+      "sha256": "44c54ec87746fff2bf7feee7a17b1ade1df31715433f1c48b015d32373b64ccd",
+      "gitBlob": "5ae5d2fecf5a8162f5748660bdf2f8be1b2fa7b9",
+      "revisionSource": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-002/cases/F3-R02-05/result.json",
+      "complete": true,
+      "lastRecordedCommit": "a3a5e377e8724b950b3f0c5484e0abc82e9b276f",
+      "commitOrdinal": 6
+    }
+  ],
+  "plannedVariants": 15,
+  "completedVariants": 15,
+  "counts": {
+    "PASS": 15
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "root-fileFormat-different",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "root-fileFormatVersion-different",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "root-kind-different",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "root-exportedAt-different",
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "label": "root-snapshot-different",
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "label": "root-pending-different",
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "label": "root-checksum-different",
+      "status": "PASS"
+    },
+    {
+      "index": 9,
+      "label": "root-fileFormat-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 10,
+      "label": "root-fileFormatVersion-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 11,
+      "label": "root-kind-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 12,
+      "label": "root-exportedAt-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 13,
+      "label": "root-snapshot-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 14,
+      "label": "root-pending-different-mixed-structural-whitespace",
+      "status": "PASS"
+    },
+    {
+      "index": 15,
+      "label": "root-checksum-different-mixed-structural-whitespace",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

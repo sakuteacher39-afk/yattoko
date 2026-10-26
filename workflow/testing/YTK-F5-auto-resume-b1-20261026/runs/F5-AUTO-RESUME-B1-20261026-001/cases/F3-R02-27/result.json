@@ -1,0 +1,81 @@
+{
+  "caseId": "F3:R02-27",
+  "status": "PASS",
+  "attempt": 3,
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B1-20261026-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 136,
+    "description": "checksum hex uppercase/長さ63/65/非hex。",
+    "details": [
+      "- 期待：reject。"
+    ],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "caseId": "F3:R02-27",
+      "status": "PASS",
+      "subjectCommit": "99e566da100ee6924149ec3244893bbddf7e8c4d",
+      "runId": "F5-B1-20261015-001",
+      "attempt": 1,
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-27/result.json",
+      "bytes": 1741,
+      "sha256": "851f09b011db58ff45378a0d98df9e150edca116d4cb7d36171c2a71d8842d9a",
+      "gitBlob": "61c9a2a4f64c65b7466d67ea6e3bb61443790ed0",
+      "revisionSource": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/SUMMARY.json",
+      "complete": true,
+      "lastRecordedCommit": "0a077ba793de538491c023be39c05d25bd3ba97a",
+      "commitOrdinal": 1
+    },
+    {
+      "caseId": "F3:R02-27",
+      "status": "PASS",
+      "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+      "runId": "F5-REG-R02-M1-20261020-001",
+      "attempt": 2,
+      "path": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-27/result.json",
+      "bytes": 1481,
+      "sha256": "35c4bd3196f744c1f638b1d1bd40213e82442cc67f24788378b8838a45d4919d",
+      "gitBlob": "7a202ac729b0f8bf9376f56e9394bfd2f12cf28d",
+      "revisionSource": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-27/result.json",
+      "complete": true,
+      "lastRecordedCommit": "b15c54d9e19efdbad859d7fe2accc4205e3a9d2a",
+      "commitOrdinal": 5
+    }
+  ],
+  "plannedVariants": 5,
+  "completedVariants": 5,
+  "counts": {
+    "PASS": 5
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "invalid-hex-uppercase",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "invalid-hex-short63",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "invalid-hex-long65",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "invalid-hex-nonhex",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}

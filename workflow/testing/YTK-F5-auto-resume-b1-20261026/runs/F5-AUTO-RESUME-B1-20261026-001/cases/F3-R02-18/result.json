@@ -1,0 +1,79 @@
+{
+  "caseId": "F3:R02-18",
+  "status": "PASS",
+  "attempt": 3,
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B1-20261026-001",
+  "source": {
+    "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+    "line": 120,
+    "description": "Number.MAX_SAFE_INTEGER超過拒否。",
+    "details": [],
+    "sha256": "605f16535035eea31510ceb6fc1d50f3e2e578b22fb943ed2818a7754fbecc80"
+  },
+  "priorAttempts": [
+    {
+      "caseId": "F3:R02-18",
+      "status": "PASS",
+      "subjectCommit": "99e566da100ee6924149ec3244893bbddf7e8c4d",
+      "runId": "F5-B1-20261015-001",
+      "attempt": 1,
+      "path": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/cases/F3-R02-18/result.json",
+      "bytes": 907,
+      "sha256": "457a8fe725d7338cd0438f4bfd33bf2158af7648aff326ad2e4475a94a1bec29",
+      "gitBlob": "abb1834e7005aea56c0b6f90690cfbd0047b335b",
+      "revisionSource": "workflow/testing/YTK-F5-batch1-20261015/runs/F5-B1-20261015-001/SUMMARY.json",
+      "complete": true,
+      "lastRecordedCommit": "0a077ba793de538491c023be39c05d25bd3ba97a",
+      "commitOrdinal": 1
+    },
+    {
+      "caseId": "F3:R02-18",
+      "status": "PASS",
+      "subjectCommit": "168274010a1aa45794de98dc71ac5735cb9d0ae1",
+      "runId": "F5-REG-R02-M1-20261020-001",
+      "attempt": 2,
+      "path": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-18/result.json",
+      "bytes": 1463,
+      "sha256": "ae7fd30239aa83c21a94fa68743b522a859be597efdd2fda9f4ca18a18f466a1",
+      "gitBlob": "7005a4b2023d2bcb10844ba1bbad700528057e2f",
+      "revisionSource": "workflow/testing/YTK-F5-regression-R02-mini1-20261020/runs/F5-REG-R02-M1-20261020-001/cases/F3-R02-18/result.json",
+      "complete": true,
+      "lastRecordedCommit": "b15c54d9e19efdbad859d7fe2accc4205e3a9d2a",
+      "commitOrdinal": 5
+    }
+  ],
+  "plannedVariants": 5,
+  "completedVariants": 5,
+  "counts": {
+    "PASS": 5
+  },
+  "observations": [
+    {
+      "index": 1,
+      "label": "valid-canonical-control",
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "label": "MAX_SAFE_INTEGER-control",
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "label": "unsafe-9007199254740992",
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "label": "unsafe-9007199254740993",
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "label": "unsafe-999999999999999999999",
+      "status": "PASS"
+    }
+  ],
+  "reason": "All predeclared vectors, independent oracle and expectations verified on fixed new subject; no development/old formal result copied"
+}
