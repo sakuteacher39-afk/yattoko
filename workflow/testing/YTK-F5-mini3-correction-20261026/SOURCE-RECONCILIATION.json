@@ -1,0 +1,34 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "referenceArtifact": "6911ae0c7f8890610bc02e9a821ce30cd39b6ba8",
+  "sources": [
+    {
+      "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+      "line": 227,
+      "sha256": "d80648db366bdb80b622ff8f7cabfd663ed6994a4d221fbe244b09c3d9d05d58",
+      "literal": "pending再適用で10MB超なら保存拒否"
+    },
+    {
+      "path": "workflow/proposals/YTK-F3-backup-restore-test-plan-draft-20261014.md",
+      "line": 233,
+      "sha256": "5963c2b772ae9b821b7adc6791d34b708820d9e485eca277f8a5a9cbc13ae722",
+      "literal": "pending 255 / 256 / 257 operations。"
+    }
+  ],
+  "changes": [
+    {
+      "caseId": "F2:RST-06",
+      "removed": "Unsupported fixed saveCalls=1 expectation",
+      "required": "Capacity rejection; unchanged4stores; no receipt; pending operation retained; no readwrite started. Within-capacity controls must commit correctly.",
+      "diagnosticOnly": "saveCalls is recorded without fixed expected number"
+    },
+    {
+      "caseId": "F3:R04-05",
+      "fixed": "Each category operation differs from the independently tracked before value; separate checker verifies all IDs, ordinals, dependency footprint, baseline revisions, contexts and byte/count conditions."
+    }
+  ],
+  "oldEvidenceUnchanged": true,
+  "existing18Pass": "Not executed or transferred",
+  "other36": "NOT RUN",
+  "limits": "Node/fake-indexeddb is not native browser, physical quota/storage or iPhone performance evidence."
+}
