@@ -1,0 +1,190 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "reference": "837e3500dc6be49cd6aee8bb4f666d2cdf6396a9",
+  "scope": [
+    "F2:CON-01",
+    "F2:CON-02",
+    "F2:CON-03",
+    "F2:CON-04",
+    "F2:CON-05",
+    "F2:CON-06",
+    "F2:CON-07",
+    "F2:DIR-01",
+    "F2:DIR-02",
+    "F2:DIR-03",
+    "F2:DIR-04",
+    "F2:DIR-05",
+    "F2:DIR-06",
+    "F2:DIR-07",
+    "F2:DIR-08",
+    "F2:DIR-09",
+    "F2:DIR-10",
+    "F2:DIR-11",
+    "F2:DIR-12",
+    "F2:CAP-16"
+  ],
+  "cases": [
+    {
+      "caseId": "F2:CON-01",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 120,
+      "variantBinding": "All12 category bindings, partial/completed as applicable, fresh and stale controls; CON04 real coordinator retry+pending state, CON05 actual deleteAll, CON06 actual verified import+confirmed restore, CON07 notifications unavailable.",
+      "originalExpected": "tab A save後、旧global tab B save拒否"
+    },
+    {
+      "caseId": "F2:CON-02",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 36,
+      "variantBinding": "All12 category bindings, partial/completed as applicable, fresh and stale controls; CON04 real coordinator retry+pending state, CON05 actual deleteAll, CON06 actual verified import+confirmed restore, CON07 notifications unavailable.",
+      "originalExpected": "partial serviceも競合保護"
+    },
+    {
+      "caseId": "F2:CON-03",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 36,
+      "variantBinding": "All12 category bindings, partial/completed as applicable, fresh and stale controls; CON04 real coordinator retry+pending state, CON05 actual deleteAll, CON06 actual verified import+confirmed restore, CON07 notifications unavailable.",
+      "originalExpected": "completed serviceも競合保護"
+    },
+    {
+      "caseId": "F2:CON-04",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 48,
+      "variantBinding": "All12 category bindings, partial/completed as applicable, fresh and stale controls; CON04 real coordinator retry+pending state, CON05 actual deleteAll, CON06 actual verified import+confirmed restore, CON07 notifications unavailable.",
+      "originalExpected": "conflict単純retryでforce overwriteしない"
+    },
+    {
+      "caseId": "F2:CON-05",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 72,
+      "variantBinding": "All12 category bindings, partial/completed as applicable, fresh and stale controls; CON04 real coordinator retry+pending state, CON05 actual deleteAll, CON06 actual verified import+confirmed restore, CON07 notifications unavailable.",
+      "originalExpected": "delete-all後旧generation save拒否"
+    },
+    {
+      "caseId": "F2:CON-06",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 72,
+      "variantBinding": "All12 category bindings, partial/completed as applicable, fresh and stale controls; CON04 real coordinator retry+pending state, CON05 actual deleteAll, CON06 actual verified import+confirmed restore, CON07 notifications unavailable.",
+      "originalExpected": "restore後旧generation save拒否"
+    },
+    {
+      "caseId": "F2:CON-07",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 120,
+      "variantBinding": "All12 category bindings, partial/completed as applicable, fresh and stale controls; CON04 real coordinator retry+pending state, CON05 actual deleteAll, CON06 actual verified import+confirmed restore, CON07 notifications unavailable.",
+      "originalExpected": "BroadcastChannel通知なしでもversion checkで拒否"
+    },
+    {
+      "caseId": "F2:DIR-01",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 96,
+      "variantBinding": "All applicable manifest source categories, both record states, explicit/unknown/unanswered summary states. DIR06 repeats positive paths with meta/overview/category/first-last service write-success abort; full4 stores preserved.",
+      "originalExpected": "parent=not_using + new child usage=using -> parent=usingへ同一transaction"
+    },
+    {
+      "caseId": "F2:DIR-02",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 90,
+      "variantBinding": "All applicable manifest source categories, both record states, explicit/unknown/unanswered summary states. DIR06 repeats positive paths with meta/overview/category/first-last service write-success abort; full4 stores preserved.",
+      "originalExpected": "R001 billing=no + service billing=yes -> billing=yesへ同一transaction"
+    },
+    {
+      "caseId": "F2:DIR-03",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 18,
+      "variantBinding": "All applicable manifest source categories, both record states, explicit/unknown/unanswered summary states. DIR06 repeats positive paths with meta/overview/category/first-last service write-success abort; full4 stores preserved.",
+      "originalExpected": "R001 finance=no + finance asset=yes -> finance=yes"
+    },
+    {
+      "caseId": "F2:DIR-04",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 126,
+      "variantBinding": "All applicable manifest source categories, both record states, explicit/unknown/unanswered summary states. DIR06 repeats positive paths with meta/overview/category/first-last service write-success abort; full4 stores preserved.",
+      "originalExpected": "R001 data=no + service importantData=yes -> data=yes"
+    },
+    {
+      "caseId": "F2:DIR-05",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 36,
+      "variantBinding": "All applicable manifest source categories, both record states, explicit/unknown/unanswered summary states. DIR06 repeats positive paths with meta/overview/category/first-last service write-success abort; full4 stores preserved.",
+      "originalExpected": "R001 family=known + service familyKnow=no -> family=hidden"
+    },
+    {
+      "caseId": "F2:DIR-06",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 2196,
+      "variantBinding": "All applicable manifest source categories, both record states, explicit/unknown/unanswered summary states. DIR06 repeats positive paths with meta/overview/category/first-last service write-success abort; full4 stores preserved.",
+      "originalExpected": "positive整合transaction abortでchildだけ/summaryだけ残らない"
+    },
+    {
+      "caseId": "F2:DIR-07",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 48,
+      "variantBinding": "Source-specific negative direction over applicable categories and both record states. Valid consistent no-op control; contradiction rejected with no child delete/edit and no partial commit.",
+      "originalExpected": "child usingありでparentをnot_using -> commit拒否/再確認"
+    },
+    {
+      "caseId": "F2:DIR-08",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 60,
+      "variantBinding": "Source-specific negative direction over applicable categories and both record states. Valid consistent no-op control; contradiction rejected with no child delete/edit and no partial commit.",
+      "originalExpected": "service billing=yesありでR001 billingをno -> silent commitしない"
+    },
+    {
+      "caseId": "F2:DIR-09",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 12,
+      "variantBinding": "Source-specific negative direction over applicable categories and both record states. Valid consistent no-op control; contradiction rejected with no child delete/edit and no partial commit.",
+      "originalExpected": "finance asset=yesありでR001 finance=no -> silent commitしない"
+    },
+    {
+      "caseId": "F2:DIR-10",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 84,
+      "variantBinding": "Source-specific negative direction over applicable categories and both record states. Valid consistent no-op control; contradiction rejected with no child delete/edit and no partial commit.",
+      "originalExpected": "importantData=yesありでR001 data=no -> silent commitしない"
+    },
+    {
+      "caseId": "F2:DIR-11",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 24,
+      "variantBinding": "Source-specific negative direction over applicable categories and both record states. Valid consistent no-op control; contradiction rejected with no child delete/edit and no partial commit.",
+      "originalExpected": "familyKnow=noありでR001 family=known -> silent commitしない"
+    },
+    {
+      "caseId": "F2:DIR-12",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 228,
+      "variantBinding": "Source-specific negative direction over applicable categories and both record states. Valid consistent no-op control; contradiction rejected with no child delete/edit and no partial commit.",
+      "originalExpected": "reject時にchildを削除/変更しない"
+    },
+    {
+      "caseId": "F2:CAP-16",
+      "priorStatus": "NOT RUN",
+      "readiness": "READY",
+      "variants": 3,
+      "originalExpected": "update後prospective stateで計測しoverなら旧commit維持"
+    }
+  ],
+  "heldGatesUntouched": true,
+  "excluded": [],
+  "formalNativeBrowserClaim": false
+}
