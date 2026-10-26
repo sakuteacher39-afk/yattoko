@@ -1,0 +1,316 @@
+{
+  "bindings": [
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 1,
+      "time": 71.59999999962747,
+      "activeReadwrite": 0,
+      "kind": "console-api",
+      "api": "warn"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 2,
+      "time": 71.90000000037253,
+      "activeReadwrite": 0,
+      "kind": "network-api",
+      "api": "fetch"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 3,
+      "time": 75.70000000018626,
+      "activeReadwrite": 0,
+      "kind": "network-api",
+      "api": "fetch"
+    },
+    {
+      "session": "CB0B46FA97FAE8FDA8C66D799A4F9291",
+      "seq": 1,
+      "time": 5.7000000001862645,
+      "activeReadwrite": 0,
+      "kind": "console-api",
+      "api": "warn"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 4,
+      "time": 194,
+      "activeReadwrite": 1,
+      "kind": "transaction",
+      "api": "start",
+      "mode": "readwrite"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 5,
+      "time": 194.09999999962747,
+      "activeReadwrite": 1,
+      "kind": "idb-request",
+      "api": "put",
+      "store": "h"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 6,
+      "time": 194.29999999981374,
+      "activeReadwrite": 1,
+      "kind": "timer",
+      "api": "setTimeout"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 7,
+      "time": 194.40000000037253,
+      "activeReadwrite": 1,
+      "kind": "crypto",
+      "api": "digest"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 8,
+      "time": 195,
+      "activeReadwrite": 1,
+      "kind": "file-api",
+      "api": "arrayBuffer"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 9,
+      "time": 195.29999999981374,
+      "activeReadwrite": 1,
+      "kind": "idb-request",
+      "api": "put-success",
+      "store": "h"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "seq": 10,
+      "time": 195.5,
+      "activeReadwrite": 0,
+      "kind": "transaction",
+      "api": "complete",
+      "mode": "readwrite"
+    }
+  ],
+  "observed": {
+    "events": [
+      {
+        "seq": 1,
+        "time": 71.59999999962747,
+        "activeReadwrite": 0,
+        "kind": "console-api",
+        "api": "warn"
+      },
+      {
+        "seq": 2,
+        "time": 71.90000000037253,
+        "activeReadwrite": 0,
+        "kind": "network-api",
+        "api": "fetch"
+      },
+      {
+        "seq": 3,
+        "time": 75.70000000018626,
+        "activeReadwrite": 0,
+        "kind": "network-api",
+        "api": "fetch"
+      },
+      {
+        "seq": 4,
+        "time": 194,
+        "activeReadwrite": 1,
+        "kind": "transaction",
+        "api": "start",
+        "mode": "readwrite"
+      },
+      {
+        "seq": 5,
+        "time": 194.09999999962747,
+        "activeReadwrite": 1,
+        "kind": "idb-request",
+        "api": "put",
+        "store": "h"
+      },
+      {
+        "seq": 6,
+        "time": 194.29999999981374,
+        "activeReadwrite": 1,
+        "kind": "timer",
+        "api": "setTimeout"
+      },
+      {
+        "seq": 7,
+        "time": 194.40000000037253,
+        "activeReadwrite": 1,
+        "kind": "crypto",
+        "api": "digest"
+      },
+      {
+        "seq": 8,
+        "time": 195,
+        "activeReadwrite": 1,
+        "kind": "file-api",
+        "api": "arrayBuffer"
+      },
+      {
+        "seq": 9,
+        "time": 195.29999999981374,
+        "activeReadwrite": 1,
+        "kind": "idb-request",
+        "api": "put-success",
+        "store": "h"
+      },
+      {
+        "seq": 10,
+        "time": 195.5,
+        "activeReadwrite": 0,
+        "kind": "transaction",
+        "api": "complete",
+        "mode": "readwrite"
+      }
+    ],
+    "activeReadwrite": 0
+  },
+  "nativeConsole": [
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "type": "warning",
+      "argCount": 1,
+      "textSHA256": "e8a1095f8d7d0c656dbdcd88f9aa47906f304fb3a71e0a4c2d51f2eeb06094b5",
+      "canary": true,
+      "rawTextRecorded": false
+    },
+    {
+      "session": "CB0B46FA97FAE8FDA8C66D799A4F9291",
+      "type": "warning",
+      "argCount": 1,
+      "textSHA256": "e8a1095f8d7d0c656dbdcd88f9aa47906f304fb3a71e0a4c2d51f2eeb06094b5",
+      "canary": true,
+      "rawTextRecorded": false
+    }
+  ],
+  "nativeNetwork": [
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:47841/__env__/canary.html",
+      "postBytes": 0,
+      "postSHA256": null
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:47841/favicon.ico",
+      "postBytes": 0,
+      "postSHA256": null
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:47841/__env__/echo",
+      "postBytes": 0,
+      "postSHA256": null
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "kind": "request",
+      "method": "POST",
+      "url": "https://ytk-harness.invalid/blocked",
+      "postBytes": 27,
+      "postSHA256": "e8a1095f8d7d0c656dbdcd88f9aa47906f304fb3a71e0a4c2d51f2eeb06094b5"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "kind": "blocked-external",
+      "url": "https://ytk-harness.invalid/blocked"
+    },
+    {
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9",
+      "kind": "request",
+      "method": "GET",
+      "url": "blob:http://127.0.0.1:47841/28c408c7-e60d-4573-8b9c-5410550afefd",
+      "postBytes": 0,
+      "postSHA256": null
+    }
+  ],
+  "contexts": [
+    {
+      "type": "page",
+      "session": "9A27C9ADC6E397860BC0759443F7B9B9"
+    },
+    {
+      "type": "worker",
+      "session": "CB0B46FA97FAE8FDA8C66D799A4F9291",
+      "url": "blob:http://127.0.0.1:47841/28c408c7-e60d-4573-8b9c-5410550afefd"
+    }
+  ],
+  "diagnostics": [],
+  "serverEvents": [
+    {
+      "kind": "blocked-proxy",
+      "method": "GET",
+      "url": "http://clients2.google.com/time/1/current?cup2key=10:G3ID5YcFN-gVwATYDpNGDsDg5MMNfVhAfIloVXRW1OM&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.gstatic.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "update.googleapis.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "accounts.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/__env__/canary.html"
+    },
+    {
+      "kind": "blocked-proxy-connect",
+      "host": "www.google.com:443"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/favicon.ico"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/__env__/echo"
+    },
+    {
+      "kind": "http",
+      "method": "GET",
+      "path": "/index.html"
+    }
+  ],
+  "rawConsoleAndRequestBodiesRecorded": false
+}
