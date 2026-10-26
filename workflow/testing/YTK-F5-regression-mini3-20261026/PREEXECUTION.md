@@ -1,0 +1,15 @@
+# 第3小バッチ実行前固定
+
+固定製品 15a146a9b2c4f80c63798eb31d64b6774a4c2e99、参照成果物 c98a4c027a83889ee2e7c9a81642482afe38fed8。統合76件のうち第2小バッチ20 PASSを除く56件を確認し、その内Node候補から20件を選定した。旧20 PASSは過去run履歴として保持し、本runへ判定を移植しない。未選定の残り36件は実行しない。
+
+全102 variantのケースID、入力raw bytes/SHA-256、独立oracle、期待結果、実施方式、fixture/fault参照、runner/helper hashをPREEXECUTION.jsonに固定する。容量・pending bytes/count、依存cycle/conditional context、preflight順序、transaction complete前後receipt、中断後同一session retry、duplicate importを優先する。
+
+scanner層の深さ16/17・token4096/4097・member上限・理論service件数境界は、上限内のscanner通過後にschemaで拒否するcontrolを明示する。JSON.parse全体呼出し回数を観測し、単なる拒否を境界検証の成功としない。pending bytesおよび255/256のcontrolは完全に有効なfileとしてpreview受理を期待する。
+
+10MB容量は有効なsnapshot 9,999,999 bytesと、追加後10MB超の1操作を独立生成し、保存拒否・旧保存内容維持・receipt無しを確認する。小さな正常保存controlも実施する。
+
+Node24/fake-indexeddbは実ブラウザーquota、永続性、物理保存、iPhone性能を証明しない。private receipt Mapの保持は固定ソースの構造照合と公開status・返却receipt・改変コピーの防御を併用する。Map内部を直接公開させる製品改変はしない。
+
+準備時のfixture経路不備1件はPREPARATION-HISTORY.jsonに保持した。製品の正式実行前であり、正式結果として扱わない。
+
+実行前commit後に新run F5-REG-M3-20261026-001だけを実行する。期待に反したらFAIL、fixture/runner/観測不備ならNOT VERIFIABLEとし、過去証拠を変更しない。重大な旧データ破壊・外部送信・対象改変時は停止する。
