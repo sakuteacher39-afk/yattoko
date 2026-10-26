@@ -1,0 +1,53 @@
+{
+  "label": "dense-raw16000000-32",
+  "status": "PASS",
+  "checks": {
+    "inputUnchanged": true,
+    "instrumentationPreservesOutcome": true,
+    "accepted": true,
+    "fileRead": true,
+    "wholeInputParse": true,
+    "scalarOnly": true,
+    "checksumRoute": true,
+    "errorRoute": true,
+    "scannerBeforeTreeAbsent": true,
+    "scannerExitTreeAbsent": true,
+    "afterParseTreeDetected": true,
+    "allocationTracePresent": true,
+    "staticAllocationPolicy": true,
+    "positiveControlSensitivity": true
+  },
+  "expected": {
+    "accepted": false,
+    "wholeInputParses": 1,
+    "scalarTokenReturnsOnly": true,
+    "scannerTrees": 0,
+    "afterParseTreesAtLeast": 1,
+    "fileReads": 1,
+    "digestCalls": 0,
+    "errorCode": "CANONICAL"
+  },
+  "measuredCounts": {
+    "wholeInputParses": 1,
+    "scalarTokenParses": 420087,
+    "nonScalarTokenReturns": 0,
+    "maxTokenCharacters": 66,
+    "fileReads": 1,
+    "digestCalls": 0,
+    "controlWholeParses": 0
+  },
+  "baselineCounts": {
+    "wholeInputParses": 1,
+    "scalarTokenParses": 420087,
+    "nonScalarTokenReturns": 0,
+    "maxTokenCharacters": 66,
+    "fileReads": 1,
+    "digestCalls": 0,
+    "controlWholeParses": 0
+  },
+  "scannerGraphs": {
+    "before": 0,
+    "exit": 0,
+    "afterParse": 1
+  }
+}

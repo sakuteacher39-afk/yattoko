@@ -1,0 +1,49 @@
+{
+  "formalRunChanged": false,
+  "productReexecuted": false,
+  "events": [
+    {
+      "type": "AUDIT_EXPECTATION_ERROR",
+      "cause": "Auditor expected exactly4 explicitly passed child env keys; libuv1.52.1 Windows make_program_env adds required OS vars. Observed13 names.",
+      "resolution": "Keep all original worker/config/heap records immutable. Audit against exact explicit4 union documented Windows required_vars11 (overlap2), not an arbitrary relaxed set. No product or instrumentation-runner changes.",
+      "primarySource": "https://raw.githubusercontent.com/libuv/libuv/v1.52.1/src/win/process.c",
+      "lines": "47-59,592-731",
+      "explicitKeys": [
+        "SystemRoot",
+        "TEMP",
+        "TMP",
+        "NODE_NO_WARNINGS"
+      ],
+      "windowsRequiredKeys": [
+        "HOMEDRIVE",
+        "HOMEPATH",
+        "LOGONSERVER",
+        "PATH",
+        "SYSTEMDRIVE",
+        "SYSTEMROOT",
+        "TEMP",
+        "USERDOMAIN",
+        "USERNAME",
+        "USERPROFILE",
+        "WINDIR"
+      ],
+      "observed13Keys": [
+        "HOMEDRIVE",
+        "HOMEPATH",
+        "LOGONSERVER",
+        "NODE_NO_WARNINGS",
+        "PATH",
+        "SYSTEMDRIVE",
+        "SYSTEMROOT",
+        "TEMP",
+        "TMP",
+        "USERDOMAIN",
+        "USERNAME",
+        "USERPROFILE",
+        "WINDIR"
+      ],
+      "valuesNotPrinted": true,
+      "interpretation": "Heaps contain normal Windows OS metadata; no arbitrary account/API credential env keys were passed or observed. Do not claim only4 observed keys."
+    }
+  ]
+}

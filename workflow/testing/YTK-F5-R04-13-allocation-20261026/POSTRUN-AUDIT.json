@@ -1,0 +1,721 @@
+{
+  "caseId": "F3:R04-13",
+  "runId": "F5-R04-13-ALLOCATION-20261026-001",
+  "attempt": 2,
+  "status": "PASS",
+  "evidenceFilesVerified": 125,
+  "heapGraphsIndependentlyRecomputed": 36,
+  "allGraphRawBytesAndSHA256Verified": true,
+  "allGraphAllocationTraceTuplesPresent": true,
+  "allSamplingProfilesAndHeapTimelineRecordsPresent": true,
+  "positiveRetentionAndTransientSensitivityVerified": true,
+  "staticSourceAllocationPolicyAndThreePositiveCopiesVerified": true,
+  "phaseOrderAndObserverOutcomeEquivalenceVerified": true,
+  "oldThreeRawVariantsPreservedExactly": true,
+  "oldNotVerifiableAnd19PassPreserved": true,
+  "targetFileCount": 3441,
+  "historicalFileCount": 28313,
+  "dependenciesFiles": 1978,
+  "targetDependenciesHistoryBeforeAfterMatch": true,
+  "allFrozenRunnersUnchanged": true,
+  "changesOnlyNewTestFolder": true,
+  "childEnvironmentIsExplicit4PlusDocumentedLibuvWindowsVars": true,
+  "childHasNoOtherEnvironmentKeys": true,
+  "extraProductExecutionsByAudit": 0,
+  "graphAudits": [
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-retained",
+      "phase": "after-decode-before-scanner",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 49,
+        "allocations": 560,
+        "totalBytes": 32672,
+        "functionInfoValues": 216,
+        "rawBytes": 8808736,
+        "rawSHA256": "f45d61cbc2925c10022644a2c5f5b5c9d2477a872d0733c1ef7cec2b0225c21c"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-retained",
+      "phase": "positive-control-peak",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 247,
+        "allocations": 242264,
+        "totalBytes": 12089544,
+        "functionInfoValues": 780,
+        "rawBytes": 22848271,
+        "rawSHA256": "7beac073f5938ca8ec3bbad94de38fbf2e833675661d0717efdd0c57db9898ce"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-retained",
+      "phase": "scanner-end-before-full-parse",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 465,
+        "allocations": 1138814,
+        "totalBytes": 58934512,
+        "functionInfoValues": 846,
+        "rawBytes": 22878635,
+        "rawSHA256": "a90b127d0ca5a08670dee2ce7c0208440b6c5a1876556b3141218259111ac119"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-retained",
+      "phase": "after-full-parse",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 580,
+        "allocations": 1361026,
+        "totalBytes": 70115488,
+        "functionInfoValues": 864,
+        "rawBytes": 35962794,
+        "rawSHA256": "e5c366ec5fea6c09bb84ac2fe00f97ecb2abd45698dee12bf2479955974fb72a"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-retained",
+      "phase": "canonical-full-encode",
+      "matchingTrees": 3,
+      "trace": {
+        "tuples": 691,
+        "allocations": 3441389,
+        "totalBytes": 286606328,
+        "functionInfoValues": 984,
+        "rawBytes": 44515220,
+        "rawSHA256": "2462718915e46f86d6b7cf2fe5b375231bef9b2d76edccc2773a80f42b248879"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-transient",
+      "phase": "after-decode-before-scanner",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 49,
+        "allocations": 561,
+        "totalBytes": 32704,
+        "functionInfoValues": 216,
+        "rawBytes": 8807097,
+        "rawSHA256": "9c5c855113541060e12035443c3bee712186eda785835f818f1ad01ac1fc4673"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-transient",
+      "phase": "positive-control-peak",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 247,
+        "allocations": 242261,
+        "totalBytes": 12089304,
+        "functionInfoValues": 780,
+        "rawBytes": 22888233,
+        "rawSHA256": "d2824d4a80a6019d0f4abec12b8bac5a963c1f4a5e8b3856cb00edb8c9968dfb"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-transient",
+      "phase": "scanner-end-before-full-parse",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 466,
+        "allocations": 1138460,
+        "totalBytes": 58925256,
+        "functionInfoValues": 852,
+        "rawBytes": 8922936,
+        "rawSHA256": "82c982273e215dff842064e4c33336e43fe679892431ddb86b490d5693fbd814"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-transient",
+      "phase": "after-full-parse",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 576,
+        "allocations": 1359916,
+        "totalBytes": 70055376,
+        "functionInfoValues": 870,
+        "rawBytes": 22922844,
+        "rawSHA256": "121802cbeea3a4df5101ce3ba735b2dbb173d5fb1a74b3413ac789c209489e7d"
+      }
+    },
+    {
+      "worker": "calibration/F5-R04-13-SENSITIVITY-20261026-001/positive-transient",
+      "phase": "canonical-full-encode",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 688,
+        "allocations": 3439431,
+        "totalBytes": 286490424,
+        "functionInfoValues": 996,
+        "rawBytes": 31361191,
+        "rawSHA256": "5c2381e340ed705bdb4f79ddb7637b09fcf2eeb4d9a1a96f04357432a3988691"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-canonical-control/measured",
+      "phase": "after-decode-before-scanner",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 49,
+        "allocations": 568,
+        "totalBytes": 32880,
+        "functionInfoValues": 216,
+        "rawBytes": 8810485,
+        "rawSHA256": "da69adc1d1dc0750eaa1b5a96256398b5fd07ecc8f28a590146ca9556b3e63bb"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-canonical-control/measured",
+      "phase": "scanner-end-before-full-parse",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 335,
+        "allocations": 916099,
+        "totalBytes": 47728856,
+        "functionInfoValues": 840,
+        "rawBytes": 8916442,
+        "rawSHA256": "c10985356931b17653944f074b928d47e53fad405f0e4e158d1e146acba2d074"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-canonical-control/measured",
+      "phase": "after-full-parse",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 440,
+        "allocations": 1137563,
+        "totalBytes": 58860648,
+        "functionInfoValues": 846,
+        "rawBytes": 22869377,
+        "rawSHA256": "b193a3c1ea9852d6ff2b0ddba6f64a81b31356449f4cb3817d3236767fe8286c"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-canonical-control/measured",
+      "phase": "canonical-full-encode",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 562,
+        "allocations": 3217282,
+        "totalBytes": 275302680,
+        "functionInfoValues": 966,
+        "rawBytes": 31261282,
+        "rawSHA256": "736dba2ca7c8dc01e2ed309a5a5940be3d97987851b51fb018a33965d897d506"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-canonical-control/measured",
+      "phase": "before-checksum-digest",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 706,
+        "allocations": 3220199,
+        "totalBytes": 290697904,
+        "functionInfoValues": 1014,
+        "rawBytes": 31272541,
+        "rawSHA256": "0d89542bf9577a3496092acbb1b900c04190b623b485fe0c0850402196180a33"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-raw16000000-10/measured",
+      "phase": "after-decode-before-scanner",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 49,
+        "allocations": 565,
+        "totalBytes": 32784,
+        "functionInfoValues": 216,
+        "rawBytes": 8807911,
+        "rawSHA256": "607a35f434bb78a1c87a29524ed2caee98e0f959e895f3e48491c148d7345d8d"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-raw16000000-10/measured",
+      "phase": "scanner-end-before-full-parse",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 333,
+        "allocations": 916039,
+        "totalBytes": 47731680,
+        "functionInfoValues": 834,
+        "rawBytes": 8913792,
+        "rawSHA256": "25a5dfb5b17504b1384e5c47750a1f963ba742bb8b23aa052024fa696fd0900a"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-raw16000000-10/measured",
+      "phase": "after-full-parse",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 438,
+        "allocations": 1137500,
+        "totalBytes": 58863376,
+        "functionInfoValues": 840,
+        "rawBytes": 22914122,
+        "rawSHA256": "3f7e1a08b7bfaecd38eea710ee5fd7c9979bae7f35d1eb6d72167f1e6b2d890e"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-raw16000000-10/measured",
+      "phase": "canonical-full-encode",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 561,
+        "allocations": 3217451,
+        "totalBytes": 275306512,
+        "functionInfoValues": 954,
+        "rawBytes": 31289003,
+        "rawSHA256": "d3f03acef10c20c3468df79e1ccf2dbd1b98a49dd00906cbd0482b669b12ec02"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-raw16000000-32/measured",
+      "phase": "after-decode-before-scanner",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 49,
+        "allocations": 565,
+        "totalBytes": 32784,
+        "functionInfoValues": 216,
+        "rawBytes": 8809845,
+        "rawSHA256": "710e0c71ca54e225fc3caef9b1d0e53e0bd9080c8693b2c3efb5fc07499dff71"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-raw16000000-32/measured",
+      "phase": "scanner-end-before-full-parse",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 336,
+        "allocations": 916341,
+        "totalBytes": 47742944,
+        "functionInfoValues": 834,
+        "rawBytes": 8915787,
+        "rawSHA256": "e18ae6b735c7ff5016260a21bb8fba9d41c1d0dedac4cfb4cf0a1f1e7729dd64"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-raw16000000-32/measured",
+      "phase": "after-full-parse",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 441,
+        "allocations": 1137802,
+        "totalBytes": 58874640,
+        "functionInfoValues": 840,
+        "rawBytes": 22865945,
+        "rawSHA256": "50e48b027338df193c7ca509f085847404d24821e29282943dc0a4bb91798ef2"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/dense-raw16000000-32/measured",
+      "phase": "canonical-full-encode",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 564,
+        "allocations": 3217804,
+        "totalBytes": 275327984,
+        "functionInfoValues": 960,
+        "rawBytes": 31247713,
+        "rawSHA256": "787500cc24a5290a4077814add1ebaf7541c066a1c66efe5d2867ad8dfbc8fc7"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-canonical-control/measured",
+      "phase": "after-decode-before-scanner",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 49,
+        "allocations": 566,
+        "totalBytes": 39952,
+        "functionInfoValues": 216,
+        "rawBytes": 8806490,
+        "rawSHA256": "d57c2be5ed6dfb85b745be31c227b492f0fc2e0af37d3a1bbbd4b1d21112844c"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-canonical-control/measured",
+      "phase": "scanner-end-before-full-parse",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 305,
+        "allocations": 23105,
+        "totalBytes": 1100728,
+        "functionInfoValues": 804,
+        "rawBytes": 8897790,
+        "rawSHA256": "f51512ccd717496e588642a959a8375c86db7abd99a6c6d39cee89565deb3748"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-canonical-control/measured",
+      "phase": "after-full-parse",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 410,
+        "allocations": 24647,
+        "totalBytes": 1195408,
+        "functionInfoValues": 810,
+        "rawBytes": 8913751,
+        "rawSHA256": "eb3522343f3a7a89443c3e70b7433cebb3d7627b08e8fd2e88542199a286774e"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-canonical-control/measured",
+      "phase": "canonical-full-encode",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 524,
+        "allocations": 27798,
+        "totalBytes": 1450496,
+        "functionInfoValues": 906,
+        "rawBytes": 8955155,
+        "rawSHA256": "3a824982c459e6c865e7227c7bd2c86c13e4fd089ada4b56b23572ca4046ed06"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-canonical-control/measured",
+      "phase": "before-checksum-digest",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 666,
+        "allocations": 29260,
+        "totalBytes": 1550032,
+        "functionInfoValues": 954,
+        "rawBytes": 8975123,
+        "rawSHA256": "febf0400ef4e4b3dcbb4b8e9b31fdae8858332fb17cc2415850a75460fe6b8b9"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-raw16000000-10/measured",
+      "phase": "after-decode-before-scanner",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 49,
+        "allocations": 563,
+        "totalBytes": 32720,
+        "functionInfoValues": 216,
+        "rawBytes": 8805766,
+        "rawSHA256": "9ed947ed0f9481b9948301b0216e41c01e34f747181e266ba9c5b4190c286e83"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-raw16000000-10/measured",
+      "phase": "scanner-end-before-full-parse",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 307,
+        "allocations": 23114,
+        "totalBytes": 1099048,
+        "functionInfoValues": 804,
+        "rawBytes": 8897574,
+        "rawSHA256": "db65562fd896e8bbf0374f84f60afd51252e9a1a86303dc28a3b2bfd15ffa5c5"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-raw16000000-10/measured",
+      "phase": "after-full-parse",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 412,
+        "allocations": 24659,
+        "totalBytes": 1195744,
+        "functionInfoValues": 810,
+        "rawBytes": 8913177,
+        "rawSHA256": "7518fc8ac0020a3dfccab15e89ffeb35bff4c0c1ba039229c3ceb7e1b191d5c1"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-raw16000000-10/measured",
+      "phase": "canonical-full-encode",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 531,
+        "allocations": 27810,
+        "totalBytes": 1450976,
+        "functionInfoValues": 906,
+        "rawBytes": 8954222,
+        "rawSHA256": "feaff64fec34773e6377ab3775b832ebf734ecf2f8d883dd6549aeee7eb2f0eb"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-raw16000000-32/measured",
+      "phase": "after-decode-before-scanner",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 49,
+        "allocations": 563,
+        "totalBytes": 32720,
+        "functionInfoValues": 216,
+        "rawBytes": 8808880,
+        "rawSHA256": "530941f24b957630ffd0b7435ccf229d831ced66f019e9f2ff793d6daddcb85c"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-raw16000000-32/measured",
+      "phase": "scanner-end-before-full-parse",
+      "matchingTrees": 0,
+      "trace": {
+        "tuples": 307,
+        "allocations": 23114,
+        "totalBytes": 1099464,
+        "functionInfoValues": 810,
+        "rawBytes": 8900458,
+        "rawSHA256": "1c83292e5c9e1028b0c484c45028bd4c55b57921d7f2833fab3043228ec0ab8d"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-raw16000000-32/measured",
+      "phase": "after-full-parse",
+      "matchingTrees": 1,
+      "trace": {
+        "tuples": 412,
+        "allocations": 24659,
+        "totalBytes": 1196160,
+        "functionInfoValues": 816,
+        "rawBytes": 8915698,
+        "rawSHA256": "96de1e9c7777ebb47060f6385f8041c583f76a04b4acebdcb04b00b4a2bdde8c"
+      }
+    },
+    {
+      "worker": "runs/F5-R04-13-ALLOCATION-20261026-001/old-raw16000000-32/measured",
+      "phase": "canonical-full-encode",
+      "matchingTrees": 2,
+      "trace": {
+        "tuples": 531,
+        "allocations": 27810,
+        "totalBytes": 1451392,
+        "functionInfoValues": 912,
+        "rawBytes": 8956945,
+        "rawSHA256": "48efd041e4d2d991c7dd785d927ad18f805eb2ff03a34116f72922e07eb95856"
+      }
+    }
+  ],
+  "chronologies": [
+    {
+      "label": "old-canonical-control",
+      "phases": [
+        "after-decode-before-scanner",
+        "scanner-end-before-full-parse",
+        "after-full-parse",
+        "canonical-full-encode",
+        "canonical-full-encode",
+        "canonical-payload-encode",
+        "before-checksum-digest"
+      ],
+      "counts": {
+        "wholeInputParses": 1,
+        "scalarTokenParses": 236,
+        "nonScalarTokenReturns": 0,
+        "maxTokenCharacters": 66,
+        "fileReads": 1,
+        "digestCalls": 1,
+        "controlWholeParses": 0
+      },
+      "scannerTrees": {
+        "before": 0,
+        "exit": 0,
+        "afterParse": 1
+      }
+    },
+    {
+      "label": "dense-canonical-control",
+      "phases": [
+        "after-decode-before-scanner",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scanner-end-before-full-parse",
+        "after-full-parse",
+        "canonical-full-encode",
+        "canonical-full-encode",
+        "canonical-payload-encode",
+        "before-checksum-digest"
+      ],
+      "counts": {
+        "wholeInputParses": 1,
+        "scalarTokenParses": 420087,
+        "nonScalarTokenReturns": 0,
+        "maxTokenCharacters": 66,
+        "fileReads": 1,
+        "digestCalls": 1,
+        "controlWholeParses": 0
+      },
+      "scannerTrees": {
+        "before": 0,
+        "exit": 0,
+        "afterParse": 1
+      }
+    },
+    {
+      "label": "old-raw16000000-32",
+      "phases": [
+        "after-decode-before-scanner",
+        "scanner-end-before-full-parse",
+        "after-full-parse",
+        "canonical-full-encode",
+        "canonical-full-encode"
+      ],
+      "counts": {
+        "wholeInputParses": 1,
+        "scalarTokenParses": 236,
+        "nonScalarTokenReturns": 0,
+        "maxTokenCharacters": 66,
+        "fileReads": 1,
+        "digestCalls": 0,
+        "controlWholeParses": 0
+      },
+      "scannerTrees": {
+        "before": 0,
+        "exit": 0,
+        "afterParse": 1
+      }
+    },
+    {
+      "label": "old-raw16000000-10",
+      "phases": [
+        "after-decode-before-scanner",
+        "scanner-end-before-full-parse",
+        "after-full-parse",
+        "canonical-full-encode",
+        "canonical-full-encode"
+      ],
+      "counts": {
+        "wholeInputParses": 1,
+        "scalarTokenParses": 236,
+        "nonScalarTokenReturns": 0,
+        "maxTokenCharacters": 66,
+        "fileReads": 1,
+        "digestCalls": 0,
+        "controlWholeParses": 0
+      },
+      "scannerTrees": {
+        "before": 0,
+        "exit": 0,
+        "afterParse": 1
+      }
+    },
+    {
+      "label": "dense-raw16000000-32",
+      "phases": [
+        "after-decode-before-scanner",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scanner-end-before-full-parse",
+        "after-full-parse",
+        "canonical-full-encode",
+        "canonical-full-encode"
+      ],
+      "counts": {
+        "wholeInputParses": 1,
+        "scalarTokenParses": 420087,
+        "nonScalarTokenReturns": 0,
+        "maxTokenCharacters": 66,
+        "fileReads": 1,
+        "digestCalls": 0,
+        "controlWholeParses": 0
+      },
+      "scannerTrees": {
+        "before": 0,
+        "exit": 0,
+        "afterParse": 1
+      }
+    },
+    {
+      "label": "dense-raw16000000-10",
+      "phases": [
+        "after-decode-before-scanner",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scalar-progress",
+        "scanner-end-before-full-parse",
+        "after-full-parse",
+        "canonical-full-encode",
+        "canonical-full-encode"
+      ],
+      "counts": {
+        "wholeInputParses": 1,
+        "scalarTokenParses": 420087,
+        "nonScalarTokenReturns": 0,
+        "maxTokenCharacters": 66,
+        "fileReads": 1,
+        "digestCalls": 0,
+        "controlWholeParses": 0
+      },
+      "scannerTrees": {
+        "before": 0,
+        "exit": 0,
+        "afterParse": 1
+      }
+    }
+  ],
+  "scope": "Exact fixed scanner producer policy + measured Node cases; not a claim based on low heap, not native browser/Safari peak or16MB safety/F6/F5 overall."
+}

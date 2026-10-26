@@ -1,0 +1,101 @@
+{
+  "label": "old-raw16000000-32",
+  "mode": "bare",
+  "profile": false,
+  "accepted": false,
+  "error": {
+    "name": "Error",
+    "code": "CANONICAL"
+  },
+  "counts": {
+    "wholeInputParses": 1,
+    "scalarTokenParses": 236,
+    "nonScalarTokenReturns": 0,
+    "maxTokenCharacters": 66,
+    "fileReads": 1,
+    "digestCalls": 0,
+    "controlWholeParses": 0
+  },
+  "profileError": null,
+  "snapshots": [],
+  "events": [
+    {
+      "phase": "after-decode-before-scanner",
+      "time": 151.2851,
+      "memory": {
+        "rss": 150999040,
+        "heapTotal": 12345344,
+        "heapUsed": 8699864,
+        "external": 100178298,
+        "arrayBuffers": 32146771
+      }
+    },
+    {
+      "phase": "scanner-end-before-full-parse",
+      "time": 211.4506,
+      "memory": {
+        "rss": 152453120,
+        "heapTotal": 13918208,
+        "heapUsed": 8438816,
+        "external": 100194298,
+        "arrayBuffers": 32162752
+      }
+    },
+    {
+      "phase": "after-full-parse",
+      "time": 217.8568,
+      "memory": {
+        "rss": 152465408,
+        "heapTotal": 13918208,
+        "heapUsed": 8451216,
+        "external": 100194298,
+        "arrayBuffers": 32162752
+      }
+    },
+    {
+      "phase": "canonical-full-encode",
+      "bytes": 3607,
+      "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+      "time": 221.3925
+    },
+    {
+      "phase": "canonical-full-encode",
+      "time": 221.4045,
+      "memory": {
+        "rss": 153088000,
+        "heapTotal": 13918208,
+        "heapUsed": 8646408,
+        "external": 100201268,
+        "arrayBuffers": 32169722
+      }
+    }
+  ],
+  "sampling": {
+    "interval": 4096,
+    "includeCollected": true,
+    "samples": 0,
+    "frames": []
+  },
+  "inputBytes": 16000000,
+  "inputSHA256": "f4d77a4b79cdd0513de0af7e401892fefa9d2bef97a981f6133d04641b16f93a",
+  "intrinsicsPreserved": true,
+  "controlRootRetained": false,
+  "sinks": [],
+  "environmentKeys": [
+    "HOMEDRIVE",
+    "HOMEPATH",
+    "LOGONSERVER",
+    "NODE_NO_WARNINGS",
+    "PATH",
+    "SYSTEMDRIVE",
+    "SystemRoot",
+    "TEMP",
+    "TMP",
+    "USERDOMAIN",
+    "USERNAME",
+    "USERPROFILE",
+    "WINDIR"
+  ],
+  "inspectorTransport": "in-process Session; no listener port",
+  "schemaGraphExpectedServices": 3
+}

@@ -1,0 +1,1530 @@
+{
+  "label": "dense-raw16000000-32",
+  "mode": "subject",
+  "profile": true,
+  "accepted": false,
+  "error": {
+    "name": "Error",
+    "code": "CANONICAL"
+  },
+  "counts": {
+    "wholeInputParses": 1,
+    "scalarTokenParses": 420087,
+    "nonScalarTokenReturns": 0,
+    "maxTokenCharacters": 66,
+    "fileReads": 1,
+    "digestCalls": 0,
+    "controlWholeParses": 0
+  },
+  "profileError": null,
+  "snapshots": [
+    {
+      "phase": "after-decode-before-scanner",
+      "file": "after-decode-before-scanner.heapsnapshot.gz",
+      "rawBytes": 8809845,
+      "rawSHA256": "710e0c71ca54e225fc3caef9b1d0e53e0bd9080c8693b2c3efb5fc07499dff71",
+      "gzipSHA256": "adb62f78fef1e9a5ca5bbdbf35609e2edd3aa5df894b5402f38dea3b95aea01a"
+    },
+    {
+      "phase": "scanner-end-before-full-parse",
+      "file": "scanner-end-before-full-parse.heapsnapshot.gz",
+      "rawBytes": 8915787,
+      "rawSHA256": "e18ae6b735c7ff5016260a21bb8fba9d41c1d0dedac4cfb4cf0a1f1e7729dd64",
+      "gzipSHA256": "48472abcd8be35f1ff9c49f5f58fda16289d34eb0b2d790861e1b3832cbd9500"
+    },
+    {
+      "phase": "after-full-parse",
+      "file": "after-full-parse.heapsnapshot.gz",
+      "rawBytes": 22865945,
+      "rawSHA256": "50e48b027338df193c7ca509f085847404d24821e29282943dc0a4bb91798ef2",
+      "gzipSHA256": "b06b52cbe918b96ea5f2c43e0864b0afbf85e2a4442a081c12eb3239a6d865f2"
+    },
+    {
+      "phase": "canonical-full-encode",
+      "file": "canonical-full-encode.heapsnapshot.gz",
+      "rawBytes": 31247713,
+      "rawSHA256": "787500cc24a5290a4077814add1ebaf7541c066a1c66efe5d2867ad8dfbc8fc7",
+      "gzipSHA256": "957b0d8593beb93e2fa24cef3451f76bc4ccaf805bce04fc07db02485bb87582"
+    }
+  ],
+  "events": [
+    {
+      "phase": "after-decode-before-scanner",
+      "time": 148.8759,
+      "memory": {
+        "rss": 147804160,
+        "heapTotal": 13131776,
+        "heapUsed": 7553736,
+        "external": 90581589,
+        "arrayBuffers": 32146735
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 16384,
+      "time": 598.5903,
+      "memory": {
+        "rss": 190464000,
+        "heapTotal": 10248192,
+        "heapUsed": 7383728,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 32768,
+      "time": 676.1164,
+      "memory": {
+        "rss": 188641280,
+        "heapTotal": 10510336,
+        "heapUsed": 8407408,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 49152,
+      "time": 743.9342,
+      "memory": {
+        "rss": 188645376,
+        "heapTotal": 10510336,
+        "heapUsed": 8145552,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 65536,
+      "time": 809.6591,
+      "memory": {
+        "rss": 188710912,
+        "heapTotal": 10510336,
+        "heapUsed": 7912984,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 81920,
+      "time": 877.4769,
+      "memory": {
+        "rss": 188715008,
+        "heapTotal": 10510336,
+        "heapUsed": 7681192,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 98304,
+      "time": 940.7437,
+      "memory": {
+        "rss": 188715008,
+        "heapTotal": 10510336,
+        "heapUsed": 7448584,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 114688,
+      "time": 1009.1618,
+      "memory": {
+        "rss": 188780544,
+        "heapTotal": 10510336,
+        "heapUsed": 8231872,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 131072,
+      "time": 1078.6046,
+      "memory": {
+        "rss": 188801024,
+        "heapTotal": 10510336,
+        "heapUsed": 7966616,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 147456,
+      "time": 1150.9971,
+      "memory": {
+        "rss": 188989440,
+        "heapTotal": 10510336,
+        "heapUsed": 7734608,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 163840,
+      "time": 1218.2736,
+      "memory": {
+        "rss": 189054976,
+        "heapTotal": 10510336,
+        "heapUsed": 7502728,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 180224,
+      "time": 1287.0306,
+      "memory": {
+        "rss": 189054976,
+        "heapTotal": 10510336,
+        "heapUsed": 8285784,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 196608,
+      "time": 1353.8425,
+      "memory": {
+        "rss": 189120512,
+        "heapTotal": 10510336,
+        "heapUsed": 8020320,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 212992,
+      "time": 1421.5323,
+      "memory": {
+        "rss": 189120512,
+        "heapTotal": 10510336,
+        "heapUsed": 7788208,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 229376,
+      "time": 1487.548,
+      "memory": {
+        "rss": 189190144,
+        "heapTotal": 10510336,
+        "heapUsed": 7555800,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 245760,
+      "time": 1555.6723,
+      "memory": {
+        "rss": 189259776,
+        "heapTotal": 10510336,
+        "heapUsed": 8339192,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 262144,
+      "time": 1623.5738,
+      "memory": {
+        "rss": 189259776,
+        "heapTotal": 10510336,
+        "heapUsed": 8073792,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 278528,
+      "time": 1693.6093,
+      "memory": {
+        "rss": 189329408,
+        "heapTotal": 10510336,
+        "heapUsed": 7841608,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 294912,
+      "time": 1761.9839,
+      "memory": {
+        "rss": 189329408,
+        "heapTotal": 10510336,
+        "heapUsed": 7609896,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 311296,
+      "time": 1831.3891,
+      "memory": {
+        "rss": 189657088,
+        "heapTotal": 10510336,
+        "heapUsed": 8392656,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 327680,
+      "time": 1900.1179,
+      "memory": {
+        "rss": 189726720,
+        "heapTotal": 10510336,
+        "heapUsed": 8127576,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 344064,
+      "time": 1971.4205,
+      "memory": {
+        "rss": 189726720,
+        "heapTotal": 10510336,
+        "heapUsed": 7895480,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 360448,
+      "time": 2044.7276,
+      "memory": {
+        "rss": 189722624,
+        "heapTotal": 10510336,
+        "heapUsed": 7662872,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 376832,
+      "time": 2113.0954,
+      "memory": {
+        "rss": 189792256,
+        "heapTotal": 10510336,
+        "heapUsed": 8446000,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 393216,
+      "time": 2177.1947,
+      "memory": {
+        "rss": 189792256,
+        "heapTotal": 10510336,
+        "heapUsed": 8180584,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scalar-progress",
+      "tokens": 409600,
+      "time": 2246.3917,
+      "memory": {
+        "rss": 189861888,
+        "heapTotal": 10510336,
+        "heapUsed": 7948328,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "scanner-end-before-full-parse",
+      "time": 2320.2424,
+      "memory": {
+        "rss": 190308352,
+        "heapTotal": 10510336,
+        "heapUsed": 8094264,
+        "external": 90708550,
+        "arrayBuffers": 32277821
+      }
+    },
+    {
+      "phase": "after-full-parse",
+      "time": 3104.4992,
+      "memory": {
+        "rss": 219697152,
+        "heapTotal": 31383552,
+        "heapUsed": 18388176,
+        "external": 90708546,
+        "arrayBuffers": 32277817
+      }
+    },
+    {
+      "phase": "canonical-full-encode",
+      "bytes": 10000243,
+      "sha256": "4035fb67bf78442c76cac2d34f6a13bb176fba3757a54832302851e790de231b",
+      "time": 7123.5974
+    },
+    {
+      "phase": "canonical-full-encode",
+      "time": 7123.7234,
+      "memory": {
+        "rss": 314609664,
+        "heapTotal": 54681600,
+        "heapUsed": 40813600,
+        "external": 100643243,
+        "arrayBuffers": 42212514
+      }
+    }
+  ],
+  "sampling": {
+    "interval": 4096,
+    "includeCollected": true,
+    "samples": 57413,
+    "frames": [
+      {
+        "functionName": "Promise",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4200,
+        "subtreeSize": 4200
+      },
+      {
+        "functionName": "importBackup",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-backup.mjs",
+        "lineNumber": 25,
+        "selfSize": 4224,
+        "subtreeSize": 4224
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-R04-13-allocation-20261026/runner/worker.mjs",
+        "lineNumber": 0,
+        "selfSize": 4424,
+        "subtreeSize": 12848
+      },
+      {
+        "functionName": "memoryUsage",
+        "url": "node:internal/process/per_thread",
+        "lineNumber": 215,
+        "selfSize": 4104,
+        "subtreeSize": 4104
+      },
+      {
+        "functionName": "normalizeString",
+        "url": "node:path",
+        "lineNumber": 91,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "join",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4352,
+        "subtreeSize": 4352
+      },
+      {
+        "functionName": "",
+        "url": "node:internal/fs/utils",
+        "lineNumber": 926,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "wrappedFn",
+        "url": "node:internal/errors",
+        "lineNumber": 537,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "",
+        "url": "node:internal/validators",
+        "lineNumber": 405,
+        "selfSize": 4136,
+        "subtreeSize": 4136
+      },
+      {
+        "functionName": "readFileSync",
+        "url": "node:fs",
+        "lineNumber": 473,
+        "selfSize": 5832,
+        "subtreeSize": 18224
+      },
+      {
+        "functionName": "writeFileSync",
+        "url": "node:fs",
+        "lineNumber": 2462,
+        "selfSize": 5016,
+        "subtreeSize": 5016
+      },
+      {
+        "functionName": "sha",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-R04-13-allocation-20261026/runner/worker.mjs",
+        "lineNumber": 1,
+        "selfSize": 4216,
+        "subtreeSize": 4216
+      },
+      {
+        "functionName": "writeHeapSnapshot",
+        "url": "node:v8",
+        "lineNumber": 84,
+        "selfSize": 4120,
+        "subtreeSize": 4120
+      },
+      {
+        "functionName": "wrappedFn",
+        "url": "node:internal/errors",
+        "lineNumber": 537,
+        "selfSize": 16480,
+        "subtreeSize": 16480
+      },
+      {
+        "functionName": "Uint8Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 29016,
+        "subtreeSize": 29016
+      },
+      {
+        "functionName": "Uint8Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 16640,
+        "subtreeSize": 16640
+      },
+      {
+        "functionName": "processChunkSync",
+        "url": "node:zlib",
+        "lineNumber": 415,
+        "selfSize": 12320,
+        "subtreeSize": 74456
+      },
+      {
+        "functionName": "",
+        "url": "node:events",
+        "lineNumber": 331,
+        "selfSize": 4200,
+        "subtreeSize": 4200
+      },
+      {
+        "functionName": "Duplex",
+        "url": "node:internal/streams/duplex",
+        "lineNumber": 63,
+        "selfSize": 4200,
+        "subtreeSize": 8400
+      },
+      {
+        "functionName": "ZlibBase",
+        "url": "node:zlib",
+        "lineNumber": 212,
+        "selfSize": 4128,
+        "subtreeSize": 12528
+      },
+      {
+        "functionName": "normalizeString",
+        "url": "node:path",
+        "lineNumber": 91,
+        "selfSize": 8224,
+        "subtreeSize": 8224
+      },
+      {
+        "functionName": "join",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4352,
+        "subtreeSize": 4352
+      },
+      {
+        "functionName": "join",
+        "url": "node:path",
+        "lineNumber": 505,
+        "selfSize": 12352,
+        "subtreeSize": 24928
+      },
+      {
+        "functionName": "wrappedFn",
+        "url": "node:internal/errors",
+        "lineNumber": 537,
+        "selfSize": 4104,
+        "subtreeSize": 4104
+      },
+      {
+        "functionName": "wrappedFn",
+        "url": "node:internal/errors",
+        "lineNumber": 537,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "readFileSync",
+        "url": "node:fs",
+        "lineNumber": 473,
+        "selfSize": 9960,
+        "subtreeSize": 18192
+      },
+      {
+        "functionName": "includes",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4352,
+        "subtreeSize": 4352
+      },
+      {
+        "functionName": "wrappedFn",
+        "url": "node:internal/errors",
+        "lineNumber": 537,
+        "selfSize": 24704,
+        "subtreeSize": 24704
+      },
+      {
+        "functionName": "markAsUntransferable",
+        "url": "node:internal/buffer",
+        "lineNumber": 1077,
+        "selfSize": 4120,
+        "subtreeSize": 4120
+      },
+      {
+        "functionName": "createUnsafeBuffer",
+        "url": "node:internal/buffer",
+        "lineNumber": 1096,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "Uint8Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 29016,
+        "subtreeSize": 29016
+      },
+      {
+        "functionName": "allocUnsafe",
+        "url": "node:buffer",
+        "lineNumber": 453,
+        "selfSize": 12352,
+        "subtreeSize": 74320
+      },
+      {
+        "functionName": "Uint8Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 24856,
+        "subtreeSize": 24856
+      },
+      {
+        "functionName": "push",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 10992,
+        "subtreeSize": 10992
+      },
+      {
+        "functionName": "processChunkSync",
+        "url": "node:zlib",
+        "lineNumber": 415,
+        "selfSize": 8272,
+        "subtreeSize": 118440
+      },
+      {
+        "functionName": "Uint8Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4160,
+        "subtreeSize": 4160
+      },
+      {
+        "functionName": "",
+        "url": "node:events",
+        "lineNumber": 331,
+        "selfSize": 4104,
+        "subtreeSize": 4104
+      },
+      {
+        "functionName": "ZlibBase",
+        "url": "node:zlib",
+        "lineNumber": 212,
+        "selfSize": 31120,
+        "subtreeSize": 39384
+      },
+      {
+        "functionName": "Uint32Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4144,
+        "subtreeSize": 4144
+      },
+      {
+        "functionName": "JSON.parse",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-R04-13-allocation-20261026/runner/worker.mjs",
+        "lineNumber": 7,
+        "selfSize": 10935336,
+        "subtreeSize": 11144776
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 16512,
+        "subtreeSize": 16512
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 28,
+        "selfSize": 8256,
+        "subtreeSize": 8256
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 28,
+        "selfSize": 66080,
+        "subtreeSize": 66080
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 12352,
+        "subtreeSize": 86688
+      },
+      {
+        "functionName": "baseline",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 28,
+        "selfSize": 12416,
+        "subtreeSize": 115616
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4160,
+        "subtreeSize": 4160
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 32896,
+        "subtreeSize": 32896
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 8240,
+        "subtreeSize": 41136
+      },
+      {
+        "functionName": "ordered",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 4144,
+        "subtreeSize": 49440
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 78336,
+        "subtreeSize": 78336
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 259152,
+        "subtreeSize": 259152
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 70112,
+        "subtreeSize": 329264
+      },
+      {
+        "functionName": "ordered",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 28872,
+        "subtreeSize": 436472
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 12376,
+        "subtreeSize": 12376
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 8288,
+        "subtreeSize": 12416
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 28872,
+        "subtreeSize": 490136
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4160,
+        "subtreeSize": 4160
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 41152,
+        "subtreeSize": 41152
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 8256,
+        "subtreeSize": 49408
+      },
+      {
+        "functionName": "ordered",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 4144,
+        "subtreeSize": 57712
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4144,
+        "subtreeSize": 4144
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 8256,
+        "subtreeSize": 8256
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 12424,
+        "subtreeSize": 82536
+      },
+      {
+        "functionName": "projection",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 12400,
+        "subtreeSize": 634512
+      },
+      {
+        "functionName": "encode",
+        "url": "node:internal/encoding",
+        "lineNumber": 354,
+        "selfSize": 8288,
+        "subtreeSize": 8288
+      },
+      {
+        "functionName": "bytes",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 5,
+        "selfSize": 8224,
+        "subtreeSize": 16512
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-backup.mjs",
+        "lineNumber": 9,
+        "selfSize": 12328,
+        "subtreeSize": 12328
+      },
+      {
+        "functionName": "sort",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 26384,
+        "subtreeSize": 38712
+      },
+      {
+        "functionName": "maximumServiceCount",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-backup.mjs",
+        "lineNumber": 9,
+        "selfSize": 58856,
+        "subtreeSize": 864208
+      },
+      {
+        "functionName": "equal",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 7,
+        "selfSize": 125096,
+        "subtreeSize": 125096
+      },
+      {
+        "functionName": "sort",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 8462616,
+        "subtreeSize": 8462616
+      },
+      {
+        "functionName": "keys",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 468896,
+        "subtreeSize": 468896
+      },
+      {
+        "functionName": "fields",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 8,
+        "selfSize": 1096664,
+        "subtreeSize": 10153272
+      },
+      {
+        "functionName": "test",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 60408,
+        "subtreeSize": 60408
+      },
+      {
+        "functionName": "normalizeName",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 24,
+        "selfSize": 532000,
+        "subtreeSize": 592408
+      },
+      {
+        "functionName": "values",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 642960,
+        "subtreeSize": 642960
+      },
+      {
+        "functionName": "entries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4926960,
+        "subtreeSize": 4926960
+      },
+      {
+        "functionName": "sort",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 62732840,
+        "subtreeSize": 62732840
+      },
+      {
+        "functionName": "test",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4224,
+        "subtreeSize": 4224
+      },
+      {
+        "functionName": "filter",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 511192,
+        "subtreeSize": 511192
+      },
+      {
+        "functionName": "add",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 1311240,
+        "subtreeSize": 1311240
+      },
+      {
+        "functionName": "keys",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 3294848,
+        "subtreeSize": 3294848
+      },
+      {
+        "functionName": "RegExp",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 2937128,
+        "subtreeSize": 2937128
+      },
+      {
+        "functionName": "next",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 3276344,
+        "subtreeSize": 3276344
+      },
+      {
+        "functionName": "includes",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 36824,
+        "subtreeSize": 36824
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 186904,
+        "subtreeSize": 186904
+      },
+      {
+        "functionName": "validate",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 32,
+        "selfSize": 24248104,
+        "subtreeSize": 114855248
+      },
+      {
+        "functionName": "sort",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 164160,
+        "subtreeSize": 164160
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4120,
+        "subtreeSize": 4120
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 4160,
+        "subtreeSize": 4160
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4391888,
+        "subtreeSize": 4391888
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 30136344,
+        "subtreeSize": 34528232
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 159984,
+        "subtreeSize": 34696496
+      },
+      {
+        "functionName": "projection",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 159984,
+        "subtreeSize": 35020640
+      },
+      {
+        "functionName": "sort",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 159984,
+        "subtreeSize": 159984
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 8256,
+        "subtreeSize": 8256
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 74240,
+        "subtreeSize": 74240
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 452960,
+        "subtreeSize": 452960
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 66144,
+        "subtreeSize": 519104
+      },
+      {
+        "functionName": "ordered",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 45320,
+        "subtreeSize": 638664
+      },
+      {
+        "functionName": "fromEntries",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4208952,
+        "subtreeSize": 4208952
+      },
+      {
+        "functionName": "filter",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 2021168,
+        "subtreeSize": 2021168
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 37,
+        "selfSize": 6515824,
+        "subtreeSize": 6515824
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 1388496,
+        "subtreeSize": 1388496
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 1882336,
+        "subtreeSize": 9786656
+      },
+      {
+        "functionName": "",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 17959408,
+        "subtreeSize": 34614848
+      },
+      {
+        "functionName": "map",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 159984,
+        "subtreeSize": 34783088
+      },
+      {
+        "functionName": "projection",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 38,
+        "selfSize": 159984,
+        "subtreeSize": 35103056
+      },
+      {
+        "functionName": "capacity",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs",
+        "lineNumber": 39,
+        "selfSize": 15201624,
+        "subtreeSize": 50304680
+      },
+      {
+        "functionName": "normalizeString",
+        "url": "node:path",
+        "lineNumber": 91,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "join",
+        "url": "node:path",
+        "lineNumber": 505,
+        "selfSize": 8232,
+        "subtreeSize": 12360
+      },
+      {
+        "functionName": "createUnsafeBuffer",
+        "url": "node:internal/buffer",
+        "lineNumber": 1096,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "Uint8Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 20696,
+        "subtreeSize": 20696
+      },
+      {
+        "functionName": "createUnsafeBuffer",
+        "url": "node:internal/buffer",
+        "lineNumber": 1096,
+        "selfSize": 8256,
+        "subtreeSize": 28952
+      },
+      {
+        "functionName": "Uint8Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 33176,
+        "subtreeSize": 33176
+      },
+      {
+        "functionName": "allocUnsafe",
+        "url": "node:buffer",
+        "lineNumber": 453,
+        "selfSize": 12384,
+        "subtreeSize": 74512
+      },
+      {
+        "functionName": "Uint8Array",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 45656,
+        "subtreeSize": 45656
+      },
+      {
+        "functionName": "push",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 5760,
+        "subtreeSize": 5760
+      },
+      {
+        "functionName": "processChunkSync",
+        "url": "node:zlib",
+        "lineNumber": 415,
+        "selfSize": 16448,
+        "subtreeSize": 142376
+      },
+      {
+        "functionName": "Duplex",
+        "url": "node:internal/streams/duplex",
+        "lineNumber": 63,
+        "selfSize": 8280,
+        "subtreeSize": 8280
+      },
+      {
+        "functionName": "Zlib",
+        "url": "node:zlib",
+        "lineNumber": 640,
+        "selfSize": 4104,
+        "subtreeSize": 12384
+      },
+      {
+        "functionName": "TextEncoder.encode",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-R04-13-allocation-20261026/runner/worker.mjs",
+        "lineNumber": 8,
+        "selfSize": 4104,
+        "subtreeSize": 175352
+      },
+      {
+        "functionName": "whitespace",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 12,
+        "selfSize": 7040,
+        "subtreeSize": 7040
+      },
+      {
+        "functionName": "string",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 13,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "slice",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4128,
+        "subtreeSize": 4128
+      },
+      {
+        "functionName": "whitespace",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 12,
+        "selfSize": 46736,
+        "subtreeSize": 46736
+      },
+      {
+        "functionName": "memoryUsage",
+        "url": "node:internal/process/per_thread",
+        "lineNumber": 215,
+        "selfSize": 4112,
+        "subtreeSize": 4112
+      },
+      {
+        "functionName": "JSON.parse",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-R04-13-allocation-20261026/runner/worker.mjs",
+        "lineNumber": 7,
+        "selfSize": 82264,
+        "subtreeSize": 82264
+      },
+      {
+        "functionName": "slice",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 37024,
+        "subtreeSize": 37024
+      },
+      {
+        "functionName": "string",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 13,
+        "selfSize": 11127920,
+        "subtreeSize": 11251320
+      },
+      {
+        "functionName": "string",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 13,
+        "selfSize": 10210288,
+        "subtreeSize": 10210288
+      },
+      {
+        "functionName": "string",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 13,
+        "selfSize": 2516544,
+        "subtreeSize": 2516544
+      },
+      {
+        "functionName": "exec",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 2036736,
+        "subtreeSize": 2036736
+      },
+      {
+        "functionName": "Set",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 2957488,
+        "subtreeSize": 2957488
+      },
+      {
+        "functionName": "consume",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 14,
+        "selfSize": 1779704,
+        "subtreeSize": 19500760
+      },
+      {
+        "functionName": "max",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 18752,
+        "subtreeSize": 18752
+      },
+      {
+        "functionName": "JSON.parse",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-R04-13-allocation-20261026/runner/worker.mjs",
+        "lineNumber": 7,
+        "selfSize": 94888,
+        "subtreeSize": 113640
+      },
+      {
+        "functionName": "slice",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 49352,
+        "subtreeSize": 49352
+      },
+      {
+        "functionName": "string",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 13,
+        "selfSize": 540264,
+        "subtreeSize": 703256
+      },
+      {
+        "functionName": "JSON.parse",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-R04-13-allocation-20261026/runner/worker.mjs",
+        "lineNumber": 7,
+        "selfSize": 24672,
+        "subtreeSize": 24672
+      },
+      {
+        "functionName": "slice",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 8224,
+        "subtreeSize": 8224
+      },
+      {
+        "functionName": "string",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 13,
+        "selfSize": 102816,
+        "subtreeSize": 135712
+      },
+      {
+        "functionName": "slice",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 45248,
+        "subtreeSize": 45248
+      },
+      {
+        "functionName": "exec",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 120328,
+        "subtreeSize": 120328
+      },
+      {
+        "functionName": "next",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 263520,
+        "subtreeSize": 263520
+      },
+      {
+        "functionName": "Set",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 182480,
+        "subtreeSize": 182480
+      },
+      {
+        "functionName": "consume",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 14,
+        "selfSize": 259544,
+        "subtreeSize": 1710088
+      },
+      {
+        "functionName": "add",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 11024040,
+        "subtreeSize": 11024040
+      },
+      {
+        "functionName": "has",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4800,
+        "subtreeSize": 4800
+      },
+      {
+        "functionName": "Set",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 3146928,
+        "subtreeSize": 3146928
+      },
+      {
+        "functionName": "consume",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 14,
+        "selfSize": 4672,
+        "subtreeSize": 46689344
+      },
+      {
+        "functionName": "consume",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 14,
+        "selfSize": 4928,
+        "subtreeSize": 46698400
+      },
+      {
+        "functionName": "consume",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 14,
+        "selfSize": 6224,
+        "subtreeSize": 46704624
+      },
+      {
+        "functionName": "scanJSON",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-json.mjs",
+        "lineNumber": 10,
+        "selfSize": 4224,
+        "subtreeSize": 46720016
+      },
+      {
+        "functionName": "test",
+        "url": "",
+        "lineNumber": -1,
+        "selfSize": 4256,
+        "subtreeSize": 4256
+      },
+      {
+        "functionName": "importBackup",
+        "url": "file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/import-backup.mjs",
+        "lineNumber": 25,
+        "selfSize": 15219040,
+        "subtreeSize": 274439360
+      }
+    ]
+  },
+  "inputBytes": 16000000,
+  "inputSHA256": "c437b4a5c77b6126a54b4549e7998274ea7bebef59afb98db78c10d9d90c3d56",
+  "intrinsicsPreserved": true,
+  "controlRootRetained": false,
+  "sinks": [],
+  "environmentKeys": [
+    "HOMEDRIVE",
+    "HOMEPATH",
+    "LOGONSERVER",
+    "NODE_NO_WARNINGS",
+    "PATH",
+    "SYSTEMDRIVE",
+    "SystemRoot",
+    "TEMP",
+    "TMP",
+    "USERDOMAIN",
+    "USERNAME",
+    "USERPROFILE",
+    "WINDIR"
+  ],
+  "inspectorTransport": "in-process Session; no listener port",
+  "schemaGraphExpectedServices": 19996
+}

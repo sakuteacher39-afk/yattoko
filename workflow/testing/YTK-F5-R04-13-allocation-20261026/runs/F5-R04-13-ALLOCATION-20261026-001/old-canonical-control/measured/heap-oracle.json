@@ -1,0 +1,130 @@
+{
+  "heaps": [
+    {
+      "phase": "after-decode-before-scanner",
+      "heapNodes": 97633,
+      "heapEdges": 433127,
+      "traceFunctionInfoEntries": 216,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [],
+      "uniqueSnapshotTrees": [],
+      "matchingTreeCount": 0,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "scanner-end-before-full-parse",
+      "heapNodes": 98606,
+      "heapEdges": 437717,
+      "traceFunctionInfoEntries": 804,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [],
+      "uniqueSnapshotTrees": [],
+      "matchingTreeCount": 0,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "after-full-parse",
+      "heapNodes": 98802,
+      "heapEdges": 438347,
+      "traceFunctionInfoEntries": 810,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 201923,
+          "snapshotNodeId": 202055,
+          "serviceCount": 3
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 202055,
+          "serviceCount": 3,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00000003-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 1,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "canonical-full-encode",
+      "heapNodes": 99198,
+      "heapEdges": 440621,
+      "traceFunctionInfoEntries": 906,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 202379,
+          "snapshotNodeId": 202383,
+          "serviceCount": 3
+        },
+        {
+          "envelopeNodeId": 202381,
+          "snapshotNodeId": 202383,
+          "serviceCount": 3
+        },
+        {
+          "envelopeNodeId": 201923,
+          "snapshotNodeId": 202055,
+          "serviceCount": 3
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 202383,
+          "serviceCount": 3,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00000003-0000-4000-8000-000000000001"
+        },
+        {
+          "snapshotNodeId": 202055,
+          "serviceCount": 3,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00000003-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 2,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "before-checksum-digest",
+      "heapNodes": 99394,
+      "heapEdges": 441590,
+      "traceFunctionInfoEntries": 954,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 202379,
+          "snapshotNodeId": 202383,
+          "serviceCount": 3
+        },
+        {
+          "envelopeNodeId": 202381,
+          "snapshotNodeId": 202383,
+          "serviceCount": 3
+        },
+        {
+          "envelopeNodeId": 201923,
+          "snapshotNodeId": 202055,
+          "serviceCount": 3
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 202383,
+          "serviceCount": 3,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00000003-0000-4000-8000-000000000001"
+        },
+        {
+          "snapshotNodeId": 202055,
+          "serviceCount": 3,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00000003-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 2,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    }
+  ]
+}

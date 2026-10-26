@@ -1,0 +1,115 @@
+{
+  "label": "old-canonical-control",
+  "mode": "bare",
+  "profile": false,
+  "accepted": true,
+  "error": null,
+  "counts": {
+    "wholeInputParses": 1,
+    "scalarTokenParses": 236,
+    "nonScalarTokenReturns": 0,
+    "maxTokenCharacters": 66,
+    "fileReads": 1,
+    "digestCalls": 1,
+    "controlWholeParses": 0
+  },
+  "profileError": null,
+  "snapshots": [],
+  "events": [
+    {
+      "phase": "after-decode-before-scanner",
+      "time": 110.6691,
+      "memory": {
+        "rss": 54947840,
+        "heapTotal": 12345344,
+        "heapUsed": 8727600,
+        "external": 4182033,
+        "arrayBuffers": 150378
+      }
+    },
+    {
+      "phase": "scanner-end-before-full-parse",
+      "time": 113.9171,
+      "memory": {
+        "rss": 56197120,
+        "heapTotal": 12869632,
+        "heapUsed": 9279768,
+        "external": 4189888,
+        "arrayBuffers": 158193
+      }
+    },
+    {
+      "phase": "after-full-parse",
+      "time": 113.9779,
+      "memory": {
+        "rss": 56217600,
+        "heapTotal": 12869632,
+        "heapUsed": 8657240,
+        "external": 4189888,
+        "arrayBuffers": 158193
+      }
+    },
+    {
+      "phase": "canonical-full-encode",
+      "bytes": 3607,
+      "sha256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+      "time": 118.0408
+    },
+    {
+      "phase": "canonical-full-encode",
+      "time": 118.0527,
+      "memory": {
+        "rss": 56881152,
+        "heapTotal": 12869632,
+        "heapUsed": 8851160,
+        "external": 4196858,
+        "arrayBuffers": 165163
+      }
+    },
+    {
+      "phase": "canonical-payload-encode",
+      "bytes": 3499,
+      "sha256": "8873371c543e1ce9dc1f789112e7f21c9a4d38ea95a25d8a151e7cf6eea36bd8",
+      "time": 118.3771
+    },
+    {
+      "phase": "before-checksum-digest",
+      "time": 118.4474,
+      "memory": {
+        "rss": 56954880,
+        "heapTotal": 12869632,
+        "heapUsed": 8865824,
+        "external": 4200357,
+        "arrayBuffers": 168662
+      }
+    }
+  ],
+  "sampling": {
+    "interval": 4096,
+    "includeCollected": true,
+    "samples": 0,
+    "frames": []
+  },
+  "inputBytes": 3607,
+  "inputSHA256": "375e3faae5800291a7e4d76aa0278c7903dacb3e40d972cda50115f72eea13e7",
+  "intrinsicsPreserved": true,
+  "controlRootRetained": false,
+  "sinks": [],
+  "environmentKeys": [
+    "HOMEDRIVE",
+    "HOMEPATH",
+    "LOGONSERVER",
+    "NODE_NO_WARNINGS",
+    "PATH",
+    "SYSTEMDRIVE",
+    "SystemRoot",
+    "TEMP",
+    "TMP",
+    "USERDOMAIN",
+    "USERNAME",
+    "USERPROFILE",
+    "WINDIR"
+  ],
+  "inspectorTransport": "in-process Session; no listener port",
+  "schemaGraphExpectedServices": 3
+}

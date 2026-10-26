@@ -1,0 +1,27 @@
+{
+  "calibrationId": "F5-R04-13-SENSITIVITY-20261026-001",
+  "runnerCommit": "ec8dd7134509071de61918b16d14be24b09a4614",
+  "staticAuditPass": true,
+  "controls": [
+    {
+      "mode": "positive-retained",
+      "passed": true,
+      "peakTrees": 1,
+      "scannerExitTrees": 1,
+      "allocationFrameDetected": true,
+      "traceTreeEntries": 5,
+      "oracle": "Heap graph detector sees planted tree by schema property links; transient allocation captured at peak and in allocation stack after release. No marker-name/memory threshold inference."
+    },
+    {
+      "mode": "positive-transient",
+      "passed": true,
+      "peakTrees": 1,
+      "scannerExitTrees": 0,
+      "allocationFrameDetected": true,
+      "traceTreeEntries": 5,
+      "oracle": "Heap graph detector sees planted tree by schema property links; transient allocation captured at peak and in allocation stack after release. No marker-name/memory threshold inference."
+    }
+  ],
+  "gatePassed": true,
+  "formalAllowed": true
+}

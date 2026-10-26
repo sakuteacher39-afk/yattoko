@@ -1,0 +1,114 @@
+{
+  "heaps": [
+    {
+      "phase": "after-decode-before-scanner",
+      "heapNodes": 97635,
+      "heapEdges": 433124,
+      "traceFunctionInfoEntries": 216,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [],
+      "uniqueSnapshotTrees": [],
+      "matchingTreeCount": 0,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "positive-control-peak",
+      "heapNodes": 318629,
+      "heapEdges": 960337,
+      "traceFunctionInfoEntries": 780,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 199869,
+          "snapshotNodeId": 602235,
+          "serviceCount": 19996
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 602235,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 1,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "scanner-end-before-full-parse",
+      "heapNodes": 98960,
+      "heapEdges": 438740,
+      "traceFunctionInfoEntries": 852,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [],
+      "uniqueSnapshotTrees": [],
+      "matchingTreeCount": 0,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "after-full-parse",
+      "heapNodes": 319143,
+      "heapEdges": 962012,
+      "traceFunctionInfoEntries": 870,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 642889,
+          "snapshotNodeId": 986969,
+          "serviceCount": 19996
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 986969,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 1,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "canonical-full-encode",
+      "heapNodes": 379680,
+      "heapEdges": 1445708,
+      "traceFunctionInfoEntries": 996,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 1083323,
+          "snapshotNodeId": 1083327,
+          "serviceCount": 19996
+        },
+        {
+          "envelopeNodeId": 1083325,
+          "snapshotNodeId": 1083327,
+          "serviceCount": 19996
+        },
+        {
+          "envelopeNodeId": 642889,
+          "snapshotNodeId": 986969,
+          "serviceCount": 19996
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 1083327,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        },
+        {
+          "snapshotNodeId": 986969,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 2,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    }
+  ]
+}

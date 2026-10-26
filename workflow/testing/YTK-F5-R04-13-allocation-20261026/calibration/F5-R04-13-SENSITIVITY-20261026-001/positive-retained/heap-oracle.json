@@ -1,0 +1,149 @@
+{
+  "heaps": [
+    {
+      "phase": "after-decode-before-scanner",
+      "heapNodes": 97635,
+      "heapEdges": 433130,
+      "traceFunctionInfoEntries": 216,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [],
+      "uniqueSnapshotTrees": [],
+      "matchingTreeCount": 0,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "positive-control-peak",
+      "heapNodes": 318629,
+      "heapEdges": 960336,
+      "traceFunctionInfoEntries": 780,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 199869,
+          "snapshotNodeId": 569123,
+          "serviceCount": 19996
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 569123,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 1,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "scanner-end-before-full-parse",
+      "heapNodes": 319034,
+      "heapEdges": 961642,
+      "traceFunctionInfoEntries": 846,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 199869,
+          "snapshotNodeId": 569123,
+          "serviceCount": 19996
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 569123,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 1,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "after-full-parse",
+      "heapNodes": 539194,
+      "heapEdges": 1484862,
+      "traceFunctionInfoEntries": 864,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 642889,
+          "snapshotNodeId": 1077711,
+          "serviceCount": 19996
+        },
+        {
+          "envelopeNodeId": 199869,
+          "snapshotNodeId": 569123,
+          "serviceCount": 19996
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 1077711,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        },
+        {
+          "snapshotNodeId": 569123,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 2,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    },
+    {
+      "phase": "canonical-full-encode",
+      "heapNodes": 599731,
+      "heapEdges": 1968582,
+      "traceFunctionInfoEntries": 984,
+      "traceTreeEntries": 5,
+      "matchingEnvelopeRoots": [
+        {
+          "envelopeNodeId": 1083273,
+          "snapshotNodeId": 1083277,
+          "serviceCount": 19996
+        },
+        {
+          "envelopeNodeId": 1083275,
+          "snapshotNodeId": 1083277,
+          "serviceCount": 19996
+        },
+        {
+          "envelopeNodeId": 642889,
+          "snapshotNodeId": 1077711,
+          "serviceCount": 19996
+        },
+        {
+          "envelopeNodeId": 199869,
+          "snapshotNodeId": 569123,
+          "serviceCount": 19996
+        }
+      ],
+      "uniqueSnapshotTrees": [
+        {
+          "snapshotNodeId": 1083277,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        },
+        {
+          "snapshotNodeId": 1077711,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        },
+        {
+          "snapshotNodeId": 569123,
+          "serviceCount": 19996,
+          "firstRecordId": "svc_00000001-0000-4000-8000-000000000001",
+          "lastRecordId": "svc_00004e1c-0000-4000-8000-000000000001"
+        }
+      ],
+      "matchingTreeCount": 3,
+      "rule": "Native heap object property edges fileFormat -> snapshot -> services -> element recordId+answers, exact unique service count; group by snapshot node ID to avoid counting payload/canonical wrappers twice."
+    }
+  ]
+}
