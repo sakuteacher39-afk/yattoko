@@ -1,0 +1,37 @@
+{
+  "phase": "AFTER_FORMAL_STOP",
+  "formalProductCalls": 0,
+  "formalResultChanged": false,
+  "fixedAdapterSHA256": "690c0c45092735fe8c43188a02613b5005c27cec3ff37304935e80553ee6000e",
+  "extractedObserverFragmentSHA256": "4ddd97a77561e017ff8d58a1a0fb5968b1b31bb3a2b6e1f78c9b939ffca53053",
+  "reproduction": "Exact frozen adapter observer fragment on plain dummy transaction that returns one cached objectStore. Repeated objectStore calls wrap the same methods again; n actual calls produce n(n+1)/2 observer events.",
+  "proofs": [
+    {
+      "requestedPutCalls": 1,
+      "underlyingPutCalls": 1,
+      "observerWriteCount": 1,
+      "traceWriteCount": 1
+    },
+    {
+      "requestedPutCalls": 2,
+      "underlyingPutCalls": 2,
+      "observerWriteCount": 3,
+      "traceWriteCount": 3
+    },
+    {
+      "requestedPutCalls": 3,
+      "underlyingPutCalls": 3,
+      "observerWriteCount": 6,
+      "traceWriteCount": 6
+    },
+    {
+      "requestedPutCalls": 20,
+      "underlyingPutCalls": 20,
+      "observerWriteCount": 210,
+      "traceWriteCount": 210
+    }
+  ],
+  "confirmedHarnessDefect": "Observer wrapping is not idempotent; missing objectStore WeakSet protection. Large service loops can amplify calls/trace and change harness resource behavior.",
+  "rangeErrorAttribution": "Formal error has no retained stack/partial stores. This diagnostic proves a harness flaw, but does not by itself establish the exact Invalid string length throw site or product capacity behavior. Keep CAP-14 NOT VERIFIABLE.",
+  "minimalFutureTestOnlyFix": "Use a per-transaction WeakSet to wrap each objectStore once; retain request count/trace and add repeated-access sensitivity control. Do not change fixed product. Requires new locked runner, attempt and review authorization before rerun."
+}

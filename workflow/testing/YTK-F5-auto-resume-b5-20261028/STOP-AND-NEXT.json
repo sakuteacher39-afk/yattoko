@@ -1,0 +1,52 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B5-20261028-001",
+  "stoppedAt": "F2:CAP-14 variant1",
+  "currentBatch": {
+    "PASS": 15,
+    "NOT VERIFIABLE": 1,
+    "NOT RUN": 4
+  },
+  "notRunCases": [
+    "F2:CAP-15",
+    "F2:CAP-17",
+    "F2:CAP-01",
+    "F2:CAP-02"
+  ],
+  "nextBatchCandidates": [
+    {
+      "caseId": "F2:CAP-14",
+      "status": "NOT VERIFIABLE",
+      "authorizedNow": false,
+      "prerequisite": "Independent review of preserved failure and observer diagnostic; test-only WeakSet guard and repeated objectStore sensitivity control; new preexecution lock/run/attempt under separate instruction"
+    },
+    {
+      "caseId": "F2:CAP-15",
+      "status": "NOT RUN",
+      "authorizedNow": false,
+      "prerequisite": "Independent review of preserved failure and observer diagnostic; test-only WeakSet guard and repeated objectStore sensitivity control; new preexecution lock/run/attempt under separate instruction"
+    },
+    {
+      "caseId": "F2:CAP-17",
+      "status": "NOT RUN",
+      "authorizedNow": false,
+      "prerequisite": "Independent review of preserved failure and observer diagnostic; test-only WeakSet guard and repeated objectStore sensitivity control; new preexecution lock/run/attempt under separate instruction"
+    },
+    {
+      "caseId": "F2:CAP-01",
+      "status": "NOT RUN",
+      "authorizedNow": false,
+      "prerequisite": "Independent review of preserved failure and observer diagnostic; test-only WeakSet guard and repeated objectStore sensitivity control; new preexecution lock/run/attempt under separate instruction"
+    },
+    {
+      "caseId": "F2:CAP-02",
+      "status": "NOT RUN",
+      "authorizedNow": false,
+      "prerequisite": "Independent review of preserved failure and observer diagnostic; test-only WeakSet guard and repeated objectStore sensitivity control; new preexecution lock/run/attempt under separate instruction"
+    }
+  ],
+  "noFormalRerunOrOtherCases": true,
+  "productCodeChanges": 0,
+  "runnerOrFixtureCorrectionsAfterFormalStart": 0,
+  "reportingPolicy": "STOP-AND-NEXT is the safety-priority next recommendation. REMAINING-AND-NEXT retains generic remaining-case catalog candidates, not authorization or readiness."
+}

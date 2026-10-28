@@ -1,0 +1,119 @@
+{
+  "caseId": "F2:TXT-07",
+  "runId": "F5-AUTO-RESUME-B5-20261028-001",
+  "attempt": 1,
+  "index": 205,
+  "label": "U91-leading-mail-partial-normal-canonical",
+  "mode": "name",
+  "fault": "NONE",
+  "recipe": null,
+  "source": {
+    "path": "workflow/proposals/YTK-F2-F5-F6-test-plan-20261013.md",
+    "line": 176,
+    "description": "C1 control拒否",
+    "details": [],
+    "sha256": "328e861436b7c9fbe4cddefcb58a1394a87cbd84321bce6d32b85676d9e95c47"
+  },
+  "startedAt": "2026-10-28T06:13:14.093Z",
+  "finishedAt": "2026-10-28T06:13:14.103Z",
+  "input": {
+    "path": "inputs/49af188000dd24e9e832976103fa09756eef116ca122b1093284ab3f897552d0.bin",
+    "bytes": 7531,
+    "sha256": "49af188000dd24e9e832976103fa09756eef116ca122b1093284ab3f897552d0"
+  },
+  "expected": {
+    "save": false,
+    "saveName": null,
+    "savedDatasetMatches": true,
+    "failedSaveKeepsOld": true,
+    "load": false,
+    "backup": false,
+    "rawSourceUnchanged": true,
+    "sourceReadwriteTransactions": 0,
+    "import": false,
+    "restore": false,
+    "importOldUnchanged": true,
+    "restoreOldUnchanged": true,
+    "importReadwriteTransactions": 0,
+    "restoreReadwriteTransactions": 0,
+    "confirmedExported": 0,
+    "confirmedOmitted": 1,
+    "confirmedCaptureStatus": "none",
+    "confirmedName": null,
+    "draftExported": 0,
+    "draftOmitted": 1,
+    "draftCaptureStatus": "none",
+    "draftName": null,
+    "confirmedCoverageExact": true,
+    "draftCoverageExact": true,
+    "captureReadwriteTransactions": 0,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "unauthorizedMutation": false
+  },
+  "independentOracle": {
+    "inputJSONValid": true,
+    "datasetSHA256": "2edf2284bdc9a8cf4136be4a7157f0c4817fb6aed1f50c920e47985b129d8be1",
+    "name": "試験",
+    "utf16Units": 3,
+    "utf8Bytes": 8,
+    "fileChecksumMatches": true,
+    "snapshotBytes": 3026,
+    "operation": null
+  },
+  "oracleNote": "Approved F2 sections10/11 explicit input/output tables; independent codepoint, UTF16-unit and Buffer UTF8 byte counts, raw payload signing with no projection, per-record revision model. No product validator used to generate expectations.",
+  "actual": {
+    "save": false,
+    "savedDatasetMatches": true,
+    "failedSaveKeepsOld": true,
+    "saveName": null,
+    "load": false,
+    "backup": false,
+    "rawSourceUnchanged": true,
+    "sourceReadwriteTransactions": 0,
+    "import": false,
+    "importOldUnchanged": true,
+    "importReadwriteTransactions": 0,
+    "restore": false,
+    "restoreOldUnchanged": true,
+    "restoreReadwriteTransactions": 0,
+    "confirmedExported": 0,
+    "confirmedOmitted": 1,
+    "confirmedCaptureStatus": "none",
+    "confirmedName": null,
+    "confirmedCoverageExact": true,
+    "draftExported": 0,
+    "draftOmitted": 1,
+    "draftCaptureStatus": "none",
+    "draftName": null,
+    "draftCoverageExact": true,
+    "captureReadwriteTransactions": 0,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "unauthorizedMutation": false,
+    "errors": {
+      "save": {
+        "name": "Error",
+        "code": "validation"
+      },
+      "load": {
+        "name": "Error",
+        "code": "validation"
+      },
+      "backup": {
+        "name": "Error",
+        "code": "validation"
+      },
+      "import": {
+        "name": "Error",
+        "code": "INVALID_FILE"
+      },
+      "restore": {
+        "name": "Error",
+        "code": "INVALID_FILE"
+      }
+    }
+  },
+  "status": "PASS",
+  "executionError": null
+}
