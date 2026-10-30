@@ -1,0 +1,164 @@
+{
+  "caseId": "F2:BKP-05",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 787,
+  "label": "carrier-partial-chain-NONE",
+  "input": {
+    "path": "inputs/e322b546102f96cefc398e62859922a16997d13750b90a0eb56f127b10465a43.bin",
+    "bytes": 5689,
+    "sha256": "e322b546102f96cefc398e62859922a16997d13750b90a0eb56f127b10465a43"
+  },
+  "oracle": {
+    "snapshotSHA256": "783be6d2a7a5a1ff29d963d4d9e15ef14c13687180d4c63a81c855d889e4b5f1",
+    "snapshotBytes": 3073,
+    "expectedOperations": [
+      {
+        "operationType": "addService",
+        "targetKind": "service",
+        "categoryKey": "carrier",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "baseRecordRevision": null,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "serviceCatalogId": "other",
+          "otherServiceName": "未保存ダミー"
+        },
+        "dependencyContext": {
+          "expectedValue": null,
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 1
+      },
+      {
+        "operationType": "service",
+        "targetKind": "service",
+        "categoryKey": "carrier",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "baseRecordRevision": null,
+        "dependsOrdinals": [
+          1
+        ],
+        "canonicalValue": {
+          "field": "usageStatus",
+          "value": "using"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 2
+      },
+      {
+        "operationType": "service",
+        "targetKind": "service",
+        "categoryKey": "carrier",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "baseRecordRevision": null,
+        "dependsOrdinals": [
+          1,
+          2
+        ],
+        "canonicalValue": {
+          "field": "recoveryUse",
+          "value": "unknown"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 3
+      },
+      {
+        "operationType": "service",
+        "targetKind": "service",
+        "categoryKey": "carrier",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "baseRecordRevision": null,
+        "dependsOrdinals": [
+          1,
+          2,
+          3
+        ],
+        "canonicalValue": {
+          "field": "intentionOverride",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": null,
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 4
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 3,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 5
+      }
+    ],
+    "expectedOmitted": [],
+    "expectedPendingStatus": "full",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": true,
+    "errorName": null,
+    "errorCode": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null,
+    "digestCalls": 3,
+    "capacityBytes": 3073,
+    "fileGreaterThan10MB": false,
+    "fileSHA256": "df8e58529d66a18385559391a79153b4eea535e401de82b6483b73b9b71de131",
+    "payloadSHA256": "84ef5df2d59930e4cbbc25a52e20cc560d862760234d863c00ee3a878cbbe472",
+    "snapshotSHA256": "783be6d2a7a5a1ff29d963d4d9e15ef14c13687180d4c63a81c855d889e4b5f1",
+    "rawBytes": 6554,
+    "pendingBytes": 3238,
+    "captureStatus": "full",
+    "exportedCount": 5,
+    "omittedCount": 0,
+    "independentChecksumMatches": true,
+    "canonicalRawMatches": true,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

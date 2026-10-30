@@ -1,0 +1,71 @@
+{
+  "caseId": "F2:BKP-04",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 212,
+  "label": "subscription-completed-forbidden-deleteAll-READ",
+  "input": {
+    "path": "inputs/cc71de196760d08707ce495ae3d0b49cd34bcaffb0590dd0d1ab8abdeef1d8aa.bin",
+    "bytes": 3658,
+    "sha256": "cc71de196760d08707ce495ae3d0b49cd34bcaffb0590dd0d1ab8abdeef1d8aa"
+  },
+  "oracle": {
+    "snapshotSHA256": "c8d2772f146f0378727eff8ea0dabd66912d47a3e4dd85def0d3e02d2eced90f",
+    "snapshotBytes": 2975,
+    "expectedOperations": [],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "overview",
+        "operationType": "deleteAll",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      },
+      {
+        "categoryKey": "device",
+        "targetKind": "category",
+        "operationType": "category",
+        "ordinalStart": 2,
+        "ordinalEnd": 2,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      }
+    ],
+    "expectedPendingStatus": null,
+    "normalPendingMustBeNull": true
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "AbortError",
+    "errorCode": 20,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 0,
+    "capacityBytes": 2975,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

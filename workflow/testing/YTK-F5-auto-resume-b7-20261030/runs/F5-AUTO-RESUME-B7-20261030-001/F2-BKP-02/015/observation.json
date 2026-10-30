@@ -1,0 +1,71 @@
+{
+  "caseId": "F2:BKP-02",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 15,
+  "label": "device-partial-forbidden-deleteAll-SHA",
+  "input": {
+    "path": "inputs/00dcdc258df7f25d3858bb4f1f5156ff8b723e3080ad950c775fcc2b2e9429d0.bin",
+    "bytes": 3692,
+    "sha256": "00dcdc258df7f25d3858bb4f1f5156ff8b723e3080ad950c775fcc2b2e9429d0"
+  },
+  "oracle": {
+    "snapshotSHA256": "76e24d27c616360fa472a433cd5b1844266fbc2803a208a2160db5177c110e18",
+    "snapshotBytes": 3019,
+    "expectedOperations": [],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "overview",
+        "operationType": "deleteAll",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      },
+      {
+        "categoryKey": "base",
+        "targetKind": "category",
+        "operationType": "category",
+        "ordinalStart": 2,
+        "ordinalEnd": 2,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      }
+    ],
+    "expectedPendingStatus": null,
+    "normalPendingMustBeNull": true
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "Error",
+    "errorCode": "DIGEST_FAILED",
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 1,
+    "capacityBytes": 3019,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

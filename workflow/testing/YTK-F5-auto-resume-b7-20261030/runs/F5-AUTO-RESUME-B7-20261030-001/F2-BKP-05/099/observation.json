@@ -1,0 +1,90 @@
+{
+  "caseId": "F2:BKP-05",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 99,
+  "label": "base-partial-missing-SHA",
+  "input": {
+    "path": "inputs/1df34ad5d7d5b6f93f099d6389055e305f29a82869ceace12c0c1c2e57bae774.bin",
+    "bytes": 4177,
+    "sha256": "1df34ad5d7d5b6f93f099d6389055e305f29a82869ceace12c0c1c2e57bae774"
+  },
+  "oracle": {
+    "snapshotSHA256": "d0a3c6aeb7dbd130959bbdc0797c255c384c59f6d9d6388a76b798ceb25e4379",
+    "snapshotBytes": 3065,
+    "expectedOperations": [
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 3,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 3
+      }
+    ],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "service",
+        "operationType": "deleteService",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "DEPENDENCY_MISSING"
+      },
+      {
+        "categoryKey": null,
+        "targetKind": "service",
+        "operationType": "service",
+        "ordinalStart": 2,
+        "ordinalEnd": 2,
+        "reasonCode": "DEPENDENCY_MISSING"
+      }
+    ],
+    "expectedPendingStatus": "partial",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "Error",
+    "errorCode": "DIGEST_FAILED",
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 1,
+    "capacityBytes": 3065,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

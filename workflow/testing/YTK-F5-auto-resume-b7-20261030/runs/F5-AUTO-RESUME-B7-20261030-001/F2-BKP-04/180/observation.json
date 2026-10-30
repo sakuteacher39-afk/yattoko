@@ -1,0 +1,82 @@
+{
+  "caseId": "F2:BKP-04",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 180,
+  "label": "cloud-completed-forbidden-restore-SHA",
+  "input": {
+    "path": "inputs/0f2d9a6799108f518e9145478b99c1ccdb727531e238448e0559f00af0bb4720.bin",
+    "bytes": 3896,
+    "sha256": "0f2d9a6799108f518e9145478b99c1ccdb727531e238448e0559f00af0bb4720"
+  },
+  "oracle": {
+    "snapshotSHA256": "8b544be0161638b1d3fb854764ceb63863253588788cd86ef2d657cfe68dbe6b",
+    "snapshotBytes": 3063,
+    "expectedOperations": [
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 3,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 2
+      }
+    ],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "unknown",
+        "operationType": "unsupported",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      }
+    ],
+    "expectedPendingStatus": null,
+    "normalPendingMustBeNull": true
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "Error",
+    "errorCode": "DIGEST_FAILED",
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 1,
+    "capacityBytes": 3063,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

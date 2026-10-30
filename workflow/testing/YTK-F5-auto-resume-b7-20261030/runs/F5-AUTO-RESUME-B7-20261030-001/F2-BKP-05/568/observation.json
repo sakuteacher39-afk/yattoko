@@ -1,0 +1,92 @@
+{
+  "caseId": "F2:BKP-05",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 568,
+  "label": "commerce-partial-missing-single-NONE",
+  "input": {
+    "path": "inputs/49d4aaa44f0d81a1219e1acf2a3c773b94c417e0eef43c016c860034b0a71a8c.bin",
+    "bytes": 3926,
+    "sha256": "49d4aaa44f0d81a1219e1acf2a3c773b94c417e0eef43c016c860034b0a71a8c"
+  },
+  "oracle": {
+    "snapshotSHA256": "f99d87196a6a3bc5509d0c6583e9795aa8728f7db8d62c2d245ad6f750aa5144",
+    "snapshotBytes": 3063,
+    "expectedOperations": [
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 3,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 2
+      }
+    ],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "service",
+        "operationType": "service",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "DEPENDENCY_MISSING"
+      }
+    ],
+    "expectedPendingStatus": "partial",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": true,
+    "errorName": null,
+    "errorCode": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null,
+    "digestCalls": 3,
+    "capacityBytes": 3063,
+    "fileGreaterThan10MB": false,
+    "fileSHA256": "0bdfabb0e7081d3345554c085e6d65f9f52c2a7495a00457810b0b02c37451d3",
+    "payloadSHA256": "9b146da3a16719deb2c29013b90f770ea8f0e5357ffe562e575d30c36614a008",
+    "snapshotSHA256": "f99d87196a6a3bc5509d0c6583e9795aa8728f7db8d62c2d245ad6f750aa5144",
+    "rawBytes": 4322,
+    "pendingBytes": 1016,
+    "captureStatus": "partial",
+    "exportedCount": 1,
+    "omittedCount": 1,
+    "independentChecksumMatches": true,
+    "canonicalRawMatches": true,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

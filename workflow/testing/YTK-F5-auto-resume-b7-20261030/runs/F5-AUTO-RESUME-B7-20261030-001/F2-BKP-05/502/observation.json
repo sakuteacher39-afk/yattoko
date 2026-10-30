@@ -1,0 +1,81 @@
+{
+  "caseId": "F2:BKP-05",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 502,
+  "label": "finance-partial-forbidden-deleteAll-NONE",
+  "input": {
+    "path": "inputs/b8d1642f5aff9149db57fa068515cefea410c76355dbd34cefc1cf37b4ac16dc.bin",
+    "bytes": 3693,
+    "sha256": "b8d1642f5aff9149db57fa068515cefea410c76355dbd34cefc1cf37b4ac16dc"
+  },
+  "oracle": {
+    "snapshotSHA256": "7042cea1b0327e58648c99049e41372b78afed988eb876ed8a9ecd1213bd5133",
+    "snapshotBytes": 3069,
+    "expectedOperations": [],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "overview",
+        "operationType": "deleteAll",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      },
+      {
+        "categoryKey": "device",
+        "targetKind": "category",
+        "operationType": "category",
+        "ordinalStart": 2,
+        "ordinalEnd": 2,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      }
+    ],
+    "expectedPendingStatus": "none",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": true
+  },
+  "actual": {
+    "accepted": true,
+    "errorName": null,
+    "errorCode": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": true,
+    "digestCalls": 3,
+    "capacityBytes": 3069,
+    "fileGreaterThan10MB": false,
+    "fileSHA256": "354b17cde7ac8f33a95dbb8079c21746825389972ab908ef8d549ec5923075fa",
+    "payloadSHA256": "4c0e42fdbe08b06ccd769e0acfe5fe79f82720cbee127f641e18bb28084479fb",
+    "snapshotSHA256": "7042cea1b0327e58648c99049e41372b78afed988eb876ed8a9ecd1213bd5133",
+    "rawBytes": 3990,
+    "pendingBytes": 678,
+    "captureStatus": "none",
+    "exportedCount": 0,
+    "omittedCount": 2,
+    "independentChecksumMatches": true,
+    "canonicalRawMatches": true,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

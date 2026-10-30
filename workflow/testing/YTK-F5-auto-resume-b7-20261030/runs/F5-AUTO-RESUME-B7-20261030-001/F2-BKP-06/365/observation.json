@@ -1,0 +1,63 @@
+{
+  "caseId": "F2:BKP-06",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 365,
+  "label": "cloud-completed-none-READ",
+  "input": {
+    "path": "inputs/a3e0761abb613c63e03808ca00370d407ecfc59a31b4d793225a7e13b2fd7726.bin",
+    "bytes": 3508,
+    "sha256": "a3e0761abb613c63e03808ca00370d407ecfc59a31b4d793225a7e13b2fd7726"
+  },
+  "oracle": {
+    "snapshotSHA256": "8b544be0161638b1d3fb854764ceb63863253588788cd86ef2d657cfe68dbe6b",
+    "snapshotBytes": 3063,
+    "expectedOperations": [],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "service",
+        "operationType": "service",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "INVALID_VALUE"
+      }
+    ],
+    "expectedPendingStatus": "none",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "AbortError",
+    "errorCode": 20,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 0,
+    "capacityBytes": 3063,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

@@ -1,0 +1,73 @@
+{
+  "caseId": "F2:BKP-06",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 239,
+  "label": "social-partial-single-READ",
+  "input": {
+    "path": "inputs/c1f73bea55199eaf773fdf9dc8c7b414bf908e6fbb6c5e51578f11215f788959.bin",
+    "bytes": 3707,
+    "sha256": "c1f73bea55199eaf773fdf9dc8c7b414bf908e6fbb6c5e51578f11215f788959"
+  },
+  "oracle": {
+    "snapshotSHA256": "e232896a6d34afbbfcd87b72bab7e1053e806b6a6e6832388539fa5977910b14",
+    "snapshotBytes": 3069,
+    "expectedOperations": [
+      {
+        "operationType": "service",
+        "targetKind": "service",
+        "categoryKey": "social",
+        "recordId": "svc_00000001-0000-4000-8000-000000000003",
+        "baseRecordRevision": 5,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "usageStatus",
+          "value": "using"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 1
+      }
+    ],
+    "expectedOmitted": [],
+    "expectedPendingStatus": "full",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "AbortError",
+    "errorCode": 20,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 0,
+    "capacityBytes": 3069,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

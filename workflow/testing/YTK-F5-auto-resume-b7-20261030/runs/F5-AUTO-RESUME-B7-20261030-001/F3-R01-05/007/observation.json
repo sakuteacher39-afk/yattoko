@@ -1,0 +1,83 @@
+{
+  "caseId": "F3:R01-05",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 7,
+  "label": "base-partial-single-NONE",
+  "input": {
+    "path": "inputs/5c9218b9eb105e077a537e45c0f1dd7d9bb197e18a01cb0f23b660905cd699e2.bin",
+    "bytes": 3701,
+    "sha256": "5c9218b9eb105e077a537e45c0f1dd7d9bb197e18a01cb0f23b660905cd699e2"
+  },
+  "oracle": {
+    "snapshotSHA256": "d0a3c6aeb7dbd130959bbdc0797c255c384c59f6d9d6388a76b798ceb25e4379",
+    "snapshotBytes": 3065,
+    "expectedOperations": [
+      {
+        "operationType": "service",
+        "targetKind": "service",
+        "categoryKey": "base",
+        "recordId": "svc_00000001-0000-4000-8000-000000000003",
+        "baseRecordRevision": 5,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "usageStatus",
+          "value": "using"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 1
+      }
+    ],
+    "expectedOmitted": [],
+    "expectedPendingStatus": "full",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": true,
+    "errorName": null,
+    "errorCode": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null,
+    "digestCalls": 3,
+    "capacityBytes": 3065,
+    "fileGreaterThan10MB": false,
+    "fileSHA256": "ae6bf7b3453244fc400d752f749eb1c3ebf8b7b951543b18f3e9100f3f45530d",
+    "payloadSHA256": "aa08c2b198832ec0f8fef6857228ea3743cc24318ebfd8fa1df99d8df5ab8a05",
+    "snapshotSHA256": "d0a3c6aeb7dbd130959bbdc0797c255c384c59f6d9d6388a76b798ceb25e4379",
+    "rawBytes": 4215,
+    "pendingBytes": 907,
+    "captureStatus": "full",
+    "exportedCount": 1,
+    "omittedCount": 0,
+    "independentChecksumMatches": true,
+    "canonicalRawMatches": true,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

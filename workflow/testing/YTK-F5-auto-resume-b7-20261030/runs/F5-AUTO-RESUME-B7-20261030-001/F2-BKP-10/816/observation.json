@@ -1,0 +1,71 @@
+{
+  "caseId": "F2:BKP-10",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 816,
+  "label": "carrier-partial-forbidden-deleteAll-SHA",
+  "input": {
+    "path": "inputs/7ef7dc6ce499509f538b04f187845a2fedde5284fa2670ed3e18bf4a2bd0d75e.bin",
+    "bytes": 3697,
+    "sha256": "7ef7dc6ce499509f538b04f187845a2fedde5284fa2670ed3e18bf4a2bd0d75e"
+  },
+  "oracle": {
+    "snapshotSHA256": "783be6d2a7a5a1ff29d963d4d9e15ef14c13687180d4c63a81c855d889e4b5f1",
+    "snapshotBytes": 3073,
+    "expectedOperations": [],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "overview",
+        "operationType": "deleteAll",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      },
+      {
+        "categoryKey": "device",
+        "targetKind": "category",
+        "operationType": "category",
+        "ordinalStart": 2,
+        "ordinalEnd": 2,
+        "reasonCode": "UNSUPPORTED_OPERATION"
+      }
+    ],
+    "expectedPendingStatus": "none",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "Error",
+    "errorCode": "DIGEST_FAILED",
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 1,
+    "capacityBytes": 3073,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

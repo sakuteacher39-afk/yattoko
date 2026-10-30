@@ -1,0 +1,54 @@
+{
+  "caseId": "F2:BKP-04",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 200,
+  "label": "subscription-completed-empty-READ",
+  "input": {
+    "path": "inputs/e3b65e3b396d82a937bfb9a0397c09c24a60fba306446317d023f4a805dc97f6.bin",
+    "bytes": 3190,
+    "sha256": "e3b65e3b396d82a937bfb9a0397c09c24a60fba306446317d023f4a805dc97f6"
+  },
+  "oracle": {
+    "snapshotSHA256": "c8d2772f146f0378727eff8ea0dabd66912d47a3e4dd85def0d3e02d2eced90f",
+    "snapshotBytes": 2975,
+    "expectedOperations": [],
+    "expectedOmitted": [],
+    "expectedPendingStatus": null,
+    "normalPendingMustBeNull": true
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "AbortError",
+    "errorCode": 20,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 0,
+    "capacityBytes": 2975,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

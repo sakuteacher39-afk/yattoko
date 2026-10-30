@@ -1,0 +1,73 @@
+{
+  "caseId": "F2:BKP-10",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 130,
+  "label": "base-completed-none-NONE",
+  "input": {
+    "path": "inputs/ac6edc1c624fb3187d77f2dfd7e61319c3cd5972dc2cc7fd22c531e7e66a2570.bin",
+    "bytes": 3510,
+    "sha256": "ac6edc1c624fb3187d77f2dfd7e61319c3cd5972dc2cc7fd22c531e7e66a2570"
+  },
+  "oracle": {
+    "snapshotSHA256": "e3505517236c17c24414e975daf399fa312d57d13cf2c7592ea7b6309e6a3458",
+    "snapshotBytes": 3065,
+    "expectedOperations": [],
+    "expectedOmitted": [
+      {
+        "categoryKey": null,
+        "targetKind": "service",
+        "operationType": "service",
+        "ordinalStart": 1,
+        "ordinalEnd": 1,
+        "reasonCode": "INVALID_VALUE"
+      }
+    ],
+    "expectedPendingStatus": "none",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": true,
+    "errorName": null,
+    "errorCode": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null,
+    "digestCalls": 3,
+    "capacityBytes": 3065,
+    "fileGreaterThan10MB": false,
+    "fileSHA256": "d6a7f9844992171a46e23f88ec696bab7d0a7609dc463dc9a04e87a3b1c07334",
+    "payloadSHA256": "76579fd9147da16a3d2e7f458cd8afcbb8b1297f729f9636218f0f71e9f77285",
+    "snapshotSHA256": "e3505517236c17c24414e975daf399fa312d57d13cf2c7592ea7b6309e6a3458",
+    "rawBytes": 3830,
+    "pendingBytes": 522,
+    "captureStatus": "none",
+    "exportedCount": 0,
+    "omittedCount": 1,
+    "independentChecksumMatches": true,
+    "canonicalRawMatches": true,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

@@ -1,0 +1,54 @@
+{
+  "caseId": "F2:BKP-02",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 309,
+  "label": "auth-completed-empty-SHA",
+  "input": {
+    "path": "inputs/c329ac8de3ca5403577cf65af8b5e1dd9dbc22cd6c21fb9c5a00dd55800d620f.bin",
+    "bytes": 3220,
+    "sha256": "c329ac8de3ca5403577cf65af8b5e1dd9dbc22cd6c21fb9c5a00dd55800d620f"
+  },
+  "oracle": {
+    "snapshotSHA256": "19758b3d27c429ffc1acc5c3c51e0c588408f8adc1803d9dbbecb4d383b7cad1",
+    "snapshotBytes": 3013,
+    "expectedOperations": [],
+    "expectedOmitted": [],
+    "expectedPendingStatus": null,
+    "normalPendingMustBeNull": true
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "Error",
+    "errorCode": "DIGEST_FAILED",
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 1,
+    "capacityBytes": 3013,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

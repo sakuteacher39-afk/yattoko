@@ -1,0 +1,164 @@
+{
+  "caseId": "F2:BKP-06",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 202,
+  "label": "mail-completed-chain-NONE",
+  "input": {
+    "path": "inputs/136e9aebf814af8ee622e524b8b64049b7609c7662397bc36ff106d37941c7cc.bin",
+    "bytes": 5626,
+    "sha256": "136e9aebf814af8ee622e524b8b64049b7609c7662397bc36ff106d37941c7cc"
+  },
+  "oracle": {
+    "snapshotSHA256": "025661dcb8426088c0d1a8caca4e92b953572a9515c37822c330c33bf1cefb33",
+    "snapshotBytes": 3025,
+    "expectedOperations": [
+      {
+        "operationType": "addService",
+        "targetKind": "service",
+        "categoryKey": "mail",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "baseRecordRevision": null,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "serviceCatalogId": "other",
+          "otherServiceName": "未保存ダミー"
+        },
+        "dependencyContext": {
+          "expectedValue": null,
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 1
+      },
+      {
+        "operationType": "service",
+        "targetKind": "service",
+        "categoryKey": "mail",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "baseRecordRevision": null,
+        "dependsOrdinals": [
+          1
+        ],
+        "canonicalValue": {
+          "field": "usageStatus",
+          "value": "using"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 2
+      },
+      {
+        "operationType": "service",
+        "targetKind": "service",
+        "categoryKey": "mail",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "baseRecordRevision": null,
+        "dependsOrdinals": [
+          1,
+          2
+        ],
+        "canonicalValue": {
+          "field": "recoveryUse",
+          "value": "unknown"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 3
+      },
+      {
+        "operationType": "service",
+        "targetKind": "service",
+        "categoryKey": "mail",
+        "recordId": "svc_00000003-0000-4000-8000-000000000003",
+        "baseRecordRevision": null,
+        "dependsOrdinals": [
+          1,
+          2,
+          3
+        ],
+        "canonicalValue": {
+          "field": "intentionOverride",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": null,
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 4
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 3,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 5
+      }
+    ],
+    "expectedOmitted": [],
+    "expectedPendingStatus": "full",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": true,
+    "errorName": null,
+    "errorCode": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": true,
+    "generatedFileAccepted": true,
+    "forbiddenRejected": null,
+    "digestCalls": 3,
+    "capacityBytes": 3025,
+    "fileGreaterThan10MB": false,
+    "fileSHA256": "e64ea6bb06011f597355b52e0dff283ae68d5efa7213abd6c482d1c4c32a7ea8",
+    "payloadSHA256": "49033f660b390d10e84f5f783295952e5b2003b23d2c74d91eb9abfb7f04c335",
+    "snapshotSHA256": "025661dcb8426088c0d1a8caca4e92b953572a9515c37822c330c33bf1cefb33",
+    "rawBytes": 6494,
+    "pendingBytes": 3226,
+    "captureStatus": "full",
+    "exportedCount": 5,
+    "omittedCount": 0,
+    "independentChecksumMatches": true,
+    "canonicalRawMatches": true,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}

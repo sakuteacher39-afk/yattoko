@@ -1,0 +1,7511 @@
+{
+  "caseId": "F2:BKP-08",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B7-20261030-001",
+  "attempt": 1,
+  "index": 11,
+  "label": "dense-mixed-rounds-256-READ",
+  "input": {
+    "path": "inputs/acca82ffbc5269ba9f744d7c1d9b14d9cdc9435a388f245ca977a904348e307d.bin",
+    "bytes": 10115796,
+    "sha256": "acca82ffbc5269ba9f744d7c1d9b14d9cdc9435a388f245ca977a904348e307d"
+  },
+  "oracle": {
+    "snapshotSHA256": "f2a3fc263c295abc9ed6692cf6593245fa93464e3258a06ef9f28f845ddb43ac",
+    "snapshotBytes": 9999999,
+    "expectedOperations": [
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "undecided",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 1
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 2
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 3
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 4
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 5
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 6
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 7
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 8
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 9
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 10
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 11
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "unanswered",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 12
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 13
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 14
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 15
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 16
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 17
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 18
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 19
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 20
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 21
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 22
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 23
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 24
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 25
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 26
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 27
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 28
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 29
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 30
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 31
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 32
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 33
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 34
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 35
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 36
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 37
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 38
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 39
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 40
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 41
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 42
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 43
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 44
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 45
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 46
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 47
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 48
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 49
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 50
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 51
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 52
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 53
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 54
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 55
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 56
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 57
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 58
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 59
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 60
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 61
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 62
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 63
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 64
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 65
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 66
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 67
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 68
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 69
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 70
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 71
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 72
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 73
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 74
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 75
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 76
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 77
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 78
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 79
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 80
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 81
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 82
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 83
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 84
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 85
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 86
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 87
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 88
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 89
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 90
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 91
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 92
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 93
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 94
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 95
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 96
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 97
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 98
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 99
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 100
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 101
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 102
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 103
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 104
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 105
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 106
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 107
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 108
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 109
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 110
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 111
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 112
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 113
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 114
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 115
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 116
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 117
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 118
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 119
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 120
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 121
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 122
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 123
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 124
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 125
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 126
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 127
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 128
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 129
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 130
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 131
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 132
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 133
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 134
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 135
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 136
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 137
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 138
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 139
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 140
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 141
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 142
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 143
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 144
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 145
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 146
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 147
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 148
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 149
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 150
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 151
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 152
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 153
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 154
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 155
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 156
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 157
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 158
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 159
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 160
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137,
+          149
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 161
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138,
+          150
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 162
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139,
+          151
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 163
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140,
+          152
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 164
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141,
+          153
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 165
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142,
+          154
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 166
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143,
+          155
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 167
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144,
+          156
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 168
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145,
+          157
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 169
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146,
+          158
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 170
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147,
+          159
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 171
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148,
+          160
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 172
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137,
+          149,
+          161
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 173
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138,
+          150,
+          162
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 174
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139,
+          151,
+          163
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 175
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140,
+          152,
+          164
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 176
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141,
+          153,
+          165
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 177
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142,
+          154,
+          166
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 178
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143,
+          155,
+          167
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 179
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144,
+          156,
+          168
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 180
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145,
+          157,
+          169
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 181
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146,
+          158,
+          170
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 182
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147,
+          159,
+          171
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 183
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148,
+          160,
+          172
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 184
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137,
+          149,
+          161,
+          173
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 185
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138,
+          150,
+          162,
+          174
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 186
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139,
+          151,
+          163,
+          175
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 187
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140,
+          152,
+          164,
+          176
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 188
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141,
+          153,
+          165,
+          177
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 189
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142,
+          154,
+          166,
+          178
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 190
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143,
+          155,
+          167,
+          179
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 191
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144,
+          156,
+          168,
+          180
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 192
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145,
+          157,
+          169,
+          181
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 193
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146,
+          158,
+          170,
+          182
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 194
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147,
+          159,
+          171,
+          183
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 195
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148,
+          160,
+          172,
+          184
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 196
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137,
+          149,
+          161,
+          173,
+          185
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 197
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138,
+          150,
+          162,
+          174,
+          186
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 198
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139,
+          151,
+          163,
+          175,
+          187
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 199
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140,
+          152,
+          164,
+          176,
+          188
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 200
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141,
+          153,
+          165,
+          177,
+          189
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 201
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142,
+          154,
+          166,
+          178,
+          190
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 202
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143,
+          155,
+          167,
+          179,
+          191
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 203
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144,
+          156,
+          168,
+          180,
+          192
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 204
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145,
+          157,
+          169,
+          181,
+          193
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 205
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 206
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147,
+          159,
+          171,
+          183,
+          195
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 207
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148,
+          160,
+          172,
+          184,
+          196
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 208
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137,
+          149,
+          161,
+          173,
+          185,
+          197
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 209
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138,
+          150,
+          162,
+          174,
+          186,
+          198
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 210
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139,
+          151,
+          163,
+          175,
+          187,
+          199
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 211
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140,
+          152,
+          164,
+          176,
+          188,
+          200
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 212
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141,
+          153,
+          165,
+          177,
+          189,
+          201
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 213
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142,
+          154,
+          166,
+          178,
+          190,
+          202
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 214
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143,
+          155,
+          167,
+          179,
+          191,
+          203
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 215
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144,
+          156,
+          168,
+          180,
+          192,
+          204
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 216
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145,
+          157,
+          169,
+          181,
+          193,
+          205
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 217
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 218
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147,
+          159,
+          171,
+          183,
+          195,
+          207
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 219
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148,
+          160,
+          172,
+          184,
+          196,
+          208
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 220
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137,
+          149,
+          161,
+          173,
+          185,
+          197,
+          209
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 221
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138,
+          150,
+          162,
+          174,
+          186,
+          198,
+          210
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 222
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139,
+          151,
+          163,
+          175,
+          187,
+          199,
+          211
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 223
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140,
+          152,
+          164,
+          176,
+          188,
+          200,
+          212
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 224
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141,
+          153,
+          165,
+          177,
+          189,
+          201,
+          213
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 225
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142,
+          154,
+          166,
+          178,
+          190,
+          202,
+          214
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 226
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143,
+          155,
+          167,
+          179,
+          191,
+          203,
+          215
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 227
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144,
+          156,
+          168,
+          180,
+          192,
+          204,
+          216
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 228
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145,
+          157,
+          169,
+          181,
+          193,
+          205,
+          217
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 229
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206,
+          218
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 230
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147,
+          159,
+          171,
+          183,
+          195,
+          207,
+          219
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 231
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148,
+          160,
+          172,
+          184,
+          196,
+          208,
+          220
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 232
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137,
+          149,
+          161,
+          173,
+          185,
+          197,
+          209,
+          221
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 233
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138,
+          150,
+          162,
+          174,
+          186,
+          198,
+          210,
+          222
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 234
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139,
+          151,
+          163,
+          175,
+          187,
+          199,
+          211,
+          223
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 235
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140,
+          152,
+          164,
+          176,
+          188,
+          200,
+          212,
+          224
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 236
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141,
+          153,
+          165,
+          177,
+          189,
+          201,
+          213,
+          225
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 237
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142,
+          154,
+          166,
+          178,
+          190,
+          202,
+          214,
+          226
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 238
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143,
+          155,
+          167,
+          179,
+          191,
+          203,
+          215,
+          227
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 239
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144,
+          156,
+          168,
+          180,
+          192,
+          204,
+          216,
+          228
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 240
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145,
+          157,
+          169,
+          181,
+          193,
+          205,
+          217,
+          229
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 241
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206,
+          218,
+          230
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 242
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147,
+          159,
+          171,
+          183,
+          195,
+          207,
+          219,
+          231
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 243
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148,
+          160,
+          172,
+          184,
+          196,
+          208,
+          220,
+          232
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 244
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "cloud",
+        "recordId": "cat_cloud",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          5,
+          17,
+          29,
+          41,
+          53,
+          65,
+          77,
+          89,
+          101,
+          113,
+          125,
+          137,
+          149,
+          161,
+          173,
+          185,
+          197,
+          209,
+          221,
+          233
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 245
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "subscription",
+        "recordId": "cat_subscription",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          6,
+          18,
+          30,
+          42,
+          54,
+          66,
+          78,
+          90,
+          102,
+          114,
+          126,
+          138,
+          150,
+          162,
+          174,
+          186,
+          198,
+          210,
+          222,
+          234
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 246
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "finance",
+        "recordId": "cat_finance",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          7,
+          19,
+          31,
+          43,
+          55,
+          67,
+          79,
+          91,
+          103,
+          115,
+          127,
+          139,
+          151,
+          163,
+          175,
+          187,
+          199,
+          211,
+          223,
+          235
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 247
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "commerce",
+        "recordId": "cat_commerce",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          8,
+          20,
+          32,
+          44,
+          56,
+          68,
+          80,
+          92,
+          104,
+          116,
+          128,
+          140,
+          152,
+          164,
+          176,
+          188,
+          200,
+          212,
+          224,
+          236
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 248
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "auth",
+        "recordId": "cat_auth",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          9,
+          21,
+          33,
+          45,
+          57,
+          69,
+          81,
+          93,
+          105,
+          117,
+          129,
+          141,
+          153,
+          165,
+          177,
+          189,
+          201,
+          213,
+          225,
+          237
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 249
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "license",
+        "recordId": "cat_license",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          10,
+          22,
+          34,
+          46,
+          58,
+          70,
+          82,
+          94,
+          106,
+          118,
+          130,
+          142,
+          154,
+          166,
+          178,
+          190,
+          202,
+          214,
+          226,
+          238
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 250
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "carrier",
+        "recordId": "cat_carrier",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          11,
+          23,
+          35,
+          47,
+          59,
+          71,
+          83,
+          95,
+          107,
+          119,
+          131,
+          143,
+          155,
+          167,
+          179,
+          191,
+          203,
+          215,
+          227,
+          239
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 251
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "business",
+        "recordId": "cat_business",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96,
+          108,
+          120,
+          132,
+          144,
+          156,
+          168,
+          180,
+          192,
+          204,
+          216,
+          228,
+          240
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "keep"
+        },
+        "dependencyContext": {
+          "expectedValue": "delete",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 252
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "device",
+        "recordId": "cat_device",
+        "baseRecordRevision": 1,
+        "dependsOrdinals": [
+          1,
+          13,
+          25,
+          37,
+          49,
+          61,
+          73,
+          85,
+          97,
+          109,
+          121,
+          133,
+          145,
+          157,
+          169,
+          181,
+          193,
+          205,
+          217,
+          229,
+          241
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 253
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "base",
+        "recordId": "cat_base",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          2,
+          14,
+          26,
+          38,
+          50,
+          62,
+          74,
+          86,
+          98,
+          110,
+          122,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206,
+          218,
+          230,
+          242
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 254
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "mail",
+        "recordId": "cat_mail",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          3,
+          15,
+          27,
+          39,
+          51,
+          63,
+          75,
+          87,
+          99,
+          111,
+          123,
+          135,
+          147,
+          159,
+          171,
+          183,
+          195,
+          207,
+          219,
+          231,
+          243
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 255
+      },
+      {
+        "operationType": "category",
+        "targetKind": "category",
+        "categoryKey": "social",
+        "recordId": "cat_social",
+        "baseRecordRevision": 0,
+        "dependsOrdinals": [
+          4,
+          16,
+          28,
+          40,
+          52,
+          64,
+          76,
+          88,
+          100,
+          112,
+          124,
+          136,
+          148,
+          160,
+          172,
+          184,
+          196,
+          208,
+          220,
+          232,
+          244
+        ],
+        "canonicalValue": {
+          "field": "intention",
+          "value": "delete"
+        },
+        "dependencyContext": {
+          "expectedValue": "keep",
+          "parentQuestionKey": null,
+          "parentAnswer": null
+        },
+        "ordinal": 256
+      }
+    ],
+    "expectedOmitted": [],
+    "expectedPendingStatus": "full",
+    "normalPendingMustBeNull": false
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "queueUnchanged": true,
+    "oldStateUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "unauthorizedMutation": false,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null
+  },
+  "actual": {
+    "accepted": false,
+    "errorName": "AbortError",
+    "errorCode": 20,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "oldStateUnchanged": true,
+    "queueUnchanged": true,
+    "readwriteTransactions": 0,
+    "writeRequests": 0,
+    "independentOracleMatches": null,
+    "generatedFileAccepted": null,
+    "forbiddenRejected": null,
+    "digestCalls": 0,
+    "capacityBytes": 9999999,
+    "fileGreaterThan10MB": null,
+    "unauthorizedMutation": false
+  },
+  "error": null,
+  "status": "PASS"
+}
