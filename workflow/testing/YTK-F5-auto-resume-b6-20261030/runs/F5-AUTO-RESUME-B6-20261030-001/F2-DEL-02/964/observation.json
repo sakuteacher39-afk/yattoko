@@ -1,0 +1,67 @@
+{
+  "caseId": "F2:DEL-02",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B6-20261030-001",
+  "attempt": 1,
+  "index": 964,
+  "label": "license-partial-children1-abort11-generationOnlyfalse",
+  "input": {
+    "path": "inputs/f50a147e72734a9b7a8a58f2f4110755f95e4c612b1618d14726849f66a9a98e.bin",
+    "bytes": 2971,
+    "sha256": "f50a147e72734a9b7a8a58f2f4110755f95e4c612b1618d14726849f66a9a98e"
+  },
+  "oracle": {
+    "source": "F2 fixed12 categories incl unanswered; delete logical category resets its answers and removes its children; deleteAll baseline fresh generation/global+1, changed records rev+1",
+    "inputSHA256": "f50a147e72734a9b7a8a58f2f4110755f95e4c612b1618d14726849f66a9a98e",
+    "expectedSHA256": "7d7c37f88925efe6754ca47a0487f0c0ae22567c20344e43b818553337b1202d",
+    "children": 1,
+    "unaffectedServices": 1,
+    "writeRequests": 16,
+    "faultOrdinal": 11
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "validNewGeneration": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": true,
+    "saveResolvedAfterComplete": false,
+    "writeRequests": 16,
+    "unauthorizedMutation": false,
+    "oldStateUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": 20,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": true,
+    "validNewGeneration": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": true,
+    "saveResolvedAfterComplete": false,
+    "guardReject": false,
+    "guardUnchanged": true,
+    "guardRW": 0,
+    "guardAbort": 0,
+    "unauthorizedMutation": false,
+    "actualGeneration": "gen_73000000-0000-4000-8000-000000000003",
+    "writeRequests": 16,
+    "observerCounts": {
+      "meta.put": 1,
+      "overview.put": 1,
+      "categories.put": 12,
+      "services.delete": 1,
+      "services.put": 1
+    }
+  },
+  "error": null,
+  "status": "PASS"
+}

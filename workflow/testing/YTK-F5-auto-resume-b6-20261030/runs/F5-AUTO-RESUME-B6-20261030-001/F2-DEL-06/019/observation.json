@@ -1,0 +1,69 @@
+{
+  "caseId": "F2:DEL-06",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B6-20261030-001",
+  "attempt": 1,
+  "index": 19,
+  "label": "base-completed-children0-abort0-generationOnlyfalse",
+  "input": {
+    "path": "inputs/7676f5da15881a2aa36f56a7b4c307a50f4377892a9a527713ef166187a9857e.bin",
+    "bytes": 2565,
+    "sha256": "7676f5da15881a2aa36f56a7b4c307a50f4377892a9a527713ef166187a9857e"
+  },
+  "oracle": {
+    "source": "F2 fixed12 categories incl unanswered; delete logical category resets its answers and removes its children; deleteAll baseline fresh generation/global+1, changed records rev+1",
+    "inputSHA256": "7676f5da15881a2aa36f56a7b4c307a50f4377892a9a527713ef166187a9857e",
+    "expectedSHA256": "2bc3f7c7993c8b2706d5b8260ba9bd1fb661ad8d6d2a6cd63fe2f3b3836628ac",
+    "children": 0,
+    "unaffectedServices": 1,
+    "writeRequests": 15,
+    "faultOrdinal": 0
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "validNewGeneration": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveResolvedAfterComplete": true,
+    "writeRequests": 15,
+    "unauthorizedMutation": false,
+    "guardReject": true,
+    "guardUnchanged": true,
+    "guardRW": 1,
+    "guardAbort": 1
+  },
+  "actual": {
+    "accepted": true,
+    "errorCode": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": false,
+    "validNewGeneration": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveResolvedAfterComplete": true,
+    "guardReject": true,
+    "guardUnchanged": true,
+    "guardRW": 1,
+    "guardAbort": 1,
+    "unauthorizedMutation": false,
+    "actualGeneration": "gen_867f6879-b3d0-4fa0-a571-86a9b8f7de7b",
+    "writeRequests": 15,
+    "observerCounts": {
+      "meta.put": 1,
+      "overview.put": 1,
+      "categories.put": 12,
+      "services.delete": 1
+    }
+  },
+  "error": null,
+  "status": "PASS"
+}

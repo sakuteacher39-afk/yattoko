@@ -1,0 +1,67 @@
+{
+  "caseId": "F2:DEL-02",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B6-20261030-001",
+  "attempt": 1,
+  "index": 283,
+  "label": "mail-completed-children1-abort6-generationOnlyfalse",
+  "input": {
+    "path": "inputs/21e9f3c7c2e3a3bedc866e0047c833c1531b8d7a7f473afbd04809883fb9e195.bin",
+    "bytes": 2935,
+    "sha256": "21e9f3c7c2e3a3bedc866e0047c833c1531b8d7a7f473afbd04809883fb9e195"
+  },
+  "oracle": {
+    "source": "F2 fixed12 categories incl unanswered; delete logical category resets its answers and removes its children; deleteAll baseline fresh generation/global+1, changed records rev+1",
+    "inputSHA256": "21e9f3c7c2e3a3bedc866e0047c833c1531b8d7a7f473afbd04809883fb9e195",
+    "expectedSHA256": "7d368026d20be1dc13126044b56fbee864157bf07a69e773feb7af611181f093",
+    "children": 1,
+    "unaffectedServices": 1,
+    "writeRequests": 16,
+    "faultOrdinal": 6
+  },
+  "expected": {
+    "accepted": false,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "validNewGeneration": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": true,
+    "saveResolvedAfterComplete": false,
+    "writeRequests": 16,
+    "unauthorizedMutation": false,
+    "oldStateUnchanged": true
+  },
+  "actual": {
+    "accepted": false,
+    "errorCode": 20,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": true,
+    "validNewGeneration": true,
+    "readwriteTransactions": 1,
+    "completeCount": 0,
+    "abortCount": 1,
+    "faultInjected": true,
+    "saveResolvedAfterComplete": false,
+    "guardReject": false,
+    "guardUnchanged": true,
+    "guardRW": 0,
+    "guardAbort": 0,
+    "unauthorizedMutation": false,
+    "actualGeneration": "gen_73000000-0000-4000-8000-000000000003",
+    "writeRequests": 16,
+    "observerCounts": {
+      "meta.put": 1,
+      "overview.put": 1,
+      "categories.put": 12,
+      "services.delete": 1,
+      "services.put": 1
+    }
+  },
+  "error": null,
+  "status": "PASS"
+}

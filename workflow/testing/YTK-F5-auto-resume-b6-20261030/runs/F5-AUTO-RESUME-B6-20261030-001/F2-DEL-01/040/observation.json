@@ -1,0 +1,65 @@
+{
+  "caseId": "F2:DEL-01",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-AUTO-RESUME-B6-20261030-001",
+  "attempt": 1,
+  "index": 40,
+  "label": "finance-completed-children0-abort0-generationOnlyfalse",
+  "input": {
+    "path": "inputs/b9d5938c0bdd431d9f68acb7d7b186669ef7a5809d16bb249fb0e04057c2d5ac.bin",
+    "bytes": 2594,
+    "sha256": "b9d5938c0bdd431d9f68acb7d7b186669ef7a5809d16bb249fb0e04057c2d5ac"
+  },
+  "oracle": {
+    "source": "F2 fixed12 categories incl unanswered; delete logical category resets its answers and removes its children; deleteAll baseline fresh generation/global+1, changed records rev+1",
+    "inputSHA256": "b9d5938c0bdd431d9f68acb7d7b186669ef7a5809d16bb249fb0e04057c2d5ac",
+    "expectedSHA256": "324739f4dec968adf6d8846ac942ffd5db326b0963f10684010480d69bed98f2",
+    "children": 0,
+    "unaffectedServices": 1,
+    "writeRequests": 15,
+    "faultOrdinal": 0
+  },
+  "expected": {
+    "accepted": true,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "validNewGeneration": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveResolvedAfterComplete": true,
+    "writeRequests": 15,
+    "unauthorizedMutation": false
+  },
+  "actual": {
+    "accepted": true,
+    "errorCode": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "oldStateUnchanged": false,
+    "validNewGeneration": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "faultInjected": false,
+    "saveResolvedAfterComplete": true,
+    "guardReject": false,
+    "guardUnchanged": true,
+    "guardRW": 0,
+    "guardAbort": 0,
+    "unauthorizedMutation": false,
+    "actualGeneration": "gen_73000000-0000-4000-8000-000000000003",
+    "writeRequests": 15,
+    "observerCounts": {
+      "meta.put": 1,
+      "overview.put": 1,
+      "categories.put": 12,
+      "services.put": 1
+    }
+  },
+  "error": null,
+  "status": "PASS"
+}
