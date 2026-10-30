@@ -1,0 +1,85 @@
+{
+  "phase": "READ_ONLY_AUDIT_OF_DIAGNOSTIC_EVIDENCE",
+  "noProductCalls": true,
+  "interpretation": "Sample maxima only, not allocation timeline peaks. Time/memory may change with observation; semantic outcome equivalence only. Not formal F5 verdicts.",
+  "rows": [
+    {
+      "boundary": 9999999,
+      "observer": "without",
+      "accepted": true,
+      "storedBytes": 9999999,
+      "phaseSamples": 10,
+      "sampledMaxRSS": 504680448,
+      "sampledMaxHeapUsed": 245317840,
+      "elapsedMS": 3441,
+      "writeRequests": null,
+      "complete": null,
+      "abort": null
+    },
+    {
+      "boundary": 9999999,
+      "observer": "with",
+      "accepted": true,
+      "storedBytes": 9999999,
+      "phaseSamples": 10,
+      "sampledMaxRSS": 710619136,
+      "sampledMaxHeapUsed": 405665960,
+      "elapsedMS": 3117,
+      "writeRequests": 20010,
+      "complete": 1,
+      "abort": 0
+    },
+    {
+      "boundary": 10000000,
+      "observer": "without",
+      "accepted": true,
+      "storedBytes": 10000000,
+      "phaseSamples": 10,
+      "sampledMaxRSS": 713265152,
+      "sampledMaxHeapUsed": 378969080,
+      "elapsedMS": 3016,
+      "writeRequests": null,
+      "complete": null,
+      "abort": null
+    },
+    {
+      "boundary": 10000000,
+      "observer": "with",
+      "accepted": true,
+      "storedBytes": 10000000,
+      "phaseSamples": 10,
+      "sampledMaxRSS": 692944896,
+      "sampledMaxHeapUsed": 355621032,
+      "elapsedMS": 3223,
+      "writeRequests": 20010,
+      "complete": 1,
+      "abort": 0
+    },
+    {
+      "boundary": 10000001,
+      "observer": "without",
+      "accepted": false,
+      "storedBytes": 9999994,
+      "phaseSamples": 8,
+      "sampledMaxRSS": 687276032,
+      "sampledMaxHeapUsed": 321345688,
+      "elapsedMS": 4838,
+      "writeRequests": null,
+      "complete": null,
+      "abort": null
+    },
+    {
+      "boundary": 10000001,
+      "observer": "with",
+      "accepted": false,
+      "storedBytes": 9999994,
+      "phaseSamples": 8,
+      "sampledMaxRSS": 687276032,
+      "sampledMaxHeapUsed": 321376760,
+      "elapsedMS": 4880,
+      "writeRequests": 0,
+      "complete": 0,
+      "abort": 1
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "reference": "8cddda3f34bbc856eae0eeaf75dd9b634ebb7d08",
+  "preexecutionCommit": "a9c3c0a9147662728ca40eb32131a9c80d46f638",
+  "runId": "F5-CAP14-20261030-002",
+  "attempt": 2,
+  "status": "PASS",
+  "variants": 3,
+  "evidenceManifestSHA256": "32e7b3167c01d2e83917c8fb05739f91b8ee02f18d4310b06614a63a9f56a8ea",
+  "evidenceFiles": 128,
+  "targetFiles": 3441,
+  "oldFiles": 89288,
+  "dependencies": 1978,
+  "productUnchanged": true,
+  "historyUnchanged": true,
+  "dependenciesUnchanged": true,
+  "old496RowsUnchanged": true,
+  "oldNotVerifiablePreserved": true,
+  "oldTrackedDiffEmpty": true,
+  "counts": {
+    "NOT RUN": 331,
+    "PASS": 166
+  },
+  "storeAudit": [
+    {
+      "boundary": 9999999,
+      "route": "direct",
+      "all4StoresIndependentMatch": true,
+      "readwrite": 1,
+      "complete": 1,
+      "abort": 0,
+      "writes": 20010,
+      "noOutstandingTransaction": true,
+      "rejectPreservesAllRevisionsPendingAndMeta": false
+    },
+    {
+      "boundary": 9999999,
+      "route": "coordinator",
+      "all4StoresIndependentMatch": true,
+      "readwrite": 1,
+      "complete": 1,
+      "abort": 0,
+      "writes": 20010,
+      "noOutstandingTransaction": true,
+      "rejectPreservesAllRevisionsPendingAndMeta": false
+    },
+    {
+      "boundary": 10000000,
+      "route": "direct",
+      "all4StoresIndependentMatch": true,
+      "readwrite": 1,
+      "complete": 1,
+      "abort": 0,
+      "writes": 20010,
+      "noOutstandingTransaction": true,
+      "rejectPreservesAllRevisionsPendingAndMeta": false
+    },
+    {
+      "boundary": 10000000,
+      "route": "coordinator",
+      "all4StoresIndependentMatch": true,
+      "readwrite": 1,
+      "complete": 1,
+      "abort": 0,
+      "writes": 20010,
+      "noOutstandingTransaction": true,
+      "rejectPreservesAllRevisionsPendingAndMeta": false
+    },
+    {
+      "boundary": 10000001,
+      "route": "direct",
+      "all4StoresIndependentMatch": true,
+      "readwrite": 1,
+      "complete": 0,
+      "abort": 1,
+      "writes": 0,
+      "noOutstandingTransaction": true,
+      "rejectPreservesAllRevisionsPendingAndMeta": true
+    },
+    {
+      "boundary": 10000001,
+      "route": "coordinator",
+      "all4StoresIndependentMatch": true,
+      "readwrite": 1,
+      "complete": 0,
+      "abort": 1,
+      "writes": 0,
+      "noOutstandingTransaction": true,
+      "rejectPreservesAllRevisionsPendingAndMeta": true
+    }
+  ],
+  "stop": null,
+  "sinkAttempts": []
+}
