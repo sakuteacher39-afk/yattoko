@@ -1,0 +1,146 @@
+{
+  "caseId": "F2:CAP-01",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-B5-REMAINING4-20261030-001",
+  "attempt": 1,
+  "index": 43,
+  "label": "carrier-completed-canonical",
+  "input": {
+    "path": "inputs/99c7c3e55b6c55a28a4da703ead8879129ef756571910527a76ea7419119c492.bin",
+    "bytes": 3196,
+    "sha256": "99c7c3e55b6c55a28a4da703ead8879129ef756571910527a76ea7419119c492"
+  },
+  "oracle": {
+    "inputSHA256": "99c7c3e55b6c55a28a4da703ead8879129ef756571910527a76ea7419119c492",
+    "expectedSHA256": "ca06f9286b7264f205f8a3896cf326b722c1eb116d81b6cd02fd06529c987786",
+    "canonicalUTF8Bytes": 3073,
+    "sourceInputByteIdentical": true,
+    "operation": {
+      "type": "overview",
+      "field": "identity",
+      "value": "configured"
+    },
+    "beforeBytes": 3072,
+    "prospectiveBytes": 3073
+  },
+  "expected": {
+    "accepted": true,
+    "datasetMatchesOracle": true,
+    "capacityBytes": 3073,
+    "independentActualBytes": 3073,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "revisionAndGenerationUnchangedOnReject": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "writeRequests": 16,
+    "saveCalls": 1,
+    "unauthorizedMutation": false,
+    "exportMatchesOracle": true,
+    "topKeys": [
+      "schemaVersion",
+      "questionSchemaVersion",
+      "generationId",
+      "globalRevision",
+      "overview",
+      "categories",
+      "services"
+    ]
+  },
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "capacityBytes": 3073,
+    "independentActualBytes": 3073,
+    "oldStateUnchanged": false,
+    "revisionAndGenerationUnchangedOnReject": true,
+    "exportMatchesOracle": true,
+    "topKeys": [
+      "schemaVersion",
+      "questionSchemaVersion",
+      "generationId",
+      "globalRevision",
+      "overview",
+      "categories",
+      "services"
+    ],
+    "overviewKeys": [
+      "recordId",
+      "identity",
+      "billing",
+      "finance",
+      "data",
+      "family",
+      "revision",
+      "schemaVersion"
+    ],
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "writeRequests": 16,
+    "observerCounts": {
+      "meta.put": 1,
+      "overview.put": 1,
+      "categories.put": 12,
+      "services.put": 2
+    },
+    "saveCalls": 1,
+    "pendingCount": 0,
+    "coordinatorStopped": false,
+    "pendingOperationsMatch": true,
+    "pendingBaseMatches": true,
+    "noFollowingSave": true,
+    "pendingSHA256": null,
+    "unauthorizedMutation": false,
+    "before": {
+      "meta": {
+        "rows": 1,
+        "bytes": 221,
+        "sha256": "d0bb4258737b5f254128b0266117d4b4390d19c73fbb15a3de8c826248d78286"
+      },
+      "overview": {
+        "rows": 1,
+        "bytes": 193,
+        "sha256": "fa1b497e5f5a185ba46903f73f00ce058304e4c857763a0e74d76396bc42629e"
+      },
+      "categories": {
+        "rows": 12,
+        "bytes": 1897,
+        "sha256": "8e7f80cc4b3cb01cbff9c6a5fa1fb44c899131e8c025973f33d6838ff408f478"
+      },
+      "services": {
+        "rows": 2,
+        "bytes": 743,
+        "sha256": "ebea7fc8155295d6643a5db4f751172d165ba25e60b375d6cd81b1da6a374575"
+      }
+    },
+    "after": {
+      "meta": {
+        "rows": 1,
+        "bytes": 222,
+        "sha256": "6e7974edecd08a9cdc7ff49ac2f30b2e86b318858b9987835348d5b4d677321a"
+      },
+      "overview": {
+        "rows": 1,
+        "bytes": 193,
+        "sha256": "8e846dd8052d9933e660a74a5565910f16adadb9c9b51328ebd4ea34a1759eca"
+      },
+      "categories": {
+        "rows": 12,
+        "bytes": 1897,
+        "sha256": "8e7f80cc4b3cb01cbff9c6a5fa1fb44c899131e8c025973f33d6838ff408f478"
+      },
+      "services": {
+        "rows": 2,
+        "bytes": 743,
+        "sha256": "ebea7fc8155295d6643a5db4f751172d165ba25e60b375d6cd81b1da6a374575"
+      }
+    }
+  },
+  "error": null,
+  "status": "PASS"
+}

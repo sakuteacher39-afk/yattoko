@@ -1,0 +1,146 @@
+{
+  "caseId": "F2:CAP-01",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-B5-REMAINING4-20261030-001",
+  "attempt": 1,
+  "index": 24,
+  "label": "subscription-completed-reversed",
+  "input": {
+    "path": "inputs/aecad915fdccefe1ee799be5b2e38e9916dd5d98426bd8b9abe40b64b4086d03.bin",
+    "bytes": 3098,
+    "sha256": "aecad915fdccefe1ee799be5b2e38e9916dd5d98426bd8b9abe40b64b4086d03"
+  },
+  "oracle": {
+    "inputSHA256": "aecad915fdccefe1ee799be5b2e38e9916dd5d98426bd8b9abe40b64b4086d03",
+    "expectedSHA256": "7b2de48a72f07c79b0acf1c881d95bb84e1514f3f5d2e8359e947be969d409df",
+    "canonicalUTF8Bytes": 2975,
+    "sourceInputByteIdentical": true,
+    "operation": {
+      "type": "overview",
+      "field": "identity",
+      "value": "configured"
+    },
+    "beforeBytes": 2974,
+    "prospectiveBytes": 2975
+  },
+  "expected": {
+    "accepted": true,
+    "datasetMatchesOracle": true,
+    "capacityBytes": 2975,
+    "independentActualBytes": 2975,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "revisionAndGenerationUnchangedOnReject": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "writeRequests": 16,
+    "saveCalls": 1,
+    "unauthorizedMutation": false,
+    "exportMatchesOracle": true,
+    "topKeys": [
+      "schemaVersion",
+      "questionSchemaVersion",
+      "generationId",
+      "globalRevision",
+      "overview",
+      "categories",
+      "services"
+    ]
+  },
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "capacityBytes": 2975,
+    "independentActualBytes": 2975,
+    "oldStateUnchanged": false,
+    "revisionAndGenerationUnchangedOnReject": true,
+    "exportMatchesOracle": true,
+    "topKeys": [
+      "schemaVersion",
+      "questionSchemaVersion",
+      "generationId",
+      "globalRevision",
+      "overview",
+      "categories",
+      "services"
+    ],
+    "overviewKeys": [
+      "recordId",
+      "identity",
+      "billing",
+      "finance",
+      "data",
+      "family",
+      "revision",
+      "schemaVersion"
+    ],
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "writeRequests": 16,
+    "observerCounts": {
+      "meta.put": 1,
+      "overview.put": 1,
+      "categories.put": 12,
+      "services.put": 2
+    },
+    "saveCalls": 1,
+    "pendingCount": 0,
+    "coordinatorStopped": false,
+    "pendingOperationsMatch": true,
+    "pendingBaseMatches": true,
+    "noFollowingSave": true,
+    "pendingSHA256": null,
+    "unauthorizedMutation": false,
+    "before": {
+      "meta": {
+        "rows": 1,
+        "bytes": 221,
+        "sha256": "07c7c18a1b3aeeef2633fc1267c4b4cd9d83c8ec942249d1d16124aa0c58e19b"
+      },
+      "overview": {
+        "rows": 1,
+        "bytes": 193,
+        "sha256": "f6f017d7423eb96ae87a648fa74b60c7ff8cf16431be13c63b1def160c57263a"
+      },
+      "categories": {
+        "rows": 12,
+        "bytes": 1897,
+        "sha256": "8e7f80cc4b3cb01cbff9c6a5fa1fb44c899131e8c025973f33d6838ff408f478"
+      },
+      "services": {
+        "rows": 2,
+        "bytes": 645,
+        "sha256": "f17fa170819e117319586ff347229ce1947845aed486b963746c4e2f074ae407"
+      }
+    },
+    "after": {
+      "meta": {
+        "rows": 1,
+        "bytes": 222,
+        "sha256": "6e7974edecd08a9cdc7ff49ac2f30b2e86b318858b9987835348d5b4d677321a"
+      },
+      "overview": {
+        "rows": 1,
+        "bytes": 193,
+        "sha256": "8e846dd8052d9933e660a74a5565910f16adadb9c9b51328ebd4ea34a1759eca"
+      },
+      "categories": {
+        "rows": 12,
+        "bytes": 1897,
+        "sha256": "8e7f80cc4b3cb01cbff9c6a5fa1fb44c899131e8c025973f33d6838ff408f478"
+      },
+      "services": {
+        "rows": 2,
+        "bytes": 645,
+        "sha256": "f17fa170819e117319586ff347229ce1947845aed486b963746c4e2f074ae407"
+      }
+    }
+  },
+  "error": null,
+  "status": "PASS"
+}

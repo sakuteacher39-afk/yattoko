@@ -1,0 +1,147 @@
+{
+  "caseId": "F2:CAP-02",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-B5-REMAINING4-20261030-001",
+  "attempt": 1,
+  "index": 38,
+  "label": "license-partial-reversed",
+  "input": {
+    "path": "inputs/d8b5155846b0998848c91db2cd7c5b3e7d52f471ea3063726ef74728229ce826.bin",
+    "bytes": 3206,
+    "sha256": "d8b5155846b0998848c91db2cd7c5b3e7d52f471ea3063726ef74728229ce826"
+  },
+  "oracle": {
+    "inputSHA256": "d8b5155846b0998848c91db2cd7c5b3e7d52f471ea3063726ef74728229ce826",
+    "expectedSHA256": "5704da7310496413a6d779484c1c23356921cda0552ddeaf40bdfd5d4759c7dc",
+    "canonicalUTF8Bytes": 3083,
+    "sourceInputByteIdentical": true,
+    "operation": {
+      "type": "overview",
+      "field": "identity",
+      "value": "configured"
+    },
+    "beforeBytes": 3082,
+    "prospectiveBytes": 3083
+  },
+  "expected": {
+    "accepted": true,
+    "datasetMatchesOracle": true,
+    "capacityBytes": 3083,
+    "independentActualBytes": 3083,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "revisionAndGenerationUnchangedOnReject": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "writeRequests": 16,
+    "saveCalls": 1,
+    "unauthorizedMutation": false,
+    "exportMatchesOracle": true,
+    "overviewKeys": [
+      "recordId",
+      "identity",
+      "billing",
+      "finance",
+      "data",
+      "family",
+      "revision",
+      "schemaVersion"
+    ]
+  },
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "capacityBytes": 3083,
+    "independentActualBytes": 3083,
+    "oldStateUnchanged": false,
+    "revisionAndGenerationUnchangedOnReject": true,
+    "exportMatchesOracle": true,
+    "topKeys": [
+      "schemaVersion",
+      "questionSchemaVersion",
+      "generationId",
+      "globalRevision",
+      "overview",
+      "categories",
+      "services"
+    ],
+    "overviewKeys": [
+      "recordId",
+      "identity",
+      "billing",
+      "finance",
+      "data",
+      "family",
+      "revision",
+      "schemaVersion"
+    ],
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "writeRequests": 16,
+    "observerCounts": {
+      "meta.put": 1,
+      "overview.put": 1,
+      "categories.put": 12,
+      "services.put": 2
+    },
+    "saveCalls": 1,
+    "pendingCount": 0,
+    "coordinatorStopped": false,
+    "pendingOperationsMatch": true,
+    "pendingBaseMatches": true,
+    "noFollowingSave": true,
+    "pendingSHA256": null,
+    "unauthorizedMutation": false,
+    "before": {
+      "meta": {
+        "rows": 1,
+        "bytes": 221,
+        "sha256": "07c7c18a1b3aeeef2633fc1267c4b4cd9d83c8ec942249d1d16124aa0c58e19b"
+      },
+      "overview": {
+        "rows": 1,
+        "bytes": 193,
+        "sha256": "f6f017d7423eb96ae87a648fa74b60c7ff8cf16431be13c63b1def160c57263a"
+      },
+      "categories": {
+        "rows": 12,
+        "bytes": 1897,
+        "sha256": "8e7f80cc4b3cb01cbff9c6a5fa1fb44c899131e8c025973f33d6838ff408f478"
+      },
+      "services": {
+        "rows": 2,
+        "bytes": 753,
+        "sha256": "2085343f50aa848bf4e12872a60502d25b7e9f695e3f181cd9b9a887da0b2a7c"
+      }
+    },
+    "after": {
+      "meta": {
+        "rows": 1,
+        "bytes": 222,
+        "sha256": "6e7974edecd08a9cdc7ff49ac2f30b2e86b318858b9987835348d5b4d677321a"
+      },
+      "overview": {
+        "rows": 1,
+        "bytes": 193,
+        "sha256": "8e846dd8052d9933e660a74a5565910f16adadb9c9b51328ebd4ea34a1759eca"
+      },
+      "categories": {
+        "rows": 12,
+        "bytes": 1897,
+        "sha256": "8e7f80cc4b3cb01cbff9c6a5fa1fb44c899131e8c025973f33d6838ff408f478"
+      },
+      "services": {
+        "rows": 2,
+        "bytes": 753,
+        "sha256": "2085343f50aa848bf4e12872a60502d25b7e9f695e3f181cd9b9a887da0b2a7c"
+      }
+    }
+  },
+  "error": null,
+  "status": "PASS"
+}

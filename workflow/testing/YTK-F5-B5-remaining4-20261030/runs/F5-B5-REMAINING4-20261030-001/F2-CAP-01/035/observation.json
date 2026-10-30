@@ -1,0 +1,146 @@
+{
+  "caseId": "F2:CAP-01",
+  "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "runId": "F5-B5-REMAINING4-20261030-001",
+  "attempt": 1,
+  "index": 35,
+  "label": "auth-completed-canonical",
+  "input": {
+    "path": "inputs/09cd8a3b4530701ce8e65390a7ef0d10452869f016f1769beeb9212f80264dbb.bin",
+    "bytes": 3136,
+    "sha256": "09cd8a3b4530701ce8e65390a7ef0d10452869f016f1769beeb9212f80264dbb"
+  },
+  "oracle": {
+    "inputSHA256": "09cd8a3b4530701ce8e65390a7ef0d10452869f016f1769beeb9212f80264dbb",
+    "expectedSHA256": "371a33999717e68622824333e32bb00c9c5488eb5b2e955e10f09d41978dc9f0",
+    "canonicalUTF8Bytes": 3013,
+    "sourceInputByteIdentical": true,
+    "operation": {
+      "type": "overview",
+      "field": "identity",
+      "value": "configured"
+    },
+    "beforeBytes": 3012,
+    "prospectiveBytes": 3013
+  },
+  "expected": {
+    "accepted": true,
+    "datasetMatchesOracle": true,
+    "capacityBytes": 3013,
+    "independentActualBytes": 3013,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "revisionAndGenerationUnchangedOnReject": true,
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "writeRequests": 16,
+    "saveCalls": 1,
+    "unauthorizedMutation": false,
+    "exportMatchesOracle": true,
+    "topKeys": [
+      "schemaVersion",
+      "questionSchemaVersion",
+      "generationId",
+      "globalRevision",
+      "overview",
+      "categories",
+      "services"
+    ]
+  },
+  "actual": {
+    "accepted": true,
+    "error": null,
+    "inputUnchanged": true,
+    "inputObjectUnchanged": true,
+    "datasetMatchesOracle": true,
+    "capacityBytes": 3013,
+    "independentActualBytes": 3013,
+    "oldStateUnchanged": false,
+    "revisionAndGenerationUnchangedOnReject": true,
+    "exportMatchesOracle": true,
+    "topKeys": [
+      "schemaVersion",
+      "questionSchemaVersion",
+      "generationId",
+      "globalRevision",
+      "overview",
+      "categories",
+      "services"
+    ],
+    "overviewKeys": [
+      "recordId",
+      "identity",
+      "billing",
+      "finance",
+      "data",
+      "family",
+      "revision",
+      "schemaVersion"
+    ],
+    "readwriteTransactions": 1,
+    "completeCount": 1,
+    "abortCount": 0,
+    "writeRequests": 16,
+    "observerCounts": {
+      "meta.put": 1,
+      "overview.put": 1,
+      "categories.put": 12,
+      "services.put": 2
+    },
+    "saveCalls": 1,
+    "pendingCount": 0,
+    "coordinatorStopped": false,
+    "pendingOperationsMatch": true,
+    "pendingBaseMatches": true,
+    "noFollowingSave": true,
+    "pendingSHA256": null,
+    "unauthorizedMutation": false,
+    "before": {
+      "meta": {
+        "rows": 1,
+        "bytes": 221,
+        "sha256": "d0bb4258737b5f254128b0266117d4b4390d19c73fbb15a3de8c826248d78286"
+      },
+      "overview": {
+        "rows": 1,
+        "bytes": 193,
+        "sha256": "fa1b497e5f5a185ba46903f73f00ce058304e4c857763a0e74d76396bc42629e"
+      },
+      "categories": {
+        "rows": 12,
+        "bytes": 1897,
+        "sha256": "8e7f80cc4b3cb01cbff9c6a5fa1fb44c899131e8c025973f33d6838ff408f478"
+      },
+      "services": {
+        "rows": 2,
+        "bytes": 683,
+        "sha256": "d077bd71341300bdea595f02377b27e87c917f992a28d5cafb45205ccea49dc8"
+      }
+    },
+    "after": {
+      "meta": {
+        "rows": 1,
+        "bytes": 222,
+        "sha256": "6e7974edecd08a9cdc7ff49ac2f30b2e86b318858b9987835348d5b4d677321a"
+      },
+      "overview": {
+        "rows": 1,
+        "bytes": 193,
+        "sha256": "8e846dd8052d9933e660a74a5565910f16adadb9c9b51328ebd4ea34a1759eca"
+      },
+      "categories": {
+        "rows": 12,
+        "bytes": 1897,
+        "sha256": "8e7f80cc4b3cb01cbff9c6a5fa1fb44c899131e8c025973f33d6838ff408f478"
+      },
+      "services": {
+        "rows": 2,
+        "bytes": 683,
+        "sha256": "d077bd71341300bdea595f02377b27e87c917f992a28d5cafb45205ccea49dc8"
+      }
+    }
+  },
+  "error": null,
+  "status": "PASS"
+}

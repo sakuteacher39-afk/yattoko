@@ -1,0 +1,94 @@
+{
+  "accepted": true,
+  "error": null,
+  "inputUnchanged": true,
+  "inputObjectUnchanged": true,
+  "datasetMatchesOracle": true,
+  "capacityBytes": 9999499,
+  "independentActualBytes": 9999499,
+  "oldStateUnchanged": false,
+  "revisionAndGenerationUnchangedOnReject": true,
+  "exportMatchesOracle": true,
+  "topKeys": [
+    "schemaVersion",
+    "questionSchemaVersion",
+    "generationId",
+    "globalRevision",
+    "overview",
+    "categories",
+    "services"
+  ],
+  "overviewKeys": [
+    "recordId",
+    "identity",
+    "billing",
+    "finance",
+    "data",
+    "family",
+    "revision",
+    "schemaVersion"
+  ],
+  "readwriteTransactions": 1,
+  "completeCount": 1,
+  "abortCount": 0,
+  "writeRequests": 20010,
+  "observerCounts": {
+    "meta.put": 1,
+    "overview.put": 1,
+    "categories.put": 12,
+    "services.delete": 1,
+    "services.put": 19995
+  },
+  "saveCalls": 1,
+  "pendingCount": 0,
+  "coordinatorStopped": false,
+  "pendingOperationsMatch": true,
+  "pendingBaseMatches": true,
+  "noFollowingSave": true,
+  "pendingSHA256": null,
+  "unauthorizedMutation": false,
+  "before": {
+    "meta": {
+      "rows": 1,
+      "bytes": 221,
+      "sha256": "d0c8fecd347e23ac3b4bb5d1092ba3d177d037759dff150fdf1ce8a3d1206c93"
+    },
+    "overview": {
+      "rows": 1,
+      "bytes": 193,
+      "sha256": "419e6cf905ec8f20a558be91641a58bab657db0700350f9b914f28818203c855"
+    },
+    "categories": {
+      "rows": 12,
+      "bytes": 1891,
+      "sha256": "7b0c5bb9b27678881751abf6bcc8c399926a978b7c78fdae5af2f010fe76ba48"
+    },
+    "services": {
+      "rows": 19996,
+      "bytes": 9997676,
+      "sha256": "df74e4ac38d1ffe6a7bbaaa08ecb88f1155f584cf2635e28cf23c49a6b7f5464"
+    }
+  },
+  "after": {
+    "meta": {
+      "rows": 1,
+      "bytes": 221,
+      "sha256": "d359a5aa699e3aac47b4ad8182e8b1c42707823e0f1e34db30d90079d68a3e41"
+    },
+    "overview": {
+      "rows": 1,
+      "bytes": 193,
+      "sha256": "419e6cf905ec8f20a558be91641a58bab657db0700350f9b914f28818203c855"
+    },
+    "categories": {
+      "rows": 12,
+      "bytes": 1891,
+      "sha256": "7b0c5bb9b27678881751abf6bcc8c399926a978b7c78fdae5af2f010fe76ba48"
+    },
+    "services": {
+      "rows": 19995,
+      "bytes": 9997176,
+      "sha256": "775f4fc54415c5d2aa9735e1145ebf8d0c4b126430c9051af6f67e69b4a98b98"
+    }
+  }
+}
