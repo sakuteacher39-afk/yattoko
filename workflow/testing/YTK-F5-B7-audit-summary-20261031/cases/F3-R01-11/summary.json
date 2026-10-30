@@ -1,0 +1,83 @@
+{
+  "caseId": "F3:R01-11",
+  "sourceCommit": "d18db02241566cb230ac9fe7aa8e798e60bf51d0",
+  "fixedProductCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "originalFormalStatus": "PASS",
+  "noRecertification": true,
+  "sourceResult": {
+    "path": "workflow/testing/YTK-F5-auto-resume-b7-20261030/runs/F5-AUTO-RESUME-B7-20261030-001/F3-R01-11/result.json",
+    "gitBlobSHA1": "303dc7ecaf6192d96162b8dc9cc08b7ac3448a5e",
+    "present": true,
+    "bytes": 261,
+    "sha256": "97644c5178d6c2248173c6c4769feb6afedb763d554555c4b94aa05fdd12d7e8",
+    "computedGitBlobSHA1": "303dc7ecaf6192d96162b8dc9cc08b7ac3448a5e",
+    "gitBindingMatches": true,
+    "inventoryPage": "source-inventory/250.json",
+    "inventoryOffset": 132
+  },
+  "sourceAuditRow": {
+    "caseId": "F3:R01-11",
+    "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+    "runId": "F5-AUTO-RESUME-B7-20261030-001",
+    "attempt": 1,
+    "status": "PASS",
+    "plannedVariants": 144,
+    "completedVariants": 144,
+    "counts": {
+      "PASS": 144
+    },
+    "resultSHA256": "97644c5178d6c2248173c6c4769feb6afedb763d554555c4b94aa05fdd12d7e8"
+  },
+  "sourceCheckRange": {
+    "start": 4935,
+    "endExclusive": 5079
+  },
+  "counts": {
+    "planned": 144,
+    "resultCompleted": 144,
+    "observationFiles": 144,
+    "sourceAuditChecks": 144,
+    "expectedActualMatches": 144,
+    "recordedOriginalOracleFileProofs": 144,
+    "expectedFailureWithoutFileProof": 0,
+    "oracleApplicableProofMissing": 0,
+    "oldFourStorePairsMatch": 144,
+    "ledgerVariantMatches": 144,
+    "evidenceMissing": 0,
+    "evidenceHashMismatch": 0,
+    "expectationMismatch": 0,
+    "sourceRecordedOracleMismatch": 0
+  },
+  "recordedGlobalIntegrity": {
+    "sourceProductMatches": true,
+    "recordedProductBeforeAfterMetadataEqual": true,
+    "recordedHistoryBeforeAfterMetadataEqual": true,
+    "recordedDependenciesBeforeAfterMetadataEqual": true,
+    "targetMetadataMatchesPlan": true,
+    "historyMetadataMatchesPlan": true,
+    "dependencyMetadataMatchesPlan": true,
+    "sourceAuditClaims": {
+      "productUnchanged": true,
+      "historyUnchanged": true,
+      "dependenciesUnchanged": true
+    },
+    "targetFiles": 3441,
+    "historyFiles": 126690,
+    "dependencyFiles": 1978
+  },
+  "auditParts": [
+    "cases/F3-R01-11/audit-001.json",
+    "cases/F3-R01-11/audit-002.json",
+    "cases/F3-R01-11/audit-003.json",
+    "cases/F3-R01-11/audit-004.json",
+    "cases/F3-R01-11/audit-005.json"
+  ],
+  "variantParts": [
+    "cases/F3-R01-11/variants-001.json",
+    "cases/F3-R01-11/variants-002.json",
+    "cases/F3-R01-11/variants-003.json",
+    "cases/F3-R01-11/variants-004.json",
+    "cases/F3-R01-11/variants-005.json"
+  ],
+  "issues": []
+}

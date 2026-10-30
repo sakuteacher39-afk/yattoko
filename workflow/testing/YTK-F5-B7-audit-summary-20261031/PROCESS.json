@@ -1,0 +1,53 @@
+{
+  "scope": "READ_ONLY_AUDIT_EVIDENCE_SUMMARY",
+  "sourceCommit": "d18db02241566cb230ac9fe7aa8e798e60bf51d0",
+  "fixedProductCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "formalTestsExecuted": 0,
+  "formalVerdictsRecertified": 0,
+  "oldSourceFilesWritten": 0,
+  "node": "v24.20.0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "verificationOutcome": "MATCH",
+  "provenanceOutcome": "MATCH",
+  "byteExact": true,
+  "sourceFiles": 63881,
+  "evidenceFiles": 63395,
+  "fixedProductFiles": 3441,
+  "originalCumulativeCounts": {
+    "NOT RUN": 307,
+    "PASS": 190
+  },
+  "sourceAuditSHA256": "4d06b71a4df8881e5a90cd7c07630484721eedbd01dd95e29783155e57cf0ebf",
+  "scripts": [
+    {
+      "path": "scripts/extract.mjs",
+      "bytes": 10807,
+      "sha256": "ecb553850da6da14cfde7c46971895fe91166d8d94b28c425d7fa3f3fb8c73bd"
+    },
+    {
+      "path": "scripts/verify.py",
+      "bytes": 17979,
+      "sha256": "09cb7332bd782e4cd95742da15fdd2f4bea6bc2af372263c8196cd22b87671a0"
+    },
+    {
+      "path": "scripts/verify-provenance.mjs",
+      "bytes": 3414,
+      "sha256": "7442940c18302aa2e5ab590c9e93ac804942572bb45b057ab14208a4e05c3f0f"
+    },
+    {
+      "path": "scripts/reconstruct-bytes.py",
+      "bytes": 1530,
+      "sha256": "4d0b6f818eaaed481d37b68372feba4b7c7f558cad96b69b9cc8b54d434d02ed"
+    }
+  ],
+  "sizes": {
+    "caseSummaries": 14,
+    "maxCaseSummaryBytes": 4679,
+    "auditPartCount": 165,
+    "maxAuditPartBytes": 27129,
+    "variantPartCount": 165,
+    "maxVariantPartBytes": 25984,
+    "sourceInventoryPages": 250,
+    "maxInventoryPageBytes": 115144
+  }
+}

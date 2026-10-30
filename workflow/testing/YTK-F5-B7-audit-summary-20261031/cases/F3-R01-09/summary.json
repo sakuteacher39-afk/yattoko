@@ -1,0 +1,79 @@
+{
+  "caseId": "F3:R01-09",
+  "sourceCommit": "d18db02241566cb230ac9fe7aa8e798e60bf51d0",
+  "fixedProductCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+  "originalFormalStatus": "PASS",
+  "noRecertification": true,
+  "sourceResult": {
+    "path": "workflow/testing/YTK-F5-auto-resume-b7-20261030/runs/F5-AUTO-RESUME-B7-20261030-001/F3-R01-09/result.json",
+    "gitBlobSHA1": "5b42a696ed465c663fa7b5e6db16f6bcf6b6870d",
+    "present": true,
+    "bytes": 258,
+    "sha256": "720c9e4886a0b07d57e87811a4a08f5b141a7638f958efd18cb306001981d9d6",
+    "computedGitBlobSHA1": "5b42a696ed465c663fa7b5e6db16f6bcf6b6870d",
+    "gitBindingMatches": true,
+    "inventoryPage": "source-inventory/237.json",
+    "inventoryOffset": 242
+  },
+  "sourceAuditRow": {
+    "caseId": "F3:R01-09",
+    "subjectCommit": "15a146a9b2c4f80c63798eb31d64b6774a4c2e99",
+    "runId": "F5-AUTO-RESUME-B7-20261030-001",
+    "attempt": 1,
+    "status": "PASS",
+    "plannedVariants": 96,
+    "completedVariants": 96,
+    "counts": {
+      "PASS": 96
+    },
+    "resultSHA256": "720c9e4886a0b07d57e87811a4a08f5b141a7638f958efd18cb306001981d9d6"
+  },
+  "sourceCheckRange": {
+    "start": 4743,
+    "endExclusive": 4839
+  },
+  "counts": {
+    "planned": 96,
+    "resultCompleted": 96,
+    "observationFiles": 96,
+    "sourceAuditChecks": 96,
+    "expectedActualMatches": 96,
+    "recordedOriginalOracleFileProofs": 96,
+    "expectedFailureWithoutFileProof": 0,
+    "oracleApplicableProofMissing": 0,
+    "oldFourStorePairsMatch": 96,
+    "ledgerVariantMatches": 96,
+    "evidenceMissing": 0,
+    "evidenceHashMismatch": 0,
+    "expectationMismatch": 0,
+    "sourceRecordedOracleMismatch": 0
+  },
+  "recordedGlobalIntegrity": {
+    "sourceProductMatches": true,
+    "recordedProductBeforeAfterMetadataEqual": true,
+    "recordedHistoryBeforeAfterMetadataEqual": true,
+    "recordedDependenciesBeforeAfterMetadataEqual": true,
+    "targetMetadataMatchesPlan": true,
+    "historyMetadataMatchesPlan": true,
+    "dependencyMetadataMatchesPlan": true,
+    "sourceAuditClaims": {
+      "productUnchanged": true,
+      "historyUnchanged": true,
+      "dependenciesUnchanged": true
+    },
+    "targetFiles": 3441,
+    "historyFiles": 126690,
+    "dependencyFiles": 1978
+  },
+  "auditParts": [
+    "cases/F3-R01-09/audit-001.json",
+    "cases/F3-R01-09/audit-002.json",
+    "cases/F3-R01-09/audit-003.json"
+  ],
+  "variantParts": [
+    "cases/F3-R01-09/variants-001.json",
+    "cases/F3-R01-09/variants-002.json",
+    "cases/F3-R01-09/variants-003.json"
+  ],
+  "issues": []
+}
