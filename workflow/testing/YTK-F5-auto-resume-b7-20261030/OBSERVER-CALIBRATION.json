@@ -1,0 +1,26 @@
+{
+  "noProductCalls": true,
+  "byteIdenticalToApprovedGuard": true,
+  "sensitivity": [
+    {
+      "accesses": 1,
+      "underlyingCalls": 1,
+      "observed": 1
+    },
+    {
+      "accesses": 20,
+      "underlyingCalls": 20,
+      "observed": 20
+    },
+    {
+      "accesses": 19996,
+      "underlyingCalls": 19996,
+      "observed": 19996
+    }
+  ],
+  "maximumCommittedServices": 19996,
+  "maximumPending": 257,
+  "pendingBaseEncoding": "Explicit shared snapshot reference, expanded only in memory. Avoid JSON serialization duplicating10MB base257times. Check queue operation hashes and shared-base hashes separately before/after.",
+  "output": "Raw UTF8 backup perfile, eachstore separately, event JSONL and phase memory/stack. No huge trace stringify.",
+  "GitBufferBytes": 268435456
+}
