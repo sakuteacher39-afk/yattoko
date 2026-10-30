@@ -1,0 +1,20 @@
+{
+  "phase": "BEFORE_FORMAL_RUN_CREATION_AND_SUBJECT_IMPORT",
+  "preexecutionCommit": "d31631196a48c12a5b51e2be4121f9e956cb5441",
+  "command": "node runner/run.mjs",
+  "exitCode": 1,
+  "error": {
+    "name": "Error",
+    "message": "git show failed with status128: Filename too long",
+    "path": "d31631196a48c12a5b51e2be4121f9e956cb5441:workflow/testing/YTK-F5-CAP14-correction-20261030/expected/9ba2bb75510ccedcdc0adfc204064bec11a1e1e1022f7a72f285393f3c4a8252.bin",
+    "stackFrames": [
+      "git helper: YTK-F5-regression-mini3-20261026/runner/common.mjs:5:164",
+      "run.mjs:3:189"
+    ]
+  },
+  "formalRunDirectoryCreated": false,
+  "formalLedgerCreated": false,
+  "subjectModulesCalled": false,
+  "formalResults": 0,
+  "fix": "Process-local GIT_CONFIG core.longpaths=true in committed launcher; no product/fixture/oracle/old evidence or existing runner changes."
+}

@@ -1,0 +1,19 @@
+{
+  "revision": "R2_ENVIRONMENT_ONLY",
+  "parentPreexecutionCommit": "d31631196a48c12a5b51e2be4121f9e956cb5441",
+  "preexecutionPlanUnchangedSHA256": "3849b4451065879fb7033bca15d3ce12f0a4d600dcb8ea5160673f05f327b7fe",
+  "runnerFixtureOracleUnchanged": true,
+  "formalRunNotStartedAtAddendum": true,
+  "scope": [
+    "F2:CAP-14"
+  ],
+  "requiredProcessEnvironment": {
+    "GIT_CONFIG_COUNT": "1",
+    "GIT_CONFIG_KEY_0": "core.longpaths",
+    "GIT_CONFIG_VALUE_0": "true"
+  },
+  "launcher": "runner/start-formal.ps1",
+  "launcherSHA256": "a9be1360f4b916854c7e0d370dd8175d49159cc202cdbf9b354ccf9ade08e4a8",
+  "repositoryGitConfigChanged": false,
+  "oldFailure": "preflight/FAILED-START-01.json"
+}
