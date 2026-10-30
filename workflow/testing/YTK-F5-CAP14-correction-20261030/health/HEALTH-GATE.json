@@ -1,0 +1,56 @@
+{
+  "status": "HEALTHY_FOR_CAP14_ONLY",
+  "stage": "DIAGNOSTIC_NOT_FORMAL_F5",
+  "positiveControlDetected": true,
+  "repeatedAccessCountExact": true,
+  "oldRangeErrorsObserved": true,
+  "observerAbsentAndPresentEquivalent": true,
+  "sourceAndHistoryAndDependenciesUnchanged": true,
+  "sinkAttempts": [],
+  "comparisons": [
+    {
+      "target": 9999999,
+      "observerAbsentAndPresentEquivalent": true,
+      "withoutSHA256": "927c594de88bc1c98ebab301db1f3da0b0ce53492019eaf76a2d8b5972bf4457",
+      "withSHA256": "c0f3ca8dc8e64527b4761ee3d31d1c4a2760e7f8d74d44d10d8853a7480597ee",
+      "readwriteTransactions": 1,
+      "complete": 1,
+      "abort": 0,
+      "writeRequests": 20010
+    },
+    {
+      "target": 10000000,
+      "observerAbsentAndPresentEquivalent": true,
+      "withoutSHA256": "00717df5fcfb1b6502fdfdd8970dd91f318b7c81bf669a53662bdbc0c23bfe3d",
+      "withSHA256": "c344a742a612495f4ca7e8b0e7e4261d27b13c8740676e057471b0aeba33a1e2",
+      "readwriteTransactions": 1,
+      "complete": 1,
+      "abort": 0,
+      "writeRequests": 20010
+    },
+    {
+      "target": 10000001,
+      "observerAbsentAndPresentEquivalent": true,
+      "withoutSHA256": "156f1eb1515eba0d212214181042e346198cbc037937fe6b13aaf05b98440d7e",
+      "withSHA256": "668108a19313d7014a41c9c0649841078c078abb4e22ee5e4828e988e3b42166",
+      "readwriteTransactions": 1,
+      "complete": 0,
+      "abort": 1,
+      "writeRequests": 0
+    }
+  ],
+  "measurement": {
+    "rss": 716394496,
+    "heapTotal": 314236928,
+    "heapUsed": 236380368,
+    "external": 140631809,
+    "arrayBuffers": 105886779,
+    "at": "2026-10-30T07:27:22.631Z"
+  },
+  "limitations": [
+    "Historical attempt had no stack; exact historical throw site cannot be recovered.",
+    "To bound diagnostic memory, original observer events were counted, not allocated. Wrapping/call chain is unchanged.",
+    "Evidence serialization replays a sufficient repeated-event prefix independently; it is not the original lost array."
+  ],
+  "formalLedgerUpdated": false
+}

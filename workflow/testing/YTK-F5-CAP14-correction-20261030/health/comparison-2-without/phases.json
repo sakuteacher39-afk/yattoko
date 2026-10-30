@@ -1,0 +1,82 @@
+[
+  {
+    "stage": "INPUT_PARSE",
+    "rss": 600510464,
+    "heapTotal": 337854464,
+    "heapUsed": 171945064,
+    "external": 59650633,
+    "arrayBuffers": 40210373,
+    "at": "2026-10-30T07:26:19.660Z"
+  },
+  {
+    "stage": "SEED",
+    "rss": 658116608,
+    "heapTotal": 368590848,
+    "heapUsed": 224451400,
+    "external": 84852780,
+    "arrayBuffers": 50210552,
+    "at": "2026-10-30T07:26:19.799Z"
+  },
+  {
+    "stage": "BEFORE_DUMP",
+    "rss": 608350208,
+    "heapTotal": 355328000,
+    "heapUsed": 235014112,
+    "external": 74852601,
+    "arrayBuffers": 40210373,
+    "at": "2026-10-30T07:26:20.158Z"
+  },
+  {
+    "stage": "PRODUCT_SAVE",
+    "rss": 608563200,
+    "heapTotal": 356036608,
+    "heapUsed": 227333192,
+    "external": 74852601,
+    "arrayBuffers": 40210373,
+    "at": "2026-10-30T07:26:20.242Z"
+  },
+  {
+    "stage": "PRODUCT_SAVE_REJECTED",
+    "rss": 635899904,
+    "heapTotal": 416063488,
+    "heapUsed": 306473088,
+    "external": 84852602,
+    "arrayBuffers": 50210374,
+    "at": "2026-10-30T07:26:20.916Z",
+    "error": {
+      "name": "Error",
+      "message": "capacity",
+      "code": "capacity",
+      "stack": "Error: capacity\n    at fail (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs:6:40)\n    at assertCapacity (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs:41:54)\n    at mutate (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs:59:78)\n    at file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/storage.mjs:6:410\n    at r.onsuccess (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/storage.mjs:5:877)\n    at invoke (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\lib\\FakeEventTarget.js:19:16)\n    at invokeEventListeners (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\lib\\FakeEventTarget.js:56:7)\n    at FDBRequest.dispatchEvent (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\lib\\FakeEventTarget.js:103:7)\n    at FDBTransaction._start (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\FDBTransaction.js:220:19)\n    at process.processImmediate (node:internal/timers:574:21)"
+    }
+  },
+  {
+    "stage": "AFTER_DUMP",
+    "rss": 635899904,
+    "heapTotal": 416063488,
+    "heapUsed": 306487928,
+    "external": 84852602,
+    "arrayBuffers": 50210374,
+    "at": "2026-10-30T07:26:20.917Z"
+  },
+  {
+    "stage": "EVIDENCE_WRITE",
+    "rss": 636878848,
+    "heapTotal": 431276032,
+    "heapUsed": 290864672,
+    "external": 84850272,
+    "arrayBuffers": 50208044,
+    "at": "2026-10-30T07:26:24.393Z",
+    "observerState": null
+  },
+  {
+    "stage": "EVIDENCE_COMPLETE",
+    "rss": 687276032,
+    "heapTotal": 461676544,
+    "heapUsed": 321345688,
+    "external": 104845614,
+    "arrayBuffers": 70203386,
+    "at": "2026-10-30T07:26:24.498Z",
+    "observerState": null
+  }
+]

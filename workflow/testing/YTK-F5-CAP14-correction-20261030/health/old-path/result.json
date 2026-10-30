@@ -1,0 +1,561 @@
+{
+  "phase": "DIAGNOSTIC_NOT_FORMAL",
+  "oldAdapterSHA256": "690c0c45092735fe8c43188a02613b5005c27cec3ff37304935e80553ee6000e",
+  "exactObserverFragmentSHA256": "4ddd97a77561e017ff8d58a1a0fb5968b1b31bb3a2b6e1f78c9b939ffca53053",
+  "inputSHA256": "a5b4005eee806ed3306ecaf82e89322cc8131a68246ad978c87bc4afc04918a9",
+  "saveAccepted": false,
+  "saveError": {
+    "name": "RangeError",
+    "message": "Maximum call stack size exceeded",
+    "code": null,
+    "stack": "RangeError: Maximum call stack size exceeded\n    at structuredClone (node:internal/worker/js_transferable:127:26)\n    at cloneValueForInsertion (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\lib\\cloneValueForInsertion.js:25:12)\n    at buildRecordAddPut (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\FDBObjectStore.js:43:68)\n    at FDBObjectStore.put (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\FDBObjectStore.js:134:20)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)"
+  },
+  "serializationError": {
+    "name": "RangeError",
+    "message": "Invalid string length",
+    "code": null,
+    "stack": "RangeError: Invalid string length\n    at JSON.stringify (<anonymous>)\n    at file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:9:392"
+  },
+  "observerEvents": 39449500,
+  "observerState": {
+    "rw": 1,
+    "complete": 0,
+    "abort": 1,
+    "writes": 39449496
+  },
+  "before": {
+    "meta": {
+      "rows": 1,
+      "bytes": 221,
+      "sha256": "d0c8fecd347e23ac3b4bb5d1092ba3d177d037759dff150fdf1ce8a3d1206c93"
+    },
+    "overview": {
+      "rows": 1,
+      "bytes": 193,
+      "sha256": "419e6cf905ec8f20a558be91641a58bab657db0700350f9b914f28818203c855"
+    },
+    "categories": {
+      "rows": 12,
+      "bytes": 1891,
+      "sha256": "7b0c5bb9b27678881751abf6bcc8c399926a978b7c78fdae5af2f010fe76ba48"
+    },
+    "services": {
+      "rows": 19996,
+      "bytes": 9997669,
+      "sha256": "3ea156668170258630009f655d235ebdb568cb5ecc7ad4d68125d250686b20e5"
+    }
+  },
+  "after": {
+    "meta": {
+      "rows": 1,
+      "bytes": 221,
+      "sha256": "d0c8fecd347e23ac3b4bb5d1092ba3d177d037759dff150fdf1ce8a3d1206c93"
+    },
+    "overview": {
+      "rows": 1,
+      "bytes": 193,
+      "sha256": "419e6cf905ec8f20a558be91641a58bab657db0700350f9b914f28818203c855"
+    },
+    "categories": {
+      "rows": 12,
+      "bytes": 1891,
+      "sha256": "7b0c5bb9b27678881751abf6bcc8c399926a978b7c78fdae5af2f010fe76ba48"
+    },
+    "services": {
+      "rows": 19996,
+      "bytes": 9997669,
+      "sha256": "3ea156668170258630009f655d235ebdb568cb5ecc7ad4d68125d250686b20e5"
+    }
+  },
+  "oldDataUnchanged": true,
+  "replay": {
+    "count": 7456542,
+    "perEventLowerBound": 72,
+    "maxStringLength": 536870888
+  },
+  "limitations": [
+    "Historical attempt had no stack; exact historical throw site cannot be recovered.",
+    "To bound diagnostic memory, original observer events were counted, not allocated. Wrapping/call chain is unchanged.",
+    "Evidence serialization replays a sufficient repeated-event prefix independently; it is not the original lost array."
+  ],
+  "phases": [
+    {
+      "stage": "BEFORE_SEED",
+      "rss": 136114176,
+      "heapTotal": 109395968,
+      "heapUsed": 53178392,
+      "external": 29499627,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:02.354Z"
+    },
+    {
+      "stage": "PRODUCT_SAVE_WITH_OLD_WRAPPERS",
+      "rss": 255897600,
+      "heapTotal": 205299712,
+      "heapUsed": 96433024,
+      "external": 29499667,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:02.829Z"
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 383250432,
+      "heapTotal": 287272960,
+      "heapUsed": 213693120,
+      "external": 39501714,
+      "arrayBuffers": 20212271,
+      "at": "2026-10-30T07:26:03.651Z",
+      "events": 1000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356241408,
+      "heapTotal": 270254080,
+      "heapUsed": 138235224,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.677Z",
+      "events": 2000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356356096,
+      "heapTotal": 270254080,
+      "heapUsed": 139432464,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.696Z",
+      "events": 3000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356462592,
+      "heapTotal": 270254080,
+      "heapUsed": 140444352,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.715Z",
+      "events": 4000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356540416,
+      "heapTotal": 270516224,
+      "heapUsed": 141372504,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.734Z",
+      "events": 5000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356667392,
+      "heapTotal": 270516224,
+      "heapUsed": 142180416,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.752Z",
+      "events": 6000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356761600,
+      "heapTotal": 270516224,
+      "heapUsed": 142924912,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.771Z",
+      "events": 7000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356855808,
+      "heapTotal": 270516224,
+      "heapUsed": 143617216,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.789Z",
+      "events": 8000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356933632,
+      "heapTotal": 270778368,
+      "heapUsed": 144269128,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.808Z",
+      "events": 9000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357122048,
+      "heapTotal": 270778368,
+      "heapUsed": 144948536,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.827Z",
+      "events": 10000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357212160,
+      "heapTotal": 270778368,
+      "heapUsed": 145534016,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.846Z",
+      "events": 11000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357302272,
+      "heapTotal": 270778368,
+      "heapUsed": 146095664,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.864Z",
+      "events": 12000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357322752,
+      "heapTotal": 270778368,
+      "heapUsed": 146633488,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.883Z",
+      "events": 13000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356618240,
+      "heapTotal": 271040512,
+      "heapUsed": 147131744,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.902Z",
+      "events": 14000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356655104,
+      "heapTotal": 271040512,
+      "heapUsed": 147587856,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.921Z",
+      "events": 15000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356691968,
+      "heapTotal": 271040512,
+      "heapUsed": 148029536,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.941Z",
+      "events": 16000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356777984,
+      "heapTotal": 271040512,
+      "heapUsed": 148457104,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.960Z",
+      "events": 17000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356798464,
+      "heapTotal": 271040512,
+      "heapUsed": 148872328,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.979Z",
+      "events": 18000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356823040,
+      "heapTotal": 271040512,
+      "heapUsed": 149283744,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:03.998Z",
+      "events": 19000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356868096,
+      "heapTotal": 271040512,
+      "heapUsed": 149681024,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.016Z",
+      "events": 20000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356884480,
+      "heapTotal": 271040512,
+      "heapUsed": 150065072,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.036Z",
+      "events": 21000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356966400,
+      "heapTotal": 271040512,
+      "heapUsed": 150439360,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.057Z",
+      "events": 22000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 356982784,
+      "heapTotal": 271040512,
+      "heapUsed": 150886576,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.078Z",
+      "events": 23000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357093376,
+      "heapTotal": 271040512,
+      "heapUsed": 151250632,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.101Z",
+      "events": 24000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357109760,
+      "heapTotal": 271040512,
+      "heapUsed": 151603224,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.122Z",
+      "events": 25000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357126144,
+      "heapTotal": 271040512,
+      "heapUsed": 151948560,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.144Z",
+      "events": 26000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357142528,
+      "heapTotal": 271040512,
+      "heapUsed": 152286712,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.165Z",
+      "events": 27000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357220352,
+      "heapTotal": 271040512,
+      "heapUsed": 152620080,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.183Z",
+      "events": 28000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357236736,
+      "heapTotal": 271040512,
+      "heapUsed": 152948552,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.203Z",
+      "events": 29000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357253120,
+      "heapTotal": 271040512,
+      "heapUsed": 153269800,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.222Z",
+      "events": 30000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357265408,
+      "heapTotal": 271040512,
+      "heapUsed": 153586256,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.241Z",
+      "events": 31000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357281792,
+      "heapTotal": 271040512,
+      "heapUsed": 153897952,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.259Z",
+      "events": 32000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357294080,
+      "heapTotal": 271040512,
+      "heapUsed": 154204760,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.279Z",
+      "events": 33000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357310464,
+      "heapTotal": 271302656,
+      "heapUsed": 154506840,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.298Z",
+      "events": 34000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 358055936,
+      "heapTotal": 271302656,
+      "heapUsed": 154806424,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.317Z",
+      "events": 35000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357609472,
+      "heapTotal": 271302656,
+      "heapUsed": 155130240,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.336Z",
+      "events": 36000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357629952,
+      "heapTotal": 271302656,
+      "heapUsed": 155436120,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.356Z",
+      "events": 37000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357650432,
+      "heapTotal": 271302656,
+      "heapUsed": 155739560,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.375Z",
+      "events": 38000000
+    },
+    {
+      "stage": "OLD_OBSERVER_EVENTS",
+      "rss": 357675008,
+      "heapTotal": 271302656,
+      "heapUsed": 156037912,
+      "external": 39501714,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.394Z",
+      "events": 39000000
+    },
+    {
+      "stage": "SAVE_EXCEPTION",
+      "rss": 337768448,
+      "heapTotal": 247980032,
+      "heapUsed": 128355440,
+      "external": 14299751,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.529Z",
+      "error": {
+        "name": "RangeError",
+        "message": "Maximum call stack size exceeded",
+        "code": null,
+        "stack": "RangeError: Maximum call stack size exceeded\n    at structuredClone (node:internal/worker/js_transferable:127:26)\n    at cloneValueForInsertion (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\lib\\cloneValueForInsertion.js:25:12)\n    at buildRecordAddPut (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\FDBObjectStore.js:43:68)\n    at FDBObjectStore.put (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\FDBObjectStore.js:134:20)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)\n    at o.<computed> (eval at <anonymous> (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:6:313), <anonymous>:3:622)"
+      },
+      "events": 39449498,
+      "observerState": {
+        "rw": 1,
+        "complete": 0,
+        "abort": 1,
+        "writes": 39449496
+      }
+    },
+    {
+      "stage": "AFTER_PRODUCT_SAVE",
+      "rss": 338931712,
+      "heapTotal": 248164352,
+      "heapUsed": 163496880,
+      "external": 14299751,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.634Z",
+      "saveAccepted": false,
+      "events": 39449500,
+      "observerState": {
+        "rw": 1,
+        "complete": 0,
+        "abort": 1,
+        "writes": 39449496
+      }
+    },
+    {
+      "stage": "EVIDENCE_JSON_STRINGIFY_REPLAY",
+      "rss": 338931712,
+      "heapTotal": 248164352,
+      "heapUsed": 163507576,
+      "external": 14299751,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:04.635Z",
+      "count": 7456542,
+      "events": 39449500,
+      "perEventLowerBound": 72,
+      "predictedLowerBound": 536871024,
+      "maxStringLength": 536870888
+    },
+    {
+      "stage": "EVIDENCE_EXCEPTION",
+      "rss": 398438400,
+      "heapTotal": 307818496,
+      "heapUsed": 223172128,
+      "external": 14299751,
+      "arrayBuffers": 10212272,
+      "at": "2026-10-30T07:26:06.362Z",
+      "error": {
+        "name": "RangeError",
+        "message": "Invalid string length",
+        "code": null,
+        "stack": "RangeError: Invalid string length\n    at JSON.stringify (<anonymous>)\n    at file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/yattoko/workflow/testing/YTK-F5-CAP14-correction-20261030/runner/old-path-diagnostic.mjs:9:392"
+      },
+      "count": 7456542,
+      "events": 39449500
+    }
+  ]
+}

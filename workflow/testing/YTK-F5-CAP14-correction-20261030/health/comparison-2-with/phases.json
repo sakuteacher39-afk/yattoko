@@ -1,0 +1,96 @@
+[
+  {
+    "stage": "INPUT_PARSE",
+    "rss": 687276032,
+    "heapTotal": 461676544,
+    "heapUsed": 321376760,
+    "external": 104845614,
+    "arrayBuffers": 70203386,
+    "at": "2026-10-30T07:26:24.506Z"
+  },
+  {
+    "stage": "SEED",
+    "rss": 602255360,
+    "heapTotal": 359800832,
+    "heapUsed": 145011232,
+    "external": 54854649,
+    "arrayBuffers": 20212453,
+    "at": "2026-10-30T07:26:24.670Z"
+  },
+  {
+    "stage": "BEFORE_DUMP",
+    "rss": 544268288,
+    "heapTotal": 211152896,
+    "heapUsed": 111442736,
+    "external": 39652681,
+    "arrayBuffers": 10212274,
+    "at": "2026-10-30T07:26:25.026Z"
+  },
+  {
+    "stage": "PRODUCT_SAVE",
+    "rss": 544468992,
+    "heapTotal": 211337216,
+    "heapUsed": 91043192,
+    "external": 29652502,
+    "arrayBuffers": 10212274,
+    "at": "2026-10-30T07:26:25.118Z"
+  },
+  {
+    "stage": "PRODUCT_SAVE_REJECTED",
+    "rss": 573296640,
+    "heapTotal": 285134848,
+    "heapUsed": 197344848,
+    "external": 39652503,
+    "arrayBuffers": 20212275,
+    "at": "2026-10-30T07:26:25.832Z",
+    "error": {
+      "name": "Error",
+      "message": "capacity",
+      "code": "capacity",
+      "stack": "Error: capacity\n    at fail (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs:6:40)\n    at assertCapacity (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs:41:54)\n    at mutate (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/canonical.mjs:59:78)\n    at file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/storage.mjs:6:410\n    at r.onsuccess (file:///C:/Users/81804/Documents/Codex/2026-10-15/f4-https-github-com-sakuteacher39-afk/work/F5-TARGET-15a146a/workflow/prototypes/YTK-F4/src/storage.mjs:5:877)\n    at invoke (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\lib\\FakeEventTarget.js:19:16)\n    at invokeEventListeners (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\lib\\FakeEventTarget.js:56:7)\n    at FDBRequest.dispatchEvent (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\lib\\FakeEventTarget.js:103:7)\n    at FDBTransaction._start (C:\\Users\\81804\\Documents\\Codex\\2026-10-15\\f4-https-github-com-sakuteacher39-afk\\work\\yattoko\\workflow\\prototypes\\YTK-F4\\node_modules\\fake-indexeddb\\build\\cjs\\FDBTransaction.js:220:19)\n    at process.processImmediate (node:internal/timers:574:21)"
+    }
+  },
+  {
+    "stage": "AFTER_DUMP",
+    "rss": 573296640,
+    "heapTotal": 285134848,
+    "heapUsed": 197359560,
+    "external": 39652503,
+    "arrayBuffers": 20212275,
+    "at": "2026-10-30T07:26:25.833Z"
+  },
+  {
+    "stage": "EVIDENCE_WRITE",
+    "rss": 574042112,
+    "heapTotal": 295923712,
+    "heapUsed": 158470240,
+    "external": 39715709,
+    "arrayBuffers": 20275481,
+    "at": "2026-10-30T07:26:29.279Z",
+    "observerState": {
+      "readwrite": 1,
+      "complete": 0,
+      "abort": 1,
+      "writeRequests": 0,
+      "wrappedStores": 12,
+      "events": 6
+    }
+  },
+  {
+    "stage": "EVIDENCE_COMPLETE",
+    "rss": 624439296,
+    "heapTotal": 326324224,
+    "heapUsed": 188950848,
+    "external": 59711051,
+    "arrayBuffers": 40270823,
+    "at": "2026-10-30T07:26:29.386Z",
+    "observerState": {
+      "readwrite": 1,
+      "complete": 0,
+      "abort": 1,
+      "writeRequests": 0,
+      "wrappedStores": 12,
+      "events": 6
+    }
+  }
+]

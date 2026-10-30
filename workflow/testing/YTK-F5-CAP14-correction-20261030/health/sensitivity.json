@@ -1,0 +1,73 @@
+{
+  "noProductCalls": true,
+  "guardedCountsExact": true,
+  "intentionalDoubleWrappingDetected": true,
+  "sensitivity": [
+    {
+      "n": 1,
+      "legacy": false,
+      "underlyingCalls": 1,
+      "observed": 1,
+      "countsMatch": true
+    },
+    {
+      "n": 2,
+      "legacy": false,
+      "underlyingCalls": 2,
+      "observed": 2,
+      "countsMatch": true
+    },
+    {
+      "n": 3,
+      "legacy": false,
+      "underlyingCalls": 3,
+      "observed": 3,
+      "countsMatch": true
+    },
+    {
+      "n": 20,
+      "legacy": false,
+      "underlyingCalls": 20,
+      "observed": 20,
+      "countsMatch": true
+    },
+    {
+      "n": 1000,
+      "legacy": false,
+      "underlyingCalls": 1000,
+      "observed": 1000,
+      "countsMatch": true
+    },
+    {
+      "n": 19996,
+      "legacy": false,
+      "underlyingCalls": 19996,
+      "observed": 19996,
+      "countsMatch": true
+    },
+    {
+      "n": 2,
+      "legacy": true,
+      "underlyingCalls": 2,
+      "observed": 3,
+      "countsMatch": false,
+      "positiveControlDetected": true
+    },
+    {
+      "n": 3,
+      "legacy": true,
+      "underlyingCalls": 3,
+      "observed": 6,
+      "countsMatch": false,
+      "positiveControlDetected": true
+    },
+    {
+      "n": 20,
+      "legacy": true,
+      "underlyingCalls": 20,
+      "observed": 210,
+      "countsMatch": false,
+      "positiveControlDetected": true
+    }
+  ]
+}
