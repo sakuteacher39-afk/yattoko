@@ -1,0 +1,114 @@
+[
+  {
+    "caseId": "F3:R05-26",
+    "fault": false,
+    "substitutedAt": null,
+    "original": {
+      "type": "category",
+      "categoryKey": "mail",
+      "field": "usageStatus",
+      "value": "not_using"
+    },
+    "appliedInput": {
+      "type": "category",
+      "categoryKey": "mail",
+      "field": "usageStatus",
+      "value": "not_using"
+    },
+    "outcome": "APPLIED",
+    "writes": 1,
+    "aborts": 0,
+    "completes": 1,
+    "receipts": 1,
+    "before": {
+      "bytes": 3352,
+      "sha256": "0c9215d32eb5eba6f798a73a13ba2cbe6b1e6cb832eafe3a0254dadc56e36386"
+    },
+    "after": {
+      "bytes": 3356,
+      "sha256": "0436cdb41b3c02050437ba18502d84d29cb31052fb47e35442f230bbbf54cd6c"
+    }
+  },
+  {
+    "caseId": "F3:R05-26",
+    "fault": true,
+    "substitutedAt": "test-only decoded business operation",
+    "original": {
+      "type": "category",
+      "categoryKey": "mail",
+      "field": "usageStatus",
+      "value": "not_using"
+    },
+    "appliedInput": {
+      "type": "category",
+      "categoryKey": "device",
+      "field": "usageStatus",
+      "value": "not_using"
+    },
+    "outcome": "contradiction",
+    "writes": 0,
+    "aborts": 0,
+    "completes": 0,
+    "receipts": 0,
+    "before": {
+      "bytes": 3352,
+      "sha256": "7595cc1c4d755d1e4541d5b5211bf850ae06aba5f9206452463cd8847e9b82f2"
+    },
+    "after": {
+      "bytes": 3352,
+      "sha256": "7595cc1c4d755d1e4541d5b5211bf850ae06aba5f9206452463cd8847e9b82f2"
+    }
+  },
+  {
+    "caseId": "F3:R05-28",
+    "fault": false,
+    "substitutedAt": null,
+    "original": {
+      "type": "completeService",
+      "recordId": "svc_00000002-0000-4000-8000-000000000001"
+    },
+    "appliedInput": {
+      "type": "completeService",
+      "recordId": "svc_00000002-0000-4000-8000-000000000001"
+    },
+    "outcome": "APPLIED",
+    "writes": 1,
+    "aborts": 0,
+    "completes": 1,
+    "receipts": 1,
+    "before": {
+      "bytes": 3355,
+      "sha256": "b93f977e51f41da3d735a41ee824894a9c8e593725d541851c0cf45760eca591"
+    },
+    "after": {
+      "bytes": 3357,
+      "sha256": "57d023b56c4cb5c34a457d6f3bcba51b73070d7f52750c38b2cb2a63d237388a"
+    }
+  },
+  {
+    "caseId": "F3:R05-28",
+    "fault": true,
+    "substitutedAt": "test-only decoded business operation",
+    "original": {
+      "type": "completeService",
+      "recordId": "svc_00000002-0000-4000-8000-000000000001"
+    },
+    "appliedInput": {
+      "type": "completeService",
+      "recordId": "svc_00000001-0000-4000-8000-000000000001"
+    },
+    "outcome": "validation",
+    "writes": 0,
+    "aborts": 0,
+    "completes": 0,
+    "receipts": 0,
+    "before": {
+      "bytes": 3355,
+      "sha256": "4ab65ae3b8430756e43f2177559cb56c065038ee0da0ff69f67c449df081188b"
+    },
+    "after": {
+      "bytes": 3355,
+      "sha256": "4ab65ae3b8430756e43f2177559cb56c065038ee0da0ff69f67c449df081188b"
+    }
+  }
+]
