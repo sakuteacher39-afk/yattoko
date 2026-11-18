@@ -4,7 +4,39 @@ var f4Ready=false,f4State=null,f4Coordinator=null,f4Success=null;
 function f4Record(s,d){return {recordId:s.recordId,categoryId:s.categoryKey,serviceId:s.serviceCatalogId,serviceName:s.otherServiceName||s.serviceCatalogId,other:s.serviceCatalogId==="other",usageStatus:s.usageStatus==="unanswered"?null:s.usageStatus,intentionOverride:s.intentionOverride,inheritedIntention:effectiveIntention(s,d.categories.find(c=>c.categoryKey===s.categoryKey)),answers:Object.fromEntries(Object.entries(s.answers).filter(([k,v])=>v!=="unanswered")),recordState:s.recordState};}
 function f4Hydrate(d){C.forEach(function(c){var p=d?.categories.find(x=>x.categoryKey===c.id);S.status[c.id]=p&&p.usageStatus!=="unanswered"?p.usageStatus:null;S.intent[c.id]=p&&p.intention!=="unanswered"?p.intention:null;});Object.keys(S.quick).forEach(k=>S.quick[k]=d&&d.overview[k]!=="unanswered"?d.overview[k]:null);R2.records=d?d.services.map(s=>f4Record(s,d)):[];if(R2.draft?.recordId){var s=d?.services.find(s=>s.recordId===R2.draft.recordId);if(s)Object.assign(R2.draft,f4Record(s,d));}}
 function f4Save(op,done){f4Success=done||null;f4Coordinator.submit(op);}
-function f4Add(done){f4Success=done;f4Coordinator.submitService({categoryKey:R2.draft.categoryId,serviceCatalogId:R2.draft.serviceId,otherServiceName:R2.draft.other?R2.draft.serviceName:null});}
+function f4ListButton(actions){
+ if(!R2.records.length)return;
+ actions.append(B("保存した記録を見る","btn secondary",function(){
+  R2.active=true;R2.history=[];R2.screen="list";R2.draft=null;render(true);
+ }));
+}
+function f4OpenRecord(rec){
+ R2.active=true;
+ R2.selectedCategory=rec.categoryId;
+ R2.draft={...rec,answers:{...rec.answers},editIndex:R2.records.findIndex(row=>row.recordId===rec.recordId)};
+ R2.questionPage=0;R2.history=["list"];R2.screen="core";render(true);
+}
+function f4MatchingDrafts(){
+ const d=R2.draft;
+ return R2.records.filter(row=>row.recordState==="partial"&&row.categoryId===d.categoryId&&row.serviceId===d.serviceId&&row.serviceName===d.serviceName);
+}
+function f4Existing(app){
+ const panel=E("section","panel");
+ panel.append(r2Top("途中の記録があります",R2.draft.serviceName));
+ const matches=f4MatchingDrafts();
+ for(const [index,rec] of matches.entries()){
+  const usage=rec.usageStatus?r2Usage(rec.usageStatus):"未回答";
+  const label=matches.length===1?"この記録を再開":(index+1)+"件目を再開（"+usage+"・"+r2EffectiveIntent(rec)+"）";
+  panel.append(B(label,"btn primary",function(){f4OpenRecord(rec);}));
+ }
+ panel.append(B("別の1件として追加","btn secondary",function(){f4Create(function(){R2.screen="core";render(true);});}),r2Nav(true));
+ app.append(panel);
+}
+function f4Add(done){
+ if(f4MatchingDrafts().length){r2Push("existing");return;}
+ f4Create(done);
+}
+function f4Create(done){f4Success=done;f4Coordinator.submitService({categoryKey:R2.draft.categoryId,serviceCatalogId:R2.draft.serviceId,otherServiceName:R2.draft.other?R2.draft.serviceName:null});}
 function f4Status(){f4RestoreUI?.refresh();f4BackupUI?.refresh();var node=document.getElementById('save-status');if(!node){node=E('section','panel');node.id='save-status';node.setAttribute('aria-live','polite');document.getElementById('app').before(node);}node.replaceChildren();node.append(E('p','',f4State?.message||(f4State?.saving?'保存しています…':f4Ready?(f4State?.committed?'端末内に保存済み（長期保持を保証する表示ではありません）':'まだ回答は保存されていません'):'保存機能を確認しています…')));if(f4State?.pending.length){node.append(E('strong','','未保存回答を保持しています。再読み込みすると失われる可能性があります。'));for(const p of f4State.pending)node.append(E('p','',f4PendingLabel(p.operation)));if(f4State.error&&!['conflict','version'].includes(f4State.error)){var retry=E('button','btn secondary','同じ未保存回答を再試行');retry.addEventListener('click',()=>f4Coordinator.retry());node.append(retry);}}if(f4State?.error){var reload=E('button','btn secondary','未保存回答を破棄して再読み込み');reload.addEventListener('click',()=>{if(confirm('画面上の未保存回答を破棄して、保存済みデータを読み込みますか？'))location.reload();});node.append(reload);}document.querySelectorAll('#app button').forEach(b=>{if(!f4Ready||f4State?.saving||f4State?.pending.length)b.disabled=true;});}
 const legacyRender=render;render=function(reset){legacyRender(reset);if(S.step===0&&!R2.active){var warning=E('p','danger','プライベートモードでは終了時に整理データが失われる場合があります。通常モードでも長期保存は保証されません。適宜バックアップを推奨します。');document.getElementById('app').prepend(warning);}f4Status();};
 if(typeof document!=='undefined'){

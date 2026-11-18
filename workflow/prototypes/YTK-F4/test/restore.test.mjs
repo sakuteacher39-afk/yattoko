@@ -51,3 +51,58 @@ test('an unproven no-op result never earns an APPLIED receipt',async()=>{const {
 test('dependent service create/usage/conditional child reapply commits in order with R07/R09 parent semantics',async()=>{const d=fixture(),add={type:'addService',recordId:id('svc'),categoryKey:'subscription',serviceCatalogId:'Netflix',otherServiceName:null},operations=[add,{type:'service',recordId:add.recordId,field:'usageStatus',value:'using'},{type:'service',recordId:add.recordId,field:'billing',value:'yes'},{type:'service',recordId:add.recordId,field:'billingSource',value:'apple'}];const {token}=await exported(d,{kind:'emergency',pending:operations.map(operation=>({operation,base:d}))}),s=await store(),result=await commitRestore(s,await prepareRestore(s,token),{confirmed:true}),session=new ReapplySession(s,result);for(const o of token.envelope.pending.operations)await session.apply(token,o.operationId,{confirmed:true});const data=await s.read();assert.equal(data.services[0].recordId,add.recordId);assert.equal(data.services[0].answers.billingSource,'apple');assert.equal(data.categories[5].usageStatus,'using');assert.equal(data.categories[5].intention,'undecided');assert.equal(data.overview.billing,'yes');assert.equal(data.globalRevision,5);assert.equal(session.status.remainingOperationIds.length,0);s.close();});
 
 test('strict import rejects over10MB canonical dataset within raw16MB and service-count bounds',async()=>{const {text}=await exported(),e=JSON.parse(text),d=e.snapshot;const add={type:'addService',recordId:id('svc'),categoryKey:'subscription',serviceCatalogId:'other',otherServiceName:'あ'.repeat(60)},template=mutate(d,add,id('gen')).services[0],one=projection({...d,services:[template]});const byteLength=o=>new TextEncoder().encode(JSON.stringify(o)).length,base=byteLength(d),delta=byteLength(one)-base,count=Math.ceil((10_000_000-base+1)/(delta+1))+1;assert.ok(count<maximumServiceCount());d.services=Array.from({length:count},(_,i)=>({...structuredClone(template),recordId:'svc_'+i.toString(16).padStart(8,'0')+'-0000-4000-8000-000000000000'}));e.snapshot=projection(d);assert.ok(byteLength(e.snapshot)>10_000_000);const raw=resign(e);assert.ok(new TextEncoder().encode(raw).length<=16_000_000);await assert.rejects(importBackup(file(raw)));});
+
+test('receiptless same answer from another writer is ambiguous, including a race at save',async()=>{
+ for(const race of [false,true]){
+  const factory=new IDBFactory();
+  const s=await store(factory),other=await store(factory);
+  try{
+   const {token}=await emergency();
+   const restored=await commitRestore(s,await prepareRestore(s,token),{confirmed:true});
+   const session=new ReapplySession(s,restored);
+   const external=()=>other.save(restored.dataset,cat('mail'));
+   if(race){
+    const save=s.save.bind(s);
+    s.save=async(...args)=>{await external();return save(...args);};
+   }else await external();
+   const first=token.envelope.pending.operations[0];
+   await assert.rejects(session.apply(token,first.operationId,{confirmed:true}),{code:'AMBIGUOUS_SAME_VALUE'});
+   assert.equal(session.status.state,'INVALIDATED');
+   assert.deepEqual(session.status.appliedOperationIds,[]);
+   const current=await other.read();
+   assert.equal(current.globalRevision,restored.dataset.globalRevision+1);
+   assert.equal((await prepareRestore(other,token)).proofLossReason,'AMBIGUOUS_SAME_VALUE');
+   await other.save(current,cat('mail','unknown'));
+   assert.equal((await prepareRestore(other,token)).proofLossReason,'UNPROVEN');
+  }finally{s.close();other.close();}
+ }
+});
+
+test('aborting the last metadata put rolls back successful overview, category and service writes',async()=>{
+ const s=await store();
+ try{
+  const old=await s.save(null,cat('base','unknown'));
+  const source=mutate(fixture(),{type:'addService',recordId:id('svc'),categoryKey:'mail',serviceCatalogId:'other',otherServiceName:'復元試験'},id('gen'));
+  const {token}=await exported(source);
+  const plan=await prepareRestore(s,token);
+  const transaction=s.db.transaction.bind(s.db),success=[];
+  s.db.transaction=(names,mode)=>{
+   const tx=transaction(names,mode);
+   if(mode==='readwrite')for(const name of names){
+    const records=tx.objectStore(name),put=records.put.bind(records);
+    records.put=value=>{
+     const req=put(value);
+     req.addEventListener('success',()=>{
+      success.push(name);
+      if(name==='meta')tx.abort();
+     });
+     return req;
+    };
+   }
+   return tx;
+  };
+  await assert.rejects(commitRestore(s,plan,{confirmed:true}));
+  assert.deepEqual(success,['overview',...source.categories.map(()=>'categories'),'services','meta']);
+  assert.deepEqual(await s.read(),old);
+ }finally{s.close();}
+});

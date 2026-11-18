@@ -16,7 +16,15 @@ replace('R2.draft.answers[q.k]=v;r2PruneHiddenAnswers();','f4Save({type:"service
 replace('R2.draft.intentionOverride=o[0];render();','f4Save({type:"service",recordId:R2.draft.recordId,field:"intentionOverride",value:o[0]});');
 const start=html.indexOf('function r2FinishDraft(){');const end=html.indexOf('function r2Usage',start);
 html=html.slice(0,start)+'function r2FinishDraft(){f4Save({type:"completeService",recordId:R2.draft.recordId},function(){R2.screen="complete";R2.history=[];render(true);});}\n'+html.slice(end);
-replace('R2.selectedCategory=rec.categoryId;R2.draft={categoryId:rec.categoryId','R2.selectedCategory=rec.categoryId;R2.draft={recordId:rec.recordId,categoryId:rec.categoryId');
+replace('p.appendChild(a);app.appendChild(p);\n}\nfunction renderCats', 'f4ListButton(a);p.appendChild(a);app.appendChild(p);\n}\nfunction renderCats');
+replace('a.append(B("カテゴリを選ぶ"', 'f4ListButton(a);a.append(B("カテゴリを選ぶ"');
+replace('x.append(E("h3","",rec.serviceName),E("p","",c.t+" / "+r2Usage(rec.usageStatus))', 'x.append(E("h3","",rec.serviceName),E("p","",rec.recordState==="completed"?"完了":"途中"),E("p","",c.t+" / "+(rec.usageStatus?r2Usage(rec.usageStatus):"未回答"))');
+const editStart=html.indexOf('function(){R2.selectedCategory=rec.categoryId;R2.draft={');
+const editEnd=html.indexOf('render(true);}',editStart);
+if(editStart<0||editEnd<0)throw Error('Existing record editor drift');
+html=html.slice(0,editStart)+'function(){f4OpenRecord(rec);}'+html.slice(editEnd+'render(true);}'.length);
+replace('var map={entry:r2Entry', 'var map={existing:f4Existing,entry:r2Entry');
+
 // Do not preserve a cached inherited intention; derive from the current canonical parent each time.
 replace('R2INT[rec.inheritedIntention]+"（カテゴリと同じ）"','R2INT[S.intent[rec.categoryId]||"undecided"]+"（カテゴリと同じ）"');
 const resetStart=html.indexOf('function(){S={step:0,status:{},quick:');const resetEnd=html.indexOf('render(true);}',resetStart);

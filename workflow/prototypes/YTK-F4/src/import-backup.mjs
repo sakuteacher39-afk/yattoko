@@ -13,6 +13,19 @@ const scopeKeys=['categoryKey','targetKind','operationType','ordinalStart','ordi
 const operationKeys=['operationId','ordinal','operationType','targetKind','categoryKey','recordId','baseGenerationId','baseGlobalRevision','baseRecordRevision','dependsOnOperationIds','captureKind','canonicalValue','dependencyContext'];
 const contextKeys=['expectedValue','parentQuestionKey','parentAnswer'];
 const reasons=['INVALID_VALUE','DEPENDENCY_INVALID','DEPENDENCY_MISSING','BASE_CONFLICT','PENDING_BYTES_LIMIT','PENDING_COUNT_LIMIT','UNSUPPORTED_OPERATION'];
+// A matching answer describes present content only. It cannot establish an applied receipt.
+export function matchesPendingAnswer(dataset, entry){
+ if(!dataset||!entry)return false;
+ const {operationType,recordId,categoryKey,canonicalValue}=entry;
+ let record;
+ if(operationType==='overview')record=dataset.overview;
+ else if(operationType==='category')record=dataset.categories.find(row=>row.categoryKey===categoryKey);
+ else if(operationType==='service')record=dataset.services.find(row=>row.recordId===recordId&&row.categoryKey===categoryKey);
+ else return false;
+ if(!record||record.recordId!==recordId)return false;
+ const fields=operationType==='service'&&canonicalValue.field!=='usageStatus'&&canonicalValue.field!=='intentionOverride'?record.answers:record;
+ return Object.hasOwn(fields,canonicalValue.field)&&fields[canonicalValue.field]===canonicalValue.value;
+}
 export function decodeOperation(o){if(!types.includes(o?.operationType))reject('OPERATION');switch(o.operationType){case 'category':return {type:'category',categoryKey:o.categoryKey,...o.canonicalValue};case 'overview':return {type:'overview',...o.canonicalValue};case 'service':return {type:'service',recordId:o.recordId,...o.canonicalValue};case 'addService':return {type:'addService',recordId:o.recordId,categoryKey:o.categoryKey,...o.canonicalValue};case 'deleteCategory':return {type:o.operationType,categoryKey:o.categoryKey};default:return {type:o.operationType,recordId:o.recordId};}}
 const hashPattern=/^[0-9a-f]{64}$/;
 function pendingCanonical(p){if(p===null)return null;exact(p,pendingKeys);if(!Array.isArray(p.operations)||!Array.isArray(p.omittedScopes))reject('PENDING');return {...ordered(p,pendingKeys),omittedScopes:p.omittedScopes.map(s=>{exact(s,scopeKeys);return ordered(s,scopeKeys);}),operations:p.operations.map(o=>{exact(o,operationKeys);exact(o.dependencyContext,contextKeys);let value=null;if(['category','overview','service'].includes(o.operationType)){exact(o.canonicalValue,['field','value']);value=ordered(o.canonicalValue,['field','value']);}else if(o.operationType==='addService'){exact(o.canonicalValue,['serviceCatalogId','otherServiceName']);value=ordered(o.canonicalValue,['serviceCatalogId','otherServiceName']);}else if(o.canonicalValue!==null)reject('FIELDS');return {...ordered(o,operationKeys),dependsOnOperationIds:Array.isArray(o.dependsOnOperationIds)?[...o.dependsOnOperationIds]:o.dependsOnOperationIds,canonicalValue:value,dependencyContext:ordered(o.dependencyContext,contextKeys)};})};}
