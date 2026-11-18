@@ -29,10 +29,10 @@ function fixture(d,target){
 }
 for(const [n,target] of [[21,999999],[22,1000000],[23,1000001]])b(n,async()=>{const d=base(),f=fixture(d,target),before=JSON.stringify(f.pending.map(x=>x.operation));const e=await normal(d,{kind:'emergency',pending:f.pending});if(target<=1000000){eq(e.pending.captureStatus,'full');eq(byte(e.pending),target)}else{const control=fixture(d,target);const last=control.pending.findLast(x=>x.operation.otherServiceName?.length>1);last.operation.otherServiceName=last.operation.otherServiceName.slice(1);const allowed=await normal(d,{kind:'emergency',pending:control.pending});eq(byte(allowed.pending),1000000);eq(e.pending.exportedCount,0);ok(e.pending.omittedScopes.every(x=>x.reasonCode==='PENDING_BYTES_LIMIT'))}eq(JSON.stringify(f.pending.map(x=>x.operation)),before);return {target,k:f.k,j:f.j}});
 for(const n of [2,3,4,5,6,9,10])nrm(n,async()=>{const s=await store();let d=await s.save(null,cat('mail','unknown')),op=add();for(const o of [op,sv(op.recordId,'usageStatus','using'),{type:'completeService',recordId:op.recordId},add('mail')])d=await s.save(d,o);
-const tr=s.db.transaction.bind(s.db),modes=[];s.db.transaction=(names,m)=>{modes.push(m);return tr(names,m)};
+const beforeExport=await s.read();const tr=s.db.transaction.bind(s.db),modes=[];s.db.transaction=(names,m)=>{modes.push(m);return tr(names,m)};
 let sends=0;const prior=globalThis.fetch;globalThis.fetch=()=>{sends++;throw Error('network')};try{const a=await B.createBackup(s,{pending:[frozen(d)],draft:{categoryKey:'mail',otherServiceName:'DRAFT_SENTINEL'}}),txt=new TextDecoder().decode(a.bytes),e=JSON.parse(txt);
 if(n===2)de([e.snapshot.categories[2].usageStatus,e.snapshot.categories[1].usageStatus],['unknown','unanswered']);
 if(n===3)de(e.snapshot.services.map(x=>x.recordState).sort(),['completed','partial']);
 if(n===4){eq(e.pending,null);ok(!/DRAFT_SENTINEL|mutationSeq|inheritedIntention|history/.test(txt))}
-if(n===5){de(modes,['readonly']);de(e.snapshot,d)}if(n===6)de(await s.read(),d);if(n===9)de([e.kind,e.pending],['normal',null]);if(n===10)eq(sends,0);
+if(n===5){de(modes,['readonly']);de(e.snapshot,beforeExport)}if(n===6)de(await s.read(),beforeExport);if(n===9)de([e.kind,e.pending],['normal',null]);if(n===10)eq(sends,0);
 }finally{globalThis.fetch=prior;s.close()}});
